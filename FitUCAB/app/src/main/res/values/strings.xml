@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FitUCAB</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!--Inicio Strings Modulo 1 -->
+    <string name="btn_m01_comienza">Comienza</string>
+    <string name="btn_m01_iniciaSesion">Inicia Sesion</string>
+    <!--Final Strings Modulo 1 -->
+
+</resources>
