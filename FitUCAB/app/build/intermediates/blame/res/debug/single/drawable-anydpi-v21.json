@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/design/25.3.0/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    },
+    {
+        "merged": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/design/25.3.0/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    }
+]
