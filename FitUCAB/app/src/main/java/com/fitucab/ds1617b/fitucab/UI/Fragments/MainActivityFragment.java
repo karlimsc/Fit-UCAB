@@ -1,4 +1,4 @@
-package com.fitucab.ds1617b.fitucab.Fragments;
+package com.fitucab.ds1617b.fitucab.UI.Fragments;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;

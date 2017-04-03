@@ -1,4 +1,4 @@
-package com.fitucab.ds1617b.fitucab.Fragments;
+package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -6,19 +6,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.R;
 
 /**
  * A placeholder fragment containing a simple view.
  */
-public class LoginActivityFragment extends Fragment {
+public class M01LoginFragment extends Fragment {
 
     private Button _btnRegistro;
     private Button _btnIniciaSesion;
     private View _view;
-    public LoginActivityFragment() {
+    public M01LoginFragment() {
     }
 
     /**
@@ -31,7 +30,7 @@ public class LoginActivityFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        _view = inflater.inflate(R.layout.fragment_login, container, false);
+        _view = inflater.inflate(R.layout.fragment_m01_login, container, false);
         instanciarComponentes();
         return _view;
     }
@@ -43,5 +42,7 @@ public class LoginActivityFragment extends Fragment {
         _btnRegistro=(Button) _view.findViewById(R.id.btn_m01_comienza);
         _btnIniciaSesion=(Button) _view.findViewById(R.id.btn_m01_iniciarSesion);
 
+
+        //llamar a ese metodo
     }
 }

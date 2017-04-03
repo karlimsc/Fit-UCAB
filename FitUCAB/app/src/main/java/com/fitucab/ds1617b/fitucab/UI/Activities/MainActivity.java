@@ -1,4 +1,4 @@
-package com.fitucab.ds1617b.fitucab.Activities;
+package com.fitucab.ds1617b.fitucab.UI.Activities;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,9 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 
 public class MainActivity extends AppCompatActivity {
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +31,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 
 }
