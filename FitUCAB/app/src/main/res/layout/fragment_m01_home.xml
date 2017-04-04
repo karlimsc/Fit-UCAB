@@ -11,8 +11,8 @@
         android:text="Hola desde HOME" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btn_m01_change_fragment"/>
+        android:id="@+id/btn_m01_change_fragment"
+        android:layout_width="0dp"
+        android:layout_height="6dp" />
 
 </FrameLayout>

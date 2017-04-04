@@ -1,12 +1,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/fitucab"
     android:baselineAligned="false"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    app:layout_collapseMode="none"
+    app:layout_collapseParallaxMultiplier="1.0">
 
 
     <Button
         android:id="@+id/btn_m01_comienza"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginBottom="20dp"
@@ -15,8 +21,9 @@
         android:layout_marginRight="40dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="380dp"
-        android:background="@android:color/holo_green_light"
+        android:background="#6ACA25"
         android:text="@string/btn_m01_comienza"
+        android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
     <Button
@@ -27,8 +34,9 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginStart="40dp"
-        android:background="#FF33B5E5"
+        android:background="#676CFB"
         android:text="@string/btn_m01_iniciaSesion"
+        android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
 </LinearLayout>
