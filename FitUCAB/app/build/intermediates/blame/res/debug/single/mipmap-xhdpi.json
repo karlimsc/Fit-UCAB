@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
-        "source": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
-        "source": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     }
 ]

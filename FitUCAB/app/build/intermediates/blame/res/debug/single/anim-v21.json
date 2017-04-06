@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
-        "source": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/design/25.3.0/res/anim-v21/design_bottom_sheet_slide_in.xml"
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
-        "source": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/design/25.3.0/res/anim-v21/design_bottom_sheet_slide_out.xml"
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
     }
 ]
