@@ -4,23 +4,49 @@
     tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01SignUpFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false"
     android:orientation="vertical"
     app:layout_collapseMode="none"
-    app:layout_collapseParallaxMultiplier="1.0">
+    app:layout_collapseParallaxMultiplier="1.0"
+    android:weightSum="1">
 
 
     <!-- TODO: Update blank fragment layout -->
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:layout_marginBottom="40dp"
+
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_weight="0.02"
+        android:ems="10"
+        android:inputType="textPassword" />
+
     <Button
         android:id="@+id/btn_m01_click"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginEnd="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginStart="40dp"
+        android:layout_marginTop="150dp"
         android:background="#676CFB"
+        android:elevation="0dp"
         android:text="@string/btn_m01_iniciaSesion"
         android:textColor="@android:color/background_light"
         android:textSize="18sp" />
