@@ -1,23 +1,28 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01SignUpFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01SignUpFragment">
+    android:baselineAligned="false"
+    android:orientation="vertical"
+    app:layout_collapseMode="none"
+    app:layout_collapseParallaxMultiplier="1.0">
+
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_m01_test"/>
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_m01_click"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:id="@+id/btn_m01_click"/>
-
+        android:layout_marginEnd="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginStart="40dp"
+        android:background="#676CFB"
+        android:text="@string/btn_m01_iniciaSesion"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp" />
 
 </LinearLayout>

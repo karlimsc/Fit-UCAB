@@ -4,7 +4,7 @@
     <string name="title_activity_main">MainActivity</string>
     <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_comienza">Comienza</string>
-    <string name="btn_m01_iniciaSesion">Inicia Sesion</string>
+    <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
