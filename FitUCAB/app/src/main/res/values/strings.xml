@@ -5,6 +5,8 @@
     <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_comienza">Comienza</string>
     <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
+    <string name="texfield_m01_correo">Correo Electrónico</string>
+    <string name="textfield_m01_contrasena">Contraseña</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

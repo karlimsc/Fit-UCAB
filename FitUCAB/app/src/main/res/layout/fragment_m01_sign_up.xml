@@ -22,7 +22,8 @@
         android:layout_marginRight="40dp"
         android:layout_marginTop="100dp"
         android:ems="10"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:text="@string/texfield_m01_correo" />
 
     <EditText
         android:id="@+id/editText2"
@@ -32,7 +33,8 @@
         android:layout_marginRight="40dp"
         android:layout_weight="0.02"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:text="@string/textfield_m01_contrasena" />
 
     <Button
         android:id="@+id/btn_m01_click"
