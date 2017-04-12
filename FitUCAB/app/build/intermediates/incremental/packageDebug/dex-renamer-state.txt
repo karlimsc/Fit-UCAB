@@ -1,0 +1,4 @@
+#Mon Apr 03 00:21:31 VET 2017
+base.0=/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+renamed.0=classes.dex
+file.0=/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
