@@ -7,24 +7,41 @@
     android:baselineAligned="false"
     android:orientation="vertical"
     app:layout_collapseMode="none"
-    app:layout_collapseParallaxMultiplier="1.0">
+    app:layout_collapseParallaxMultiplier="1.0"
+    android:weightSum="1">
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="240dp"
+        android:text="¡Bienvenido!
+  Has tu cambio con nosotros"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btn_m01_comienza"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="15dp"
         android:layout_marginEnd="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginTop="60dp"
         android:background="#6ACA25"
         android:text="@string/btn_m01_comienza"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp" />
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btn_m01_iniciarSesion"
@@ -36,7 +53,8 @@
         android:layout_marginStart="40dp"
         android:background="#676CFB"
         android:text="@string/btn_m01_iniciaSesion"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp" />
+        android:textStyle="bold" />
 
 </LinearLayout>

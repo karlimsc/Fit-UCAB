@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01SignUpFragment"
@@ -14,10 +14,11 @@
 
     <EditText
         android:id="@+id/correo"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
 
+        android:layout_marginBottom="40dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginTop="100dp"
@@ -29,27 +30,29 @@
         android:id="@+id/contrasena"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_weight="0.02"
         android:ems="10"
         android:inputType="textPassword"
-        android:text="@string/textfield_m01_contrasena" />
+        android:text="@string/textfield_m01_contrasena"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/correo"
+        android:layout_alignStart="@+id/correo"
+        android:layout_marginTop="31dp"
+        android:layout_alignRight="@+id/btn_m01_aceptar"
+        android:layout_alignEnd="@+id/btn_m01_aceptar" />
 
     <Button
-        android:id="@+id/btn_m01_click"
+        android:id="@+id/btn_m01_aceptar"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="150dp"
         android:background="#676CFB"
-        android:elevation="0dp"
-        android:text="@string/btn_m01_iniciaSesion"
+        android:text="Aceptar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp" />
+        android:textStyle="bold"
+        android:layout_below="@+id/correo"
+        android:layout_alignLeft="@+id/correo"
+        android:layout_alignStart="@+id/correo" />
 
-</LinearLayout>
+</RelativeLayout>

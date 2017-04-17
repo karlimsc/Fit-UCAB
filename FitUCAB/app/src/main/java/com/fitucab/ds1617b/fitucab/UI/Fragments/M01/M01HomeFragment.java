@@ -18,6 +18,7 @@ import com.fitucab.ds1617b.fitucab.R;
 public class M01HomeFragment extends Fragment {
 
     private Button _btnChangeFragment;
+    private Button _btnChangeFragment2;
     private View _view;
     private OnFragmentSwap _callBack;
 
@@ -50,7 +51,9 @@ public class M01HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         _view =  inflater.inflate(R.layout.fragment_m01_home, container, false);
         setupViewValues();
+        setupView2Values();
         manageChangeFragmentBtn();
+        manageChangeFragment2Btn();
         return _view;
     }
 
@@ -62,9 +65,21 @@ public class M01HomeFragment extends Fragment {
             }
         });
     }
-
-    private void setupViewValues() {
-        _btnChangeFragment = (Button) _view.findViewById(R.id.btn_m01_change_fragment);
+    private void manageChangeFragment2Btn() {
+        _btnChangeFragment2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _callBack.onSwap("M01SignUpFragment",null);
+            }
+        });
     }
 
+    private void setupViewValues() {
+        _btnChangeFragment = (Button) _view.findViewById(R.id.btn_m01_iniciarSesion);
+
+    }
+
+    private void setupView2Values() {
+        _btnChangeFragment2 = (Button) _view.findViewById(R.id.btn_m01_comienza);
+    }
 }

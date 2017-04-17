@@ -54,28 +54,27 @@ public class M01SignUpFragment extends Fragment {
 
         _view =  inflater.inflate(R.layout.fragment_m01_sign_up, container, false);
         setupViewValues();
-        manageClicHereBtn();
-
+        manageClickHereBtn();
         return _view;
     }
 
-    private void manageClicHereBtn() {
+    private void manageClickHereBtn() {
         _clickHerebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Obtenemos en la variable local el valor del EditText
-                String textoEscritoEnPantalla = _inputET.getText().toString();
+                //String textoEscritoEnPantalla = _inputET.getText().toString();
                 //Declaramos un contenedor para enviar la info al otro fragment
                 Bundle bundle = new Bundle();
-                bundle.putString("text",textoEscritoEnPantalla);
-                _callBack.onSwap("M01RecoveryFragment",bundle);
+                //bundle.putString("text",textoEscritoEnPantalla);
+                _callBack.onSwap("M01HomeFragment",bundle);
             }
         });
     }
 
     private void setupViewValues() {
-        _inputET = (EditText) _view.findViewById(R.id.et_m01_test);
-        _clickHerebtn = (Button) _view.findViewById(R.id.btn_m01_click);
+        _clickHerebtn = (Button) _view.findViewById(R.id.btn_m01_aceptar);
+
 
     }
 
