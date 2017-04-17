@@ -5,14 +5,16 @@
     tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01HomeFragment">
 
     <!-- TODO: CAMBIAR LOS TEXTOS A RECURSOS. -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hola desde HOME" />
 
     <Button
         android:id="@+id/btn_m01_change_fragment"
         android:layout_width="0dp"
         android:layout_height="6dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Hola desde HOME" />
 
 </FrameLayout>

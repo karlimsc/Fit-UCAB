@@ -74,7 +74,7 @@ public class M01SignUpFragment extends Fragment {
     }
 
     private void setupViewValues() {
-        _inputET = (EditText) _view.findViewById(R.id.et_m01_test);
+        //_inputET = (EditText) _view.findViewById(R.id.et_m01_test);
         _clickHerebtn = (Button) _view.findViewById(R.id.btn_m01_click);
 
     }
