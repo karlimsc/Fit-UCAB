@@ -2,157 +2,22 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="/home/jesus/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.0/support-annotations-25.3.0.jar"
+        is-multidex="true"
+        jar="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="dd84903d2e1af25a6081ef9038ad863cb14ca3a0">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/support-annotations-25.3.0_f59ca5246bca7643ea733488996b4294f648837f.jar" />
+        sha1="acbd4212dca14410371afa909db392eca298023d">
+        <dex dex="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_630ef9f543ba31c318316d449b6f2430fabcbc54/classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.3.0/jars/classes.jar"
+        is-multidex="true"
+        jar="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="5cc5ef8347a6bafa14556cbd35230aa9b3431bb0">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.3.0_fbd754f7091c337f72aa42032495ac5e4af47899.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="a3e61044038fb54cddf6b8dc79f41d2b57f42caf">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.3.0_afb4d7e85a1bd29a3eb69551a6ec619b11781304.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="93c1199fcb0a34b980e6fff8350daff62e696ec2">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.3.0_40ff2fbcb04314361bb9e173bc509b16744a9655.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support.constraint/constraint-layout/1.0.2/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support.constraint-constraint-layout-1.0.2_e7a7c09a6d10434cc30ecc76febdfdfb0cb36962.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="425c7b17887e5c3f8cbdf67ba171bc246f29b42c">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.3.0_fcd59761cc83103d92b4c157335d3657e135fbfa.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="70f23cb87278f89aa51e6f57e8f0fd5266572d95">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.3.0_17a61fc3cd605e65ece31d82c6c29936f29b45bc.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="93c10d68ab5ea070f15782ae6d3a28d1f1d8f45e">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.3.0_e5bf20ffca8ea55a43df9b5fd2283cc743045a20.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="473b9a0049eb5fa04298403b4e556fd78924d606">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/instant-run_2de36c81beef31bad0b15c47726c4eb33d389ea1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.3.0_410d507d569a324a6bd71cb02ae06dd74ffd0c14.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Android/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/constraint-layout-solver-1.0.2_d7e6f4a22270514d4192cd4fa236a8bdbe7a279a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="518768f3200963fbfec652f498da2c9d39245234">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.3.0_030f9dc026a5424432ee916ccb0f9500a35c9639.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/transition/25.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="fbb206f7a119f66ce171d95aae1225a5b209a8b7">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-transition-25.3.0_055c60ec84604ab33ec0cbf861f970cb930df628.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4b746ef0fd46acb5aaf3d9ab9a4cec22c28d3211">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.3.0_e838b7bcef8b8ce0ed9a38ca6afba54da75febd6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/design/25.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9ab787a20aae245b5b3651ae0b9c38459eb37715">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-design-25.3.0_9aaf6cd55e5ad36b8451a194c7e87977e332d258.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="60e88fa11980f473f822f9c8076b8e3f4e2b8e72">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_6594391f11e7362c1efab2da9ac5b4610dab1f4c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.3.0/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d6a04527c17597019dad82777c5094a3d60d1c33">
-        <dex dex="/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.3.0_4cdcbf6966c9f7d2122358d10e3cdb466741bafe.jar" />
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9ae6929d4029c259e9076b31f42d826a442947f1/classes.dex" />
     </item>
 
 </items>
