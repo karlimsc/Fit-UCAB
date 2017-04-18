@@ -49,7 +49,7 @@ public class M01HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        _view =  inflater.inflate(R.layout.fragment_m01_home, container, false);
+        _view =  inflater.inflate(R.layout.fragment_m01_login, container, false);
         setupViewValues();
         setupView2Values();
         manageChangeFragmentBtn();

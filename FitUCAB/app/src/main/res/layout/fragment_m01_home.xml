@@ -9,6 +9,7 @@
     tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01HomeFragment">
 
     <!-- TODO: CAMBIAR LOS TEXTOS A RECURSOS. -->
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
@@ -22,6 +23,7 @@
         android:textColor="@android:color/background_light"
         android:textSize="22sp"
         android:textStyle="bold" />
+
 
     <Button
         android:id="@+id/btn_m01_comienza"
@@ -57,3 +59,5 @@
         android:textStyle="bold" />
 
 </LinearLayout>
+
+

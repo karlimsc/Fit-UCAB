@@ -75,7 +75,6 @@ public class M01SignUpFragment extends Fragment {
     private void setupViewValues() {
         _clickHerebtn = (Button) _view.findViewById(R.id.btn_m01_aceptar);
 
-
     }
 
 }
