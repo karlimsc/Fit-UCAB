@@ -101,5 +101,27 @@
             location="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/outputs/apk/app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
+    <build
+        build-mode="COLD"
+        timestamp="1492374130109"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            type="SPLIT" />
+    </build>
+    <build
+        build-mode="COLD"
+        timestamp="1492374278987"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/outputs/apk/app-debug.apk"
+            type="SPLIT_MAIN" />
+    </build>
 
 </instant-run>
