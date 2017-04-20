@@ -1,10 +1,18 @@
 [
     {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
-        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_main.xml"
+        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_m05_read_exercise.xml",
+        "source": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_m05_read_exercise.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_login.xml",
-        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_login.xml"
+        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_login.xml",
+        "source": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_login.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_register_activity.xml",
+        "source": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_register_activity.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_main.xml"
     }
 ]

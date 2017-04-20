@@ -1,7 +1,7 @@
-#Tue Apr 04 08:33:52 VET 2017
-base.0=/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_415d3b56129a756c8e1882d4fdcb50fbea2eb182
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_49638339ee01369ea9c4ae8dadb23066e0c0b5ad/classes.dex
-base.1=/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_49638339ee01369ea9c4ae8dadb23066e0c0b5ad
-file.0=/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_415d3b56129a756c8e1882d4fdcb50fbea2eb182/classes.dex
+#Thu Apr 20 14:13:20 VET 2017
+base.0=/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_020d14b9b6067cc2e04df1336f3f7c687721ffa4
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_920ffe3596569dbdfc1ef7ad9e6ee87f8260f595/classes.dex
+base.1=/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_920ffe3596569dbdfc1ef7ad9e6ee87f8260f595
+file.0=/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_020d14b9b6067cc2e04df1336f3f7c687721ffa4/classes.dex

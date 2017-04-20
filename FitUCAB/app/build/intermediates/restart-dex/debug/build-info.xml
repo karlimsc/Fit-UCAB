@@ -2,13 +2,13 @@
 <instant-run
     abi="x86"
     api-level="24"
-    build-mode="COLD"
+    build-mode="FULL"
     density="420dpi"
     format="10"
-    plugin-version="2.3.0"
-    timestamp="1491309374645"
-    token="4221952182249313592"
-    verifier="COLD_SWAP_REQUESTED" >
+    plugin-version="2.3.1"
+    timestamp="1492712078159"
+    token="-8573059257544582282"
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
@@ -23,50 +23,83 @@
         name="verifier"
         duration="0" />
 
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/outputs/apk/app-debug.apk"
+        type="SPLIT_MAIN" />
+
     <build
         build-mode="FULL"
-        timestamp="1491309218218"
+        timestamp="1492712078159"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
             type="SPLIT" />
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
             type="SPLIT" />
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
             type="SPLIT" />
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_5.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_2.apk"
             type="SPLIT" />
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_3.apk"
             type="SPLIT" />
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_0.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_4.apk"
             type="SPLIT" />
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_6.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_7.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_8.apk"
             type="SPLIT" />
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/dep/dependencies.apk"
             type="SPLIT" />
         <artifact
-            location="/home/david/Programs/Fit-UCAB/FitUCAB/app/build/outputs/apk/app-debug.apk"
+            location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/outputs/apk/app-debug.apk"
             type="SPLIT_MAIN" />
     </build>
-    <build
-        build-mode="COLD"
-        timestamp="1491309374645"
-        verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>
