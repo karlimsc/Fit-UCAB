@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Activities.activity_notificacion">
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="322dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="55dp"
+        android:text="Amigos"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/switch2"
+        android:layout_alignStart="@+id/switch2" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="322dp"
+        android:layout_height="33dp"
+        android:text="Actividad"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="57dp"
+        android:layout_below="@+id/switch1"
+        android:layout_alignLeft="@+id/switch3"
+        android:layout_alignStart="@+id/switch3" />
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="322dp"
+        android:layout_height="33dp"
+        android:text="Entretenimiento"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="103dp"
+        android:layout_below="@+id/switch2"
+        android:layout_alignLeft="@+id/switch4"
+        android:layout_alignStart="@+id/switch4" />
+
+    <Switch
+        android:id="@+id/switch4"
+        android:layout_width="322dp"
+        android:layout_height="33dp"
+        android:text="Retos"
+        tools:layout_editor_absoluteX="47dp"
+        tools:layout_editor_absoluteY="146dp"
+        android:layout_below="@+id/switch3"
+        android:layout_alignLeft="@+id/switch5"
+        android:layout_alignStart="@+id/switch5" />
+
+    <Switch
+        android:id="@+id/switch5"
+        android:layout_width="322dp"
+        android:layout_height="33dp"
+        android:text="Hidratacion"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="192dp"
+        android:layout_below="@+id/switch4"
+        android:layout_alignLeft="@+id/switch6"
+        android:layout_alignStart="@+id/switch6" />
+
+    <Switch
+        android:id="@+id/switch6"
+        android:layout_width="322dp"
+        android:layout_height="33dp"
+        android:text="Calorias"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="239dp"
+        android:layout_below="@+id/switch5"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/enviar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ENVIAR"
+        tools:layout_editor_absoluteX="62dp"
+        tools:layout_editor_absoluteY="337dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp" />
+
+</RelativeLayout>

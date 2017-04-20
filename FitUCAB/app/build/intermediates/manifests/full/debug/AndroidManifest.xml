@@ -8,6 +8,8 @@
         android:minSdkVersion="15"
         android:targetSdkVersion="25" />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <meta-data
         android:name="android.support.VERSION"
         android:value="25.3.0" />
@@ -33,6 +35,8 @@
             android:name="com.fitucab.ds1617b.fitucab.UI.Activities.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.fitucab.ds1617b.fitucab.UI.Activities.activity_notificacion" >
+        </activity>
     </application>
 
 </manifest>

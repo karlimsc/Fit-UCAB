@@ -28,8 +28,11 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Intent newActivity = new Intent(this, activity_notificacion.class);
+        startActivity(newActivity);
+
         //Seleccionamos el fragmento que queremos mostrar.
-        onSwap("M01HomeFragment",null);
+       // onSwap("M01HomeFragment",null);
 
 
     }
