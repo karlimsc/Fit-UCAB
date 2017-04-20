@@ -6,7 +6,7 @@
     density="420dpi"
     format="10"
     plugin-version="2.3.1"
-    timestamp="1492712078159"
+    timestamp="1492712897569"
     token="-8573059257544582282"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -62,7 +62,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1492712078159"
+        timestamp="1492712897569"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/split-apk/debug/slices/slice_1.apk"
