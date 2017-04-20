@@ -30,7 +30,7 @@ public class  M01LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        _view = inflater.inflate(R.layout.fragment_m01_home, container, false);
+        _view = inflater.inflate(R.layout.fragment_m01_login, container, false);
         instanciarComponentes();
         return _view;
     }

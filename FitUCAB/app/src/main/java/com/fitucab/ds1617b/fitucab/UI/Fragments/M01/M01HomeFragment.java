@@ -17,8 +17,8 @@ import com.fitucab.ds1617b.fitucab.R;
  */
 public class M01HomeFragment extends Fragment {
 
-    private Button _btnChangeFragment;
-    private Button _btnChangeFragment2;
+    private Button _btnIrIniciarSesion;
+    private Button _btnIrRegistro;
     private View _view;
     private OnFragmentSwap _callBack;
 
@@ -49,37 +49,35 @@ public class M01HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        _view =  inflater.inflate(R.layout.fragment_m01_login, container, false);
+        _view =  inflater.inflate(R.layout.fragment_m01_home, container, false);
         setupViewValues();
-        setupView2Values();
-        manageChangeFragmentBtn();
-        manageChangeFragment2Btn();
+        manageChangeFragmentLogin();
+        manageChangeFragmentSignUp();
         return _view;
     }
 
-    private void manageChangeFragmentBtn() {
-        _btnChangeFragment.setOnClickListener(new View.OnClickListener() {
+    private void manageChangeFragmentLogin() {
+        _btnIrIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _callBack.onSwap("M01SignUpFragment",null);
+                _callBack.onSwap("M01LoginFragment",null);
             }
         });
     }
-    private void manageChangeFragment2Btn() {
-        _btnChangeFragment2.setOnClickListener(new View.OnClickListener() {
+    private void manageChangeFragmentSignUp() {
+        _btnIrRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 _callBack.onSwap("M01SignUpFragment",null);
             }
         });
+
     }
 
     private void setupViewValues() {
-        _btnChangeFragment = (Button) _view.findViewById(R.id.btn_m01_iniciarSesion);
+        _btnIrIniciarSesion = (Button) _view.findViewById(R.id.btn_m01_iniciarSesion);
+        _btnIrRegistro = (Button) _view.findViewById(R.id.btn_m01_comienza);
 
     }
 
-    private void setupView2Values() {
-        _btnChangeFragment2 = (Button) _view.findViewById(R.id.btn_m01_comienza);
-    }
 }
