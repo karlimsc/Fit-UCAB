@@ -14,28 +14,26 @@
         android:text="@string/tv_m01_acercaDeTi"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:textSize="22sp"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="40dp"
+        android:padding="20dp"
         android:orientation="vertical"
-        android:weightSum="15">
+        android:weightSum="10">
 
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_column="1">
 
             <EditText
                 android:id="@+id/et_m01_usuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:layout_marginTop="20dp"
+                android:layout_weight="2"
                 android:layout_gravity="left"
                 android:ems="10"
                 android:hint="@string/et_m01_usuario"
@@ -47,7 +45,7 @@
             android:id="@+id/et_m01_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="2"
             android:layout_marginTop="20dp"
             android:hint="@string/et_m01_password"
             android:layout_gravity="center"
@@ -57,14 +55,13 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_column="1">
 
             <EditText
                 android:id="@+id/et_m01_correoRegistro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
+                android:layout_weight="2"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="left"
                 android:ems="10"
@@ -83,25 +80,31 @@
             android:id="@+id/et_m01_telefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:layout_marginTop="20dp"
+            android:layout_weight="2"
             android:ems="10"
             android:hint="@string/et_m01_telefono"
             android:inputType="phone" />
         </android.support.design.widget.TextInputLayout>
 
-        <TextView
-            android:id="@+id/tv_m01_fechanac"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_column="1">
+        <EditText
+            android:id="@+id/et_m01_fechanac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="@string/tv_m01_fechanac"
             android:inputType="date"
-            android:textSize="20sp"/>
-
-
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:textSize="18sp"/>
+        </android.support.design.widget.TextInputLayout>
+        
     </LinearLayout>
 
     <Button

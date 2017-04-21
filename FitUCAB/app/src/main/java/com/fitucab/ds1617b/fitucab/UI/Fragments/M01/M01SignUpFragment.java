@@ -26,7 +26,7 @@ public class M01SignUpFragment extends Fragment {
 
     private OnFragmentSwap _callBack;
     private Button _btnRegistrar;
-    private TextView _tvfechaNac;
+    private EditText _etfechaNac;
     private View _view;
 
     public M01SignUpFragment() {
@@ -80,7 +80,7 @@ public class M01SignUpFragment extends Fragment {
     }
 
     private void activarCalendario(){
-        _tvfechaNac.setOnClickListener(new View.OnClickListener() {
+        _etfechaNac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 instanciarCalendario();
@@ -90,7 +90,7 @@ public class M01SignUpFragment extends Fragment {
 
     private void setupViewValues() {
         _btnRegistrar = (Button) _view.findViewById(R.id.btn_m01_entrar);
-        _tvfechaNac = (TextView) _view.findViewById(R.id.tv_m01_fechanac);
+        _etfechaNac = (EditText) _view.findViewById(R.id.et_m01_fechanac);
 
     }
 
@@ -116,7 +116,7 @@ public class M01SignUpFragment extends Fragment {
             String year1 = String.valueOf(selectedYear);
             String month1 = String.valueOf(selectedMonth + 1);
             String day1 = String.valueOf(selectedDay);
-            _tvfechaNac.setText(day1 + "/" + month1 + "/" + year1);
+            _etfechaNac.setText(day1 + "/" + month1 + "/" + year1);
         }
     };
 }
