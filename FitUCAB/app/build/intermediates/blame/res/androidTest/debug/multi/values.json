@@ -11,7 +11,38 @@
                     "endOffset": 96
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "/home/david/.android/build-cache/39a37f8a7bd9bfdaa6a2aba883580ef5ce16477a/output/res/values/values.xml",
+=======
+                    "file": "/home/karo/.android/build-cache/e7615aa5b88e5589dc004d5a7ada208444fb6616/output/res/values/values.xml",
+<<<<<<< HEAD
+=======
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/res/values/values.xml",
+>>>>>>> Develop
+>>>>>>> 69f568f7688a53b2b4e259a6a243d280d545b354
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

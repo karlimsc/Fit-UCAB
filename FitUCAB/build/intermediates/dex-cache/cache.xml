@@ -7,8 +7,13 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
+<<<<<<< HEAD
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
         <dex dex="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_020d14b9b6067cc2e04df1336f3f7c687721ffa4/classes.dex" />
+=======
+        sha1="acbd4212dca14410371afa909db392eca298023d">
+        <dex dex="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_630ef9f543ba31c318316d449b6f2430fabcbc54/classes.dex" />
+>>>>>>> 69f568f7688a53b2b4e259a6a243d280d545b354
     </item>
     <item
         is-multidex="true"
