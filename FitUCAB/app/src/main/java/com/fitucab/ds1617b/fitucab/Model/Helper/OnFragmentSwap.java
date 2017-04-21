@@ -1,6 +1,11 @@
 package com.fitucab.ds1617b.fitucab.Model.Helper;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTabHost;
+
+import java.util.List;
 
 
 /**
@@ -14,6 +19,7 @@ public interface OnFragmentSwap {
      * @param bundle Recibe la data encapsulada que se le pasara al fragment, (puede ser null)
      */
     void onSwap(String fragmentName, Bundle bundle);
+
 
     /**
      * Metodo encargado de realizar los cambios entre activities

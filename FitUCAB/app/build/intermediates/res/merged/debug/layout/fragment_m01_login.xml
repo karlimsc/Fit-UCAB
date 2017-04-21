@@ -1,0 +1,85 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="311dp"
+        android:layout_height="100dp"
+        android:layout_weight="2"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="80dp"
+        android:src="@mipmap/logofitucabsolonombreblanco"
+        android:background="@color/colorBtnAceptar"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:weightSum="12">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_column="1">
+
+            <EditText
+                android:id="@+id/et_m01_usuarioCorreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left"
+                android:ems="10"
+                android:hint="@string/et_m01_usuario"
+                android:inputType="textPersonName"
+                android:maxLength="20" />
+        </android.support.design.widget.TextInputLayout>
+
+        <EditText
+            android:id="@+id/et_m01_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginTop="20dp"
+            android:hint="@string/et_m01_password"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btn_m01_aceptarLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginTop="20dp"
+            android:text="@string/btn_m01_aceptarLogin"
+            android:background="@color/colorBtnConfirmar"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_m01_olvidoClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="@string/tv_m01_olvidoClave" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
