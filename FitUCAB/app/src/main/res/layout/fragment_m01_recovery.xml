@@ -32,7 +32,7 @@
             android:layout_column="1">
 
             <EditText
-                android:id="@+id/profile_names"
+                android:id="@+id/et_m01_correo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
@@ -45,7 +45,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <Button
-            android:id="@+id/btn_m01_aceptarLogin"
+            android:id="@+id/btn_m01_enviarCorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="5"
