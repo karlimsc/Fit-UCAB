@@ -7,10 +7,10 @@
     <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
     <string name="texfield_m01_correo">Correo Electrónico</string>
     <string name="textfield_m01_contrasena">Contraseña</string>
-    <string name="tv_m01_intro">¡Bienvenido! \n inicia tu entrenamiento fisico</string>
+    <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento fisico</string>
     <string name="btn_m01_entrar">Entrar</string>
     <string name="et_m01_usuarioCorreo">Usuario o Correo</string>
-    <string name="et_m01_password">**********</string>
+    <string name="et_m01_password">Contrasena</string>
     <string name="btn_m01_aceptarLogin">Entrar</string>
     <string name="tv_m01_olvidoClave">Olvidaste tu contrasena?</string>
     <string name="et_m01_correo">Correo Electronico</string>
@@ -20,6 +20,12 @@
     <string name="et_m01_usuario">Usuario</string>
     <string name="et_m01_correoRegistro">Correo Electronico</string>
     <string name="et_m01_telefono">Telefono</string>
+    <string name="rb_m01_femenino">Femenino</string>
+    <string name="rb_m01_masculino">Masculino</string>
+    <string name="et_m01_peso">Peso</string>
+    <string name="et_m01_kg">Kg</string>
+    <string name="et_m01_estatura">Estatura</string>
+    <string name="et_m01_mts">Mts</string>
 
 
 
