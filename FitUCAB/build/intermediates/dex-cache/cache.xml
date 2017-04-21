@@ -2,22 +2,40 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="acbd4212dca14410371afa909db392eca298023d">
-        <dex dex="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_630ef9f543ba31c318316d449b6f2430fabcbc54/classes.dex" />
+        sha1="c7626a9aa507bbbdc16188bc9a9f9bf3370c1ddd">
+        <dex dex="/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/classes_c642ee800675e8f4e66e2128c66c64e604a3434a.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/root/.android/build-cache/fee9d0bc14766dafff341209176c5e133767795a/output/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.2"
-        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9ae6929d4029c259e9076b31f42d826a442947f1/classes.dex" />
+        sha1="bdcc2a9572f18b8c90a3a157cab6cdfc97c6c736">
+        <dex dex="/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/classes_d30b23bd931fefc963ee2b6aa103d5a91f507327.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/root/.android/build-cache/7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="19696dc358ac668e341f28c41e3387d61ccdb81d">
+        <dex dex="/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/classes_d64f4893739b120124d9762ec9545a8c39d87c0a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/root/.android/build-cache/2951ce2cf8e686ef94df81e70621df7d6231bbb7/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6003d64df88a6ce5e961fa2bad7f1b9b97689ac1">
+        <dex dex="/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/pre-dexed/debug/classes_b2f9ca36abeb611ce2121b650e089662c9cf13b3.jar" />
     </item>
 
 </items>
