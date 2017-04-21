@@ -7,13 +7,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-<<<<<<< HEAD
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
         <dex dex="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_020d14b9b6067cc2e04df1336f3f7c687721ffa4/classes.dex" />
-=======
-        sha1="acbd4212dca14410371afa909db392eca298023d">
-        <dex dex="/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_630ef9f543ba31c318316d449b6f2430fabcbc54/classes.dex" />
->>>>>>> 69f568f7688a53b2b4e259a6a243d280d545b354
     </item>
     <item
         is-multidex="true"
@@ -21,44 +16,8 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="9c713be526faa0236706e8b86a6b087ec66b12e7">
+        sha1="88fd03417806b2ebe61b3d30f4f223ce6ebf9c8e">
         <dex dex="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_920ffe3596569dbdfc1ef7ad9e6ee87f8260f595/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/david/.android/build-cache/94a269bb3461b18fbc9f7891bac80c2f84a359b6/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6003d64df88a6ce5e961fa2bad7f1b9b97689ac1">
-        <dex dex="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e446133aa7097f3a2cab0e3b1e07b155a8b4d617/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/david/.android/build-cache/e6a22680b659e4905551d84523ca554f6edda4bc/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="19696dc358ac668e341f28c41e3387d61ccdb81d">
-        <dex dex="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ffbbd9ba427d3c0a5042cfdffa22d2dc05fdf5a5/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/david/.android/build-cache/93b0b027c1d06bb47fd929fff218a33095527540/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="bdcc2a9572f18b8c90a3a157cab6cdfc97c6c736">
-        <dex dex="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2326cffd03a1c49376868b4a8922604473554051/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c7626a9aa507bbbdc16188bc9a9f9bf3370c1ddd">
-        <dex dex="/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_ec17c2335d9b39b21a8606bdc71588f721eaaad4/classes.dex" />
     </item>
 
 </items>

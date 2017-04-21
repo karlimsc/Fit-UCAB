@@ -8,7 +8,6 @@
         "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
-<<<<<<< HEAD
         "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/design_ic_visibility_off.png",
         "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/drawable-xhdpi-v4/design_ic_visibility_off.png"
     },
@@ -19,18 +18,6 @@
     {
         "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png",
         "source": "/home/david/.android/build-cache/e6a22680b659e4905551d84523ca554f6edda4bc/output/res/drawable-xhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
-=======
-        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/design_ic_visibility.png",
-        "source": "/home/karo/.android/build-cache/91d103353e7db76cfaa988fae365929273f4443b/output/res/drawable-xhdpi-v4/design_ic_visibility.png"
-    },
-    {
-        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
-        "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
-    },
-    {
-        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png",
-        "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
->>>>>>> 69f568f7688a53b2b4e259a6a243d280d545b354
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png",
@@ -177,7 +164,6 @@
         "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png"
     },
     {
-<<<<<<< HEAD
         "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png",
         "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/drawable-xhdpi-v4/abc_scrubber_track_mtrl_alpha.9.png"
     },
@@ -188,18 +174,6 @@
     {
         "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
         "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
-=======
-        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/googleg_standard_color_18.png",
-        "source": "/home/karo/.android/build-cache/1c9a0ee118f48f315803fe964d94c0a58a800f0e/output/res/drawable-xhdpi-v4/googleg_standard_color_18.png"
-    },
-    {
-        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png",
-        "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/drawable-xhdpi-v4/abc_ic_star_half_black_36dp.png"
-    },
-    {
-        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png",
-        "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png"
->>>>>>> 69f568f7688a53b2b4e259a6a243d280d545b354
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_off_mtrl_alpha.png",

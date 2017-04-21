@@ -48,34 +48,20 @@
         "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/notification_action_tombstone.xml"
     },
     {
-<<<<<<< HEAD
         "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
         "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_action_mode_bar.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
         "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/select_dialog_item_material.xml"
-=======
-        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
-        "source": "/home/karo/.android/build-cache/91d103353e7db76cfaa988fae365929273f4443b/output/res/layout/design_navigation_item_separator.xml"
->>>>>>> 69f568f7688a53b2b4e259a6a243d280d545b354
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
         "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_screen_toolbar.xml"
     },
     {
-<<<<<<< HEAD
         "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
         "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_navigation_menu_item.xml"
-=======
-        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
-        "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/layout/select_dialog_item_material.xml"
-    },
-    {
-        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
-        "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/layout/notification_template_media_custom.xml"
->>>>>>> 69f568f7688a53b2b4e259a6a243d280d545b354
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml",
