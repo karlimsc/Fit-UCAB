@@ -50,12 +50,11 @@ public class M01RecoveryFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         _view = inflater.inflate(R.layout.fragment_m01_recovery, container, false);
-        setupViewValues();
-        manageChangeActivityBtn();
+       /* setupViewValues();*/
         return _view;
     }
 
-    private void setupViewValues() {
+    /*private void setupViewValues() {
         _printTextTV = (TextView) _view.findViewById(R.id.tv_m01_prueba);
         Bundle incomingData = getArguments();
         String textFromView = incomingData.getString("text");
@@ -63,16 +62,9 @@ public class M01RecoveryFragment extends Fragment {
         _printTextTV.setText(textFromView);
         _btnChangeActivity = (Button) _view.findViewById(R.id.btn_m01_change_activity);
 
-    }
+    }*/
 
-    private void manageChangeActivityBtn() {
-        _btnChangeActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                _callBack.onSwapActivity("MainActivity",null);
-            }
-        });
-    }
+
 
 }
 

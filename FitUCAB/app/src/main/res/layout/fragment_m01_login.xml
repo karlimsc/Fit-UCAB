@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:weightSum="9">
+        android:weightSum="12">
 
 
         <android.support.design.widget.TextInputLayout
@@ -66,10 +66,20 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_m01_olvidoClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:text="Olvidaste tu contrasena?" />
 
     </LinearLayout>
+
+
 
 
 </LinearLayout>

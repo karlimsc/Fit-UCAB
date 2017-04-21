@@ -1,19 +1,62 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01RecoveryFragment">
+    android:orientation="vertical"
+    android:weightSum="10">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/tv_m01_prueba"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-    <Button
-        android:id="@+id/btn_m01_change_activity"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="311dp"
+        android:layout_height="100dp"
+        android:layout_weight="2"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="80dp"
+        android:src="@mipmap/logofitucabsolonombreblanco"
+        android:background="@color/colorBtnAceptar"
+        />
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:weightSum="10">
 
-</FrameLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_column="1">
+
+            <EditText
+                android:id="@+id/profile_names"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left"
+                android:ems="10"
+                android:hint="Correo Electronico"
+                android:inputType="textPersonName"
+                android:maxLength="20" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_m01_aceptarLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_marginTop="20dp"
+            android:text="Enviar Correo"
+            android:background="@color/colorBtnConfirmar"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>
