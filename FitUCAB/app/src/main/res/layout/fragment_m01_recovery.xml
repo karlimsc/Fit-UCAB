@@ -39,18 +39,18 @@
                 android:layout_marginTop="20dp"
                 android:layout_gravity="left"
                 android:ems="10"
-                android:hint="Correo Electronico"
+                android:hint="@string/et_m01_correo"
                 android:inputType="textPersonName"
                 android:maxLength="20" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/btn_m01_enviarCorreo"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"
             android:layout_marginTop="20dp"
-            android:text="Enviar Correo"
+            android:text="@string/btn_m01_enviarCorreo"
             android:background="@color/colorBtnConfirmar"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"

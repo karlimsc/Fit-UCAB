@@ -1,58 +1,121 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01SignUpFragment"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
     android:orientation="vertical"
-    app:layout_collapseMode="none"
-    app:layout_collapseParallaxMultiplier="1.0"
-    android:weightSum="1">
+    android:weightSum="2">
 
+    <TextView
+        android:id="@+id/tv_m01_acercaDeTi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_m01_acercaDeTi"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <EditText
-        android:id="@+id/correo"
-        style="@style/Widget.AppCompat.AutoCompleteTextView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:orientation="vertical"
+        android:weightSum="15">
 
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="100dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:text="@string/texfield_m01_correo" />
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_column="1">
 
-    <EditText
-        android:id="@+id/contrasena"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.02"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:text="@string/textfield_m01_contrasena"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/correo"
-        android:layout_alignStart="@+id/correo"
-        android:layout_marginTop="31dp"
-        android:layout_alignRight="@+id/btn_m01_aceptar"
-        android:layout_alignEnd="@+id/btn_m01_aceptar" />
+            <EditText
+                android:id="@+id/et_m01_usuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left"
+                android:ems="10"
+                android:hint="@string/et_m01_usuario"
+                android:inputType="textPersonName"
+                android:maxLength="20" />
+        </android.support.design.widget.TextInputLayout>
+
+        <EditText
+            android:id="@+id/et_m01_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginTop="20dp"
+            android:hint="@string/et_m01_password"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_column="1">
+
+            <EditText
+                android:id="@+id/et_m01_correoRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left"
+                android:ems="10"
+                android:hint="@string/et_m01_correoRegistro"
+                android:inputType="textPersonName"
+                android:maxLength="28" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_column="1">
+
+        <EditText
+            android:id="@+id/et_m01_telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/et_m01_telefono"
+            android:inputType="phone" />
+        </android.support.design.widget.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_m01_fechanac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="@string/tv_m01_fechanac"
+            android:inputType="date"
+            android:textSize="20sp"/>
+
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/btn_m01_aceptar"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="#676CFB"
-        android:text="Aceptar"
+        android:id="@+id/btn_m01_entrar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginBottom="10dp"
+        android:layout_gravity="center"
+        android:background="@color/colorBtnConfirmar"
+        android:text="@string/btn_m01_entrar"
+        android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/background_light"
-        android:textStyle="bold"
-        android:layout_below="@+id/correo"
-        android:layout_alignLeft="@+id/correo"
-        android:layout_alignStart="@+id/correo" />
+        android:textStyle="bold" />
 
-</RelativeLayout>
+</LinearLayout>
