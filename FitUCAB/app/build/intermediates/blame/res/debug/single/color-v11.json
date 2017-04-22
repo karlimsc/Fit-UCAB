@@ -4,6 +4,14 @@
         "source": "C:\\Users\\Andy\\.android\\build-cache\\bb7587b008b3552c121bd516937aea4848c3a2c7\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
         "merged": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
         "source": "C:\\Users\\Andy\\.android\\build-cache\\bb7587b008b3552c121bd516937aea4848c3a2c7\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     }

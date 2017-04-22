@@ -1,5 +1,17 @@
 [
     {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\drawable-ldrtl-xxhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
         "merged": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png",
         "source": "C:\\Users\\Andy\\.android\\build-cache\\bb7587b008b3552c121bd516937aea4848c3a2c7\\output\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },

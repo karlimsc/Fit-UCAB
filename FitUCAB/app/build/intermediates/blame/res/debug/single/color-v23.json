@@ -4,12 +4,28 @@
         "source": "C:\\Users\\Andy\\.android\\build-cache\\bb7587b008b3552c121bd516937aea4848c3a2c7\\output\\res\\color-v23\\abc_tint_edittext.xml"
     },
     {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v23\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v23\\abc_tint_switch_thumb.xml"
+    },
+    {
         "merged": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
         "source": "C:\\Users\\Andy\\.android\\build-cache\\bb7587b008b3552c121bd516937aea4848c3a2c7\\output\\res\\color-v23\\abc_tint_spinner.xml"
     },
     {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
+    },
+    {
         "merged": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
         "source": "C:\\Users\\Andy\\.android\\build-cache\\bb7587b008b3552c121bd516937aea4848c3a2c7\\output\\res\\color-v23\\abc_color_highlight_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v23\\abc_tint_switch_track.xml"
     },
     {
         "merged": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_btn_checkable.xml",
@@ -24,6 +40,14 @@
         "source": "C:\\Users\\Andy\\.android\\build-cache\\bb7587b008b3552c121bd516937aea4848c3a2c7\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_borderless_text_material.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_edittext.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v23\\abc_tint_edittext.xml"
+    },
+    {
         "merged": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
         "source": "C:\\Users\\Andy\\.android\\build-cache\\914a50643be8fdfb6b4ed2906c3fc9e17fe15101\\output\\res\\color-v23\\design_tint_password_toggle.xml"
     },
@@ -32,8 +56,16 @@
         "source": "C:\\Users\\Andy\\.android\\build-cache\\bb7587b008b3552c121bd516937aea4848c3a2c7\\output\\res\\color-v23\\abc_tint_default.xml"
     },
     {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_seek_thumb.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v23\\abc_tint_seek_thumb.xml"
+    },
+    {
         "merged": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_track.xml",
         "source": "C:\\Users\\Andy\\.android\\build-cache\\bb7587b008b3552c121bd516937aea4848c3a2c7\\output\\res\\color-v23\\abc_tint_switch_track.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\design_tint_password_toggle.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\3b4794f57906fa818918561b3f4aa1847df93c6e\\output\\res\\color-v23\\design_tint_password_toggle.xml"
     },
     {
         "merged": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_switch_thumb.xml",
@@ -42,5 +74,17 @@
     {
         "merged": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_btn_colored_text_material.xml",
         "source": "C:\\Users\\Andy\\.android\\build-cache\\bb7587b008b3552c121bd516937aea4848c3a2c7\\output\\res\\color-v23\\abc_btn_colored_text_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_spinner.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v23\\abc_tint_spinner.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_tint_default.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v23\\abc_tint_default.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v23\\abc_color_highlight_material.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\color-v23\\abc_color_highlight_material.xml"
     }
 ]

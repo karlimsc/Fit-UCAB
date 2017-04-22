@@ -1,13 +1,19 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 import com.fitucab.ds1617b.fitucab.R;
 
+import java.util.Locale;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
@@ -24,8 +30,11 @@ public class activity_notificacion extends AppCompatActivity {
     String correo;
     String contraseña;
     Session session;
-
-    Button enviar;
+    Configuration config = new Configuration();
+    String LOCALE_ESPANOL = "es";
+    String LOCALE_ENGLISH = "en";
+    Locale locale;
+    Button enviar, lang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +90,48 @@ public class activity_notificacion extends AppCompatActivity {
             }
         });
 
+        lang = (Button)findViewById(R.id.idioma);
 
-
-
+        lang.setOnClickListener(
+                new View.OnClickListener() {
+                    public void onClick(View view) {
+                        showDialog();
+                    }});
     }
 
+    /**
+     * Muestra una ventana de dialogo para elegir el nuevo idioma de la aplicacion
+     * Cuando se hace clic en uno de los idiomas, se cambia el idioma de la aplicacion
+     * y se recarga la actividad para ver los cambios
+     * */
+    private void showDialog(){
+        AlertDialog.Builder b = new AlertDialog.Builder(this);
+        b.setTitle(getResources().getString(R.string.lang_btn));
+        //obtiene los idiomas del array de string.xml
+        String[] types = getResources().getStringArray(R.array.languages);
+        b.setItems(types, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.dismiss();
+                switch(which){
+                    case 0:
+                        locale = new Locale("en");
+                        config.locale =locale;
+                        break;
+                    case 1:
+                        locale = new Locale("es");
+                        config.locale =locale;
+                        break;
+                }
+                getResources().updateConfiguration(config, null);
+                Intent refresh = new Intent(activity_notificacion.this, activity_notificacion.class);
+                startActivity(refresh);
+                finish();
+            }
+
+        });
+        b.show();
+    }
 }
 

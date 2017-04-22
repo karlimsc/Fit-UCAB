@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FitUCAB</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!--Inicio Strings Modulo 1 -->
+    <string name="btn_m01_comienza">Start</string>
+    <string name="btn_m01_iniciaSesion">Log in</string>
+    <!--Final Strings Modulo 1 -->
+
+    <!--Inicio Strings Modulo 4 -->
+    <string name="amigo">Friends</string>
+    <string name="actividad">Activity</string>
+    <string name="entretenimiento">Entertainment</string>
+    <string name="reto">Challenges</string>
+    <string name="hidratacion">Hydration</string>
+    <string name="calorias">Calories</string>
+    <!--Final Strings Modulo 4 -->
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_en">English</string>
+    <string name="str_es">Español</string>
+    <string name="lang_btn">Language</string>
+</resources>
