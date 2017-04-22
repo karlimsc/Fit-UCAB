@@ -1,7 +1,0 @@
-#Fri Apr 21 16:18:55 VET 2017
-base.0=/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_020d14b9b6067cc2e04df1336f3f7c687721ffa4
-renamed.1=classes.dex
-renamed.0=classes2.dex
-file.1=/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_920ffe3596569dbdfc1ef7ad9e6ee87f8260f595/classes.dex
-base.1=/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_920ffe3596569dbdfc1ef7ad9e6ee87f8260f595
-file.0=/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_020d14b9b6067cc2e04df1336f3f7c687721ffa4/classes.dex
