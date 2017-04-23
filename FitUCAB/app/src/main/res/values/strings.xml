@@ -8,7 +8,7 @@
     <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
     <string name="texfield_m01_correo">Correo Electrónico</string>
     <string name="textfield_m01_contrasena">Contraseña</string>
-    <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento fisico</string>
+    <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento físico</string>
     <string name="btn_m01_entrar">Entrar</string>
     <string name="et_m01_usuarioCorreo">Usuario o Correo</string>
     <string name="et_m01_password">Contrasena</string>
