@@ -754,12 +754,13 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
-    <string name="et_m01_correo">Correo Electronico</string>
-    <string name="et_m01_correoRegistro">Correo Electronico</string>
+    <string name="et_m01_correoRecovery">Correo Electrónico</string>
+    <string name="et_m01_correoRegistro">Correo Electrónico</string>
     <string name="et_m01_estatura">Estatura</string>
     <string name="et_m01_kg">Kg</string>
     <string name="et_m01_mts">Mts</string>
-    <string name="et_m01_password">Contrasena</string>
+    <string name="et_m01_passwordLogin">Contraseña</string>
+    <string name="et_m01_passwordRegistro">Contraseña</string>
     <string name="et_m01_peso">Peso</string>
     <string name="et_m01_telefono">Telefono</string>
     <string name="et_m01_usuario">Usuario</string>
@@ -774,14 +775,12 @@
     <string name="rb_m01_masculino">Masculino</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="texfield_m01_correo">Correo Electrónico</string>
-    <string name="textfield_m01_contrasena">Contraseña</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="tv_m01_acercaDeTi">Acerca de ti</string>
     <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
     <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento físico</string>
-    <string name="tv_m01_olvidoClave">Olvidaste tu contrasena?</string>
+    <string name="tv_m01_olvidoClave">Olvidaste tu contraseña?</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

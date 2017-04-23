@@ -4,16 +4,12 @@
     <string name="app_name">Fit UCAB</string>
     <string name="btn_m01_enviarCorreo">Send Email</string>
     <string name="btn_m01_iniciaSesion">Login</string>
-    <string name="et_m01_correo">Email</string>
     <string name="et_m01_correoRegistro">Email</string>
     <string name="et_m01_telefono">Telephone</string>
     <string name="et_m01_usuario">Username</string>
     <string name="et_m01_usuarioCorreo">Username or Email</string>
     <string name="et_m01_estatura">Height</string>
     <string name="et_m01_peso">Weight</string>
-    <string name="et_m01_password">Password</string>
-    <string name="texfield_m01_correo">Email</string>
-    <string name="textfield_m01_contrasena">Password</string>
     <string name="tv_m01_fechanac">Birthdate</string>
     <string name="tv_m01_intro">Welcome! \n Start your physical training</string>
     <string name="tv_m01_acercaDeTi">About you</string>
@@ -25,5 +21,8 @@
     <string name="btn_m01_comienza">Begin</string>
     <string name="btn_m01_aceptarLogin">Login</string>
     <string name="btn_m01_entrar">Submit</string>
+    <string name="et_m01_correoRecovery">Email</string>
+    <string name="et_m01_passwordLogin">Password</string>
+    <string name="et_m01_passwordRegistro">Password</string>
     <!--FIN Strings Modulo 1 -->
 </resources>

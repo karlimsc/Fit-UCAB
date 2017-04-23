@@ -31,14 +31,14 @@
             android:layout_column="1">
 
             <EditText
-                android:id="@+id/et_m01_correo"
+                android:id="@+id/et_m01_correoRecovery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="left"
                 android:ems="10"
-                android:hint="@string/et_m01_correo"
+                android:hint="@string/et_m01_correoRecovery"
                 android:inputType="textPersonName"
                 android:maxLength="20" />
         </android.support.design.widget.TextInputLayout>
