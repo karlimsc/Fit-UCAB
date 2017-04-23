@@ -5,11 +5,11 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.widget.Switch;
 
 import com.fitucab.ds1617b.fitucab.R;
 
@@ -31,10 +31,15 @@ public class activity_notificacion extends AppCompatActivity {
     String contraseña;
     Session session;
     Configuration config = new Configuration();
-    String LOCALE_ESPANOL = "es";
-    String LOCALE_ENGLISH = "en";
     Locale locale;
     Button enviar, lang;
+    Switch amigos;
+    Switch actividad;
+    Switch entrenamiento;
+    Switch retos;
+    Switch hidratacion;
+    Switch calorias;
+    Switch gamificacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,51 +48,296 @@ public class activity_notificacion extends AppCompatActivity {
 
         correo= "aagilazer@gmail.com";
         contraseña="25216467";
+        amigos=(Switch) findViewById(R.id.switch1);
+        actividad = (Switch) findViewById(R.id.switch2);
+        entrenamiento = (Switch) findViewById(R.id.switch3);
+        retos = (Switch) findViewById(R.id.switch4);
+        hidratacion= (Switch) findViewById(R.id.switch5);
+        calorias = (Switch) findViewById(R.id.switch6);
+        gamificacion = (Switch) findViewById(R.id.switch7);
 
         enviar=(Button)findViewById(R.id.enviar); //obteniendo la id del boton
         enviar.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick (View v){
 
-                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //agregando politicas para que se envie el correo
-                StrictMode.setThreadPolicy(policy); //agregando la politica
+                enviar_correo("aagilazer@gmail.com","mi asunto","este es mi mensaje para ti","ami");
 
-                Properties properties = new Properties(); // Ésta clase es la encargada de almacenar las propiedades de la conexión que vamos a establecer con el servidor de correo Saliente SMTP.
-                properties.put("mail.smtp.host","smtp.googlemail.com");//se coloca el servidor de correo electronico
-                properties.put("mail.smtp.socketFactory.port","465"); //aqui se agrega el socket para recibir respuesta del servidor de gmail
-                properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory"); //seguridad ssl potocolo para qu se envie de forma segurala informacion
-                properties.put("mail.smtp.auth","true"); //autenticas
-                properties.put("mail.smtp.port","465"); //socket puerto de gmail
+            }
+            private void enviar_correo(String receptor,String asunto, String mensaje,String identificacion) {
 
-                //Autenticar correo:
-                try{
-                    session= Session.getDefaultInstance(properties, new Authenticator() {
-                    @Override
-                        protected PasswordAuthentication getPasswordAuthentication() {
-                           return new PasswordAuthentication(correo,contraseña);
+                /////// verificacion de los check de los SWITCH:////////////////////////////////7
+
+                ////////////// SWITCH AMIGOS:///////////////////////////////////////////////
+                if(amigos.isChecked() && ("ami".equals(identificacion)) ){
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //agregando politicas para que se envie el correo
+                    StrictMode.setThreadPolicy(policy); //agregando la politica
+
+                    Properties properties = new Properties(); // Ésta clase es la encargada de almacenar las propiedades de la conexión que vamos a establecer con el servidor de correo Saliente SMTP.
+                    properties.put("mail.smtp.host","smtp.googlemail.com");//se coloca el servidor de correo electronico
+                    properties.put("mail.smtp.socketFactory.port","465"); //aqui se agrega el socket para recibir respuesta del servidor de gmail
+                    properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory"); //seguridad ssl potocolo para qu se envie de forma segurala informacion
+                    properties.put("mail.smtp.auth","true"); //autenticas
+                    properties.put("mail.smtp.port","465"); //socket puerto de gmail
+
+                    //Autenticar correo:
+                    try{
+                        session= Session.getDefaultInstance(properties, new Authenticator() {
+                            @Override
+                            protected PasswordAuthentication getPasswordAuthentication() {
+                                return new PasswordAuthentication(correo,contraseña);
+                            }
+                        });
+                        //Verificar que la sesion no sea nula
+                        if(session!= null){
+                            MimeMessage message = new MimeMessage(session);//Message message = new MimeMessage(session);
+                            message.setFrom(new InternetAddress(correo)); //Emisor: quien enviara el correo
+                            message.setSubject(asunto); //AQUI SE ENVIA EL  ASUNTO
+                            message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(receptor));//Receptor: el correo que le llegara el mensaje
+                            message.setContent(mensaje, "text/html; charset=utf-8");//AQUI SE COLOCA EL MENSAJE. despues de la coma va el  formato del mensaje
+
+                            //Enviar correo:
+                            Transport.send(message);
+
                         }
-                    });
-                    //Verificar que la sesion no sea nula
-                    if(session!= null){
-                        MimeMessage message = new MimeMessage(session);//Message message = new MimeMessage(session);
-                        message.setFrom(new InternetAddress(correo)); //Emisor: quien enviara el correo
-                        message.setSubject("ESTE ES EL ASUNTO"); //aqui se envia el asunto
-                        message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("aagilazer_95@hotmail.com"));//Receptor: el correo que le llegara el mensaje  min 11:46
-                        message.setContent("hola este es un mensaje", "text/html; charset=utf-8");//Aqui se coloca el mensaje. despues de la coma va el  formato del mensaje
-
-                    //Enviar correo:
-                        Transport.send(message);
 
                     }
 
+                    catch (Exception e){
+                        e.printStackTrace(); }
+                }
+                ////////////// SWITCH ACTIVIDAD:///////////////////////////////////////////////
+
+                if(actividad.isChecked() &&("acti".equals(identificacion)) ){
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //agregando politicas para que se envie el correo
+                    StrictMode.setThreadPolicy(policy); //agregando la politica
+
+                    Properties properties = new Properties(); // Ésta clase es la encargada de almacenar las propiedades de la conexión que vamos a establecer con el servidor de correo Saliente SMTP.
+                    properties.put("mail.smtp.host","smtp.googlemail.com");//se coloca el servidor de correo electronico
+                    properties.put("mail.smtp.socketFactory.port","465"); //aqui se agrega el socket para recibir respuesta del servidor de gmail
+                    properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory"); //seguridad ssl potocolo para qu se envie de forma segurala informacion
+                    properties.put("mail.smtp.auth","true"); //autenticas
+                    properties.put("mail.smtp.port","465"); //socket puerto de gmail
+
+                    //Autenticar correo:
+                    try{
+                        session= Session.getDefaultInstance(properties, new Authenticator() {
+                            @Override
+                            protected PasswordAuthentication getPasswordAuthentication() {
+                                return new PasswordAuthentication(correo,contraseña);
+                            }
+                        });
+                        //Verificar que la sesion no sea nula
+                        if(session!= null){
+                            MimeMessage message = new MimeMessage(session);//Message message = new MimeMessage(session);
+                            message.setFrom(new InternetAddress(correo)); //Emisor: quien enviara el correo
+                            message.setSubject(asunto); //AQUI SE ENVIA EL  ASUNTO
+                            message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(receptor));//Receptor: el correo que le llegara el mensaje
+                            message.setContent(mensaje, "text/html; charset=utf-8");//AQUI SE COLOCA EL MENSAJE. despues de la coma va el  formato del mensaje
+
+                            //Enviar correo:
+                            Transport.send(message);
+
+                        }
+
+                    }
+
+                    catch (Exception e){
+                        e.printStackTrace(); }
+                }
+                ////////////// SWITCH ENTRENAMIENTO:///////////////////////////////////////////////
+                if(entrenamiento.isChecked() &&("entrena".equals(identificacion)) ){
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //agregando politicas para que se envie el correo
+                    StrictMode.setThreadPolicy(policy); //agregando la politica
+
+                    Properties properties = new Properties(); // Ésta clase es la encargada de almacenar las propiedades de la conexión que vamos a establecer con el servidor de correo Saliente SMTP.
+                    properties.put("mail.smtp.host","smtp.googlemail.com");//se coloca el servidor de correo electronico
+                    properties.put("mail.smtp.socketFactory.port","465"); //aqui se agrega el socket para recibir respuesta del servidor de gmail
+                    properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory"); //seguridad ssl potocolo para qu se envie de forma segurala informacion
+                    properties.put("mail.smtp.auth","true"); //autenticas
+                    properties.put("mail.smtp.port","465"); //socket puerto de gmail
+
+                    //Autenticar correo:
+                    try{
+                        session= Session.getDefaultInstance(properties, new Authenticator() {
+                            @Override
+                            protected PasswordAuthentication getPasswordAuthentication() {
+                                return new PasswordAuthentication(correo,contraseña);
+                            }
+                        });
+                        //Verificar que la sesion no sea nula
+                        if(session!= null){
+                            MimeMessage message = new MimeMessage(session);//Message message = new MimeMessage(session);
+                            message.setFrom(new InternetAddress(correo)); //Emisor: quien enviara el correo
+                            message.setSubject(asunto); //AQUI SE ENVIA EL  ASUNTO
+                            message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(receptor));//Receptor: el correo que le llegara el mensaje
+                            message.setContent(mensaje, "text/html; charset=utf-8");//AQUI SE COLOCA EL MENSAJE. despues de la coma va el  formato del mensaje
+
+                            //Enviar correo:
+                            Transport.send(message);
+
+                        }
+
+                    }
+
+                    catch (Exception e){
+                        e.printStackTrace(); }
+                }
+                ////////////// SWITCH RETOS:///////////////////////////////////////////////
+                if(retos.isChecked() &&("reto".equals(identificacion)) ){
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //agregando politicas para que se envie el correo
+                    StrictMode.setThreadPolicy(policy); //agregando la politica
+
+                    Properties properties = new Properties(); // Ésta clase es la encargada de almacenar las propiedades de la conexión que vamos a establecer con el servidor de correo Saliente SMTP.
+                    properties.put("mail.smtp.host","smtp.googlemail.com");//se coloca el servidor de correo electronico
+                    properties.put("mail.smtp.socketFactory.port","465"); //aqui se agrega el socket para recibir respuesta del servidor de gmail
+                    properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory"); //seguridad ssl potocolo para qu se envie de forma segurala informacion
+                    properties.put("mail.smtp.auth","true"); //autenticas
+                    properties.put("mail.smtp.port","465"); //socket puerto de gmail
+
+                    //Autenticar correo:
+                    try{
+                        session= Session.getDefaultInstance(properties, new Authenticator() {
+                            @Override
+                            protected PasswordAuthentication getPasswordAuthentication() {
+                                return new PasswordAuthentication(correo,contraseña);
+                            }
+                        });
+                        //Verificar que la sesion no sea nula
+                        if(session!= null){
+                            MimeMessage message = new MimeMessage(session);//Message message = new MimeMessage(session);
+                            message.setFrom(new InternetAddress(correo)); //Emisor: quien enviara el correo
+                            message.setSubject(asunto); //AQUI SE ENVIA EL  ASUNTO
+                            message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(receptor));//Receptor: el correo que le llegara el mensaje
+                            message.setContent(mensaje, "text/html; charset=utf-8");//AQUI SE COLOCA EL MENSAJE. despues de la coma va el  formato del mensaje
+
+                            //Enviar correo:
+                            Transport.send(message);
+
+                        }
+
+                    }
+
+                    catch (Exception e){
+                        e.printStackTrace(); }
+                }
+                ////////////// SWITCH HIDRATACION:///////////////////////////////////////////////
+                if(hidratacion.isChecked() &&("hidra".equals(identificacion)) ){
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //agregando politicas para que se envie el correo
+                    StrictMode.setThreadPolicy(policy); //agregando la politica
+
+                    Properties properties = new Properties(); // Ésta clase es la encargada de almacenar las propiedades de la conexión que vamos a establecer con el servidor de correo Saliente SMTP.
+                    properties.put("mail.smtp.host","smtp.googlemail.com");//se coloca el servidor de correo electronico
+                    properties.put("mail.smtp.socketFactory.port","465"); //aqui se agrega el socket para recibir respuesta del servidor de gmail
+                    properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory"); //seguridad ssl potocolo para qu se envie de forma segurala informacion
+                    properties.put("mail.smtp.auth","true"); //autenticas
+                    properties.put("mail.smtp.port","465"); //socket puerto de gmail
+
+                    //Autenticar correo:
+                    try{
+                        session= Session.getDefaultInstance(properties, new Authenticator() {
+                            @Override
+                            protected PasswordAuthentication getPasswordAuthentication() {
+                                return new PasswordAuthentication(correo,contraseña);
+                            }
+                        });
+                        //Verificar que la sesion no sea nula
+                        if(session!= null){
+                            MimeMessage message = new MimeMessage(session);//Message message = new MimeMessage(session);
+                            message.setFrom(new InternetAddress(correo)); //Emisor: quien enviara el correo
+                            message.setSubject(asunto); //AQUI SE ENVIA EL  ASUNTO
+                            message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(receptor));//Receptor: el correo que le llegara el mensaje
+                            message.setContent(mensaje, "text/html; charset=utf-8");//AQUI SE COLOCA EL MENSAJE. despues de la coma va el  formato del mensaje
+
+                            //Enviar correo:
+                            Transport.send(message);
+
+                        }
+
+                    }
+
+                    catch (Exception e){
+                        e.printStackTrace(); }
+                }
+                ////////////// SWITCH CALORIAS:///////////////////////////////////////////////
+                if(calorias.isChecked() &&("calori".equals(identificacion)) ){
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //agregando politicas para que se envie el correo
+                    StrictMode.setThreadPolicy(policy); //agregando la politica
+
+                    Properties properties = new Properties(); // Ésta clase es la encargada de almacenar las propiedades de la conexión que vamos a establecer con el servidor de correo Saliente SMTP.
+                    properties.put("mail.smtp.host","smtp.googlemail.com");//se coloca el servidor de correo electronico
+                    properties.put("mail.smtp.socketFactory.port","465"); //aqui se agrega el socket para recibir respuesta del servidor de gmail
+                    properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory"); //seguridad ssl potocolo para qu se envie de forma segurala informacion
+                    properties.put("mail.smtp.auth","true"); //autenticas
+                    properties.put("mail.smtp.port","465"); //socket puerto de gmail
+
+                    //Autenticar correo:
+                    try{
+                        session= Session.getDefaultInstance(properties, new Authenticator() {
+                            @Override
+                            protected PasswordAuthentication getPasswordAuthentication() {
+                                return new PasswordAuthentication(correo,contraseña);
+                            }
+                        });
+                        //Verificar que la sesion no sea nula
+                        if(session!= null){
+                            MimeMessage message = new MimeMessage(session);//Message message = new MimeMessage(session);
+                            message.setFrom(new InternetAddress(correo)); //Emisor: quien enviara el correo
+                            message.setSubject(asunto); //AQUI SE ENVIA EL  ASUNTO
+                            message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(receptor));//Receptor: el correo que le llegara el mensaje
+                            message.setContent(mensaje, "text/html; charset=utf-8");//AQUI SE COLOCA EL MENSAJE. despues de la coma va el  formato del mensaje
+
+                            //Enviar correo:
+                            Transport.send(message);
+
+                        }
+
+                    }
+
+                    catch (Exception e){
+                        e.printStackTrace(); }
+                }
+                ////////////// SWITCH GAMIFICACION:///////////////////////////////////////////////
+                if(gamificacion.isChecked() &&("gami".equals(identificacion)) ){
+                    StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //agregando politicas para que se envie el correo
+                    StrictMode.setThreadPolicy(policy); //agregando la politica
+
+                    Properties properties = new Properties(); // Ésta clase es la encargada de almacenar las propiedades de la conexión que vamos a establecer con el servidor de correo Saliente SMTP.
+                    properties.put("mail.smtp.host","smtp.googlemail.com");//se coloca el servidor de correo electronico
+                    properties.put("mail.smtp.socketFactory.port","465"); //aqui se agrega el socket para recibir respuesta del servidor de gmail
+                    properties.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory"); //seguridad ssl potocolo para qu se envie de forma segurala informacion
+                    properties.put("mail.smtp.auth","true"); //autenticas
+                    properties.put("mail.smtp.port","465"); //socket puerto de gmail
+
+                    //Autenticar correo:
+                    try{
+                        session= Session.getDefaultInstance(properties, new Authenticator() {
+                            @Override
+                            protected PasswordAuthentication getPasswordAuthentication() {
+                                return new PasswordAuthentication(correo,contraseña);
+                            }
+                        });
+                        //Verificar que la sesion no sea nula
+                        if(session!= null){
+                            MimeMessage message = new MimeMessage(session);//Message message = new MimeMessage(session);
+                            message.setFrom(new InternetAddress(correo)); //Emisor: quien enviara el correo
+                            message.setSubject(asunto); //AQUI SE ENVIA EL  ASUNTO
+                            message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(receptor));//Receptor: el correo que le llegara el mensaje
+                            message.setContent(mensaje, "text/html; charset=utf-8");//AQUI SE COLOCA EL MENSAJE. despues de la coma va el  formato del mensaje
+
+                            //Enviar correo:
+                            Transport.send(message);
+
+                        }
+
+                    }
+
+                    catch (Exception e){
+                        e.printStackTrace(); }
                 }
 
-                catch (Exception e){
-                    e.printStackTrace(); }
-
-
-
             }
+
         });
 
         lang = (Button)findViewById(R.id.idioma);

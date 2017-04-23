@@ -1,4 +1,4 @@
-#Sat Apr 22 17:43:27 VET 2017
-base.0=C\:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+#Sun Apr 23 02:14:35 VET 2017
+base.0=C\:\\Users\\Lui\\Documents\\Mis Documentos\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.0=C\:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
+file.0=C\:\\Users\\Lui\\Documents\\Mis Documentos\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

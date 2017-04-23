@@ -8,7 +8,15 @@
         "source": "C:\\Users\\Andy\\.android\\build-cache\\914a50643be8fdfb6b4ed2906c3fc9e17fe15101\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
     },
     {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\3b4794f57906fa818918561b3f4aa1847df93c6e\\output\\res\\anim-v21\\design_bottom_sheet_slide_in.xml"
+    },
+    {
         "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\Lui\\.android\\build-cache\\3b4794f57906fa818918561b3f4aa1847df93c6e\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim-v21\\design_bottom_sheet_slide_out.xml",
         "source": "C:\\Users\\Lui\\.android\\build-cache\\3b4794f57906fa818918561b3f4aa1847df93c6e\\output\\res\\anim-v21\\design_bottom_sheet_slide_out.xml"
     },
     {

@@ -23,4 +23,5 @@
     <string name="str_en">English</string>
     <string name="str_es">Español</string>
     <string name="lang_btn">Language</string>
+    <string name="gamificacion">Gamification</string>
 </resources>
