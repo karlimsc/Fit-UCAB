@@ -17,10 +17,25 @@
     <string name="et_m01_telefono">Telephone</string>
     <string name="et_m01_usuario">Username</string>
     <string name="et_m01_usuarioCorreo">Username or Email</string>
+    <string name="et_m02_Steps">Steps</string>
+    <string name="et_m02_datenac">Birthdate</string>
+    <string name="et_m02_email">Email</string>
+    <string name="et_m02_height">Height</string>
+    <string name="et_m02_location">Location</string>
+    <string name="et_m02_phone">Phone</string>
+    <string name="et_m02_username">username</string>
+    <string name="et_m02_water">Water</string>
+    <string name="et_m02_weight">Weight</string>
+    <string name="nav_02_calorias">Calories</string>
+    <string name="nav_02_cerrarsesion">Logout</string>
+    <string name="nav_02_cuenta">Account</string>
+    <string name="nav_02_entrenamiento">Training</string>
+    <string name="nav_02_inicio">Home</string>
     <string name="rb_m01_femenino">Female</string>
     <string name="rb_m01_masculino">Male</string>
     <string name="tv_m01_acercaDeTi">About you</string>
     <string name="tv_m01_fechanac">Birthdate</string>
     <string name="tv_m01_intro">Welcome! \n Start your physical training</string>
     <string name="tv_m01_olvidoClave">Forgot your password?</string>
+    <string name="tv_m02_perfil">Profile</string>
 </resources>

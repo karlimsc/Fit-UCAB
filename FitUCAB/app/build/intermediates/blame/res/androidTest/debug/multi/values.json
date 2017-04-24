@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "C:\\Users\\Familia\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/home/david/.android/build-cache/39a37f8a7bd9bfdaa6a2aba883580ef5ce16477a/output/res/values/values.xml",
+                    "file": "C:\\Users\\Familia\\.android\\build-cache\\082a41e60da03b95a0390f0d86264a8df1e45c84\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

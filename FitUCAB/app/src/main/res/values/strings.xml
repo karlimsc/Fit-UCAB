@@ -28,10 +28,30 @@
     <string name="et_m01_mts">Mts</string>
     <!--FIN Strings Modulo 1 -->
 
+    <!--Inicio Strings Modulo 2-->
+    <string name="nav_02_inicio">Inicio</string>
+    <string name="nav_02_calorias">Calorias</string>
+    <string name="nav_02_entrenamiento">Entrenamiento</string>
+    <string name="nav_02_cuenta">Cuenta</string>
+    <string name="nav_02_cerrarsesion">Cerrar Sesión</string>
+    <string name="tv_m02_perfil">Perfil</string>
+    <string name="et_m02_username">Nombre de usuario</string>
+    <string name="et_m02_email">Correo electronico</string>
+    <string name="et_m02_phone">Telefono</string>
+    <string name="et_m02_datenac">Fecha de Nacimiento</string>
+    <string name="et_m02_weight">Peso</string>
+    <string name="et_m02_height">Estatura</string>
+    <string name="et_m02_location">Locación</string>
+    <string name="et_m02_water">Vasos de Agua</string>
+    <string name="et_m02_Steps">Nro de Pasos</string>
 
+    <!--FIN Strings Modulo 2 -->
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Home</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_m02_home">M02HomeActivity</string>
 
 
 </resources>

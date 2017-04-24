@@ -1,34 +1,34 @@
 [
     {
-        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/avd_hide_password.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/drawable-v21/avd_hide_password.xml"
+        "merged": "C:\\Users\\Familia\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\Familia\\.android\\build-cache\\498efa4482bf00a80b138a207f3898e15ad9efcc\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/drawable-v21/notification_action_background.xml"
+        "merged": "C:\\Users\\Familia\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Familia\\.android\\build-cache\\e1c73e15f90cbf76dc4ee29e66bc3d07c304d53d\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/drawable-v21/design_bottom_navigation_item_background.xml"
+        "merged": "C:\\Users\\Familia\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
+        "source": "C:\\Users\\Familia\\.android\\build-cache\\498efa4482bf00a80b138a207f3898e15ad9efcc\\output\\res\\drawable-v21\\avd_show_password.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+        "merged": "C:\\Users\\Familia\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\Familia\\.android\\build-cache\\e1c73e15f90cbf76dc4ee29e66bc3d07c304d53d\\output\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/drawable-v21/abc_edit_text_material.xml"
+        "merged": "C:\\Users\\Familia\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
+        "source": "C:\\Users\\Familia\\.android\\build-cache\\498efa4482bf00a80b138a207f3898e15ad9efcc\\output\\res\\drawable-v21\\design_password_eye.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/avd_show_password.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/drawable-v21/avd_show_password.xml"
+        "merged": "C:\\Users\\Familia\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Familia\\.android\\build-cache\\e1c73e15f90cbf76dc4ee29e66bc3d07c304d53d\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/drawable-v21/design_password_eye.xml"
+        "merged": "C:\\Users\\Familia\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
+        "source": "C:\\Users\\Familia\\.android\\build-cache\\498efa4482bf00a80b138a207f3898e15ad9efcc\\output\\res\\drawable-v21\\avd_hide_password.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/drawable-v21/abc_btn_colored_material.xml"
+        "merged": "C:\\Users\\Familia\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\Familia\\.android\\build-cache\\e1c73e15f90cbf76dc4ee29e66bc3d07c304d53d\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     }
 ]
