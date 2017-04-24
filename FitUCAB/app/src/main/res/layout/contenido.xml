@@ -14,7 +14,7 @@
         android:src="@drawable/copa" />
 
     <TextView
-        android:id="@+id/tv_logrolabel"
+        android:id="@+id/tv_logroLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/i_copa"
@@ -28,7 +28,7 @@
         android:id="@+id/tv_logro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/tv_logrolabel"
+        android:layout_toRightOf="@+id/tv_logroLabel"
         android:paddingTop="6dp"
         android:text=""
         android:textSize="24sp"
