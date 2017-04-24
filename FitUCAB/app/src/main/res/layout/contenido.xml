@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,23 +8,22 @@
         android:id="@+id/i_copa"
         android:layout_width="50dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="4dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="4dp"
-        android:src="@drawable/copa" />
+        android:src="@drawable/copa"
+        android:layout_alignBottom="@+id/tv_descripcion" />
 
     <TextView
         android:id="@+id/tv_logroLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/i_copa"
-        android:fontFamily="sans-serif-condensed"
         android:paddingTop="6dp"
-        android:text="Logros: "
-        android:textAllCaps="true"
+        android:text="Logro: "
         android:textColor="#000000"
-        android:textSize="24sp" />
+        android:textSize="14sp" />
+
     <TextView
         android:id="@+id/tv_logro"
         android:layout_width="wrap_content"
@@ -31,22 +31,23 @@
         android:layout_toRightOf="@+id/tv_logroLabel"
         android:paddingTop="6dp"
         android:text=""
-        android:textSize="24sp"
-        android:textColor="#000000"/>
+        android:textColor="#000000"
+        android:textSize="12sp"
+        tools:text="logro" />
 
     <TextView
         android:id="@+id/tv_descripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_logro"
-        android:layout_toEndOf="@+id/i_copa"
-        android:layout_toRightOf="@+id/i_copa"
         android:fontFamily="monospace"
         android:paddingTop="6dp"
         android:text="Descripcion:"
         android:textColor="#000000"
         android:textSize="12sp"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        android:layout_below="@+id/tv_logroLabel"
+        android:layout_toRightOf="@+id/i_copa"
+        android:layout_toEndOf="@+id/i_copa" />
 
 
 
