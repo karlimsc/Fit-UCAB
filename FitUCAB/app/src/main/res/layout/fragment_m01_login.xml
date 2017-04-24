@@ -74,15 +74,18 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/tv_m01_olvidoClave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
             android:layout_marginTop="20dp"
+            android:layout_weight="3"
             android:gravity="center"
+            android:text="@string/tv_m01_olvidoClave"
             android:textAlignment="center"
-            android:text="@string/tv_m01_olvidoClave" />
+            android:textColor="@color/colorBtnAceptar"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

@@ -12,14 +12,14 @@
     <string name="et_m01_passwordLogin">Contraseña</string>
     <string name="et_m01_passwordRegistro">Contraseña</string>
     <string name="btn_m01_aceptarLogin">Entrar</string>
-    <string name="tv_m01_olvidoClave">Olvidaste tu contraseña?</string>
+    <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
     <string name="et_m01_correoRecovery">Correo Electrónico</string>
     <string name="btn_m01_enviarCorreo">Enviar Correo</string>
     <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
     <string name="tv_m01_acercaDeTi">Acerca de ti</string>
     <string name="et_m01_usuario">Usuario</string>
     <string name="et_m01_correoRegistro">Correo Electrónico</string>
-    <string name="et_m01_telefono">Telefono</string>
+    <string name="et_m01_telefono">Teléfono</string>
     <string name="rb_m01_femenino">Femenino</string>
     <string name="rb_m01_masculino">Masculino</string>
     <string name="et_m01_peso">Peso</string>
