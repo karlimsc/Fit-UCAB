@@ -781,6 +781,7 @@
     <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
     <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento físico</string>
     <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
+    <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

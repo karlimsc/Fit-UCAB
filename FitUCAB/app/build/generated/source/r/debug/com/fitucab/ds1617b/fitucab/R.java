@@ -3433,7 +3433,7 @@ containing a value of this type.
         public static final int btn_m01_aceptarLogin=0x7f0d009f;
         public static final int btn_m01_comienza=0x7f0d009a;
         public static final int btn_m01_entrar=0x7f0d00af;
-        public static final int btn_m01_enviarCorreo=0x7f0d00a2;
+        public static final int btn_m01_enviarCorreo=0x7f0d00a3;
         public static final int btn_m01_iniciarSesion=0x7f0d009b;
         public static final int buttonPanel=0x7f0d005c;
         public static final int cancel_action=0x7f0d00c9;
@@ -3464,7 +3464,7 @@ containing a value of this type.
         public static final int end_padder=0x7f0d00db;
         public static final int enterAlways=0x7f0d0021;
         public static final int enterAlwaysCollapsed=0x7f0d0022;
-        public static final int et_m01_correoRecovery=0x7f0d00a1;
+        public static final int et_m01_correoRecovery=0x7f0d00a2;
         public static final int et_m01_correoRegistro=0x7f0d00a6;
         public static final int et_m01_estatura=0x7f0d00ab;
         public static final int et_m01_fechanac=0x7f0d00a8;
@@ -3607,7 +3607,7 @@ containing a value of this type.
         public static final int track_activity=0x7f0d00c0;
         public static final int transition_current_scene=0x7f0d000b;
         public static final int transition_scene_layoutid_cache=0x7f0d000c;
-        public static final int tv_m01_acercaDeTi=0x7f0d00a3;
+        public static final int tv_m01_acercaDeTi=0x7f0d00a1;
         public static final int tv_m01_olvidoClave=0x7f0d00a0;
         public static final int tv_m05_calories_tag=0x7f0d00b8;
         public static final int tv_m05_distance_tag=0x7f0d00be;
@@ -3809,6 +3809,7 @@ containing a value of this type.
         public static final int tv_m01_fechanac=0x7f07003a;
         public static final int tv_m01_intro=0x7f07003b;
         public static final int tv_m01_olvidoClave=0x7f07003c;
+        public static final int tv_m01_recuperacionContra=0x7f070055;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0900a1;

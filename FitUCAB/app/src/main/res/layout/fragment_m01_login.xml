@@ -9,11 +9,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="311dp"
-        android:layout_height="100dp"
+        android:layout_width="100dp"
+        android:layout_height="103dp"
         android:layout_weight="2"
         android:layout_gravity="center_horizontal|center"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="20dp"
         android:src="@mipmap/logofitucabnombre"
         />
     <LinearLayout

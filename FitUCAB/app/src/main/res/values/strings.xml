@@ -17,6 +17,7 @@
     <string name="btn_m01_enviarCorreo">Enviar Correo</string>
     <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
     <string name="tv_m01_acercaDeTi">Acerca de ti</string>
+    <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
     <string name="et_m01_usuario">Usuario</string>
     <string name="et_m01_correoRegistro">Correo Electrónico</string>
     <string name="et_m01_telefono">Teléfono</string>

@@ -830,7 +830,7 @@ int id bt_m05_start_track 0x7f0d00c1
 int id btn_m01_aceptarLogin 0x7f0d009f
 int id btn_m01_comienza 0x7f0d009a
 int id btn_m01_entrar 0x7f0d00af
-int id btn_m01_enviarCorreo 0x7f0d00a2
+int id btn_m01_enviarCorreo 0x7f0d00a3
 int id btn_m01_iniciarSesion 0x7f0d009b
 int id buttonPanel 0x7f0d005c
 int id cancel_action 0x7f0d00c9
@@ -861,7 +861,7 @@ int id end 0x7f0d0032
 int id end_padder 0x7f0d00db
 int id enterAlways 0x7f0d0021
 int id enterAlwaysCollapsed 0x7f0d0022
-int id et_m01_correoRecovery 0x7f0d00a1
+int id et_m01_correoRecovery 0x7f0d00a2
 int id et_m01_correoRegistro 0x7f0d00a6
 int id et_m01_estatura 0x7f0d00ab
 int id et_m01_fechanac 0x7f0d00a8
@@ -1004,7 +1004,7 @@ int id tp_m05_time 0x7f0d00bc
 int id track_activity 0x7f0d00c0
 int id transition_current_scene 0x7f0d000b
 int id transition_scene_layoutid_cache 0x7f0d000c
-int id tv_m01_acercaDeTi 0x7f0d00a3
+int id tv_m01_acercaDeTi 0x7f0d00a1
 int id tv_m01_olvidoClave 0x7f0d00a0
 int id tv_m05_calories_tag 0x7f0d00b8
 int id tv_m05_distance_tag 0x7f0d00be
@@ -1196,6 +1196,7 @@ int string tv_m01_acercaDeTi 0x7f070039
 int string tv_m01_fechanac 0x7f07003a
 int string tv_m01_intro 0x7f07003b
 int string tv_m01_olvidoClave 0x7f07003c
+int string tv_m01_recuperacionContra 0x7f070055
 int style AlertDialog_AppCompat 0x7f0900a1
 int style AlertDialog_AppCompat_Light 0x7f0900a2
 int style Animation_AppCompat_Dialog 0x7f0900a3
