@@ -1,159 +1,159 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-44:12
+ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:2:1-47:12
 	package
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:3:5-42
-		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:3:5-42
+		INJECTED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
 application
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:5:5-42:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /root/.android/build-cache/ac4790f4d16237f913714fd0cf5d9f672550e060/output/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.0] /root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /root/.android/build-cache/e0d29ff062368d2736012d8ab78e4d3018a1e96a/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /root/.android/build-cache/336387f6c0b22a4bf9a6194261742c253d31bce2/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:transition:25.3.0] /root/.android/build-cache/4b39a18c49108457c3009f25ea92305d977a1e47/output/AndroidManifest.xml:26:5-20
-MERGED from [com.google.android.gms:play-services-maps:10.2.1] /root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/AndroidManifest.xml:24:5-19
-MERGED from [com.google.android.gms:play-services-base:10.2.1] /root/.android/build-cache/7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6/output/AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-tasks:10.2.1] /root/.android/build-cache/2951ce2cf8e686ef94df81e70621df7d6231bbb7/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:10.2.1] /root/.android/build-cache/fee9d0bc14766dafff341209176c5e133767795a/output/AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:support-v4:25.3.0] /root/.android/build-cache/9619af34af9eb95f9a341656e1e96c96a98b17d3/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.0] /root/.android/build-cache/114c7b77c425269547cc9362efa6148f90010893/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.0] /root/.android/build-cache/01a1ca0b2498cb34ca2c9920a0468729c317c79c/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.0] /root/.android/build-cache/f2f6aff2052ec8679730301bb363001dc9d2fb3c/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.0] /root/.android/build-cache/93cb81b1a31d2a735f78019eb69cff9fd4106d38/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.0] /root/.android/build-cache/66653b14ee7f41ed98a67d6e86a2761ab871af19/output/AndroidManifest.xml:29:5-20
+ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:5:5-45:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Alejandro Fernandez\.android\build-cache\2a336ddef4eb517a83e32d972eb8df5350f59585\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\9c3984fc3dc7ad2148a5831cb2972b29ab2300f3\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\160caa0d894500fb10ef9e5fdcb9babcd220626f\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\9f67ae4f02f946bc472934b93f4c4ecc3faf87b7\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\98400abad5bf5de724841d13b0d5c211f7daf451\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\0333bc997e7b0d73fbf462b814bf490216acd78a\output\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\1a9a558d85ad483902469c97a8c4768873fe526d\output\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\b1365ece43ca4de9609824486e36ba7d51e53523\output\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\423aed36dfc3871f64f92e0e6e21e114eca136dc\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\362ded1f6191b2464de9b6d9a014b5d465cb6854\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\003707955c18efbdc57595129c2f4d128cd0fca5\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\3332417a71a3c252b94272183b1577b9a2b9a53d\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\50c357656f582228af42f03d7eb5920c232817b6\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\125cf40432c553cd9e060a44e867a81071b1c1cc\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\2554df769e124fe3ebd1a656111902fdec907372\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\dbaa000316a7520fa8eff37e2a36aa61899ca4c4\output\AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:8:9-41
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:8:9-41
 	android:supportsRtl
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:10:9-35
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:10:9-35
 	android:roundIcon
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:9:9-54
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:9:9-54
 	android:allowBackup
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:6:9-35
 	android:icon
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:7:9-43
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:7:9-43
 	android:theme
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:11:9-40
-activity#com.fitucab.ds1617b.fitucab.UI.Activities.M01LoginActivity
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:15:9-23:20
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:11:9-40
+activity#com.fitucab.ds1617b.fitucab.UI.Activities.M06TrainingActivity
+ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:15:9-23:20
 	android:label
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:17:13-45
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:16:13-45
 	android:theme
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:18:13-56
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:17:13-56
 	android:name
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:16:13-59
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:15:19-68
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:19:13-22:29
+ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:20:17-69
+ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:19:17-69
 	android:name
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:20:25-66
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:21:17-77
+ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:21:27-74
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:21:27-74
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05AddExerciseActivity
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:27:9-31:20
+ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:26:9-29:68
 	android:label
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:29:13-45
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:28:13-45
 	android:theme
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:30:13-56
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:29:13-56
 	android:name
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:28:13-65
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:27:13-65
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.MainActivity
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:33:9-36:59
+ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:30:9-33:59
 	android:label
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:35:13-56
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:32:13-56
 	android:theme
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:36:13-56
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:33:13-56
 	android:name
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:34:13-55
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:31:13-55
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05ReadExerciseActivity
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:38:9-41:68
+ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:34:9-37:59
 	android:label
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:40:13-43
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:36:13-43
 	android:theme
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:41:13-56
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:37:13-56
 	android:name
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:39:13-66
+		ADDED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:35:13-66
 uses-sdk
-INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /root/.android/build-cache/ac4790f4d16237f913714fd0cf5d9f672550e060/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.3.0] /root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /root/.android/build-cache/e0d29ff062368d2736012d8ab78e4d3018a1e96a/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /root/.android/build-cache/336387f6c0b22a4bf9a6194261742c253d31bce2/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:25.3.0] /root/.android/build-cache/09ef6aff04b7b4e0f660bc0121e42138e931d003/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.3.0] /root/.android/build-cache/4b39a18c49108457c3009f25ea92305d977a1e47/output/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:10.2.1] /root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/AndroidManifest.xml:23:5-43
-MERGED from [com.google.android.gms:play-services-base:10.2.1] /root/.android/build-cache/7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tasks:10.2.1] /root/.android/build-cache/2951ce2cf8e686ef94df81e70621df7d6231bbb7/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:10.2.1] /root/.android/build-cache/fee9d0bc14766dafff341209176c5e133767795a/output/AndroidManifest.xml:17:5-43
-MERGED from [com.android.support:support-v4:25.3.0] /root/.android/build-cache/9619af34af9eb95f9a341656e1e96c96a98b17d3/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.0] /root/.android/build-cache/114c7b77c425269547cc9362efa6148f90010893/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.0] /root/.android/build-cache/01a1ca0b2498cb34ca2c9920a0468729c317c79c/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.0] /root/.android/build-cache/f2f6aff2052ec8679730301bb363001dc9d2fb3c/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.0] /root/.android/build-cache/93cb81b1a31d2a735f78019eb69cff9fd4106d38/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.3.0] /root/.android/build-cache/66653b14ee7f41ed98a67d6e86a2761ab871af19/output/AndroidManifest.xml:21:5-23:58
+INJECTED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Alejandro Fernandez\.android\build-cache\2a336ddef4eb517a83e32d972eb8df5350f59585\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\9c3984fc3dc7ad2148a5831cb2972b29ab2300f3\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\160caa0d894500fb10ef9e5fdcb9babcd220626f\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\9f67ae4f02f946bc472934b93f4c4ecc3faf87b7\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\98400abad5bf5de724841d13b0d5c211f7daf451\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\f22cb906b443dc14d398827036ad9fc15db95d20\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\0333bc997e7b0d73fbf462b814bf490216acd78a\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\1a9a558d85ad483902469c97a8c4768873fe526d\output\AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\b1365ece43ca4de9609824486e36ba7d51e53523\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\423aed36dfc3871f64f92e0e6e21e114eca136dc\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\362ded1f6191b2464de9b6d9a014b5d465cb6854\output\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\003707955c18efbdc57595129c2f4d128cd0fca5\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\3332417a71a3c252b94272183b1577b9a2b9a53d\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\50c357656f582228af42f03d7eb5920c232817b6\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\125cf40432c553cd9e060a44e867a81071b1c1cc\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\2554df769e124fe3ebd1a656111902fdec907372\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\dbaa000316a7520fa8eff37e2a36aa61899ca4c4\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\9c3984fc3dc7ad2148a5831cb2972b29ab2300f3\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Alejandro Fernandez\Documents\Universidad\Desarrollo De Software\Repositorio-Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.0] /root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /root/.android/build-cache/e0d29ff062368d2736012d8ab78e4d3018a1e96a/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /root/.android/build-cache/336387f6c0b22a4bf9a6194261742c253d31bce2/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.0] /root/.android/build-cache/09ef6aff04b7b4e0f660bc0121e42138e931d003/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:transition:25.3.0] /root/.android/build-cache/4b39a18c49108457c3009f25ea92305d977a1e47/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-v4:25.3.0] /root/.android/build-cache/9619af34af9eb95f9a341656e1e96c96a98b17d3/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.0] /root/.android/build-cache/114c7b77c425269547cc9362efa6148f90010893/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.0] /root/.android/build-cache/01a1ca0b2498cb34ca2c9920a0468729c317c79c/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.0] /root/.android/build-cache/f2f6aff2052ec8679730301bb363001dc9d2fb3c/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.0] /root/.android/build-cache/93cb81b1a31d2a735f78019eb69cff9fd4106d38/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.0] /root/.android/build-cache/66653b14ee7f41ed98a67d6e86a2761ab871af19/output/AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\9c3984fc3dc7ad2148a5831cb2972b29ab2300f3\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\160caa0d894500fb10ef9e5fdcb9babcd220626f\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\9f67ae4f02f946bc472934b93f4c4ecc3faf87b7\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\98400abad5bf5de724841d13b0d5c211f7daf451\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\f22cb906b443dc14d398827036ad9fc15db95d20\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\0333bc997e7b0d73fbf462b814bf490216acd78a\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\003707955c18efbdc57595129c2f4d128cd0fca5\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\3332417a71a3c252b94272183b1577b9a2b9a53d\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\50c357656f582228af42f03d7eb5920c232817b6\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\125cf40432c553cd9e060a44e867a81071b1c1cc\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\2554df769e124fe3ebd1a656111902fdec907372\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\dbaa000316a7520fa8eff37e2a36aa61899ca4c4\output\AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\9c3984fc3dc7ad2148a5831cb2972b29ab2300f3\output\AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:25.3.0] C:\Users\Alejandro Fernandez\.android\build-cache\9c3984fc3dc7ad2148a5831cb2972b29ab2300f3\output\AndroidManifest.xml:26:9-47
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.android.gms:play-services-maps:10.2.1] /root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/AndroidManifest.xml:19:5-78
+ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\1a9a558d85ad483902469c97a8c4768873fe526d\output\AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/AndroidManifest.xml:19:22-76
+		ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\1a9a558d85ad483902469c97a8c4768873fe526d\output\AndroidManifest.xml:19:22-76
 uses-permission#android.permission.INTERNET
-ADDED from [com.google.android.gms:play-services-maps:10.2.1] /root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/AndroidManifest.xml:20:5-66
+ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\1a9a558d85ad483902469c97a8c4768873fe526d\output\AndroidManifest.xml:20:5-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/AndroidManifest.xml:20:22-64
+		ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\1a9a558d85ad483902469c97a8c4768873fe526d\output\AndroidManifest.xml:20:22-64
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:10.2.1] /root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/AndroidManifest.xml:21:5-77
+ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\1a9a558d85ad483902469c97a8c4768873fe526d\output\AndroidManifest.xml:21:5-77
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/AndroidManifest.xml:21:19-51
+		ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\1a9a558d85ad483902469c97a8c4768873fe526d\output\AndroidManifest.xml:21:19-51
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/AndroidManifest.xml:21:52-75
+		ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\1a9a558d85ad483902469c97a8c4768873fe526d\output\AndroidManifest.xml:21:52-75
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:10.2.1] /root/.android/build-cache/7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6/output/AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\b1365ece43ca4de9609824486e36ba7d51e53523\output\AndroidManifest.xml:19:9-172
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:10.2.1] /root/.android/build-cache/7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6/output/AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\b1365ece43ca4de9609824486e36ba7d51e53523\output\AndroidManifest.xml:19:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:10.2.1] /root/.android/build-cache/7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6/output/AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\b1365ece43ca4de9609824486e36ba7d51e53523\output\AndroidManifest.xml:19:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:10.2.1] /root/.android/build-cache/7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6/output/AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\b1365ece43ca4de9609824486e36ba7d51e53523\output\AndroidManifest.xml:19:19-85
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:10.2.1] /root/.android/build-cache/fee9d0bc14766dafff341209176c5e133767795a/output/AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\362ded1f6191b2464de9b6d9a014b5d465cb6854\output\AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:10.2.1] /root/.android/build-cache/fee9d0bc14766dafff341209176c5e133767795a/output/AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\362ded1f6191b2464de9b6d9a014b5d465cb6854\output\AndroidManifest.xml:20:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:10.2.1] /root/.android/build-cache/fee9d0bc14766dafff341209176c5e133767795a/output/AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:10.2.1] C:\Users\Alejandro Fernandez\.android\build-cache\362ded1f6191b2464de9b6d9a014b5d465cb6854\output\AndroidManifest.xml:20:20-65

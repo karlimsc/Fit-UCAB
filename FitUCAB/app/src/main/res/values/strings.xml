@@ -22,10 +22,74 @@
     <string name="et_m01_telefono">Telefono</string>
 
 
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
 
+    <!-- Inicio Strings Modulo 6-->
+    <string name="M06_nombre_modulo">Entrenamiento</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="M06_title_activity_opcion_agregar_entrenamiento">Agregar Entrenamiento</string>
+    <string name="M06_entrenamientoPersonalizado">Entrenamiento Personalizado</string>
+    <string name="M06_entrenamientoPredefinido">Entrenamiento Predefinido</string>
+    <string name="M06_title_eliminar_entrenamiento">Eliminar Entrenamiento</string>
+    <string name="M06_title_detalle_entrenamiento">Detalles de Entrenamiento</string>
+    <string name="M06_title_seleccionar_entrenamiento">Seleccionar Entrenamiento</string>
+    <string name="M06_title_modificar_entrenamiento">Modificar Entrenamiento</string>
+    <string name="M06_title_activity_opcion_agregar_entrenamiento_personalizado">
+        Entrenamiento personalizado
+    </string>
+    <string name="MO6_title_compartir_entrenamiento">Compartir entrenamiento</string>
+    <string name="M06_title_activity_opcion_agregar_entrenamiento_predefinido">
+        Entrenamiento predefinido
+    </string>
+    <string name="M06_nombreEntrenamiento">Nombre de entrenamiento</string>
+    <string name="M06_actividad">Actividades</string>
+    <string name="M06_tiempo">Tiempo</string>
+    <string name="M06_caminar">Caminar</string>
+    <string name="M06_correr">Correr</string>
+    <string-array name="M06_tipoTiempos">
+        <item>Horas</item>
+        <item>Minutos</item>
+    </string-array>
+    <string-array name="M06_tiposEntrenamientosPredefinidos">
+        <item>Caminata</item>
+        <item>Trote</item>
+    </string-array>
+    <string name="M06_tipo">Dificultad</string>
+    <string-array name="M06_dificultad">
+        <item>Fácil</item>
+        <item>Medio</item>
+        <item>Profesional</item>
+    </string-array>
+    <string-array name="M06_calorias">
+        <item>36Cal</item>
+        <item>73Cal</item>
+        <item>145Cal</item>
+        <item>175Cal</item>
+        <item>350Cal</item>
+        <item>700Cal</item>
+    </string-array>
+    <string-array name="M06_contactos">
+        <item>Pedro Fernández</item>
+        <item>Luis Machado</item>
+        <item>Dayana Colmenares</item>
+    </string-array>
+    <string name="M06_caloriasQuemadas">Calorías quemadas:</string>
+    <string name="M06_editar_entrenamiento">Editar entrenamiento</string>
+    <string name="M06_eliminar_entrenamiento">Eliminar entrenamiento</string>
+    <string name="M06_compartir_entrenamiento">Compartir entrenamiento</string>
+    <string name="m06_agregar">Agregar</string>
+    <string name="m06_modificar">Modificar</string>
+    <string name="m06_eliminar">Eliminar</string>
+    <string name="M06_details_training_personalized">Este entrenamiento será diario</string>
+    <string name="M06_entrenamiento_creado_exito">¡Entrenamiento creado satisfactoriamente!</string>
+    <string name="M06_compartir">Compartir</string>
+    <string name="M06_compartir_exitoso">¡Entrenamiento compartido satisfactoriamente!</string>
+    <string name="M06_eliminar_exitoso">¡Entrenamiento eliminado satisfactoriamente!</string>
+    <string name="M06_modificar_existoso">¡Entrenamiento modificado satisfactoriamente!</string>
+    <!--Fin Strings modulo 6-->
 </resources>
