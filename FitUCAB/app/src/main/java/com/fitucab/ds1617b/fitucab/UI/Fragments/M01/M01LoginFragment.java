@@ -18,6 +18,7 @@ import com.fitucab.ds1617b.fitucab.R;
 public class  M01LoginFragment extends Fragment {
 
     private TextView _tvOlvidoClave;
+    private Button _btnEntrarLogin;
     private View _view;
     private OnFragmentSwap _callBack;
     public M01LoginFragment() {
@@ -50,6 +51,7 @@ public class  M01LoginFragment extends Fragment {
         _view = inflater.inflate(R.layout.fragment_m01_login, container, false);
         instanciarComponentes();
         manageChangeFragmentRecovery();
+        manageButtonEntrar();
         return _view;
     }
 
@@ -62,11 +64,21 @@ public class  M01LoginFragment extends Fragment {
         });
 
     }
+    private void manageButtonEntrar(){
+        _btnEntrarLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                _callBack.onSwapActivity("M02HomeActivity",null);
+            }
+        });
+    }
+
     /**
      * Metodo encargado para instanciar los componentes de esta vista
      */
     private void instanciarComponentes (){
         _tvOlvidoClave=(TextView) _view.findViewById(R.id.tv_m01_olvidoClave);
+        _btnEntrarLogin=(Button) _view.findViewById(R.id.btn_m01_aceptarLogin);
 
         //llamar a ese metodo
     }
