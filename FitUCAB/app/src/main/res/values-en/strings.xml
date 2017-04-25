@@ -25,4 +25,24 @@
     <string name="et_m01_passwordLogin">Password</string>
     <string name="et_m01_passwordRegistro">Password</string>
     <!--FIN Strings Modulo 1 -->
+    <!--Inicio Strings Modulo 1 -->
+    <string name="nav_02_inicio">Home</string>
+    <string name="nav_02_calorias">Calories</string>
+    <string name="nav_02_entrenamiento">Training</string>
+    <string name="nav_02_cuenta">Account</string>
+    <string name="nav_02_cerrarsesion">Logout</string>
+    <!--FIN Strings Modulo 1 -->
+    <!--Inicio Strings Modulo 2-->
+    <string name="tv_m02_perfil">Profile</string>
+    <string name="et_m02_username">username</string>
+    <string name="et_m02_email">Email</string>
+    <string name="et_m02_phone">Phone</string>
+    <string name="et_m02_datenac">Birthdate</string>
+    <string name="et_m02_weight">Weight</string>
+    <string name="et_m02_height">Height</string>
+    <string name="et_m02_location">Location</string>
+    <string name="et_m02_water">Water</string>
+    <string name="et_m02_Steps">Steps</string>
+
+    <!--FIN Strings Modulo 2 -->
 </resources>

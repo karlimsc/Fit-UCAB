@@ -74,7 +74,7 @@ public class M01SignUpFragment extends Fragment {
                 //Declaramos un contenedor para enviar la info al otro fragment
                 Bundle bundle = new Bundle();
                 //bundle.putString("text",textoEscritoEnPantalla);
-                _callBack.onSwap("M01HomeFragment",bundle);
+                _callBack.onSwapActivity("M02HomeActivity",null);
             }
         });
     }

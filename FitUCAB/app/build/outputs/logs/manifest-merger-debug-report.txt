@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-44:12
+ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-49:12
 	package
 		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:3:5-42
 		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/An
 		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
 		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
 application
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:5:5-42:19
+ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:5:5-47:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /root/.android/build-cache/ac4790f4d16237f913714fd0cf5d9f672550e060/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.0] /root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/AndroidManifest.xml:29:5-20
@@ -62,29 +62,37 @@ ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/An
 	android:name
 		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:21:27-74
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05AddExerciseActivity
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:27:9-31:20
+ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:26:9-29:68
 	android:label
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:29:13-45
+		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:28:13-45
 	android:theme
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:30:13-56
+		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:29:13-56
 	android:name
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:28:13-65
+		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:27:13-65
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.MainActivity
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:33:9-36:59
+ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:30:9-33:68
 	android:label
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:35:13-56
+		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:32:13-56
 	android:theme
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:36:13-56
+		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:33:13-56
 	android:name
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:34:13-55
+		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:31:13-55
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05ReadExerciseActivity
-ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:38:9-41:68
+ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:34:9-37:59
 	android:label
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:40:13-43
+		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:36:13-43
+	android:theme
+		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:37:13-56
+	android:name
+		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:35:13-66
+activity#com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity
+ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:38:9-46:20
+	android:label
+		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:40:13-37
 	android:theme
 		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:41:13-56
 	android:name
-		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:39:13-66
+		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:39:13-58
 uses-sdk
 INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /root/.android/build-cache/ac4790f4d16237f913714fd0cf5d9f672550e060/output/AndroidManifest.xml:5:5-7:41
