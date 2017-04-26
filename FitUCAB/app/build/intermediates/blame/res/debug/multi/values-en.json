@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en/values-en.xml",
+        "outputFile": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 91,
+                        "startOffset": 94,
                         "endColumn": 45,
-                        "endOffset": 132
+                        "endOffset": 135
                     }
                 }
             },
@@ -30,13 +30,13 @@
                     "endOffset": 151
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
-                        "startOffset": 1078,
+                        "startOffset": 1099,
                         "endColumn": 54,
-                        "endOffset": 1128
+                        "endOffset": 1149
                     }
                 }
             },
@@ -49,13 +49,13 @@
                     "endOffset": 202
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 1027,
+                        "startOffset": 1047,
                         "endColumn": 50,
-                        "endOffset": 1073
+                        "endOffset": 1093
                     }
                 }
             },
@@ -68,13 +68,13 @@
                     "endOffset": 252
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
-                        "startOffset": 1133,
+                        "startOffset": 1155,
                         "endColumn": 49,
-                        "endOffset": 1178
+                        "endOffset": 1200
                     }
                 }
             },
@@ -87,13 +87,13 @@
                     "endOffset": 312
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 137,
+                        "startOffset": 141,
                         "endColumn": 59,
-                        "endOffset": 192
+                        "endOffset": 196
                     }
                 }
             },
@@ -106,13 +106,13 @@
                     "endOffset": 367
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 197,
+                        "startOffset": 202,
                         "endColumn": 54,
-                        "endOffset": 247
+                        "endOffset": 252
                     }
                 }
             },
@@ -125,13 +125,13 @@
                     "endOffset": 423
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 4,
-                        "startOffset": 1183,
+                        "startOffset": 1206,
                         "endColumn": 55,
-                        "endOffset": 1234
+                        "endOffset": 1257
                     }
                 }
             },
@@ -144,13 +144,13 @@
                     "endOffset": 479
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 252,
+                        "startOffset": 258,
                         "endColumn": 55,
-                        "endOffset": 303
+                        "endOffset": 309
                     }
                 }
             },
@@ -163,13 +163,13 @@
                     "endOffset": 530
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 481,
+                        "startOffset": 491,
                         "endColumn": 50,
-                        "endOffset": 527
+                        "endOffset": 537
                     }
                 }
             },
@@ -182,13 +182,13 @@
                     "endOffset": 572
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 872,
+                        "startOffset": 889,
                         "endColumn": 41,
-                        "endOffset": 909
+                        "endOffset": 926
                     }
                 }
             },
@@ -201,13 +201,13 @@
                     "endOffset": 616
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 914,
+                        "startOffset": 932,
                         "endColumn": 43,
-                        "endOffset": 953
+                        "endOffset": 971
                     }
                 }
             },
@@ -220,13 +220,13 @@
                     "endOffset": 674
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 4,
-                        "startOffset": 1239,
+                        "startOffset": 1263,
                         "endColumn": 57,
-                        "endOffset": 1292
+                        "endOffset": 1316
                     }
                 }
             },
@@ -239,13 +239,13 @@
                     "endOffset": 735
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 25,
                         "startColumn": 4,
-                        "startOffset": 1297,
+                        "startOffset": 1322,
                         "endColumn": 60,
-                        "endOffset": 1353
+                        "endOffset": 1378
                     }
                 }
             },
@@ -258,13 +258,13 @@
                     "endOffset": 782
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 532,
+                        "startOffset": 543,
                         "endColumn": 46,
-                        "endOffset": 574
+                        "endOffset": 585
                     }
                 }
             },
@@ -277,13 +277,13 @@
                     "endOffset": 836
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 308,
+                        "startOffset": 315,
                         "endColumn": 53,
-                        "endOffset": 357
+                        "endOffset": 364
                     }
                 }
             },
@@ -296,13 +296,13 @@
                     "endOffset": 888
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 362,
+                        "startOffset": 370,
                         "endColumn": 51,
-                        "endOffset": 409
+                        "endOffset": 417
                     }
                 }
             },
@@ -315,13 +315,13 @@
                     "endOffset": 955
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 414,
+                        "startOffset": 423,
                         "endColumn": 66,
-                        "endOffset": 476
+                        "endOffset": 485
                     }
                 }
             },
@@ -334,13 +334,13 @@
                     "endOffset": 1002
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 44,
                         "startColumn": 4,
-                        "startOffset": 2206,
+                        "startOffset": 2250,
                         "endColumn": 46,
-                        "endOffset": 2248
+                        "endOffset": 2292
                     }
                 }
             },
@@ -353,13 +353,13 @@
                     "endOffset": 1055
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 39,
                         "startColumn": 4,
-                        "startOffset": 1955,
+                        "startOffset": 1994,
                         "endColumn": 52,
-                        "endOffset": 2003
+                        "endOffset": 2042
                     }
                 }
             },
@@ -372,13 +372,13 @@
                     "endOffset": 1102
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 37,
                         "startColumn": 4,
-                        "startOffset": 1861,
+                        "startOffset": 1898,
                         "endColumn": 46,
-                        "endOffset": 1903
+                        "endOffset": 1940
                     }
                 }
             },
@@ -391,13 +391,13 @@
                     "endOffset": 1151
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 41,
                         "startColumn": 4,
-                        "startOffset": 2057,
+                        "startOffset": 2098,
                         "endColumn": 48,
-                        "endOffset": 2101
+                        "endOffset": 2142
                     }
                 }
             },
@@ -410,13 +410,13 @@
                     "endOffset": 1204
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 42,
                         "startColumn": 4,
-                        "startOffset": 2106,
+                        "startOffset": 2148,
                         "endColumn": 52,
-                        "endOffset": 2154
+                        "endOffset": 2196
                     }
                 }
             },
@@ -429,13 +429,13 @@
                     "endOffset": 1251
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 38,
                         "startColumn": 4,
-                        "startOffset": 1908,
+                        "startOffset": 1946,
                         "endColumn": 46,
-                        "endOffset": 1950
+                        "endOffset": 1988
                     }
                 }
             },
@@ -448,13 +448,13 @@
                     "endOffset": 1304
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 36,
                         "startColumn": 4,
-                        "startOffset": 1808,
+                        "startOffset": 1844,
                         "endColumn": 52,
-                        "endOffset": 1856
+                        "endOffset": 1892
                     }
                 }
             },
@@ -467,13 +467,13 @@
                     "endOffset": 1351
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 43,
                         "startColumn": 4,
-                        "startOffset": 2159,
+                        "startOffset": 2202,
                         "endColumn": 46,
-                        "endOffset": 2201
+                        "endOffset": 2244
                     }
                 }
             },
@@ -486,13 +486,13 @@
                     "endOffset": 1400
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 40,
                         "startColumn": 4,
-                        "startOffset": 2008,
+                        "startOffset": 2048,
                         "endColumn": 48,
-                        "endOffset": 2052
+                        "endOffset": 2092
                     }
                 }
             },
@@ -505,13 +505,13 @@
                     "endOffset": 1453
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
-                        "startOffset": 1474,
+                        "startOffset": 1503,
                         "endColumn": 52,
-                        "endOffset": 1522
+                        "endOffset": 1551
                     }
                 }
             },
@@ -524,13 +524,13 @@
                     "endOffset": 1508
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
-                        "startOffset": 1635,
+                        "startOffset": 1667,
                         "endColumn": 54,
-                        "endOffset": 1685
+                        "endOffset": 1717
                     }
                 }
             },
@@ -543,13 +543,13 @@
                     "endOffset": 1558
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 31,
                         "startColumn": 4,
-                        "startOffset": 1585,
+                        "startOffset": 1616,
                         "endColumn": 49,
-                        "endOffset": 1630
+                        "endOffset": 1661
                     }
                 }
             },
@@ -562,13 +562,13 @@
                     "endOffset": 1616
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 4,
-                        "startOffset": 1527,
+                        "startOffset": 1557,
                         "endColumn": 57,
-                        "endOffset": 1580
+                        "endOffset": 1610
                     }
                 }
             },
@@ -581,13 +581,13 @@
                     "endOffset": 1663
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 4,
-                        "startOffset": 1427,
+                        "startOffset": 1455,
                         "endColumn": 46,
-                        "endOffset": 1469
+                        "endOffset": 1497
                     }
                 }
             },
@@ -600,13 +600,13 @@
                     "endOffset": 1714
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 771,
+                        "startOffset": 786,
                         "endColumn": 50,
-                        "endOffset": 817
+                        "endOffset": 832
                     }
                 }
             },
@@ -619,13 +619,13 @@
                     "endOffset": 1764
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 822,
+                        "startOffset": 838,
                         "endColumn": 49,
-                        "endOffset": 867
+                        "endOffset": 883
                     }
                 }
             },
@@ -638,13 +638,13 @@
                     "endOffset": 1820
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 715,
+                        "startOffset": 729,
                         "endColumn": 55,
-                        "endOffset": 766
+                        "endOffset": 780
                     }
                 }
             },
@@ -657,13 +657,13 @@
                     "endOffset": 1874
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 579,
+                        "startOffset": 591,
                         "endColumn": 53,
-                        "endOffset": 628
+                        "endOffset": 640
                     }
                 }
             },
@@ -676,13 +676,13 @@
                     "endOffset": 1956
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 633,
+                        "startOffset": 646,
                         "endColumn": 81,
-                        "endOffset": 710
+                        "endOffset": 723
                     }
                 }
             },
@@ -695,13 +695,13 @@
                     "endOffset": 2025
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 958,
+                        "startOffset": 977,
                         "endColumn": 68,
-                        "endOffset": 1022
+                        "endOffset": 1041
                     }
                 }
             },
@@ -714,13 +714,13 @@
                     "endOffset": 2075
                 },
                 "from": {
-                    "file": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "file": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\values-en\\strings.xml",
                     "position": {
                         "startLine": 35,
                         "startColumn": 4,
-                        "startOffset": 1758,
+                        "startOffset": 1793,
                         "endColumn": 49,
-                        "endOffset": 1803
+                        "endOffset": 1838
                     }
                 }
             }
