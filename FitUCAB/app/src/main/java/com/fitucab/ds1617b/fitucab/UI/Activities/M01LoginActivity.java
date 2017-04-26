@@ -22,6 +22,10 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
 
     private FragmentManager FM = getSupportFragmentManager();
 
+    /**
+     * Metodo que inicia para selecionar el fragmento al que se va a cambiar
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,11 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
         onSwap("M01HomeFragment",null);
     }
 
+    /**
+     * Metodo que realiza el cambio de fragmento.
+     * @param fragmentName Recibe el nobmre del fragment (nombre de la clase)
+     * @param bundle Recibe la data encapsulada que se le pasara al fragment, (puede ser null)
+     */
     //cambiar fragment
     @Override
     public void onSwap(String fragmentName, Bundle bundle) {
@@ -79,6 +88,11 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
         }
     }
 
+    /**
+     * Metodo que realiza cambio entre actividades, cambio a el home
+     * @param activityName Nombre de la actividad
+     * @param bundle
+     */
     @Override
     public void onSwapActivity(String activityName, Bundle bundle) {
 

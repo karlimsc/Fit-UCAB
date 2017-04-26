@@ -27,6 +27,7 @@
         android:theme="@style/AppTheme" >
 
         <!-- ACTIVITIES MODULO 1 NO MODIFICAR EL CONTENIDO INTERNO -->
+        <!-- Indica que esta actividad es la que va a iniciar primero -->
 
         <activity
             android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M01LoginActivity"
