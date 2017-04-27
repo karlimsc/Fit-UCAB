@@ -1,34 +1,95 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="10">
 
 
-    <Button
-        android:id="@+id/btn_m01_comienza"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="380dp"
-        android:background="@android:color/holo_green_light"
-        android:text="@string/btn_m01_comienza"
-        android:textSize="18sp" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="103dp"
+        android:layout_weight="2"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/logofitucabnombre"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:weightSum="12">
 
-    <Button
-        android:id="@+id/btn_m01_iniciarSesion"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginStart="40dp"
-        android:background="#FF33B5E5"
-        android:text="@string/btn_m01_iniciaSesion"
-        android:textSize="18sp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_column="1">
+
+            <EditText
+                android:id="@+id/et_m01_usuarioCorreo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="left"
+                android:ems="10"
+                android:hint="@string/et_m01_usuarioCorreo"
+                android:inputType="textPersonName"
+                android:maxLength="20" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/et_m01_passwordLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_weight="2"
+                android:ems="10"
+                android:hint="@string/et_m01_passwordLogin"
+                android:inputType="textPassword"
+                android:maxLength="20"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_m01_aceptarLogin"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:layout_marginTop="20dp"
+            android:text="@string/btn_m01_aceptarLogin"
+            android:background="@color/colorBtnConfirmar"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_m01_olvidoClave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="@string/tv_m01_olvidoClave"
+            android:textAlignment="center"
+            android:textColor="@color/colorBtnAceptar"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+
 
 </LinearLayout>

@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/home/jesus/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/res/values/values.xml",
+                    "file": "/root/.android/build-cache/8291114f0b3a3ccd091a37ee0e30e8d1af53913a/output/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
