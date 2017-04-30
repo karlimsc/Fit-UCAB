@@ -12,10 +12,13 @@
     <!--Inicio Strings Modulo 4 -->
     <string name="amigo">Friends</string>
     <string name="actividad">Activity</string>
-    <string name="entretenimiento">Entertainment</string>
+    <string name="entrenamiento">training</string>
     <string name="reto">Challenges</string>
     <string name="hidratacion">Hydration</string>
     <string name="calorias">Calories</string>
+    <string name="gamificacion">Gamification</string>
+    <string name="SI">YES</string> <!-- -->
+    <string name="NO">NO</string> <!-- -->
     <!--Final Strings Modulo 4 -->
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -23,5 +26,5 @@
     <string name="str_en">English</string>
     <string name="str_es">Español</string>
     <string name="lang_btn">Language</string>
-    <string name="gamificacion">Gamification</string>
+
 </resources>

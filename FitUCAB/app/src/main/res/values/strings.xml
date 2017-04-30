@@ -17,11 +17,13 @@
     <!--Inicio Strings Modulo 4 -->
     <string name="amigo">Amigos</string> <!-- opcion de amigo al enviar correo -->
     <string name="actividad">Actividad</string> <!-- opcion de actividad al enviar correo -->
-    <string name="entretenimiento">Entretenimiento</string> <!-- opcion de entretenimiento al enviar correo -->
+    <string name="entrenamiento">Entrenamiento</string> <!-- opcion de entretenimiento al enviar correo -->
     <string name="reto">Retos</string> <!-- opcion de retos al enviar correo -->
     <string name="hidratacion">Hidratacion</string> <!-- opcion de hidratacion al enviar correo -->
     <string name="calorias">Calorias</string> <!-- opcion de calorias al enviar correo -->
-    <string name="gamificacion">Gamificacion</string> <!-- opcion de gamificacion al enviar correo -->
+    <string name="gamificacion">Gamificacion</string> <!-- opcion de calorias al enviar correo -->
+    <string name="SI">SI</string> <!--  -->
+    <string name="NO">NO</string> <!-- -->
     <!--Final Strings Modulo 4 -->
 
     <!-- TODO: Remove or change this placeholder text -->

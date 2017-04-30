@@ -10,13 +10,16 @@
         android:id="@+id/switch1"
         android:layout_width="322dp"
         android:layout_height="33dp"
-        android:layout_marginTop="55dp"
-        android:text="@string/amigo"
-        tools:layout_editor_absoluteX="46dp"
-        tools:layout_editor_absoluteY="16dp"
-        android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/switch2"
-        android:layout_alignStart="@+id/switch2" />
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/switch2"
+        android:layout_marginTop="55dp"
+        android:checked="false"
+        android:text="@string/amigo"
+        android:textOff="@string/NO"
+        android:textOn="@string/SI"
+        tools:layout_editor_absoluteX="46dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <Switch
         android:id="@+id/switch2"
@@ -27,18 +30,23 @@
         tools:layout_editor_absoluteY="57dp"
         android:layout_below="@+id/switch1"
         android:layout_alignLeft="@+id/switch3"
-        android:layout_alignStart="@+id/switch3" />
+        android:layout_alignStart="@+id/switch3"
+        android:textOff="@string/NO"
+        android:textOn="@string/SI"
+                                                />
 
     <Switch
         android:id="@+id/switch3"
         android:layout_width="322dp"
         android:layout_height="33dp"
-        android:text="@string/entretenimiento"
+        android:text="@string/entrenamiento"
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="103dp"
         android:layout_below="@+id/switch2"
         android:layout_alignLeft="@+id/switch4"
-        android:layout_alignStart="@+id/switch4" />
+        android:layout_alignStart="@+id/switch4"
+        android:textOff="@string/NO"
+        android:textOn="@string/SI"             />
 
     <Switch
         android:id="@+id/switch4"
@@ -49,7 +57,9 @@
         tools:layout_editor_absoluteY="146dp"
         android:layout_below="@+id/switch3"
         android:layout_alignLeft="@+id/switch5"
-        android:layout_alignStart="@+id/switch5" />
+        android:layout_alignStart="@+id/switch5"
+        android:textOff="@string/NO"
+        android:textOn="@string/SI"             />
 
     <Switch
         android:id="@+id/switch5"
@@ -60,7 +70,9 @@
         tools:layout_editor_absoluteY="192dp"
         android:layout_below="@+id/switch4"
         android:layout_alignLeft="@+id/switch6"
-        android:layout_alignStart="@+id/switch6" />
+        android:layout_alignStart="@+id/switch6"
+        android:textOff="@string/NO"
+        android:textOn="@string/SI"             />
 
     <Switch
         android:id="@+id/switch6"
@@ -70,7 +82,9 @@
         tools:layout_editor_absoluteX="46dp"
         tools:layout_editor_absoluteY="239dp"
         android:layout_below="@+id/switch5"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textOff="@string/NO"
+        android:textOn="@string/SI"         />
 
     <Switch
         android:id="@+id/switch7"
@@ -82,7 +96,9 @@
         tools:layout_editor_absoluteY="290dp"
         android:layout_below="@+id/switch6"
         android:layout_alignLeft="@+id/switch6"
-        android:layout_alignStart="@+id/switch6" />
+        android:layout_alignStart="@+id/switch6"
+        android:textOff="@string/NO"
+        android:textOn="@string/SI"                 />
 
     <Button
         android:id="@+id/enviar"
@@ -91,18 +107,54 @@
         android:text="ENVIAR"
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="337dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="80dp" />
+        android:layout_marginBottom="15dp"
+        android:layout_above="@+id/button_guardacambios"
+        android:layout_alignRight="@+id/button_guardacambios"
+        android:layout_alignEnd="@+id/button_guardacambios"
+        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp" />
 
     <Button
         android:id="@+id/idioma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/lang_btn"
+        android:layout_marginRight="39dp"
+        android:layout_marginEnd="39dp"
         android:layout_above="@+id/enviar"
-        android:layout_alignLeft="@+id/enviar"
-        android:layout_alignStart="@+id/enviar"
-        android:layout_marginBottom="16dp"
-        android:text="@string/lang_btn" />
+        android:layout_alignRight="@+id/switch7"
+        android:layout_alignEnd="@+id/switch7" />
+
+    <Button
+        android:id="@+id/button_guardacambios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="guardar cambios"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/idioma"
+        android:layout_alignEnd="@+id/idioma"
+        android:layout_marginRight="50dp"
+        android:layout_marginEnd="50dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/idioma"
+        android:layout_alignLeft="@+id/switch7"
+        android:layout_alignStart="@+id/switch7"
+        android:layout_toLeftOf="@+id/textView"
+        android:layout_toStartOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_alignBaseline="@+id/idioma"
+        android:layout_alignBottom="@+id/idioma"
+        android:layout_toLeftOf="@+id/button_guardacambios"
+        android:layout_toStartOf="@+id/button_guardacambios" />
 
 </RelativeLayout>
