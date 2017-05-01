@@ -1,5 +1,17 @@
 [
     {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\LuisAlejandro\\.android\\build-cache\\f2c18e799c0fa4068ca4eb6f64b43d0da2856e33\\output\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\LuisAlejandro\\.android\\build-cache\\f2c18e799c0fa4068ca4eb6f64b43d0da2856e33\\output\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\LuisAlejandro\\.android\\build-cache\\f2c18e799c0fa4068ca4eb6f64b43d0da2856e33\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
         "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_custom_big.xml",
         "source": "C:\\Users\\Daniel R\\.android\\build-cache\\4fb56a8dce72f6ebb9d0e4965e5a2456f7a753ed\\output\\res\\layout-v21\\notification_template_custom_big.xml"
     },
@@ -10,6 +22,10 @@
     {
         "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action_tombstone.xml",
         "source": "C:\\Users\\Daniel R\\.android\\build-cache\\4fb56a8dce72f6ebb9d0e4965e5a2456f7a753ed\\output\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\LuisAlejandro\\.android\\build-cache\\f2c18e799c0fa4068ca4eb6f64b43d0da2856e33\\output\\res\\layout-v21\\notification_template_icon_group.xml"
     },
     {
         "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21\\notification_action.xml",

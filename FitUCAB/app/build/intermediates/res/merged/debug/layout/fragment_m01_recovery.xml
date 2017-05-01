@@ -21,9 +21,10 @@
         android:id="@+id/tv_m01_acercaDeTi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tv_m01_recuperacionContra"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
+        android:text="@string/tv_m01_recuperacionContra"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -51,7 +52,8 @@
                 android:ems="10"
                 android:hint="@string/et_m01_correoRecovery"
                 android:inputType="textPersonName"
-                android:maxLength="20" />
+                android:maxLength="20"
+                android:textSize="18sp" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
@@ -65,6 +67,7 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </LinearLayout>

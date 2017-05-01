@@ -2,8 +2,8 @@
 <resources>
     <color name="colorPrimary">#0b3680</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorBtnDenegar">#fc0f3b</color>
-    <color name="colorBtnAceptar">#676cfb</color>
+    <color name="colorBtnDenegar">#ff0000</color>
+    <color name="colorBtnAceptar">#0000ff</color>
     <color name="colorBtnConfirmar">#6aca25</color>
     <color name="black">#000</color>
     <color name="grey">#20000000</color>

@@ -1,15 +1,19 @@
 [
     {
-        "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
-        "source": "C:\\Users\\Daniel R\\.android\\build-cache\\300e03847031cc8d92a4ebd8dba2b6dadb33b0cb\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
-    },
-    {
         "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_date.xml",
         "source": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_date.xml"
     },
     {
-        "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_mail.xml",
-        "source": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_mail.xml"
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_training.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_training.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
+        "source": "C:\\Users\\LuisAlejandro\\.android\\build-cache\\7b9930bfaa0826fa4f78b170fa8fdf03a9241612\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_account.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_account.xml"
     },
     {
         "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_directions.xml",
@@ -20,12 +24,8 @@
         "source": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_calories.xml"
     },
     {
-        "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_home_black.xml",
-        "source": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_home_black.xml"
-    },
-    {
-        "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_account.xml",
-        "source": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_account.xml"
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_calories.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_calories.xml"
     },
     {
         "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
@@ -40,8 +40,60 @@
         "source": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_water.xml"
     },
     {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_fitness.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_fitness.xml"
+    },
+    {
+        "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
+        "source": "C:\\Users\\Daniel R\\.android\\build-cache\\300e03847031cc8d92a4ebd8dba2b6dadb33b0cb\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_directions.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_directions.xml"
+    },
+    {
+        "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_mail.xml",
+        "source": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_mail.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_date.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_date.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_water.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_water.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_logout.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_logout.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_home_black.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_home_black.xml"
+    },
+    {
+        "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_home_black.xml",
+        "source": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_home_black.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_map.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_map.xml"
+    },
+    {
+        "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_account.xml",
+        "source": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_mail.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_mail.xml"
+    },
+    {
         "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_training.xml",
         "source": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_training.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
+        "source": "C:\\Users\\LuisAlejandro\\.android\\build-cache\\7b9930bfaa0826fa4f78b170fa8fdf03a9241612\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
     },
     {
         "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_logout.xml",
@@ -50,6 +102,10 @@
     {
         "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_phone.xml",
         "source": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_phone.xml"
+    },
+    {
+        "merged": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_phone.xml",
+        "source": "C:\\Users\\LuisAlejandro\\Desktop\\Barbara\\DESARROLLO\\GIT-HUB\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_phone.xml"
     },
     {
         "merged": "C:\\Users\\Daniel R\\Desktop\\desarrollofinal\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_fitness.xml",
