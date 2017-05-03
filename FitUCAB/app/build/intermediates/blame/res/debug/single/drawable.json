@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
-        "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/drawable/abc_vector_test.xml"
-    },
-    {
         "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
         "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/drawable/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
+        "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/drawable/abc_vector_test.xml"
     },
     {
         "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",

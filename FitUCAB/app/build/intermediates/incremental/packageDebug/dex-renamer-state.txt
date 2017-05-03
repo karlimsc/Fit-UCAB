@@ -1,4 +1,4 @@
-#Sun Apr 16 16:24:39 VET 2017
+#Wed May 03 12:33:22 VET 2017
 base.0=/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_630ef9f543ba31c318316d449b6f2430fabcbc54
 renamed.1=classes2.dex
 renamed.0=classes.dex

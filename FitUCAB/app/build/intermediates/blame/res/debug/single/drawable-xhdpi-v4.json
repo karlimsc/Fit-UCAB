@@ -8,12 +8,12 @@
         "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/drawable-xhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png"
     },
     {
-        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
-        "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
-    },
-    {
         "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/design_ic_visibility.png",
         "source": "/home/karo/.android/build-cache/91d103353e7db76cfaa988fae365929273f4443b/output/res/drawable-xhdpi-v4/design_ic_visibility.png"
+    },
+    {
+        "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png",
+        "source": "/home/karo/.android/build-cache/4ae02c52854450ab86bea8251a7737238bcc4308/output/res/drawable-xhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
         "merged": "/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png",
