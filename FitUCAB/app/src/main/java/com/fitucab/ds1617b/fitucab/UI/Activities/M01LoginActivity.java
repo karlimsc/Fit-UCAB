@@ -83,8 +83,8 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
     public void onSwapActivity(String activityName, Bundle bundle) {
 
         switch (activityName){
-            case "MainActivity":
-                Intent newActivity = new Intent(this, MainActivity.class);
+            case "M02HomeActivity":
+                Intent newActivity = new Intent(this, M02HomeActivity.class);
                 startActivity(newActivity);
                 break;
 
