@@ -1,7 +1,0 @@
-#Wed May 03 12:33:22 VET 2017
-base.0=/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_630ef9f543ba31c318316d449b6f2430fabcbc54
-renamed.1=classes2.dex
-renamed.0=classes.dex
-file.1=/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9ae6929d4029c259e9076b31f42d826a442947f1/classes.dex
-base.1=/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_9ae6929d4029c259e9076b31f42d826a442947f1
-file.0=/home/karo/UCAB/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_630ef9f543ba31c318316d449b6f2430fabcbc54/classes.dex

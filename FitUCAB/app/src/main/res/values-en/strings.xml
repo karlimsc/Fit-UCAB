@@ -43,6 +43,10 @@
     <string name="et_m02_location">Location</string>
     <string name="et_m02_water">Water</string>
     <string name="et_m02_Steps">Steps</string>
+        <!--FIN Strings Modulo 2 -->
 
-    <!--FIN Strings Modulo 2 -->
+    <!--Inicio Strings Modulo 5-->
+    <string name="tab_m05_log">Log</string>
+    <string name="tab_m05_track">Track</string>
+    <!--FIN Strings Modulo 5 -->
 </resources>
