@@ -1,0 +1,11 @@
+local.properties
+
+FitUCAB/build/
+
+FitUCAB/app/build/
+
+*.iml
+
+FitUCAB/\.idea/libraries/
+
+FitUCAB/\.idea/workspace\.xml
