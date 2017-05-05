@@ -1,13 +1,12 @@
-local.properties
-
-FitUCAB/build/
-
-FitUCAB/app/build/
 
 *.iml
-
-FitUCAB/\.idea/libraries/
-
-FitUCAB/\.idea/workspace\.xml
-
-FitUCAB/\.idea/
+.gradle
+local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.idea
+/app/build

@@ -53,5 +53,6 @@
     <string name="permission_notice">Please note that your location permission is important if you want to draw your route on map while walking or running</string>
     <string name="permission_title">Location Permission Denied</string>
     <string name="cancel_permission_notice">Wow, please come back again when you need it and grant the permission</string>
+    <string name="start_tracking">Start</string>
     <!--FIN Strings Modulo 5 -->
 </resources>
