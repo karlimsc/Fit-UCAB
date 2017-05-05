@@ -9,3 +9,4 @@ local.properties
 .externalNativeBuild
 .idea
 /app/build
+build/
