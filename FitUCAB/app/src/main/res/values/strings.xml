@@ -62,6 +62,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_m02_home">M02HomeActivity</string>
+    <string name="title_activity_m05_track_exercise">Track</string>
 
 
 </resources>

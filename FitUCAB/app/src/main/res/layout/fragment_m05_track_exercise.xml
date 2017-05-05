@@ -1,0 +1,16 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Activities.M05TrackExerciseActivity"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/m05_track_activity_fragment">
+
+<fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+/>
+    
+</android.support.design.widget.CoordinatorLayout>
