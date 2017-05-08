@@ -57,10 +57,6 @@
 
     <!-- Inicio Strings Modulo 6-->
     <string name="M06_nombre_modulo">Entrenamiento</string>
-
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
     <string name="M06_title_activity_opcion_agregar_entrenamiento">Agregar Entrenamiento</string>
     <string name="M06_entrenamientoPersonalizado">Entrenamiento Personalizado</string>
     <string name="M06_entrenamientoPredefinido">Entrenamiento Predefinido</string>
