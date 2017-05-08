@@ -76,5 +76,7 @@
     <string name="M06_title_modificar_entrenamiento">Modify Training</string>
     <string name="M06_title_seleccionar_entrenamiento">Select Training</string>
     <string name="MO6_title_compartir_entrenamiento">Share Training</string>
+    <string name="M06_personalizado">Personalized</string>
+    <string name="M06_predefinido">Predefined</string>
     <!--Fin de modulo 06-->
 </resources>

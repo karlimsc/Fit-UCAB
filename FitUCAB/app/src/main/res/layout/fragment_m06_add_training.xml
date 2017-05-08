@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -23,34 +23,67 @@
 
     <Button
         android:id="@+id/m06_botonEntrenamientoPersonalizado"
-        android:layout_width="wrap_content"
+        android:layout_width="183dp"
         android:layout_height="150dp"
-        android:background="@mipmap/correr_0"
-        android:text="@string/M06_entrenamientoPersonalizado"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:background="@mipmap/entrenamientopersonalizado"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_above="@+id/botonEntrenamientoPredefinido"
+        android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="42dp"
-        android:layout_marginBottom="42dp" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/m06_botonEntrenamientoPredefinido"
-        android:layout_width="match_parent"
+        android:layout_width="183dp"
         android:layout_height="150dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="64dp"
-        android:background="@mipmap/training"
-        android:text="@string/M06_entrenamientoPredefinido"
+        android:layout_alignTop="@+id/m06_botonEntrenamientoPersonalizado"
+        android:layout_toRightOf="@+id/m06_botonEntrenamientoPersonalizado"
+        android:background="@mipmap/entrenamientopredefinido"
         android:textAllCaps="false"
+        android:layout_marginRight="18dp"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:textStyle="bold" />
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/m06_botonEntrenamientoPersonalizado"
+        android:layout_alignStart="@+id/m06_botonEntrenamientoPersonalizado"
+        android:layout_below="@+id/m06_botonEntrenamientoPersonalizado"
+        android:layout_toLeftOf="@+id/m06_botonEntrenamientoPredefinido"
+        android:layout_toStartOf="@+id/m06_botonEntrenamientoPredefinido"
+        android:text="@string/M06_personalizado"
+        android:textAlignment="center"
+        android:textColor="@color/M06_negroDiseño" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView2"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignEnd="@+id/m06_botonEntrenamientoPredefinido"
+        android:layout_alignRight="@+id/m06_botonEntrenamientoPredefinido"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:text="@string/M06_predefinido"
+        android:textAlignment="center"
+        android:textColor="@color/M06_negroDiseño" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appBarLayout4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="@string/M06_title_seleccionar_entrenamiento"
+        android:textColor="@color/M06_negroDiseño"
+        android:textSize="20dp" />
+</RelativeLayout>

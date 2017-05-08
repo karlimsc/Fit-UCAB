@@ -116,6 +116,8 @@
     <string name="M06_compartir_exitoso">¡Entrenamiento compartido satisfactoriamente!</string>
     <string name="M06_eliminar_exitoso">¡Entrenamiento eliminado satisfactoriamente!</string>
     <string name="M06_modificar_existoso">¡Entrenamiento modificado satisfactoriamente!</string>
+    <string name="M06_personalizado">Personalizado</string>
+    <string name="M06_predefinido">Predefinido</string>
     <!--Fin Strings modulo 6-->
 
 
