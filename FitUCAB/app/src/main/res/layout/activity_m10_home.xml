@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.fitucab.ds1617b.fitucab.Activity_m10_home">
+    tools:context="com.fitucab.ds1617b.fitucab.M10HomeActivity">
 
 </android.support.constraint.ConstraintLayout>
