@@ -39,17 +39,17 @@ public final class R {
         public static final int zOrderOnTop = 0x7f010114;
     }
     public static final class color {
-        public static final int common_google_signin_btn_text_dark = 0x7f0c006b;
+        public static final int common_google_signin_btn_text_dark = 0x7f0c006c;
         public static final int common_google_signin_btn_text_dark_default = 0x7f0c0019;
         public static final int common_google_signin_btn_text_dark_disabled = 0x7f0c001a;
         public static final int common_google_signin_btn_text_dark_focused = 0x7f0c001b;
         public static final int common_google_signin_btn_text_dark_pressed = 0x7f0c001c;
-        public static final int common_google_signin_btn_text_light = 0x7f0c006c;
+        public static final int common_google_signin_btn_text_light = 0x7f0c006d;
         public static final int common_google_signin_btn_text_light_default = 0x7f0c001d;
         public static final int common_google_signin_btn_text_light_disabled = 0x7f0c001e;
         public static final int common_google_signin_btn_text_light_focused = 0x7f0c001f;
         public static final int common_google_signin_btn_text_light_pressed = 0x7f0c0020;
-        public static final int common_google_signin_btn_tint = 0x7f0c006d;
+        public static final int common_google_signin_btn_tint = 0x7f0c006e;
     }
     public static final class drawable {
         public static final int common_full_open_on_phone = 0x7f020057;

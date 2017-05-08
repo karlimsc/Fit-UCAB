@@ -117,11 +117,11 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <color name="colorBtnAceptar">#0000ff</color>
+    <color name="colorBtnAceptar">#3f51b5</color>
     <color name="colorBtnConfirmar">#6aca25</color>
     <color name="colorBtnDenegar">#ff0000</color>
     <color name="colorPrimary">#0b3680</color>
-    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimaryDark">#353535</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
     <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
     <color name="common_google_signin_btn_text_dark_focused">@android:color/black</color>
@@ -147,7 +147,7 @@
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
-    <color name="grey">#20000000</color>
+    <color name="grey">#f5f5f5</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="material_blue_grey_800">#ff37474f</color>
@@ -179,6 +179,7 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
+    <color name="softgrey">#53535353</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
@@ -742,11 +743,11 @@
     <string name="app_name">Fit UCAB</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
-    <string name="btn_m01_aceptarLogin">Entrar</string>
-    <string name="btn_m01_comienza">Comienza</string>
-    <string name="btn_m01_entrar">Entrar</string>
-    <string name="btn_m01_enviarCorreo">Enviar Correo</string>
-    <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
+    <string name="btn_m01_aceptarLogin">ENTRAR</string>
+    <string name="btn_m01_comienza">REGISTRATE</string>
+    <string name="btn_m01_entrar">ENTRAR</string>
+    <string name="btn_m01_enviarCorreo">ENVIAR CORREO</string>
+    <string name="btn_m01_iniciaSesion">INICIA SESION</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>

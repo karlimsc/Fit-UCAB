@@ -7,8 +7,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01HomeFragment;
@@ -16,12 +14,9 @@ import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01LoginFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01RecoveryFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01SignUpFragment;
 
-import java.util.List;
-
 public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwap {
 
     private FragmentManager FM = getSupportFragmentManager();
-
     /**
      * Metodo que inicia para selecionar el fragmento al que se va a cambiar
      * @param savedInstanceState
@@ -30,10 +25,13 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         //Declaracion del Toolbar. si alguien necesita acceder al toolbar en un Fragment
         //debe declarar este atributo como privado y hacerle un Getter.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
 
         //Seleccionamos el fragmento que queremos mostrar.
         onSwap("M01HomeFragment",null);
