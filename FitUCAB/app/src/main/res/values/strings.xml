@@ -53,6 +53,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_m02_home">M02HomeActivity</string>
+    <string name="title_activity_m10_water_glass">M10WaterGlassActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 
 
 </resources>
