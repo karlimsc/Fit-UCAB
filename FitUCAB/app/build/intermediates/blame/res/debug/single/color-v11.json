@@ -1,18 +1,18 @@
 [
     {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
         "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
-    },
-    {
         "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
         "source": "C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     }
 ]

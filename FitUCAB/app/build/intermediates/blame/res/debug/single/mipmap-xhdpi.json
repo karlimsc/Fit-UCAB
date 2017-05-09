@@ -4,16 +4,12 @@
         "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xhdpi\\logofitucabsolonombreblanco.png"
     },
     {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\logofitucabsolonombreblanco.png",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xhdpi\\logofitucabsolonombreblanco.png"
-    },
-    {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
-    },
-    {
         "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\logofitucabnombre.png",
         "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xhdpi\\logofitucabnombre.png"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\logofitucabnombre.png",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xhdpi\\logofitucabnombre.png"
     },
     {
         "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
@@ -24,11 +20,15 @@
         "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\logofitucabsolonombreblanco.png",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xhdpi\\logofitucabsolonombreblanco.png"
+    },
+    {
         "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher.png",
         "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\logofitucabnombre.png",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xhdpi\\logofitucabnombre.png"
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_launcher_round.png",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     }
 ]

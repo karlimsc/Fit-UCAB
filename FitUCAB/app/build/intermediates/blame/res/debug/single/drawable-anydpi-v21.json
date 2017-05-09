@@ -8,12 +8,8 @@
         "source": "C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
     },
     {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_water.xml",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_water.xml"
-    },
-    {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_mail.xml",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_mail.xml"
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
+        "source": "C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
     },
     {
         "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_directions.xml",
@@ -24,6 +20,10 @@
         "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_home_black.xml"
     },
     {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_water.xml",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_water.xml"
+    },
+    {
         "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_mail.xml",
         "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_mail.xml"
     },
@@ -32,72 +32,72 @@
         "source": "C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
     },
     {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_home_black.xml",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_home_black.xml"
+    },
+    {
         "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_training.xml",
         "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_training.xml"
-    },
-    {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_directions.xml",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_directions.xml"
-    },
-    {
-        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_water.xml",
-        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_water.xml"
-    },
-    {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_account.xml",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_account.xml"
-    },
-    {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_phone.xml",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_phone.xml"
-    },
-    {
-        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_account.xml",
-        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_account.xml"
-    },
-    {
-        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_fitness.xml",
-        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_fitness.xml"
-    },
-    {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
-        "source": "C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
-    },
-    {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility.xml",
-        "source": "C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\drawable-anydpi-v21\\design_ic_visibility.xml"
-    },
-    {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_calories.xml",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_calories.xml"
-    },
-    {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_fitness.xml",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_fitness.xml"
-    },
-    {
-        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_phone.xml",
-        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_phone.xml"
-    },
-    {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_logout.xml",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_logout.xml"
     },
     {
         "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_map.xml",
         "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_map.xml"
     },
     {
-        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_logout.xml",
-        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_logout.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_water.xml",
+        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_water.xml"
+    },
+    {
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_account.xml",
+        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_account.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_directions.xml",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_directions.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_fitness.xml",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_fitness.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_phone.xml",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_phone.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_account.xml",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_fitness.xml",
+        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_fitness.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_calories.xml",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_calories.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_logout.xml",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_logout.xml"
+    },
+    {
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_phone.xml",
+        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_phone.xml"
     },
     {
         "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_date.xml",
         "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_date.xml"
     },
     {
-        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_home_black.xml",
-        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_home_black.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_logout.xml",
+        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_logout.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_mail.xml",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_mail.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\design_ic_visibility_off.xml",
+        "source": "C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\drawable-anydpi-v21\\design_ic_visibility_off.xml"
     },
     {
         "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21\\ic_training.xml",
