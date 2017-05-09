@@ -3756,7 +3756,7 @@ containing a value of this type.
         public static final int fragment_m02_home=0x7f040038;
         public static final int fragment_m05_log_activity=0x7f040039;
         public static final int fragment_m05_track_activity=0x7f04003a;
-        public static final int fragment_m10_history =0x7f04003b;
+        public static final int fragment_m10_histoy=0x7f04003b;
         public static final int fragment_main=0x7f04003c;
         public static final int nav_header_m02_home=0x7f04003d;
         public static final int notification_action=0x7f04003e;

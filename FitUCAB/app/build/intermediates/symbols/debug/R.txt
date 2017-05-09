@@ -1149,7 +1149,7 @@ int layout fragment_m02_account 0x7f040037
 int layout fragment_m02_home 0x7f040038
 int layout fragment_m05_log_activity 0x7f040039
 int layout fragment_m05_track_activity 0x7f04003a
-int layout fragment_m10_hidratacion 0x7f04003b
+int layout fragment_m10_histoy 0x7f04003b
 int layout fragment_main 0x7f04003c
 int layout nav_header_m02_home 0x7f04003d
 int layout notification_action 0x7f04003e
