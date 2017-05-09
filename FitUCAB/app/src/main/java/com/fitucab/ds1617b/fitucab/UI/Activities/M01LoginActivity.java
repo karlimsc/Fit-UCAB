@@ -85,7 +85,7 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
         switch (activityName){
             case "M02HomeActivity":
                 /*pequeño cable*/
-                Intent newActivity = new Intent(this, M10HomeActivity.class);
+                Intent newActivity = new Intent(this, M10WaterGlassActivity.class);
                 startActivity(newActivity);
                 break;
 

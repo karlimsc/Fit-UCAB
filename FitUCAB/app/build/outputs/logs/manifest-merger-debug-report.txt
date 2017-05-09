@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-52:12
+ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-55:12
 	package
 		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:3:5-42
 		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
@@ -14,7 +14,7 @@ ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifes
 		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
 application
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:5:5-50:19
+ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:5:5-53:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/JoseA2R/.android/build-cache/f13c3c0e74e1facb3fe98add0eb4f8268502fc9a/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.0] /Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.0] /Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/AndroidManifest.xml:29:5-20
@@ -93,10 +93,14 @@ ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifes
 		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:42:13-56
 	android:name
 		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:40:13-58
-activity#com.fitucab.ds1617b.fitucab.UI.Activities.M10HomeActivity
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:49:9-76
+activity#com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity
+ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:49:9-52:68
+	android:label
+		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:51:13-67
+	android:theme
+		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:52:13-56
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:49:19-64
+		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:50:13-64
 uses-sdk
 INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/JoseA2R/.android/build-cache/f13c3c0e74e1facb3fe98add0eb4f8268502fc9a/output/AndroidManifest.xml:5:5-7:41
