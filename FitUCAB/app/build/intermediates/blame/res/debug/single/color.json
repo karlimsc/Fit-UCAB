@@ -20,12 +20,12 @@
         "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\color\\abc_tint_switch_track.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\root\\.android\\build-cache\\7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6\\output\\res\\color\\common_google_signin_btn_text_light.xml"
-    },
-    {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
         "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_light.xml",
+        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\root\\.android\\build-cache\\7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6\\output\\res\\color\\common_google_signin_btn_text_light.xml"
     },
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_tint_password_toggle.xml",

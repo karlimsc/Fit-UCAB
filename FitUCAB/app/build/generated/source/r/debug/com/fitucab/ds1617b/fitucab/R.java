@@ -3477,7 +3477,7 @@ containing a value of this type.
         public static final int clip_horizontal=0x7f0d003a;
         public static final int clip_vertical=0x7f0d003b;
         public static final int collapseActionView=0x7f0d0047;
-        public static final int container=0x7f0d008e;
+        public static final int container=0x7f0d008d;
         public static final int contentPanel=0x7f0d005f;
         public static final int cpb_m02_home=0x7f0d00c2;
         public static final int custom=0x7f0d0066;
@@ -3523,7 +3523,7 @@ containing a value of this type.
         public static final int exitUntilCollapsed=0x7f0d0023;
         public static final int expand_activities_button=0x7f0d0056;
         public static final int expanded_menu=0x7f0d006b;
-        public static final int fab=0x7f0d008d;
+        public static final int fab=0x7f0d008f;
         public static final int fill=0x7f0d003c;
         public static final int fill_horizontal=0x7f0d003d;
         public static final int fill_vertical=0x7f0d0033;
@@ -3542,7 +3542,7 @@ containing a value of this type.
         public static final int image=0x7f0d0057;
         public static final int imageView=0x7f0d00a2;
         public static final int imageView2=0x7f0d009e;
-        public static final int include=0x7f0d008f;
+        public static final int include=0x7f0d008e;
         public static final int info=0x7f0d00f3;
         public static final int item_touch_helper_previous_elevation=0x7f0d0005;
         public static final int iv_m02_home=0x7f0d00c3;
