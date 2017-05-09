@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/Users/JoseA2R/.android/build-cache/34c370cf824d918774347d3745fb0958176e4454/output/res/values/values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\4ee1b9c1a64f2d24ece000c61486c8b92396023c\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -24,7 +24,7 @@
         ]
     },
     {
-        "outputFile": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -35,7 +35,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\4ee1b9c1a64f2d24ece000c61486c8b92396023c\\output\\res\\values\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\.android\\build-cache\\34c370cf824d918774347d3745fb0958176e4454\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -48,7 +48,7 @@
         ]
     },
     {
-        "outputFile": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -59,7 +59,31 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\root\\.android\\build-cache\\8291114f0b3a3ccd091a37ee0e30e8d1af53913a\\output\\res\\values\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\8291114f0b3a3ccd091a37ee0e30e8d1af53913a\\output\\res\\values\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 229,
+                        "endColumn": 45,
+                        "endOffset": 270
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\4ee1b9c1a64f2d24ece000c61486c8b92396023c\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
