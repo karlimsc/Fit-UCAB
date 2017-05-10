@@ -79,10 +79,6 @@ public class M10WaterGlassFragment extends Fragment  {
         addDate();
         lessDate();
 
-
-
-
-
         return _view;
 
     }
@@ -92,11 +88,16 @@ public class M10WaterGlassFragment extends Fragment  {
         _btnLess = (ImageButton) _view.findViewById(R.id.btn_m10_lessDate);
         _btnAdd = (ImageButton) _view.findViewById(R.id.btn_m10_AddDate);
         _EtnDate= (EditText) _view.findViewById(R.id.et_m10_date);
-        _sdf = new SimpleDateFormat("dd/MM/yyyy");
+        _EtnDate.setText(giveDate());
+
+
+
+
 
 
 
     }
+
 
 
     private void addDate()
@@ -128,8 +129,7 @@ public class M10WaterGlassFragment extends Fragment  {
             @Override
             public void onClick(View v) {
                 try {
-                     _date =  _EtnDate.getText().toString();
-
+                    _date =  _EtnDate.getText().toString();
                     _cal.setTime(_sdf.parse(_date));
                     _cal.add(Calendar.DATE,-1);
                     _date = _sdf.format(_cal.getTime());
@@ -151,6 +151,7 @@ public class M10WaterGlassFragment extends Fragment  {
             public void onClick(View v)
             {
                 try {
+                    _EtnDate.setText(null);
                     _cal = Calendar.getInstance(TimeZone.getDefault());
                     instanciarCalendario();
                 }
@@ -179,9 +180,9 @@ public class M10WaterGlassFragment extends Fragment  {
     }
 
     public String giveDate() {
-        Calendar cal = Calendar.getInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        return sdf.format(cal.getTime());
+        Calendar ab = Calendar.getInstance();
+        SimpleDateFormat a = new SimpleDateFormat("dd/MM/yyyy");
+        return a.format(ab.getTime());
     }
 
     private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
