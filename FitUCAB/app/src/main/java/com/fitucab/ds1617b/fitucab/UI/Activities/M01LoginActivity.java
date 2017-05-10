@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
@@ -14,6 +15,8 @@ import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01HomeFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01LoginFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01RecoveryFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01SignUpFragment;
+
+import java.util.List;
 
 public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwap {
 
@@ -32,9 +35,13 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
         startActivity(newActivity);
 
         //Seleccionamos el fragmento que queremos mostrar.
+<<<<<<< HEAD
        // onSwap("M01HomeFragment",null);
 
 
+=======
+        onSwap("M01HomeFragment",null);
+>>>>>>> Develop
     }
 
     //cambiar fragment
@@ -85,13 +92,12 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
     public void onSwapActivity(String activityName, Bundle bundle) {
 
         switch (activityName){
-            case "MainActivity":
-                Intent newActivity = new Intent(this, MainActivity.class);
+            case "M02HomeActivity":
+                Intent newActivity = new Intent(this, M02HomeActivity.class);
                 startActivity(newActivity);
                 break;
 
         }
-
 
     }
 

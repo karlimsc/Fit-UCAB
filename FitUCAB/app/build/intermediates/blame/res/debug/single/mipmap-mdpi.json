@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
         "source": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
@@ -22,5 +23,13 @@
     {
         "merged": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_launcher_round.png",
         "source": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+=======
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher_round.png",
+        "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+>>>>>>> Develop
     }
 ]

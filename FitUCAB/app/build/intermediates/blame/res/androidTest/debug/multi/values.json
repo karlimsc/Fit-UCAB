@@ -1,6 +1,10 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "C:\\Users\\Andy\\Documents\\GIT-FIT\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+=======
+        "outputFile": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+>>>>>>> Develop
         "map": [
             {
                 "to": {
@@ -11,6 +15,7 @@
                     "endOffset": 96
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Andy\\.android\\build-cache\\8959429632a53ffb1effebfb3c97ed06b7df398f\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
@@ -60,6 +65,9 @@
                 },
                 "from": {
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\023ed11b58293be0ac76aa66da5e4d7af4aa672f\\output\\res\\values\\values.xml",
+=======
+                    "file": "/root/.android/build-cache/8291114f0b3a3ccd091a37ee0e30e8d1af53913a/output/res/values/values.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

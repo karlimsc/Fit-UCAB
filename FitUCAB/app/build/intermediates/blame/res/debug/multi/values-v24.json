@@ -1,6 +1,10 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+=======
+        "outputFile": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+>>>>>>> Develop
         "map": [
             {
                 "to": {
@@ -11,7 +15,11 @@
                     "endOffset": 207
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v24/values-v24.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +38,11 @@
                     "endOffset": 342
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v24/values-v24.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +61,11 @@
                     "endOffset": 411
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v24/values-v24.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +84,11 @@
                     "endOffset": 475
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v24/values-v24.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -87,7 +107,11 @@
                     "endOffset": 544
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v24/values-v24.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -106,6 +130,7 @@
                     "endOffset": 614
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v24\\values-v24.xml",
                     "position": {
                         "startLine": 7,
@@ -345,6 +370,9 @@
                 },
                 "from": {
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v24\\values-v24.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v24/values-v24.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,

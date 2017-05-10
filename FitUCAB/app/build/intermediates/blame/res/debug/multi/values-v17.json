@@ -1,6 +1,10 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "C:\\Users\\Lui\\Documents\\Mis Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+=======
+        "outputFile": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v17/values-v17.xml",
+>>>>>>> Develop
         "map": [
             {
                 "to": {
@@ -12,7 +16,11 @@
                     "endOffset": 223
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -33,7 +41,11 @@
                     "endOffset": 451
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -54,7 +66,11 @@
                     "endOffset": 609
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -75,7 +91,11 @@
                     "endOffset": 759
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -96,7 +116,11 @@
                     "endOffset": 931
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -117,7 +141,11 @@
                     "endOffset": 1159
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -138,7 +166,11 @@
                     "endOffset": 1401
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -159,7 +191,11 @@
                     "endOffset": 1572
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 26,
                         "startColumn": 4,
@@ -180,7 +216,11 @@
                     "endOffset": 1746
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
@@ -201,7 +241,11 @@
                     "endOffset": 1915
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -222,7 +266,11 @@
                     "endOffset": 2188
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 35,
                         "startColumn": 4,
@@ -243,7 +291,11 @@
                     "endOffset": 2388
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 39,
                         "startColumn": 4,
@@ -264,7 +316,11 @@
                     "endOffset": 2592
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 42,
                         "startColumn": 4,
@@ -285,6 +341,7 @@
                     "endOffset": 2921
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\Lui\\.android\\build-cache\\00fe7b962434f7e5b7f76140c3fd965ad766d162\\output\\res\\values-v17\\values-v17.xml",
                     "position": {
                         "startLine": 46,
@@ -884,6 +941,9 @@
                 },
                 "from": {
                     "file": "C:\\Users\\Andy\\.android\\build-cache\\bb7587b008b3552c121bd516937aea4848c3a2c7\\output\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/values-v17/values-v17.xml",
+>>>>>>> Develop
                     "position": {
                         "startLine": 46,
                         "startColumn": 4,

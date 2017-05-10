@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:visibility="gone"
     tools:context=".UI.Activities.MainActivity">
 
     <android.support.design.widget.AppBarLayout
@@ -16,12 +17,15 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
+            android:visibility="gone"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main"
-        android:id="@+id/include" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main"
+        android:layout_height="530dp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"

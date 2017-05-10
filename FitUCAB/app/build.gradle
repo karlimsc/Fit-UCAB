@@ -38,8 +38,12 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support:design:25.3.0'
     compile 'com.android.support:support-v4:25.3.0'
+<<<<<<< HEAD
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.sun.mail:android-mail:1.5.5'
     compile 'com.sun.mail:android-activation:1.5.5'
+=======
+    compile 'com.google.android.gms:play-services-maps:10.2.1'
+>>>>>>> Develop
     testCompile 'junit:junit:4.12'
 }
