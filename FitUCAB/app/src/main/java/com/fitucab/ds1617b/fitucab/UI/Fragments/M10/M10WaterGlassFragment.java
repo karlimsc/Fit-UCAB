@@ -68,6 +68,7 @@ public class M10WaterGlassFragment extends Fragment  {
         _view =inflater.inflate(R.layout.fragment_m10_water_glass, container, false);
 
         setupViewValues();
+        activarCalendario();
 
         sumar();
 
@@ -101,23 +102,22 @@ public class M10WaterGlassFragment extends Fragment  {
 
 
     private void activarCalendario() {
-        _EtnDate.setOnClickListener(new View.OnClickListener()
-                                    {
-                                        @Override
-                                        public void onClick(View v)
-                                        {
-                                            try {
-                                                instanciarCalendario();
-                                            }
-                                            catch (Exception e){
-                                                System.out.print(e);
-                                                _EtnDate.setText("exploto esta mierda ");
+        _EtnDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                try {
+                    instanciarCalendario();
+                }
+                catch (Exception e){
+                    System.out.print(e);
+                    _EtnDate.setText("exploto esta mierda ");
 
-                                            }
+                }
 
-                                           //
-                                        }
-                                    }
+                //
+            }
+        }
         );
     }
 
@@ -127,7 +127,7 @@ public class M10WaterGlassFragment extends Fragment  {
 
     public void instanciarCalendario(){
         // Create the DatePickerDialog instance
-        DatePickerDialog datePicker = new DatePickerDialog(getContext(), R.style.AppTheme,
+        DatePickerDialog datePicker = new DatePickerDialog(_view.getContext(), R.style.AppTheme,
                 datePickerListener,cal.get(Calendar.YEAR), cal.get(Calendar.DAY_OF_MONTH),
                 cal.get(Calendar.MONTH));
 

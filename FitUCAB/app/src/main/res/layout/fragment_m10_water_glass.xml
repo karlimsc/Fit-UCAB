@@ -17,16 +17,16 @@
         android:layout_height="227dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        app:srcCompat="@drawable/ic_water_glass"
+        android:layout_marginLeft="8dp"
 
+        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.62"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp" />
+        app:srcCompat="@drawable/ic_water_glass" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="129dp"
         android:layout_marginBottom="0dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginRight="7dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/imageButton4"
@@ -54,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="58dp"
             android:layout_alignTop="@+id/editText"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="27dp"
             android:layout_marginLeft="27dp"
             android:layout_marginRight="27dp"
             android:layout_toLeftOf="@+id/imageButton4"
@@ -66,7 +66,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="37dp"
             android:cursorVisible="false"
             android:ems="10"
 
@@ -80,7 +79,8 @@
             android:layout_width="wrap_content"
             android:layout_height="58dp"
             android:layout_alignTop="@+id/editText"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
             android:layout_marginStart="27dp"
             android:layout_toEndOf="@+id/imageButton4"
             android:layout_toRightOf="@+id/imageButton4"
