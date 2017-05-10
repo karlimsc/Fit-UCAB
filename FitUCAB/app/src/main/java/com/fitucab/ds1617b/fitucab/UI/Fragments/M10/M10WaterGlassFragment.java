@@ -45,7 +45,7 @@ public class M10WaterGlassFragment extends Fragment  {
     private ImageButton _btnLess;
     private EditText _EtnDate;
     private View _view;
-    Calendar cal = Calendar.getInstance(); // Get current date
+    private Calendar _cal;
 
 
     public M10WaterGlassFragment() {
@@ -57,10 +57,12 @@ public class M10WaterGlassFragment extends Fragment  {
     // TODO: Rename and change types and number of parameters
 
     public static M10WaterGlassFragment newInstance(String param1, String param2) {
+
         M10WaterGlassFragment fragment = new M10WaterGlassFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         return fragment;
+
     }
 
 
@@ -72,10 +74,7 @@ public class M10WaterGlassFragment extends Fragment  {
 
         setupViewValues();
         activarCalendario();
-
-        sumar();
-
-
+        sumarFecha();
 
         return _view;
 
@@ -83,27 +82,27 @@ public class M10WaterGlassFragment extends Fragment  {
 
     private void setupViewValues()
     {
+        Calendar _cal = Calendar.getInstance(); // Get current date
         _btnLess = (ImageButton) _view.findViewById(R.id.btn_m10_lessDate);
         _btnAdd = (ImageButton) _view.findViewById(R.id.btn_m10_AddDate);
         _EtnDate= (EditText) _view.findViewById(R.id.et_m10_date);
-
-
+        _EtnDate.setText(giveDate());
 
     }
 
 
-    private void sumar()
+    private void sumarFecha()
     {
         _btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-              String date =  _EtnDate.getText().toString();
-                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-                    cal.setTime(sdf.parse(date));
-                    cal.add(Calendar.DATE,1);
-                    date = sdf.format(cal.getTime());
+                    String date =  _EtnDate.getText().toString();
+                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                    _cal.setTime(sdf.parse(date));
+                    _cal.add(Calendar.DATE,1);
+                    date = sdf.format(_cal.getTime());
                     _EtnDate.setText(date.toString());
 
                 } catch (ParseException e) {
@@ -122,7 +121,8 @@ public class M10WaterGlassFragment extends Fragment  {
             public void onClick(View v)
             {
                 try {
-                    cal = Calendar.getInstance(TimeZone.getDefault());
+
+                    _cal = Calendar.getInstance(TimeZone.getDefault());
                     instanciarCalendario();
                 }
                 catch (Exception e){
@@ -138,24 +138,22 @@ public class M10WaterGlassFragment extends Fragment  {
     }
 
 
-
-
-
     public void instanciarCalendario(){
         // Create the DatePickerDialog instance
         DatePickerDialog datePicker = new DatePickerDialog(_view.getContext(), R.style.AppTheme,
-                datePickerListener,cal.get(Calendar.YEAR), cal.get(Calendar.DAY_OF_MONTH),
-                cal.get(Calendar.MONTH));
+                datePickerListener,_cal.get(Calendar.YEAR), _cal.get(Calendar.DAY_OF_MONTH),
+                _cal.get(Calendar.MONTH));
 
         datePicker.setCancelable(false);
         datePicker.setTitle("Select the date");
         datePicker.show();
     }
 
-
-
-
-
+    public String giveDate() {
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        return sdf.format(cal.getTime());
+    }
 
     private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
 
@@ -168,10 +166,8 @@ public class M10WaterGlassFragment extends Fragment  {
             _EtnDate.setText(day1 + "/" + month1 + "/" + year1);
 
         }
+
     };
-
-
-
 
     @Override
     public void onAttach(Context context) {
@@ -189,9 +185,6 @@ public class M10WaterGlassFragment extends Fragment  {
         super.onDetach();
         mListener = null;
     }
-
-
-
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
