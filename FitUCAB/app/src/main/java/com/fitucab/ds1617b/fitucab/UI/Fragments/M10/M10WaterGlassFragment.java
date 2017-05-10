@@ -23,7 +23,10 @@ import android.widget.ImageButton;
 
 import com.fitucab.ds1617b.fitucab.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.TimeZone;
 
 /**
@@ -42,7 +45,7 @@ public class M10WaterGlassFragment extends Fragment  {
     private ImageButton _btnLess;
     private EditText _EtnDate;
     private View _view;
-    Calendar cal = Calendar.getInstance(TimeZone.getDefault()); // Get current date
+    Calendar cal = Calendar.getInstance(); // Get current date
 
 
     public M10WaterGlassFragment() {
@@ -94,7 +97,19 @@ public class M10WaterGlassFragment extends Fragment  {
         _btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                _EtnDate.setText("mierda ");
+                try {
+              String date =  _EtnDate.getText().toString();
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+                    cal.setTime(sdf.parse(date));
+                    cal.add(Calendar.DATE,1);
+                    date = sdf.format(cal.getTime());
+                    _EtnDate.setText(date.toString());
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
 
             }
         });
@@ -107,11 +122,12 @@ public class M10WaterGlassFragment extends Fragment  {
             public void onClick(View v)
             {
                 try {
+                    cal = Calendar.getInstance(TimeZone.getDefault());
                     instanciarCalendario();
                 }
                 catch (Exception e){
                     System.out.print(e);
-                    _EtnDate.setText("exploto esta mierda ");
+
 
                 }
 

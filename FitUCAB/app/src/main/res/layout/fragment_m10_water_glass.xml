@@ -68,7 +68,7 @@
             android:layout_centerHorizontal="true"
             android:cursorVisible="false"
             android:ems="10"
-
+            android:textAlignment="center"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:inputType="date"
@@ -85,6 +85,7 @@
             android:layout_toEndOf="@+id/imageButton4"
             android:layout_toRightOf="@+id/imageButton4"
             android:contentDescription=""
+
             app:srcCompat="@drawable/ic_btn_adelante"
             tools:ignore="ObsoleteLayoutParam" />
 
