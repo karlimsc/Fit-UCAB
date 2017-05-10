@@ -4,7 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    tools:context=".UI.Fragments.M10.M10WaterGlassFragment">
+    tools:context=".UI.Fragments.M10.M10WaterGlassFragment"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -17,44 +19,64 @@
         android:layout_centerVertical="true"
         app:srcCompat="@drawable/ic_water_glass"
 
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.62"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp" />
 
-        />
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_begin="20dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="20dp" />
 
     <LinearLayout
-        android:layout_width="395dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
         android:layout_height="129dp"
-        android:orientation="horizontal"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="15dp"
         android:gravity="center"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="62dp"
-        >
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+        app:layout_constraintRight_toRightOf="parent">
 
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/btn_m10_lessDate"
             android:layout_width="wrap_content"
             android:layout_height="58dp"
             android:layout_alignTop="@+id/editText"
             android:layout_marginEnd="30dp"
-            android:layout_marginRight="27dp"
             android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
             android:layout_toLeftOf="@+id/imageButton4"
-            app:srcCompat="@drawable/ic_btn_atras" />
+            app:srcCompat="@drawable/ic_btn_atras"
+            tools:ignore="ObsoleteLayoutParam,RtlHardcoded" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/et_m10_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/imageButton4"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="37dp"
+            android:cursorVisible="false"
             android:ems="10"
-            android:inputType="date" />
+
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="date"
+            tools:ignore="ObsoleteLayoutParam" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
+            android:id="@+id/btn_m10_AddDate"
             android:layout_width="wrap_content"
             android:layout_height="58dp"
             android:layout_alignTop="@+id/editText"
@@ -62,7 +84,9 @@
             android:layout_marginStart="27dp"
             android:layout_toEndOf="@+id/imageButton4"
             android:layout_toRightOf="@+id/imageButton4"
-            app:srcCompat="@drawable/ic_btn_adelante" />
+            android:contentDescription=""
+            app:srcCompat="@drawable/ic_btn_adelante"
+            tools:ignore="ObsoleteLayoutParam" />
 
 
     </LinearLayout>

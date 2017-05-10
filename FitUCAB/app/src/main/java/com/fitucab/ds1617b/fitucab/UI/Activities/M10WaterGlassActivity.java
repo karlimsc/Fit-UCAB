@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10WaterGlassFragment;
 
 public class M10WaterGlassActivity extends AppCompatActivity {
 
@@ -38,9 +39,11 @@ public class M10WaterGlassActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_m10_home);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -114,8 +117,12 @@ public class M10WaterGlassActivity extends AppCompatActivity {
 
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+            //me cago en tu mierda deja esto asi y despues te explico
+             M10WaterGlassFragment m10 = new M10WaterGlassFragment();
+
+
             if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
-                View rootView = inflater.inflate(R.layout.fragment_m10_water_glass, container, false);
+                View rootView = m10.onCreateView(inflater,container,null);
                 return rootView;
             }
 
