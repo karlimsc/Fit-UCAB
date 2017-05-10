@@ -46,6 +46,8 @@ public class M10WaterGlassFragment extends Fragment  {
     private EditText _EtnDate;
     private View _view;
     private Calendar _cal;
+    private String _date;
+    private SimpleDateFormat _sdf;
 
 
     public M10WaterGlassFragment() {
@@ -74,7 +76,12 @@ public class M10WaterGlassFragment extends Fragment  {
 
         setupViewValues();
         activarCalendario();
-        sumarFecha();
+        addDate();
+        lessDate();
+
+
+
+
 
         return _view;
 
@@ -82,28 +89,51 @@ public class M10WaterGlassFragment extends Fragment  {
 
     private void setupViewValues()
     {
-        Calendar _cal = Calendar.getInstance(); // Get current date
         _btnLess = (ImageButton) _view.findViewById(R.id.btn_m10_lessDate);
         _btnAdd = (ImageButton) _view.findViewById(R.id.btn_m10_AddDate);
         _EtnDate= (EditText) _view.findViewById(R.id.et_m10_date);
-        _EtnDate.setText(giveDate());
+        _sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+
 
     }
 
 
-    private void sumarFecha()
+    private void addDate()
     {
         _btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
+                 _date =  _EtnDate.getText().toString();
 
-                    String date =  _EtnDate.getText().toString();
-                    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                    _cal.setTime(sdf.parse(date));
+
+                    _cal.setTime(_sdf.parse(_date));
                     _cal.add(Calendar.DATE,1);
-                    date = sdf.format(_cal.getTime());
-                    _EtnDate.setText(date.toString());
+                    _date = _sdf.format(_cal.getTime());
+                    _EtnDate.setText(_date.toString());
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+    }
+
+    private void lessDate()
+    {
+        _btnLess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                     _date =  _EtnDate.getText().toString();
+
+                    _cal.setTime(_sdf.parse(_date));
+                    _cal.add(Calendar.DATE,-1);
+                    _date = _sdf.format(_cal.getTime());
+                    _EtnDate.setText(_date.toString());
 
                 } catch (ParseException e) {
                     e.printStackTrace();
@@ -121,7 +151,6 @@ public class M10WaterGlassFragment extends Fragment  {
             public void onClick(View v)
             {
                 try {
-
                     _cal = Calendar.getInstance(TimeZone.getDefault());
                     instanciarCalendario();
                 }
