@@ -47,6 +47,7 @@ public class M10WaterGlassActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the two
         // primary sections of the activity.
+
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
@@ -62,7 +63,7 @@ public class M10WaterGlassActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_m10_water_glass, menu);
+        getMenuInflater().inflate(R.menu.m02_perfil_home, menu);
         return true;
     }
 
@@ -106,13 +107,29 @@ public class M10WaterGlassActivity extends AppCompatActivity {
             return fragment;
         }
 
+
         @Override
+
+
+
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_m10_water_glass, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-            return rootView;
+            if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
+                View rootView = inflater.inflate(R.layout.fragment_m05_track_activity, container, false);
+                return rootView;
+            }
+
+            else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2){
+                View rootView = inflater.inflate(R.layout.fragment_m05_log_activity, container, false);;
+                return rootView;
+            }
+
+            else{
+                View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+                TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+                textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+                return rootView;
+            }
         }
     }
 

@@ -39,6 +39,7 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
     @Override
     public void onSwap(String fragmentName, Bundle bundle) {
         //Declaramos un Fragmento nulo (al que vamos a cambiar)
+
         Fragment fragmentToSwap = null;
         FragmentTransaction fragmentTransaction = FM.beginTransaction();
 
