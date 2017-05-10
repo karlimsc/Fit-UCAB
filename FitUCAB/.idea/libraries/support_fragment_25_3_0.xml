@@ -1,26 +1,12 @@
-<<<<<<< HEAD
 <component name="libraryTable">
   <library name="support-fragment-25.3.0">
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/e0f70592e357b19b17050c981bd18fcf125ffa12/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/e0f70592e357b19b17050c981bd18fcf125ffa12/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/8ac8e114039eb7f73aa37e9dacd8d21339f04eea/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/8ac8e114039eb7f73aa37e9dacd8d21339f04eea/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
       <root url="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-fragment/25.3.0/support-fragment-25.3.0-sources.jar!/" />
     </SOURCES>
   </library>
-=======
-<component name="libraryTable">
-  <library name="support-fragment-25.3.0">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/114c7b77c425269547cc9362efa6148f90010893/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/114c7b77c425269547cc9362efa6148f90010893/output/res" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/support-fragment/25.3.0/support-fragment-25.3.0-sources.jar!/" />
-    </SOURCES>
-  </library>
->>>>>>> Develop
 </component>

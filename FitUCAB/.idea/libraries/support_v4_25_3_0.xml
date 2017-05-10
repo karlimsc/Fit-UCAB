@@ -1,22 +1,10 @@
-<<<<<<< HEAD
 <component name="libraryTable">
   <library name="support-v4-25.3.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/e9af4fab86a7c3b72c8c5a4e40866be2b281e78e/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/e9af4fab86a7c3b72c8c5a4e40866be2b281e78e/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/d7b3133d19964100339a357fd7cf231b00c0e71f/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/d7b3133d19964100339a357fd7cf231b00c0e71f/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
   </library>
-=======
-<component name="libraryTable">
-  <library name="support-v4-25.3.0">
-    <CLASSES>
-      <root url="jar://$USER_HOME$/.android/build-cache/9619af34af9eb95f9a341656e1e96c96a98b17d3/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/9619af34af9eb95f9a341656e1e96c96a98b17d3/output/res" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
->>>>>>> Develop
 </component>

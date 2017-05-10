@@ -41,7 +41,7 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
 
 =======
         onSwap("M01HomeFragment",null);
->>>>>>> Develop
+
     }
 
     //cambiar fragment
