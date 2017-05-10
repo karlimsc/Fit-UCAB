@@ -115,19 +115,17 @@ public class M10WaterGlassActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
-                View rootView = inflater.inflate(R.layout.fragment_m05_track_activity, container, false);
+                View rootView = inflater.inflate(R.layout.fragment_m10_water_glass, container, false);
                 return rootView;
             }
 
             else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2){
-                View rootView = inflater.inflate(R.layout.fragment_m05_log_activity, container, false);;
+                View rootView = inflater.inflate(R.layout.fragment_m10_histoy, container, false);;
                 return rootView;
             }
 
             else{
                 View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-                TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-                textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
                 return rootView;
             }
         }

@@ -1,34 +1,71 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     tools:context=".UI.Fragments.M10.M10WaterGlassFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="227dp"
+        android:layout_height="227dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        app:srcCompat="@drawable/ic_water_glass"
+
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="200dp"
+
+        />
+
+    <LinearLayout
+        android:layout_width="395dp"
+        android:layout_height="129dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="62dp"
+        >
+
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/imageButton5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/water_glass" />
+            android:layout_height="58dp"
+            android:layout_alignTop="@+id/editText"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="27dp"
+            android:layout_marginLeft="27dp"
+            android:layout_toLeftOf="@+id/imageButton4"
+            app:srcCompat="@drawable/ic_btn_atras" />
 
         <EditText
             android:id="@+id/editText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_above="@+id/imageButton4"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="45dp"
+            android:layout_marginBottom="37dp"
             android:ems="10"
             android:inputType="date" />
 
-    </RelativeLayout>
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="58dp"
+            android:layout_alignTop="@+id/editText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="27dp"
+            android:layout_toEndOf="@+id/imageButton4"
+            android:layout_toRightOf="@+id/imageButton4"
+            app:srcCompat="@drawable/ic_btn_adelante" />
 
-</FrameLayout>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
