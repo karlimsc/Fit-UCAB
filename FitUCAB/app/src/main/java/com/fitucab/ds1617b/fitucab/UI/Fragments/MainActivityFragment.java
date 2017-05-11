@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.fitucab.ds1617b.fitucab.R;
-import com.fitucab.ds1617b.fitucab.UI.Font.FontChangeCrawler;
 
 /**
  * A placeholder fragment containing a simple view.
