@@ -47,7 +47,7 @@ public class M10WaterGlassFragment extends Fragment  {
     private View _view;
     private Calendar _cal;
     private String _date;
-    private SimpleDateFormat _sdf;
+    private SimpleDateFormat _sdf =new SimpleDateFormat("dd/MM/yyyy");
 
 
     public M10WaterGlassFragment() {
@@ -88,7 +88,7 @@ public class M10WaterGlassFragment extends Fragment  {
         _btnLess = (ImageButton) _view.findViewById(R.id.btn_m10_lessDate);
         _btnAdd = (ImageButton) _view.findViewById(R.id.btn_m10_AddDate);
         _EtnDate= (EditText) _view.findViewById(R.id.et_m10_date);
-        _EtnDate.setText(giveDate());
+       _EtnDate.setText(giveDate() );
 
 
 
@@ -106,15 +106,22 @@ public class M10WaterGlassFragment extends Fragment  {
             @Override
             public void onClick(View v) {
                 try {
-                 _date =  _EtnDate.getText().toString();
+
+                        _date =  _EtnDate.getText().toString();
+
+                        _cal.setTime(_sdf.parse(_date));
+
+                        _cal.add(Calendar.DATE, 1);
+                        _date = _sdf.format(_cal.getTime());
+                        _EtnDate.setText(_date.toString());
 
 
-                    _cal.setTime(_sdf.parse(_date));
-                    _cal.add(Calendar.DATE,1);
-                    _date = _sdf.format(_cal.getTime());
-                    _EtnDate.setText(_date.toString());
 
                 } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                catch (Exception e)
+                {
                     e.printStackTrace();
                 }
 
@@ -136,6 +143,10 @@ public class M10WaterGlassFragment extends Fragment  {
                     _EtnDate.setText(_date.toString());
 
                 } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                catch (Exception e)
+                {
                     e.printStackTrace();
                 }
 
@@ -182,7 +193,9 @@ public class M10WaterGlassFragment extends Fragment  {
     public String giveDate() {
         Calendar ab = Calendar.getInstance();
         SimpleDateFormat a = new SimpleDateFormat("dd/MM/yyyy");
-        return a.format(ab.getTime());
+
+      // _EtnDate.setText(ab.get(Calendar.DATE)+"/"+ab.get(Calendar.DAY_OF_MONTH)+"/"+ab.get(Calendar.YEAR));
+        return  ab.get(Calendar.DATE)+"/"+ab.get(Calendar.DAY_OF_MONTH)+"/"+ab.get(Calendar.YEAR);
     }
 
     private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
