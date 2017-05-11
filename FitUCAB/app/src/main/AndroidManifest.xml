@@ -34,7 +34,7 @@
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity 
-        	android:name=".UI.Activities.activity_notificacion"
+        	android:name=".UI.Activities.M04ActivityNotification"
          	android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".UI.Activities.M05ReadExerciseActivity"
