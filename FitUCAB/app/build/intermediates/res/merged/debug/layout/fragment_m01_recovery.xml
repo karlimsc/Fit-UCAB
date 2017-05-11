@@ -67,13 +67,15 @@
             android:layout_marginTop="20dp"
             android:layout_weight="5"
             android:background="@color/colorBtnConfirmar"
+            android:fontFamily="sans-serif"
             android:text="@string/btn_m01_enviarCorreo"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
             android:textSize="18sp"
-            android:textStyle="bold"
             android:typeface="sans" />
+
+
 
     </LinearLayout>
 

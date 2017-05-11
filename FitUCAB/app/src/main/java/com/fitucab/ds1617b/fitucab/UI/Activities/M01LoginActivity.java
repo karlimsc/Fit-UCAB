@@ -1,12 +1,16 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
-
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.PasswordTransformationMethod;
+import android.view.ViewGroup;
+import android.widget.EditText;
+
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01HomeFragment;
@@ -26,15 +30,16 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
         //Declaracion del Toolbar. si alguien necesita acceder al toolbar en un Fragment
         //debe declarar este atributo como privado y hacerle un Getter.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
-
         //Seleccionamos el fragmento que queremos mostrar.
         onSwap("M01HomeFragment",null);
+
+
     }
 
     /**

@@ -67,13 +67,12 @@
                     android:layout_marginTop="20dp"
                     android:layout_weight="2"
                     android:ems="10"
-                    android:fontFamily="cursive"
                     android:hint="@string/et_m01_passwordRegistro"
                     android:inputType="textPassword"
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
                     android:textSize="18sp"
-                    android:typeface="serif" />
+                    android:typeface="sans" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout

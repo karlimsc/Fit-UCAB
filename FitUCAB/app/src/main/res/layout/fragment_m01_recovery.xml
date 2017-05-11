@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif"
         android:text="@string/tv_m01_recuperacionContra"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
@@ -51,6 +52,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_weight="5"
                 android:ems="10"
+                android:fontFamily="sans-serif"
                 android:hint="@string/et_m01_correoRecovery"
                 android:inputType="textPersonName"
                 android:maxLength="20"
@@ -67,13 +69,15 @@
             android:layout_marginTop="20dp"
             android:layout_weight="5"
             android:background="@color/colorBtnConfirmar"
+            android:fontFamily="sans-serif"
             android:text="@string/btn_m01_enviarCorreo"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
             android:textSize="18sp"
-            android:textStyle="bold"
             android:typeface="sans" />
+
+
 
     </LinearLayout>
 

@@ -2,12 +2,15 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
@@ -60,6 +63,7 @@ public class M01HomeFragment extends Fragment {
         setupViewValues();
         manageChangeFragmentLogin();
         manageChangeFragmentSignUp();
+
         return _view;
     }
 
