@@ -12,11 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-<<<<<<< HEAD
-=======
         <!-- ACTIVITIES MODULO 1 NO MODIFICAR EL CONTENIDO INTERNO -->
 
->>>>>>> Develop
         <activity
             android:name=".UI.Activities.M01LoginActivity"
             android:label="@string/app_name"
@@ -35,12 +32,10 @@
         <activity
             android:name=".UI.Activities.MainActivity"
             android:label="@string/title_activity_main"
-<<<<<<< HEAD
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".UI.Activities.activity_notificacion">
-
-=======
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity 
+        	android:name=".UI.Activities.activity_notificacion"
+         	android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".UI.Activities.M05ReadExerciseActivity"
             android:label="Track Exercise"
@@ -53,7 +48,6 @@
             <!-- <action android:name="android.intent.action.MAIN" /> -->
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
->>>>>>> Develop
         </activity>
     </application>
 

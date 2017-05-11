@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< HEAD
     <string name="app_name">FitUCAB</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
 
-    <!--Inicio Strings Modulo 1 -->
-    <string name="btn_m01_comienza">Start</string>
-    <string name="btn_m01_iniciaSesion">Log in</string>
-    <!--Final Strings Modulo 1 -->
 
     <!--Inicio Strings Modulo 4 -->
     <string name="amigo">Friends</string>
@@ -28,9 +23,7 @@
     <string name="str_es">Español</string>
     <string name="lang_btn">Language</string>
 
-=======
     <!--Inicio Strings Modulo 1 -->
-    <string name="app_name">Fit UCAB</string>
     <string name="btn_m01_enviarCorreo">Send Email</string>
     <string name="btn_m01_iniciaSesion">Login</string>
     <string name="et_m01_correoRegistro">Email</string>
@@ -74,5 +67,4 @@
     <string name="et_m02_Steps">Steps</string>
 
     <!--FIN Strings Modulo 2 -->
->>>>>>> Develop
 </resources>

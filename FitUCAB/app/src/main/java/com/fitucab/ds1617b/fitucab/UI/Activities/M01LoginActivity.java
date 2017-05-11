@@ -35,11 +35,9 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
         startActivity(newActivity);
 
         //Seleccionamos el fragmento que queremos mostrar.
-<<<<<<< HEAD
        // onSwap("M01HomeFragment",null);
 
 
-=======
         onSwap("M01HomeFragment",null);
 
     }

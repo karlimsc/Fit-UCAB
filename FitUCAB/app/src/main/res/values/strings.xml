@@ -1,5 +1,4 @@
 <resources>
-<<<<<<< HEAD
     <string name="app_name">FitUCAB</string>
     <string name="action_settings">Ajustes</string>
     <string name="title_activity_main">MainActivity</string>
@@ -10,10 +9,6 @@
         <item>@string/str_en</item>
         <item>@string/str_es</item>
     </string-array>
-    <!--Inicio Strings Modulo 1 -->
-    <string name="btn_m01_comienza">Comienza</string>
-    <string name="btn_m01_iniciaSesion">Inicia Sesion</string>
-    <!--Final Strings Modulo 1 -->
 
     <!--Inicio Strings Modulo 4 -->
     <string name="amigo">Amigos</string> <!-- opcion de amigo al enviar correo -->
@@ -26,10 +21,6 @@
     <string name="SI">SI</string> <!--  -->
     <string name="NO">NO</string> <!-- -->
     <!--Final Strings Modulo 4 -->
-=======
-    <string name="app_name">Fit UCAB</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
 
     <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_comienza">Comienza</string>
@@ -73,20 +64,14 @@
     <string name="et_m02_location">Locación</string>
     <string name="et_m02_water">Vasos de Agua</string>
     <string name="et_m02_Steps">Nro de Pasos</string>
->>>>>>> Develop
 
     <!--FIN Strings Modulo 2 -->
     <!-- TODO: Remove or change this placeholder text -->
-<<<<<<< HEAD
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lang_btn">Idioma</string>
-=======
     <string name="hello_blank_fragment">Home</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_m02_home">M02HomeActivity</string>
-
->>>>>>> Develop
 
 </resources>
