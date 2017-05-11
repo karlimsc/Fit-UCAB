@@ -15,6 +15,9 @@
     <string name="gamificacion">Gamification</string>
     <string name="SI">YES</string> <!-- -->
     <string name="NO">NO</string> <!-- -->
+    <string name="ajustes">Settings</string>
+    <string name="enviar">Send</string><!-- Este es solo de ejemplo, no va en app final-->
+    <string name="guardar">Save</string>
     <!--Final Strings Modulo 4 -->
 
     <!-- TODO: Remove or change this placeholder text -->

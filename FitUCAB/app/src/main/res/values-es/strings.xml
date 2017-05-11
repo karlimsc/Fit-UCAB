@@ -16,4 +16,7 @@
     <string name="amigo">Calorias</string>
     <string name="lang_btn">Idioma</string>
     <string name="gamificacion">Gamificacion</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="enviar">Enviar</string><!-- Este es solo de ejemplo, no va en app final-->
+    <string name="guardar">Guardar</string>
 </resources>
