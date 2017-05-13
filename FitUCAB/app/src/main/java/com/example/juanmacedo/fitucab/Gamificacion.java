@@ -43,13 +43,10 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
                 Log.d("DATOOO", (String) item.getText());
 
                 FragmentManager fragmentManager = getSupportFragmentManager();
-
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
-
                 Logros fragment = new Logros();
                 fragment.setArguments(bundle);
                 transaction.add(R.id.gamificacion, fragment);
-
                 transaction.commit();
 
             }
@@ -63,13 +60,9 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-
         Logros fragment = new Logros();
-
         transaction.add(R.id.gamificacion, fragment);
-
         transaction.commit();
 
     }

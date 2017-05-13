@@ -6,12 +6,12 @@
     android:background="#FFFFFF"
     android:name="Fit-UCAB"
     android:weightSum="1"
-    android:id="@+id/gamificacion">
+    android:id="@+id/main">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
         android:layout_width="96dp"
-        android:layout_height="96dp"
+        android:layout_height="66dp"
         android:layout_gravity="center"
         android:layout_centerHorizontal="true"
         android:src="@drawable/user2"
@@ -27,8 +27,8 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:text="Nombre: "
-        android:textColor="#000000"
-        android:textSize="14sp"
+        android:textColor="#353535"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <TextView
@@ -40,8 +40,8 @@
         android:layout_below="@+id/tv_nombreLabel"
         android:layout_gravity="center"
         android:text="Nivel: "
-        android:textColor="#000000"
-        android:textSize="12sp" />
+        android:textColor="#353535"
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/tv_puntos"
@@ -52,8 +52,8 @@
         android:layout_below="@+id/tv_nivelLabel"
         android:layout_gravity="center"
         android:text="3.252 puntos "
-        android:textColor="#000000"
-        android:textSize="12sp" />
+        android:textColor="#353535"
+        android:textSize="18dp" />
 
     <TextView
         android:id="@+id/line"
@@ -74,6 +74,14 @@
         android:dividerHeight="2.0dp"
         android:layout_below="@+id/line"
         android:layout_weight="4.97" />
+
+    <LinearLayout
+        android:id="@+id/gamificacion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+    </LinearLayout>
 
 
 </LinearLayout>

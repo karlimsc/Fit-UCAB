@@ -22,7 +22,7 @@
         android:paddingTop="6dp"
         android:text="Logro: "
         android:textColor="#000000"
-        android:textSize="14sp" />
+        android:textSize="20dp" />
 
     <TextView
         android:id="@+id/tv_logro"
@@ -39,15 +39,15 @@
         android:id="@+id/tv_descripcion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_logroLabel"
+        android:layout_toEndOf="@+id/i_copa"
+        android:layout_toRightOf="@+id/i_copa"
         android:fontFamily="monospace"
         android:paddingTop="6dp"
         android:text="Descripcion:"
-        android:textColor="#000000"
-        android:textSize="12sp"
-        android:textStyle="italic"
-        android:layout_below="@+id/tv_logroLabel"
-        android:layout_toRightOf="@+id/i_copa"
-        android:layout_toEndOf="@+id/i_copa" />
+        android:textColor="#353535"
+        android:textSize="18dp"
+        android:textStyle="italic" />
 
 
 
