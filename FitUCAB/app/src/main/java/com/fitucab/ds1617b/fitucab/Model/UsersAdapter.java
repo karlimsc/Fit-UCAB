@@ -12,79 +12,68 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.Fragment_Amigos;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.Fragment_Cerca_De_Mi;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.Fragment_Libreta;
 
 import java.util.ArrayList;
 
 import static android.R.attr.resource;
 
-public class UsersAdapter extends ArrayAdapter<User> {
-
-    ArrayList<User> usersList;
-    LayoutInflater vi;
-    int Resource1;
-    int Resource2;
-    ViewHolder holder;
-
-    public UsersAdapter(Context context, ArrayList<User> users) {
-
-        super(context, 0, users);
-
-        vi = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        Resource1 = resource;
-        Resource2 = resource;
-        usersList = users;
+public class UsersAdapter extends ArrayAdapter<ArrayAuxiliar> {
+    public UsersAdapter(Context context, ArrayList<ArrayAuxiliar> items) {
+        super(context, 0, items);
     }
-
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-
-        View v = convertView;
-
-        if (v == null) {
-            holder = new ViewHolder();
-            if (position == 0){
-                v = vi.inflate(R.layout.Separador_M03_con, null);
-            }
-            else{
-                v = vi.inflate(R.layout.list_item, null);
-                holder.imageview = (ImageView) v.findViewById(R.id.thumb);
-                holder.tvName = (TextView) v.findViewById(R.id.title);
-
-            }
-
-            v.setTag(holder);
-        } else {
-            holder = (ViewHolder) v.getTag();
-        }
-        holder.imageview.setImageResource(R.drawable.ic_launcher);
-        Picasso.with(getContext()).load(actorList.get(position).getImage()).into(holder.imageview);
-        String postTitle = actorList.get(position).getName();
-        Spanned deTitle = Html.fromHtml(Html.fromHtml((String) postTitle).toString());
-        holder.tvName.setText(String.valueOf(deTitle));
-
-        return v;
-
+    public int getViewTypeCount(){
+        return 4;
     }
 
+    @Override
+    public int getItemViewType(int position){
+        if (getItem(position).get_type() == 0){
+            return 0;
+        }
+        else if (getItem(position).get_type() == 1){
+            return 1;
+        }
+        else if (getItem(position).get_type() == 2){
+            return 2;
+        }
+        else if (getItem(position).get_type() == 3){
+            return 3;
+        }
+        return 0;
+    }
 
-/*
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        User user = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
+        ArrayAuxiliar item = getItem(position);
+        int type = getItemViewType(position);
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_list_M03, parent, false);
+            if(type == 0){
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.contact_with_m03, parent, false);
+            }
+            else if(type == 1){
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.contacts_without_m03, parent, false);
+            }
+            else if(type == 2){
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.separator_with_m03, parent, false);
+            }
+            else if(type == 3){
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.separator_without_m03, parent, false);
+            }
         }
+
         // Lookup view for data population
         TextView tvName = (TextView) convertView.findViewById(R.id.nombre);
         TextView tvHome = (TextView) convertView.findViewById(R.id.puntaje);
         // Populate the data into the template view using the data object
-        tvName.setText(user.getNombre());
-        tvHome.setText(Integer.toString(user.getPuntaje()));
+        tvName.setText(item.get_nombre());
+        tvHome.setText(Integer.toString(item.get_puntaje()));
         // Return the completed view to render on screen
         return convertView;
-    }*/
+    }
 }

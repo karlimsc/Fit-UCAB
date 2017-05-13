@@ -12,26 +12,26 @@
         android:layout_height="match_parent">
 
         <ImageButton
-            android:background="@color/colorWhite"
+            android:background="@color/white"
             android:id="@+id/imageButton2"
             android:layout_width="35dp"
             android:layout_height="31dp"
             android:layout_alignParentTop="true"
             android:layout_toLeftOf="@+id/imageButton"
-            app:srcCompat="@drawable/ic_compartir"
+            app:srcCompat="@drawable/ic_share"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="11dp"
             android:layout_marginLeft="289dp"
             app:layout_constraintLeft_toLeftOf="parent" />
 
         <ImageButton
-            android:background="@color/colorWhite"
+            android:background="@color/white"
             android:id="@+id/imageButton"
             android:layout_width="35dp"
             android:layout_height="31dp"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            app:srcCompat="@drawable/ic_eliminar"
+            app:srcCompat="@drawable/ic_delete"
             app:layout_constraintLeft_toRightOf="@+id/imageButton2"
             android:layout_marginLeft="11dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -48,7 +48,7 @@
             android:cropToPadding="false"
             android:maxHeight="35dp"
             android:maxWidth="74dp"
-            android:src="@drawable/ic_face_black_24dp"
+            android:src="@drawable/ic_face"
             app:layout_constraintLeft_toLeftOf="parent"
             android:layout_marginLeft="5dp"
             app:layout_constraintTop_toTopOf="parent"

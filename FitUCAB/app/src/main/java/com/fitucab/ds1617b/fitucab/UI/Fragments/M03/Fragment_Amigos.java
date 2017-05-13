@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.fitucab.ds1617b.fitucab.Model.ArrayAuxiliar;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.Model.UsersAdapter;
 import com.fitucab.ds1617b.fitucab.R;
@@ -23,16 +24,16 @@ public class Fragment_Amigos extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_M03_amigos, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_m03_friends, container, false);
 
-        ArrayList<User> arrayOfUsers = new ArrayList<User>();
+        ArrayList<ArrayAuxiliar> arrayOfUsers = new ArrayList<ArrayAuxiliar>();
         UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-        ListView listView = (ListView) rootView.findViewById(R.id.listaAmigos);
+        ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
         listView.setAdapter(adapter);
-        ArrayList<User> usuarios = new ArrayList<User>();
-        usuarios.add(new User("Pedro Perez", 650));
-        usuarios.add(new User("Andres Rodriguez", 200));
-        usuarios.add(new User("Ernesto Lara", 1630));
+        ArrayList<ArrayAuxiliar> usuarios = new ArrayList<ArrayAuxiliar>();
+        usuarios.add(new ArrayAuxiliar("Pedro Perez", 650,0));
+        usuarios.add(new ArrayAuxiliar("Andres Rodriguez", 200,0));
+        usuarios.add(new ArrayAuxiliar("Ernesto Lara", 1630,0));
         adapter.addAll(usuarios);
 
         return rootView;
