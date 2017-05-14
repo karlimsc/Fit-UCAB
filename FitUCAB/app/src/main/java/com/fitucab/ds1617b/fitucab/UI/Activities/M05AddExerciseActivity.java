@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05LogActivityFragment;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05LogExerciseFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05TrackActivityFragment;
 
 public class M05AddExerciseActivity extends AppCompatActivity implements OnFragmentSwap{
@@ -36,11 +36,15 @@ public class M05AddExerciseActivity extends AppCompatActivity implements OnFragm
 
     public void onTabSwap(FragmentTabHost mTabHost){
 
+<<<<<<< HEAD
 
         mTabHost.addTab(mTabHost.newTabSpec("track").setIndicator("TRACK ACTIVITY"),
+=======
+        mTabHost.addTab(mTabHost.newTabSpec("track").setIndicator(getResources().getString(R.string.tab_m05_track)),
+>>>>>>> 65dc6859a716fa69d5fd3503111574503b08dd66
                 M05TrackActivityFragment.class, null);
-        mTabHost.addTab(mTabHost.newTabSpec("log").setIndicator("LOG ACTIVITY"),
-                M05LogActivityFragment.class, null);
+        mTabHost.addTab(mTabHost.newTabSpec("log").setIndicator(getResources().getString(R.string.tab_m05_log)),
+                M05LogExerciseFragment.class, null);
 
     }
 
@@ -50,7 +54,7 @@ public class M05AddExerciseActivity extends AppCompatActivity implements OnFragm
         mTabHost.addTab(mTabHost.newTabSpec("track").setIndicator("TRACK ACTIVITY"),
                 M05TrackActivityFragment.class, null);
         mTabHost.addTab(mTabHost.newTabSpec("log").setIndicator("LOG ACTIVITY"),
-                M05LogActivityFragment.class, null);
+                M05LogExerciseFragment.class, null);
     }
 
     @Override

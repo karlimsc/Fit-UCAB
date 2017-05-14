@@ -85,7 +85,6 @@
     <Spinner
         android:id="@+id/spn_m05_types"
         android:layout_width="242dp"
-        android:focusable="true"
         android:layout_height="41dp"
         android:layout_alignLeft="@+id/tv_m05_startime"
         android:layout_alignStart="@+id/tv_m05_startime"
@@ -93,7 +92,9 @@
         android:layout_marginTop="23dp"
         android:layout_x="64dp"
         android:layout_y="79dp"
+        android:background="@color/common_google_signin_btn_text_dark_disabled"
         android:enabled="true"
+        android:focusable="true"
         android:fontFamily="sans-serif"
         android:typeface="sans" />
 
@@ -144,27 +145,6 @@
         android:layout_y="202dp"
         app:srcCompat="@mipmap/ic_launcher_date" />
 
-    <Button
-        android:id="@+id/btn_m05_manualregister"
-        android:layout_width="188dp"
-        android:layout_height="63dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="41dp"
-        android:layout_x="105dp"
-        android:layout_y="492dp"
-        android:width="200dp"
-        android:background="@color/colorGreenBtn"
-        android:backgroundTint="@color/colorGreenBtn"
-        android:fontFamily="sans-serif"
-        android:gravity="center"
-        android:text="@string/_btn_m05_registermanual"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:textColor="@color/colorwhite"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:typeface="sans" />
-
     <EditText
         android:id="@+id/et_m05_editduration"
         android:layout_width="271dp"
@@ -189,6 +169,27 @@
         android:text="@string/_tv_m05_titletabmanual"
         android:textColor="@color/colorwhite"
         android:textSize="20dp"
+        android:typeface="sans" />
+
+    <Button
+        android:id="@+id/btn_m05_manualregister"
+        android:layout_width="188dp"
+        android:layout_height="63dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="41dp"
+        android:layout_x="106dp"
+        android:layout_y="456dp"
+        android:width="200dp"
+        android:background="@color/colorGreenBtn"
+        android:backgroundTint="@color/colorGreenBtn"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:text="@string/_btn_m05_registermanual"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="@color/colorwhite"
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:typeface="sans" />
 
 </AbsoluteLayout>
