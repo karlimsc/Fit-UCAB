@@ -9,5 +9,17 @@ local.properties
 .externalNativeBuild
 .idea
 /app/build
+
+/FitUCAB/.gradle
+local.properties
+/FitUCAB/.idea/workspace.xml
+/FitUCAB/.idea/libraries
+/FitUCAB/.DS_Store
+/FitUCAB/build
+/FitUCAB/captures
+/FitUCAB/.externalNativeBuild
+/FitUCAB/.idea
+/FitUCAB/app/build
+
 /WebServicesFitUCAB/out/
 /WebServicesFitUCAB/.idea/
