@@ -185,7 +185,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/postgresql-42.1.1.jar!/" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -642,12 +642,12 @@
       <option name="presentableId" value="Default" />
       <updated>1494738047805</updated>
       <workItem from="1494738063597" duration="1465000" />
-      <workItem from="1494741478777" duration="220000" />
+      <workItem from="1494741478777" duration="477000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1685000" />
+    <option name="totallyTimeSpent" value="1942000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="44" width="1264" height="736" extended-state="0" />
@@ -858,7 +858,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>gson-2.3.1</last-edited>
+          <last-edited>postgresql-42.1.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
