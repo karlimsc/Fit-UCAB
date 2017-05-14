@@ -1,8 +1,6 @@
 package Domain;
 
-/**
- * Created by root on 14/05/17.
- */
+
 public class Registry {
 
     private int _idRegistry;
@@ -11,6 +9,21 @@ public class Registry {
     private int _registryPoint;
 
     public Registry(){};
+    public Registry(int idRegistry, int weight,String height,int registryPoint)
+    {
+     _idRegistry = idRegistry;
+     _weight = weight;
+     _height = height;
+     _registryPoint = registryPoint;
+    };
+
+    public Registry( int weight,String height,int registryPoint)
+    {
+
+        _weight = weight;
+        _height = height;
+        _registryPoint = registryPoint;
+    };
 
     public int getIdRegistry()
     {

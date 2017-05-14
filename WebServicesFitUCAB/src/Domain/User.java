@@ -1,8 +1,6 @@
 package Domain;
 
-/**
- * Created by root on 14/05/17.
- */
+
 public class User {
 
     private int _id;
@@ -11,9 +9,39 @@ public class User {
     private String _email;
     private String _sex;
     private String _phone;
-    private int _ingreso;
 
     public User(){};
+
+    public User(int id,String user,String password, String email,String sex,String phone)
+    {
+        _id = id;
+        _user = user;
+        _password = password;
+        _email = email;
+        _sex = sex;
+        _phone = phone;
+
+    };
+    public User(String user,String password, String email,String sex,String phone)
+    {
+
+        _user = user;
+        _password = password;
+        _email = email;
+        _sex = sex;
+        _phone = phone;
+
+    };
+    public User(String user,String password)
+    {
+        _user = user;
+        _password = password;
+    }
+    public User(String email)
+    {
+        _email= email;
+    }
+
 
     public int getId()
     {
@@ -66,13 +94,6 @@ public class User {
         this._phone=phone;
     }
 
-    public int getIngreso()
-    {
-        return _ingreso;
-    }
-    public void setIngreso(int ingreso)
-    {
-        this._ingreso = ingreso;
-    };
+
 
 }
