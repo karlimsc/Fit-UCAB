@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="postgresql-42.1.1">
+    <CLASSES>
+      <root url="jar:///home/karliana/Descargas/postgresql-42.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
