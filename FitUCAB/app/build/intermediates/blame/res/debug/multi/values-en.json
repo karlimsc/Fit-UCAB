@@ -121,8 +121,27 @@
                     "startLine": 8,
                     "startColumn": 4,
                     "startOffset": 372,
+                    "endColumn": 122,
+                    "endOffset": 490
+                },
+                "from": {
+                    "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "position": {
+                        "startLine": 54,
+                        "startColumn": 4,
+                        "startOffset": 2807,
+                        "endColumn": 122,
+                        "endOffset": 2925
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 495,
                     "endColumn": 55,
-                    "endOffset": 423
+                    "endOffset": 546
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -137,11 +156,11 @@
             },
             {
                 "to": {
-                    "startLine": 9,
+                    "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 428,
+                    "startOffset": 551,
                     "endColumn": 55,
-                    "endOffset": 479
+                    "endOffset": 602
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -156,11 +175,11 @@
             },
             {
                 "to": {
-                    "startLine": 10,
+                    "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 484,
+                    "startOffset": 607,
                     "endColumn": 50,
-                    "endOffset": 530
+                    "endOffset": 653
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -175,11 +194,11 @@
             },
             {
                 "to": {
-                    "startLine": 11,
+                    "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 535,
+                    "startOffset": 658,
                     "endColumn": 41,
-                    "endOffset": 572
+                    "endOffset": 695
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -194,11 +213,11 @@
             },
             {
                 "to": {
-                    "startLine": 12,
+                    "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 577,
+                    "startOffset": 700,
                     "endColumn": 43,
-                    "endOffset": 616
+                    "endOffset": 739
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -213,11 +232,11 @@
             },
             {
                 "to": {
-                    "startLine": 13,
+                    "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 621,
+                    "startOffset": 744,
                     "endColumn": 57,
-                    "endOffset": 674
+                    "endOffset": 797
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -232,11 +251,11 @@
             },
             {
                 "to": {
-                    "startLine": 14,
+                    "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 679,
+                    "startOffset": 802,
                     "endColumn": 60,
-                    "endOffset": 735
+                    "endOffset": 858
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -251,11 +270,11 @@
             },
             {
                 "to": {
-                    "startLine": 15,
+                    "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 740,
+                    "startOffset": 863,
                     "endColumn": 46,
-                    "endOffset": 782
+                    "endOffset": 905
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -270,11 +289,11 @@
             },
             {
                 "to": {
-                    "startLine": 16,
+                    "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 787,
+                    "startOffset": 910,
                     "endColumn": 53,
-                    "endOffset": 836
+                    "endOffset": 959
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -289,11 +308,11 @@
             },
             {
                 "to": {
-                    "startLine": 17,
+                    "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 841,
+                    "startOffset": 964,
                     "endColumn": 51,
-                    "endOffset": 888
+                    "endOffset": 1011
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -308,11 +327,11 @@
             },
             {
                 "to": {
-                    "startLine": 18,
+                    "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 893,
+                    "startOffset": 1016,
                     "endColumn": 66,
-                    "endOffset": 955
+                    "endOffset": 1078
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -327,11 +346,11 @@
             },
             {
                 "to": {
-                    "startLine": 19,
+                    "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 960,
+                    "startOffset": 1083,
                     "endColumn": 46,
-                    "endOffset": 1002
+                    "endOffset": 1125
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -346,11 +365,11 @@
             },
             {
                 "to": {
-                    "startLine": 20,
+                    "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 1007,
+                    "startOffset": 1130,
                     "endColumn": 52,
-                    "endOffset": 1055
+                    "endOffset": 1178
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -365,11 +384,11 @@
             },
             {
                 "to": {
-                    "startLine": 21,
+                    "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 1060,
+                    "startOffset": 1183,
                     "endColumn": 46,
-                    "endOffset": 1102
+                    "endOffset": 1225
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -384,11 +403,11 @@
             },
             {
                 "to": {
-                    "startLine": 22,
+                    "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 1107,
+                    "startOffset": 1230,
                     "endColumn": 48,
-                    "endOffset": 1151
+                    "endOffset": 1274
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -403,11 +422,11 @@
             },
             {
                 "to": {
-                    "startLine": 23,
+                    "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 1156,
+                    "startOffset": 1279,
                     "endColumn": 52,
-                    "endOffset": 1204
+                    "endOffset": 1327
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -422,11 +441,11 @@
             },
             {
                 "to": {
-                    "startLine": 24,
+                    "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 1209,
+                    "startOffset": 1332,
                     "endColumn": 46,
-                    "endOffset": 1251
+                    "endOffset": 1374
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -441,11 +460,11 @@
             },
             {
                 "to": {
-                    "startLine": 25,
+                    "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 1256,
+                    "startOffset": 1379,
                     "endColumn": 52,
-                    "endOffset": 1304
+                    "endOffset": 1427
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -460,11 +479,11 @@
             },
             {
                 "to": {
-                    "startLine": 26,
+                    "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 1309,
+                    "startOffset": 1432,
                     "endColumn": 46,
-                    "endOffset": 1351
+                    "endOffset": 1474
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -479,11 +498,11 @@
             },
             {
                 "to": {
-                    "startLine": 27,
+                    "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 1356,
+                    "startOffset": 1479,
                     "endColumn": 48,
-                    "endOffset": 1400
+                    "endOffset": 1523
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -498,11 +517,11 @@
             },
             {
                 "to": {
-                    "startLine": 28,
+                    "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 1405,
+                    "startOffset": 1528,
                     "endColumn": 52,
-                    "endOffset": 1453
+                    "endOffset": 1576
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -517,11 +536,11 @@
             },
             {
                 "to": {
-                    "startLine": 29,
+                    "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 1458,
+                    "startOffset": 1581,
                     "endColumn": 54,
-                    "endOffset": 1508
+                    "endOffset": 1631
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -536,11 +555,11 @@
             },
             {
                 "to": {
-                    "startLine": 30,
+                    "startLine": 31,
                     "startColumn": 4,
-                    "startOffset": 1513,
+                    "startOffset": 1636,
                     "endColumn": 49,
-                    "endOffset": 1558
+                    "endOffset": 1681
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -555,11 +574,11 @@
             },
             {
                 "to": {
-                    "startLine": 31,
+                    "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 1563,
+                    "startOffset": 1686,
                     "endColumn": 57,
-                    "endOffset": 1616
+                    "endOffset": 1739
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -574,11 +593,11 @@
             },
             {
                 "to": {
-                    "startLine": 32,
+                    "startLine": 33,
                     "startColumn": 4,
-                    "startOffset": 1621,
+                    "startOffset": 1744,
                     "endColumn": 46,
-                    "endOffset": 1663
+                    "endOffset": 1786
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -593,11 +612,49 @@
             },
             {
                 "to": {
-                    "startLine": 33,
+                    "startLine": 34,
                     "startColumn": 4,
-                    "startOffset": 1668,
+                    "startOffset": 1791,
+                    "endColumn": 163,
+                    "endOffset": 1950
+                },
+                "from": {
+                    "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "position": {
+                        "startLine": 52,
+                        "startColumn": 4,
+                        "startOffset": 2571,
+                        "endColumn": 163,
+                        "endOffset": 2730
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 35,
+                    "startColumn": 4,
+                    "startOffset": 1955,
+                    "endColumn": 71,
+                    "endOffset": 2022
+                },
+                "from": {
+                    "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "position": {
+                        "startLine": 53,
+                        "startColumn": 4,
+                        "startOffset": 2735,
+                        "endColumn": 71,
+                        "endOffset": 2802
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 36,
+                    "startColumn": 4,
+                    "startOffset": 2027,
                     "endColumn": 50,
-                    "endOffset": 1714
+                    "endOffset": 2073
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -612,11 +669,11 @@
             },
             {
                 "to": {
-                    "startLine": 34,
+                    "startLine": 37,
                     "startColumn": 4,
-                    "startOffset": 1719,
+                    "startOffset": 2078,
                     "endColumn": 49,
-                    "endOffset": 1764
+                    "endOffset": 2123
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -631,11 +688,106 @@
             },
             {
                 "to": {
-                    "startLine": 35,
+                    "startLine": 38,
                     "startColumn": 4,
-                    "startOffset": 1769,
+                    "startOffset": 2128,
+                    "endColumn": 48,
+                    "endOffset": 2172
+                },
+                "from": {
+                    "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "position": {
+                        "startLine": 55,
+                        "startColumn": 4,
+                        "startOffset": 2930,
+                        "endColumn": 48,
+                        "endOffset": 2974
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 39,
+                    "startColumn": 4,
+                    "startOffset": 2177,
+                    "endColumn": 43,
+                    "endOffset": 2216
+                },
+                "from": {
+                    "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "position": {
+                        "startLine": 48,
+                        "startColumn": 4,
+                        "startOffset": 2326,
+                        "endColumn": 43,
+                        "endOffset": 2365
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 40,
+                    "startColumn": 4,
+                    "startOffset": 2221,
+                    "endColumn": 47,
+                    "endOffset": 2264
+                },
+                "from": {
+                    "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "position": {
+                        "startLine": 49,
+                        "startColumn": 4,
+                        "startOffset": 2370,
+                        "endColumn": 47,
+                        "endOffset": 2413
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 41,
+                    "startColumn": 4,
+                    "startOffset": 2269,
+                    "endColumn": 74,
+                    "endOffset": 2339
+                },
+                "from": {
+                    "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "position": {
+                        "startLine": 50,
+                        "startColumn": 4,
+                        "startOffset": 2418,
+                        "endColumn": 74,
+                        "endOffset": 2488
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 42,
+                    "startColumn": 4,
+                    "startOffset": 2344,
+                    "endColumn": 77,
+                    "endOffset": 2417
+                },
+                "from": {
+                    "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
+                    "position": {
+                        "startLine": 51,
+                        "startColumn": 4,
+                        "startOffset": 2493,
+                        "endColumn": 77,
+                        "endOffset": 2566
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 43,
+                    "startColumn": 4,
+                    "startOffset": 2422,
                     "endColumn": 55,
-                    "endOffset": 1820
+                    "endOffset": 2473
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -650,11 +802,11 @@
             },
             {
                 "to": {
-                    "startLine": 36,
+                    "startLine": 44,
                     "startColumn": 4,
-                    "startOffset": 1825,
+                    "startOffset": 2478,
                     "endColumn": 53,
-                    "endOffset": 1874
+                    "endOffset": 2527
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -669,11 +821,11 @@
             },
             {
                 "to": {
-                    "startLine": 37,
+                    "startLine": 45,
                     "startColumn": 4,
-                    "startOffset": 1879,
+                    "startOffset": 2532,
                     "endColumn": 81,
-                    "endOffset": 1956
+                    "endOffset": 2609
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -688,11 +840,11 @@
             },
             {
                 "to": {
-                    "startLine": 38,
+                    "startLine": 46,
                     "startColumn": 4,
-                    "startOffset": 1961,
+                    "startOffset": 2614,
                     "endColumn": 68,
-                    "endOffset": 2025
+                    "endOffset": 2678
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",
@@ -707,11 +859,11 @@
             },
             {
                 "to": {
-                    "startLine": 39,
+                    "startLine": 47,
                     "startColumn": 4,
-                    "startOffset": 2030,
+                    "startOffset": 2683,
                     "endColumn": 49,
-                    "endOffset": 2075
+                    "endOffset": 2728
                 },
                 "from": {
                     "file": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/values-en/strings.xml",

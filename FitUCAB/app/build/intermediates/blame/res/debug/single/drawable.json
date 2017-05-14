@@ -168,6 +168,10 @@
         "source": "/home/elberg/.android/build-cache/f434cf85409e8d251274cd05bc2563fe34bd3eae/output/res/drawable/common_google_signin_btn_text_disabled.xml"
     },
     {
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/ic_action_play.png",
+        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/drawable/ic_action_play.png"
+    },
+    {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/drawable/abc_cab_background_internal_bg.xml"
     },
