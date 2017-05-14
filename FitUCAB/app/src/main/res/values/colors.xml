@@ -9,5 +9,9 @@
     <color name="grey">#20000000</color>
     <color name="transparent">#00000000</color>
 
+    <color name="colorwhite">#FFFFFF</color>
+    <color name="colorGreenBtn">#6aca25</color>
+    <color name="colorWhiteSmoke">#f5f5f5</color>
+
 
 </resources>

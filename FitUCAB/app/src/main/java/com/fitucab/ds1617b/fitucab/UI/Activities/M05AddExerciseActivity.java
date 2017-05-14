@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
@@ -16,6 +17,7 @@ import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05TrackActivityFragment;
 
 public class M05AddExerciseActivity extends AppCompatActivity implements OnFragmentSwap{
     private FragmentTabHost mTabHost;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public class M05AddExerciseActivity extends AppCompatActivity implements OnFragm
     }
 
     public void onTabSwap(FragmentTabHost mTabHost){
+
 
         mTabHost.addTab(mTabHost.newTabSpec("track").setIndicator("TRACK ACTIVITY"),
                 M05TrackActivityFragment.class, null);
