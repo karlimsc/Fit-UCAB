@@ -13,6 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="248bcfbe-89c1-4f31-b593-be6e1cdcd0c3" name="Default" comment="">
+<<<<<<< HEAD
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/mipmap-xhdpi-v4/fitucab.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/fitucab.jpg" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/foto1.png" afterPath="" />
@@ -34,6 +35,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/fragment_m01_sign_up.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/fragment_m01_sign_up.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/symbols/debug/R.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/fitucab/ds1617b/fitucab/UI/Fragments/MainActivityFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/fitucab/ds1617b/fitucab/UI/Fragments/MainActivityFragment.java" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-25.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
+>>>>>>> Develop
     </list>
     <ignored path="FitUCAB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -121,8 +128,23 @@
       <file leaf-file-name="MainActivityFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fitucab/ds1617b/fitucab/UI/Fragments/MainActivityFragment.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="136">
               <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+=======
+            <state relative-caret-position="522">
+              <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="M01LoginFragment.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fitucab/ds1617b/fitucab/UI/Fragments/M01/M01LoginFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="57" column="26" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+>>>>>>> Develop
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1723,8 +1745,12 @@
     </option>
     <option name="modificationStamps">
       <map>
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="4478908800156" />
         <entry key="C:\Users\Daniel R\Desktop\desarrollofinal\Fit-UCAB\FitUCAB" value="4479372474402" />
+=======
+        <entry key="$PROJECT_DIR$" value="4479272582510" />
+>>>>>>> Develop
         <entry key="C:\Users\Familia\Documents\Fit-UCAB\FitUCAB" value="4478768640475" />
         <entry key="C:\Users\LuisAlejandro\Desktop\Barbara\DESARROLLO\GIT-HUB\Fit-UCAB\FitUCAB" value="4480258258280" />
       </map>
@@ -2917,11 +2943,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/fitucab/ds1617b/fitucab/UI/Fragments/MainActivityFragment.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="136">
           <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="522">
+          <caret line="93" column="0" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
+>>>>>>> Develop
         </state>
       </provider>
     </entry>
