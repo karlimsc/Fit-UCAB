@@ -1,8 +1,5 @@
 package WebServicesClasses;
 
-/**
- * Created by root on 14/05/17.
- */
 import Domain.User;
 import com.google.gson.Gson;
 
@@ -11,37 +8,57 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
-/* ---------------ESTA CLASE ESTA MAL --------------------------------------------*/
 
+/***
+ * Clase del modulo 1 registro y login
+ */
 @Path("/M01_ServicesUser")
-
 public class M01_ServicesUser {
-    private Connection conn =conectarADb();
+
+    private Connection conn =bdConnect();
     Gson gson = new Gson();
 
+    /***
+     * Metodo que es llamado a travez del web service para agregar a la base de datos los parametros recibidos
+     * @param user
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @param weight
+     * @param height
+     * @param registryPoint
+     * @return
+     */
     @GET
     @Path("/insertRegistry")
     @Produces("application/json")
     public String insertUser(@QueryParam("User") String user,@QueryParam("Password") String password,
                              @QueryParam("Email") String email,@QueryParam("Sex") String sex,@QueryParam("Phone") String phone,
-                             @QueryParam("Ingreso") String ingreso, @QueryParam("Weight") String weight,
-                             @QueryParam("Height")String height,@QueryParam("Registry Point") String registryPoint)
+                             @QueryParam("Weight") String weight,@QueryParam("Height")String height,@QueryParam("Registry Point") String registryPoint)
     {
-        int id = incrementarId();
-        String query= "INSERT INTO PERSON(PERSONID, PERSONUSERNAME, PERSONPASSWORD, PERSONEMAIL, PERSONSEX, PERSONPHONE, PERSONINGRESO) VALUES ('"+id+"','"+user+"','"+password+"','"+email+"','"+sex+"','"+phone+"','"+ingreso+"')";
-        String queryDos="INSERT INTO REGISTRY (registryid, registryweight, registryheight, registrypoint, fk_personid) VALUES ('"+id+"','"+weight+"','"+height+"','"+registryPoint+"','"+id+"')";
+        int id = idIncrease();
+        String query= "INSERT INTO PERSON(PERSONID, PERSONUSERNAME, PERSONPASSWORD, PERSONEMAIL, PERSONSEX, PERSONPHONE, PERSONINGRESO) VALUES ('"+id+"','"+user+"','"+password+"','"+email+"','"+sex+"','"+phone+"')";
+        String query2="INSERT INTO REGISTRY (registryid, registryweight, registryheight, registrypoint, fk_personid) VALUES ('"+id+"','"+weight+"','"+height+"','"+registryPoint+"','"+id+"')";
 
         try{
 
             Statement st = conn.createStatement();
             st.executeUpdate(query);
-            st.executeUpdate(queryDos);
+            st.executeUpdate(query2);
             return gson.toJson(true);
         }
         catch(Exception e) {
             return e.getMessage();
         }
     }
+
+    /***
+     * Metodo que es llamado a travez del web service para consultar un usuario existente en la base de datos
+     * @param user
+     * @param password
+     * @return
+     */
     @GET
     @Path("/getUser")
     @Produces("application/json")
@@ -56,7 +73,7 @@ public class M01_ServicesUser {
             User result = new User();
             while(rs.next()){
 
-                result.setUser(rs.getString("name"));
+                result.setUser(rs.getString("Name"));
                 result.setPassword(rs.getString("Password"));
             }
             return gson.toJson(result);
@@ -66,20 +83,26 @@ public class M01_ServicesUser {
         }
     }
 
-    public int incrementarId()
+    /***
+     * Metodo que es llamado em otros metodos para obtener el ultimo id e incrementarlo
+     * @return devuelve un numero incrementado
+     */
+    public int idIncrease()
     {
-        int dameId=1;
-        //esto es para incrementar
-        return dameId;
+        int Id=1;
+        //esto es para incrementar, no implemenrado por ahora
+        return Id;
     }
 
-    public Connection conectarADb()
+
+    //esto no va a aqui , se puso momentaneamente.
+    public Connection bdConnect()
     {
         Connection conn = null;
         try
         {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/ejemplo";
+            String url = "jdbc:postgresql://localhost/FitUcabDB";
             conn = DriverManager.getConnection(url,"postgres", "root");
         }
         catch (ClassNotFoundException e)
