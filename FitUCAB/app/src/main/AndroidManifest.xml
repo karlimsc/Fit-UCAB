@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
 
         <!-- ACTIVITIES MODULO 1 NO MODIFICAR EL CONTENIDO INTERNO -->
-
+<!--
         <activity
             android:name=".UI.Activities.M01LoginActivity"
             android:label="@string/app_name"
@@ -21,8 +21,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+-->
         <!-- FIN ACTIVITIES MODULO 1 -->
-
+        <!--Activities Modulo 6 Cambiar antes de subir al develop-->
+        <activity
+            android:name=".UI.Activities.M06TrainingActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--Fin activities modulo 6-->
         <activity
             android:name=".UI.Activities.M05AddExerciseActivity"
             android:label="@string/app_name"
@@ -43,12 +54,8 @@
             <!-- <action android:name="android.intent.action.MAIN" /> -->
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
-        <!--Activities Modulo 6-->
-       <activity
-            android:name=".UI.Activities.M06TrainingActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <!--Fin activities modulo 6-->
+
+
         </activity>
     </application>
 
