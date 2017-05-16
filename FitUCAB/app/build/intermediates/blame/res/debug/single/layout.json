@@ -12,16 +12,16 @@
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/layout/abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m02_account.xml",
-        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/layout/fragment_m02_account.xml"
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m05_log_activity.xml",
+        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/layout/fragment_m05_log_activity.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m05_log_activity.xml",
-        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/layout/fragment_m05_log_activity.xml"
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m02_account.xml",
+        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/layout/fragment_m02_account.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/activity_m02_home.xml",
@@ -198,6 +198,10 @@
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m05_log_activity11.xml",
+        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/layout/fragment_m05_log_activity11.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",

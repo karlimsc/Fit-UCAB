@@ -4,12 +4,12 @@
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/color/abc_tint_spinner.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
-        "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/color/abc_primary_text_disable_only_material_light.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/color/abc_hint_foreground_material_dark.xml",
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/color/abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/color/abc_primary_text_disable_only_material_light.xml",
+        "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/color/abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",

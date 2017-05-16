@@ -36,12 +36,10 @@ public class M05AddExerciseActivity extends AppCompatActivity implements OnFragm
 
     public void onTabSwap(FragmentTabHost mTabHost){
 
-<<<<<<< HEAD
+
 
         mTabHost.addTab(mTabHost.newTabSpec("track").setIndicator("TRACK ACTIVITY"),
-=======
-        mTabHost.addTab(mTabHost.newTabSpec("track").setIndicator(getResources().getString(R.string.tab_m05_track)),
->>>>>>> 65dc6859a716fa69d5fd3503111574503b08dd66
+
                 M05TrackActivityFragment.class, null);
         mTabHost.addTab(mTabHost.newTabSpec("log").setIndicator(getResources().getString(R.string.tab_m05_log)),
                 M05LogExerciseFragment.class, null);
