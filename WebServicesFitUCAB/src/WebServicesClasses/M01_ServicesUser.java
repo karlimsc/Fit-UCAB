@@ -19,7 +19,7 @@ public class M01_ServicesUser {
     Gson gson = new Gson();
 
     /***
-     * Metodo que es llamado a travez del web service para agregar a la base de datos los parametros recibidos
+     * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
      * @param user
      * @param password
      * @param email
@@ -30,6 +30,8 @@ public class M01_ServicesUser {
      * @param registryPoint
      * @return
      */
+
+
     @GET
     @Path("/insertRegistry")
     @Produces("application/json")
@@ -52,6 +54,16 @@ public class M01_ServicesUser {
             return e.getMessage();
         }
     }
+
+
+    @GET
+    @Path("/helloWorld")
+    @Produces("application/json")
+    public String prueba()
+    {
+        return ("hola mundo");
+    }
+
 
     /***
      * Metodo que es llamado a travez del web service para consultar un usuario existente en la base de datos
