@@ -1,7 +1,19 @@
 [
     {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_date.png",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-hdpi/ic_launcher_date.png"
+    },
+    {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
         "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_time.png",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-hdpi/ic_launcher_time.png"
     },
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
@@ -10,6 +22,10 @@
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_date.png",
         "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-hdpi/ic_launcher_date.png"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
     },
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_time.png",

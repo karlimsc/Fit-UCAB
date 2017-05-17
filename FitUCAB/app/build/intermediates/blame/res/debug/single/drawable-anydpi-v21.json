@@ -1,58 +1,114 @@
 [
     {
-        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_mail.xml",
-        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_mail.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_home_black.xml",
         "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_home_black.xml"
-    },
-    {
-        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_water.xml",
-        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_water.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_fitness.xml",
         "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_fitness.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_calories.xml",
-        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_calories.xml"
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_mail.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_mail.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_map.xml",
         "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_map.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
-        "source": "/home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_directions.xml",
         "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_directions.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_training.xml",
-        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_training.xml"
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_account.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_account.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
         "source": "/home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_phone.xml",
-        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_phone.xml"
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_map.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_map.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_account.xml",
-        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_account.xml"
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_home_black.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_home_black.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_date.xml",
+        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_date.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_mail.xml",
+        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_mail.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility_off.xml",
+        "source": "/home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/res/drawable-anydpi-v21/design_ic_visibility_off.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_water.xml",
+        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_water.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_calories.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_calories.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_logout.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_logout.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_fitness.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_fitness.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_phone.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_phone.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_calories.xml",
+        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_calories.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/design_ic_visibility.xml",
+        "source": "/home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/res/drawable-anydpi-v21/design_ic_visibility.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_training.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_training.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_directions.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_directions.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_water.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_water.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_training.xml",
+        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_training.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_date.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_date.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_phone.xml",
+        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_phone.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_logout.xml",
         "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_logout.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_date.xml",
-        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_date.xml"
+        "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_account.xml",
+        "source": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_account.xml"
     }
 ]

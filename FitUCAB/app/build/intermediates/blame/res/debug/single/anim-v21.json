@@ -6,5 +6,13 @@
     {
         "merged": "/home/elberg/Escritorio/Repositorio/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
         "source": "/home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
     }
 ]
