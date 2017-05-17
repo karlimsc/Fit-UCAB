@@ -10,3 +10,7 @@ local.properties
 .externalNativeBuild
 .idea
 /app/build
+
+*.properties
+
+FitUCAB/app/build/
