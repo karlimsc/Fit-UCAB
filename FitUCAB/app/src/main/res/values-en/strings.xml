@@ -4,22 +4,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
 
-
-    <!--Inicio Strings Modulo 4 -->
-    <string name="amigo">Friends</string>
-    <string name="actividad">Activity</string>
-    <string name="entrenamiento">Training</string>
-    <string name="reto">Challenges</string>
-    <string name="hidratacion">Hydration</string>
-    <string name="calorias">Calories</string>
-    <string name="gamificacion">Gamification</string>
-    <string name="SI">YES</string> <!-- -->
-    <string name="NO">NO</string> <!-- -->
-    <string name="ajustes">Settings</string>
-    <string name="enviar">Send</string><!-- Este es solo de ejemplo, no va en app final-->
-    <string name="guardar">Save</string><!-- Este es solo de ejemplo, no va en app final-->
-    <!--Final Strings Modulo 4 -->
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="str_en">English</string>
@@ -49,14 +33,13 @@
     <string name="et_m01_correoRecovery">Email</string>
     <string name="et_m01_passwordLogin">Password</string>
     <string name="et_m01_passwordRegistro">Password</string>
-    <!--FIN Strings Modulo 1 -->
-    <!--Inicio Strings Modulo 1 -->
     <string name="nav_02_inicio">Home</string>
     <string name="nav_02_calorias">Calories</string>
     <string name="nav_02_entrenamiento">Training</string>
     <string name="nav_02_cuenta">Account</string>
     <string name="nav_02_cerrarsesion">Logout</string>
     <!--FIN Strings Modulo 1 -->
+
     <!--Inicio Strings Modulo 2-->
     <string name="tv_m02_perfil">Profile</string>
     <string name="et_m02_username">username</string>
@@ -70,6 +53,23 @@
     <string name="et_m02_Steps">Steps</string>
     <string name="radio">Nearby radius</string>
     <string name="tv_m01_recuperacionContra">Recover Password</string>
-
     <!--FIN Strings Modulo 2 -->
+
+    <!--Inicio Strings Modulo 4 -->
+    <string name="amigo">Friends</string>
+    <string name="actividad">Activity</string>
+    <string name="entrenamiento">Training</string>
+    <string name="reto">Challenges</string>
+    <string name="hidratacion">Hydration</string>
+    <string name="calorias">Calories</string>
+    <string name="gamificacion">Gamification</string>
+    <string name="SI">YES</string> <!-- -->
+    <string name="NO">NO</string> <!-- -->
+    <string name="ajustes">Settings</string>
+    <string name="enviar">Send</string><!-- Este es solo de ejemplo, no va en app final-->
+    <string name="guardar">Save</string><!-- Este es solo de ejemplo, no va en app final-->
+    <string name="kms">Kms.</string>
+    <string name="millas">Mi.</string>
+    <!--Final Strings Modulo 4 -->
+
 </resources>

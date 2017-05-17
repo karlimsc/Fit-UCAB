@@ -11,21 +11,17 @@
     <LinearLayout
         android:id="@+id/widget42"
         android:layout_width="282dp"
-        android:layout_height="374dp"
+        android:layout_height="275dp"
         android:orientation="vertical"
-        android:layout_x="18dp"
-        android:layout_y="20dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:layout_above="@+id/tv_m04_radio2">
+        android:layout_marginTop="24dp">
 
 
         <Switch
             android:id="@+id/sw_m04_amigos"
             android:layout_width="272dp"
             android:layout_height="33dp"
-            android:layout_centerHorizontal="true"
             android:theme="@style/AppTheme"
             android:layout_marginTop="17dp"
             android:checked="false"
@@ -39,9 +35,6 @@
             android:id="@+id/sw_m04_actividad"
             android:layout_width="272dp"
             android:layout_height="33dp"
-            android:layout_alignLeft="@+id/sw_m04_entrenamiento"
-            android:layout_alignStart="@+id/sw_m04_entrenamiento"
-            android:layout_below="@+id/sw_m04_amigos"
             android:theme="@style/AppTheme"
             android:text="@string/actividad"
             android:textOff="@string/NO"
@@ -53,9 +46,6 @@
             android:id="@+id/sw_m04_entrenamiento"
             android:layout_width="272dp"
             android:layout_height="33dp"
-            android:layout_alignLeft="@+id/sw_m04_hidratacion"
-            android:layout_alignStart="@+id/sw_m04_hidratacion"
-            android:layout_below="@+id/sw_m04_entrenamiento"
             android:theme="@style/AppTheme"
             android:text="@string/entrenamiento"
             android:textOff="@string/NO"
@@ -67,23 +57,17 @@
             android:id="@+id/sw_m04_retos"
             android:layout_width="272dp"
             android:layout_height="33dp"
-            android:layout_alignLeft="@+id/sw_m04_hidratacion"
-            android:layout_alignStart="@+id/sw_m04_hidratacion"
-            android:layout_below="@+id/sw_m04_entrenamiento"
             android:theme="@style/AppTheme"
             android:text="@string/reto"
             android:textOff="@string/NO"
             android:textOn="@string/SI"
-            tools:layout_editor_absoluteX="47dp"
+            tools:layout_editor_absoluteX="46dp"
             tools:layout_editor_absoluteY="146dp" />
 
         <Switch
             android:id="@+id/sw_m04_hidratacion"
             android:layout_width="272dp"
             android:layout_height="33dp"
-            android:layout_alignLeft="@+id/sw_m04_calorias"
-            android:layout_alignStart="@+id/sw_m04_calorias"
-            android:layout_below="@+id/sw_m04_retos"
             android:theme="@style/AppTheme"
             android:text="@string/hidratacion"
             android:textOff="@string/NO"
@@ -95,8 +79,6 @@
             android:id="@+id/sw_m04_calorias"
             android:layout_width="272dp"
             android:layout_height="33dp"
-            android:layout_below="@+id/sw_m04_hidratacion"
-            android:layout_centerHorizontal="true"
             android:theme="@style/AppTheme"
             android:text="@string/calorias"
             android:textOff="@string/NO"
@@ -108,9 +90,6 @@
             android:id="@+id/sw_m04_gamificacion"
             android:layout_width="272dp"
             android:layout_height="33dp"
-            android:layout_alignLeft="@+id/sw_m04_calorias"
-            android:layout_alignStart="@+id/sw_m04_calorias"
-            android:layout_below="@+id/sw_m04_calorias"
             android:theme="@style/AppTheme"
             android:checked="false"
             android:text="@string/gamificacion"
@@ -161,35 +140,57 @@
         android:contentDescription="guardar cambios"
         android:text="guardar" />
 
+
     <SeekBar
         android:id="@+id/tv_m04_radio2"
-        android:layout_width="wrap_content"
+        android:layout_width="100pt"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/enviar"
-        android:layout_marginBottom="56dp"
-        android:layout_toLeftOf="@+id/button_guardacambios"
-        android:layout_toStartOf="@+id/button_guardacambios" />
+        android:layout_marginBottom="13dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/widget42"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/tv_m04_distancia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/enviar"
-        android:text=""
-        android:layout_alignLeft="@+id/widget42"
-        android:layout_alignStart="@+id/widget42" />
+        android:layout_below="@+id/tv_m04_radio2"
+        android:layout_centerHorizontal="true"
+        android:text="" />
 
     <TextView
         android:id="@+id/tv_m04_radio1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/radio"
-        android:layout_marginBottom="26dp"
-        android:layout_above="@+id/enviar"
+        android:layout_above="@+id/tv_m04_radio2"
+        android:layout_alignLeft="@+id/widget42"
+        android:layout_alignStart="@+id/widget42" />
+
+    <TextView
+        android:id="@+id/tv_m04_kms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/widget42"
         android:layout_alignStart="@+id/widget42"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp" />
+        android:layout_below="@+id/tv_m04_distancia"
+        android:text="@string/kms"
+        android:onClick="toKms"
+        android:clickable="false"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"/>
+
+    <TextView
+        android:id="@+id/tv_m04_mis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/tv_m04_distancia"
+        android:text="@string/millas"
+        android:textColor="@color/black"
+        android:onClick="toMiles"
+        android:clickable="true"
+        android:layout_alignLeft="@+id/tv_m04_kms"/>
 
 
 </RelativeLayout>

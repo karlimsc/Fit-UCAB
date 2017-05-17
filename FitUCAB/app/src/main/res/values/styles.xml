@@ -18,10 +18,6 @@
         </item>
     </style>
 
-   <!-- <style name="FUSwitch" parent="Theme.AppCompat.Light.DarkActionBar">
-
-    </style>
-    -->
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

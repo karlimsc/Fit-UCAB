@@ -51,15 +51,15 @@ public class M04NotificationActivity extends AppCompatActivity {
     Button enviar, lang;
     Button btncambios;
     SeekBar seekbar;
-    TextView textview;
+    TextView textview, _textMi, _textKms;
 
-    private   Switch _swAmigos;
-    private   Switch _swActividad;
-    private   Switch _swEntrenamiento;
-    private   Switch _swRetos;
-    private   Switch _swHidratacion;
-    private   Switch _swCalorias;
-    private   Switch _swGamificacion;
+    private Switch _swAmigos;
+    private Switch _swActividad;
+    private Switch _swEntrenamiento;
+    private Switch _swRetos;
+    private Switch _swHidratacion;
+    private Switch _swCalorias;
+    private Switch _swGamificacion;
 
 
 
@@ -68,7 +68,8 @@ public class M04NotificationActivity extends AppCompatActivity {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_m04_notification );
 
-
+        _textMi = (TextView) findViewById( R.id.tv_m04_mis );
+        _textKms = (TextView) findViewById( R.id.tv_m04_kms );
         _swAmigos = (Switch) findViewById( R.id.sw_m04_amigos );
         _swActividad = (Switch) findViewById (R.id.sw_m04_actividad);
         _swEntrenamiento = (Switch) findViewById(R.id.sw_m04_entrenamiento);
@@ -277,7 +278,7 @@ public class M04NotificationActivity extends AppCompatActivity {
 
 
     /**
-     * Metodo que:  asigna de forma  predeterminada los valores de los Switch al momento de entrar a la vista de notificaciones
+     * Metodo que asigna de forma  predeterminada los valores de los Switch al momento de entrar a la vista de notificaciones
      *
      * Usando SharedPreferences hace que dentro del xml, cree  su indicador y valor
      *
@@ -328,6 +329,26 @@ public class M04NotificationActivity extends AppCompatActivity {
 
         editor.commit(); //Guardar los cambios
     }
+
+    public void toMiles( View v){
+        _textMi.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        _textMi.setTextColor(getResources().getColor(R.color.white));
+        _textMi.setClickable(false);
+        _textKms.setBackgroundColor(getResources().getColor(R.color.white));
+        _textKms.setTextColor(getResources().getColor(R.color.black));
+        _textKms.setClickable(true);
+    }
+
+    public void toKms( View v){
+        _textMi.setBackgroundColor(getResources().getColor(R.color.white));
+        _textMi.setTextColor(getResources().getColor(R.color.black));
+        _textMi.setClickable(true);
+        _textKms.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        _textKms.setTextColor(getResources().getColor(R.color.white));
+        _textKms.setClickable(false);
+    }
+
+
 
 
     /**

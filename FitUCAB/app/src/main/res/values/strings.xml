@@ -10,18 +10,6 @@
         <item>@string/str_es</item>
     </string-array>
 
-    <!--Inicio Strings Modulo 4 -->
-    <string name="amigo">Amigos</string> <!-- opcion de amigo al enviar correo -->
-    <string name="actividad">Actividad</string> <!-- opcion de actividad al enviar correo -->
-    <string name="entrenamiento">Entrenamiento</string> <!-- opcion de entrenamiento al enviar correo -->
-    <string name="reto">Retos</string> <!-- opcion de retos al enviar correo -->
-    <string name="hidratacion">Hidratacion</string> <!-- opcion de hidratacion al enviar correo -->
-    <string name="calorias">Calorias</string> <!-- opcion de calorias al enviar correo -->
-    <string name="gamificacion">Gamificacion</string> <!-- opcion de calorias al enviar correo -->
-    <string name="SI">SI</string> <!--  -->
-    <string name="NO">NO</string> <!-- -->
-    <!--Final Strings Modulo 4 -->
-
     <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_comienza">Comienza</string>
     <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
@@ -66,16 +54,32 @@
     <string name="et_m02_Steps">Nro de Pasos</string>
 
     <!--FIN Strings Modulo 2 -->
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!--Inicio Strings Modulo 4 -->
+    <string name="amigo">Amigos</string> <!-- opcion de amigo al enviar correo -->
+    <string name="actividad">Actividad</string> <!-- opcion de actividad al enviar correo -->
+    <string name="entrenamiento">Entrenamiento</string> <!-- opcion de entrenamiento al enviar correo -->
+    <string name="reto">Retos</string> <!-- opcion de retos al enviar correo -->
+    <string name="hidratacion">Hidratacion</string> <!-- opcion de hidratacion al enviar correo -->
+    <string name="calorias">Calorias</string> <!-- opcion de calorias al enviar correo -->
+    <string name="gamificacion">Gamificacion</string> <!-- opcion de calorias al enviar correo -->
+    <string name="SI">SI</string> <!--  -->
+    <string name="NO">NO</string> <!-- -->
     <string name="lang_btn">Idioma</string>
+    <string name="kms">Kms.</string>
+    <string name="millas">Mi.</string>
+    <string name="radio">Radio de cercania</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="enviar">Enviar</string>
+    <string name="guardar">Guardar</string>
+    <!--Final Strings Modulo 4 -->
+
+    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Home</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_m02_home">M02HomeActivity</string>
-    <string name="radio">Radio de cercania</string>
-    <string name="ajustes">Ajustes</string>
-    <string name="enviar">Enviar</string>
-    <string name="guardar">Guardar</string>
 
 </resources>
