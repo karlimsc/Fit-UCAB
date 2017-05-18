@@ -76,7 +76,7 @@ public class M01_ServicesUser {
     @Produces("application/json")
     public String getUser(@QueryParam("User") String user,@QueryParam("Password") String password)
     {
-        String query="SELECT PERSONUSERNAME WHERE PERSONUSERNAME="+user+"AND PERSONPASSWORD ="+password;
+        String query="SELECT PERSONUSERNAME FROM PERSON WHERE PERSONUSERNAME= '" + user + "' AND PERSONPASSWORD = '" + password + "'";
 
         try{
 
@@ -85,8 +85,8 @@ public class M01_ServicesUser {
             User result = new User();
             while(rs.next()){
 
-                result.setUser(rs.getString("Name"));
-                result.setPassword(rs.getString("Password"));
+                result.setUser(rs.getString("PERSONUSERNAME"));
+
             }
             return gson.toJson(result);
         }
@@ -115,7 +115,7 @@ public class M01_ServicesUser {
         {
             Class.forName("org.postgresql.Driver");
             String url = "jdbc:postgresql://localhost/FitUcabDB";
-            conn = DriverManager.getConnection(url,"postgres", "root");
+            conn = DriverManager.getConnection(url,"postgres", "123456");
         }
         catch (ClassNotFoundException e)
         {
