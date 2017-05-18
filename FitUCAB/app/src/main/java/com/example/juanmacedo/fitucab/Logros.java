@@ -31,6 +31,7 @@ import java.util.ArrayList;
  */
 public class Logros extends Fragment {
 
+    //**VARIABLES
     TextView texto, detalle;
     String nombreLogro;
     BarChart barra;
@@ -42,7 +43,7 @@ public class Logros extends Fragment {
     ArrayList<IBarDataSet> barDataSets;
     public static String TAG = "Logros";
     private OnFragmentInteractionListener mListener;
-
+    //VARIABLES
 
     public Logros(){
         // Required empty public constructor
@@ -57,12 +58,11 @@ public class Logros extends Fragment {
 
         nombreLogro = getArguments().getString("item");
         texto = (TextView)view.findViewById(R.id.id_texto);
-        Log.d("DATOOO2", getArguments().getString("item"));
-//        texto.setText(nombreLogro);
-        Toast.makeText(getActivity(), getArguments().getString("item"), Toast.LENGTH_LONG).show();
+        Log.d("DATOOO2", getArguments().getString("item"));                                         //IMPRIME EN EL LOG PARA PRUEBAS
+        Toast.makeText(getActivity(), getArguments().getString("item"), Toast.LENGTH_LONG).show();  //IMPRIME EN PANTALLA ANDROID DE FORMA EMERGENTE
 
-        int grafica = 1;
-        if(grafica == 1){
+        int grafica = 1;                                                                            //DEPENDIENDO DEL RETO, ENTRA EN UN IF DIFERENTE PARA GRAFICA
+        if(grafica == 1){                                                                           //A DISCUTIR SI NO SE USARA GRAFICA
 
             texto = (TextView) view.findViewById(R.id.logro);
             texto.setText(getArguments().getString("item"));
@@ -70,7 +70,7 @@ public class Logros extends Fragment {
             detalle = (TextView) view.findViewById(R.id.detalleLogro);
             detalle.setText("Logro desbloqueado despues de haber completado los 5 km de distancia en trote");
 
-            barra = (BarChart) view.findViewById(R.id.barra);
+            barra = (BarChart) view.findViewById(R.id.barra);                                       //ID DEL BARCHART
 
             Entradas();                       //FUNCION QUE LLENA
             Etiquetas();                      //FUNCION QUE LLENA
@@ -78,7 +78,7 @@ public class Logros extends Fragment {
             barDataSets = new ArrayList<>();
 
 
-            set1 = new BarDataSet(entradas, "Semana");
+            set1 = new BarDataSet(entradas, "Semana");                                               //SE INTRODUCE DATOS CON ETIQUETA
             barDataSets.add(set1);
 
 

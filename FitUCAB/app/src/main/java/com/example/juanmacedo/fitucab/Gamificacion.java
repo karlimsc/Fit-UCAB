@@ -29,7 +29,7 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_gamificacion);
 
         lista = (ListView) findViewById(R.id.lista);
-        arrayList = new ArrayList<String>();
+        arrayList = new ArrayList<String>();                                               //ARRAY DONDE SE LLENA VA LA LISTA
         adapter = new ArrayAdapter<String>(this, R.layout.contenido,R.id.tv_logro, logros);
         lista.setAdapter(adapter);
 
@@ -39,15 +39,15 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
 
                 TextView item = (TextView) view.findViewById(R.id.tv_logro);
                 Bundle bundle = new Bundle();
-                bundle.putString("item", (String) item.getText());
-                Log.d("DATOOO", (String) item.getText());
+                bundle.putString("item", (String) item.getText());                         //ASI LE PASO VALORES AL FRAGMENT CON EL BUNDLE
+                Log.d("DATOOO", (String) item.getText());                                  //PRINT DEL VALOR
 
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                Logros fragment = new Logros();
-                fragment.setArguments(bundle);
-                transaction.add(R.id.gamificacion, fragment);
-                transaction.commit();
+                FragmentManager fragmentManager = getSupportFragmentManager();             //INSTANCIO EL FRAGMENT
+                FragmentTransaction transaction = fragmentManager.beginTransaction();      //COMIENZO LA TRANSACCION
+                Logros fragment = new Logros();                                            //INSTANCIO LA CLASE LOGRO QUE ES EL FRAGMENT
+                fragment.setArguments(bundle);                                             //LE PASO EL BUNDLE
+                transaction.add(R.id.gamificacion, fragment);                              //INDICO DONDE SE HARA LA TRANSACCION
+                transaction.commit();                                                      //EJECUTO
 
             }
         });
