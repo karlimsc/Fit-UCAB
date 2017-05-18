@@ -115,7 +115,7 @@ public class M01_ServicesUser {
         {
             Class.forName("org.postgresql.Driver");
             String url = "jdbc:postgresql://localhost/FitUcabDB";
-            conn = DriverManager.getConnection(url,"postgres", "123456");
+            conn = DriverManager.getConnection(url,"postgres", "root");
         }
         catch (ClassNotFoundException e)
         {
