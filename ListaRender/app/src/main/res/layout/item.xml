@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:typeface="sans"
+    >
+
+    <TextView
+        android:id="@+id/tv_m05_sportname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:text="Sport"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif"
+        android:layout_marginTop="30dp"
+        android:typeface="sans"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/iv_m05_imagereference"
+        android:layout_toEndOf="@+id/iv_m05_imagereference" />
+
+    <ImageView
+        android:id="@+id/iv_m05_imagereference"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="38dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="28dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:typeface="sans"
+        android:id="@+id/tv_m05_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif"
+        android:text="Distance"
+        android:layout_below="@+id/tv_m05_sportname"
+        android:layout_alignLeft="@+id/tv_m05_sportname"
+        android:layout_alignStart="@+id/tv_m05_sportname" />
+
+    <TextView
+        android:typeface="sans"
+        android:id="@+id/tv_m05_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="59dp"
+        android:fontFamily="sans-serif"
+        android:layout_marginRight="59dp"
+        android:text="Time"
+        android:textSize="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="14dp" />
+
+    <TextView
+        android:typeface="sans"
+        android:id="@+id/tv_m05_speed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="speed"
+        android:textSize="18dp"
+        android:layout_alignBaseline="@+id/tv_m05_distance"
+        android:layout_alignBottom="@+id/tv_m05_distance"
+        android:layout_alignRight="@+id/tv_m05_date"
+        android:layout_alignEnd="@+id/tv_m05_date"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp" />
+
+    <TextView
+        android:typeface="sans"
+        android:id="@+id/tv_m05_uptime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Uptime"
+        android:fontFamily="sans-serif"
+        android:textSize="18dp"
+        android:layout_below="@+id/tv_m05_distance"
+        android:layout_alignLeft="@+id/tv_m05_distance"
+        android:layout_alignStart="@+id/tv_m05_distance" />
+
+</RelativeLayout>
