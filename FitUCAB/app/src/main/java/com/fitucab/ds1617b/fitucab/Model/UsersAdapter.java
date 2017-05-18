@@ -2,23 +2,15 @@ package com.fitucab.ds1617b.fitucab.Model;
 
 
 import android.content.Context;
-import android.text.Html;
-import android.text.Spanned;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.R;
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.Fragment_Amigos;
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.Fragment_Cerca_De_Mi;
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.Fragment_Libreta;
 
 import java.util.ArrayList;
-
-import static android.R.attr.resource;
 
 public class UsersAdapter extends ArrayAdapter<ArrayAuxiliar> {
     public UsersAdapter(Context context, ArrayList<ArrayAuxiliar> items) {
@@ -55,9 +47,16 @@ public class UsersAdapter extends ArrayAdapter<ArrayAuxiliar> {
         if (convertView == null) {
             if(type == 0){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.contact_with_m03, parent, false);
+                TextView tvName = (TextView) convertView.findViewById(R.id.nombre);
+                TextView tvHome = (TextView) convertView.findViewById(R.id.puntaje);
+                tvName.setText(item.get_nombre());
+                tvHome.setText(Integer.toString(item.get_puntaje()));
+
             }
             else if(type == 1){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.contacts_without_m03, parent, false);
+                TextView tvName = (TextView) convertView.findViewById(R.id.nombre);
+                tvName.setText(item.get_nombre());
             }
             else if(type == 2){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.separator_with_m03, parent, false);
@@ -67,13 +66,7 @@ public class UsersAdapter extends ArrayAdapter<ArrayAuxiliar> {
             }
         }
 
-        // Lookup view for data population
-        TextView tvName = (TextView) convertView.findViewById(R.id.nombre);
-        TextView tvHome = (TextView) convertView.findViewById(R.id.puntaje);
-        // Populate the data into the template view using the data object
-        tvName.setText(item.get_nombre());
-        tvHome.setText(Integer.toString(item.get_puntaje()));
-        // Return the completed view to render on screen
+
         return convertView;
     }
 }

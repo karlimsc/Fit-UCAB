@@ -5,9 +5,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.Fragment_Amigos;
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.Fragment_Cerca_De_Mi;
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.Fragment_Libreta;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.M03FragmentAmigos;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.M03FragmentNearMe;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M03.M03FragmentLibreta;
 
 public class PagerAdapter extends FragmentStatePagerAdapter {
     int mNumOfTabs;
@@ -22,13 +22,13 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
 
         switch (position) {
             case 0:
-                Fragment_Amigos tabAmigos = new Fragment_Amigos();
+                M03FragmentAmigos tabAmigos = new M03FragmentAmigos();
                 return tabAmigos;
             case 1:
-                Fragment_Libreta tabLibreta = new Fragment_Libreta();
+                M03FragmentLibreta tabLibreta = new M03FragmentLibreta();
                 return tabLibreta;
             case 2:
-                Fragment_Cerca_De_Mi tabCercaDeMi = new Fragment_Cerca_De_Mi();
+                M03FragmentNearMe tabCercaDeMi = new M03FragmentNearMe();
                 return tabCercaDeMi;
             default:
                 return null;

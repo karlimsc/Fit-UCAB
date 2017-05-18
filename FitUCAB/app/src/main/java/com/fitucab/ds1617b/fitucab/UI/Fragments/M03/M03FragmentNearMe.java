@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.fitucab.ds1617b.fitucab.R;
 
-public class Fragment_Cerca_De_Mi extends Fragment {
+public class M03FragmentNearMe extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

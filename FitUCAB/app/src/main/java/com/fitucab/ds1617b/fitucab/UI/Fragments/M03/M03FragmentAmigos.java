@@ -18,27 +18,22 @@ import com.fitucab.ds1617b.fitucab.R;
 
 import java.util.ArrayList;
 
-public class Fragment_Libreta extends Fragment {
+
+public class M03FragmentAmigos extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.fragment_m03_contacts, container, false);
-
+        View rootView = inflater.inflate(R.layout.fragment_m03_friends, container, false);
 
         ArrayList<ArrayAuxiliar> arrayOfUsers = new ArrayList<ArrayAuxiliar>();
         UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-        ListView listView = (ListView) rootView.findViewById(R.id.contactsList);
+        ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
         listView.setAdapter(adapter);
         ArrayList<ArrayAuxiliar> usuarios = new ArrayList<ArrayAuxiliar>();
-        usuarios.add(new ArrayAuxiliar("",0,2));
         usuarios.add(new ArrayAuxiliar("Pedro Perez", 650,0));
         usuarios.add(new ArrayAuxiliar("Andres Rodriguez", 200,0));
         usuarios.add(new ArrayAuxiliar("Ernesto Lara", 1630,0));
-        usuarios.add(new ArrayAuxiliar("",0,3));
-        usuarios.add(new ArrayAuxiliar("Raul Tuozzo", 650,1));
-        usuarios.add(new ArrayAuxiliar("Andres Rubio", 200,1));
-        usuarios.add(new ArrayAuxiliar("Raul goncalves", 1630,1));
         adapter.addAll(usuarios);
 
         return rootView;
