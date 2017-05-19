@@ -21,6 +21,7 @@ import com.fitucab.ds1617b.fitucab.R;
  */
 
 public class M06AddTrainingTypePersonalizedFragment extends Fragment implements View.OnClickListener{
+
     private Button _agregar;
     private View _view;
     private OnFragmentSwap _callBack;
@@ -51,6 +52,10 @@ public class M06AddTrainingTypePersonalizedFragment extends Fragment implements 
         return _view;
     }
 
+    /**
+     * Metodo donde se asignan los botones del layout al fragment que se esta usando
+     */
+
     private void setupViewValues() {
         //Le paso sus respectivos Id a los botones de para volver a la pantalla principal
         _agregar=(Button)_view.findViewById(R.id.m06_botonAgregarEntrenamiento);
@@ -65,6 +70,10 @@ public class M06AddTrainingTypePersonalizedFragment extends Fragment implements 
         _spinnerCorrer.setAdapter(_adaptador);
     }
 
+    /**
+     * Metodo por el cual se obtiene cual boton fue presionado y realizauna acción
+     * @param v
+     */
     @Override
     public void onClick(View v) {
 

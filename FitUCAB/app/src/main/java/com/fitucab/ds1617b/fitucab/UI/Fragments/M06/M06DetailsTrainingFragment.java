@@ -61,6 +61,10 @@ public class M06DetailsTrainingFragment extends Fragment implements View.OnClick
         _compartir.setOnClickListener(this);
     }
 
+    /**
+     * Metodo que 
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch(v.getId()){

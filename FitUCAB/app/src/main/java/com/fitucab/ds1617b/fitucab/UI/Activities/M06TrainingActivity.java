@@ -57,6 +57,12 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         onSwap("M06HomeTrainingFragment",null);
     }
 
+    /**
+     * Metodo que realiza el cambio de fragmento.
+     * @param fragmentName Recibe el nobmre del fragment (nombre de la clase)
+     * @param bundle Recibe la data encapsulada que se le pasara al fragment, (puede ser null)
+     */
+
     @Override
     public void onSwap(String fragmentName, Bundle bundle) {
         Fragment fragmentToSwap = null;
@@ -142,6 +148,11 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         }
     }
 
+    /**
+     * Usado para cambiar de actividad/modulo
+     * @param activityName
+     * @param bundle
+     */
 
     @Override
     public void onSwapActivity(String activityName, Bundle bundle) {
@@ -153,6 +164,12 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         }
     }
 
+    /**
+     * Metodo por el agarra el boton del navigation drawer el cual es seleccionado para luego
+     * cambiar entre actividades
+     * @param item
+     * @return
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
@@ -169,7 +186,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         } else if (id == R.id.nav_m06_logout) {
 
         } else if (id == R.id.nav_m06_account) {
-            
+
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

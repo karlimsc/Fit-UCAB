@@ -20,7 +20,9 @@ import com.fitucab.ds1617b.fitucab.R;
  * Created by Alejandro Fernandez on 24/4/2017.
  */
 
-public class M06DeleteTrainingFragment extends Fragment implements ListView.OnItemClickListener, View.OnClickListener{
+public class M06DeleteTrainingFragment extends Fragment implements ListView.OnItemClickListener,
+                                                                            View.OnClickListener{
+
     private ListView _listView;
     private View _view;
     private OnFragmentSwap _callBack;
@@ -52,6 +54,9 @@ public class M06DeleteTrainingFragment extends Fragment implements ListView.OnIt
         return _view;
     }
 
+    /**
+     * Metodo donde se asignan los botones del layout al fragment que se esta usando
+     */
     private void setupViewValues() {
         //Llenando el list View
         _listView=(ListView)_view.findViewById(R.id.m06_listViewEntrenamiento);
@@ -60,7 +65,13 @@ public class M06DeleteTrainingFragment extends Fragment implements ListView.OnIt
         _listView.setOnItemClickListener(this);
     }
 
-
+    /**
+     * Metodo que borra el entrenamiento que se selecciona el usuario.
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(getContext(), R.string.M06_eliminar_exitoso, Toast.LENGTH_SHORT).show();

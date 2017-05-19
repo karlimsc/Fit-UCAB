@@ -19,6 +19,7 @@ import com.fitucab.ds1617b.fitucab.R;
  */
 
 public class M06AddTrainingFragment extends Fragment implements View.OnClickListener {
+
     private Button _personalizado,_preterminado;
     private View _view;
     private OnFragmentSwap _callBack;
@@ -47,6 +48,9 @@ public class M06AddTrainingFragment extends Fragment implements View.OnClickList
         return _view;
     }
 
+    /**
+     * Metodo donde se asignan los botones del layout al fragment que se esta usando
+     */
     private void setupViewValues() {
         //Le paso sus respectivos Id a los botones de personalizado y predefinido
         _personalizado = (Button) _view.findViewById(R.id.m06_botonEntrenamientoPersonalizado);
@@ -56,6 +60,10 @@ public class M06AddTrainingFragment extends Fragment implements View.OnClickList
         ((AppCompatActivity)getActivity()).setSupportActionBar(_toolbar);
     }
 
+    /**
+     * Metodo por el cual se escoje cual boton fue presionado para cambiar de fragment
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         switch (v.getId()){
