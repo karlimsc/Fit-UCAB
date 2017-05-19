@@ -6,6 +6,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,8 @@ import android.view.MenuItem;
 
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M02.M02AccountFragment;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M02.M02HomeFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06AddTrainingFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06AddTrainingTypePersonalizedFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06AddTrainingTypePredefinedFragment;
@@ -28,12 +31,14 @@ import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06ShareTrainingFragment;
 
 public class M06TrainingActivity extends AppCompatActivity implements OnFragmentSwap,
                                 NavigationView.OnNavigationItemSelectedListener{
+
     private FragmentManager FM = getSupportFragmentManager();
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m06_training);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Se configura el Drawer Layout
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -60,53 +65,71 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         try {
             switch (fragmentName) {
                 case "M06HomeTrainingFragment":
+                    toolbar.setTitle(R.string.M06_nombre_modulo);
+                    setSupportActionBar(toolbar);
                     fragmentToSwap = new M06HomeTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
                     break;
                 case "M06AddTrainingFragment":
+                    toolbar.setTitle(R.string.M06_title_activity_opcion_agregar_entrenamiento);
+                    setSupportActionBar(toolbar);
                     fragmentToSwap = new M06AddTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
                     fragmentTransaction.addToBackStack("M06HomeTrainingFragment");
                     break;
                 case "M06AddTrainingTypePersonalizedFragment":
+                    toolbar.setTitle(R.string.M06_title_activity_opcion_agregar_entrenamiento_personalizado);
+                    setSupportActionBar(toolbar);
                     fragmentToSwap = new M06AddTrainingTypePersonalizedFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
                     fragmentTransaction.addToBackStack("M06AddTrainingFragment");
                     break;
                 case "M06AddTrainingTypePredefinedFragment":
+                    toolbar.setTitle(R.string.M06_title_activity_opcion_agregar_entrenamiento_predefinido);
+                    setSupportActionBar(toolbar);
                     fragmentToSwap = new M06AddTrainingTypePredefinedFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
                     fragmentTransaction.addToBackStack("M06HomeTrainingFragment");
                     break;
                 case "M06DetailsTrainingFragment":
+                    toolbar.setTitle(R.string.M06_title_detalle_entrenamiento);
+                    setSupportActionBar(toolbar);
                     fragmentToSwap = new M06DetailsTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
                     fragmentTransaction.addToBackStack("M06HomeTrainingFragment");
                     break;
                 case "M06ShareTrainingFragment":
+                    toolbar.setTitle(R.string.M06_compartir_entrenamiento);
+                    setSupportActionBar(toolbar);
                     fragmentToSwap = new M06ShareTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
                     fragmentTransaction.addToBackStack("M06HomeTrainingFragment");
                     break;
                 case "M06DeleteTrainingFragment":
+                    toolbar.setTitle(R.string.M06_title_eliminar_entrenamiento);
+                    setSupportActionBar(toolbar);
                     fragmentToSwap = new M06DeleteTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
                     fragmentTransaction.addToBackStack("M06HomeTrainingFragment");
                     break;
                 case "M06ModifySelectTrainingFragment":
+                    toolbar.setTitle(R.string.M06_title_seleccionar_entrenamiento);
+                    setSupportActionBar(toolbar);
                     fragmentToSwap = new M06ModifySelectTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
                     fragmentTransaction.addToBackStack("M06HomeTrainingFragment");
                     break;
                 case "M06ModifyTrainingFragment":
+                    toolbar.setTitle(R.string.M06_title_modificar_entrenamiento);
+                    setSupportActionBar(toolbar);
                     fragmentToSwap = new M06ModifyTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
@@ -123,8 +146,8 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
     @Override
     public void onSwapActivity(String activityName, Bundle bundle) {
         switch (activityName){
-            case "MainActivity":
-                Intent newActivity = new Intent(this, MainActivity.class);
+            case "M02HomeActivity":
+                Intent newActivity = new Intent(this, M02HomeActivity.class);
                 startActivity(newActivity);
                 break;
         }
@@ -132,6 +155,25 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        return false;
+        // Handle navigation view item clicks here.
+        Fragment fragmentToSwap = null;
+        FragmentTransaction fragmentTransaction = FM.beginTransaction();
+        int id = item.getItemId();
+
+        if (id == R.id.nav_m06_home) {
+            onSwapActivity("M02HomeActivity",null);
+        } else if (id == R.id.nav_m06_calories) {
+
+        } else if (id == R.id.nav_m06_training) {
+
+        } else if (id == R.id.nav_m06_logout) {
+
+        } else if (id == R.id.nav_m06_account) {
+            
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
