@@ -45,4 +45,16 @@
     <string name="et_m02_Steps">Steps</string>
 
     <!--FIN Strings Modulo 2 -->
+
+    <!--FIN Strings Modulo 2 -->
+
+    <!--Inicio Strings Modulo 3-->
+    <string name="sep_03_with">Contacts with FIT-Ucab</string>
+    <string name="sep_03_without">Contacts without FIT-Ucab</string>
+    <string name="tab_03_amigos">Friends</string>
+    <string name="tab_03_libreta">Contacts</string>
+    <string name="tab_03_cercademi">Near me</string>
+
+    <!--FIN Strings Modulo 3 -->
+
 </resources>

@@ -7,6 +7,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.provider.ContactsContract;
+import android.database.Cursor;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.support.design.widget.TabLayout;
@@ -53,10 +55,14 @@ public class M03FriendsActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);*/
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Amigos"));
-        tabLayout.addTab(tabLayout.newTab().setText("Libreta"));
-        tabLayout.addTab(tabLayout.newTab().setText("Cerca de Mi"));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_03_amigos));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_03_libreta));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_03_cercademi));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
+
+
+
 
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
@@ -82,6 +88,11 @@ public class M03FriendsActivity extends AppCompatActivity
 
 
     }
+
+
+
+
+
 
    /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {

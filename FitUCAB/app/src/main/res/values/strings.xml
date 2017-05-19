@@ -29,6 +29,7 @@
     <string name="et_m01_mts">Mts</string>
     <!--FIN Strings Modulo 1 -->
 
+
     <!--Inicio Strings Modulo 2-->
     <string name="nav_02_inicio">Inicio</string>
     <string name="nav_02_calorias">Calorias</string>
@@ -47,6 +48,19 @@
     <string name="et_m02_Steps">Nro de Pasos</string>
 
     <!--FIN Strings Modulo 2 -->
+
+    <!--Inicio Strings Modulo 3-->
+
+    <string name="sep_03_with">Contactos con FIT-Ucab</string>
+    <string name="sep_03_without">Contactos sin FIT-Ucab</string>
+    <string name="tab_03_amigos">Amigos</string>
+    <string name="tab_03_libreta">Libreta</string>
+    <string name="tab_03_cercademi">Cerca De Mi</string>
+
+    <!--FIN Strings Modulo 3 -->
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Home</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
