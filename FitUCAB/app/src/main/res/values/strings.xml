@@ -1,65 +1,4 @@
-<<<<<<< HEAD
-<resources>
-    <string name="app_name">Fit UCAB</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_main">MainActivity</string>
 
-    <!--Inicio Strings Modulo 1 -->
-    <string name="btn_m01_comienza">Comienza</string>
-    <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
-    <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento físico</string>
-    <string name="btn_m01_entrar">Entrar</string>
-    <string name="et_m01_usuarioCorreo">Usuario o Correo</string>
-    <string name="et_m01_passwordLogin">Contraseña</string>
-    <string name="et_m01_passwordRegistro">Contraseña</string>
-    <string name="btn_m01_aceptarLogin">Entrar</string>
-    <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
-    <string name="et_m01_correoRecovery">Correo Electrónico</string>
-    <string name="btn_m01_enviarCorreo">Enviar Correo</string>
-    <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
-    <string name="tv_m01_acercaDeTi">Acerca de ti</string>
-    <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
-    <string name="et_m01_usuario">Usuario</string>
-    <string name="et_m01_correoRegistro">Correo Electrónico</string>
-    <string name="et_m01_telefono">Teléfono</string>
-    <string name="rb_m01_femenino">Femenino</string>
-    <string name="rb_m01_masculino">Masculino</string>
-    <string name="et_m01_peso">Peso</string>
-    <string name="et_m01_kg">Kg</string>
-    <string name="et_m01_estatura">Estatura</string>
-    <string name="et_m01_mts">Mts</string>
-    <!--FIN Strings Modulo 1 -->
-
-    <!--Inicio Strings Modulo 2-->
-    <string name="nav_02_inicio">Inicio</string>
-    <string name="nav_02_calorias">Calorias</string>
-    <string name="nav_02_entrenamiento">Entrenamiento</string>
-    <string name="nav_02_cuenta">Cuenta</string>
-    <string name="nav_02_cerrarsesion">Cerrar Sesión</string>
-    <string name="tv_m02_perfil">Perfil</string>
-    <string name="et_m02_username">Nombre de usuario</string>
-    <string name="et_m02_email">Correo electronico</string>
-    <string name="et_m02_phone">Telefono</string>
-    <string name="et_m02_datenac">Fecha de Nacimiento</string>
-    <string name="et_m02_weight">Peso</string>
-    <string name="et_m02_height">Estatura</string>
-    <string name="et_m02_location">Locación</string>
-    <string name="et_m02_water">Vasos de Agua</string>
-    <string name="et_m02_Steps">Nro de Pasos</string>
-
-    <!--FIN Strings Modulo 2 -->
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Home</string>
-    <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_m02_home">M02HomeActivity</string>
-    <string name="title_activity_m10_water_glass">M10WaterGlassActivity</string>
-    <string name="section_format">Hello World from section: %1$d</string>
-
-
-</resources>
-=======
 <resources>
     <string name="app_name">Fit UCAB</string>
     <string name="action_settings">Settings</string>
@@ -124,8 +63,9 @@
     <string name="tab_m05_track">Automática</string>
     <!--FIN Strings Modulo 5 -->
 
-
-
+    <!-- Inicio Strings Modulo 10 -->
+    <string name="title_activity_m10_water_glass">M10WaterGlassActivity</string>
+    <!--FIN Strings Modulo 10 -->
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Home</string>
@@ -138,4 +78,4 @@
 
 
 </resources>
->>>>>>> Develop
+

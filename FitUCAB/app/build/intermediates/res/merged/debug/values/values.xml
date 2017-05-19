@@ -117,11 +117,14 @@
     <color name="bright_foreground_material_light">@android:color/black</color>
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
-    <color name="colorBtnAceptar">#676cfb</color>
+    <color name="colorBtnAceptar">#3f51b5</color>
     <color name="colorBtnConfirmar">#6aca25</color>
-    <color name="colorBtnDenegar">#fc0f3b</color>
+    <color name="colorBtnDenegar">#ff0000</color>
+    <color name="colorGreenBtn">#6aca25</color>
     <color name="colorPrimary">#0b3680</color>
-    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorPrimaryDark">#353535</color>
+    <color name="colorWhiteSmoke">#f5f5f5</color>
+    <color name="colorwhite">#FFFFFF</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
     <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
     <color name="common_google_signin_btn_text_dark_focused">@android:color/black</color>
@@ -147,7 +150,7 @@
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
-    <color name="grey">#20000000</color>
+    <color name="grey">#f5f5f5</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="material_blue_grey_800">#ff37474f</color>
@@ -179,6 +182,7 @@
     <color name="secondary_text_default_material_light">#8a000000</color>
     <color name="secondary_text_disabled_material_dark">#36ffffff</color>
     <color name="secondary_text_disabled_material_light">#24000000</color>
+    <color name="softgrey">#53535353</color>
     <color name="switch_thumb_disabled_material_dark">#ff616161</color>
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
@@ -707,6 +711,12 @@
     <integer name="hide_password_duration">320</integer>
     <integer name="show_password_duration">200</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string name="_btn_m05_registermanual">REGISTRAR</string>
+    <string name="_tv_m05_calories">Calories:</string>
+    <string name="_tv_m05_duration">Duracion:</string>
+    <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
+    <string name="_tv_m05_titletabmanual">MANUAL</string>
+    <string name="_tv_m05_type">Tipo de ejercicio:</string>
     <string name="abc_action_bar_home_description">Navigate home</string>
     <string name="abc_action_bar_home_description_format">%1$s, %2$s</string>
     <string name="abc_action_bar_home_subtitle_description_format">%1$s, %2$s, %3$s</string>
@@ -740,13 +750,15 @@
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="action_settings">Settings</string>
     <string name="app_name">Fit UCAB</string>
+    <string name="app_name_title">Actividad</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
-    <string name="btn_m01_aceptarLogin">Entrar</string>
-    <string name="btn_m01_comienza">Comienza</string>
-    <string name="btn_m01_entrar">Entrar</string>
-    <string name="btn_m01_enviarCorreo">Enviar Correo</string>
-    <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
+    <string name="bt_start_tracking">Iniciar</string>
+    <string name="btn_m01_aceptarLogin">ENTRAR</string>
+    <string name="btn_m01_comienza">REGISTRATE</string>
+    <string name="btn_m01_entrar">ENTRAR</string>
+    <string name="btn_m01_enviarCorreo">ENVIAR CORREO</string>
+    <string name="btn_m01_iniciaSesion">INICIA SESION</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>
@@ -785,6 +797,9 @@
     <string name="et_m02_username">Nombre de usuario</string>
     <string name="et_m02_water">Vasos de Agua</string>
     <string name="et_m02_weight">Peso</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyDVMlc2ldblEldVTrtxka5_WXeoA4fUL1s
+    </string>
     <string name="hello_blank_fragment">Home</string>
     <string name="nav_02_calorias">Calorias</string>
     <string name="nav_02_cerrarsesion">Cerrar Sesión</string>
@@ -801,10 +816,12 @@
     <string name="rb_m01_femenino">Femenino</string>
     <string name="rb_m01_masculino">Masculino</string>
     <string name="search_menu_title">Search</string>
-    <string name="section_format">Hello World from section: %1$d</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="tab_m05_log">Manual</string>
+    <string name="tab_m05_track">Automática</string>
     <string name="title_activity_m02_home">M02HomeActivity</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
+    <string name="title_activity_m05_track_exercise">Track</string>
     <string name="title_activity_m10_water_glass">M10WaterGlassActivity</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="tv_m01_acercaDeTi">Acerca de ti</string>
@@ -2169,6 +2186,14 @@
     <style name="Theme.Design.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Transparent" parent="android:Theme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
     <style name="ThemeOverlay.AppCompat" parent="Base.ThemeOverlay.AppCompat"/>
     <style name="ThemeOverlay.AppCompat.ActionBar" parent="Base.ThemeOverlay.AppCompat.ActionBar"/>
