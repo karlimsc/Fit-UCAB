@@ -73,10 +73,7 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
         _calorias=getResources().getStringArray(R.array.M06_calorias);
         //Agregando id al text view de calorias
         _caloriasView=(TextView) _view.findViewById(R.id.m06_textViewCalorias);
-        //Modificando la toolbar agrenadoleel boton de regreso y el titulo
-        _toolbar=(Toolbar) _view.findViewById(R.id.m06_toolbar_training_3);
-        getActivity().setTitle(R.string.M06_title_activity_opcion_agregar_entrenamiento_predefinido);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(_toolbar);
+
     }
 
     @Override

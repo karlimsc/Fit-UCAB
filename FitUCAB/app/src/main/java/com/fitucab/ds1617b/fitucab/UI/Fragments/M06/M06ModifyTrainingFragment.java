@@ -63,10 +63,6 @@ public class M06ModifyTrainingFragment extends Fragment implements View.OnClickL
         _adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         _spinnerCaminar.setAdapter(_adaptador);
         _spinnerCorrer.setAdapter(_adaptador);
-        //Aqui ando agregando el titulo a la toolbar y un boton para regresarme al anterior fragment
-        _toolbar=(Toolbar) _view.findViewById(R.id.m06_toolbar_training_8);
-        getActivity().setTitle(R.string.M06_title_modificar_entrenamiento);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(_toolbar);
     }
 
     @Override

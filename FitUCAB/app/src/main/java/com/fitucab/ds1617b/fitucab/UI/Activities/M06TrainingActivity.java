@@ -1,12 +1,17 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
@@ -21,16 +26,28 @@ import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06ModifyTrainingFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06ShareTrainingFragment;
 
 
-public class M06TrainingActivity extends AppCompatActivity implements OnFragmentSwap {
+public class M06TrainingActivity extends AppCompatActivity implements OnFragmentSwap,
+                                NavigationView.OnNavigationItemSelectedListener{
     private FragmentManager FM = getSupportFragmentManager();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m06_training);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        // Se configura el Drawer Layout
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+        //Se configura el Navigation View
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
         //Se declara el toolbar
-      /*  Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Entrenamiento");
-        setSupportActionBar(toolbar);*/
+        toolbar.setTitle(R.string.M06_nombre_modulo);
+        setSupportActionBar(toolbar);
         //Seleccionamos el fragmento que queremos mostrar.
         onSwap("M06HomeTrainingFragment",null);
     }
@@ -111,5 +128,10 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
                 startActivity(newActivity);
                 break;
         }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
     }
 }

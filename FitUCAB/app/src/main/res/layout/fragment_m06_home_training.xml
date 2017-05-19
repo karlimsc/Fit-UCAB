@@ -13,15 +13,6 @@
         android:theme="@style/AppTheme.AppBarOverlay"
         android:id="@+id/appBarLayout4">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/m06_toolbar_training_6"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            android:title="@string/M06_nombre_modulo"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-             />
-
     </android.support.design.widget.AppBarLayout>
 
     <include
@@ -29,10 +20,5 @@
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
-    <include
-        layout="@layout/fragment_m06_home_training_buttons_actions"
-        android:layout_width="wrap_content"
-        android:layout_height="76dp" />
 
 </LinearLayout>

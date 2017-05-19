@@ -58,11 +58,6 @@ public class M06DeleteTrainingFragment extends Fragment implements ListView.OnIt
         _adaptador = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1, entrenamientos);
         _listView.setAdapter(_adaptador);
         _listView.setOnItemClickListener(this);
-
-        //Aqui ando agregando el titulo a la toolbar y un boton para regresarme al anterior fragment
-        _toolbar=(Toolbar) _view.findViewById(R.id.m06_toolbar_training_4);
-        getActivity().setTitle(R.string.M06_title_eliminar_entrenamiento);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(_toolbar);
     }
 
 

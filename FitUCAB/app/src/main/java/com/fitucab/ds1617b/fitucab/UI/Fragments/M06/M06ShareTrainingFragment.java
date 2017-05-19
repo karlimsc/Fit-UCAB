@@ -58,10 +58,6 @@ public class M06ShareTrainingFragment extends Fragment implements ListView.OnIte
         _adaptador = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1, contactos);
         _listView.setAdapter(_adaptador);
         _listView.setOnItemClickListener(this);
-        //Aqui ando agregando el titulo a la toolbar y un boton para regresarme al anterior fragment
-        _toolbar=(Toolbar) _view.findViewById(R.id.m06_toolbar_training_9);
-        getActivity().setTitle(R.string.MO6_title_compartir_entrenamiento);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(_toolbar);
     }
 
 

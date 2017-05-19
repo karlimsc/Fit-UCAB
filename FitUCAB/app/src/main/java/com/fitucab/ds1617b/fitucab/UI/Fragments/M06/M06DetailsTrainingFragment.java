@@ -59,10 +59,6 @@ public class M06DetailsTrainingFragment extends Fragment implements View.OnClick
         _listView.setAdapter(_adaptador);
         _compartir=(Button) _view.findViewById(R.id.m06_botonCompartirEntrenamiento);
         _compartir.setOnClickListener(this);
-        //Aqui ando agregando el titulo a la toolbar y un boton para regresarme al anterior fragment
-        _toolbar=(Toolbar) _view.findViewById(R.id.m06_toolbar_training_5);
-        getActivity().setTitle(R.string.M06_title_detalle_entrenamiento);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(_toolbar);
     }
 
     @Override

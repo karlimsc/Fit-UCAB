@@ -4,21 +4,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        android:id="@+id/appBarLayout4">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/m06_toolbar_training_5"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            android:title="@string/M06_nombre_modulo"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            />
-    </android.support.design.widget.AppBarLayout>
 
     <TextView
         android:id="@+id/m06_nombre_entrenamiento"

@@ -51,9 +51,6 @@ public class M06AddTrainingFragment extends Fragment implements View.OnClickList
         //Le paso sus respectivos Id a los botones de personalizado y predefinido
         _personalizado = (Button) _view.findViewById(R.id.m06_botonEntrenamientoPersonalizado);
         _preterminado = (Button) _view.findViewById(R.id.m06_botonEntrenamientoPredefinido);
-        //Aqui ando agregando el titulo a la toolbar y un boton para regresarme al anterior fragment
-        _toolbar=(Toolbar) _view.findViewById(R.id.m06_toolbar_training_1);
-        getActivity().setTitle(R.string.M06_title_activity_opcion_agregar_entrenamiento);
         _preterminado.setOnClickListener(this);
         _personalizado.setOnClickListener(this);
         ((AppCompatActivity)getActivity()).setSupportActionBar(_toolbar);
@@ -62,9 +59,6 @@ public class M06AddTrainingFragment extends Fragment implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.m06_toolbar_training_1:
-                _callBack.onSwap("M06HomeTrainingFragment",null);
-                break;
             case R.id.m06_botonEntrenamientoPersonalizado:
                 _callBack.onSwap("M06AddTrainingTypePersonalizedFragment",null);
                 break;

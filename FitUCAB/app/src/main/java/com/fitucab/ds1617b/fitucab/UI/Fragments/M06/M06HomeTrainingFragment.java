@@ -23,7 +23,7 @@ import com.fitucab.ds1617b.fitucab.R;
  */
 
 public class M06HomeTrainingFragment extends Fragment implements View.OnClickListener,ListView.OnItemClickListener{
-    private Button _botonAgregar,_botonEliminar,_botonModificar;
+
     private View _view;
     private OnFragmentSwap _callBack;
     private Toolbar _toolbar;
@@ -51,57 +51,43 @@ public class M06HomeTrainingFragment extends Fragment implements View.OnClickLis
         // Inflate the layout for this fragment
         _view =  inflater.inflate(R.layout.fragment_m06_home_training, container, false);
         setupViewValues();
-        manageChangeFragmentAdd();
-        manageChangeFragmentEdit();
-        manageChangeFragmentDelete();
+
         return _view;
     }
 
-    private void manageChangeFragmentDelete() {
-        _botonEliminar.setOnClickListener(this);
-    }
-
-    private void manageChangeFragmentEdit() {
-        _botonModificar.setOnClickListener(this);
-    }
-
-    private void manageChangeFragmentAdd() {
-        _botonAgregar.setOnClickListener(this);
-    }
-
+    /**
+     * Se relacionan los atributos de este fragments a los del Fragment Home Training
+     */
 
     private void setupViewValues() {
-        _botonAgregar= (Button) _view.findViewById(R.id.m06_botonAgregar);
-        _botonEliminar=(Button) _view.findViewById(R.id.m06_botonEliminar);
-        _botonModificar=(Button) _view.findViewById(R.id.m06_botonModificar);
-        _toolbar=(Toolbar) _view.findViewById(R.id.m06_toolbar_training_6);
-        _botonEliminar.setOnClickListener(this);
-        _botonModificar.setOnClickListener(this);
-        _botonAgregar.setOnClickListener(this);
+        /*  _toolbar=(Toolbar) _view.findViewById(R.id.m06_toolbar_training_6);
         getActivity().setTitle(R.string.M06_nombre_modulo);
         ((AppCompatActivity)getActivity()).setSupportActionBar(_toolbar);
+        */
         //Llenando el list View
         _listView=(ListView)_view.findViewById(R.id.m06_listViewEntrenamiento);
         _adaptador = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1, entrenamientos);
         _listView.setAdapter(_adaptador);
         _listView.setOnItemClickListener(this);
-
     }
 
+    /**
+     * Metodo al presionar un boton realice acciones
+     */
     @Override
     public void onClick(View v) {
         switch(v.getId()){
-            case R.id.m06_botonAgregar:
-                _callBack.onSwap("M06AddTrainingFragment",null);
-                break;
-            case R.id.m06_botonModificar:
-                _callBack.onSwap("M06ModifySelectTrainingFragment",null);
-                break;
-            case R.id.m06_botonEliminar:
-                _callBack.onSwap("M06DeleteTrainingFragment",null);
-                break;
+
         }
     }
+
+    /**
+     * Metodo en el cual al presionar un elemento del entrenamiento se abre para compartir
+     * @param parent
+     * @param view
+     * @param position
+     * @param id
+     */
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

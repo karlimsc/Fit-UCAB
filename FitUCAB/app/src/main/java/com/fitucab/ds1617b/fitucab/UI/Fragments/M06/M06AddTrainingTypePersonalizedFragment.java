@@ -63,11 +63,6 @@ public class M06AddTrainingTypePersonalizedFragment extends Fragment implements 
         _adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         _spinnerCaminar.setAdapter(_adaptador);
         _spinnerCorrer.setAdapter(_adaptador);
-
-        //Aqui ando agregando el titulo a la toolbar y un boton para regresarme al anterior fragment
-        _toolbar=(Toolbar) _view.findViewById(R.id.m06_toolbar_training_2);
-        getActivity().setTitle(R.string.M06_title_activity_opcion_agregar_entrenamiento_personalizado);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(_toolbar);
     }
 
     @Override
