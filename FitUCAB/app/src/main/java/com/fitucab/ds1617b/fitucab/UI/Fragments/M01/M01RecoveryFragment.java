@@ -45,6 +45,13 @@ public class M01RecoveryFragment extends Fragment {
         }
     }
 
+    /**
+     * Metodo encargado de instanciar la vista Recuperación de contraseña.
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

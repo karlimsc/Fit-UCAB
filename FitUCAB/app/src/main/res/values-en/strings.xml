@@ -50,8 +50,8 @@
     <string name="M06_caloriasQuemadas">Calories burned:</string>
     <string name="M06_caminar">Walk</string>
     <string name="M06_compartir_entrenamiento">Share training</string>
-    <string name="M06_correr">Run</string>
     <string name="M06_editar_entrenamiento">Edit training</string>
+    <string name="M06_correr">Run</string>
     <string name="M06_eliminar_entrenamiento">Delete training</string>
     <string name="M06_entrenamientoPersonalizado">Personalized Training</string>
     <string name="M06_entrenamientoPredefinido">Predefined Training</string>
@@ -59,24 +59,24 @@
     <string name="M06_nombre_modulo">Training</string>
     <string name="M06_tiempo">Time</string>
     <string name="M06_tipo">Type</string>
-    <string name="M06_title_activity_opcion_agregar_entrenamiento">Add training</string>
     <string name="M06_title_activity_opcion_agregar_entrenamiento_personalizado">Add training personalized</string>
+    <string name="M06_title_activity_opcion_agregar_entrenamiento">Add training</string>
     <string name="M06_title_activity_opcion_agregar_entrenamiento_predefinido">Add training predefined</string>
     <string name="m06_agregar">Add</string>
     <string name="m06_eliminar">Delete</string>
     <string name="m06_modificar">Modify</string>
-    <string name="M06_details_training_personalized">This training will be daily</string>
     <string name="M06_entrenamiento_creado_exito">Successfully created training!</string>
+    <string name="M06_details_training_personalized">This training will be daily</string>
     <string name="M06_compartir">Share</string>
     <string name="M06_compartir_exitoso">Successfully share training!</string>
     <string name="M06_eliminar_exitoso">Succesfully deleted training!</string>
     <string name="M06_modificar_existoso">Succesfully modified training!</string>
-    <string name="M06_title_detalle_entrenamiento">Training details</string>
     <string name="M06_title_eliminar_entrenamiento">Delete Training</string>
+    <string name="M06_title_detalle_entrenamiento">Training details</string>
     <string name="M06_title_modificar_entrenamiento">Modify Training</string>
     <string name="M06_title_seleccionar_entrenamiento">Select Training</string>
     <string name="MO6_title_compartir_entrenamiento">Share Training</string>
-    <string name="M06_personalizado">Personalized</string>
     <string name="M06_predefinido">Predefined</string>
+    <string name="M06_personalizado">Personalized</string>
     <!--Fin de modulo 06-->
 </resources>
