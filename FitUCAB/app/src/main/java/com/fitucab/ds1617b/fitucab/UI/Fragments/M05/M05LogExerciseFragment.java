@@ -15,11 +15,11 @@ import com.fitucab.ds1617b.fitucab.R;
  * Created by karo on 13/04/17.
  */
 
-public class M05LogActivityFragment extends Fragment {
+public class M05LogExerciseFragment extends Fragment {
 
     private OnFragmentSwap _callBack;
 
-    public M05LogActivityFragment() {
+    public M05LogExerciseFragment() {
     }
 
 
