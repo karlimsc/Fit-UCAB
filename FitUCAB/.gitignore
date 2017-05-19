@@ -1,5 +1,5 @@
 *.iml
-.gradle
+*.gradle
 local.properties
 /.idea/workspace.xml
 /.idea/libraries
@@ -10,3 +10,6 @@ local.properties
 .idea
 /app/build
 build/
+/WebServicesFitUCAB/out/
+/WebServicesFitUCAB/.idea/
+*.*~
