@@ -36,12 +36,16 @@ public class M01_ServicesUser {
     @Path("/insertRegistry")
     @Produces("application/json")
     public String insertUser(@QueryParam("User") String user,@QueryParam("Password") String password,
-                             @QueryParam("Email") String email,@QueryParam("Sex") String sex,@QueryParam("Phone") String phone,
-                             @QueryParam("Weight") String weight,@QueryParam("Height")String height,@QueryParam("Registry Point") String registryPoint)
+                             @QueryParam("Email") String email,@QueryParam("Sex") String sex,
+                             @QueryParam("Phone") String phone,
+                             @QueryParam("Weight") String weight,@QueryParam("Height")String height,
+                             @QueryParam("Registry Point") String registryPoint)
     {
         int id = idIncrease();
-        String query= "INSERT INTO PERSON(PERSONID, PERSONUSERNAME, PERSONPASSWORD, PERSONEMAIL, PERSONSEX, PERSONPHONE, PERSONINGRESO) VALUES ('"+id+"','"+user+"','"+password+"','"+email+"','"+sex+"','"+phone+"')";
-        String query2="INSERT INTO REGISTRY (registryid, registryweight, registryheight, registrypoint, fk_personid) VALUES ('"+id+"','"+weight+"','"+height+"','"+registryPoint+"','"+id+"')";
+        String query= "INSERT INTO PERSON(PERSONID, PERSONUSERNAME, PERSONPASSWORD, PERSONEMAIL, PERSONSEX, PERSONPHONE, "
+                      + "PERSONINGRESO) VALUES ('"+id+"','"+user+"','"+password+"','"+email+"','"+sex+"','"+phone+"')";
+        String query2="INSERT INTO REGISTRY (registryid, registryweight, registryheight, registrypoint, fk_personid)" +
+                       " VALUES ('"+id+"','"+weight+"','"+height+"','"+registryPoint+"','"+id+"')";
 
         try{
 
@@ -56,15 +60,6 @@ public class M01_ServicesUser {
     }
 
 
-    @GET
-    @Path("/helloWorld")
-    @Produces("application/json")
-    public String prueba()
-    {
-        return ("hola mundo");
-    }
-
-
     /***
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
      * @param user
@@ -76,7 +71,8 @@ public class M01_ServicesUser {
     @Produces("application/json")
     public String getUser(@QueryParam("User") String user,@QueryParam("Password") String password)
     {
-        String query="SELECT PERSONUSERNAME FROM PERSON WHERE PERSONUSERNAME= '" + user + "' AND PERSONPASSWORD = '" + password + "'";
+        String query="SELECT PERSONUSERNAME FROM PERSON WHERE PERSONUSERNAME= '" + user + "' " +
+                     "AND PERSONPASSWORD = '" + password + "'";
 
         try{
 
@@ -105,7 +101,35 @@ public class M01_ServicesUser {
         //esto es para incrementar, no implemenrado por ahora
         return Id;
     }
+    @GET
+    @Path("/helloWorld")
+    @Produces("application/json")
+    public String prueba()
+    {
+        String query="SELECT * FROM PERSON";
 
+        try{
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            User user= null;
+            while(rs.next()){
+                String username = rs.getString("PERSONUSERNAME");
+                int id = rs.getInt("PERSONID");
+                String password = rs.getString("PERSONPASSWORD");
+                String sexo= rs.getString("PERSONSEX");
+                String phone= rs.getString("PERSONPHONE");
+                String email= rs.getString("PERSONEMAIL");
+
+                user= new User(id,username,password,email,sexo,phone);
+
+            }
+            return gson.toJson(user);
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+    }
 
     //esto no va a aqui , se puso momentaneamente.
     public Connection bdConnect()
@@ -114,8 +138,8 @@ public class M01_ServicesUser {
         try
         {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/FitUcabDB";
-            conn = DriverManager.getConnection(url,"postgres", "root");
+            String url = "jdbc:postgresql://localhost/fitucabdb";
+            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
         }
         catch (ClassNotFoundException e)
         {

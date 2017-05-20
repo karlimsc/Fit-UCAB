@@ -4,7 +4,7 @@ package Domain;
 public class User {
 
     private int _id;
-    private String  _user;
+    private String _username;
     private String  _password;
     private String _email;
     private String _sex;
@@ -15,7 +15,7 @@ public class User {
     public User(int id,String user,String password, String email,String sex,String phone)
     {
         _id = id;
-        _user = user;
+        _username = user;
         _password = password;
         _email = email;
         _sex = sex;
@@ -25,7 +25,7 @@ public class User {
     public User(String user,String password, String email,String sex,String phone)
     {
 
-        _user = user;
+        _username = user;
         _password = password;
         _email = email;
         _sex = sex;
@@ -34,7 +34,7 @@ public class User {
     };
     public User(String user,String password)
     {
-        _user = user;
+        _username = user;
         _password = password;
     }
     public User(String email)
@@ -53,11 +53,11 @@ public class User {
     }
     public String getUser()
     {
-        return _user;
+        return _username;
     }
     public void setUser(String user)
     {
-        this._user = user;
+        this._username = user;
     }
     public String getPassword()
     {
