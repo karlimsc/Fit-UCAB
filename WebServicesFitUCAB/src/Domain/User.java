@@ -1,42 +1,50 @@
 package Domain;
 
 
+import java.sql.Date;
+
 public class User {
 
     private int _id;
-    private String  _user;
+    private String _username;
     private String  _password;
     private String _email;
     private String _sex;
     private String _phone;
+    private Date _birthdate;
 
     public User(){};
 
-    public User(int id,String user,String password, String email,String sex,String phone)
+    public User(int id,String user,String password, String email,String sex,String phone, Date birthdate)
     {
         _id = id;
-        _user = user;
+        _username = user;
         _password = password;
         _email = email;
         _sex = sex;
         _phone = phone;
+        _birthdate= birthdate;
 
     };
-    public User(String user,String password, String email,String sex,String phone)
+
+
+    public User(String user, String password, String email, String sex, String phone, Date birthdate)
     {
 
-        _user = user;
+        _username = user;
         _password = password;
         _email = email;
         _sex = sex;
         _phone = phone;
-
+        _birthdate= birthdate;
     };
+
     public User(String user,String password)
     {
-        _user = user;
+        _username = user;
         _password = password;
     }
+
     public User(String email)
     {
         _email= email;
@@ -51,14 +59,16 @@ public class User {
     {
         this._id = id;
     }
+
     public String getUser()
     {
-        return _user;
+        return _username;
     }
     public void setUser(String user)
     {
-        this._user = user;
+        this._username = user;
     }
+
     public String getPassword()
     {
         return _password;
@@ -67,6 +77,7 @@ public class User {
     {
         this._password = password;
     }
+
     public String getEmail()
     {
         return _email;
@@ -94,6 +105,8 @@ public class User {
         this._phone=phone;
     }
 
+    public Date get_birthdate() {return _birthdate;}
+    public void set_birthdate(Date _birthdate) { this._birthdate = _birthdate;}
 
 
 }

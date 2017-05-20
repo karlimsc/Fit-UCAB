@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
@@ -21,6 +22,8 @@ public class  M01LoginFragment extends Fragment {
     private Button _btnEntrarLogin;
     private View _view;
     private OnFragmentSwap _callBack;
+    private EditText _etUserLogin;
+    private EditText _etPasswordLogin;
 
     public M01LoginFragment() {
     }
@@ -61,7 +64,7 @@ public class  M01LoginFragment extends Fragment {
     }
 
     /**
-     * metodo de listener de hipervinvulo, que realiza el cambio a la vista recuperar contraseña.
+     * metodo de listener de hipervinculo, que realiza el cambio a la vista recuperar contraseña.
      */
     private void manageChangeFragmentRecovery() {
         _tvOlvidoClave.setOnClickListener(new View.OnClickListener() {
@@ -80,6 +83,8 @@ public class  M01LoginFragment extends Fragment {
         _btnEntrarLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String usernameLogin= _etUserLogin.getText().toString();
+                String passwordLogin= _etPasswordLogin.getText().toString();
                 _callBack.onSwapActivity("M02HomeActivity",null);
             }
         });
@@ -91,6 +96,8 @@ public class  M01LoginFragment extends Fragment {
     private void instanciarComponentes (){
         _tvOlvidoClave=(TextView) _view.findViewById(R.id.tv_m01_olvidoClave);
         _btnEntrarLogin=(Button) _view.findViewById(R.id.btn_m01_aceptarLogin);
+        _etUserLogin=(EditText) _view.findViewById(R.id.et_m01_passwordLogin);
+        _etPasswordLogin=(EditText) _view.findViewById(R.id.et_m01_usuarioCorreo);
 
         //llamar a ese metodo
     }
