@@ -15,8 +15,10 @@ PERSONBIRTHDATE date not null
 CREATE TABLE REGISTRY (
 
 REGISTRYID 	serial primary key,
-REGISTRYWEIGHT	integer not null,
-REGISTRYHEIGHT	varchar(20) not null,
+REGISTRYWEIGHT	real not null,
+REGISTRYHEIGHT	real not null,
 REGISTRYPOINT	integer not null,
 FK_PERSONID	integer not null
 );
+
+
