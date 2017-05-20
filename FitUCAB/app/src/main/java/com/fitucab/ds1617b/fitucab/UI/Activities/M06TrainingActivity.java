@@ -12,12 +12,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M02.M02AccountFragment;
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M02.M02HomeFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06AddTrainingFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06AddTrainingTypePersonalizedFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06AddTrainingTypePredefinedFragment;
@@ -40,6 +40,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         setContentView(R.layout.activity_m06_training);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         // Se configura el Drawer Layout
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -192,5 +193,30 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    /**
+     * Metodo que coloca en la toolbar el menu con lo que contiene el layout
+     * activity_m06_home_options_menu ubicado en /menu
+     * @param menu
+     * @return
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.activity_m06_home_options_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.m06_activity_agregar_entrenamiento:
+                onSwap("M06AddTrainingFragment",null);
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
