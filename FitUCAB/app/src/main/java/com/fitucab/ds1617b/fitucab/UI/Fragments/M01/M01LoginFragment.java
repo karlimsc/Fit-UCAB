@@ -83,6 +83,8 @@ public class  M01LoginFragment extends Fragment {
         _btnEntrarLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String usernameLogin= _etUserLogin.getText().toString();
+                String passwordLogin= _etPasswordLogin.getText().toString();
                 _callBack.onSwapActivity("M02HomeActivity",null);
             }
         });
