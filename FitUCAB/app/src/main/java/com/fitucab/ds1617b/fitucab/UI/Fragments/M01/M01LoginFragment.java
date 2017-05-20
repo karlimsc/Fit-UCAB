@@ -1,3 +1,4 @@
+
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 import android.app.Activity;
@@ -21,9 +22,14 @@ public class  M01LoginFragment extends Fragment {
     private Button _btnEntrarLogin;
     private View _view;
     private OnFragmentSwap _callBack;
+
     public M01LoginFragment() {
     }
 
+    /**
+     * Una vez la activity llama a un fragment se ejecuta este metodo
+     * @param activity recibe la activity que llamo o instancio al fragment
+     */
     public void onAttach(Activity activity) {
         super.onAttach(activity);
 
@@ -55,6 +61,9 @@ public class  M01LoginFragment extends Fragment {
         return _view;
     }
 
+    /**
+     * metodo de listener de hipervinvulo, que realiza el cambio a la vista recuperar contraseña.
+     */
     private void manageChangeFragmentRecovery() {
         _tvOlvidoClave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +73,10 @@ public class  M01LoginFragment extends Fragment {
         });
 
     }
+
+    /**
+     * metodo de listener del boton entrar, para realizar el cambio de actividad.
+     */
     private void manageButtonEntrar(){
         _btnEntrarLogin.setOnClickListener(new View.OnClickListener() {
             @Override

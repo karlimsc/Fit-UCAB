@@ -1,3 +1,4 @@
+
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 
@@ -11,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
@@ -53,6 +53,13 @@ public class M01SignUpFragment extends Fragment {
     }
 
 
+    /**
+     * Metodo encargado de instanciar la vista, hacer los llamados a los metodos de listener de los componentes de la vista.
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -65,6 +72,9 @@ public class M01SignUpFragment extends Fragment {
         return _view;
     }
 
+    /**
+     * Metodo encargado de cambiar de actividad al realizar la accion de seleccionar el boton Registar.
+     */
     private void manageBtnRegistrar() {
         _btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +89,9 @@ public class M01SignUpFragment extends Fragment {
         });
     }
 
+    /**
+     * Metodo que activa el calendario.
+     */
     private void activarCalendario(){
         _etfechaNac.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +101,9 @@ public class M01SignUpFragment extends Fragment {
         });
     }
 
+    /**
+     * Metodo que prepara los componentes de la vista
+     */
     private void setupViewValues() {
         _btnRegistrar = (Button) _view.findViewById(R.id.btn_m01_entrar);
         _etfechaNac = (EditText) _view.findViewById(R.id.et_m01_fechanac);
@@ -96,6 +112,9 @@ public class M01SignUpFragment extends Fragment {
 
     Calendar cal = Calendar.getInstance(TimeZone.getDefault()); // Get current date
 
+    /**
+     * Metodo encargado de instancias el calendario.
+     */
     public void instanciarCalendario(){
         // Create the DatePickerDialog instance
         DatePickerDialog datePicker = new DatePickerDialog(getContext(), R.style.AppTheme,
@@ -107,6 +126,9 @@ public class M01SignUpFragment extends Fragment {
         datePicker.show();
     }
 
+    /**
+     *
+     */
     // Listener
     private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
 
@@ -120,3 +142,4 @@ public class M01SignUpFragment extends Fragment {
         }
     };
 }
+

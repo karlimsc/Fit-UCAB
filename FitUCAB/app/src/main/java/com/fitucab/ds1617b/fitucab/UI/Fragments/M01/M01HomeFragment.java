@@ -1,3 +1,4 @@
+
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 
@@ -45,6 +46,13 @@ public class M01HomeFragment extends Fragment {
         }
     }
 
+    /**
+     * Metodo que retorno la vista y realiza llamados a los metodos de los botones, que se encargan de esperar un evento de click
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,9 +61,13 @@ public class M01HomeFragment extends Fragment {
         setupViewValues();
         manageChangeFragmentLogin();
         manageChangeFragmentSignUp();
+
         return _view;
     }
 
+    /**
+     * metodo de listener del boton Login, para realizar el cambio al otro fragmento.
+     */
     private void manageChangeFragmentLogin() {
         _btnIrIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,6 +76,10 @@ public class M01HomeFragment extends Fragment {
             }
         });
     }
+
+    /**
+     * metodo de listener del boton SingUp, para realizar el cambio a ese fragmento.
+     */
     private void manageChangeFragmentSignUp() {
         _btnIrRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +90,9 @@ public class M01HomeFragment extends Fragment {
 
     }
 
+    /**
+     * Prepara los componentes de la vista.
+     */
     private void setupViewValues() {
         _btnIrIniciarSesion = (Button) _view.findViewById(R.id.btn_m01_iniciarSesion);
         _btnIrRegistro = (Button) _view.findViewById(R.id.btn_m01_comienza);
@@ -81,3 +100,4 @@ public class M01HomeFragment extends Fragment {
     }
 
 }
+
