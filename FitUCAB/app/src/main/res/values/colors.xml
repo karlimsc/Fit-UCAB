@@ -10,5 +10,9 @@
     <color name="softgrey">#53535353</color>
     <color name="transparent">#00000000</color>
 
+    <color name="colorwhite">#FFFFFF</color>
+    <color name="colorGreenBtn">#6aca25</color>
+    <color name="colorWhiteSmoke">#f5f5f5</color>
+
 
 </resources>

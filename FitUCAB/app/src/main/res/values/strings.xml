@@ -47,12 +47,32 @@
     <string name="et_m02_Steps">Nro de Pasos</string>
 
     <!--FIN Strings Modulo 2 -->
+
+
+
+   <!-- Inicio Strings Modulo 5 -->
+    <string name="app_name_title">Actividad</string>
+    <string name="_tv_m05_type">Tipo de ejercicio:</string>
+    <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
+    <string name="_tv_m05_duration">Duracion:</string>
+    <string name="_btn_m05_registermanual">REGISTRAR</string>
+    <string name="_tv_m05_calories">Calories:</string>
+    <string name="_tv_m05_titletabmanual">MANUAL</string>
+    <string name="tab_m05_log">Manual</string>
+    <string name="tab_m05_track">Automática</string>
+    <!--FIN Strings Modulo 5 -->
+
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Home</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_m02_home">M02HomeActivity</string>
+    <string name="title_activity_m05_track_exercise">Track</string>
+    <string name="bt_start_tracking">Iniciar</string>
 
 
 </resources>
