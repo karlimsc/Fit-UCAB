@@ -74,6 +74,9 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
                 case "M06HomeTrainingFragment":
                     toolbar.setTitle(R.string.M06_nombre_modulo);
                     setSupportActionBar(toolbar);
+
+                    FM.popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+
                     fragmentToSwap = new M06HomeTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
@@ -81,6 +84,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
                 case "M06AddTrainingFragment":
                     toolbar.setTitle(R.string.M06_title_activity_opcion_agregar_entrenamiento);
                     setSupportActionBar(toolbar);
+
                     fragmentToSwap = new M06AddTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
@@ -89,6 +93,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
                 case "M06AddTrainingTypePersonalizedFragment":
                     toolbar.setTitle(R.string.M06_title_activity_opcion_agregar_entrenamiento_personalizado);
                     setSupportActionBar(toolbar);
+
                     fragmentToSwap = new M06AddTrainingTypePersonalizedFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
@@ -97,6 +102,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
                 case "M06AddTrainingTypePredefinedFragment":
                     toolbar.setTitle(R.string.M06_title_activity_opcion_agregar_entrenamiento_predefinido);
                     setSupportActionBar(toolbar);
+
                     fragmentToSwap = new M06AddTrainingTypePredefinedFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
@@ -105,6 +111,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
                 case "M06DetailsTrainingFragment":
                     toolbar.setTitle(R.string.M06_title_detalle_entrenamiento);
                     setSupportActionBar(toolbar);
+
                     fragmentToSwap = new M06DetailsTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
@@ -113,6 +120,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
                 case "M06ShareTrainingFragment":
                     toolbar.setTitle(R.string.M06_compartir_entrenamiento);
                     setSupportActionBar(toolbar);
+
                     fragmentToSwap = new M06ShareTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
@@ -121,6 +129,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
                 case "M06DeleteTrainingFragment":
                     toolbar.setTitle(R.string.M06_title_eliminar_entrenamiento);
                     setSupportActionBar(toolbar);
+
                     fragmentToSwap = new M06DeleteTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
@@ -129,6 +138,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
                 case "M06ModifySelectTrainingFragment":
                     toolbar.setTitle(R.string.M06_title_seleccionar_entrenamiento);
                     setSupportActionBar(toolbar);
+
                     fragmentToSwap = new M06ModifySelectTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
@@ -137,6 +147,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
                 case "M06ModifyTrainingFragment":
                     toolbar.setTitle(R.string.M06_title_modificar_entrenamiento);
                     setSupportActionBar(toolbar);
+
                     fragmentToSwap = new M06ModifyTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.m06_fLayoutContent, fragmentToSwap);
