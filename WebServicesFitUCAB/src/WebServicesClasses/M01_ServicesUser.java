@@ -9,8 +9,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
 
-/***
- * Clase del modulo 1 registro y login
+/**
+ * Clase de Servicios Web del Modulo 01
  */
 @Path("/M01_ServicesUser")
 public class M01_ServicesUser {
@@ -18,7 +18,7 @@ public class M01_ServicesUser {
     private Connection conn =bdConnect();
     Gson gson = new Gson();
 
-    /***
+    /**
      * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
      * @param user
      * @param password
@@ -66,7 +66,7 @@ public class M01_ServicesUser {
 
 
     /***
-     * Metodo que es llamado a travez del web service para consultar un usuario existente en la base de datos
+     * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
      * @param user
      * @param password
      * @return
@@ -95,8 +95,8 @@ public class M01_ServicesUser {
         }
     }
 
-    /***
-     * Metodo que es llamado em otros metodos para obtener el ultimo id e incrementarlo
+    /**
+     * Metodo que es llamado en otros metodos para obtener el ultimo id e incrementarlo
      * @return devuelve un numero incrementado
      */
     public int idIncrease()
