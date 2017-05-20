@@ -30,6 +30,7 @@ public class M06_ServicesTraining {
      * @param trainingName
      * @param trainingPeriod
      * @param trainingCalories
+     * @return
      */
     public String createTraining(@QueryParam("trainingName") String name, @QueryParam("id") int id,
                                  @QueryParam("trainingPeriod") int period, @QueryParam("trainingCalories") int calories) {
@@ -77,15 +78,16 @@ public class M06_ServicesTraining {
      *
      * @return un conector para hacer llamadas a la BD
      */
+    // PARA HACER PRUEBAS!!
     private Connection connectDb() {
         Connection conn = null;
         try {
             //llamada al driver de PostgreSQL
             Class.forName("org.postgresql.Driver");
             //String de conexion a la db:
-            String url = "jdbc:postgresql:FitUCAB";
+            String url = "jdbc:postgresql://localhost/FitUcabDB";
 
-            conn = DriverManager.getConnection(url, "postgres", "211289");
+            conn = DriverManager.getConnection(url, "FitUcab", "fitucab");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             System.exit(1);
