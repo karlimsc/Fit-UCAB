@@ -2,15 +2,12 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 
 import android.app.Activity;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
@@ -48,13 +45,6 @@ public class M01HomeFragment extends Fragment {
         }
     }
 
-    /**
-     * Metodo que retorno la vista y realiza llamados a los metodos de los botones, que se encargan de esperar un evento de click
-     * @param inflater
-     * @param container
-     * @param savedInstanceState
-     * @return
-     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -63,13 +53,9 @@ public class M01HomeFragment extends Fragment {
         setupViewValues();
         manageChangeFragmentLogin();
         manageChangeFragmentSignUp();
-
         return _view;
     }
 
-    /**
-     * metodo de listener del boton Login, para realizar el cambio al otro fragmento.
-     */
     private void manageChangeFragmentLogin() {
         _btnIrIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,10 +64,6 @@ public class M01HomeFragment extends Fragment {
             }
         });
     }
-
-    /**
-     * metodo de listener del boton SingUp, para realizar el cambio a ese fragmento.
-     */
     private void manageChangeFragmentSignUp() {
         _btnIrRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,9 +74,6 @@ public class M01HomeFragment extends Fragment {
 
     }
 
-    /**
-     * Prepara los componentes de la vista.
-     */
     private void setupViewValues() {
         _btnIrIniciarSesion = (Button) _view.findViewById(R.id.btn_m01_iniciarSesion);
         _btnIrRegistro = (Button) _view.findViewById(R.id.btn_m01_comienza);

@@ -4,17 +4,17 @@
     <string name="title_activity_main">MainActivity</string>
 
     <!--Inicio Strings Modulo 1 -->
-    <string name="btn_m01_comienza">REGISTRATE</string>
-    <string name="btn_m01_iniciaSesion">INICIA SESION</string>
+    <string name="btn_m01_comienza">Comienza</string>
+    <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
     <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento físico</string>
-    <string name="btn_m01_entrar">ENTRAR</string>
+    <string name="btn_m01_entrar">Entrar</string>
     <string name="et_m01_usuarioCorreo">Usuario o Correo</string>
     <string name="et_m01_passwordLogin">Contraseña</string>
     <string name="et_m01_passwordRegistro">Contraseña</string>
-    <string name="btn_m01_aceptarLogin">ENTRAR</string>
+    <string name="btn_m01_aceptarLogin">Entrar</string>
     <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
     <string name="et_m01_correoRecovery">Correo Electrónico</string>
-    <string name="btn_m01_enviarCorreo">ENVIAR CORREO</string>
+    <string name="btn_m01_enviarCorreo">Enviar Correo</string>
     <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
     <string name="tv_m01_acercaDeTi">Acerca de ti</string>
     <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
