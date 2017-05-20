@@ -1,15 +1,28 @@
 package Domain;
 
-
+/**
+ * Clase del Modulo 1 para registrar al usuario
+ */
 public class Registry {
 
     private int _idRegistry;
-    private int _weight;
-    private String _height;
+    private float _weight;
+    private float _height;
     private int _registryPoint;
 
+    /**
+     * Constructor vacio
+     */
     public Registry(){};
-    public Registry(int idRegistry, int weight,String height,int registryPoint)
+
+    /**
+     * Constructor con todos los atributos
+     * @param idRegistry
+     * @param weight
+     * @param height
+     * @param registryPoint
+     */
+    public Registry(int idRegistry, float weight,float height,int registryPoint)
     {
      _idRegistry = idRegistry;
      _weight = weight;
@@ -17,12 +30,30 @@ public class Registry {
      _registryPoint = registryPoint;
     };
 
-    public Registry( int weight,String height,int registryPoint)
+    /**
+     * Contructor sin el id
+     * @param weight
+     * @param height
+     * @param registryPoint
+     */
+    public Registry( float weight,float height,int registryPoint)
     {
 
         _weight = weight;
         _height = height;
         _registryPoint = registryPoint;
+    };
+
+    /**
+     * Constructor sin los puntos del usuario
+     * @param weight
+     * @param height
+     */
+    public Registry( float weight,float height)
+    {
+
+        _weight = weight;
+        _height = height;
     };
 
     public int getIdRegistry()
@@ -34,20 +65,20 @@ public class Registry {
         this._idRegistry = idRegistry;
     }
 
-    public int getWeight()
+    public float getWeight()
     {
         return _weight;
     }
-    public void setWeight( int weight)
+    public void setWeight( float weight)
     {
         this._weight = weight;
     }
 
-    public String getHeight()
+    public float getHeight()
     {
         return _height;
     }
-    public void setHeight( String height)
+    public void setHeight( float height)
     {
         this._height = height;
     }
