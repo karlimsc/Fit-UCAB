@@ -55,18 +55,4 @@
         android:layout_below="@+id/m06_actividades"
         android:layout_marginBottom="200dp" />
 
-    <Button
-        android:id="@+id/m06_botonCompartirEntrenamiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="88dp"
-        android:background="@color/colorBtnAceptar"
-        android:text="@string/M06_compartir"
-        android:textAllCaps="false"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        android:textSize="12sp"
-        android:textStyle="bold" />
-
 </RelativeLayout>

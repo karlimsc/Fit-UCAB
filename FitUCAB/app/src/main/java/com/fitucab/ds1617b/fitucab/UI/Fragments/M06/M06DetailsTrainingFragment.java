@@ -19,9 +19,8 @@ import com.fitucab.ds1617b.fitucab.R;
  * Created by Alejandro Fernandez on 24/4/2017.
  */
 
-public class M06DetailsTrainingFragment extends Fragment implements View.OnClickListener{
+public class M06DetailsTrainingFragment extends Fragment {
     private ListView _listView;
-    private Button _compartir;
     private View _view;
     private OnFragmentSwap _callBack;
     private ArrayAdapter<String> _adaptador;
@@ -47,30 +46,15 @@ public class M06DetailsTrainingFragment extends Fragment implements View.OnClick
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        _view =  inflater.inflate(R.layout.fragment_m06_details_training_fragment, container, false);
+        _view = inflater.inflate(R.layout.fragment_m06_details_training_fragment, container, false);
         setupViewValues();
         return _view;
     }
 
     private void setupViewValues() {
         //Llenando el list View
-        _listView=(ListView)_view.findViewById(R.id.m06_ListViewActividades);
-        _adaptador = new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1, entrenamiento);
+        _listView = (ListView) _view.findViewById(R.id.m06_ListViewActividades);
+        _adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, entrenamiento);
         _listView.setAdapter(_adaptador);
-        _compartir=(Button) _view.findViewById(R.id.m06_botonCompartirEntrenamiento);
-        _compartir.setOnClickListener(this);
-    }
-
-    /**
-     * Metodo que 
-     * @param v
-     */
-    @Override
-    public void onClick(View v) {
-        switch(v.getId()){
-            case R.id.m06_botonCompartirEntrenamiento:
-                _callBack.onSwap("M06ShareTrainingFragment",null);
-                break;
-        }
     }
 }

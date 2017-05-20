@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <item
+        android:id="@+id/m06_menu_editar"
+        android:orderInCategory="100"
+        android:title="@string/M06_editar_entrenamiento"
+        />
+    <item
+        android:id="@+id/m06_menu_eliminar"
+        android:orderInCategory="100"
+        android:title="@string/M06_eliminar_entrenamiento"
+        />
+    <item
+        android:id="@+id/m06_menu_compartir"
+        android:orderInCategory="100"
+        android:title="@string/M06_compartir_entrenamiento"
+        />
+</menu>
