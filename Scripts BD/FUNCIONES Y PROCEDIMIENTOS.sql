@@ -1,5 +1,21 @@
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++DEPORTES++++++++++++++++++++++++++++++++++++++++++++
+
+-- INSERTA EL ID DEL USUARIO Y EL ID DEL DEPORTE PARA HABILITARLO 
+
+CREATE OR REPLACE FUNCTION M05_insertardeporte(usuario INTEGER ,deporte INTEGER)  RETURNS void AS
+$$
+
+BEGIN
+
+ INSERT INTO EXERCISE (EXERCISEID,FK_PERSON,FK_SPORT) VALUES (nextval('EXERCISEID'),usuario,deporte);
+
+END
+$$
+LANGUAGE 'plpgsql' VOLATILE; 
+
 --BUSCAR DATOS DE LOS DEPPORTES.
-CREATE OR REPLACE FUNCTION obtenerDatosDeporte (ide INTEGER) RETURNS TABLE (iddeporte NUMERIC, nombredeporte VARCHAR(200),metdeporte NUMERIC) AS 
+CREATE OR REPLACE FUNCTION M05_obtenerdatosdeporte (ide INTEGER) RETURNS TABLE (iddeporte NUMERIC, nombredeporte VARCHAR(200),metdeporte NUMERIC) AS 
 $$ 
 DECLARE
 var_r record;
@@ -22,7 +38,7 @@ LANGUAGE 'plpgsql' STABLE;
 -- BUSCA EL MET DEL DEPORTE QUE EL USUARIO QUIERE AÑADIR A SU LISTA  A TRAVES DE SU NOMBRE
 -- FUE CREADO PARA OBTENER EL MET DEL DEPORTE ANTES DE INSERTAR
 
-CREATE OR REPLACE FUNCTION obtenerMetDeporte (nombre VARCHAR(200))  RETURNS TABLE (metdeporte FLOAT) AS 
+CREATE OR REPLACE FUNCTION M05_obtenermetdeporte (nombre VARCHAR(200))  RETURNS TABLE (metdeporte FLOAT) AS 
 $$ 
 DECLARE
  var_r record;
@@ -40,78 +56,46 @@ $$
 LANGUAGE 'plpgsql' STABLE;
 
 
--- INSERTA EL ID DEL USUARIO Y EL ID DEL DEPORTE PARA HABILITARLO 
-
-CREATE OR REPLACE FUNCTION insertarDeporte(usuario INTEGER ,deporte INTEGER) RETURNS TABLE (respuesta BOOLEAN) AS
-$$
-DECLARE var_r record;
-BEGIN
 
 
-
- INSERT INTO EXERCISE (EXERCISEID,FK_PERSON,FK_SPORT) VALUES (nextval('EXERCISEID'),usuario,deporte);
-
-
- for var_r in  (SELECT SPORTNAME,PERSONUSERNAME 
-				FROM   EXERCISE,SPORT,PERSON
-				WHERE  FK_PERSON = usuario AND 
-					   FK_SPORT = SPORTID)
-loop
-		nombredeporte:=var_r.SPORTNAME;
-		nombreUsuario:=var_r.PERSONUSERNAME;
-end loop;
-return next;
-	 
-END
-$$
-LANGUAGE 'plpgsql' VOLATILE; 
-
-CREATE OR REPLACE FUNCTION insertarDeporte(usuario INTEGER ,deporte INTEGER)  AS
-$$
-
-BEGIN
-
-
-
- INSERT INTO EXERCISE (EXERCISEID,FK_PERSON,FK_SPORT) VALUES (nextval('EXERCISEID'),usuario,deporte);
-
-
-	 
-END
-$$
-LANGUAGE 'plpgsql' VOLATILE; 
-
--- CARGA TODOS LOS DEPORTES DE UN USUARIO A TRAVES DEL ID DEL DEPORTE Y DEL PROPIO
-
-CREATE OR REPLACE FUNCTION obtenerDeportesUsuario (usuario INTEGER) RETURNS VARCHAR(200) AS 
+-- CARGA TODOS LOS DEPORTES DE UN USUARIO A TRAVES DEL ID del usuario
+CREATE OR REPLACE FUNCTION M05_obtenerdeportesusuario (usuario INTEGER) RETURNS TABLE (nombredeporte VARCHAR(200)) AS 
 $$ 
 DECLARE
- resultado VARCHAR;
+ var_r record;
 BEGIN 
 
-  SELECT SPORTNAME INTO resultado
-  FROM   EXERCISE,SPORT,PERSON
-  WHERE  FK_USUARIO = usuario AND 
-		 FK_SPORT = SPORTID;
-  return(resultado);
-  
+for var_r in  (SELECT SPORTNAME 
+		FROM   EXERCISE,SPORT,PERSON
+		WHERE  FK_PERSON = usuario AND 
+		FK_SPORT = SPORTID)
+loop
+		nombredeporte:= var_r.SPORTNAME;
+		return next;
+end loop;
+
 END; 
 $$
 LANGUAGE 'plpgsql' STABLE;
 
--- Elimina deportes registrados
 
-CREATE OR REPLACE FUNCTION eliminarDeporte (usuario INTEGER ,deporte INTEGER) RETURNS BOOLEAN AS $$
+-- ELIMINA DEPORTES REGISTRADOS
+
+
+CREATE OR REPLACE FUNCTION M05_eliminardeporte(usuario INTEGER ,deporte INTEGER)  RETURNS void AS
+$$
+
 BEGIN
-	 DELETE FROM EXERCISE WHERE fk_usuario=usuario and fk_sport=deporte;
-	 
-	 RETURN TRUE;
-	 
+
+	 DELETE FROM EXERCISE WHERE fk_person=usuario and fk_sport=deporte;
+
 END
 $$
 LANGUAGE 'plpgsql' VOLATILE; 
 
 
+
+-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ACTIVIDADES+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 -- INSERTA LOS DATOS PARA EL REGISTROS DE LAS ACTIVIDADES
 
