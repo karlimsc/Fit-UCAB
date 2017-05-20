@@ -99,13 +99,11 @@ LANGUAGE 'plpgsql' VOLATILE;
 
 -- INSERTA LOS DATOS PARA EL REGISTROS DE LAS ACTIVIDADES
 
-CREATE OR REPLACE FUNCTION insertarActividad (horainicio TIME, horafinal TIME, fecha DATE, km NUMERIC, caloria NUMERIC, lugarinicio VARCHAR(200),lugarfinal VARCHAR(200) ) RETURNS BOOLEAN AS $$
+CREATE OR REPLACE FUNCTION insertarActividad (horainicio TIME, horafinal TIME, fecha DATE, km NUMERIC, caloria NUMERIC, lugarinicio VARCHAR(200),lugarfinal VARCHAR(200) ) RETURNS void AS $$
 BEGIN
 	 INSERT INTO  ACTIVITY (ACTIVITYID,ACTIVITYSTARTTIME, ACTIVITYENDTIME,ACTIVITYDATE,ACTIVITYKM ,ACTIVITYCALOR,ACTIVITYSTARTSITE,ACTIVITYENDSITE) VALUES (nextval('ACTIVITYID'),
                     horainicio,horafinal,fecha,km,caloria,lugarinicio,lugarfinal) ;
-	 
-	 RETURN TRUE;
-	 
+
 END
 $$
 LANGUAGE 'plpgsql' VOLATILE; 
