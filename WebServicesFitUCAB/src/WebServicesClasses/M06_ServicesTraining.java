@@ -49,11 +49,17 @@ public class M06_ServicesTraining {
     @GET
     @Path("/displayTraining")
     @Produces("application/json")
+
+    /***
+     * Metodo utilizado a traves de web service para visualizar los entrenamientos que posee el usuario
+     * @return
+     */
+
     public String getTraining(@QueryParam("id") int id) {
         String name = "";
         int period = 0;
         int calories = 0;
-        String query = "SELECT * FROM TRAINING";
+        String query = "SELECT * FROM TRAINING WHERE FK_USERID="+id;
         Training results = new Training(id, name, period, calories);
         try {
             Connection conn = connectDb();
