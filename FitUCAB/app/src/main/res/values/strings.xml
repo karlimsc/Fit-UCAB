@@ -54,8 +54,8 @@
     <string name="_btn_m05_registermanual">REGISTRAR</string>
     <string name="_itm_m05_delete">Eliminar</string>
     <string name="_itm_m05_modify">Modificar</string>
-    <string name="_tab_m05_log">Manual</string>
-    <string name="_tab_m05_track">Automática</string>
+    <string name="_tab_m05_log">MANUAL</string>
+    <string name="_tab_m05_track">AUTOMATICO</string>
     <string name="_tv_m05_type">Tipo de ejercicio:</string>
     <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
     <string name="_tv_m05_duration">Duracion:</string>
