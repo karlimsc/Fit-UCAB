@@ -4,7 +4,6 @@ CREATE OR REPLACE  FUNCTION M10_AddWater( tm timestamp, gt integer, fkP integer,
                                  OUT res integer)
 AS $$
 DECLARE  
-res integer ;
 max integer;
 BEGIN
 	
@@ -40,10 +39,43 @@ $$ LANGUAGE plpgsql VOLATILE;
 
 
 
+CREATE OR REPLACE FUNCTION M10_GetListFecha(fkp int, date_stamp date)
+RETURNS TABLE(GLASSTIME int, GLASSTYPE timestamp) AS $$
+BEGIN
+  RETURN QUERY
+    SELECT t.GLASSTYPE,t.GLASSTIME FROM glass_historic as t
+      WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp;
+ end;
+$$ LANGUAGE 'plpgsql';
 
 
 
-SELECT glasshistoricid, glasstime, glasstype, fk_person
-  FROM public.glass_historic where  Extract(day from glasstime ) = '03' and Extract(month from glasstime ) = '03' 
-  and Extract(year from glasstime ) = '2014' and fk_person = 2;
+
+CREATE OR REPLACE  FUNCTION M10_GetWater( fkp int, date_stamp date,
+                                 OUT max integer)
+AS $$
+DECLARE  
+
+BEGIN	
+max =  (SELECT Sum(t.GLASSTYPE) FROM glass_historic as t
+       WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp);
+END;
+$$ LANGUAGE plpgsql VOLATILE;
+
+
+
+CREATE OR REPLACE  FUNCTION M10_GetGlass( fkp int, date_stamp date,
+                                 OUT max integer)
+AS $$
+DECLARE  
+
+BEGIN	
+max =  (SELECT Count(t.glasshistoricid) FROM glass_historic as t
+       WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp);
+END;
+$$ LANGUAGE plpgsql VOLATILE;
+
+
+
+
  
