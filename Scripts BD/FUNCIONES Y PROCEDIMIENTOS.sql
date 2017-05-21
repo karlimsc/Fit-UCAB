@@ -99,7 +99,8 @@ LANGUAGE 'plpgsql' VOLATILE;
 
 -- INSERTA LOS DATOS PARA EL REGISTROS DE LAS ACTIVIDADES
 
-CREATE OR REPLACE FUNCTION M05_insertaractividad (horainicio TIMESTAMP, horafinal TIMESTAMP, fecha TIMESTAMP, km NUMERIC, caloria NUMERIC, lugarinicio VARCHAR(200),lugarfinal VARCHAR(200),idregistry INTEGER,idsport INTEGER ) RETURNS void AS $$
+CREATE OR REPLACE FUNCTION M05_insertaractividad (horainicio TIMESTAMP, horafinal TIMESTAMP, fecha TIMESTAMP, km NUMERIC, caloria NUMERIC, lugarinicio VARCHAR(200),lugarfinal VARCHAR(200),idregistry INTEGER,idsport INTEGER )
+RETURNS void AS $$
 BEGIN
 	 INSERT INTO  ACTIVITY (ACTIVITYID,ACTIVITYSTARTTIME, ACTIVITYENDTIME,ACTIVITYDATE,ACTIVITYKM ,ACTIVITYCALOR,ACTIVITYSTARTSITE,ACTIVITYENDSITE,FK_REGISTRY,FK_SPORT) VALUES (nextval('ACTIVITYID'),
                     horainicio,horafinal,fecha,km,caloria,lugarinicio,lugarfinal,idregistry,idsport) ;

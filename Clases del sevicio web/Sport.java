@@ -2,9 +2,9 @@
  * Created by estefania on 14/05/2017.
  */
 public class Sport {
-    private int _id;
+    private int    _id;
     private String _name;
-    private float _met;
+    private float  _met;
 
     public Sport() {
 
