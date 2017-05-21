@@ -51,31 +51,17 @@ $$ LANGUAGE 'plpgsql';
 
 
 
-CREATE OR REPLACE  FUNCTION M10_GetWater( fkp int, date_stamp date,
-                                 OUT max integer)
+CREATE OR REPLACE  FUNCTION M10_GetWaterGlass( fkp int, date_stamp date,
+                                 OUT max integer, OUT max1 integer)
 AS $$
 DECLARE  
 
 BEGIN	
 max =  (SELECT Sum(t.GLASSTYPE) FROM glass_historic as t
        WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp);
-END;
-$$ LANGUAGE plpgsql VOLATILE;
 
-
-
-CREATE OR REPLACE  FUNCTION M10_GetGlass( fkp int, date_stamp date,
-                                 OUT max integer)
-AS $$
-DECLARE  
-
-BEGIN	
-max =  (SELECT Count(t.glasshistoricid) FROM glass_historic as t
+max1 =  (SELECT Count(t.glasshistoricid) FROM glass_historic as t
        WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp);
 END;
 $$ LANGUAGE plpgsql VOLATILE;
 
-
-
-
- 
