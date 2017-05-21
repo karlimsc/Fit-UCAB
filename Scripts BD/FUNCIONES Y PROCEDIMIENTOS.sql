@@ -97,7 +97,19 @@ LANGUAGE 'plpgsql' VOLATILE;
 
 -- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ACTIVIDADES+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
--- INSERTA LOS DATOS PARA EL REGISTROS DE LAS ACTIVIDADES
+-- INSERTA LOS DATOS PARA EL REGISTROS DE LAS ACTIVIDADES de entrenamientos
+
+CREATE OR REPLACE FUNCTION M05_insertaractividadentrenamiento (horainicio TIMESTAMP, horafinal TIMESTAMP, fecha TIMESTAMP, km NUMERIC, caloria NUMERIC, lugarinicio VARCHAR(200),lugarfinal VARCHAR(200),idregistry INTEGER,idsport INTEGER ,identrenamiento integer)
+RETURNS void AS $$
+BEGIN
+	 INSERT INTO  ACTIVITY (ACTIVITYID,ACTIVITYSTARTTIME, ACTIVITYENDTIME,ACTIVITYDATE,ACTIVITYKM ,ACTIVITYCALOR,ACTIVITYSTARTSITE,ACTIVITYENDSITE,FK_REGISTRY,FK_SPORT,FK_TRAINING) VALUES (nextval('ACTIVITYID'),
+                    horainicio,horafinal,fecha,km,caloria,lugarinicio,lugarfinal,idregistry,idsport,identrenamiento) ;
+
+END
+$$
+LANGUAGE 'plpgsql' VOLATILE; 
+
+-- INSERTA LOS DATOS PARA EL REGISTROS DE LAS ACTIVIDADES 
 
 CREATE OR REPLACE FUNCTION M05_insertaractividad (horainicio TIMESTAMP, horafinal TIMESTAMP, fecha TIMESTAMP, km NUMERIC, caloria NUMERIC, lugarinicio VARCHAR(200),lugarfinal VARCHAR(200),idregistry INTEGER,idsport INTEGER )
 RETURNS void AS $$
@@ -161,18 +173,60 @@ END
 $$
 LANGUAGE 'plpgsql' VOLATILE; 
 
+-- CARGA LOS KILOMETROS RECORRIDOS POR DIA
+
+CREATE OR REPLACE FUNCTION M05_obtenerkmactividades (fechamenor TIMESTAMP, fechamayor TIMESTAMP,usuario INTEGER) RETURNS TABLE (dia DATE ,km NUMERIC) AS $$
+DECLARE
+ var_r record;
+
+BEGIN 
+
+for var_r in  (SELECT ACTIVITYKM,ACTIVITYDATE
+			   FROM   ACTIVITY,SPORT,REGISTRY
+			   WHERE  FK_PERSONID=usuario  and FK_REGISTRY=REGISTRYID and
+					  FK_SPORT=SPORTID and ACTIVITYDATE>=fechamenor and ACTIVITYDATE<=fechamayor)
+loop
+	
+		km      	  :=var_r.ACTIVITYKM;
+		dia           :=var_r.ACTIVITYDATE;
+
+		return next;
+end loop;
+END
+$$
+LANGUAGE 'plpgsql' VOLATILE; 
+
+-- NO FUNCIONA
+-- CARGAR ID DE ACTIVIDAD---
+
+CREATE OR REPLACE FUNCTION M05_obteneridactividad (fecha timestamp, deporte VARCHAR(200))  RETURNS  INTEGER  AS 
+$$ 
+DECLARE
+ idactividad integer;
+BEGIN 
+
+SELECT ACTIVITYID INTO idactividad
+FROM  ACTIVITY,SPORT
+WHERE ACTIVITYDATE=fecha and FK_SPORT=SPORTID AND SPORTNAME=deporte;
+
+return idactividad;
+END; 
+$$
+LANGUAGE 'plpgsql' STABLE;
 
 
 
 -- Modificar ACTIVIDAD--->KM
 
-CREATE OR REPLACE FUNCTION modificarActividad (usuario INTEGER,km NUMERIC) RETURNS BOOLEAN AS $$
+CREATE OR REPLACE FUNCTION M05_modificarActividad (idactividad integer,km NUMERIC) RETURNS VOID AS
+ $$
 BEGIN
 	 UPDATE ACTIVITY SET ACTIVITYKM=km
-	 WHERE  FK_PERSON=usuario;
-	 RETURN TRUE;
+	 WHERE  ACTIVITYID =idactividad ;
 	 
 END
 $$
 LANGUAGE 'plpgsql' VOLATILE; 
 -- DUDA : CUANDO MODIFICAS LOS KM DEBERIAS MODIFICAR TAMBIEN LAS CALORIAS NO? OSEA DEBERIAN RECALCULARSE
+
+

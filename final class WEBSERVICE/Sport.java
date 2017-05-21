@@ -2,44 +2,36 @@
  * Created by estefania on 14/05/2017.
  */
 public class Sport {
-    private int id;
-    private String name;
-    private float met;
-    private boolean state;
+    private int    _id;
+    private String _name;
+    private float  _met;
 
     public Sport() {
 
     }
 
     public int getId() {
-        return id;
+        return _id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int _id) {
+        this._id = _id;
     }
 
     public String getName() {
-        return name;
+        return _name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String _name) {
+        this._name = _name;
     }
 
     public float getMet() {
-        return met;
+        return _met;
     }
 
-    public void setMet(float met) {
-        this.met = met;
+    public void setMet(float _met) {
+        this._met = _met;
     }
 
-    public boolean isState() {
-        return state;
-    }
-
-    public void setState(boolean state) {
-        this.state = state;
-    }
 }

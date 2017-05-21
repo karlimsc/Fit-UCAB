@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Created by estefania on 14/05/2017.
  */
-@Path("/Manejo_Deportes")
+@Path("/M05_ServicesSports")
 public class SportController {
 
     Gson gson = new Gson();
@@ -19,12 +19,13 @@ public class SportController {
 
     @GET
 
-    @Path("/insertarDeporte")
+    @Path("/insertSport")
 
     @Produces("application/json")
 
     //Agrega a la lista de deportes disponibles del usuario el id seleccionado
-    public  String insertarSport(@QueryParam("idUsu") Integer nombreUsu,@QueryParam("idDep") Integer nombreDep){
+    public  String insertSport(@QueryParam("idPer") Integer nombreUsu,
+                               @QueryParam("idSpo") Integer nombreDep){
 
         Boolean respuesta;
 
@@ -47,12 +48,12 @@ public class SportController {
 
     @GET
 
-    @Path("/obtenerDeporte")
+    @Path("/getSport")
 
     @Produces("application/json")
 
     //Extrae el nombre de los deportes en funcion del id
-    public String obtenerSport(@QueryParam("idDep") Integer id){
+    public String getSport(@QueryParam("idSpo") Integer id){
 
 
         Sport resultado = new Sport();
@@ -85,13 +86,13 @@ public class SportController {
 
     @GET
 
-    @Path("/obtenerMetDeporte")
+    @Path("/getMetSport")
 
     @Produces("application/json")
 
     //Devuelve a traves del nombre del deporte el met correspondiente al mismo
     //Con el fin de realizar el calculo de las calorias quemadas en la actividad
-    public String obtenerMet(@QueryParam("nombreDep") String nombreDep ){
+    public String getMet(@QueryParam("nameSpo") String nombreDep ){
 
 
         Sport resultado = new Sport();
@@ -121,12 +122,12 @@ public class SportController {
     }
     @GET
 
-    @Path("/obtenerDeportesUsuario")
+    @Path("/getSportsUser")
 
     @Produces("application/json")
 
     //Devuelve el conjunto de deportes registrados que tiene un usuario
-    public String obtenerDeportesUsuario(@QueryParam("idUsu") Integer id ){
+    public String getSportsUser(@QueryParam("idPer") Integer id ){
 
 
         Sport resultado = new Sport();
@@ -157,11 +158,12 @@ public class SportController {
 
     @GET
 
-    @Path("/eliminarDeportes")
+    @Path("/deleteSport")
 
     @Produces("application/json")
 
-    public  String eliminarSport(@QueryParam("idUsu") Integer nombreUsu,@QueryParam("idDep") Integer nombreDep){
+    public  String deleteSport(@QueryParam("idPer") Integer nombreUsu,
+                               @QueryParam("idSpo") Integer nombreDep){
 
         Boolean respuesta;
 
