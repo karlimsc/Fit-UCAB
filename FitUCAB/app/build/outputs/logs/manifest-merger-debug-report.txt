@@ -1,204 +1,204 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-98:12
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:2:1-98:12
 	package
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:3:5-42
-		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:3:5-42
+		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:10:5-79
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:10:22-76
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:10:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:11:5-81
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:11:22-78
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:11:22-78
 uses-permission#android.permission.INTERNET
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:12:5-67
-MERGED from [com.google.android.gms:play-services-maps:10.2.1] /Users/JoseA2R/.android/build-cache/8794d2c192b723deacc9486b5b288b52939dbc25/output/AndroidManifest.xml:20:5-66
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:12:5-67
+MERGED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\charbel\.android\build-cache\0a7b6d5b7060484780208d0c6b52aa16e762384c\output\AndroidManifest.xml:20:5-66
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:12:22-64
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:12:22-64
 application
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:14:5-95:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/JoseA2R/.android/build-cache/f13c3c0e74e1facb3fe98add0eb4f8268502fc9a/output/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:design:25.3.0] /Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.0] /Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/JoseA2R/.android/build-cache/bde3fd6f923f5f804ebcf58625afdc446219ea4e/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/JoseA2R/.android/build-cache/81c5b75eb3d56a410735ec8832d4e8466543f68b/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:transition:25.3.0] /Users/JoseA2R/.android/build-cache/1532be113cbd16e1e85d18ea2ec90d2a96651e8d/output/AndroidManifest.xml:26:5-20
-MERGED from [com.google.android.gms:play-services-maps:10.2.1] /Users/JoseA2R/.android/build-cache/8794d2c192b723deacc9486b5b288b52939dbc25/output/AndroidManifest.xml:24:5-19
-MERGED from [com.google.android.gms:play-services-location:10.2.1] /Users/JoseA2R/.android/build-cache/71742fc6cb5bf5415b2c8bf63ec8431482b55172/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-base:10.2.1] /Users/JoseA2R/.android/build-cache/8dfb67043918953381d460c987d0e679f2c3378e/output/AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-tasks:10.2.1] /Users/JoseA2R/.android/build-cache/6b28f07fba18e980a8301521b315055d9cb6bcad/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:10.2.1] /Users/JoseA2R/.android/build-cache/5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec/output/AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support:support-v4:25.3.0] /Users/JoseA2R/.android/build-cache/81f91896ab7a6dd29e0ab7e37181a582b7b1ff8e/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.0] /Users/JoseA2R/.android/build-cache/13fc38d067b6356107ead21fd54437fb9b2b8876/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.0] /Users/JoseA2R/.android/build-cache/1d0efd4f24bf1a55a9cd6d66b3f28ace503bc70e/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.0] /Users/JoseA2R/.android/build-cache/984de1dd034b4bdce053dc5d7c6c6b6f84fe923a/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.0] /Users/JoseA2R/.android/build-cache/6ee473d32aae7f9c2d7dcdee82525360e86bc303/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.0] /Users/JoseA2R/.android/build-cache/d3c557312eaf893f71ce1afcd451a4ebada6e39e/output/AndroidManifest.xml:29:5-20
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:14:5-95:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\charbel\.android\build-cache\b056c6a19af71468e714d489d848eb05d8757c5b\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:25.3.0] C:\Users\charbel\.android\build-cache\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\charbel\.android\build-cache\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\charbel\.android\build-cache\dd9a96ad7c7fa6f8c3ac82cbd0ca82ab0f070b94\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\charbel\.android\build-cache\ec21b93afa30aa16cbe7bd35f23f93124782de6a\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.0] C:\Users\charbel\.android\build-cache\840c17f2e78cd10778179b389985381cb21a1758\output\AndroidManifest.xml:26:5-20
+MERGED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\charbel\.android\build-cache\0a7b6d5b7060484780208d0c6b52aa16e762384c\output\AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-location:10.2.1] C:\Users\charbel\.android\build-cache\b41dc932b5cb65e41c72858de6b160c8f45e73e3\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\charbel\.android\build-cache\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\output\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.1] C:\Users\charbel\.android\build-cache\fee3f86a02f947a1868e803f4a649f7a4b0de17d\output\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.2.1] C:\Users\charbel\.android\build-cache\c550caf18f45576f48f1892ed9cd9f23e7da1595\output\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\charbel\.android\build-cache\79265334b5496f2381772d1fb425ad823b22c3fb\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\charbel\.android\build-cache\71ba2883aa9b79406b6e7549f25688ed00f2c002\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\charbel\.android\build-cache\1e8ba32f1509e02867fa256c7859424d0ff9ee4b\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\charbel\.android\build-cache\7af685ab316d95de600fb3a5a3940b75a3fb2de6\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\charbel\.android\build-cache\38554151addc7ecd97fe39bbc096a7d96c6633ed\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\charbel\.android\build-cache\c794d329ecd403207d65c5bbf16adbcb7e0c6d30\output\AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:17:9-41
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:17:9-41
 	android:supportsRtl
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:19:9-35
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:19:9-35
 	android:roundIcon
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:18:9-54
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:18:9-54
 	android:allowBackup
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:15:9-35
 	android:icon
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:16:9-43
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:16:9-43
 	android:theme
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:20:9-40
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:20:9-40
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M01LoginActivity
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:25:9-34:20
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:25:9-34:20
 	android:label
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:27:13-45
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:27:13-45
 	android:theme
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:28:13-56
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:28:13-56
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:26:13-59
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:26:13-59
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:29:13-33:29
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:29:13-33:29
 action#android.intent.action.MAIN
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:30:17-69
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:30:17-69
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:30:25-66
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:30:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:32:17-77
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:32:27-74
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:32:27-74
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05AddExerciseActivity
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:37:9-46:20
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:37:9-46:20
 	android:label
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:39:13-45
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:39:13-45
 	android:theme
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:40:13-56
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:40:13-56
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:38:13-65
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:38:13-65
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:47:9-50:68
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:47:9-50:68
 	android:label
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:49:13-67
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:49:13-67
 	android:theme
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:50:13-56
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:50:13-56
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:48:13-64
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:48:13-64
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.MainActivity
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:51:9-54:68
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:51:9-54:68
 	android:label
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:53:13-56
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:53:13-56
 	android:theme
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:54:13-56
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:54:13-56
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:52:13-55
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:52:13-55
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05ReadExerciseActivity
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:55:9-58:59
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:55:9-58:59
 	android:label
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:57:13-43
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:57:13-43
 	android:theme
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:58:13-56
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:58:13-56
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:56:13-66
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:56:13-66
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:59:9-67:20
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:59:9-67:20
 	android:label
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:61:13-37
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:61:13-37
 	android:theme
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:62:13-56
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:62:13-56
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:60:13-58
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:60:13-58
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:76:9-78:55
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:76:9-78:55
 	android:value
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:78:13-52
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:78:13-52
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:77:13-58
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:77:13-58
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05TrackExerciseActivity
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:82:9-94:20
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:82:9-94:20
 	android:label
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:84:13-70
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:84:13-70
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:83:13-67
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:83:13-67
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:85:13-87:93
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:85:13-87:93
 	android:value
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:87:17-90
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:87:17-90
 	android:name
-		ADDED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:86:17-63
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:86:17-63
 uses-sdk
-INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/JoseA2R/.android/build-cache/f13c3c0e74e1facb3fe98add0eb4f8268502fc9a/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:design:25.3.0] /Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.3.0] /Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/JoseA2R/.android/build-cache/bde3fd6f923f5f804ebcf58625afdc446219ea4e/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/JoseA2R/.android/build-cache/81c5b75eb3d56a410735ec8832d4e8466543f68b/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:25.3.0] /Users/JoseA2R/.android/build-cache/4566ab557688b6e0a2db893c2410cb443adbf2f1/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.3.0] /Users/JoseA2R/.android/build-cache/1532be113cbd16e1e85d18ea2ec90d2a96651e8d/output/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-maps:10.2.1] /Users/JoseA2R/.android/build-cache/8794d2c192b723deacc9486b5b288b52939dbc25/output/AndroidManifest.xml:23:5-43
-MERGED from [com.google.android.gms:play-services-location:10.2.1] /Users/JoseA2R/.android/build-cache/71742fc6cb5bf5415b2c8bf63ec8431482b55172/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-base:10.2.1] /Users/JoseA2R/.android/build-cache/8dfb67043918953381d460c987d0e679f2c3378e/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tasks:10.2.1] /Users/JoseA2R/.android/build-cache/6b28f07fba18e980a8301521b315055d9cb6bcad/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:10.2.1] /Users/JoseA2R/.android/build-cache/5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec/output/AndroidManifest.xml:17:5-43
-MERGED from [com.android.support:support-v4:25.3.0] /Users/JoseA2R/.android/build-cache/81f91896ab7a6dd29e0ab7e37181a582b7b1ff8e/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.0] /Users/JoseA2R/.android/build-cache/13fc38d067b6356107ead21fd54437fb9b2b8876/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.0] /Users/JoseA2R/.android/build-cache/1d0efd4f24bf1a55a9cd6d66b3f28ace503bc70e/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.0] /Users/JoseA2R/.android/build-cache/984de1dd034b4bdce053dc5d7c6c6b6f84fe923a/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.0] /Users/JoseA2R/.android/build-cache/6ee473d32aae7f9c2d7dcdee82525360e86bc303/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.3.0] /Users/JoseA2R/.android/build-cache/d3c557312eaf893f71ce1afcd451a4ebada6e39e/output/AndroidManifest.xml:21:5-23:58
+INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\charbel\.android\build-cache\b056c6a19af71468e714d489d848eb05d8757c5b\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:25.3.0] C:\Users\charbel\.android\build-cache\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\charbel\.android\build-cache\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\charbel\.android\build-cache\dd9a96ad7c7fa6f8c3ac82cbd0ca82ab0f070b94\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\charbel\.android\build-cache\ec21b93afa30aa16cbe7bd35f23f93124782de6a\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.0] C:\Users\charbel\.android\build-cache\6cdc6dca559c7632b52ddadf8249e3f91f0e0c7d\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.0] C:\Users\charbel\.android\build-cache\840c17f2e78cd10778179b389985381cb21a1758\output\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\charbel\.android\build-cache\0a7b6d5b7060484780208d0c6b52aa16e762384c\output\AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-location:10.2.1] C:\Users\charbel\.android\build-cache\b41dc932b5cb65e41c72858de6b160c8f45e73e3\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\charbel\.android\build-cache\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\output\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.1] C:\Users\charbel\.android\build-cache\fee3f86a02f947a1868e803f4a649f7a4b0de17d\output\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.1] C:\Users\charbel\.android\build-cache\c550caf18f45576f48f1892ed9cd9f23e7da1595\output\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\charbel\.android\build-cache\79265334b5496f2381772d1fb425ad823b22c3fb\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\charbel\.android\build-cache\71ba2883aa9b79406b6e7549f25688ed00f2c002\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\charbel\.android\build-cache\1e8ba32f1509e02867fa256c7859424d0ff9ee4b\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\charbel\.android\build-cache\7af685ab316d95de600fb3a5a3940b75a3fb2de6\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\charbel\.android\build-cache\38554151addc7ecd97fe39bbc096a7d96c6633ed\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\charbel\.android\build-cache\c794d329ecd403207d65c5bbf16adbcb7e0c6d30\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.3.0] /Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.3.0] C:\Users\charbel\.android\build-cache\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.0] /Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.0] /Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/JoseA2R/.android/build-cache/bde3fd6f923f5f804ebcf58625afdc446219ea4e/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/JoseA2R/.android/build-cache/81c5b75eb3d56a410735ec8832d4e8466543f68b/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.0] /Users/JoseA2R/.android/build-cache/4566ab557688b6e0a2db893c2410cb443adbf2f1/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:transition:25.3.0] /Users/JoseA2R/.android/build-cache/1532be113cbd16e1e85d18ea2ec90d2a96651e8d/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-v4:25.3.0] /Users/JoseA2R/.android/build-cache/81f91896ab7a6dd29e0ab7e37181a582b7b1ff8e/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.0] /Users/JoseA2R/.android/build-cache/13fc38d067b6356107ead21fd54437fb9b2b8876/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.0] /Users/JoseA2R/.android/build-cache/1d0efd4f24bf1a55a9cd6d66b3f28ace503bc70e/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.0] /Users/JoseA2R/.android/build-cache/984de1dd034b4bdce053dc5d7c6c6b6f84fe923a/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.0] /Users/JoseA2R/.android/build-cache/6ee473d32aae7f9c2d7dcdee82525360e86bc303/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.0] /Users/JoseA2R/.android/build-cache/d3c557312eaf893f71ce1afcd451a4ebada6e39e/output/AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:25.3.0] C:\Users\charbel\.android\build-cache\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\charbel\.android\build-cache\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] C:\Users\charbel\.android\build-cache\dd9a96ad7c7fa6f8c3ac82cbd0ca82ab0f070b94\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.0] C:\Users\charbel\.android\build-cache\ec21b93afa30aa16cbe7bd35f23f93124782de6a\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.0] C:\Users\charbel\.android\build-cache\6cdc6dca559c7632b52ddadf8249e3f91f0e0c7d\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.0] C:\Users\charbel\.android\build-cache\840c17f2e78cd10778179b389985381cb21a1758\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.0] C:\Users\charbel\.android\build-cache\79265334b5496f2381772d1fb425ad823b22c3fb\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.0] C:\Users\charbel\.android\build-cache\71ba2883aa9b79406b6e7549f25688ed00f2c002\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.0] C:\Users\charbel\.android\build-cache\1e8ba32f1509e02867fa256c7859424d0ff9ee4b\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.0] C:\Users\charbel\.android\build-cache\7af685ab316d95de600fb3a5a3940b75a3fb2de6\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.0] C:\Users\charbel\.android\build-cache\38554151addc7ecd97fe39bbc096a7d96c6633ed\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.0] C:\Users\charbel\.android\build-cache\c794d329ecd403207d65c5bbf16adbcb7e0c6d30\output\AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:design:25.3.0] /Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.3.0] C:\Users\charbel\.android\build-cache\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\output\AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:design:25.3.0] /Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:25.3.0] C:\Users\charbel\.android\build-cache\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\output\AndroidManifest.xml:26:9-47
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.android.gms:play-services-maps:10.2.1] /Users/JoseA2R/.android/build-cache/8794d2c192b723deacc9486b5b288b52939dbc25/output/AndroidManifest.xml:19:5-78
+ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\charbel\.android\build-cache\0a7b6d5b7060484780208d0c6b52aa16e762384c\output\AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /Users/JoseA2R/.android/build-cache/8794d2c192b723deacc9486b5b288b52939dbc25/output/AndroidManifest.xml:19:22-76
+		ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\charbel\.android\build-cache\0a7b6d5b7060484780208d0c6b52aa16e762384c\output\AndroidManifest.xml:19:22-76
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:10.2.1] /Users/JoseA2R/.android/build-cache/8794d2c192b723deacc9486b5b288b52939dbc25/output/AndroidManifest.xml:21:5-77
+ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\charbel\.android\build-cache\0a7b6d5b7060484780208d0c6b52aa16e762384c\output\AndroidManifest.xml:21:5-77
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /Users/JoseA2R/.android/build-cache/8794d2c192b723deacc9486b5b288b52939dbc25/output/AndroidManifest.xml:21:19-51
+		ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\charbel\.android\build-cache\0a7b6d5b7060484780208d0c6b52aa16e762384c\output\AndroidManifest.xml:21:19-51
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /Users/JoseA2R/.android/build-cache/8794d2c192b723deacc9486b5b288b52939dbc25/output/AndroidManifest.xml:21:52-75
+		ADDED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\charbel\.android\build-cache\0a7b6d5b7060484780208d0c6b52aa16e762384c\output\AndroidManifest.xml:21:52-75
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:10.2.1] /Users/JoseA2R/.android/build-cache/8dfb67043918953381d460c987d0e679f2c3378e/output/AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\charbel\.android\build-cache\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\output\AndroidManifest.xml:19:9-172
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:10.2.1] /Users/JoseA2R/.android/build-cache/8dfb67043918953381d460c987d0e679f2c3378e/output/AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\charbel\.android\build-cache\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\output\AndroidManifest.xml:19:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:10.2.1] /Users/JoseA2R/.android/build-cache/8dfb67043918953381d460c987d0e679f2c3378e/output/AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\charbel\.android\build-cache\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\output\AndroidManifest.xml:19:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:10.2.1] /Users/JoseA2R/.android/build-cache/8dfb67043918953381d460c987d0e679f2c3378e/output/AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:10.2.1] C:\Users\charbel\.android\build-cache\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\output\AndroidManifest.xml:19:19-85
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:10.2.1] /Users/JoseA2R/.android/build-cache/5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec/output/AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:10.2.1] C:\Users\charbel\.android\build-cache\c550caf18f45576f48f1892ed9cd9f23e7da1595\output\AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:10.2.1] /Users/JoseA2R/.android/build-cache/5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec/output/AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:10.2.1] C:\Users\charbel\.android\build-cache\c550caf18f45576f48f1892ed9cd9f23e7da1595\output\AndroidManifest.xml:20:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:10.2.1] /Users/JoseA2R/.android/build-cache/5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec/output/AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:10.2.1] C:\Users\charbel\.android\build-cache\c550caf18f45576f48f1892ed9cd9f23e7da1595\output\AndroidManifest.xml:20:20-65
