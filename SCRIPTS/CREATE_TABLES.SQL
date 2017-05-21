@@ -17,7 +17,7 @@ CREATE TABLE REGISTRY (
 REGISTRYID 	serial primary key,
 REGISTRYWEIGHT	real not null,
 REGISTRYHEIGHT	real not null,
-REGISTRYPOINT	integer not null,
+REGISTRYPOINT	integer,
 FK_PERSONID	integer not null
 );
 
