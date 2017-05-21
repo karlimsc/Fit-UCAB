@@ -24,7 +24,8 @@ public class SportController {
     @Produces("application/json")
 
     //Agrega a la lista de deportes disponibles del usuario el id seleccionado
-    public  String insertSport(@QueryParam("idPer") Integer nombreUsu,@QueryParam("idSpo") Integer nombreDep){
+    public  String insertSport(@QueryParam("idPer") Integer nombreUsu,
+                               @QueryParam("idSpo") Integer nombreDep){
 
         Boolean respuesta;
 
@@ -161,7 +162,8 @@ public class SportController {
 
     @Produces("application/json")
 
-    public  String deleteSport(@QueryParam("idPer") Integer nombreUsu,@QueryParam("idSpo") Integer nombreDep){
+    public  String deleteSport(@QueryParam("idPer") Integer nombreUsu,
+                               @QueryParam("idSpo") Integer nombreDep){
 
         Boolean respuesta;
 

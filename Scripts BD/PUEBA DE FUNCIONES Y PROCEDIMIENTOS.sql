@@ -6,4 +6,7 @@ select M05_obtenerdeportesusuario(1);
 select M05_insertardeporte(1,6);
 select M05_eliminardeporte(1,6); 
 
-select public.insertarActividad( horainicio :: TIME, horafinal :: TIME, fecha :: DATE, km :: NUMERIC, caloria :: NUMERIC, lugarinicio :: VARCHAR(200),lugarfinal :: VARCHAR(200) )
+
+Select M05_insertarActividad('21/05/2017 11:41:00','21/05/2017 11:41:00','21/05/2017',1,1,' ',' ',1,4);
+select * from M05_obteneractividades ('19/05/2017', '21/05/2017' ,1)
+select * from M05_obtenercaloriasactividades ('19/05/2017', '21/05/2017' ,1)

@@ -99,14 +99,70 @@ LANGUAGE 'plpgsql' VOLATILE;
 
 -- INSERTA LOS DATOS PARA EL REGISTROS DE LAS ACTIVIDADES
 
-CREATE OR REPLACE FUNCTION insertarActividad (horainicio TIME, horafinal TIME, fecha DATE, km NUMERIC, caloria NUMERIC, lugarinicio VARCHAR(200),lugarfinal VARCHAR(200) ) RETURNS void AS $$
+CREATE OR REPLACE FUNCTION M05_insertaractividad (horainicio TIMESTAMP, horafinal TIMESTAMP, fecha TIMESTAMP, km NUMERIC, caloria NUMERIC, lugarinicio VARCHAR(200),lugarfinal VARCHAR(200),idregistry INTEGER,idsport INTEGER )
+RETURNS void AS $$
 BEGIN
-	 INSERT INTO  ACTIVITY (ACTIVITYID,ACTIVITYSTARTTIME, ACTIVITYENDTIME,ACTIVITYDATE,ACTIVITYKM ,ACTIVITYCALOR,ACTIVITYSTARTSITE,ACTIVITYENDSITE) VALUES (nextval('ACTIVITYID'),
-                    horainicio,horafinal,fecha,km,caloria,lugarinicio,lugarfinal) ;
+	 INSERT INTO  ACTIVITY (ACTIVITYID,ACTIVITYSTARTTIME, ACTIVITYENDTIME,ACTIVITYDATE,ACTIVITYKM ,ACTIVITYCALOR,ACTIVITYSTARTSITE,ACTIVITYENDSITE,FK_REGISTRY,FK_SPORT) VALUES (nextval('ACTIVITYID'),
+                    horainicio,horafinal,fecha,km,caloria,lugarinicio,lugarfinal,idregistry,idsport) ;
 
 END
 $$
 LANGUAGE 'plpgsql' VOLATILE; 
+
+-- CARGA ACTIVIDADES DADAS DOS FECHAS + EL ID DE USUARIO
+
+CREATE OR REPLACE FUNCTION M05_obteneractividades (fechamenor TIMESTAMP, fechamayor TIMESTAMP,usuario INTEGER) RETURNS TABLE (horainicio TIME, horafinal TIME, fecha DATE, km NUMERIC, caloria NUMERIC, lugarinicio VARCHAR(200),lugarfinal VARCHAR(200),nombredeporte VARCHAR(200)) AS $$
+DECLARE
+ var_r record;
+
+BEGIN 
+
+for var_r in  (SELECT ACTIVITYSTARTTIME, ACTIVITYENDTIME,ACTIVITYDATE,ACTIVITYKM ,ACTIVITYCALOR,ACTIVITYSTARTSITE,ACTIVITYENDSITE,SPORTNAME
+			   FROM   ACTIVITY,SPORT,REGISTRY
+			   WHERE  FK_PERSONID=usuario  and FK_REGISTRY=REGISTRYID and
+					  FK_SPORT=SPORTID and ACTIVITYDATE>=fechamenor and ACTIVITYDATE<=fechamayor)
+loop
+	
+		horainicio    :=var_r.ACTIVITYSTARTTIME;
+		horafinal     :=var_r.ACTIVITYENDTIME;
+		fecha         :=var_r.ACTIVITYDATE;
+		km            :=var_r.ACTIVITYKM;
+		caloria       :=var_r.ACTIVITYCALOR;
+		lugarinicio   :=var_r ACTIVITYSTARTSITE;
+		lugarfinal    :=var_r.ACTIVITYENDSITE;
+		nombredeporte :=var_r.SPORTNAME;
+		
+		return next;
+end loop;
+END
+$$
+LANGUAGE 'plpgsql' VOLATILE; 
+
+-- CARGA LAS CALORIAS QUEMADAS POR ACTIVIDAD---
+
+CREATE OR REPLACE FUNCTION M05_obtenercaloriasactividades (fechamenor TIMESTAMP, fechamayor TIMESTAMP,usuario INTEGER) RETURNS TABLE (dia DATE ,caloria NUMERIC) AS $$
+DECLARE
+ var_r record;
+
+BEGIN 
+
+for var_r in  (SELECT ACTIVITYCALOR,ACTIVITYDATE
+			   FROM   ACTIVITY,SPORT,REGISTRY
+			   WHERE  FK_PERSONID=usuario  and FK_REGISTRY=REGISTRYID and
+					  FK_SPORT=SPORTID and ACTIVITYDATE>=fechamenor and ACTIVITYDATE<=fechamayor)
+loop
+	
+		caloria       :=var_r.ACTIVITYCALOR;
+		dia           :=var_r.ACTIVITYDATE;
+
+		return next;
+end loop;
+END
+$$
+LANGUAGE 'plpgsql' VOLATILE; 
+
+
+
 
 -- Modificar ACTIVIDAD--->KM
 

@@ -5,6 +5,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * Created by estefania on 14/05/2017.
@@ -13,29 +14,35 @@ import java.sql.*;
 @Path("/Manejo_Actividades")
 public class ActivityController {
 
+//NO FUNCIONAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
     Gson gson = new Gson();
 
     @GET
 
-    @Path("/insertarActividad")
+    @Path("/insertActivity")
 
     @Produces("application/json")
 
-    public String insertarPersona(@QueryParam("horainicial") String horainicio,@QueryParam("horafinal") String horafinal,
-                                  @QueryParam("fecha") String fecha,@QueryParam("km") String km,@QueryParam("calorias")
-                                  String caloria, @QueryParam("lugarinicial") String lugarinicio,
-                                  @QueryParam("lugarfinal") String lugarfinal){
-
+    public String insertActivity (@QueryParam("horainicial")  String horainicio,
+                                  @QueryParam("horafinal")    String horafinal,
+                                  @QueryParam("fecha")        String fecha,
+                                  @QueryParam("km")           String km,
+                                  @QueryParam("calorias")     String caloria,
+                                  @QueryParam("lugarinicial") String lugarinicio,
+                                  @QueryParam("lugarfinal")   String lugarfinal,
+                                  @QueryParam("idReg")        Integer idreg,
+                                  @QueryParam("idSpo")        Integer idspo){
+            //FALTAN LAS FK DE SPORT Y DE REGISTRY(PAARA OBTENER EL PESO)
         String query = "select * from M05_insertarActividad('"+horainicio+"','"+horafinal+"','"+fecha+"','"+km+"'," +
-                "                                           '"+caloria+"','"+lugarinicio+"','"+lugarfinal+"')";
+                "                                           '"+caloria+"','"+lugarinicio+"','"+lugarfinal+"','"+idreg+"','"+idspo+"')";
 
         try{
-            Connection conn=conectarADb();
-            Statement st=conn.createStatement();
-            st.executeUpdate(query);
-            return gson.toJson(true);
+            Connection conn = conectarADb();
+            Statement st = conn.createStatement();
+            ResultSet rs =  st.executeQuery(query);
 
+            return gson.toJson(true);
         } catch (Exception e) {
             return  e.getMessage();
         }
@@ -45,16 +52,19 @@ public class ActivityController {
 
     @GET
 
-    @Path("/ObtenerActividad")
+    @Path("/getActivity")
 
     @Produces("application/json")
 
-    public String obtenerPersona(@QueryParam("nombre") String name){
+    public String getActivity(@QueryParam("fechalejana") String fmayor,
+                              @QueryParam("fechacercana") String fmenor,
+                              @QueryParam("idPer")      Integer id){
 
 
-        String query = "SELECT * FROM sport WHERE sportname='"+name+"'";
+        String query = "select * from M05_obteneractividades ('"+fmayor+"', '"+fmenor+"' ,'"+id+"')";
 
-        Sport resultado= new Sport();
+        Activity resultado= new Activity();
+        ArrayList<Activity> listaActividades= new ArrayList<>();
 
         try{
             Connection conn=conectarADb();
@@ -63,18 +73,63 @@ public class ActivityController {
 
             while(rs.next()){
 
-                resultado.setId(rs.getInt("sportid"));
-                resultado.setName(rs.getString("sportname"));
-                resultado.setMet(rs.getFloat("sportmet"));
+                resultado.setStartime(rs.getString("horainicio"));
+                resultado.setEndtime (rs.getString("horafinal"));
+                resultado.setDate(rs.getString("fecha"));
+                resultado.setKm(rs.getFloat("km"));
+                resultado.setCalor(rs.getFloat("caloria"));
+                resultado.setStarsite(rs.getString("lugarinicio"));
+                resultado.setEndsite(rs.getString("lugarfinal"));
+                resultado.setName(rs.getString("nombredeporte"));
+                listaActividades.add(resultado);
 
 
             }
-            return gson.toJson(resultado);
+            return gson.toJson(listaActividades);
 
         } catch (Exception e) {
             return e.getMessage();
         }
     }
+
+    @GET
+
+    @Path("/getCalorie")
+
+    @Produces("application/json")
+
+    public String getCalorie(@QueryParam("fechalejana") String fmayor,
+                              @QueryParam("fechacercana") String fmenor,
+                              @QueryParam("idPer")      Integer id){
+
+
+        String query = "select * from M05_obtenercaloriasactividades ('"+fmayor+"', '"+fmenor+"' ,'"+id+"')";
+
+        Activity resultado= new Activity();
+        ArrayList<Activity> listaActividades= new ArrayList<>();
+
+        try{
+            Connection conn=conectarADb();
+            Statement st = conn.createStatement();
+            ResultSet rs =  st.executeQuery(query);
+
+            while(rs.next()){
+                resultado.setDate(rs.getString("dia"));
+                resultado.setCalor(rs.getFloat("caloria"));
+
+                listaActividades.add(resultado);
+
+
+            }
+            return gson.toJson(listaActividades);
+
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+
+
+
 
     public float obtenerMet( String name){
 
