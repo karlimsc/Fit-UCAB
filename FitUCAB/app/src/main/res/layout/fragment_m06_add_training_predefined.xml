@@ -55,12 +55,35 @@
                 android:layout_marginRight="36dp"/>
 
             <TextView
+                android:id="@+id/m06_textViewPeriodicidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="@string/M06_periodicidad"
+                android:layout_below="@+id/m06_spinnerTipo"
+                android:layout_alignLeft="@+id/m06_spinnerEntrenamientoPredefinido"
+                android:layout_alignStart="@+id/m06_spinnerEntrenamientoPredefinido" />
+
+            <EditText
+                android:id="@+id/m06_editTextPeriodicidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/m06_textViewPeriodicidad"
+                android:layout_alignLeft="@+id/m06_textViewPeriodicidad"
+                android:layout_alignStart="@+id/m06_textViewPeriodicidad"
+                android:ems="10"
+                android:inputType="number"
+                android:layout_alignRight="@+id/m06_spinnerTipo"
+                android:layout_alignEnd="@+id/m06_spinnerTipo" />
+
+            <TextView
                 android:id="@+id/m06_textViewCaloriasQuemadas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/m06_spinnerTipo"
-                android:layout_alignStart="@+id/m06_spinnerTipo"
-                android:layout_below="@+id/m06_spinnerTipo"
+                android:layout_alignLeft="@+id/m06_editTextPeriodicidad"
+                android:layout_alignStart="@+id/m06_editTextPeriodicidad"
+                android:layout_below="@+id/m06_editTextPeriodicidad"
                 android:layout_marginTop="30dp"
                 android:text="@string/M06_caloriasQuemadas" />
 
@@ -86,6 +109,8 @@
                 android:textAllCaps="false"
                 android:textColor="@android:color/background_light"
                 android:textSize="12sp" />
+
+
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>

@@ -137,6 +137,7 @@
     <string name="M06_modificar_existoso">¡Entrenamiento modificado satisfactoriamente!</string>
     <string name="M06_personalizado">Personalizado</string>
     <string name="M06_predefinido">Predefinido</string>
+    <string name="M06_periodicidad">Periodicidad</string>
     <!--Fin Strings modulo 6-->
 
 </resources>
