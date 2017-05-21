@@ -138,6 +138,7 @@
     <string name="M06_personalizado">Personalizado</string>
     <string name="M06_predefinido">Predefinido</string>
     <string name="M06_periodicidad">Periodicidad</string>
+    <string name="M06_toast_periodicidad">Por favor, inserte periodicidad del entrenamiento</string>
     <!--Fin Strings modulo 6-->
 
 </resources>
