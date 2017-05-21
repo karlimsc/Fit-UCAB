@@ -11,9 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 
 import java.util.Calendar;
@@ -29,6 +28,9 @@ public class M01SignUpFragment extends Fragment {
     private EditText _etfechaNac;
     private View _view;
 
+    /**
+     * Constructor vacio
+     */
     public M01SignUpFragment() {
         // Required empty public constructor
     }
@@ -42,16 +44,17 @@ public class M01SignUpFragment extends Fragment {
         super.onAttach(activity);
 
         try {
-            _callBack = (OnFragmentSwap) activity;
-        } catch (ClassCastException e) {
 
+            _callBack = (OnFragmentSwap) activity;
+
+        }
+        catch (ClassCastException e) {
 
             throw new ClassCastException(activity.toString()
                     + " must implement OnHeadlineSelectedListener");
 
         }
     }
-
 
     /**
      * Metodo encargado de instanciar la vista, hacer los llamados a los metodos de listener de los componentes de la vista.
@@ -64,16 +67,16 @@ public class M01SignUpFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         _view =  inflater.inflate(R.layout.fragment_m01_sign_up, container, false);
         setupViewValues();
         manageBtnRegistrar();
-        activarCalendario();
+        activateCalendar();
+
         return _view;
     }
-
     /**
-     * Metodo encargado de cambiar de actividad al realizar la accion de seleccionar el boton Registar.
+     * Metodo encargado de cambiar de actividad al realizar la accion de seleccionar
+     * el boton Registar.
      */
     private void manageBtnRegistrar() {
         _btnRegistrar.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +88,7 @@ public class M01SignUpFragment extends Fragment {
                 Bundle bundle = new Bundle();
                 //bundle.putString("text",textoEscritoEnPantalla);
                 _callBack.onSwapActivity("M02HomeActivity",null);
+
             }
         });
     }
@@ -92,11 +96,12 @@ public class M01SignUpFragment extends Fragment {
     /**
      * Metodo que activa el calendario.
      */
-    private void activarCalendario(){
+    private void activateCalendar(){
+
         _etfechaNac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                instanciarCalendario();
+                instantiateCalendar();
             }
         });
     }
@@ -115,7 +120,7 @@ public class M01SignUpFragment extends Fragment {
     /**
      * Metodo encargado de instancias el calendario.
      */
-    public void instanciarCalendario(){
+    public void instantiateCalendar(){
         // Create the DatePickerDialog instance
         DatePickerDialog datePicker = new DatePickerDialog(getContext(), R.style.AppTheme,
         datePickerListener,cal.get(Calendar.YEAR), cal.get(Calendar.DAY_OF_MONTH),
@@ -127,17 +132,18 @@ public class M01SignUpFragment extends Fragment {
     }
 
     /**
-     *
+     *Le asigno al editText lo seleccionado en el calendario
      */
-    // Listener
     private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
 
         // when dialog box is closed, below method will be called.
         public void onDateSet(DatePicker view, int selectedYear,
                               int selectedMonth, int selectedDay) {
+
             String year1 = String.valueOf(selectedYear);
             String month1 = String.valueOf(selectedMonth + 1);
             String day1 = String.valueOf(selectedDay);
+
             _etfechaNac.setText(day1 + "/" + month1 + "/" + year1);
         }
     };
