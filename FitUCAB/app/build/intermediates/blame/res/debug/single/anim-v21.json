@@ -4,7 +4,15 @@
         "source": "/root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/res/anim-v21/design_bottom_sheet_slide_in.xml"
     },
     {
+        "merged": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_in.xml",
+        "source": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/design/25.3.0/res/anim-v21/design_bottom_sheet_slide_in.xml"
+    },
+    {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
         "source": "/root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/res/anim-v21/design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim-v21/design_bottom_sheet_slide_out.xml",
+        "source": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/build/intermediates/exploded-aar/com.android.support/design/25.3.0/res/anim-v21/design_bottom_sheet_slide_out.xml"
     }
 ]

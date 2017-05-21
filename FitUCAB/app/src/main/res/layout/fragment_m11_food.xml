@@ -1,0 +1,72 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11FoodFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="3"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="75dp"
+        android:id="@+id/gl_m11_listaAlimento">
+
+        <TextView
+            android:text="Nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/tv_m11_nombreAlimento"/>
+
+
+        <TextView
+            android:text="Peso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/tv_m11_pesoAlimento"/>
+
+        <TextView
+            android:text="Calorias"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/tv_m11_caloriasAlimento"/>
+
+
+    </GridLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_delete_black"
+        android:id="@+id/btn_m11_borrar"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="230dp"
+        android:tint="@color/grey"
+        android:backgroundTint="@android:color/white" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_input_add"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="130dp"
+        android:id="@+id/btn_m11_agregar"
+        android:background="#ffffff"/>
+
+
+
+
+
+
+
+</FrameLayout>

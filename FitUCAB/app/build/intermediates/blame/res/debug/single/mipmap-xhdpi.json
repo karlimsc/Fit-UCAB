@@ -4,6 +4,14 @@
         "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/logofitucabsolonombreblanco.png"
     },
     {
+        "merged": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
+        "source": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/logofitucabsolonombreblanco.png",
+        "source": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/logofitucabsolonombreblanco.png"
+    },
+    {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/logofitucabnombre.png",
         "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/logofitucabnombre.png"
     },
@@ -12,7 +20,15 @@
         "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
+        "merged": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
         "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/logofitucabnombre.png",
+        "source": "/home/marvian/Fit_Ucab/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/logofitucabnombre.png"
     }
 ]
