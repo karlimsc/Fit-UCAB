@@ -64,7 +64,9 @@
     <!--FIN Strings Modulo 5 -->
 
     <!-- Inicio Strings Modulo 10 -->
-    <string name="title_activity_m10_water_glass">M10WaterGlassActivity</string>
+    <string name="title_activity_m10_water_glass">Agua</string>
+    <string name="tab_m10_Hidratacion">Hidratacion</string>
+    <string name="tab_m10_Control">Control</string>
     <!--FIN Strings Modulo 10 -->
 
     <!-- TODO: Remove or change this placeholder text -->

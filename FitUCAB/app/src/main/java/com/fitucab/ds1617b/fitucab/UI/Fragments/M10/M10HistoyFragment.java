@@ -7,8 +7,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.fitucab.ds1617b.fitucab.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +23,8 @@ import com.fitucab.ds1617b.fitucab.R;
 public class M10HistoyFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
+    ListView _waterlist;
+    String[] values = new String[]{"hola","chao","eres","tu","chiano"};
 
     public M10HistoyFragment() {
         // Required empty public constructor
@@ -29,7 +35,14 @@ public class M10HistoyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_m10_histoy, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_m10_histoy,container,false);
+        //ArrayList<InfoGlass> FillWater = new ArrayList<InfoGlass>();
+        _waterlist = (ListView) rootView.findViewById(R.id.list_water);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getContext(),android.R.layout.simple_expandable_list_item_1,values);
+        _waterlist.setAdapter(adapter);
+
+        return rootView;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

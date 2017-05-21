@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10HistoyFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10WaterGlassFragment;
 
 public class M10WaterGlassActivity extends AppCompatActivity {
@@ -58,6 +59,8 @@ public class M10WaterGlassActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_m10_Hidratacion));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_m10_Control));
         tabLayout.setupWithViewPager(mViewPager);
 
     }
@@ -118,7 +121,8 @@ public class M10WaterGlassActivity extends AppCompatActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             //me cago en tu mierda deja esto asi y despues te explico
-             M10WaterGlassFragment m10 = new M10WaterGlassFragment();
+            M10WaterGlassFragment m10 = new M10WaterGlassFragment();
+            M10HistoyFragment list = new M10HistoyFragment();
 
 
             if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {

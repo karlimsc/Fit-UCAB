@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
+    android:background="@color/colorwhite"
     tools:context=".UI.Fragments.M10.M10WaterGlassFragment"
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp">
@@ -18,7 +19,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginLeft="8dp"
-
+        android:background="@color/colorwhite"
         android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
@@ -42,11 +43,14 @@
         android:layout_width="wrap_content"
         android:layout_height="129dp"
         android:layout_marginBottom="0dp"
-        android:layout_marginRight="7dp"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorwhite"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/imageButton4"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent">
 
 
         <ImageButton
@@ -58,6 +62,7 @@
             android:layout_marginLeft="27dp"
             android:layout_marginRight="27dp"
             android:layout_toLeftOf="@+id/imageButton4"
+            android:background="@color/colorwhite"
             app:srcCompat="@drawable/ic_btn_atras"
             tools:ignore="ObsoleteLayoutParam,RtlHardcoded" />
 
@@ -68,10 +73,10 @@
             android:layout_centerHorizontal="true"
             android:cursorVisible="false"
             android:ems="10"
-            android:textAlignment="center"
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:inputType="date"
+            android:textAlignment="center"
             tools:ignore="ObsoleteLayoutParam" />
 
         <ImageButton
@@ -84,6 +89,7 @@
             android:layout_marginStart="27dp"
             android:layout_toEndOf="@+id/imageButton4"
             android:layout_toRightOf="@+id/imageButton4"
+            android:background="@color/colorwhite"
             android:contentDescription=""
 
             app:srcCompat="@drawable/ic_btn_adelante"
