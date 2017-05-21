@@ -27,7 +27,7 @@ public class M01_ServicesUser {
      * @param phone
      * @param weight
      * @param height
-     * @param registryPoint
+     * @param point
      * @return
      */
 
@@ -35,31 +35,45 @@ public class M01_ServicesUser {
     @Path("/insertRegistry")
     @Produces("application/json")
 
-    public String insertUser(@QueryParam("username") String username,@QueryParam("password") String password,
-                             @QueryParam("email") String email,@QueryParam("sex") String sex,
+    public String insertUser(@QueryParam("username") String username,
+                             @QueryParam("password") String password,
+                             @QueryParam("email") String email,
+                             @QueryParam("sex") String sex,
                              @QueryParam("phone") String phone,
-                             @QueryParam("weight") String weight,@QueryParam("height")String height,
-                             @QueryParam("registryPoint") String registryPoint)
+                             @QueryParam("birthdate") String birthdate,
+                             @QueryParam("weight") String weight,
+                             @QueryParam("height")String height,
+                             @QueryParam("point") String point
+                            )
     {
-        int id = idIncrease();
-        String query= "INSERT INTO PERSON(PERSONID, PERSONUSERNAME, PERSONPASSWORD, PERSONEMAIL, PERSONSEX, PERSONPHONE, "
-                      + "PERSONINGRESO) VALUES ("+id+",'"+username+"','"+password+"','"+email+"','"+sex+"','"+phone+"')";
-        String query2="INSERT INTO REGISTRY (registryid, registryweight, registryheight, registrypoint, fk_personid)" +
-                       " VALUES ("+id+",'"+weight+"','"+height+"','"+registryPoint+"','"+id+"')";
+        String insertUserQuery= "INSERT INTO PERSON (PERSONUSERNAME, PERSONPASSWORD, PERSONEMAIL, PERSONSEX," +
+                                          " PERSONPHONE, PERSONBIRTHDATE)"+
+                       " VALUES ( '" +username+ "','" +password+ "','" +email+ "','" +sex+ "','" +phone+ "','" +birthdate+ "')";
 
-        return query;
-        /*
         try{
 
             Statement st = conn.createStatement();
-            st.executeUpdate(query);
-            st.executeUpdate(query2);
+            st.executeUpdate(insertUserQuery);
+            //Statement st2 = conn.createStatement();
+            String idQuery="SELECT PERSONID as _id FROM PERSON WHERE PERSONUSERNAME='"+username+"'";
+
+            ResultSet rs = st.executeQuery(idQuery); //aqui va st2
+
+            int userId = 0;
+            if ( rs.next()) {
+                userId = rs.getInt("_id");
+            }
+
+                String insertRegistryQuery="INSERT INTO REGISTRY (registryweight, registryheight, registrypoint, fk_personid)" +
+                    " VALUES (" +weight+" , "+height+" ,"+point+" , "+userId+" )";
+
+            st.executeUpdate(insertRegistryQuery);
+
             return gson.toJson(true);
         }
         catch(Exception e) {
             return e.getMessage();
         }
-        */
     }
 
     /**
@@ -69,7 +83,7 @@ public class M01_ServicesUser {
      * @return el usuario con los datos que trae la consulta
      */
     @GET
-    @Path("/getUser")
+    @Path("/login_user")
     @Produces("application/json")
 
     public String getUser(@QueryParam("username") String userparam,@QueryParam("password") String passwordparam)
@@ -91,9 +105,9 @@ public class M01_ServicesUser {
                 String sexo= rs.getString("PERSONSEX");
                 String phone= rs.getString("PERSONPHONE");
                 String email= rs.getString("PERSONEMAIL");
-                Date birtdate= rs.getDate("PERSONBIRTHDATE");
+                Date birthdate= rs.getDate("PERSONBIRTHDATE");
 
-                user= new User(id,username,password,email,sexo,phone,birtdate);
+                user= new User(id,username,password,email,sexo,phone,birthdate);
 
             }
             return gson.toJson(user);

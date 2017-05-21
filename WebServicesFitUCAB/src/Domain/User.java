@@ -3,6 +3,9 @@ package Domain;
 
 import java.sql.Date;
 
+/**
+ * Clase Usuario del Modulo 1
+ */
 public class User {
 
     private int _id;
@@ -13,8 +16,21 @@ public class User {
     private String _phone;
     private Date _birthdate;
 
+    /**
+     * Constructor vacio
+     */
     public User(){};
 
+    /**
+     * Constructor con todos los atributos
+     * @param id
+     * @param user
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @param birthdate
+     */
     public User(int id,String user,String password, String email,String sex,String phone, Date birthdate)
     {
         _id = id;
@@ -27,7 +43,15 @@ public class User {
 
     };
 
-
+    /**
+     * Constructor sin el id del usuario
+     * @param user
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @param birthdate
+     */
     public User(String user, String password, String email, String sex, String phone, Date birthdate)
     {
 
@@ -39,12 +63,34 @@ public class User {
         _birthdate= birthdate;
     };
 
+    /**
+     * Constructor para solo el username y el password
+     * @param user
+     * @param password
+     */
     public User(String user,String password)
     {
         _username = user;
         _password = password;
     }
 
+    /**
+     * Contructor para el username, password y el email
+     * @param user
+     * @param password
+     * @param _email
+     */
+    public User(String user,String password, String _email)
+    {
+        _username = user;
+        _password = password;
+        _email = _email;
+    }
+
+    /**
+     * Constructor para solo el email
+     * @param email
+     */
     public User(String email)
     {
         _email= email;

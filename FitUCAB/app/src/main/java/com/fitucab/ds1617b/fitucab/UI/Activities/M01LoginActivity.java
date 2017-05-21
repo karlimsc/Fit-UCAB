@@ -1,17 +1,13 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.method.PasswordTransformationMethod;
-import android.view.ViewGroup;
-import android.widget.EditText;
 
-import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01HomeFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01LoginFragment;
