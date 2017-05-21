@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 
 /**
@@ -24,9 +24,13 @@ public class M01RecoveryFragment extends Fragment {
     private View _view;
     private OnFragmentSwap _callBack;
 
+    /**
+     * constructor vacio
+     */
     public M01RecoveryFragment() {
         // Required empty public constructor
     }
+
     /**
      * Una vez la activity llama a un fragment se ejecuta este metodo
      * @param activity recibe la activity que llamo o instancio al fragment
@@ -36,9 +40,11 @@ public class M01RecoveryFragment extends Fragment {
         super.onAttach(activity);
 
         try {
-            _callBack = (OnFragmentSwap) activity;
-        } catch (ClassCastException e) {
 
+            _callBack = (OnFragmentSwap) activity;
+
+        }
+        catch (ClassCastException e) {
 
             throw new ClassCastException(activity.toString()
                     + " must implement OnHeadlineSelectedListener");

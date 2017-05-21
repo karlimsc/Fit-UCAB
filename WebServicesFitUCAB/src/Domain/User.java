@@ -1,42 +1,96 @@
 package Domain;
 
 
+import java.sql.Date;
+
+/**
+ * Clase Usuario del Modulo 1
+ */
 public class User {
 
     private int _id;
-    private String  _user;
+    private String _username;
     private String  _password;
     private String _email;
     private String _sex;
     private String _phone;
+    private Date _birthdate;
 
+    /**
+     * Constructor vacio
+     */
     public User(){};
 
-    public User(int id,String user,String password, String email,String sex,String phone)
+    /**
+     * Constructor con todos los atributos
+     * @param id
+     * @param user
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @param birthdate
+     */
+    public User(int id,String user,String password, String email,String sex,String phone, Date birthdate)
     {
         _id = id;
-        _user = user;
+        _username = user;
         _password = password;
         _email = email;
         _sex = sex;
         _phone = phone;
+        _birthdate= birthdate;
 
     };
-    public User(String user,String password, String email,String sex,String phone)
+
+    /**
+     * Constructor sin el id del usuario
+     * @param user
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @param birthdate
+     */
+    public User(String user, String password, String email, String sex, String phone, Date birthdate)
     {
 
-        _user = user;
+        _username = user;
         _password = password;
         _email = email;
         _sex = sex;
         _phone = phone;
-
+        _birthdate= birthdate;
     };
+
+    /**
+     * Constructor para solo el username y el password
+     * @param user
+     * @param password
+     */
     public User(String user,String password)
     {
-        _user = user;
+        _username = user;
         _password = password;
     }
+
+    /**
+     * Contructor para el username, password y el email
+     * @param user
+     * @param password
+     * @param _email
+     */
+    public User(String user,String password, String _email)
+    {
+        _username = user;
+        _password = password;
+        _email = _email;
+    }
+
+    /**
+     * Constructor para solo el email
+     * @param email
+     */
     public User(String email)
     {
         _email= email;
@@ -51,14 +105,16 @@ public class User {
     {
         this._id = id;
     }
+
     public String getUser()
     {
-        return _user;
+        return _username;
     }
     public void setUser(String user)
     {
-        this._user = user;
+        this._username = user;
     }
+
     public String getPassword()
     {
         return _password;
@@ -67,6 +123,7 @@ public class User {
     {
         this._password = password;
     }
+
     public String getEmail()
     {
         return _email;
@@ -94,6 +151,8 @@ public class User {
         this._phone=phone;
     }
 
+    public Date get_birthdate() {return _birthdate;}
+    public void set_birthdate(Date _birthdate) { this._birthdate = _birthdate;}
 
 
 }

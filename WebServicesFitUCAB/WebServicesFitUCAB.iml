@@ -22,10 +22,10 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="Jersey-2.2" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.1" level="application_server_libraries" />
+    <orderEntry type="library" name="Jersey-2.2" level="project" />
     <orderEntry type="library" name="gson-2.3.1" level="project" />
     <orderEntry type="library" name="postgresql-42.1.1" level="project" />
     <orderEntry type="library" name="javax.ws.rs-api-2.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2" level="application_server_libraries" />
   </component>
 </module>

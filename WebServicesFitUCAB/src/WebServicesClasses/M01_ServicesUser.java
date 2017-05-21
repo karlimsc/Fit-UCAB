@@ -9,8 +9,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
 
-/***
- * Clase del modulo 1 registro y login
+/**
+ * Clase de Servicios Web del Modulo 01
  */
 @Path("/M01_ServicesUser")
 public class M01_ServicesUser {
@@ -18,36 +18,57 @@ public class M01_ServicesUser {
     private Connection conn =bdConnect();
     Gson gson = new Gson();
 
-    /***
+    /**
      * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
-     * @param user
+     * @param username
      * @param password
      * @param email
      * @param sex
      * @param phone
      * @param weight
      * @param height
-     * @param registryPoint
+     * @param point
      * @return
      */
-
 
     @GET
     @Path("/insertRegistry")
     @Produces("application/json")
-    public String insertUser(@QueryParam("User") String user,@QueryParam("Password") String password,
-                             @QueryParam("Email") String email,@QueryParam("Sex") String sex,@QueryParam("Phone") String phone,
-                             @QueryParam("Weight") String weight,@QueryParam("Height")String height,@QueryParam("Registry Point") String registryPoint)
+
+    public String insertUser(@QueryParam("username") String username,
+                             @QueryParam("password") String password,
+                             @QueryParam("email") String email,
+                             @QueryParam("sex") String sex,
+                             @QueryParam("phone") String phone,
+                             @QueryParam("birthdate") String birthdate,
+                             @QueryParam("weight") String weight,
+                             @QueryParam("height")String height,
+                             @QueryParam("point") String point
+                            )
     {
-        int id = idIncrease();
-        String query= "INSERT INTO PERSON(PERSONID, PERSONUSERNAME, PERSONPASSWORD, PERSONEMAIL, PERSONSEX, PERSONPHONE, PERSONINGRESO) VALUES ('"+id+"','"+user+"','"+password+"','"+email+"','"+sex+"','"+phone+"')";
-        String query2="INSERT INTO REGISTRY (registryid, registryweight, registryheight, registrypoint, fk_personid) VALUES ('"+id+"','"+weight+"','"+height+"','"+registryPoint+"','"+id+"')";
+        String insertUserQuery= "INSERT INTO PERSON (PERSONUSERNAME, PERSONPASSWORD, PERSONEMAIL, PERSONSEX," +
+                                          " PERSONPHONE, PERSONBIRTHDATE)"+
+                       " VALUES ( '" +username+ "','" +password+ "','" +email+ "','" +sex+ "','" +phone+ "','" +birthdate+ "')";
 
         try{
 
             Statement st = conn.createStatement();
-            st.executeUpdate(query);
-            st.executeUpdate(query2);
+            st.executeUpdate(insertUserQuery);
+            //Statement st2 = conn.createStatement();
+            String idQuery="SELECT PERSONID as _id FROM PERSON WHERE PERSONUSERNAME='"+username+"'";
+
+            ResultSet rs = st.executeQuery(idQuery); //aqui va st2
+
+            int userId = 0;
+            if ( rs.next()) {
+                userId = rs.getInt("_id");
+            }
+
+                String insertRegistryQuery="INSERT INTO REGISTRY (registryweight, registryheight, registrypoint, fk_personid)" +
+                    " VALUES (" +weight+" , "+height+" ,"+point+" , "+userId+" )";
+
+            st.executeUpdate(insertRegistryQuery);
+
             return gson.toJson(true);
         }
         catch(Exception e) {
@@ -55,48 +76,49 @@ public class M01_ServicesUser {
         }
     }
 
-
-    @GET
-    @Path("/helloWorld")
-    @Produces("application/json")
-    public String prueba()
-    {
-        return ("hola mundo");
-    }
-
-
-    /***
-     * Metodo que es llamado a travez del web service para consultar un usuario existente en la base de datos
-     * @param user
-     * @param password
-     * @return
+    /**
+     * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
+     * @param userparam
+     * @param passwordparam
+     * @return el usuario con los datos que trae la consulta
      */
     @GET
-    @Path("/getUser")
+    @Path("/login_user")
     @Produces("application/json")
-    public String getUser(@QueryParam("User") String user,@QueryParam("Password") String password)
+
+    public String getUser(@QueryParam("username") String userparam,@QueryParam("password") String passwordparam)
     {
-        String query="SELECT PERSONUSERNAME WHERE PERSONUSERNAME="+user+"AND PERSONPASSWORD ="+password;
+        String query="SELECT * FROM PERSON WHERE PERSONUSERNAME= '" + userparam + "' " +
+                     "AND PERSONPASSWORD = '" + passwordparam + "'";
 
         try{
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
-            User result = new User();
+            User user= null;
+
             while(rs.next()){
 
-                result.setUser(rs.getString("Name"));
-                result.setPassword(rs.getString("Password"));
+                String username = rs.getString("PERSONUSERNAME");
+                int id = rs.getInt("PERSONID");
+                String password = rs.getString("PERSONPASSWORD");
+                String sexo= rs.getString("PERSONSEX");
+                String phone= rs.getString("PERSONPHONE");
+                String email= rs.getString("PERSONEMAIL");
+                Date birthdate= rs.getDate("PERSONBIRTHDATE");
+
+                user= new User(id,username,password,email,sexo,phone,birthdate);
+
             }
-            return gson.toJson(result);
+            return gson.toJson(user);
         }
         catch(Exception e) {
             return e.getMessage();
         }
     }
 
-    /***
-     * Metodo que es llamado em otros metodos para obtener el ultimo id e incrementarlo
+    /**
+     * Metodo que es llamado en otros metodos para obtener el ultimo id e incrementarlo
      * @return devuelve un numero incrementado
      */
     public int idIncrease()
@@ -105,7 +127,35 @@ public class M01_ServicesUser {
         //esto es para incrementar, no implemenrado por ahora
         return Id;
     }
+    @GET
+    @Path("/helloWorld")
+    @Produces("application/json")
+    public String prueba()
+    {
+        String query="SELECT * FROM PERSON";
 
+        try{
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            User user= null;
+            while(rs.next()){
+                String username = rs.getString("PERSONUSERNAME");
+                int id = rs.getInt("PERSONID");
+                String password = rs.getString("PERSONPASSWORD");
+                String sexo= rs.getString("PERSONSEX");
+                String phone= rs.getString("PERSONPHONE");
+                String email= rs.getString("PERSONEMAIL");
+                Date birtdate= rs.getDate("PERSONBIRTHDATE");
+
+                user= new User(id,username,password,email,sexo,phone,birtdate);
+            }
+            return gson.toJson(user);
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+    }
 
     //esto no va a aqui , se puso momentaneamente.
     public Connection bdConnect()
@@ -114,8 +164,8 @@ public class M01_ServicesUser {
         try
         {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/FitUcabDB";
-            conn = DriverManager.getConnection(url,"postgres", "root");
+            String url = "jdbc:postgresql://localhost/fitucabdb";
+            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
         }
         catch (ClassNotFoundException e)
         {

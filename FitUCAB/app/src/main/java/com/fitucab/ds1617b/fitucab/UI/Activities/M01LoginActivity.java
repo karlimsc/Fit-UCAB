@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
-import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01HomeFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01LoginFragment;

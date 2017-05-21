@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 *.iml
-.gradle
+*.gradle
 local.properties
 /.idea/workspace.xml
 /.idea/libraries
@@ -10,18 +10,7 @@ local.properties
 .externalNativeBuild
 .idea
 /app/build
-=======
-*.iml
-.gradle
-local.properties
-/.idea/workspace.xml
-/.idea/libraries
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.idea
-/app/build
+build/
 /WebServicesFitUCAB/out/
 /WebServicesFitUCAB/.idea/
->>>>>>> Develop
+*.*~

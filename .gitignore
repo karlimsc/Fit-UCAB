@@ -20,6 +20,10 @@ local.properties
 /FitUCAB/.externalNativeBuild
 /FitUCAB/.idea
 /FitUCAB/app/build
+/FitUCAB/gradle/
+/FitUCAB/gradlew.bat
+/FitUCAB/app/build/*
+*.*~
 
 /WebServicesFitUCAB/out/
 /WebServicesFitUCAB/.idea/
