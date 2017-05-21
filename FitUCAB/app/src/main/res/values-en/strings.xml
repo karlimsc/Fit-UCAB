@@ -122,6 +122,7 @@
     <string name="M06_personalizado">Personalized</string>
     <string name="M06_periodicidad">Periodicity</string>
     <string name="M06_toast_periodicidad">Please, insert periodicity of training</string>
+    <string name="M06_tipo_entrenamiento">Training type</string>
 
     <!--Fin de modulo 06-->
 

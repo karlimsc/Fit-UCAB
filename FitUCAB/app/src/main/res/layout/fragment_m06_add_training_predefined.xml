@@ -79,12 +79,33 @@
                 android:inputType="number" />
 
             <TextView
-                android:id="@+id/m06_textViewCaloriasQuemadas"
+                android:id="@+id/m06_textViewTipoEntrenamiento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/m06_editTextPeriodicidad"
                 android:layout_alignStart="@+id/m06_editTextPeriodicidad"
                 android:layout_below="@+id/m06_editTextPeriodicidad"
+                android:layout_marginTop="30dp"
+                android:text="@string/M06_tipo_entrenamiento" />
+
+            <Spinner
+                android:id="@+id/m06_spinnerTipoEntrenamiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/m06_textViewTipoEntrenamiento"
+                android:layout_alignStart="@+id/m06_textViewTipoEntrenamiento"
+                android:layout_below="@+id/m06_textViewTipoEntrenamiento"
+                android:layout_marginRight="36dp"
+                android:layout_marginTop="16dp" />
+
+
+            <TextView
+                android:id="@+id/m06_textViewCaloriasQuemadas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/m06_spinnerTipoEntrenamiento"
+                android:layout_alignStart="@+id/m06_spinnerTipoEntrenamiento"
+                android:layout_below="@+id/m06_spinnerTipoEntrenamiento"
                 android:layout_marginTop="30dp"
                 android:text="@string/M06_caloriasQuemadas" />
 

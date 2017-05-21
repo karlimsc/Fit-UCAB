@@ -104,11 +104,13 @@
         <item>Trote</item>
     </string-array>
     <string name="M06_tipo">Dificultad</string>
+
     <string-array name="M06_dificultad">
         <item>Fácil</item>
         <item>Medio</item>
         <item>Profesional</item>
     </string-array>
+
     <string-array name="M06_calorias">
         <item>36Cal</item>
         <item>73Cal</item>
@@ -117,11 +119,18 @@
         <item>350Cal</item>
         <item>700Cal</item>
     </string-array>
+
     <string-array name="M06_contactos">
         <item>Pedro Fernández</item>
         <item>Luis Machado</item>
         <item>Dayana Colmenares</item>
     </string-array>
+
+    <string-array name="M06_array_tipo_de_entrenamiento">
+        <item>Por Kilometros</item>
+        <item>Por Tiempo</item>
+    </string-array>
+
     <string name="M06_caloriasQuemadas">Calorías quemadas:</string>
     <string name="M06_editar_entrenamiento">Editar entrenamiento</string>
     <string name="M06_eliminar_entrenamiento">Eliminar entrenamiento</string>
@@ -139,6 +148,7 @@
     <string name="M06_predefinido">Predefinido</string>
     <string name="M06_periodicidad">Periodicidad</string>
     <string name="M06_toast_periodicidad">Por favor, inserte periodicidad del entrenamiento</string>
+    <string name="M06_tipo_entrenamiento">Tipo de entrenamiento</string>
     <!--Fin Strings modulo 6-->
 
 </resources>

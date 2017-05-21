@@ -26,7 +26,7 @@ import com.fitucab.ds1617b.fitucab.R;
 
 public class M06AddTrainingTypePredefinedFragment extends Fragment implements View.OnClickListener, AdapterView.OnItemSelectedListener{
     private Button _agregar;
-    private Spinner _spinnerEntrenamiento,_spinnerTipo;
+    private Spinner _spinnerEntrenamiento , _spinnerTipo , _spinnerTipoEntrenamiento;
     private String[] _calorias;
     private TextView _caloriasView;
     private EditText _periodicidad;
@@ -63,9 +63,11 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
     private void setupViewValues() {
         //Se intancia la periodicidad
         _periodicidad= (EditText) _view.findViewById(R.id.m06_editTextPeriodicidad);
-        //Se instancian los 2 spinners, tanto de entrenamiento como de tipo
+
+        //Se instancian los 3 spinners, tanto de entrenamiento,tipo y tipo de entrenamiento
         _spinnerEntrenamiento=(Spinner)_view.findViewById(R.id.m06_spinnerEntrenamientoPredefinido);
         _spinnerTipo=(Spinner)_view.findViewById(R.id.m06_spinnerTipo);
+        _spinnerTipoEntrenamiento=(Spinner) _view.findViewById(R.id.m06_spinnerTipoEntrenamiento);
 
         //Se crean adaptadores para cada tipo de spinner y luego se rellenan con la infromacion
         _adaptador= ArrayAdapter.createFromResource(getContext(),R.array.M06_tiposEntrenamientosPredefinidos,android.R.layout.simple_spinner_item);
@@ -74,6 +76,9 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
         _adaptador= ArrayAdapter.createFromResource(getContext(),R.array.M06_dificultad,android.R.layout.simple_spinner_item);
         _adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         _spinnerTipo.setAdapter(_adaptador);
+        _adaptador= ArrayAdapter.createFromResource(getContext(),R.array.M06_array_tipo_de_entrenamiento,android.R.layout.simple_spinner_item);
+        _adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        _spinnerTipoEntrenamiento.setAdapter(_adaptador);
 
         //Agregando funcionalidad a los botones
         _agregar=(Button) _view.findViewById(R.id.m06_botonAgregarEntrenamientoPredefinido);
