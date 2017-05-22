@@ -8,8 +8,14 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.androidtutorialpoint.mymapsappsdirection.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -47,7 +53,7 @@
         <activity
             android:name=".UI.Activities.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UI.Activities.M05ReadExerciseActivity"
             android:label="Track Exercise"
@@ -56,6 +62,7 @@
             android:name=".UI.Activities.M02HomeActivity"
             android:label="Fit UCAB"
             android:theme="@style/AppTheme.NoActionBar">
+
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
@@ -73,15 +80,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-
-
-        <activity
-            android:name=".UI.Activities.M05TrackExerciseActivity"
-            android:label="@string/title_activity_m05_track_exercise">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity" />
-
+        <activity android:name=".UI.Activities.M05StartTrackingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

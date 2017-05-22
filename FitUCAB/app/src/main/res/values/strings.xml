@@ -49,20 +49,22 @@
     <!--FIN Strings Modulo 2 -->
 
 
-
-   <!-- Inicio Strings Modulo 5 -->
+    <!-- Inicio Strings Modulo 5 -->
     <string name="app_name_title">Actividad</string>
     <string name="_tv_m05_type">Tipo de ejercicio:</string>
+    <string name="_tv_m05_time">Tiempo</string>
+    <string name="_tv_m05_speed">Velocidad</string>
     <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
-    <string name="_tv_m05_duration">Duracion:</string>
+    <string name="_tv_m05_duration">Duración:</string>
     <string name="_btn_m05_registermanual">REGISTRAR</string>
-    <string name="_tv_m05_calories">Calories:</string>
+    <string name="_tv_m05_calories">Calorías:</string>
     <string name="_tv_m05_titletabmanual">MANUAL</string>
+    <string name="_btn_m05_pause">PAUSAR</string>
+    <string name="_btn_m05_resume">CONTINUAR</string>
     <string name="tab_m05_log">Manual</string>
     <string name="tab_m05_track">Automática</string>
+
     <!--FIN Strings Modulo 5 -->
-
-
 
 
     <!-- TODO: Remove or change this placeholder text -->

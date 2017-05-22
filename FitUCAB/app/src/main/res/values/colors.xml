@@ -14,5 +14,9 @@
     <color name="colorGreenBtn">#6aca25</color>
     <color name="colorWhiteSmoke">#f5f5f5</color>
 
+    <color name="colorpink">#ec0b3c</color>
+    <color name="gradvioletgrey">#1a0c38</color>
+    <color name="gradlightgrey">#5a595e</color>
+
 
 </resources>
