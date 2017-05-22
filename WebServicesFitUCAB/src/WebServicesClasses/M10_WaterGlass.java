@@ -1,6 +1,7 @@
 package WebServicesClasses;
 
 import Domain.User;
+import Domain.Water;
 import com.google.gson.Gson;
 import sun.java2d.pipe.SpanShapeRenderer;
 
@@ -23,58 +24,204 @@ import java.util.Date;
 public class M10_WaterGlass
 {
 
-    Gson gson = new Gson();
+    private Gson _gson = new Gson();
     private Connection conn =bdConnect();
-    DateFormat dateFormatter;
+    private ArrayList<Water> _array = new ArrayList<>() ;
+    private Water _water;
+    private ResultSet _rs;
+    private Statement _st;
+    private Integer _res;
 
-
-
-    @GET
-    @Path("/addWater")
-    @Produces("application/json")
-    public String addWater(@QueryParam("time") String dia , @QueryParam("Fkg") String password
-            , @QueryParam("Fkp") String fkp)
+    public ResultSet  sql (String query)
     {
-        SimpleDateFormat formatter = new SimpleDateFormat("DD/mm/yyyy HH:mm:ss");
-        Date date = null;
+
         try {
-         date = formatter.parse(dia);
-            
-        } catch (ParseException e) {
+                 _st = conn.createStatement();
+                 _rs  = _st.executeQuery(query);
+                 conn.close();
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
+        return _rs;
+    }
 
-        return gson.toJson(date);
+
+    /**
+     * Metodo que es llamado a traves del web service para agregar un vaso a la base de dato
+     * @param dia
+     * @param glassType
+     * @param fkp
+     * @return la cantidad de vasos tomados  que tiene ese dia
+     */
+    @GET
+    @Path("/addWater")
+    @Produces("application/json")
+    public String addWater(@QueryParam("time") String dia , @QueryParam("glasstype") int glassType
+            , @QueryParam("fkp") int fkp)
+    {
+                
+        try {
+            //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
+            ResultSet rs = sql("Select res from m10_addwater("+dia+","+glassType+","+fkp+")");
+
+            //recorro la consulta
+            while( rs.next() )
+            {
+                _water = new Water();
+                _water.set_cantidad( rs.getInt("res") );
+
+                _array.add( _water );
+            }// end while que recorre la consulta
+        } catch ( SQLException e) {
+            e.printStackTrace();
+            return _gson.toJson( e );
+        }
+        return  _gson.toJson( _array );
     }
 
 
 
+    /**
+     * Metodo que es llamado a traves del web service para consulta la
+     * el historial de vasos de agua tomados
+     * @param dia
+     * @param fkp
+     * @return array con fecha, hora y tamaño del vaso de agua
+     */
     @GET
-    @Path("/a")
+    @Path("/GetList")
     @Produces("application/json")
-    public String prueba()
+    public String GetListDate( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
-        String aa ="";
 
-        try{
+        try {
 
-            String query= "SELECT glasshistoricid, fk_glass, fk_person, glasstime" +
-                    "  FROM glass_historic where glasshistoricid = 5";
+            //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
+            _rs = sql("Select * from M10_GetListFecha("+fkp+" ,"+dia+")");
 
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            while(rs.next()){
+            while(_rs.next())
+            {
+                //se agarran los valores de la consulta y se crea un objeto tipo water
+                _water = new Water( _rs.getTimestamp("GLASSTIME").toString()
+                        ,_rs.getInt("GLASSTYPE"));
 
-             aa  =rs.getString("GLASSHISTORICID").toString();
-            }
+                // se guardan los datos en un arraylist de tipo water
+                _array.add(_water);
 
-            return gson.toJson(aa);
+            } //end while que recorre la consulta
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return _gson.toJson( e );
         }
-        catch(Exception e) {
-            return e.getMessage();
-        }
+        //se devuelve el arraylist
+        return  _gson.toJson( _array );
 
+
+    }
+
+    /**
+     * Metodo que es llamado a traves del web service para consulta la
+     * cantidad de vasos tomados y cantidad de agua en  dia
+     * @param dia
+     * @param fkp
+     * @return array con cantidad de agua total y cantidad de vasos
+     */
+    @GET
+    @Path("/GetWater")
+    @Produces("application/json")
+    public String GetWater( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
+    {
+
+        try {
+
+            //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
+            _rs = sql("Select * from M10_GetWaterGlass("+fkp+" ,"+dia+")");
+
+            while(_rs.next())
+            {
+                //se agarran los valores de la consulta y se crea un objeto tipo water
+                _water = new Water(_rs.getInt("sumG")
+                        ,_rs.getInt("countg"));
+
+                // se guardan los datos en un arraylist de tipo water
+                _array.add(_water);
+
+            } //end while que recorre la consulta
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return _gson.toJson( e );
+        }
+        //se devuelve el arraylist
+        return  _gson.toJson( _array );
+
+
+    }
+
+
+    @GET
+    @Path("/GetFechaInt")
+    @Produces("application/json")
+    public String GetFechaInt( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
+    {
+        try {
+
+            //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
+            _rs = sql("Select * from M10_Fechainter ("+fkp+" ,"+dia+")");
+
+            while(_rs.next())
+            {
+                //se agarran los valores de la consulta y se crea un objeto tipo water
+
+
+                _water = new Water (_rs.getDate("glasstime").toString(),
+                                    _rs.getInt("sumg"),_rs.getInt("count"));
+
+                // se guardan los datos en un arraylist de tipo water
+                _array.add(_water);
+
+            } //end while que recorre la consulta
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return _gson.toJson( e );
+        }
+        //se devuelve el arraylist
+        return  _gson.toJson( _array );
+
+    }
+
+
+    @GET
+    @Path("/DeletLast")
+    @Produces("application/json")
+    public String DeletLast( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
+    {
+
+        try {
+
+            //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
+            _rs = sql("Select * from M10_DeletWaterLast("+dia+" ,"+fkp+")");
+
+            while(_rs.next())
+            {
+                //se agarran los valores de la consulta y se crea un objeto tipo water
+                _water.set_cantidad(_rs.getInt("res"));
+
+                // se guardan los datos en un arraylist de tipo water
+                _array.add(_water);
+
+            } //end while que recorre la consulta
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return _gson.toJson( e );
+        }
+        //se devuelve el arraylist
+        return  _gson.toJson( _array );
 
 
     }
@@ -100,6 +247,8 @@ public class M10_WaterGlass
         }
         return conn;
     }
+
+
 
 
 }
