@@ -3,7 +3,9 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,12 +13,21 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
+import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 
 import java.util.Calendar;
 import java.util.TimeZone;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,7 +36,15 @@ public class M01SignUpFragment extends Fragment {
 
     private OnFragmentSwap _callBack;
     private Button _btnRegistrar;
-    private EditText _etfechaNac;
+    private EditText _etBirthdate;
+    private EditText _etUsernameRegistry;
+    private EditText _etPasswordRegistry;
+    private EditText _etEmailRegistry;
+    private EditText _etPhone;
+    private EditText _etHeight;
+    private EditText _etWeight;
+    private RadioButton _rbSexFem;
+    private RadioButton _rbSexMale;
     private View _view;
 
     /**
@@ -69,6 +88,7 @@ public class M01SignUpFragment extends Fragment {
         // Inflate the layout for this fragment
         _view =  inflater.inflate(R.layout.fragment_m01_sign_up, container, false);
         setupViewValues();
+        instantiateComponents();
         manageBtnRegistrar();
         activateCalendar();
 
@@ -82,12 +102,24 @@ public class M01SignUpFragment extends Fragment {
         _btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Obtenemos en la variable local el valor del EditText
-                //String textoEscritoEnPantalla = _inputET.getText().toString();
-                //Declaramos un contenedor para enviar la info al otro fragment
-                Bundle bundle = new Bundle();
-                //bundle.putString("text",textoEscritoEnPantalla);
-                _callBack.onSwapActivity("M02HomeActivity",null);
+
+               String sex="";
+               String username = _etUsernameRegistry.getText().toString();
+               String password = _etPasswordRegistry.getText().toString();
+               String email = _etEmailRegistry.getText().toString();
+               String phone = _etPhone.getText().toString();
+               String birthdate = _etBirthdate.getText().toString();
+               String weight = _etWeight.getText().toString();
+               String height = _etHeight.getText().toString();
+
+                if(_rbSexFem.isChecked()) {
+                    sex = "f";
+                }
+                else{
+                    sex="m";
+                }
+
+                getRetrofit(username,password,email,sex,phone,birthdate,weight,height);
 
             }
         });
@@ -98,7 +130,7 @@ public class M01SignUpFragment extends Fragment {
      */
     private void activateCalendar(){
 
-        _etfechaNac.setOnClickListener(new View.OnClickListener() {
+        _etBirthdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 instantiateCalendar();
@@ -111,7 +143,7 @@ public class M01SignUpFragment extends Fragment {
      */
     private void setupViewValues() {
         _btnRegistrar = (Button) _view.findViewById(R.id.btn_m01_entrar);
-        _etfechaNac = (EditText) _view.findViewById(R.id.et_m01_fechanac);
+        _etBirthdate = (EditText) _view.findViewById(R.id.et_m01_fechanac);
 
     }
 
@@ -131,6 +163,19 @@ public class M01SignUpFragment extends Fragment {
         datePicker.show();
     }
 
+    private void instantiateComponents(){
+
+        _etUsernameRegistry= (EditText) _view.findViewById(R.id.et_m01_usuario);
+        _etPasswordRegistry= (EditText) _view.findViewById(R.id.et_m01_passwordRegistro);
+        _etEmailRegistry= (EditText) _view.findViewById(R.id.et_m01_correoRegistro);
+        _etPhone = (EditText) _view.findViewById(R.id.et_m01_telefono);
+        _rbSexFem = (RadioButton) _view.findViewById(R.id.rb_m01_femenino);
+        _rbSexMale= (RadioButton) _view.findViewById(R.id.rb_m01_masculino);
+        _etHeight= (EditText) _view.findViewById(R.id.et_m01_estatura);
+        _etWeight= (EditText) _view.findViewById(R.id.et_m01_peso);
+
+    }
+
     /**
      *Le asigno al editText lo seleccionado en el calendario
      */
@@ -144,7 +189,42 @@ public class M01SignUpFragment extends Fragment {
             String month1 = String.valueOf(selectedMonth + 1);
             String day1 = String.valueOf(selectedDay);
 
-            _etfechaNac.setText(day1 + "/" + month1 + "/" + year1);
+            _etBirthdate.setText(day1 + "/" + month1 + "/" + year1);
         }
     };
+
+
+    public void getRetrofit(String username, String password,String email,String sex,
+                            String phone, String birthdate, String weigth, String height){
+
+        ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
+        Call<String> call= apiService.insertRegistry(username,password,email,sex,phone,birthdate,weigth,height);
+        call.enqueue(new Callback<String>() {
+
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+                try{
+
+                   // String userid = response.body();
+                    System.out.println("Hice bien  el insert");
+                    _callBack.onSwapActivity("M02HomeActivity",null);
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                    System.out.println("Hice MAL el insert");
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+
+                System.out.println("FALLO TODO en el insert");
+
+            }
+        });
+    }
 }
+

@@ -18,7 +18,7 @@ REGISTRYID 	serial primary key,
 REGISTRYWEIGHT	real not null,
 REGISTRYHEIGHT	real not null,
 REGISTRYPOINT	integer not null,
-FK_PERSONID	integer not null
+FK_PERSONID	integer
 );
 
 

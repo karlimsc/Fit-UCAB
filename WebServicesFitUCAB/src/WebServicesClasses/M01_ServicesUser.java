@@ -27,7 +27,6 @@ public class M01_ServicesUser {
      * @param phone
      * @param weight
      * @param height
-     * @param point
      * @return
      */
 
@@ -42,8 +41,7 @@ public class M01_ServicesUser {
                              @QueryParam("phone") String phone,
                              @QueryParam("birthdate") String birthdate,
                              @QueryParam("weight") String weight,
-                             @QueryParam("height")String height,
-                             @QueryParam("point") String point
+                             @QueryParam("height")String height
                             )
     {
         String insertUserQuery= "INSERT INTO PERSON (PERSONUSERNAME, PERSONPASSWORD, PERSONEMAIL, PERSONSEX," +
@@ -65,11 +63,12 @@ public class M01_ServicesUser {
             }
 
                 String insertRegistryQuery="INSERT INTO REGISTRY (registryweight, registryheight, registrypoint, fk_personid)" +
-                    " VALUES (" +weight+" , "+height+" ,"+point+" , "+userId+" )";
+                    " VALUES (" +weight+" , "+height+" ,0, "+userId+" )";
+
 
             st.executeUpdate(insertRegistryQuery);
+            return (Integer.toString(userId));
 
-            return gson.toJson(true);
         }
         catch(Exception e) {
             return e.getMessage();
