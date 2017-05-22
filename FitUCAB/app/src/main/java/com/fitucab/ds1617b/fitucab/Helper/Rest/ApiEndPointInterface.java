@@ -15,14 +15,14 @@ public interface ApiEndPointInterface {
     Call<User> loginUser(@Query("username") String userparam,@Query("password") String passwordparam);
 
     @GET("M01_ServicesUser/insertRegistry")
-    Call<String> insertRegistry(@Query("username") String username,
+    Call<User> insertRegistry(@Query("username") String username,
                             @Query("password") String password,
                             @Query("email") String email,
                             @Query("sex") String sex,
                             @Query("phone")String phone,
                             @Query("birthdate") String birthdate,
-                            @Query("weigth") String weigt,
-                            @Query("heigth") String height
+                            @Query("weight") String weight,
+                            @Query("height") String height
                             );
 
 }
