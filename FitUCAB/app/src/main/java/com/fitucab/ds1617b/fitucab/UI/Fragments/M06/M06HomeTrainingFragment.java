@@ -14,6 +14,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterViewAnimator;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -93,6 +94,8 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         //Si se pulsa simple se abre para detalles
+       //String hola = parent.getItemAtPosition(position).toString();
+
         _callBack.onSwap("M06DetailsTrainingFragment",null);
 
         //Si se deja pulsado mas tiempo se abre el menu contextual con diferentes opciones
