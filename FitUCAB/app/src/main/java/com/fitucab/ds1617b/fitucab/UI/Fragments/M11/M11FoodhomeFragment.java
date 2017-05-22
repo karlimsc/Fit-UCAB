@@ -51,7 +51,7 @@ public class M11FoodhomeFragment extends Fragment {
 
         }
     }
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -65,11 +65,50 @@ public class M11FoodhomeFragment extends Fragment {
         _btn_m11_food = (ImageButton)_view.findViewById(R.id.btn_m11_food);
         _tv_m11_cantidadCalorias = (TextView)_view.findViewById(R.id.tv_m11_cantidadCalorias);
 
+        manageChangeDietFragment();
+        manageChangeFoodFragment();
+        manageChangeGraphicFragment();
+        manageChangeSuggestionFragment();
 
         return _view;
     }
 
-
+    private void manageChangeDietFragment()
+    {
+        _btn_m11_diet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _callBack.onSwap("M11DietFragment",null);
+            }
+        });
+    }
+    private void manageChangeFoodFragment()
+    {
+        _btn_m11_food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _callBack.onSwap("M11FoodFragment",null);
+            }
+        });
+    }
+    private void manageChangeGraphicFragment()
+    {
+        _btn_m11_graphic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _callBack.onSwap("M11GraphicFragment",null);
+            }
+        });
+    }
+    private void manageChangeSuggestionFragment()
+    {
+        _btn_m11_suggestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _callBack.onSwap("M01LoginFragment",null);
+            }
+        });
+    }
 
 
 }
