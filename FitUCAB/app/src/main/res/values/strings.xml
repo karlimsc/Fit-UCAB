@@ -53,14 +53,24 @@
     <string name="_app_name_title_m05">Actividad</string>
     <string name="_btn_m05_registermanual">REGISTRAR</string>
     <string name="_bt_start_tracking">INICIAR</string>
+    <string name="_btn_m05t_save">GUARDAR</string>
     <string name="_itm_m05_delete">Eliminar</string>
     <string name="_itm_m05_modify">Modificar</string>
     <string name="_tab_m05_log">MANUAL</string>
     <string name="_tab_m05_track">AUTOMATICO</string>
     <string name="_tv_m05_type">Tipo de ejercicio:</string>
+    <string name="_tv_m05_sport">Deporte:</string>
+    <string name="_tv_m05_day">Dia</string>
+    <string name="_tv_m05_month">Mes</string>
+    <string name="_tv_m05_year">Año</string>
+    <string name="_tv_m05_distance">Distacia:</string>
+    <string name="_tv_m05_speed">Velocidad:</string>
+    <string name="_tv_m05_uptime">Duracion:</string>
+    <string name="_tv_m05_starHour">Hora:</string>
+    <string name="_tv_m05_starDate">Fecha:</string>
     <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
     <string name="_tv_m05_duration">Duracion:</string>
-    <string name="_tv_m05_calories">Calories:</string>
+    <string name="_tv_m05_calories">Calorias:</string>
     <string name="_tv_m05_titletabmanual">MANUAL</string>
     <string name="_ttl_m05_activity">Actividad</string>
     <string name="_ttl_m05_questiondeleteactivity">Confirmar</string>
@@ -74,6 +84,9 @@
     <string name="_dlg_m05_hourseleted">Seleccione hora</string>
     <string name="_tst_m05_messagedelete">Debe seleccionar un item de la lista para eliminar</string>
     <string name="_tst_m05_messagemodify">Debe seleccionar un item de la lista para modificar</string>
+    <string name="_tst_m05_seletectitemonetouch">Debe seleccionar prolongadamente el item para ver opciones</string>
+
+    <!--FIN Strings Modulo 5 -->
 
 
     <string name="hello_blank_fragment">Home</string>
@@ -85,6 +98,6 @@
 
     <string name="title_activity_m05_add_exercise2">M05AddExercise2</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <!--FIN Strings Modulo 5 -->
+
 
 </resources>

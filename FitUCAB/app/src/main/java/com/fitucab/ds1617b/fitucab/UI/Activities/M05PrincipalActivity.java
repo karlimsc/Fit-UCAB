@@ -1,6 +1,7 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
 import android.app.DatePickerDialog;
+import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.Model.AdapterItem;
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05ModifyFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -62,7 +64,7 @@ public class M05PrincipalActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_m05_principal_activity);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        selectedElement();
+        _listView = (ListView) findViewById(R.id.lv_m05_listactivity);
         _fabChangeDate = (FloatingActionButton) findViewById(R.id.fab_m05_datepickerserch);
         // Se pone en modo de escucha
         _fabChangeDate.setOnClickListener(this);
@@ -83,22 +85,33 @@ public class M05PrincipalActivity extends AppCompatActivity implements
         // como adaptador de contenido
         adaptador = new ArrayAdapter<Activit>(this, android.R.layout.simple_list_item_1, _activits);
 
-
+        selectedElement();
     }
 
     /**
      * Metodo para iniciar la seleccion de elemntos
      */
  public void selectedElement (){
-     _listView = (ListView) findViewById(R.id.lv_m05_listactivity);
+
+      // Para la seleccion individual
+     _listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+
+     _listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+         @Override
+         public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+             // Obtención del manejador de fragmentos
+             FragmentManager fragmentManager = getFragmentManager();
+             new M05ModifyFragment().show(fragmentManager, "M05ModifyFragment");
+             return true;
+         }
+     });
 
 
-     // Se pone en escucha si se selecciona un item
      _listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Para la seleccion individual
-                _listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+                Toast.makeText(getApplicationContext(), R.string._tst_m05_seletectitemonetouch,
+                        Toast.LENGTH_SHORT).show();
 
             }
      });

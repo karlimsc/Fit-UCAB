@@ -34,4 +34,23 @@
 
     </style>
 
+    <style name="Toolbar_m05" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/ColorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorwhite</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:typeface">sans</item>
+
+    </style>
+
+
+    <style name="white_m05" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/colorWhiteSmoke</item>
+        <item name="android:textColorPrimary">@color/colorWhiteSmoke</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:typeface">sans</item>
+
+    </style>
+
 </resources>

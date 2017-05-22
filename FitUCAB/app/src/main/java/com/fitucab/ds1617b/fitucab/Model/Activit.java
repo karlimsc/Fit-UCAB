@@ -18,11 +18,11 @@ public class Activit {
     private double  speedActivity;
     private Date starTimeActivity;
     private Date endTimeAtivity;
-    private String placeStartActivity;
-    private String placeEndActivity;
+    private String placeStartActivity; // Para registro automatico
+    private String placeEndActivity;  // Registro Automatico
     private int caloriesBurned;
     private String dateActivity;
-    private ImageView imege;
+    private ImageView imege;        // imagen para asignar en el list view, no esta en la BD
 
     public Activit() {
     }
