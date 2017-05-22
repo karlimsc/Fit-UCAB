@@ -22,15 +22,22 @@ public class M11Food extends AppCompatActivity implements OnFragmentSwap {
 
     private FragmentManager FM = getSupportFragmentManager();
 
-
+    /**
+     * Metodo para iniciar la actividad con el fragmento de inicio.
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        onSwap("M11FoodHomeFragment",null);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m11_food);
+        onSwap("M11FoodHomeFragment",null);
     }
 
+    /**
+     * Metodo para hacer el cambio entre fragmentos con la actividad anfitriona.
+     * @param fragmentName Recibe el nobmre del fragment (nombre de la clase)
+     * @param bundle Recibe la data encapsulada que se le pasara al fragment, (puede ser null)
+     */
     @Override
     public void onSwap(String fragmentName, Bundle bundle) {
 
