@@ -68,7 +68,7 @@ public class  M01LoginFragment extends Fragment {
                              Bundle savedInstanceState){
 
         _view = inflater.inflate(R.layout.fragment_m01_login, container, false);
-        instanciarComponentes();
+        instantiateComponents();
         manageChangeFragmentRecovery();
         manageButtonEntrar();
         return _view;
@@ -106,7 +106,7 @@ public class  M01LoginFragment extends Fragment {
     /**
      * Metodo encargado para instanciar los componentes de esta vista
      */
-    private void instanciarComponentes (){
+    private void instantiateComponents(){
 
         _tvOlvidoClave=(TextView) _view.findViewById(R.id.tv_m01_olvidoClave);
         _btnEntrarLogin=(Button) _view.findViewById(R.id.btn_m01_aceptarLogin);
