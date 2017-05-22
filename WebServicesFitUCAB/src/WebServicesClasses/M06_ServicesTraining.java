@@ -62,11 +62,12 @@ public class M06_ServicesTraining {
         int period = 0;
         int calories = 0;
         String query = "select (trainingid, trainingname, trainingperiod, trainingcalories) from public.training";
-        Training results = new Training(id, name, period, calories);
+        
         try {
             Connection conn = connectDb();
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
+            Training results = null;
             while (rs.next()) {
 
                 results.setId(rs.getInt("trainingid"));
@@ -74,9 +75,11 @@ public class M06_ServicesTraining {
                 results.setTrainingPeriod(rs.getInt("trainingperiod"));
                 results.setTrainingCalories(rs.getInt("trainingcalories"));
 
+                results = new Training(id, name, period, calories);
             }
             return gson.toJson(results);
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             return e.getMessage();
         }
     }
@@ -101,13 +104,6 @@ public class M06_ServicesTraining {
         } catch (SQLException e) {
             e.printStackTrace();
             System.exit(2);
-        } finally {
-            //cerramos la conexion
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
         return conn;
     }
