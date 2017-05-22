@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-97:12
+ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-107:12
 	package
 		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:3:5-42
 		INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
@@ -27,7 +27,7 @@ MERGED from [com.google.android.gms:play-services-maps:10.2.1] /home/elberg/.and
 	android:name
 		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:12:22-64
 application
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:14:5-95:19
+ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:14:5-105:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/elberg/.android/build-cache/1bf92d2b76924630b213d936b8e8d9579a98a394/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.0] /home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.0] /home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/AndroidManifest.xml:29:5-20
@@ -83,48 +83,56 @@ ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/And
 		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:42:13-56
 	android:name
 		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:40:13-65
+activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05PrincipalActivity
+ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:49:9-58:20
+	android:label
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:51:13-54
+	android:theme
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:52:13-56
+	android:name
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:50:13-63
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05TrackExerciseActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:49:9-61:20
+ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:59:9-71:20
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:51:13-70
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:61:13-70
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:50:13-67
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:60:13-67
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:52:13-54:93
+ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:62:13-64:93
 	android:value
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:54:17-90
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:64:17-90
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:53:17-63
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:63:17-63
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.MainActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:64:9-67:59
+ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:74:9-77:59
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:66:13-56
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:76:13-56
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:67:13-56
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:77:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:65:13-55
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:75:13-55
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05ReadExerciseActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:68:9-71:59
+ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:78:9-81:59
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:70:13-43
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:80:13-43
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:71:13-56
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:81:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:69:13-66
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:79:13-66
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:72:9-81:20
+ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:82:9-91:20
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:74:13-37
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:84:13-37
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:75:13-56
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:85:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:73:13-58
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:83:13-58
 meta-data#com.google.android.geo.API_KEY
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:90:9-92:55
+ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:100:9-102:55
 	android:value
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:92:13-52
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:102:13-52
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:91:13-58
+		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:101:13-58
 uses-sdk
 INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/elberg/.android/build-cache/1bf92d2b76924630b213d936b8e8d9579a98a394/output/AndroidManifest.xml:5:5-7:41
