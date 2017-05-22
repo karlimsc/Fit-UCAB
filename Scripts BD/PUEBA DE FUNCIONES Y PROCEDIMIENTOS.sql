@@ -1,5 +1,6 @@
 
 select M05_obtenerdatosdeporte(1);
+select M05_obteneriddeporte('CAMINAR');
 select M05_obtenermetdeporte('CAMINAR');
 select M05_obtenerdeportes('CAMINAR');
 select M05_obtenerdeportesusuario(1);

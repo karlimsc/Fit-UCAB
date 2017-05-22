@@ -55,8 +55,24 @@ END;
 $$
 LANGUAGE 'plpgsql' STABLE;
 
+-- OBTIENE EL ID A TRAVES DEL NOMBRE DEL DEPORTE
 
+CREATE OR REPLACE FUNCTION M05_obteneriddeporte (nombre VARCHAR(200))  RETURNS TABLE (iddeporte INTEGER) AS 
+$$ 
+DECLARE
+ var_r record;
+BEGIN 
 
+for var_r in  (SELECT SPORTID
+				FROM  SPORT
+				WHERE SPORTNAME=nombre)
+loop
+		iddeporte := var_r.SPORTID;
+end loop;
+return next;
+END; 
+$$
+LANGUAGE 'plpgsql' STABLE;
 
 -- CARGA TODOS LOS DEPORTES DE UN USUARIO A TRAVES DEL ID del usuario
 CREATE OR REPLACE FUNCTION M05_obtenerdeportesusuario (usuario INTEGER) RETURNS TABLE (nombredeporte VARCHAR(200)) AS 
