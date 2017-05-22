@@ -27,6 +27,11 @@
     <string name="et_m01_kg">Kg</string>
     <string name="et_m01_estatura">Estatura</string>
     <string name="et_m01_mts">Mts</string>
+    <string name="m01_errorUsernameSpecialChar">El nombre de usuario no debe tener caracteres especiales</string>
+    <string name="m01_errorUsernameTooShort">El nombre de usuario debe poseer al menos 4 caracteres</string>
+    <string name="m01_errorPhoneTooShort">El teléfono es inválido</string>
+    <string name="m01_errorPasswordTooShort">La contraseña es muy corta </string>
+    <string name="m01_errorInvalidEmail">El email es inválido</string>
     <!--FIN Strings Modulo 1 -->
 
     <!--Inicio Strings Modulo 2-->
