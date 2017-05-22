@@ -105,7 +105,7 @@ public class M11FoodhomeFragment extends Fragment {
         _btn_m11_suggestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _callBack.onSwap("M01LoginFragment",null);
+                _callBack.onSwap("M11SuggestionFragment",null);
             }
         });
     }

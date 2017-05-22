@@ -68,11 +68,20 @@ public class M11Food extends AppCompatActivity implements OnFragmentSwap {
                     fragmentTransaction.addToBackStack("M11FoodFragment");
 
                     break;
+
                 case "M11GraphicFragment":
                     fragmentToSwap = new M11GraphicFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
                     fragmentTransaction.addToBackStack("M11GraphicFragment");
+
+                    break;
+
+                case "M11SuggestionFragment":
+                    fragmentToSwap = new M11GraphicFragment();
+                    fragmentToSwap.setArguments(bundle);
+                    fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
+                    fragmentTransaction.addToBackStack("M11SuggestionFragment");
 
                     break;
 
