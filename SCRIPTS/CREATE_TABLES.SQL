@@ -26,7 +26,7 @@ FK_PERSONID	integer not null
 
 CREATE TABLE TRAINING (
 
-TRAININGID serial primary key
+TRAININGID serial primary key,
 TRAININGNAME varchar (80) not null,
 TRAININGPERIOD integer not null,
 TRAININGCALORIES integer not null,

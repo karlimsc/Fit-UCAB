@@ -61,7 +61,7 @@ public class M06_ServicesTraining {
         String name = "";
         int period = 0;
         int calories = 0;
-        String query = "select (trainingid, trainingname, trainingperiod, trainingcalories) from TRAINING;";
+        String query = "select (trainingid, trainingname, trainingperiod, trainingcalories) from public.training";
         Training results = new Training(id, name, period, calories);
         try {
             Connection conn = connectDb();
@@ -70,9 +70,9 @@ public class M06_ServicesTraining {
             while (rs.next()) {
 
                 results.setId(rs.getInt("trainingid"));
-                results.setTrainingName(rs.getString("trainingName"));
-                results.setTrainingPeriod(rs.getInt("trainingPeriod"));
-                results.setTrainingCalories(rs.getInt("trainingCalories"));
+                results.setTrainingName(rs.getString("trainingname"));
+                results.setTrainingPeriod(rs.getInt("trainingperiod"));
+                results.setTrainingCalories(rs.getInt("trainingcalories"));
 
             }
             return gson.toJson(results);
@@ -92,9 +92,9 @@ public class M06_ServicesTraining {
             //llamada al driver de PostgreSQL
             Class.forName("org.postgresql.Driver");
             //String de conexion a la db:
-            String url = "jdbc:postgresql://localhost/FitUcabDB";
+            String url = "jdbc:postgresql://localhost/fitucabdb";
 
-            conn = DriverManager.getConnection(url, "FitUcab", "fitucab");
+            conn = DriverManager.getConnection(url, "fitucab", "fitucab");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
             System.exit(1);
