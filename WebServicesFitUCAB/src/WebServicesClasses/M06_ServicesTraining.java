@@ -10,9 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
 
-/**
- * Created by LuisMiguel on 18/05/2017.
- */
+
 @Path("/training")
 public class M06_ServicesTraining {
 
@@ -46,6 +44,8 @@ public class M06_ServicesTraining {
         }
     }
 
+
+
     @GET
     @Path("/displayTraining")
     @Produces("application/json")
@@ -55,11 +55,13 @@ public class M06_ServicesTraining {
      * @return
      */
 
+    //prueba esto
+    //http://localhost:8888/FitUCAB_Web_Service_war_exploded/training/displayTraining
     public String getTraining(@QueryParam("id") int id) {
         String name = "";
         int period = 0;
         int calories = 0;
-        String query = "SELECT * FROM TRAINING WHERE FK_USERID="+id;
+        String query = "select (trainingid, trainingname, trainingperiod, trainingcalories) from TRAINING;";
         Training results = new Training(id, name, period, calories);
         try {
             Connection conn = connectDb();
@@ -67,7 +69,7 @@ public class M06_ServicesTraining {
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {
 
-                results.setId(rs.getInt("id"));
+                results.setId(rs.getInt("trainingid"));
                 results.setTrainingName(rs.getString("trainingName"));
                 results.setTrainingPeriod(rs.getInt("trainingPeriod"));
                 results.setTrainingCalories(rs.getInt("trainingCalories"));
@@ -84,7 +86,6 @@ public class M06_ServicesTraining {
      *
      * @return un conector para hacer llamadas a la BD
      */
-    // PARA HACER PRUEBAS!!
     private Connection connectDb() {
         Connection conn = null;
         try {
@@ -100,6 +101,13 @@ public class M06_ServicesTraining {
         } catch (SQLException e) {
             e.printStackTrace();
             System.exit(2);
+        } finally {
+            //cerramos la conexion
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return conn;
     }
