@@ -5,6 +5,7 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -65,8 +66,8 @@ public class M05ModifyFragment extends DialogFragment  {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        dialogConfirmation();
 
-                        dismiss();
                     }
                 }
         );
@@ -84,6 +85,31 @@ public class M05ModifyFragment extends DialogFragment  {
 
         return builder.create();
 
+    }
+
+
+    /**
+     * Dialogo emergente para confirmacion de eliminacion de actividad
+     */
+
+
+    public void dialogConfirmation() {
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string._ttl_m05_questiondeleteactivity);
+        builder.setMessage(R.string._dlg_m05_quetiondeleteactivity)
+                .setPositiveButton(R.string._dlg_m05_done, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dismiss();
+                    }
+                })
+                .setNegativeButton(R.string._dlg_m05_cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+
+        android.app.AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
 }

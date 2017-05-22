@@ -169,24 +169,7 @@ public void listElement(){
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.itm_m05_delete) {
-            listElement();
-            if(selection == -1) {
-                Toast.makeText(getApplicationContext(), R.string._tst_m05_messagedelete,
-                        Toast.LENGTH_SHORT).show();
-            }
-            else {
-                dialogConfirmation();
-            }
-            return true;
-        }
-        if (id == R.id.itm_m05_modify) {
-            Toast.makeText(getApplicationContext(), R.string._tst_m05_messagemodify,
-                    Toast.LENGTH_SHORT).show();
 
-            return true;
-        }
         if (id == R.id.itm_m05_start_activity){
             Intent newActivity = new Intent(this, M05AddExerciseActivity.class);
             startActivity(newActivity);
@@ -196,28 +179,6 @@ public void listElement(){
     }
 
 
-    /**
-     * Dialogo emergente para confirmacion de eliminacion de actividad
-     */
-
-    public void dialogConfirmation() {
-        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
-        builder.setTitle(R.string._ttl_m05_questiondeleteactivity);
-        builder.setMessage(R.string._dlg_m05_quetiondeleteactivity)
-                .setPositiveButton(R.string._dlg_m05_done, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                    }
-                })
-                .setNegativeButton(R.string._dlg_m05_cancel, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                    }
-                });
-
-        android.app.AlertDialog dialog = builder.create();
-        dialog.show();
-    }
 
 
     /**
