@@ -16,5 +16,12 @@
         android:title="@string/_itm_m05_delete"
         app:showAsAction="never"
         />
+    <item
+        android:id="@+id/itm_m05_start_activity"
+        android:orderInCategory="100"
+        android:title="@mipmap/ic_launcher_activity"
+        android:icon="@mipmap/ic_launcher_activity"
+        app:showAsAction="ifRoom"
+        />
 
 </menu>

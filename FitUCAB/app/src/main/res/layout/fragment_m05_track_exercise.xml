@@ -20,7 +20,7 @@
         android:fontFamily="sans-serif"
         android:background="@color/colorBtnConfirmar"
         android:gravity="center"
-        android:text="@string/bt_start_tracking"
+        android:text="@string/_bt_start_tracking"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <fragment

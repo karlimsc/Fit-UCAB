@@ -2,6 +2,7 @@ package com.fitucab.ds1617b.fitucab.UI.Activities;
 
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -172,6 +173,10 @@ public void listElement(){
                     Toast.LENGTH_SHORT).show();
 
             return true;
+        }
+        if (id == R.id.itm_m05_start_activity){
+            Intent newActivity = new Intent(this, M05AddExerciseActivity.class);
+            startActivity(newActivity);
         }
 
         return super.onOptionsItemSelected(item);

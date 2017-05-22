@@ -198,7 +198,7 @@
         android:text="@string/_btn_m05_registermanual"
         android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
         android:textColor="@color/colorwhite"
-        android:textSize="20dp"
+        android:textSize="18dp"
 
         android:typeface="sans" />
 
