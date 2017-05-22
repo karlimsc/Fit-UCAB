@@ -29,16 +29,16 @@ $$ LANGUAGE plpgsql VOLATILE;
 CREATE OR REPLACE FUNCTION M10_DeletWaterTm (tm timestamp , fkP integer  , out res integer)
 AS $$
 DECLARE  
-res integer ;
+
 
 BEGIN
- 
-
+ 	res :=(SELECT Count(t.glasshistoricid) FROM glass_historic as t WHERE DATE(t.GLASSTIME) = DATE(tm) and fk_person = fkp);
+ 	if res > 0 then
 	delete from glass_historic where GLASSTIME=tm and fk_person=fkP ;
-
-    res :=(SELECT Count(t.glasshistoricid) FROM glass_historic as t WHERE DATE(t.GLASSTIME) = DATE(tm) and fk_person = fkp);
-
-
+	res :=(SELECT Count(t.glasshistoricid) FROM glass_historic as t WHERE DATE(t.GLASSTIME) = DATE(tm) and fk_person = fkp);
+	else 
+	res :=0;
+	end if;
 END;
 $$ LANGUAGE plpgsql VOLATILE;
 
