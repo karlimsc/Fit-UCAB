@@ -22,6 +22,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -97,8 +99,7 @@ public class  M01LoginFragment extends Fragment {
 
                 String usernameLogin= _etUserLogin.getText().toString();
                 String passwordLogin= _etPasswordLogin.getText().toString();
-                 getRetrofit(usernameLogin,passwordLogin);
-                //_callBack.onSwapActivity("M02HomeActivity",null);
+                getRetrofit(usernameLogin,passwordLogin);
             }
         });
     }
@@ -133,6 +134,9 @@ public class  M01LoginFragment extends Fragment {
 
                      User user = response.body();
                      onCompleted(user);
+                     int id=getIdUser(getContext());
+                     System.out.println(id);
+                     _callBack.onSwapActivity("M02HomeActivity",null);
                      System.out.println("Hice bien la consulta");
                  }
                  catch (Exception e){

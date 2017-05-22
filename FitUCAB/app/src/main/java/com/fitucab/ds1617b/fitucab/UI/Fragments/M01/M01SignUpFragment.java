@@ -29,6 +29,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -195,36 +197,58 @@ public class M01SignUpFragment extends Fragment {
 
 
     public void getRetrofit(String username, String password,String email,String sex,
-                            String phone, String birthdate, String weigth, String height){
+                            String phone, String birthdate, String weight, String height){
 
         ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
-        Call<String> call= apiService.insertRegistry(username,password,email,sex,phone,birthdate,weigth,height);
-        call.enqueue(new Callback<String>() {
+        Call<User> call= apiService.insertRegistry(username,password,email,sex,phone,birthdate,weight,height);
+        call.enqueue(new Callback<User>() {
 
             @Override
-            public void onResponse(Call<String> call, Response<String> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
 
                 try{
 
-                   // String userid = response.body();
-                    System.out.println("Hice bien  el insert");
-                    _callBack.onSwapActivity("M02HomeActivity",null);
+                   User user = response.body();
+                   onCompleted(user);
+                   int id=getIdUser(getContext());
+                   System.out.println(id);
+                   System.out.println("Hice bien  el insert");
+                   _callBack.onSwapActivity("M02HomeActivity",null);
                 }
                 catch (Exception e){
-                    e.printStackTrace();
-                    System.out.println("Hice MAL el insert");
+                   e.printStackTrace();
+                   System.out.println("Hice MAL el insert");
 
                 }
 
             }
 
             @Override
-            public void onFailure(Call<String> call, Throwable t) {
+            public void onFailure(Call<User> call, Throwable t) {
 
                 System.out.println("FALLO TODO en el insert");
 
             }
         });
+    }
+
+    public void onCompleted(User user){
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putInt("idUser", user.get_idUser());
+        editor.putString("username", user.get_username());
+        editor.putString("password", user.get_password());
+        editor.putString("email", user.get_email());
+        editor.putString("sex", String.valueOf(user.get_sex()));
+        editor.putString("phone", user.get_phone());
+        editor.putString("birthdate", user.get_birthdate());
+        editor.putFloat("height", user.get_height());
+        editor.putFloat("weight", user.get_weight());
+
+        editor.commit();
+
     }
 }
 
