@@ -4,17 +4,17 @@
     <string name="title_activity_main">MainActivity</string>
 
     <!--Inicio Strings Modulo 1 -->
-    <string name="btn_m01_comienza">Comienza</string>
-    <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
+    <string name="btn_m01_comienza">REGISTRATE</string>
+    <string name="btn_m01_iniciaSesion">INICIA SESION</string>
     <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento físico</string>
-    <string name="btn_m01_entrar">Entrar</string>
+    <string name="btn_m01_entrar">ENTRAR</string>
     <string name="et_m01_usuarioCorreo">Usuario o Correo</string>
     <string name="et_m01_passwordLogin">Contraseña</string>
     <string name="et_m01_passwordRegistro">Contraseña</string>
-    <string name="btn_m01_aceptarLogin">Entrar</string>
+    <string name="btn_m01_aceptarLogin">ENTRAR</string>
     <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
     <string name="et_m01_correoRecovery">Correo Electrónico</string>
-    <string name="btn_m01_enviarCorreo">Enviar Correo</string>
+    <string name="btn_m01_enviarCorreo">ENVIAR CORREO</string>
     <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
     <string name="tv_m01_acercaDeTi">Acerca de ti</string>
     <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
@@ -47,12 +47,32 @@
     <string name="et_m02_Steps">Nro de Pasos</string>
 
     <!--FIN Strings Modulo 2 -->
+
+
+
+   <!-- Inicio Strings Modulo 5 -->
+    <string name="app_name_title">Actividad</string>
+    <string name="_tv_m05_type">Tipo de ejercicio:</string>
+    <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
+    <string name="_tv_m05_duration">Duracion:</string>
+    <string name="_btn_m05_registermanual">REGISTRAR</string>
+    <string name="_tv_m05_calories">Calories:</string>
+    <string name="_tv_m05_titletabmanual">MANUAL</string>
+    <string name="tab_m05_log">Manual</string>
+    <string name="tab_m05_track">Automática</string>
+    <!--FIN Strings Modulo 5 -->
+
+
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Home</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_m02_home">M02HomeActivity</string>
+    <string name="title_activity_m05_track_exercise">Track</string>
+    <string name="bt_start_tracking">Iniciar</string>
 
 
 </resources>
