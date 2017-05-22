@@ -9,5 +9,4 @@ local.properties
 .externalNativeBuild
 .idea
 /app/build
-/WebServicesFitUCAB/out/
-/WebServicesFitUCAB/.idea/
+/gradle

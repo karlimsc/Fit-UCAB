@@ -26,10 +26,10 @@
         android:theme="@style/AppTheme">
 
         <!-- ACTIVITIES MODULO 1 NO MODIFICAR EL CONTENIDO INTERNO -->
-        <!-- Indica que esta actividad es la que va a iniciar primero -->
 
         <activity
             android:name=".UI.Activities.M01LoginActivity"
+
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -40,9 +40,11 @@
         </activity>
         <!-- FIN ACTIVITIES MODULO 1 -->
 
+
+          <!-- MODULO 5-->
         <activity
             android:name=".UI.Activities.M05AddExerciseActivity"
-            android:label="@string/app_name"
+            android:label="@string/_app_name_title_m05"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -50,6 +52,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".UI.Activities.M05PrincipalActivity"
+            android:label="@string/_ttl_m05_activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".UI.Activities.M05TrackExerciseActivity"
+            android:label="@string/title_activity_m05_track_exercise">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- FIN MODULO 5-->
         <activity
             android:name=".UI.Activities.MainActivity"
             android:label="@string/title_activity_main"
