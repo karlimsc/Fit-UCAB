@@ -47,6 +47,16 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".UI.Activities.M05PrincipalActivity"
+            android:label="@string/_ttl_m05_activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".UI.Activities.M05TrackExerciseActivity"
             android:label="@string/title_activity_m05_track_exercise">
             <meta-data
