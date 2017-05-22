@@ -13,4 +13,8 @@ Select M05_insertarActividadentrenamiento('21/05/2017 11:00:00','21/05/2017 11:4
 select * from M05_obteneractividades ('19/05/2017', '21/05/2017' ,1)
 select * from M05_obtenercaloriasactividades ('19/05/2017', '21/05/2017' ,1)
 select * from M05_obtenerkmactividades('19/05/2017', '20/05/2017' ,1);
-select m05_modificarActividad(2,20000000);
+SELECT * FROM M05_obteneridactividades('25/05/2017','25/05/2017 1:00:00',1) -- OJO ESTA FUNCION;
+select m05_modificarkmActividad(15,20000000); -- RECUERDA Q AQUI PASAS LA ID DE LA ACTIVIDAD;
+select M05_modificarcaloriaActividad(15,20000000);-- RECUERDA Q AQUI PASAS LA ID DE LA ACTIVIDAD;
+SELECT M05_eliminaractividad(15 ) ;   -- ELIMINA A TRAVES DE LA ID DE LA ACTIVIDAD
+
