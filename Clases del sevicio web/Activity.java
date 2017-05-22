@@ -2,7 +2,7 @@
  * Created by estefania on 14/05/2017.
  */
 public class Activity {
-    //private int _id;
+    private int _id;
     private String _startime;
     private String _endtime;
     private String _date;
@@ -15,11 +15,11 @@ public class Activity {
     public Activity() {
     }
 
- //   public int getId() {
-        //return _id; }
+    public int getId() {
+        return _id; }
 
-//    public void setId(int _id) {
- //       this._id = _id;}
+    public void setId(int _id) {
+        this._id = _id;}
 
     public String getStartime() {
         return _startime;

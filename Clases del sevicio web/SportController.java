@@ -182,6 +182,31 @@ public class SportController {
 
     }
 
+    //FUNCION QUE Obtiene el id del deporte a traves del nombre
+
+    public int obtenerIdSport(String name){
+
+
+        String query = "select M05_obteneriddeporte('"+name.toUpperCase()+"');";
+
+       Sport resultado= new Sport();
+
+        try{
+            Connection conn=conectarADb();
+            Statement st = conn.createStatement();
+            ResultSet rs =  st.executeQuery(query);
+
+            while(rs.next()){
+
+                resultado.setId(rs.getInt("iddeporte"));
+            }
+
+            return resultado.getId();
+
+        } catch (Exception e) {
+            return 0;
+        }
+    }
 
     private Connection conectarADb(){
 
