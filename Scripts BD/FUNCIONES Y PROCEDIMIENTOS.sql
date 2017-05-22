@@ -55,8 +55,24 @@ END;
 $$
 LANGUAGE 'plpgsql' STABLE;
 
+-- OBTIENE EL ID A TRAVES DEL NOMBRE DEL DEPORTE
 
+CREATE OR REPLACE FUNCTION M05_obteneriddeporte (nombre VARCHAR(200))  RETURNS TABLE (iddeporte INTEGER) AS 
+$$ 
+DECLARE
+ var_r record;
+BEGIN 
 
+for var_r in  (SELECT SPORTID
+				FROM  SPORT
+				WHERE SPORTNAME=nombre)
+loop
+		iddeporte := var_r.SPORTID;
+end loop;
+return next;
+END; 
+$$
+LANGUAGE 'plpgsql' STABLE;
 
 -- CARGA TODOS LOS DEPORTES DE UN USUARIO A TRAVES DEL ID del usuario
 CREATE OR REPLACE FUNCTION M05_obtenerdeportesusuario (usuario INTEGER) RETURNS TABLE (nombredeporte VARCHAR(200)) AS 
@@ -196,29 +212,34 @@ END
 $$
 LANGUAGE 'plpgsql' VOLATILE; 
 
--- NO FUNCIONA
+-- FUNCIONA PERO CARGA 2 VECES EL VALOR DEL ID DE LA ACTIVIDAD;
 -- CARGAR ID DE ACTIVIDAD---
-
-CREATE OR REPLACE FUNCTION M05_obteneridactividad (fecha timestamp, deporte VARCHAR(200))  RETURNS  INTEGER  AS 
-$$ 
+CREATE OR REPLACE FUNCTION M05_obtenerIDactividades (fechamenor TIMESTAMP ,horainicio TIMESTAMP ,idregistro INTEGER) RETURNS TABLE (id INTEGER) AS $$
 DECLARE
- idactividad integer;
+ var_r record;
+
 BEGIN 
 
-SELECT ACTIVITYID INTO idactividad
-FROM  ACTIVITY,SPORT
-WHERE ACTIVITYDATE=fecha and FK_SPORT=SPORTID AND SPORTNAME=deporte;
+for var_r in  (SELECT ACTIVITYID
+	       FROM   ACTIVITY,REGISTRY,PERSON
+	       WHERE  FK_PERSONID=PERSONID  and FK_REGISTRY=idregistro and
+       	              ACTIVITYDATE=fechamenor and ACTIVITYSTARTTIME=CAST(horainicio AS TIME))
+loop
+	
+		id :=var_r.ACTIVITYID;
 
-return idactividad;
-END; 
+
+		return next;
+end loop;
+END
 $$
-LANGUAGE 'plpgsql' STABLE;
+LANGUAGE 'plpgsql' VOLATILE; 
 
 
 
 -- Modificar ACTIVIDAD--->KM
 
-CREATE OR REPLACE FUNCTION M05_modificarActividad (idactividad integer,km NUMERIC) RETURNS VOID AS
+CREATE OR REPLACE FUNCTION M05_modificarKmActividad (idactividad integer,km NUMERIC) RETURNS VOID AS
  $$
 BEGIN
 	 UPDATE ACTIVITY SET ACTIVITYKM=km
@@ -227,6 +248,30 @@ BEGIN
 END
 $$
 LANGUAGE 'plpgsql' VOLATILE; 
+
+
+-- Modificar Actividad---> CALORIAS
+CREATE OR REPLACE FUNCTION M05_modificarcaloriaActividad (idactividad integer,calor NUMERIC) RETURNS VOID AS
+ $$
+BEGIN
+	 UPDATE ACTIVITY SET ACTIVITYCALOR=calor
+	 WHERE  ACTIVITYID =idactividad ;
+	 
+END
+$$
+LANGUAGE 'plpgsql' VOLATILE; 
+
 -- DUDA : CUANDO MODIFICAS LOS KM DEBERIAS MODIFICAR TAMBIEN LAS CALORIAS NO? OSEA DEBERIAN RECALCULARSE
 
+-- Eliminar Actividad 
 
+CREATE OR REPLACE FUNCTION M05_eliminaractividad(idactividad INTEGER )  RETURNS void AS
+$$
+
+BEGIN
+
+	 DELETE FROM ACTIVITY WHERE ACTIVITYID=idactividad;
+
+END
+$$
+LANGUAGE 'plpgsql' VOLATILE; 
