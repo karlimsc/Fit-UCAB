@@ -83,6 +83,7 @@
         android:layout_marginRight="35dp"
         android:layout_marginLeft="35dp"
         android:layout_marginBottom="15dp"
+        android:contextClickable="true"
         android:id="@+id/tl_m11_listaDieta">
 
 

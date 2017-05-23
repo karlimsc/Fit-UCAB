@@ -40,6 +40,7 @@ public class M11DietFragment extends Fragment {
     private ImageButton _btn_m11__diet_borrar;
     private TableLayout _tl_m11_listaDieta;
     private View _view;
+    private int _contadorAlimentos;
     private OnFragmentSwap _callBack;
 
     public M11DietFragment() {
@@ -98,7 +99,6 @@ public class M11DietFragment extends Fragment {
                 String nombreAlimento =  _tv_m11_nombreAlimento.getText().toString();
                 String pesoAlimento = _tv_m11_peso.getText().toString();
                 LlenaTabla(nombreAlimento, pesoAlimento);
-               // LlenaTabla("basura"); -> En caso de que usemos el icono para borrar de la lista
             }
         });
     }
@@ -121,35 +121,43 @@ public class M11DietFragment extends Fragment {
      * @param nombreAlimento Recibe nombre del alimento a cargar,
      * @param pesoAlimento Recibe el peso del alimento a cargar.
      */
-    public void LlenaTabla( String nombreAlimento, String pesoAlimento )
+    public void LlenaTabla( String nombreAlimento, String pesoAlimento)
     {
-        /* Esto solo si decidimos usar el simbolo para borrar de la lista.
-        if ( nombreAlimento.equals( "basura" ) && ( pesoAlimento.equals( "basura" ) ))
-        {
-            TableRow tableRow = new TableRow(getContext());
-            TableLayout.LayoutParams params = new TableLayout.LayoutParams(
-                    TableLayout.LayoutParams.WRAP_CONTENT , TableLayout.LayoutParams.WRAP_CONTENT);
-            ImageButton currentImage = new ImageButton(getContext());
-            currentImage = _btn_m11__diet_borrar;
-            currentImage.setVisibility(View.VISIBLE);
-            tableRow.setLayoutParams(params);
-            tableRow.addView(currentImage);
-
-            _tl_m11_listaDieta.addView(tableRow);
-        }
-        else
-        {*/
-            TableRow tableRow = new TableRow(getContext());
-            TableLayout.LayoutParams params = new TableLayout.LayoutParams(
-                    TableLayout.LayoutParams.WRAP_CONTENT , TableLayout.LayoutParams.WRAP_CONTENT);
-            TextView currentText = new TextView(getContext());
-            currentText.setText(nombreAlimento+"             "+pesoAlimento);
-            currentText.setTextSize(currentText.getText().length());
-            currentText.setTextColor(Color.BLACK);
-            tableRow.setLayoutParams(params);
-            tableRow.addView(currentText);
-            _tl_m11_listaDieta.addView(tableRow);
-        //}
-
+        final TableRow tableRow = new TableRow(getContext());
+        _tl_m11_listaDieta.addView(tableRow);
+        TableLayout.LayoutParams params = new TableLayout.LayoutParams(
+        TableLayout.LayoutParams.WRAP_CONTENT , TableLayout.LayoutParams.WRAP_CONTENT);
+        TextView currentText = new TextView(getContext());
+        currentText.setText(nombreAlimento+"             "+pesoAlimento);
+        currentText.setTextSize(currentText.getText().length());
+        currentText.setTextColor(Color.BLACK);
+        currentText.setId(_contadorAlimentos);
+        tableRow.setLayoutParams(params);
+        tableRow.addView(currentText);
+        AgregaColumna(pesoAlimento , tableRow , params);
+        currentText.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                _tl_m11_listaDieta.removeView(tableRow);
+            }
+        });
     }
+
+    /**
+     * Metodo para agregar columna con el peso del alimento al TableLayout.
+     * @param pesoAlimento Recibe el peso del alimento.
+     * @param tableRow Recibe la fila sobre la cual se creara la columna.
+     * @param params Recibe el Layout.
+     */
+    public void AgregaColumna ( String pesoAlimento , TableRow tableRow, TableLayout.LayoutParams params )
+    {
+        TextView currentText = new TextView(getContext());
+        currentText.setText(pesoAlimento);
+        currentText.setTextSize(pesoAlimento.length());
+        currentText.setTextColor(Color.BLACK);
+        currentText.setId(_contadorAlimentos);
+        tableRow.setLayoutParams(params);
+        tableRow.addView(currentText);
+    }
+
 }
