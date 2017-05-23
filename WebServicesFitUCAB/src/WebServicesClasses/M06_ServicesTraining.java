@@ -1,4 +1,4 @@
-package WebServicesClasses;
+package WebServicesClasses;7
 
 import Domain.Training;
 
@@ -49,25 +49,24 @@ public class M06_ServicesTraining {
     @GET
     @Path("/displayTraining")
     @Produces("application/json")
-
+    
     /***
      * Metodo utilizado a traves de web service para visualizar los entrenamientos que posee el usuario
      * @return
      */
 
-    //prueba esto
-    //http://localhost:8888/FitUCAB_Web_Service_war_exploded/training/displayTraining
-    public String getTraining(@QueryParam("id") int id) {
+
+     public String getTraining(@QueryParam("id") int id) {
         String name = "";
         int period = 0;
         int calories = 0;
-        String query = "select (trainingid, trainingname, trainingperiod, trainingcalories) from public.training";
-        
+        String query = "SELECT TRAININGID, TRAININGNAME, TRAININGPERIOD, TRAININGCALORIES FROM TRAINING";
+
         try {
             Connection conn = connectDb();
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
-            Training results = null;
+            Training results = new Training();
             while (rs.next()) {
 
                 results.setId(rs.getInt("trainingid"));
@@ -75,10 +74,10 @@ public class M06_ServicesTraining {
                 results.setTrainingPeriod(rs.getInt("trainingperiod"));
                 results.setTrainingCalories(rs.getInt("trainingcalories"));
 
-                results = new Training(id, name, period, calories);
+
             }
             return gson.toJson(results);
-        } 
+        }
         catch (Exception e) {
             return e.getMessage();
         }
