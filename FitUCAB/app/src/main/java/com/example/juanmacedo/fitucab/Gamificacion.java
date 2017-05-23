@@ -1,5 +1,7 @@
 package com.example.juanmacedo.fitucab;
 
+import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,8 +11,10 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -27,6 +31,9 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamificacion);
+
+        ImageView _perfil = (ImageView) findViewById(R.id.profile_image);
+        _perfil.setOnClickListener(this);
 
         _lista = (ListView) findViewById(R.id.lista);
         //ARRAY DONDE SE LLENA VA LA LISTA
@@ -67,13 +74,26 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        Logros fragment = new Logros();
-        transaction.add(R.id.gamificacion, fragment);
-        transaction.commit();
+        if (v.getId()==R.id.profile_image){
 
+
+            Intent myIntent = new Intent(Gamificacion.this, GraficaNivel.class);
+            //myIntent.putExtra("key", value); //Optional parameters
+            Gamificacion.this.startActivity(myIntent);
+
+            //Toast.makeText(Gamificacion.this, "Vas bien gafito",
+            //        Toast.LENGTH_LONG).show();
+
+        }
+        else {
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction transaction = fragmentManager.beginTransaction();
+            Logros fragment = new Logros();
+            transaction.add(R.id.gamificacion, fragment);
+            transaction.commit();
+        }
     }
+
 
     @Override
     public void onFragmentInteraction(Uri uri) {

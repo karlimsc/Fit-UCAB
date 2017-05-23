@@ -84,7 +84,7 @@ public class Logros extends Fragment {
             _barDataSets.add(_set1);
 
 
-            _data = new BarData(_dias, _set1);
+           // _data = new BarData(_dias, _set1);
             _barra.setData(_data);
             _barra.setEnabled(true);
         }
