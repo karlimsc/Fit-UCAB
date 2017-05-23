@@ -64,18 +64,12 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
     private static final String LAST_UPDATED_TIME_STRING_KEY = "last-updated-time-string";
     private GoogleApiClient mGoogleApiClient;
     private Location mLastLocation;
-    //private LocationRequest mLocationRequest;
     private Location mCurrentLocation;
     private String mLastUpdateTime;
     private boolean mRequestingLocationUpdates;
-    private LocationSettingsRequest mLocationSettingsRequest;
     private ArrayList<Location> LocationPoints;
     private float distance = 0;
-    private Marker mCurrentLocationMarker;
-    private Marker mLastLocationMarker;
-    private LocationManager locationManager;
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
-    private GoogleMap mMap;
     private LocationRequest mLocationRequest = new LocationRequest();
 
     @Override
@@ -153,13 +147,6 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
     public void onConnected(Bundle connectionHint) {
         startLocationUpdates();
         CheckLastLocation();
-
-       /* startLocationUpdates();
-        if (mRequestingLocationUpdates) {
-            Log.i("TRACE","Start Location Updates");
-            startLocationUpdates();
-        }*/
-
     }
 
 
@@ -205,64 +192,11 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
      */
     protected void createLocationRequest() {
         Log.i("TRACE","Crate Location Request");
-
         mLocationRequest.setInterval(1000);
         mLocationRequest.setFastestInterval(1000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
 
-    /**
-     * Prompt the User to Change Location Settings.
-
-    private void checkSettings() {
-        /**
-         * Add the location request that was created in the previous step.
-
-        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
-                .addLocationRequest(mLocationRequest);
-
-        /**
-         * Next check whether the current location settings are satisfied.
-
-        PendingResult<LocationSettingsResult> result =
-                LocationServices.SettingsApi.checkLocationSettings(mGoogleApiClient,
-                        builder.build());
-
-        result.setResultCallback(new ResultCallback<LocationSettingsResult>() {
-            @Override
-            public void onResult(LocationSettingsResult result) {
-                final Status status = result.getStatus();
-                switch (status.getStatusCode()) {
-                    case LocationSettingsStatusCodes.SUCCESS:
-                        Log.i(TAG, "All location settings are satisfied.");
-
-                        //setLocationListener();
-                        break;
-
-                    case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
-                        // Location settings are not satisfied. But could be fixed by showing the user a dialog.
-                        Log.i(TAG, "Location settings are not satisfied. Attempting to upgrade " +
-                                "location settings ");
-                        try {
-                            // Show the dialog by calling startResolutionForResult(),
-                            // and check the result in onActivityResult().
-                            status.startResolutionForResult(M05StartTrackingActivity.this, REQUEST_CHECK_SETTINGS);
-                        } catch (IntentSender.SendIntentException e) {
-                            Log.e(TAG, e.getLocalizedMessage());
-                        }
-                        break;
-
-                    case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
-                        String errorMessage = "Location settings are inadequate, and cannot be " +
-                                "fixed here. Fix in Settings.";
-                        Log.e(TAG, errorMessage);
-                        // Location settings are not satisfied. However, we have no way to fix the
-                        // settings so we won't animateIn the dialog.
-                        break;
-                }
-            }
-        });
-    }*/
 
     /**
      * Start Location Updates
@@ -298,12 +232,10 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
 
         Log.i("CURRENT LOCATION", mCurrentLocation.toString());
 
-        //M05_textview_km.setText("");
-
         if (LocationPoints.size() >= 2) {
             mPrevLocation = LocationPoints.get(lastIndex - 1);
             distance = distance + mPrevLocation.distanceTo(mCurrentLocation);
-            M05_textview_km.setText(String.valueOf(distance));
+            M05_textview_km.setText(String.valueOf(distance/1000));
         }
     }
 
@@ -334,6 +266,10 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
         }
     }
 
+    /**
+     * Crea una nuva instancia de Google API.
+     */
+
     public void instanceGoogleAPIClient() {
         Log.i("TRACE","Instant Google API Client");
             mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -344,17 +280,26 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
             mGoogleApiClient.connect();
     }
 
+    /**
+     * Cuando la actividad entra en pausa.
+     */
     @Override
     protected void onPause() {
         super.onPause();
         stopLocationUpdates();
     }
 
+    /**
+     * Detener las actualizaciones de Localización.
+     */
     protected void stopLocationUpdates() {
         LocationServices.FusedLocationApi.removeLocationUpdates(
                 mGoogleApiClient, this);
     }
 
+    /**
+     * Cuando reanuda la actividad.
+     */
     @Override
     public void onResume() {
         super.onResume();
@@ -363,6 +308,10 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
         }
     }
 
+    /**
+     * Guarda el estado de la actividad.
+     * @param savedInstanceState Estado de la actividad.
+     */
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putBoolean(REQUESTING_LOCATION_UPDATES_KEY,
                 mRequestingLocationUpdates);
@@ -371,6 +320,10 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
         super.onSaveInstanceState(savedInstanceState);
     }
 
+    /**
+     * Actualiza el estado de la actividad.
+     * @param savedInstanceState Estado de la actividad.
+     */
     private void updateValuesFromBundle(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
             // Update the value of mRequestingLocationUpdates from the Bundle, and
@@ -449,6 +402,12 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
         }
     }
 
+    /**
+     * Resultado de la solicitud de permisos al usuario.
+     * @param requestCode Código de solicitud.
+     * @param permissions Permisos.
+     * @param grantResults Otorgar permisos.
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode,                                            String permissions[], int[] grantResults) {
         switch (requestCode) {
@@ -466,7 +425,7 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
                         if (mGoogleApiClient == null) {
                             instanceGoogleAPIClient();
                         }
-                        mMap.setMyLocationEnabled(true);
+                        //mMap.setMyLocationEnabled(true);
                     }
 
                 } else {

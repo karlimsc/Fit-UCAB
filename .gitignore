@@ -32,3 +32,5 @@ FitUCAB/app/build/
 FitUCAB/gradle/
 
 FitUCAB/gradlew\.bat
+
+FitUCAB/app/src/debug/
