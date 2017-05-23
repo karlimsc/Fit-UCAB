@@ -48,7 +48,6 @@ public class M05GetLocationActivity extends AppCompatActivity implements
     private TextView longitudeField;
     private GoogleApiClient mGoogleApiClient;
     private Location mLastLocation;
-    private GoogleApiClient mGoogleClient;
     private LocationRequest mLocationRequest;
     private Location mCurrentLocation;
     private String mLastUpdateTime;
@@ -135,6 +134,7 @@ public class M05GetLocationActivity extends AppCompatActivity implements
      * Create the location request and set the parameters.
      */
     protected void createLocationRequest() {
+        Log.i("TRACE","CREATE LCATION REQUEST");
         LocationRequest mLocationRequest = new LocationRequest();
         mLocationRequest.setInterval(10000);
         mLocationRequest.setFastestInterval(5000);
@@ -145,6 +145,7 @@ public class M05GetLocationActivity extends AppCompatActivity implements
      * Prompt the User to Change Location Settings.
      */
     private void checkSettings() {
+        Log.i("TRACE","CHECK SETTINGS");
         /**
          * Add the location request that was created in the previous step.
          */
@@ -155,7 +156,7 @@ public class M05GetLocationActivity extends AppCompatActivity implements
          * Next check whether the current location settings are satisfied.
          */
         PendingResult<LocationSettingsResult> result =
-                LocationServices.SettingsApi.checkLocationSettings(mGoogleClient,
+                LocationServices.SettingsApi.checkLocationSettings(mGoogleApiClient,
                         builder.build());
 
         result.setResultCallback(new ResultCallback<LocationSettingsResult>() {
@@ -164,28 +165,28 @@ public class M05GetLocationActivity extends AppCompatActivity implements
                 final Status status = result.getStatus();
                 switch (status.getStatusCode()) {
                     case LocationSettingsStatusCodes.SUCCESS:
-                        Log.i(TAG, "All location settings are satisfied.");
+                        Log.i("TRACE", "All location settings are satisfied.");
 
                         //setLocationListener();
                         break;
 
                     case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
                         // Location settings are not satisfied. But could be fixed by showing the user a dialog.
-                        Log.i(TAG, "Location settings are not satisfied. Attempting to upgrade " +
+                        Log.i("TRACE", "Location settings are not satisfied. Attempting to upgrade " +
                                 "location settings ");
                         try {
                             // Show the dialog by calling startResolutionForResult(),
                             // and check the result in onActivityResult().
                             status.startResolutionForResult(M05GetLocationActivity.this, REQUEST_CHECK_SETTINGS);
                         } catch (IntentSender.SendIntentException e) {
-                            Log.e(TAG, e.getLocalizedMessage());
+                            Log.e("TRACE", e.getLocalizedMessage());
                         }
                         break;
 
                     case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
                         String errorMessage = "Location settings are inadequate, and cannot be " +
                                 "fixed here. Fix in Settings.";
-                        Log.e(TAG, errorMessage);
+                        Log.e("TRACE", errorMessage);
                         // Location settings are not satisfied. However, we have no way to fix the
                         // settings so we won't animateIn the dialog.
                         break;
@@ -209,6 +210,7 @@ public class M05GetLocationActivity extends AppCompatActivity implements
             //                                          int[] grantResults)
             // to handle the case where the user grants the permission. See the documentation
             // for ActivityCompat#requestPermissions for more details.
+            Log.i("TRACE","PERMISSIONS GRANTED START LOCATION UPDATES");
             return;
         }
         LocationServices.FusedLocationApi.requestLocationUpdates(
@@ -221,7 +223,7 @@ public class M05GetLocationActivity extends AppCompatActivity implements
      */
     @Override
     public void onLocationChanged(Location location) {
-        Log.i("LOCATION", "CHANGE");
+        Log.i("TRACE", "LOCATION CHANGE");
         mCurrentLocation = location;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
@@ -233,6 +235,7 @@ public class M05GetLocationActivity extends AppCompatActivity implements
      * Actualiza la interfaz.
      */
     private void updateUI() {
+        Log.i("TRACE","UPDATE UI");
         latituteField.setText(String.valueOf(mCurrentLocation.getLatitude()));
         longitudeField.setText(String.valueOf(mCurrentLocation.getLongitude()));
         LocationPoints.add(new LatLng(mCurrentLocation.getLatitude(),mCurrentLocation.getLongitude()));

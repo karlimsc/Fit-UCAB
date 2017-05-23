@@ -63,8 +63,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UI.Activities.M05TrackExerciseActivity"
-            android:label="@string/title_activity_m05_track_exercise">
+            android:name=".UI.Activities.M05TrackExerciseActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity" />

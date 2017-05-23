@@ -94,13 +94,9 @@
 
 
     <string name="hello_blank_fragment">Home</string>
-    <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="title_activity_m02_home">M02HomeActivity</string>
-    <string name="title_activity_m05_track_exercise">Track</string>
-
-    <string name="title_activity_m05_add_exercise2">M05AddExercise2</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
 

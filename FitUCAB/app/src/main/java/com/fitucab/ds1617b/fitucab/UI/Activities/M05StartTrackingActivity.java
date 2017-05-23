@@ -1,5 +1,6 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
+import android.Manifest;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.icu.text.DateFormat;
@@ -57,18 +58,15 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
     private static final String REQUESTING_LOCATION_UPDATES_KEY = "requesting-location-updates";
     private static final String LOCATION_KEY = "location";
     private static final String LAST_UPDATED_TIME_STRING_KEY = "last-updated-time-string";
-    private TextView latituteField;
-    private TextView longitudeField;
     private GoogleApiClient mGoogleApiClient;
     private Location mLastLocation;
-    private GoogleApiClient mGoogleClient;
     private LocationRequest mLocationRequest;
     private Location mCurrentLocation;
     private String mLastUpdateTime;
-    private TextView mLastUpdateTimeTextView;
     private boolean mRequestingLocationUpdates;
     private LocationSettingsRequest mLocationSettingsRequest;
-    private ArrayList<LatLng> LocationPoints;
+    private ArrayList<Location> LocationPoints;
+    private float distance = 0;
     private Marker mCurrentLocationMarker;
     private Marker mLastLocationMarker;
 
@@ -90,6 +88,7 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
         M05_button_pause.setOnClickListener(pause);
         M05_button_resume.setOnClickListener(resume);
 
+        //Desde donde inicia.
         M05_textview_time.setBase(SystemClock.elapsedRealtime());
         M05_textview_time.start();
 
@@ -145,7 +144,9 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
         if (mRequestingLocationUpdates) {
             startLocationUpdates();
         }
+
     }
+
 
     /**
      * Método que pertenece a la interfaz.
@@ -208,7 +209,7 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
          * Next check whether the current location settings are satisfied.
          */
         PendingResult<LocationSettingsResult> result =
-                LocationServices.SettingsApi.checkLocationSettings(mGoogleClient,
+                LocationServices.SettingsApi.checkLocationSettings(mGoogleApiClient,
                         builder.build());
 
         result.setResultCallback(new ResultCallback<LocationSettingsResult>() {
@@ -283,15 +284,20 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
     }
 
     /**
-     * Actualiza la interfaz con los valores que va leyendo.
+     * Actualiza la interfaz.
      */
     private void updateUI() {
-        LocationPoints.add(new LatLng(mCurrentLocation.getLatitude(),mCurrentLocation.getLongitude()));
+
+        LocationPoints.add(mCurrentLocation);
+
+        Log.i("CURRENT LOCATION", mCurrentLocation.toString());
+
+        M05_textview_km.setText("");
     }
 
 
     /**
-     * Gets Devices's last location.
+     * Gets Devices's last logation.
      */
     private void CheckLastLocation() {
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -308,17 +314,16 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
                 mGoogleApiClient);
 
         if (mLastLocation != null) {
-            LocationPoints.add(new LatLng(mLastLocation.getLatitude(),mLastLocation.getLongitude()));
+            Log.i("LAST LOCATION",mLastLocation.toString());
+            LocationPoints.add(mLastLocation);
         } else {
             checkSettings();
             return;
         }
     }
 
-    /**
-     *Creates an instance of GoogleAPIClient.
-     */
     public void instanceGoogleAPIClient() {
+        // Create an instance of GoogleAPIClient.
         if (mGoogleApiClient == null) {
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
@@ -329,26 +334,17 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
 
     }
 
-    /**
-     * Cuando se detenga la actividad.
-     */
     @Override
     protected void onPause() {
         super.onPause();
         stopLocationUpdates();
     }
 
-    /**
-     * Stops location Updates.
-     */
     protected void stopLocationUpdates() {
         LocationServices.FusedLocationApi.removeLocationUpdates(
                 mGoogleApiClient, this);
     }
 
-    /**
-     * Cuando re-arranca la actividad.
-     */
     @Override
     public void onResume() {
         super.onResume();
@@ -357,10 +353,6 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
         }
     }
 
-    /**
-     * Lee el estado anterior de la actividad.
-     * @param savedInstanceState
-     */
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putBoolean(REQUESTING_LOCATION_UPDATES_KEY,
                 mRequestingLocationUpdates);
@@ -369,10 +361,6 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
         super.onSaveInstanceState(savedInstanceState);
     }
 
-    /**
-     * Lee el estado anterior de la actividad.
-     * @param savedInstanceState
-     */
     private void updateValuesFromBundle(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
             // Update the value of mRequestingLocationUpdates from the Bundle, and
