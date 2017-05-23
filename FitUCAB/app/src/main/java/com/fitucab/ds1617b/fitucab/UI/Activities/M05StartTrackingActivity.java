@@ -5,10 +5,12 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.icu.text.DateFormat;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.android.gms.common.ConnectionResult;
@@ -29,6 +32,7 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResult;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
@@ -60,7 +64,7 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
     private static final String LAST_UPDATED_TIME_STRING_KEY = "last-updated-time-string";
     private GoogleApiClient mGoogleApiClient;
     private Location mLastLocation;
-    private LocationRequest mLocationRequest;
+    //private LocationRequest mLocationRequest;
     private Location mCurrentLocation;
     private String mLastUpdateTime;
     private boolean mRequestingLocationUpdates;
@@ -69,6 +73,10 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
     private float distance = 0;
     private Marker mCurrentLocationMarker;
     private Marker mLastLocationMarker;
+    private LocationManager locationManager;
+    public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+    private GoogleMap mMap;
+    private LocationRequest mLocationRequest = new LocationRequest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,7 +104,10 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
         mLastUpdateTime = "";
 
         // Update values using data stored in the Bundle.
-        updateValuesFromBundle(savedInstanceState);
+       // updateValuesFromBundle(savedInstanceState);
+
+        //Check for Location Permissions
+        checkLocationPermission();
 
         //Creates GoogleAPIClient Instance
         instanceGoogleAPIClient();
@@ -114,6 +125,7 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
             timeWhenStopped = M05_textview_time.getBase() - SystemClock.elapsedRealtime();
             M05_textview_time.stop();
             M05_button_resume.setVisibility(View.VISIBLE);
+
         }
     };
 
@@ -139,11 +151,14 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
      */
     @Override
     public void onConnected(Bundle connectionHint) {
+        startLocationUpdates();
         CheckLastLocation();
 
+       /* startLocationUpdates();
         if (mRequestingLocationUpdates) {
+            Log.i("TRACE","Start Location Updates");
             startLocationUpdates();
-        }
+        }*/
 
     }
 
@@ -189,25 +204,26 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
      * Create the location request and set the parameters.
      */
     protected void createLocationRequest() {
-        LocationRequest mLocationRequest = new LocationRequest();
-        mLocationRequest.setInterval(10000);
-        mLocationRequest.setFastestInterval(5000);
+        Log.i("TRACE","Crate Location Request");
+
+        mLocationRequest.setInterval(1000);
+        mLocationRequest.setFastestInterval(1000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
     }
 
     /**
      * Prompt the User to Change Location Settings.
-     */
+
     private void checkSettings() {
         /**
          * Add the location request that was created in the previous step.
-         */
+
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                 .addLocationRequest(mLocationRequest);
 
         /**
          * Next check whether the current location settings are satisfied.
-         */
+
         PendingResult<LocationSettingsResult> result =
                 LocationServices.SettingsApi.checkLocationSettings(mGoogleApiClient,
                         builder.build());
@@ -246,53 +262,49 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
                 }
             }
         });
-    }
+    }*/
 
     /**
      * Start Location Updates
      **/
     protected void startLocationUpdates() {
-        if (ActivityCompat.checkSelfPermission(this,
-                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(this,
-                android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
+        Log.i("TRACE","Start Location Updates Método");
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
+            if (mGoogleApiClient!=null)
+                if (mLocationRequest!=null)
+                    LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,
+                    mLocationRequest, this);
+                else
+                    Log.i("TRACE","location request null");
+            else
+                    Log.i("TRACE","googl api null");
         }
-        LocationServices.FusedLocationApi.requestLocationUpdates(
-                mGoogleApiClient, mLocationRequest, this);
+        else {
+            Log.i("TRACE","No hay persmiso para location updats");
+            checkLocationPermission();
+        }
     }
 
-    /**
-     * Detecs if location changed.
-     * @param location
-     */
-    @Override
-    public void onLocationChanged(Location location) {
-        Log.i("LOCATION", "CHANGE");
-        mCurrentLocation = location;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            mLastUpdateTime = DateFormat.getTimeInstance().format(new Date());
-        }
-        updateUI();
-    }
 
     /**
      * Actualiza la interfaz.
      */
     private void updateUI() {
 
-        LocationPoints.add(mCurrentLocation);
+        Location mPrevLocation;
+        int lastIndex = LocationPoints.size()-1;
 
         Log.i("CURRENT LOCATION", mCurrentLocation.toString());
 
-        M05_textview_km.setText("");
+        //M05_textview_km.setText("");
+
+        if (LocationPoints.size() >= 2) {
+            mPrevLocation = LocationPoints.get(lastIndex - 1);
+            distance = distance + mPrevLocation.distanceTo(mCurrentLocation);
+            M05_textview_km.setText(String.valueOf(distance));
+        }
     }
 
 
@@ -300,38 +312,36 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
      * Gets Devices's last logation.
      */
     private void CheckLastLocation() {
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
-        }
-        mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
-                mGoogleApiClient);
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED) {
 
-        if (mLastLocation != null) {
-            Log.i("LAST LOCATION",mLastLocation.toString());
-            LocationPoints.add(mLastLocation);
-        } else {
-            checkSettings();
-            return;
+            Log.i("TRACE","Check Location Tiene Permissions");
+            mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
+                    mGoogleApiClient);
+
+            if (mLastLocation != null) {
+                Log.i("LAST LOCATION",mLastLocation.toString());
+                LocationPoints.add(mLastLocation);
+            } else {
+                Log.i("TRACE","Last Location es null.");
+
+            }
+        }
+        else {
+            Log.i("TRACE", "No hay persmiso para last location");
+            checkLocationPermission();
         }
     }
 
     public void instanceGoogleAPIClient() {
-        // Create an instance of GoogleAPIClient.
-        if (mGoogleApiClient == null) {
+        Log.i("TRACE","Instant Google API Client");
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
                     .addOnConnectionFailedListener(this)
                     .addApi(LocationServices.API)
                     .build();
-        }
-
+            mGoogleApiClient.connect();
     }
 
     @Override
@@ -388,4 +398,88 @@ public class M05StartTrackingActivity extends AppCompatActivity implements
             updateUI();
         }
     }
+
+    /**
+     * Detecs if location changed.
+     * @param location
+     */
+    @Override
+    public void onLocationChanged(Location location) {
+        Log.i("LOCATION", "CHANGE");
+        mCurrentLocation = location;
+        LocationPoints.add(mCurrentLocation);
+        updateUI();
+    }
+
+    public boolean checkLocationPermission(){
+        Log.i("TRACE","Check Location Permissions");
+        if (ContextCompat.checkSelfPermission(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            Log.i("TRACE","No los tiene");
+            // Asking user if explanation is needed
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+
+                Log.i("TRACE","Tiene que explicar al usuario");
+                //Prompt the user once explanation has been shown
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_LOCATION);
+                Log.i("TRACE","Pide el permiso");
+            }
+            else {
+                // No explanation needed, we can request the permission.
+                Log.i("TRACE","Pedir sin explicar");
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        MY_PERMISSIONS_REQUEST_LOCATION);
+            }
+            return false;
+        }
+        else
+        {
+            Log.i("TRACE","Sí los tiene");
+            return true;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,                                            String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_LOCATION: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    // permission was granted. Do the
+                    // contacts-related task you need to do.
+                    if (ContextCompat.checkSelfPermission(this,
+                            Manifest.permission.ACCESS_FINE_LOCATION)
+                            == PackageManager.PERMISSION_GRANTED) {
+
+                        if (mGoogleApiClient == null) {
+                            instanceGoogleAPIClient();
+                        }
+                        mMap.setMyLocationEnabled(true);
+                    }
+
+                } else {
+
+                    // Permission denied, Disable the functionality that depends on this permission.
+                    Toast.makeText(this, "permission denied", Toast.LENGTH_LONG).show();
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other permissions this app might request.
+            // You can add here other case statements according to your requirement.
+        }
+    }
 }
+

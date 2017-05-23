@@ -34,7 +34,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="?attr/actionBarSize"
             android:gravity="center_vertical|center_horizontal"
-            android:text="TextView"
+            android:text="0,000"
             android:textColor="@color/colorwhite"
             android:textSize="80sp" />
 
