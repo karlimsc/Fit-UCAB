@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import com.fitucab.ds1617b.fitucab.Model.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 
 /**
@@ -22,6 +22,9 @@ public class M01HomeFragment extends Fragment {
     private View _view;
     private OnFragmentSwap _callBack;
 
+    /**
+     * Constructor vacio
+     */
     public M01HomeFragment() {
         // Required empty public constructor
     }
@@ -35,9 +38,11 @@ public class M01HomeFragment extends Fragment {
         super.onAttach(activity);
 
         try {
-            _callBack = (OnFragmentSwap) activity;
-        } catch (ClassCastException e) {
 
+            _callBack = (OnFragmentSwap) activity;
+
+        }
+        catch (ClassCastException e) {
 
             throw new ClassCastException(activity.toString()
                     + " must implement OnHeadlineSelectedListener");
@@ -45,6 +50,14 @@ public class M01HomeFragment extends Fragment {
         }
     }
 
+    /**
+     * Metodo que retorno la vista y realiza llamados a los metodos de los botones,
+     * que se encargan de esperar un evento de click
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,10 +66,15 @@ public class M01HomeFragment extends Fragment {
         setupViewValues();
         manageChangeFragmentLogin();
         manageChangeFragmentSignUp();
+
         return _view;
     }
 
+    /**
+     * metodo de listener del boton Login, para realizar el cambio al otro fragmento.
+     */
     private void manageChangeFragmentLogin() {
+
         _btnIrIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,17 +82,28 @@ public class M01HomeFragment extends Fragment {
             }
         });
     }
+
+    /**
+     * metodo de listener del boton SingUp, para realizar el cambio a ese fragmento.
+     */
     private void manageChangeFragmentSignUp() {
+
         _btnIrRegistro.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
+
                 _callBack.onSwap("M01SignUpFragment",null);
             }
         });
 
     }
 
+    /**
+     * Prepara los componentes de la vista.
+     */
     private void setupViewValues() {
+
         _btnIrIniciarSesion = (Button) _view.findViewById(R.id.btn_m01_iniciarSesion);
         _btnIrRegistro = (Button) _view.findViewById(R.id.btn_m01_comienza);
 
