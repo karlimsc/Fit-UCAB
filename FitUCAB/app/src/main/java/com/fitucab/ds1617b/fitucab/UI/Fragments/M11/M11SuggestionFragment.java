@@ -23,6 +23,10 @@ public class M11SuggestionFragment extends Fragment {
     private View _view;
     private OnFragmentSwap _callBack;
 
+    public M11SuggestionFragment(){
+
+    }
+
     /**
      * Metodo que se llama automaticamente cuando la la actividad anfitriona usa el fragmento.
      * @param activity Recibe la actividad anfitriona en la que va a mostrarse.

@@ -11,6 +11,7 @@ import com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11DietFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11FoodFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11FoodhomeFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11GraphicFragment;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11SuggestionFragment;
 
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
@@ -78,7 +79,7 @@ public class M11Food extends AppCompatActivity implements OnFragmentSwap {
                     break;
 
                 case "M11SuggestionFragment":
-                    fragmentToSwap = new M11GraphicFragment();
+                    fragmentToSwap = new M11SuggestionFragment();
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
                     fragmentTransaction.addToBackStack("M11SuggestionFragment");

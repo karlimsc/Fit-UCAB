@@ -52,6 +52,13 @@ public class M11FoodhomeFragment extends Fragment {
         }
     }
 
+    /**
+     * Metodo para inicializar el fragmento
+     * @param inflater Recibe el layout y lo infla.
+     * @param container Recibe el contenedor sobre el cual se va a manejar
+     * @param savedInstanceState Reciba la instancia
+     * @return Devuelve el fragmento con sus valores.
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -73,6 +80,9 @@ public class M11FoodhomeFragment extends Fragment {
         return _view;
     }
 
+    /**
+     * Metodo para hacer swap a vista de agregar dieta.
+     */
     private void manageChangeDietFragment()
     {
         _btn_m11_diet.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +92,10 @@ public class M11FoodhomeFragment extends Fragment {
             }
         });
     }
+
+    /**
+     * Metodo para hacer swap a vista de alimentos.
+     */
     private void manageChangeFoodFragment()
     {
         _btn_m11_food.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +105,10 @@ public class M11FoodhomeFragment extends Fragment {
             }
         });
     }
+
+    /**
+     * Metodo para hacer swap a vista de seguimiento (grafica).
+     */
     private void manageChangeGraphicFragment()
     {
         _btn_m11_graphic.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +118,10 @@ public class M11FoodhomeFragment extends Fragment {
             }
         });
     }
+
+    /**
+     * Metodo para hacer swap a vista de sugerencias.
+     */
     private void manageChangeSuggestionFragment()
     {
         _btn_m11_suggestion.setOnClickListener(new View.OnClickListener() {
