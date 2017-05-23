@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/track_activity"
     android:layout_width="match_parent"
-    android:background="@color/colorWhiteSmoke"
     android:layout_height="match_parent"
     tools:context="com.fitucab.ds1617b.fitucab.UI.Activities.M05AddExerciseActivity">
 
@@ -48,10 +47,10 @@
         <com.google.android.gms.maps.MapView
             android:id="@+id/mv_m05_track"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1.3"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp" />
+            tools:layout_editor_absoluteY="8dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.3"/>
 
         <ExpandableListView
             android:id="@+id/lv_m05_track_type"
