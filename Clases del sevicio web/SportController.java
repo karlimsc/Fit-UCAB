@@ -215,7 +215,7 @@ public class SportController {
         try {
 
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/FitUcabDB";
+            String url = "jdbc:postgresql://localhost:"+Global.port+"/"+Global.nameBd;
              conn       = DriverManager.getConnection(url,  Global.user,  Global.password);
         } catch (ClassNotFoundException e) {
 
