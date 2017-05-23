@@ -49,18 +49,19 @@ public class M06_ServicesTraining {
     @GET
     @Path("/displayTraining")
     @Produces("application/json")
-    
+
     /***
      * Metodo utilizado a traves de web service para visualizar los entrenamientos que posee el usuario
      * @return
      */
 
 
-     public String getTraining(@QueryParam("id") int id) {
+     public String getTraining(@QueryParam("userId") int userId) {
+        int id = 0;
         String name = "";
         int period = 0;
         int calories = 0;
-        String query = "SELECT TRAININGID, TRAININGNAME, TRAININGPERIOD, TRAININGCALORIES FROM TRAINING";
+        String query = "SELECT TRAININGID, TRAININGNAME, TRAININGPERIOD, TRAININGCALORIES FROM TRAINING WHERE FK_USERID =" +userId;
 
         try {
             Connection conn = connectDb();
@@ -80,6 +81,23 @@ public class M06_ServicesTraining {
         }
         catch (Exception e) {
             return e.getMessage();
+        }
+    }
+
+    public String deleteTraining (@QueryParam("id") int id) {
+        
+        String query = "DELETE FROM TRAINING WHERE TRAININGID =" +id;
+        
+        try{
+            
+            Connection conn = conectarADb();
+            Statement st = conn.createStatement();
+            ResultSet rs =  st.executeQuery(query);
+
+            return gson.toJson(true);
+
+        } catch (Exception e) {
+            return  e.getMessage();
         }
     }
 
