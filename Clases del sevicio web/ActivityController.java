@@ -320,8 +320,7 @@ public class ActivityController {
         try {
             Class.forName("org.postgresql.Driver");
             String url ="jdbc:postgresql://localhost:"+ Global.port+"/"+Global.nameBd;
-            conn       = DriverManager.getConnection(url, "postgres",  "postgres");
-
+              conn       = DriverManager.getConnection(url,  Global.user,  Global.password);
 
 
         } catch (ClassNotFoundException e) {
