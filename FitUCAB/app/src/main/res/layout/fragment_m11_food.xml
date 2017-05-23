@@ -6,6 +6,7 @@
     tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11FoodFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
