@@ -10,18 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:columnCount="3"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="75dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
         android:id="@+id/gl_m11_listaAlimento">
 
         <TextView
             android:text="Nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
             android:id="@+id/tv_m11_nombreAlimento"/>
 
 
@@ -29,16 +29,16 @@
             android:text="Peso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="80dp"
             android:id="@+id/tv_m11_pesoAlimento"/>
 
         <TextView
             android:text="Calorias"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
             android:id="@+id/tv_m11_caloriasAlimento"/>
 
 
@@ -49,17 +49,17 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_delete_black"
         android:id="@+id/btn_m11_borrar"
-        android:layout_marginTop="450dp"
-        android:layout_marginLeft="230dp"
-        android:tint="@color/grey"
-        android:backgroundTint="@android:color/white" />
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="70dp"
+        android:tint="@color/softgrey"
+        android:background="@color/colorWhiteSmoke" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@android:drawable/ic_input_add"
-        android:layout_marginTop="450dp"
-        android:layout_marginLeft="130dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="150dp"
         android:id="@+id/btn_m11_agregar"
         android:background="#ffffff"/>
 

@@ -25,7 +25,7 @@
         android:columnCount="2"
         android:rowCount="4"
         android:layout_marginTop="100dp"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginRight="50dp"
         android:layout_marginBottom="75dp">
 
@@ -39,7 +39,8 @@
             android:textAlignment="center"
             android:id="@+id/btn_m11_diet"
             android:layout_marginTop="50dp"
-            android:layout_marginLeft="40dp"/>
+            android:layout_marginLeft="20dp"
+            android:background="@color/colorWhiteSmoke" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -50,13 +51,14 @@
             android:textAlignment="center"
             android:id="@+id/btn_m11_suggestion"
             android:layout_marginTop="50dp"
-            android:layout_marginLeft="75dp"/>
+            android:layout_marginLeft="45dp"
+            android:background="@color/colorWhiteSmoke"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Dieta"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="30dp"
             android:id="@+id/tv_m11_dieta"/>
 
 
@@ -64,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sugerencia"
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="40dp"
             android:id="@+id/tv_m11_sugerencia"/>
 
         <ImageButton
@@ -75,8 +77,9 @@
             tools:layout_editor_absoluteX="33dp"
             android:textAlignment="center"
             android:id="@+id/btn_m11_graphic"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="40dp"/>
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/colorWhiteSmoke"/>
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -86,14 +89,15 @@
             tools:layout_editor_absoluteX="33dp"
             android:textAlignment="center"
             android:id="@+id/btn_m11_food"
-            android:layout_marginTop="100dp"
-            android:layout_marginLeft="75dp"/>
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="45dp"
+            android:background="@color/colorWhiteSmoke"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Seguimiento"
-            android:layout_marginLeft="40dp"
+            android:layout_marginLeft="10dp"
             android:id="@+id/tv_m11_seguimiento"/>
 
 
@@ -101,7 +105,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Personalizados"
-            android:layout_marginLeft="65dp"
+            android:layout_marginLeft="30dp"
             android:id="@+id/tv_m11_personalizado"/>
 
 
