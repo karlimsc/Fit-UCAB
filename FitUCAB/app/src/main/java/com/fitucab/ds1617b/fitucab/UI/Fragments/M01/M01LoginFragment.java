@@ -22,6 +22,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -68,7 +70,7 @@ public class  M01LoginFragment extends Fragment {
                              Bundle savedInstanceState){
 
         _view = inflater.inflate(R.layout.fragment_m01_login, container, false);
-        instanciarComponentes();
+        instantiateComponents();
         manageChangeFragmentRecovery();
         manageButtonEntrar();
         return _view;
@@ -97,8 +99,7 @@ public class  M01LoginFragment extends Fragment {
 
                 String usernameLogin= _etUserLogin.getText().toString();
                 String passwordLogin= _etPasswordLogin.getText().toString();
-                 getRetrofit(usernameLogin,passwordLogin);
-                //_callBack.onSwapActivity("M02HomeActivity",null);
+                getRetrofit(usernameLogin,passwordLogin);
             }
         });
     }
@@ -106,7 +107,7 @@ public class  M01LoginFragment extends Fragment {
     /**
      * Metodo encargado para instanciar los componentes de esta vista
      */
-    private void instanciarComponentes (){
+    private void instantiateComponents(){
 
         _tvOlvidoClave=(TextView) _view.findViewById(R.id.tv_m01_olvidoClave);
         _btnEntrarLogin=(Button) _view.findViewById(R.id.btn_m01_aceptarLogin);
@@ -133,6 +134,9 @@ public class  M01LoginFragment extends Fragment {
 
                      User user = response.body();
                      onCompleted(user);
+                     int id=getIdUser(getContext());
+                     System.out.println(id);
+                     _callBack.onSwapActivity("M02HomeActivity",null);
                      System.out.println("Hice bien la consulta");
                  }
                  catch (Exception e){
