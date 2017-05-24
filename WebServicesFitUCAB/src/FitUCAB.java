@@ -23,6 +23,7 @@ public class FitUCAB extends Application {
         h.add(M04_ServicesNotificationSettings.class);
         h.add(M05_ServicesActivity.class);
         h.add(M05_ServicesSport.class);
+        h.add(HelloWorld.class);
         return h;
     }
 
