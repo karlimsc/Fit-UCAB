@@ -27,7 +27,7 @@ public class M05_ServicesSport {
 
     @Produces("application/json")
     /**
-     * Agrega a la lista de deportes disponibles del usuario el id seleccionado
+     *  Agrega a la lista de deportes disponibles del usuario el id seleccionado
      *  @param idPer
      *  @param idSpo
      *  @return
@@ -59,7 +59,8 @@ public class M05_ServicesSport {
 
     @Produces("application/json")
     /**
-     * Extrae el nombre de los deportes en funcion del id
+     * 
+	 * Extrae el nombre de los deportes en funcion del id
      * @param idSpo
      * @return
      */
