@@ -6,7 +6,7 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M03;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.provider.ContactsContract;
+
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
@@ -26,7 +26,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Model.ArrayAuxiliar;
 import com.fitucab.ds1617b.fitucab.Model.Person;
-import com.fitucab.ds1617b.fitucab.Model.User;
+
 import com.fitucab.ds1617b.fitucab.Model.UsersAdapter;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;

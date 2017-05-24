@@ -5,17 +5,20 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M03;
 
 import android.content.ContentResolver;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.fitucab.ds1617b.fitucab.Model.ArrayAuxiliar;
-import com.fitucab.ds1617b.fitucab.Model.User;
+
 import com.fitucab.ds1617b.fitucab.Model.UsersAdapter;
 import com.fitucab.ds1617b.fitucab.R;
 
@@ -23,8 +26,20 @@ import java.util.ArrayList;
 
 public class M03FragmentLibreta extends Fragment {
 
+    private static final int PERMISSIONS_REQUEST_READ_CONTACTS = 100;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
+        if (ActivityCompat.checkSelfPermission(getContext(),
+                android.Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED ) {
+            ActivityCompat.requestPermissions(getActivity(),
+                    new String[]{android.Manifest.permission.READ_CONTACTS},PERMISSIONS_REQUEST_READ_CONTACTS
+            );
+        } else {
+            Log.e("DB", "PERMISSION GRANTED");
+        }
 
         View rootView = inflater.inflate(R.layout.fragment_m03_contacts, container, false);
         ArrayList<ArrayAuxiliar> arrayOfUsers = new ArrayList<ArrayAuxiliar>();
@@ -55,21 +70,12 @@ public class M03FragmentLibreta extends Fragment {
             do {
                 // Get the contacts name
                 String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
-
-
-
-
                 usuarios.add(new ArrayAuxiliar(name, 650, 1));
               //  adapter.addAll(usuarios);
             } while (cursor.moveToNext());
 
         }
         // Close the cursor
-
-
-
-
-
 
        adapter.addAll(usuarios);
         cursor.close();

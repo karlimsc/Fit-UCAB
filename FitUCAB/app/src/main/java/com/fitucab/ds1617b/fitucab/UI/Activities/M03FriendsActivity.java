@@ -36,8 +36,6 @@ public class M03FriendsActivity extends AppCompatActivity
 
     private ListView mListView;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,9 +57,6 @@ public class M03FriendsActivity extends AppCompatActivity
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_03_libreta));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_03_cercademi));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
-
-
 
 
 
