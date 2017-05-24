@@ -11,7 +11,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class ApiClient {
-    public static final String BASE_URL= "http://192.168.0.100:8080/WebServicesFitUCAB_war_exploded/";
+    //En Base URL, va la direccion de tu pc donde tengas corriendo el servidor:8888/WebServicesFitUCAB_war_exploded/
+    public static final String BASE_URL= "http://186.93.48.131:8888/PruebaDeServicioWeb_war_exploded/";
     private static Retrofit retrofit = null;
 
     /**

@@ -1,4 +1,4 @@
-package Domain;
+package com.fitucab.ds1617b.fitucab.Model;
 
 public class Training {
     private int _idTraining;
