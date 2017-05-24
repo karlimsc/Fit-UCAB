@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@+id/widget42"
         android:layout_width="282dp"
-        android:layout_height="275dp"
+        android:layout_height="290dp"
         android:orientation="vertical"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -30,7 +30,7 @@
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="16dp"
+            tools:layout_editor_absoluteY="10dp"
             android:layout_weight="0.12" />
 
         <Switch
@@ -42,7 +42,7 @@
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="57dp" />
+            tools:layout_editor_absoluteY="50dp" />
 
         <Switch
             android:id="@+id/sw_m04_entrenamiento"
@@ -53,7 +53,7 @@
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="103dp"
+            tools:layout_editor_absoluteY="90dp"
             android:layout_weight="0.12" />
 
         <Switch
@@ -65,7 +65,7 @@
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="146dp"
+            tools:layout_editor_absoluteY="130dp"
             android:layout_weight="0.12" />
 
         <Switch
@@ -77,7 +77,7 @@
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="192dp"
+            tools:layout_editor_absoluteY="170dp"
             android:layout_weight="0.12" />
 
         <Switch
@@ -89,7 +89,7 @@
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="239dp"
+            tools:layout_editor_absoluteY="210dp"
             android:layout_weight="0.12" />
 
         <Switch
@@ -102,9 +102,20 @@
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="290dp"
+            tools:layout_editor_absoluteY="250dp"
             android:layout_weight="0.12" />
 
+        <TextView
+            android:id="@+id/tv_m04_idioma"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:clickable="true"
+            android:onClick="showDialog"
+            android:text="@string/lang_btn"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="290dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp" />
 
 
     </LinearLayout>
@@ -118,19 +129,10 @@
         tools:layout_editor_absoluteX="62dp"
         tools:layout_editor_absoluteY="337dp"
         android:layout_marginTop="22dp"
-        android:layout_below="@+id/idioma"
+        android:layout_below="@+id/tv_m04_distancia"
+        android:layout_alignLeft="@+id/tv_m04_distancia"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:id="@+id/idioma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lang_btn"
-        tools:layout_editor_absoluteX="192dp"
-        android:layout_marginTop="19dp"
-        android:layout_below="@+id/tv_m04_distancia"
-        android:layout_toLeftOf="@+id/enviar"
-        android:layout_toStartOf="@+id/enviar" />
 
     <Button
         android:id="@+id/button_guardacambios"
@@ -138,19 +140,18 @@
         android:layout_height="wrap_content"
         android:contentDescription="guardar cambios"
         android:text="guardar"
-        android:layout_alignBaseline="@+id/idioma"
-        android:layout_alignBottom="@+id/idioma"
-        android:layout_alignRight="@+id/widget42"
-        android:layout_alignEnd="@+id/widget42" />
+        android:layout_alignBaseline="@+id/enviar"
+        android:layout_alignBottom="@+id/enviar"
+        android:layout_alignStart="@+id/tv_m04_radio2" />
 
 
     <SeekBar
         android:id="@+id/tv_m04_radio2"
         android:layout_width="100pt"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:layout_below="@+id/widget42"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/tv_m04_radio1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
 
     <TextView
         android:id="@+id/tv_m04_distancia"
@@ -166,9 +167,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/radio"
+        android:layout_marginTop="48dp"
         android:layout_below="@+id/widget42"
-        android:layout_alignLeft="@+id/widget42"
         android:layout_alignStart="@+id/widget42" />
+
 
 
 

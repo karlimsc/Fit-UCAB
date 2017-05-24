@@ -123,12 +123,12 @@ public class M04NotificationActivity extends AppCompatActivity {
         //////////////////////////////////////////////////////////7
 
         ///////////////////////////////////////////////////////// CABMBIAR IDIOMA
-        lang = (Button)findViewById(R.id.idioma);//obteniendo la id del boton
+        /*lang = (Button)findViewById(R.id.idioma);//obteniendo la id del boton
         lang.setOnClickListener(
                 new View.OnClickListener() {
                     public void onClick(View view) {
                         showDialog();
-                    }});
+                    }});*/
         //////////////////////////////////////////////////////////////////////////
 
     }
@@ -260,7 +260,7 @@ public class M04NotificationActivity extends AppCompatActivity {
      * Cuando se hace clic en uno de los idiomas, se cambia el idioma de la aplicacion
      * y se recarga la actividad para ver los cambios
      * */
-    public void showDialog()
+    public void showDialog(View v)
     {
         AlertDialog.Builder b = new AlertDialog.Builder(this);
         b.setTitle(getResources().getString(R.string.lang_btn));
