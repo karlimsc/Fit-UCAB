@@ -102,16 +102,6 @@
             </intent-filter>/>
         </activity>
 
-        <activity
-            android:name=".UI.Activities.Prueba"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <!-- Esto va en el modulo de karliana, el main -->
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

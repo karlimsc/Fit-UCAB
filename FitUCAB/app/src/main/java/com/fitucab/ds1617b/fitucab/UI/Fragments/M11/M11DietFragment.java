@@ -1,7 +1,9 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M11;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,7 +22,6 @@ import android.widget.TextView;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 import android.widget.ArrayAdapter;
-
 import org.w3c.dom.Text;
 
 /**
@@ -131,16 +132,39 @@ public class M11DietFragment extends Fragment {
         currentText.setText(nombreAlimento+"             "+pesoAlimento);
         currentText.setTextSize(currentText.getText().length());
         currentText.setTextColor(Color.BLACK);
-        currentText.setId(_contadorAlimentos);
+        currentText.setId(_contadorAlimentos);//Un ID para fila del TableRow
         tableRow.setLayoutParams(params);
         tableRow.addView(currentText);
         AgregaColumna(pesoAlimento , tableRow , params);
         currentText.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View v) {
-                _tl_m11_listaDieta.removeView(tableRow);
+                //Confirmacion para eliminar alimento de la tabla de la die
+                final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                builder.setMessage("¿Desea continuar con la Eliminacion?")
+                        .setTitle("Advertencia")
+                        .setCancelable(false)
+                        //Acciones para cuando dice no
+                        .setNegativeButton("No",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        })
+                        //Acciones para cuando dice si
+                        .setPositiveButton("Si",new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                //Elimina el alimento del TableRow
+                                _tl_m11_listaDieta.removeView(tableRow);
+
+
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
             }
         });
+
     }
 
     /**

@@ -40,14 +40,16 @@
 
 
         <AutoCompleteTextView
-            android:text="Escriba un alimento"
+            android:hint="Escriba un alimento"
+            android:inputType="text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:id="@+id/tv_m11_nombreAlimento"/>
+            android:id="@+id/tv_m11_nombreAlimento" />
 
         <EditText
-            android:text="Peso"
+            android:hint = "Peso"
+            android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -95,7 +97,7 @@
         app:srcCompat="@drawable/ic_check_black"
         android:id="@+id/btn_m11_aceptar"
         android:layout_marginTop="400dp"
-        android:layout_marginLeft="70dp"
+        android:layout_marginLeft="100dp"
         android:background="@color/colorWhiteSmoke"
         android:tint="@android:color/holo_green_light" />
 
@@ -105,20 +107,11 @@
         app:srcCompat="@drawable/ic_close_black"
         android:id="@+id/btn_m11_rechazar"
         android:layout_marginTop="400dp"
-        android:layout_marginLeft="160dp"
+        android:layout_marginLeft="260dp"
         android:background="@color/colorWhiteSmoke"
         android:tint="@android:color/holo_red_light" />
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_delete_black"
-        android:id="@+id/btn_m11_diet_borrar"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="70dp"
-        android:tint="@color/softgrey"
-        android:visibility="invisible"
-        android:background="@color/colorWhiteSmoke" />
+
 
 
 </FrameLayout>
