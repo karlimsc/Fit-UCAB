@@ -11,7 +11,7 @@ import java.sql.Date;
  */
 @Path("/M02Users")
 @Produces(MediaType.APPLICATION_JSON)
-public class M02_ServiceUser {
+public class M02_ServicesUser {
 
     /**
      * Metodo para obtener un usuario

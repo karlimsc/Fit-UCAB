@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("/M02Homes")
 @Produces(MediaType.APPLICATION_JSON)
-public class M02_ServiceHome {
+public class M02_ServicesHome {
 
     /**
      * Metodo para actualizar contenido del home
