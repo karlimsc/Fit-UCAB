@@ -93,16 +93,19 @@ public class M06_ServicesTraining {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             Training results = new Training();
+            ArrayList<Training> training = new ArrayList<Training>();
             while (rs.next()) {
 
                 results.setId(rs.getInt("trainingid"));
                 results.setTrainingName(rs.getString("trainingname"));
                 results.setTrainingPeriod(rs.getInt("trainingperiod"));
                 results.setTrainingCalories(rs.getInt("trainingcalories"));
-
+                training.add(results);
 
             }
-            return gson.toJson(results);
+            
+            return gson.toJson(training);
+
         }
         catch (Exception e) {
             return e.getMessage();

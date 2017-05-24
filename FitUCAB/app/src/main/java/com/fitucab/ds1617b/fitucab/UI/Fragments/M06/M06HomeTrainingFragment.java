@@ -49,8 +49,6 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
     private OnFragmentSwap _callBack;
     private ListView _listView;
     private ArrayAdapter<String> _adaptador;
-    private String[] entrenamientos = {"Entrenamiento CAF 2018", "Entrenamiento lento","Caminata", "Trote"};
-    //  Se debe crear Objeto del tipo entrenamiento para luego pasarle lo que contenga y asi poder compartirlo
     //Esta variable es solo de prueba
     private String _posicionDeEntrenamiento;
     private Training entrenamieto;
