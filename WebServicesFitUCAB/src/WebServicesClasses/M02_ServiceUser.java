@@ -1,6 +1,7 @@
 package WebServicesClasses;
 
 import Domain.User;
+import com.google.gson.Gson;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -10,28 +11,30 @@ import java.sql.Date;
  * Created by david on 5/23/17.
  */
 
+/**
+ * Clase del servicio web modulo 02
+ */
 @Path("/M02Users")
 @Produces(MediaType.APPLICATION_JSON)
 public class M02_ServiceUser {
 
-    @GET
-    public String test(){
-        return "Hello World";
-    }
+    private Gson gson = new Gson();
 
     @GET
     @Path("/{username}")
-    public User getUser(@PathParam("username") String username){
+    public String getUser(@PathParam("username") String username){
         Date date = new Date(1L);
-        return new User( 1, username, "password", "email", "sexo", "4241782944", date );
+        User user = new User( 1, username, "password", "email", "sexo", "4241782944", date );
+        return gson.toJson(user);
     }
 
     @PUT
     @Path("/{username}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public User updateUser(@PathParam("username") String username){
+    public String updateUser(@PathParam("username") String username){
         Date date = new Date(1L);
-        return new User( 1, username, "password", "email", "sexo", "4241782944", date );
+        User user = new User( 1, username, "password", "email", "sexo", "4241782944", date );
+        return gson.toJson(user);
     }
 
 }
