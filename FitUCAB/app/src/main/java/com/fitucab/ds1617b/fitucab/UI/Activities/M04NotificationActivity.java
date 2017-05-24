@@ -53,6 +53,17 @@ public class M04NotificationActivity extends AppCompatActivity {
     SeekBar seekbar;
     TextView textview, _textMi, _textKms;
 
+    int    _sendcorrect;
+    int radio;
+    int w;
+
+    public   M04NotificationActivity()
+    {
+
+        //radio = 0;
+        // _sendcorrect=0;
+
+    }
     private Switch _swAmigos;
     private Switch _swActividad;
     private Switch _swEntrenamiento;
@@ -63,13 +74,12 @@ public class M04NotificationActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
         setContentView (R.layout.activity_m04_notification );
 
-        _textMi = (TextView) findViewById( R.id.tv_m04_mis );
-        _textKms = (TextView) findViewById( R.id.tv_m04_kms );
         _swAmigos = (Switch) findViewById( R.id.sw_m04_amigos );
         _swActividad = (Switch) findViewById (R.id.sw_m04_actividad);
         _swEntrenamiento = (Switch) findViewById(R.id.sw_m04_entrenamiento);
@@ -78,11 +88,15 @@ public class M04NotificationActivity extends AppCompatActivity {
         _swCalorias = (Switch) findViewById(R.id.sw_m04_calorias);
         _swGamificacion = (Switch) findViewById(R.id.sw_m04_gamificacion);
 
+
+
         /////////////////////////////////////////////////////  RADIO UBICACION
         seekbar = (SeekBar) findViewById(R.id.tv_m04_radio2);
         textview = (TextView) findViewById(R.id.tv_m04_distancia);
-        int radio = 0;
+
+
         radio = getRadio();
+
         ///////////////////////////////////////////////////
 
         //////////////////////////////////////////////////////////// REFERENCIAS DE LOS CHECKS
@@ -192,7 +206,7 @@ public class M04NotificationActivity extends AppCompatActivity {
      * @param mensaje mensaje del correo
      *
      */
-    public void checkMail(String receptor, String asunto, String mensaje) {
+    public int checkMail(String receptor, String asunto, String mensaje) {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //agregando politicas para que se envie el correo
         StrictMode.setThreadPolicy(policy); //agregando la politica
 
@@ -223,6 +237,8 @@ public class M04NotificationActivity extends AppCompatActivity {
                     /*Envia el correo:*/
                 Transport.send(message);
 
+                _sendcorrect=1; //verifico que lo haya mandado
+
             }
 
         }
@@ -231,9 +247,10 @@ public class M04NotificationActivity extends AppCompatActivity {
         } catch (MessagingException ex) {
             ex.printStackTrace();
         }
-            catch (Exception e) {
-                e.printStackTrace();
+        catch (Exception e) {
+            e.printStackTrace();
         }
+        return 0; //_sendcorrect;
 
     }
 
@@ -285,7 +302,12 @@ public class M04NotificationActivity extends AppCompatActivity {
      */
     public void loadReference()
     {
-        SharedPreferences mispreferencias = getSharedPreferences( "PreferenciasUsuario", Context.MODE_PRIVATE ); //el SharedPreferences crea un archivo xml que solo sera accedido solo para esta aplicacion
+        SharedPreferences mispreferencias = getSharedPreferences( "PreferenciasUsuario", Context.MODE_PRIVATE );
+        //el SharedPreferences crea un archivo xml que solo sera accedido solo para esta aplicacion
+
+        locale = new Locale(mispreferencias.getString("check_locale","es" ));
+        config.setLocale(locale);
+        getResources().updateConfiguration(config, null);
 
         _swAmigos.setChecked(mispreferencias.getBoolean( "check_amigo",true ));
         _swActividad.setChecked(mispreferencias.getBoolean( "check_actividad",true ));
@@ -295,10 +317,10 @@ public class M04NotificationActivity extends AppCompatActivity {
         _swCalorias.setChecked(mispreferencias.getBoolean( "check_calorias",true ));
         _swGamificacion.setChecked(mispreferencias.getBoolean( "check_gamificacion",true ));
 
-
+        seekbar.setProgress(mispreferencias.getInt("check_radio",5));
 
     }
-
+///
 
     /**
      * Metodo que:  al momento de cerrar la aplicacion, guarda los nuevos   valores editados de los Switch de
@@ -318,6 +340,8 @@ public class M04NotificationActivity extends AppCompatActivity {
         boolean hidrata = _swHidratacion.isChecked();
         boolean caloria = _swCalorias.isChecked();
         boolean gamifica = _swGamificacion.isChecked();
+        String idioma = locale.getCountry();
+        int radio = seekbar.getProgress();
 
         editor.putBoolean( "check_amigo",amigo ); //del indicador guardar el nuevo valor
         editor.putBoolean( "check_actividad",actividades );
@@ -326,29 +350,11 @@ public class M04NotificationActivity extends AppCompatActivity {
         editor.putBoolean( "check_hidratacion",hidrata );
         editor.putBoolean( "check_calorias",caloria );
         editor.putBoolean( "check_gamificacion",gamifica );
+        editor.putString("check_locale",idioma);
+        editor.putInt("check_radio",radio);
 
         editor.commit(); //Guardar los cambios
     }
-
-    public void toMiles( View v){
-        _textMi.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        _textMi.setTextColor(getResources().getColor(R.color.white));
-        _textMi.setClickable(false);
-        _textKms.setBackgroundColor(getResources().getColor(R.color.white));
-        _textKms.setTextColor(getResources().getColor(R.color.black));
-        _textKms.setClickable(true);
-    }
-
-    public void toKms( View v){
-        _textMi.setBackgroundColor(getResources().getColor(R.color.white));
-        _textMi.setTextColor(getResources().getColor(R.color.black));
-        _textMi.setClickable(true);
-        _textKms.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        _textKms.setTextColor(getResources().getColor(R.color.white));
-        _textKms.setClickable(false);
-    }
-
-
 
 
     /**
@@ -369,13 +375,15 @@ public class M04NotificationActivity extends AppCompatActivity {
             {
                 textview.setText("KM:" + seekBar.getProgress());
 
-                   /*el SharedPreferences crea un archivo xml que solo sera accedido solo para esta aplicacion*/
+                  /*el SharedPreferences crea un archivo xml que solo sera accedido solo para esta aplicacion*/
                 SharedPreferences mispreferencias = getSharedPreferences( "PreferenciasUsuario", Context.MODE_PRIVATE );
                 SharedPreferences.Editor editor = mispreferencias.edit();
 
                 int savedProgress1 = seekBar.getProgress();
                 editor.putInt("Progreso radio", savedProgress1);
                 editor.commit();//Guardar los cambios
+
+
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar)
@@ -386,8 +394,8 @@ public class M04NotificationActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar)
             {
 
+
             }
         }); return w;}
 
 }
-

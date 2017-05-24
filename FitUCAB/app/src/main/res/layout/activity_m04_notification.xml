@@ -15,12 +15,13 @@
         android:orientation="vertical"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp">
+        android:layout_marginTop="24dp"
+        android:weightSum="1">
 
 
         <Switch
             android:id="@+id/sw_m04_amigos"
-            android:layout_width="272dp"
+            android:layout_width="match_parent"
             android:layout_height="33dp"
             android:theme="@style/AppTheme"
             android:layout_marginTop="17dp"
@@ -29,11 +30,12 @@
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="16dp" />
+            tools:layout_editor_absoluteY="16dp"
+            android:layout_weight="0.12" />
 
         <Switch
             android:id="@+id/sw_m04_actividad"
-            android:layout_width="272dp"
+            android:layout_width="match_parent"
             android:layout_height="33dp"
             android:theme="@style/AppTheme"
             android:text="@string/actividad"
@@ -44,51 +46,55 @@
 
         <Switch
             android:id="@+id/sw_m04_entrenamiento"
-            android:layout_width="272dp"
+            android:layout_width="match_parent"
             android:layout_height="33dp"
             android:theme="@style/AppTheme"
             android:text="@string/entrenamiento"
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="103dp" />
+            tools:layout_editor_absoluteY="103dp"
+            android:layout_weight="0.12" />
 
         <Switch
             android:id="@+id/sw_m04_retos"
-            android:layout_width="272dp"
+            android:layout_width="match_parent"
             android:layout_height="33dp"
             android:theme="@style/AppTheme"
             android:text="@string/reto"
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="146dp" />
+            tools:layout_editor_absoluteY="146dp"
+            android:layout_weight="0.12" />
 
         <Switch
             android:id="@+id/sw_m04_hidratacion"
-            android:layout_width="272dp"
+            android:layout_width="match_parent"
             android:layout_height="33dp"
             android:theme="@style/AppTheme"
             android:text="@string/hidratacion"
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="192dp" />
+            tools:layout_editor_absoluteY="192dp"
+            android:layout_weight="0.12" />
 
         <Switch
             android:id="@+id/sw_m04_calorias"
-            android:layout_width="272dp"
+            android:layout_width="match_parent"
             android:layout_height="33dp"
             android:theme="@style/AppTheme"
             android:text="@string/calorias"
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="239dp" />
+            tools:layout_editor_absoluteY="239dp"
+            android:layout_weight="0.12" />
 
         <Switch
             android:id="@+id/sw_m04_gamificacion"
-            android:layout_width="272dp"
+            android:layout_width="match_parent"
             android:layout_height="33dp"
             android:theme="@style/AppTheme"
             android:checked="false"
@@ -96,7 +102,8 @@
             android:textOff="@string/NO"
             android:textOn="@string/SI"
             tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="290dp" />
+            tools:layout_editor_absoluteY="290dp"
+            android:layout_weight="0.12" />
 
 
 
@@ -106,47 +113,42 @@
         android:id="@+id/enviar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_guardacambios"
-
-        android:layout_marginBottom="13dp"
-        android:layout_marginLeft="9dp"
-        android:layout_marginStart="9dp"
         android:contentDescription="prueba para enviar correo"
         android:text="enviar"
         tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="337dp" />
+        tools:layout_editor_absoluteY="337dp"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/idioma"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/idioma"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="@string/lang_btn"
-        android:layout_alignBottom="@+id/button_guardacambios"
-        android:layout_alignRight="@+id/widget42"
-        android:layout_alignEnd="@+id/widget42"
-        android:layout_marginRight="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="24dp" />
+        tools:layout_editor_absoluteX="192dp"
+        android:layout_marginTop="19dp"
+        android:layout_below="@+id/tv_m04_distancia"
+        android:layout_toLeftOf="@+id/enviar"
+        android:layout_toStartOf="@+id/enviar" />
 
     <Button
         android:id="@+id/button_guardacambios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="15dp"
-        android:layout_toLeftOf="@+id/idioma"
-        android:layout_toStartOf="@+id/idioma"
         android:contentDescription="guardar cambios"
-        android:text="guardar" />
+        android:text="guardar"
+        android:layout_alignBaseline="@+id/idioma"
+        android:layout_alignBottom="@+id/idioma"
+        android:layout_alignRight="@+id/widget42"
+        android:layout_alignEnd="@+id/widget42" />
 
 
     <SeekBar
         android:id="@+id/tv_m04_radio2"
         android:layout_width="100pt"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="22dp"
         android:layout_below="@+id/widget42"
         android:layout_centerHorizontal="true" />
 
@@ -159,38 +161,15 @@
         android:text="" />
 
     <TextView
+        android:theme="@style/AppTheme"
         android:id="@+id/tv_m04_radio1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/radio"
-        android:layout_above="@+id/tv_m04_radio2"
+        android:layout_below="@+id/widget42"
         android:layout_alignLeft="@+id/widget42"
         android:layout_alignStart="@+id/widget42" />
 
-    <TextView
-        android:id="@+id/tv_m04_kms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/widget42"
-        android:layout_alignStart="@+id/widget42"
-        android:layout_below="@+id/tv_m04_distancia"
-        android:text="@string/kms"
-        android:onClick="toKms"
-        android:clickable="false"
-        android:background="@color/colorPrimary"
-        android:textColor="@color/white"/>
-
-    <TextView
-        android:id="@+id/tv_m04_mis"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_below="@+id/tv_m04_distancia"
-        android:text="@string/millas"
-        android:textColor="@color/black"
-        android:onClick="toMiles"
-        android:clickable="true"
-        android:layout_alignLeft="@+id/tv_m04_kms"/>
 
 
 </RelativeLayout>
