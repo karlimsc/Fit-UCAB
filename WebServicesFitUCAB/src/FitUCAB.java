@@ -4,6 +4,7 @@
 
 import WebServicesClasses.*;
 
+
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.util.HashSet;
@@ -20,6 +21,8 @@ public class FitUCAB extends Application {
         HashSet h= new HashSet<Class<?>>();
         h.add(M01_ServicesUser.class);
         h.add(M04_ServicesNotificationSettings.class);
+        h.add(M05_ServicesActivity.class);
+        h.add(M05_ServicesSport.class);
         return h;
     }
 
