@@ -51,7 +51,7 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
     private ArrayAdapter<String> _adaptador;
     //Esta variable es solo de prueba
     private String _posicionDeEntrenamiento;
-    private Training entrenamieto;
+    private ArrayList<Training> _entrenamientos;
 
 
     @Override
@@ -159,6 +159,7 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
         Bundle bundle= new Bundle();
         AdapterView.AdapterContextMenuInfo info = ( AdapterView.AdapterContextMenuInfo ) item.getMenuInfo();
         _posicionDeEntrenamiento =  ( (TextView) info.targetView).getText().toString();
+        
         bundle.putString("Nombre de Entrenamiento",_posicionDeEntrenamiento);
         return bundle;
 
@@ -188,6 +189,7 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
                         ArrayList<Training> at = new ArrayList<Training>();
                         at = gson.fromJson( response , new TypeToken< List< Training > >(){}.getType() );
                         ArrayList<ArrayAuxiliarTraining> arrayOfTrainings = new ArrayList< ArrayAuxiliarTraining >();
+                        _entrenamientos = at;
                         TrainingAdapter adapter = new TrainingAdapter( _view.getContext() , arrayOfTrainings );
                         _listView.setAdapter( adapter );
                         ArrayList< ArrayAuxiliarTraining > entrenamientos = new ArrayList<ArrayAuxiliarTraining>();
