@@ -398,4 +398,17 @@ public class M04NotificationActivity extends AppCompatActivity {
             }
         }); return w;}
 
+    public int converterMiles(double distanciakm)
+    {
+        double distanciamilla = distanciakm * 0.6213;
+        int z = (int)(distanciamilla);
+        return z;
+    }
+
+    public int converterKm (double distanciamiles)
+    {
+        double distanciakm = distanciamiles * 1.609;
+        int w = (int)(distanciakm);
+        return w;
+    }
 }
