@@ -51,11 +51,11 @@ public class M01_ServicesUser {
         try{
 
             Statement st = conn.createStatement();
+            User user= null;
             st.executeUpdate(insertUserQuery);
-            //Statement st2 = conn.createStatement();
             String idQuery="SELECT PERSONID as _id FROM PERSON WHERE PERSONUSERNAME='"+username+"'";
 
-            ResultSet rs = st.executeQuery(idQuery); //aqui va st2
+            ResultSet rs = st.executeQuery(idQuery);
 
             int userId = 0;
             if ( rs.next()) {
@@ -67,7 +67,8 @@ public class M01_ServicesUser {
 
 
             st.executeUpdate(insertRegistryQuery);
-            return (Integer.toString(userId));
+            user= new User(userId);
+            return gson.toJson(user);
 
         }
         catch(Exception e) {
