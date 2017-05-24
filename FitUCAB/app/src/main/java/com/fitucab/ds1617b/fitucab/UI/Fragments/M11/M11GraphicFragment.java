@@ -42,6 +42,9 @@ import static com.fitucab.ds1617b.fitucab.R.layout.fragment_m11_graphic;
 /**
  * A simple {@link Fragment} subclass.
  */
+
+
+
 public class M11GraphicFragment extends Fragment {
 
     private CheckBox _cb_m11_consumidas;
@@ -91,7 +94,7 @@ public class M11GraphicFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        _view = inflater.inflate(R.layout.fragment_m11_food, container, false);
+        _view = inflater.inflate(R.layout.fragment_m11_graphic, container, false);
 
         _cb_m11_consumidas = (CheckBox) _view.findViewById(R.id.cb_m11_consumidas);
         _cb_m11_quemadas = (CheckBox) _view.findViewById(R.id.cb_m11_quemadas);
@@ -198,7 +201,7 @@ public class M11GraphicFragment extends Fragment {
     quemadas de la grafica. El metodo es llamado con la propiedad
     onClick en el archivo xml
     */
-    public void activarDesactivarQuemadas(View view) {
+    public void activarDesactivarQuemadas(View _view) {
         // obtengo el checkbox que indica si desea ver o no
         // la linea de calorias quemadas
         CheckBox cbQuemadas = (CheckBox) _view.findViewById(R.id.cb_m11_quemadas);
@@ -236,7 +239,7 @@ public class M11GraphicFragment extends Fragment {
     esta funcion ya no va.
     igual que su correspodiente boton del xml
     */
-    public void verGraficaAno(View view){
+    public void verGraficaAno(View _view){
         _lineChart.clear();
     }
 
@@ -245,7 +248,7 @@ public class M11GraphicFragment extends Fragment {
     ultimos 12 meses de calorias consumidas, quemadas y su diferencia.
     OJO FUNCION NO COMPLETADA. SOLO BORRA LOS DATOS POR AHORA
     */
-    public void verGraficoMes(View view){
+    public void verGraficoMes(View _view){
         _lineChart.clear();
     }
 
@@ -254,7 +257,7 @@ public class M11GraphicFragment extends Fragment {
     ultimas 4 semanas de calorias consumidas, quemadas y su diferencia.
     OJO FUNCION NO COMPLETADA. SOLO BORRA LOS DATOS POR AHORA
     */
-    public void verGraficoSemana(View view){
+    public void verGraficoSemana(View _view){
         _lineChart.clear();
     }
 
@@ -263,7 +266,10 @@ public class M11GraphicFragment extends Fragment {
    ultimos 7 dias de calorias consumidas, quemadas y su diferencia.
    OJO FUNCION NO COMPLETADA. SOLO BORRA LOS DATOS POR AHORA
    */
-    public void verGraficoDia(View view){
+    public void verGraficoDia(View _view){
         _lineChart.clear();
     }
+
+
+
 }
