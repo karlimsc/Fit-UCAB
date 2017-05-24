@@ -20,8 +20,8 @@ public class Home {
 
     /**
      * Constructor con todos los atributos
-     * @param _totalCaloria
-     * @param _totalAgua
+     * @param _totalCaloria Total de calorias consumidas
+     * @param _totalAgua Total de vasos de agua consumidos
      */
     public Home(float _totalCaloria, int _totalAgua) {
         this._totalCaloria = _totalCaloria;
