@@ -1,0 +1,4 @@
+CREATE USER fitucab PASSWORD 'fitucab';
+ALTER ROLE fitucab WITH SUPERUSER;
+CREATE DATABASE FitUcabDB WITH OWNER fitucab;
+

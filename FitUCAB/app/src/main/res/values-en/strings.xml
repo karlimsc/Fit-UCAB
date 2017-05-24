@@ -43,10 +43,8 @@
     <string name="et_m02_location">Location</string>
     <string name="et_m02_water">Water</string>
     <string name="et_m02_Steps">Steps</string>
+        <!--FIN Strings Modulo 2 -->
 
-    <!--FIN Strings Modulo 2 -->
-
-    <!--FIN Strings Modulo 2 -->
 
     <!--Inicio Strings Modulo 3-->
     <string name="sep_03_with">Contacts with FIT-Ucab</string>
@@ -57,4 +55,14 @@
 
     <!--FIN Strings Modulo 3 -->
 
+    <!--Inicio Strings Modulo 5-->
+    <string name="tab_m05_log">Log</string>
+    <string name="tab_m05_track">Track</string>
+    <string name="title_activity_map_tracking">Map Route Tracking</string>
+    <string name="track_path_on_map">Walk and route your path on map</string>
+    <string name="permission_notice">Please note that your location permission is important if you want to draw your route on map while walking or running</string>
+    <string name="permission_title">Location Permission Denied</string>
+    <string name="cancel_permission_notice">Wow, please come back again when you need it and grant the permission</string>
+    <string name="start_tracking">Start</string>
+    <!--FIN Strings Modulo 5 -->
 </resources>
