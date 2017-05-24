@@ -32,8 +32,6 @@ public class M11_ServicesFood {
     public String ObtenerAlimento(@QueryParam("username") String username) throws SQLException {
         String query = "SELECT * FROM get_alimentos_person(?)";
 
-
-
         Food food = new Food();
         JsonArray arregloJson = new JsonArray();
         try{
@@ -111,6 +109,40 @@ public class M11_ServicesFood {
                 // revisar string
                 food.setFoodCalorie(rs.getString("calorias_comida"));
                 food.setFoodWeight(rs.getString("peso_comida"));
+                arregloJson.add(gson.toJson(food));
+            }
+
+            respuesta = gson.toJson(arregloJson);
+        }
+        catch (SQLException e){
+            respuesta = e.getMessage();
+        }
+        finally {
+            bdClose();
+            return respuesta;
+        }
+    }
+
+    @GET
+    @Path("obtener_todoas_alimentos_auto")
+    @Produces("application/json")
+    public String obtenerAlimentosAuto(@QueryParam("username") String username){
+
+        String query = "select * from get_todos_alimentos_autocompletar(?)";
+        Food food = new Food();
+        JsonArray arregloJson = new JsonArray();
+
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1, username);
+            ResultSet rs = st.executeQuery();
+
+            while(rs.next()) {
+                food.setFoodName(rs.getString("nombre_comida"));
+                // revisar string
+                food.setFoodCalorie(rs.getString("calorias_comida"));
+                food.setFoodWeight(rs.getString("peso_comida"));
+                food.setId(rs.getInt("id_alimento"));
                 arregloJson.add(gson.toJson(food));
             }
 
