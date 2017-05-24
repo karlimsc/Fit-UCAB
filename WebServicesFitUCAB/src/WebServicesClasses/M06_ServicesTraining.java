@@ -23,16 +23,16 @@ public class M06_ServicesTraining {
     //formato de retorno
     @Produces("application/json")
 
-    /***
+    /**
      * Metodo utilizado a traves de web service para agregar los parametros a la base de datos
      * @param trainingName
      * @param trainingPeriod
      * @param trainingCalories
      * @return
      */
-    public String createTraining(@QueryParam("trainingName") String name, @QueryParam("id") int id,
-                                 @QueryParam("trainingPeriod") int period, @QueryParam("trainingCalories") int calories) {
-        String query = "INSERT INTO TRAINING (NAME, ID, PERIOD, CALORIES) VALUES (name,id,period,calories)";
+    public String createTraining(@QueryParam("trainingName") String name, @QueryParam("trainingPeriod") int period,
+                                 @QueryParam("trainingCalories") int calories) {
+        String query = "INSERT INTO TRAINING (NAME, PERIOD, CALORIES) VALUES (name,period,calories)";
 
         try {
             Connection conn = connectDb();
@@ -45,22 +45,47 @@ public class M06_ServicesTraining {
     }
 
 
+    @GET
+    @Path("/createPersonalizedTraining")
+    @Produces ("application/json")
+    
+    public String createPersonalizedTraining (@QueryParam("trainingName") String name, @QueryParam("trainingPeriod") int period,
+                                              @QueryParam("trainingCalories") int calories) {
+
+    }
+
+    @GET
+    @Path("/updateTraining")
+    @Produces("application/json")
+
+    public String updateTraining (@QueryParam("idTraining") int id, @QueryParam("trainingName") String name, @QueryParam("trainingPeriod") int period, @QueryParam("trainingCalories") int calories) {
+        String query = "UPDATE TRAINING
+                        SET TRAININGNAME=" +name+ ", TRAININGPERIOD=" +period+ ", TRAININGCALORIES=" +calories+ "WHERE TRAININGID=" +idTraining;
+
+        try {
+            Connection conn = connectDb();
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+            return gson.toJson(true);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+
 
     @GET
     @Path("/displayTraining")
     @Produces("application/json")
 
-    /***
+
+    /**
      * Metodo utilizado a traves de web service para visualizar los entrenamientos que posee el usuario
+     * @param userId
      * @return
      */
 
 
      public String getTraining(@QueryParam("userId") int userId) {
-        int id = 0;
-        String name = "";
-        int period = 0;
-        int calories = 0;
         String query = "SELECT TRAININGID, TRAININGNAME, TRAININGPERIOD, TRAININGCALORIES FROM TRAINING WHERE FK_USERID =" +userId;
 
         try {
@@ -83,6 +108,15 @@ public class M06_ServicesTraining {
             return e.getMessage();
         }
     }
+
+    @DELETE
+    @Path("/deleteTraining")
+    
+    /**
+    * Metodo encargado de borrar un entrenamiento relacionado con un usuario al recibir el identificador
+    * @param id 
+    * @return
+    */
 
     public String deleteTraining (@QueryParam("id") int id) {
         
