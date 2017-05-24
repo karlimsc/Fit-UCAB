@@ -64,7 +64,7 @@ CREATE SEQUENCE ACTIVITYID;
 --MODULO 4--
 CREATE TABLE NOTIFICATION_SETTINGS(
 
-NOTIFICATIONSETTINGSID		integer not null,
+NOTIFICATIONSETTINGSID		serial  primary key,
 PREFERENCEFRIENDS		boolean not null,
 PREFERENCEACTIVITY		boolean not null,
 PREFERENCETRAINING		boolean not null,
@@ -72,7 +72,9 @@ PREFERENCECHALLENGES	boolean not null,
 PREFERENCEHYDRATION	boolean not null,
 PREFERENCECALORIES		boolean not null,
 PREFERENCEGAMIFICATION	boolean not null,
-PREFERENCELANGUAGE		boolean not null,
+PREFERENCELANGUAGE		varchar(2) not null,
+PREFERENCEUNIT varchar(2) not null,
+PREFERENCERADIUS integer not null,
 FK_PERSON		integer not null
 );
 --TERMINA MODULO 4--
