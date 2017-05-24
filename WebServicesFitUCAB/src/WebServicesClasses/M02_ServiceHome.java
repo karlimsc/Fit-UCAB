@@ -1,5 +1,6 @@
 package WebServicesClasses;
 
+import Domain.Home;
 import com.google.gson.Gson;
 
 import javax.ws.rs.GET;
@@ -18,8 +19,8 @@ public class M02_ServiceHome {
     private Gson gson = new Gson();
 
     @GET
-    public String getHome(){
-        return "Home result";
+    public Home getHome(){
+        return new Home( 4, 5 );
     }
 
 }
