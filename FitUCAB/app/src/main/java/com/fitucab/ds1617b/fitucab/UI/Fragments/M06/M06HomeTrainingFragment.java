@@ -177,7 +177,7 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
      * necesite.
      */
     public void fillListView(){
-        String url = "http://186.93.48.131:8888/PruebaDeServicioWeb_war_exploded/training/displayTraining?id=0";
+        String url = "http://190.204.128.224:8888/ServiciosWebFitUCAB_war_exploded/training/displayTraining?userId=1";
         final Gson gson = new Gson();
 
         // Instancia RequestQueue.
