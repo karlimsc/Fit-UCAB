@@ -96,8 +96,7 @@ public class M11GraphicFragment extends Fragment {
 
         _view = inflater.inflate(R.layout.fragment_m11_graphic, container, false);
 
-        _cb_m11_consumidas = (CheckBox) _view.findViewById(R.id.cb_m11_consumidas);
-        _cb_m11_quemadas = (CheckBox) _view.findViewById(R.id.cb_m11_quemadas);
+
         _btn_m11_dia = (Button) _view.findViewById(R.id.btn_m11_dia);
         _btn_m11_semana = (Button) _view.findViewById(R.id.btn_m11_semana);
         _btn_m11_mes = (Button) _view.findViewById(R.id.btn_m11_mes);
@@ -197,6 +196,45 @@ public class M11GraphicFragment extends Fragment {
     }
 
     /*
+   funcion que muestra o elimina la linea que indica las calorias
+   consumidas de la grafica. El metodo es llamado con la propiedad
+   onClick en el archivo xml
+   */
+    public void activarDesactivarConsumidas (View _view) {
+        // obtengo el checkbox que indica si desea ver o no
+        // la linea de calorias consumidas
+         _cb_m11_consumidas = (CheckBox) _view.findViewById(R.id.cb_m11_consumidas);
+        // pregunto si el check no esta seleccionado
+        if (!_cb_m11_consumidas.isChecked()) {
+            // obtengo la data del grafico
+            LineData lineData = _lineChart.getData();
+            //ILineDataSet set = lineData.getDataSetByIndex(0);
+
+            // obtengo los datos pertenecientes a la linea de consumidas
+            ILineDataSet consumidas = lineData.getDataSetByLabel("Consumidas",false);
+            // remuevo los datos
+            lineData.removeDataSet(consumidas);
+            // se actualiza tanto el grafico como la variable que contiene los datos
+            lineData.notifyDataChanged();
+            _lineChart.notifyDataSetChanged();
+            // refresco el grafico para que detecte los cambios
+            _lineChart.invalidate();
+        }
+        // si el check esta seleccionado
+        else {
+            // obtengo los datos de la grafica
+            LineData lineData = _lineChart.getData();
+            // agrego los datos pertenecientes a calorias consumidas
+            lineData.addDataSet(_setComp2);
+            // notifico los cambios
+            lineData.notifyDataChanged();
+            _lineChart.notifyDataSetChanged();
+            // refresco el grafico para que agarre los cambios
+            _lineChart.invalidate();
+        }
+    }
+
+    /*
     funcion que muestra o elimina la linea que indica las calorias
     quemadas de la grafica. El metodo es llamado con la propiedad
     onClick en el archivo xml
@@ -204,9 +242,9 @@ public class M11GraphicFragment extends Fragment {
     public void activarDesactivarQuemadas(View _view) {
         // obtengo el checkbox que indica si desea ver o no
         // la linea de calorias quemadas
-        CheckBox cbQuemadas = (CheckBox) _view.findViewById(R.id.cb_m11_quemadas);
+         _cb_m11_quemadas = (CheckBox) _view.findViewById(R.id.cb_m11_quemadas);
         // pregunto si el check no esta seleccionado
-        if (!cbQuemadas.isChecked()){
+        if (!_cb_m11_quemadas.isChecked()){
             // obtengo la data del grafico
             LineData lineData = _lineChart.getData();
             //ILineDataSet set = lineData.getDataSetByIndex(0);
