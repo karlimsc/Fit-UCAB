@@ -4,6 +4,7 @@
 
 import Domain.User;
 import WebServicesClasses.M01_ServicesUser;
+import WebServicesClasses.M02_ServiceHome;
 import WebServicesClasses.M02_ServiceUser;
 
 import javax.ws.rs.ApplicationPath;
@@ -22,6 +23,7 @@ public class FitUCAB extends Application {
         HashSet h= new HashSet<Class<?>>();
         h.add( M01_ServicesUser.class );
         h.add( M02_ServiceUser.class );
+        h.add( M02_ServiceHome.class );
         return h;
     }
 }
