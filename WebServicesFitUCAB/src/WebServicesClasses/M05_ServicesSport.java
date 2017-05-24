@@ -1,18 +1,22 @@
+package WebServicesClasses;
 
 import com.google.gson.Gson;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
 import java.util.ArrayList;
+import Domain.*;
 
 
 /**
  * Created by estefania on 14/05/2017.
  */
-@Path("/M05_ServicesSports")
-public class SportController {
+
+@Path("/M05_ServicesSport")
+public class M05_ServicesSport {
 
     Gson gson = new Gson();
 
@@ -22,21 +26,24 @@ public class SportController {
     @Path("/insertSport")
 
     @Produces("application/json")
+    /**
+     * Agrega a la lista de deportes disponibles del usuario el id seleccionado
+     *  @param idPer
+     *  @param idSpo
+     *  @return
+     */
 
-    //Agrega a la lista de deportes disponibles del usuario el id seleccionado
     public  String insertSport(@QueryParam("idPer") Integer nombreUsu,
                                @QueryParam("idSpo") Integer nombreDep){
-
-        Boolean respuesta;
 
         String query = "select * from M05_insertarDeporte('"+nombreUsu+"','"+nombreDep+"')" ;
 
         try{
             Connection conn = conectarADb();
-            Statement st = conn.createStatement();
-            ResultSet rs =  st.executeQuery(query);
+            Statement    st = conn.createStatement();
+            ResultSet    rs =  st.executeQuery(query);
 
-            return gson.toJson(true);
+            return gson.toJson("Agregado");
 
         } catch (Exception e) {
             return  e.getMessage();
@@ -51,12 +58,16 @@ public class SportController {
     @Path("/getSport")
 
     @Produces("application/json")
+    /**
+     * Extrae el nombre de los deportes en funcion del id
+     * @param idSpo
+     * @return
+     */
 
-    //Extrae el nombre de los deportes en funcion del id
     public String getSport(@QueryParam("idSpo") Integer id){
 
 
-        Sport resultado = new Sport();
+        Sport resultado = null;
 
         //Declarando la sentencia de la funcion de obtenerDatosDeporte que devuelve todos los datos de los deportes
         String query = "select * from M05_obtenerdatosdeporte('"+id+"')";
@@ -64,13 +75,15 @@ public class SportController {
         try{
 
             Connection conn = conectarADb();
-            Statement st = conn.createStatement();
-            ResultSet rs =  st.executeQuery(query);
+            Statement    st = conn.createStatement();
+            ResultSet    rs =  st.executeQuery(query);
 
             while(rs.next()){
 
-                resultado.setId(rs.getInt(     "iddeporte"));
-                resultado.setName(rs.getString("nombredeporte"));
+                Integer numero = rs.getInt(   "iddeporte");
+                String  nombre = rs.getString("nombredeporte");
+
+                resultado=new Sport(numero,nombre);
 
 
             }
@@ -89,27 +102,28 @@ public class SportController {
     @Path("/getMetSport")
 
     @Produces("application/json")
+    /**Devuelve a traves del nombre del deporte el met correspondiente al mismo
+     * Con el fin de realizar el calculo de las calorias quemadas en la actividad
+     * @param nameSpo
+     */
 
-    //Devuelve a traves del nombre del deporte el met correspondiente al mismo
-    //Con el fin de realizar el calculo de las calorias quemadas en la actividad
     public String getMet(@QueryParam("nameSpo") String nombreDep ){
 
-
-        Sport resultado = new Sport();
+        Sport resultado = null;
 
         //Declarando la sentencia de lafuncion obtenerMetDeporte que devuelve el met correspondiente al deporte consultado
         String query = "select * from M05_obtenermetdeporte('"+nombreDep.toUpperCase()+"')";
 
         try{
 
-            Connection conn=conectarADb();
-            Statement st = conn.createStatement();
-            ResultSet rs =  st.executeQuery(query);
+            Connection conn = conectarADb();
+            Statement    st = conn.createStatement();
+            ResultSet    rs =  st.executeQuery(query);
 
             while(rs.next()){
 
-                resultado.setMet(rs.getFloat(  "metdeporte"));
-
+                Float mets=rs.getFloat(  "metdeporte");
+                resultado=new Sport(mets);
             }
 
             return gson.toJson(resultado);
@@ -120,13 +134,19 @@ public class SportController {
 
         }
     }
+
+
     @GET
 
     @Path("/getSportsUser")
 
     @Produces("application/json")
+    /**
+     * Devuelve el conjunto de deportes registrados que tiene un usuario
+     * @param idPer
+     * @return
+     */
 
-    //Devuelve el conjunto de deportes registrados que tiene un usuario
     public String getSportsUser(@QueryParam("idPer") Integer id ){
 
 
@@ -162,6 +182,13 @@ public class SportController {
 
     @Produces("application/json")
 
+    /**
+     * Elimina un deporte de la lista de disponibles del usuario
+     * @param idPer
+     * @param idSpo
+     * @return
+     */
+
     public  String deleteSport(@QueryParam("idPer") Integer nombreUsu,
                                @QueryParam("idSpo") Integer nombreDep){
 
@@ -182,7 +209,12 @@ public class SportController {
 
     }
 
-    //FUNCION QUE Obtiene el id del deporte a traves del nombre
+    /**
+     *  Obtiene el id del deporte a traves del nombre
+     *
+     * @param name
+     * @return
+     */
 
     public int obtenerIdSport(String name){
 
@@ -215,8 +247,9 @@ public class SportController {
         try {
 
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:"+Global.port+"/"+Global.nameBd;
-             conn       = DriverManager.getConnection(url,  Global.user,  Global.password);
+            String url = "jdbc:postgresql://localhost:5432/FitUcabDB";
+            conn       = DriverManager.getConnection(url, "postgres",  "postgres");
+
         } catch (ClassNotFoundException e) {
 
             e.printStackTrace();
