@@ -1,4 +1,4 @@
-package WebServicesClasses;7
+package WebServicesClasses;
 
 import Domain.Training;
 
@@ -103,7 +103,7 @@ public class M06_ServicesTraining {
                 training.add(results);
 
             }
-            
+
             return gson.toJson(training);
 
         }
