@@ -83,13 +83,9 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
      */
 
     private void setupViewValues() {
-        /*  _toolbar=(Toolbar) _view.findViewById(R.id.m06_toolbar_training_6);
-        getActivity().setTitle(R.string.M06_nombre_modulo);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(_toolbar);
-        */
+
         //Llenando el list View
         fillListView();
-
         registerForContextMenu( _listView );
 
     }
@@ -157,15 +153,12 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
      * Esta funcion recibe el entrenamiento a compartir con un amigo, aquí se encapsula para enviar
      * a través del bundle y así pasarlo a otro fragment, devuelve el objeto bundle
      * @param item
-     * @return
+     * @return bundle donde se encuentra alojado el nombre del entrenamiento
      */
     public Bundle encapsulandoInformacionEntrenamiento( MenuItem item ){
-        //Se supone que aqui se mete en el objeto y luego se mete en el bundle, pero
-        //Mientras no hay objeto trabajaré así
         Bundle bundle= new Bundle();
         AdapterView.AdapterContextMenuInfo info = ( AdapterView.AdapterContextMenuInfo ) item.getMenuInfo();
-        _posicionDeEntrenamiento =  ((TextView) info.targetView).getText().toString();
-        System.out.println(_posicionDeEntrenamiento);
+        _posicionDeEntrenamiento =  ( (TextView) info.targetView).getText().toString();
         bundle.putString("Nombre de Entrenamiento",_posicionDeEntrenamiento);
         return bundle;
 
@@ -177,48 +170,50 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
      * necesite.
      */
     public void fillListView(){
+
+        //Url a la cual se va a hacer conexion
         String url = "http://190.204.128.224:8888/ServiciosWebFitUCAB_war_exploded/training/displayTraining?userId=1";
         final Gson gson = new Gson();
 
         // Instancia RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        _listView = (ListView) _view.findViewById(R.id.m06_listViewEntrenamiento);
+        _listView = (ListView) _view.findViewById( R.id.m06_listViewEntrenamiento );
 
         //Se hace la peticion y lo devuelve en String Request
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+        StringRequest stringRequest = new StringRequest( Request.Method.GET , url ,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
 
                         ArrayList<Training> at = new ArrayList<Training>();
-                        at = gson.fromJson(response,new TypeToken<List<Training>>(){}.getType());
-                        ArrayList<ArrayAuxiliarTraining> arrayOfUsers = new ArrayList<ArrayAuxiliarTraining>();
-                        TrainingAdapter adapter = new TrainingAdapter(_view.getContext(), arrayOfUsers);
-                        _listView.setAdapter(adapter);
-                        ArrayList<ArrayAuxiliarTraining> entrenamientos = new ArrayList<ArrayAuxiliarTraining>();
+                        at = gson.fromJson( response , new TypeToken< List< Training > >(){}.getType() );
+                        ArrayList<ArrayAuxiliarTraining> arrayOfTrainings = new ArrayList< ArrayAuxiliarTraining >();
+                        TrainingAdapter adapter = new TrainingAdapter( _view.getContext() , arrayOfTrainings );
+                        _listView.setAdapter( adapter );
+                        ArrayList< ArrayAuxiliarTraining > entrenamientos = new ArrayList<ArrayAuxiliarTraining>();
 
 
                         for(int i = 0;i<at.size();i++){
-                            entrenamientos.add(new ArrayAuxiliarTraining(at.get(i).getTrainingName()));
+                            entrenamientos.add( new ArrayAuxiliarTraining( at.get(i).getTrainingName() ) );
                         }
 
-                        adapter.addAll(entrenamientos);
+                        adapter.addAll( entrenamientos );
 
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                System.out.println("Entre en el failure");
-                ArrayList<ArrayAuxiliarTraining> arrayOfTraining = new ArrayList<ArrayAuxiliarTraining>();
-                TrainingAdapter adapter = new TrainingAdapter(_view.getContext(), arrayOfTraining);
-                _listView.setAdapter(adapter);
-                ArrayList<ArrayAuxiliarTraining> usuarios = new ArrayList<ArrayAuxiliarTraining>();
-                usuarios.add(new ArrayAuxiliarTraining("Error en la conexión, intente mas tarde"));
-                adapter.addAll(usuarios);
+
+                ArrayList<ArrayAuxiliarTraining> arrayOfTrainings = new ArrayList< ArrayAuxiliarTraining >();
+                TrainingAdapter adapter = new TrainingAdapter( _view.getContext() , arrayOfTrainings );
+                _listView.setAdapter( adapter );
+                ArrayList< ArrayAuxiliarTraining > usuarios = new ArrayList<ArrayAuxiliarTraining>();
+                usuarios.add( new ArrayAuxiliarTraining( "Error en la conexión, intente mas tarde" ) );
+                adapter.addAll( usuarios );
             }
         });
         // Add the request to the RequestQueue.
-        queue.add(stringRequest);
+        queue.add( stringRequest );
         _listView.setOnItemClickListener( this );
     }
 }
