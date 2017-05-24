@@ -22,8 +22,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Model.ArrayAuxiliarTraining;
+import com.fitucab.ds1617b.fitucab.Model.Training;
+import com.fitucab.ds1617b.fitucab.Model.TrainingAdapter;
 import com.fitucab.ds1617b.fitucab.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Alejandro Fernandez on 23/4/2017.
@@ -39,6 +53,7 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
     //  Se debe crear Objeto del tipo entrenamiento para luego pasarle lo que contenga y asi poder compartirlo
     //Esta variable es solo de prueba
     private String _posicionDeEntrenamiento;
+    private Training entrenamieto;
 
 
     @Override
@@ -75,10 +90,8 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
         ((AppCompatActivity)getActivity()).setSupportActionBar(_toolbar);
         */
         //Llenando el list View
-        _listView = (ListView) _view.findViewById ( R.id.m06_listViewEntrenamiento );
-        _adaptador = new ArrayAdapter<String>( getContext() , android.R.layout.simple_list_item_1 , entrenamientos);
-        _listView.setAdapter( _adaptador );
-        _listView.setOnItemClickListener( this );
+        fillListView();
+
         registerForContextMenu( _listView );
 
     }
@@ -154,7 +167,60 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
         Bundle bundle= new Bundle();
         AdapterView.AdapterContextMenuInfo info = ( AdapterView.AdapterContextMenuInfo ) item.getMenuInfo();
         _posicionDeEntrenamiento =  ((TextView) info.targetView).getText().toString();
+        System.out.println(_posicionDeEntrenamiento);
         bundle.putString("Nombre de Entrenamiento",_posicionDeEntrenamiento);
         return bundle;
+
+    }
+
+    /**
+     * Metodo que rellena el list haciendo la peticion al WS.
+     * La url debe ser la de la pc donde se ejecuta el servidor + la llamada del metodo que se
+     * necesite.
+     */
+    public void fillListView(){
+        String url = "http://186.93.48.131:8888/PruebaDeServicioWeb_war_exploded/training/displayTraining?id=0";
+        final Gson gson = new Gson();
+
+        // Instancia RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(getContext());
+        _listView = (ListView) _view.findViewById(R.id.m06_listViewEntrenamiento);
+
+        //Se hace la peticion y lo devuelve en String Request
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        ArrayList<Training> at = new ArrayList<Training>();
+                        at = gson.fromJson(response,new TypeToken<List<Training>>(){}.getType());
+                        ArrayList<ArrayAuxiliarTraining> arrayOfUsers = new ArrayList<ArrayAuxiliarTraining>();
+                        TrainingAdapter adapter = new TrainingAdapter(_view.getContext(), arrayOfUsers);
+                        _listView.setAdapter(adapter);
+                        ArrayList<ArrayAuxiliarTraining> entrenamientos = new ArrayList<ArrayAuxiliarTraining>();
+
+
+                        for(int i = 0;i<at.size();i++){
+                            entrenamientos.add(new ArrayAuxiliarTraining(at.get(i).getTrainingName()));
+                        }
+
+                        adapter.addAll(entrenamientos);
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                System.out.println("Entre en el failure");
+                ArrayList<ArrayAuxiliarTraining> arrayOfTraining = new ArrayList<ArrayAuxiliarTraining>();
+                TrainingAdapter adapter = new TrainingAdapter(_view.getContext(), arrayOfTraining);
+                _listView.setAdapter(adapter);
+                ArrayList<ArrayAuxiliarTraining> usuarios = new ArrayList<ArrayAuxiliarTraining>();
+                usuarios.add(new ArrayAuxiliarTraining("Error en la conexión, intente mas tarde"));
+                adapter.addAll(usuarios);
+            }
+        });
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
+        _listView.setOnItemClickListener( this );
     }
 }
