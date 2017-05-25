@@ -18,7 +18,7 @@ public class M05TrackExerciseActivity extends FragmentActivity implements OnMapR
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_m05_track_activity);
+        setContentView(R.layout.fragment_m05_track_exercise);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);

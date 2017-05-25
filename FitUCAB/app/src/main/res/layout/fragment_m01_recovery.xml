@@ -1,31 +1,34 @@
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     android:orientation="vertical"
     android:weightSum="10">
+
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="103dp"
-        android:layout_weight="2"
         android:layout_gravity="center_horizontal|center"
         android:layout_marginTop="13dp"
-        android:src="@mipmap/logofitucabnombre"
-        />
+        android:layout_weight="2"
+        android:src="@mipmap/logofitucabnombre" />
 
     <TextView
         android:id="@+id/tv_m01_acercaDeTi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/tv_m01_recuperacionContra"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/tv_m01_recuperacionContra"
+        android:textColor="@color/colorPrimaryDark"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:typeface="sans" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -49,9 +52,14 @@
                 android:layout_marginTop="20dp"
                 android:layout_weight="5"
                 android:ems="10"
+                android:fontFamily="sans-serif"
                 android:hint="@string/et_m01_correoRecovery"
                 android:inputType="textPersonName"
-                android:maxLength="20" />
+                android:maxLength="20"
+                android:textColor="@color/softgrey"
+                android:textColorLink="@color/colorBtnAceptar"
+                android:textSize="18sp"
+                android:typeface="sans" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
@@ -61,11 +69,15 @@
             android:layout_marginTop="20dp"
             android:layout_weight="5"
             android:background="@color/colorBtnConfirmar"
+            android:fontFamily="sans-serif"
             android:text="@string/btn_m01_enviarCorreo"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:typeface="sans" />
+
+
 
     </LinearLayout>
 
