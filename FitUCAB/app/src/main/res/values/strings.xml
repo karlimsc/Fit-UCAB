@@ -63,13 +63,15 @@
     <string name="_tv_m05_day">Dia</string>
     <string name="_tv_m05_month">Mes</string>
     <string name="_tv_m05_year">Año</string>
-    <string name="_tv_m05_distance">Distacia:</string>
+    <string name="_tv_m05_distance">Distacia recorrida</string>
     <string name="_tv_m05_speed">Velocidad:</string>
     <string name="_tv_m05_starHour">Hora:</string>
+    <string name="_tv_m05_date">Fecha de inicio</string>
+
     <string name="_tv_m05_starDate">Fecha:</string>
     <string name="_tv_m05_time">Tiempo</string>
     <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
-    <string name="_tv_m05_calories">Calorías:</string>
+    <string name="_tv_m05_calories">Calorías quemadas</string>
     <string name="_tv_m05_duration">Duración en minutos:</string>
     <string name="_tv_m05_titletabmanual">MANUAL</string>
     <string name="_btn_m05_pause">PAUSAR</string>

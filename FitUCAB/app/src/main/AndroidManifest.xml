@@ -87,11 +87,7 @@
             android:value="AIzaSyDCWy5j4NHRnwsS5il39SSFREQImlh7taI" />
 
         <activity android:name=".UI.Activities.M05StartTrackingActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
