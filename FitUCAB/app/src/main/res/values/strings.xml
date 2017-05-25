@@ -66,6 +66,8 @@
     <string name="_tv_m05_distance">Distacia:</string>
     <string name="_tv_m05_speed">Velocidad:</string>
     <string name="_tv_m05_starHour">Hora:</string>
+    <string name="_tv_m05_date">Fecha de inicio</string>
+
     <string name="_tv_m05_starDate">Fecha:</string>
     <string name="_tv_m05_time">Tiempo</string>
     <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
