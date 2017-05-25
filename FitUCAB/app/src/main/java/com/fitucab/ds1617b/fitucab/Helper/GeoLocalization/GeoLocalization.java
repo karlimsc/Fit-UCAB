@@ -29,18 +29,12 @@ public class GeoLocalization extends AppCompatActivity implements
         LocationListener {
 
     //Constantes.
-    private static final String REQUESTING_LOCATION_UPDATES_KEY = "requesting-location-updates";
-    private static final String LOCATION_KEY = "location";
-    private static final String LAST_UPDATED_TIME_STRING_KEY = "last-updated-time-string";
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
     private GoogleApiClient mGoogleApiClient;
     private Location mLastLocation;
     private Location mCurrentLocation;
-    private String mLastUpdateTime;
-    private boolean mRequestingLocationUpdates;
     private ArrayList<Location> LocationPoints=new ArrayList<Location>();
-    private float distance = 0;
     private LocationRequest mLocationRequest = new LocationRequest();
 
     /**
@@ -109,7 +103,7 @@ public class GeoLocalization extends AppCompatActivity implements
 
 
     /**
-     * Actualiza la interfaz.
+     * Actualiza la el array de posiciones..
      */
     public void updateLocationPoints(ArrayList<Location> LocationPoints) {
 
@@ -120,7 +114,6 @@ public class GeoLocalization extends AppCompatActivity implements
         }
 
     }
-
 
     /**
      * Gets Devices's last logation and store it in an ArrayList.
@@ -259,7 +252,4 @@ public class GeoLocalization extends AppCompatActivity implements
         }
     }
 
-    public void getLocationPoints(ArrayList<Location> locationPoints){
-        locationPoints= this.LocationPoints;
-    }
 }
