@@ -46,33 +46,16 @@
             android:name=".UI.Activities.M05AddExerciseActivity"
             android:label="@string/_app_name_title_m05"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".UI.Activities.M05PrincipalActivity"
             android:label="@string/_ttl_m05_activity"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
-            android:name=".UI.Activities.M05TrackExerciseActivity">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity" />
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:name=".UI.Activities.M05TrackExerciseActivity"
+            android:label="@string/_ttl_m05_activity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <!-- FIN MODULO 5-->
@@ -80,10 +63,7 @@
             android:name=".UI.Activities.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".UI.Activities.M05ReadExerciseActivity"
-            android:label="Track Exercise"
-            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".UI.Activities.M02HomeActivity"
             android:label="Fit UCAB"
@@ -104,7 +84,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
+            android:value="AIzaSyDCWy5j4NHRnwsS5il39SSFREQImlh7taI" />
 
         <activity android:name=".UI.Activities.M05StartTrackingActivity">
             <intent-filter>
@@ -112,6 +92,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 

@@ -252,4 +252,7 @@ public class GeoLocalization extends AppCompatActivity implements
         }
     }
 
+    public void getLocationPoints(ArrayList<Location> locationPoints) {
+        locationPoints = LocationPoints;
+    }
 }

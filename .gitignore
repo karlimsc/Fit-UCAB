@@ -29,9 +29,9 @@ local.properties
 
 FitUCAB/app/build/
 
-FitUCAB/gradle/
+WebServicesFitUCAB/src/WebServicesClasses/HelloWorld\.java
 
-FitUCAB/gradlew\.bat
+WebServicesFitUCAB/lib/\.fuse_hidden0000003700000007
 
 FitUCAB/app/src/debug/
 
