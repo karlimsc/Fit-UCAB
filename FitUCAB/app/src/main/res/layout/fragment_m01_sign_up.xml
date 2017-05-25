@@ -1,24 +1,21 @@
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:background="@color/grey"
     android:orientation="vertical"
     android:padding="20dp"
     android:weightSum="2">
-
     <TextView
         android:id="@+id/tv_m01_acercaDeTi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/tv_m01_acercaDeTi"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:fontFamily="sans-serif"
-        android:text="@string/tv_m01_acercaDeTi"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
+        android:textSize="25sp"
         android:textStyle="bold" />
 
     <ScrollView
@@ -44,14 +41,9 @@
                     android:layout_gravity="left"
                     android:layout_weight="2"
                     android:ems="10"
-                    android:fontFamily="sans-serif"
                     android:hint="@string/et_m01_usuario"
                     android:inputType="textPersonName"
-                    android:maxLength="20"
-                    android:textColor="@color/softgrey"
-                    android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
-                    android:typeface="sans" />
+                    android:maxLength="20" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -61,20 +53,15 @@
                 android:layout_marginTop="20dp">
 
                 <EditText
-                    android:id="@+id/et_m01_passwordRegistro"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:layout_weight="2"
-                    android:ems="10"
-                    android:fontFamily="sans-serif"
-                    android:hint="@string/et_m01_passwordRegistro"
-                    android:inputType="textPassword"
-                    android:textColor="@color/softgrey"
-                    android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
-                    android:typeface="sans" />
+                android:id="@+id/et_m01_passwordRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_weight="2"
+                android:ems="10"
+                android:hint="@string/et_m01_passwordRegistro"
+                android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -91,14 +78,9 @@
                     android:layout_marginTop="20dp"
                     android:layout_weight="2"
                     android:ems="10"
-                    android:fontFamily="sans-serif"
                     android:hint="@string/et_m01_correoRegistro"
                     android:inputType="textPersonName"
-                    android:maxLength="28"
-                    android:textColor="@color/softgrey"
-                    android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
-                    android:typeface="sans" />
+                    android:maxLength="28" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -113,13 +95,8 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:ems="10"
-                    android:fontFamily="sans-serif"
                     android:hint="@string/et_m01_telefono"
-                    android:inputType="phone"
-                    android:textColor="@color/softgrey"
-                    android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
-                    android:typeface="sans" />
+                    android:inputType="phone" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -138,13 +115,9 @@
                     android:ems="10"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
-                    android:fontFamily="sans-serif"
                     android:hint="@string/tv_m01_fechanac"
                     android:inputType="date"
-                    android:textColor="@color/softgrey"
-                    android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
-                    android:typeface="sans" />
+                    android:textSize="18sp" />
             </android.support.design.widget.TextInputLayout>
 
             <LinearLayout
@@ -157,25 +130,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_column="1"
-                    android:layout_marginTop="20dp"
-                    android:layout_weight="3">
+                    android:layout_weight="3"
+                    android:layout_marginTop="20dp">
 
                     <EditText
                         android:id="@+id/et_m01_peso"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:layout_marginRight="10dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginRight="10dp"
                         android:ems="10"
-                        android:fontFamily="sans-serif"
                         android:hint="@string/et_m01_peso"
                         android:inputType="numberDecimal"
-                        android:maxLength="3"
-                        android:textColor="@color/softgrey"
-                        android:textColorLink="@color/colorBtnAceptar"
-                        android:textSize="18sp"
-                        android:typeface="sans" />
+                        android:maxLength="3"/>
                 </android.support.design.widget.TextInputLayout>
 
                 <TextView
@@ -185,58 +153,47 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginTop="20dp"
                     android:layout_weight="1"
-                    android:fontFamily="sans-serif"
                     android:text="@string/et_m01_kg"
-                    android:textColor="@color/common_google_signin_btn_text_light_default"
-                    android:textSize="18sp"
-                    android:typeface="sans" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="4">
+                android:layout_column="1"
+                android:layout_weight="3"
+                android:layout_marginTop="20dp">
 
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/et_m01_estatura"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
+                    android:layout_gravity="left"
                     android:layout_marginTop="20dp"
-                    android:layout_weight="3">
+                    android:layout_marginRight="10dp"
+                    android:ems="10"
+                    android:hint="@string/et_m01_estatura"
+                    android:inputType="numberDecimal"
+                    android:maxLength="3"/>
+            </android.support.design.widget.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/et_m01_estatura"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="20dp"
-                        android:ems="10"
-                        android:fontFamily="sans-serif"
-                        android:hint="@string/et_m01_estatura"
-                        android:inputType="numberDecimal"
-                        android:maxLength="3"
-                        android:textColor="@color/softgrey"
-                        android:textColorLink="@color/colorBtnAceptar"
-                        android:textSize="18sp"
-                        android:typeface="sans" />
-                </android.support.design.widget.TextInputLayout>
-
-                <TextView
-                    android:id="@+id/et_m01_mts"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginTop="20dp"
-                    android:layout_weight="3.71"
-                    android:fontFamily="sans-serif"
-                    android:text="@string/et_m01_mts"
-                    android:textColor="@color/common_google_signin_btn_text_light_default"
-                    android:textSize="18sp"
-                    android:typeface="sans" />
-            </LinearLayout>
+            <TextView
+                android:id="@+id/et_m01_mts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:layout_weight="1"
+                android:text="@string/et_m01_mts"
+                android:textSize="20sp" />
+        </LinearLayout>
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -251,43 +208,33 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/rb_m01_femenino"
-                    android:textColor="@color/common_google_signin_btn_text_light_default"
-                    android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
-                    android:typeface="sans" />
+                    android:text="@string/rb_m01_femenino" />
 
                 <RadioButton
                     android:id="@+id/rb_m01_masculino"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/rb_m01_masculino"
-                    android:textColor="@color/common_google_signin_btn_text_light_default"
-                    android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
-                    android:typeface="sans" />
+                    android:text="@string/rb_m01_masculino" />
             </RadioGroup>
 
             <Button
                 android:id="@+id/btn_m01_entrar"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="20dp"
                 android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
                 android:background="@color/colorBtnConfirmar"
-                android:fontFamily="sans-serif"
                 android:text="@string/btn_m01_entrar"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/background_light"
-                android:textSize="18sp"
-                android:typeface="sans" />
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-    </ScrollView>
+</ScrollView>
 
 </LinearLayout>

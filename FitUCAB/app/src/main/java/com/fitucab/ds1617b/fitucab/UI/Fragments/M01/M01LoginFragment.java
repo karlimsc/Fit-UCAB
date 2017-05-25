@@ -1,5 +1,4 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
-
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -39,10 +38,6 @@ public class  M01LoginFragment extends Fragment {
     public M01LoginFragment() {
     }
 
-    /**
-     * Una vez la activity llama a un fragment se ejecuta este metodo
-     * @param activity recibe la activity que llamo o instancio al fragment
-     */
     public void onAttach(Activity activity) {
         super.onAttach(activity);
 
@@ -88,10 +83,6 @@ public class  M01LoginFragment extends Fragment {
         });
 
     }
-
-    /**
-     * metodo de listener del boton entrar, para realizar el cambio de actividad.
-     */
     private void manageButtonEntrar(){
         _btnEntrarLogin.setOnClickListener(new View.OnClickListener() {
             @Override
