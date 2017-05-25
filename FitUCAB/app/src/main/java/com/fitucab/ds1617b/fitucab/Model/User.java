@@ -1,19 +1,5 @@
 package com.fitucab.ds1617b.fitucab.Model;
 
-/**
- * Created by Colmenares on 26/03/2017.
- */
-
-public class User {
-}
-
-/**
- * Created by Colmenares on 26/03/2017.
- */
-
-public class User {
-}
-
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -75,7 +61,7 @@ public class User {
     }
 
     public User(int idUser, String username, String password,String email, String phone,
-                 char sex, String birthdate){
+                char sex, String birthdate){
         _idUser=idUser;
         _username=username;
         _password=password;

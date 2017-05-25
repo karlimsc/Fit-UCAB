@@ -9,10 +9,15 @@ public class Water {
     private     Integer  _fkPerson;
     private     Integer _cantidad;
     private     Integer _suma;
+    private     String _error;
 
     public  Water ()
     {
 
+    }
+    public  Water (String error)
+    {
+        _error=error;
     }
 
     /**
@@ -22,8 +27,8 @@ public class Water {
      */
     public Water(String time, Integer glasstype)
     {
-        set_time(time);
-        set_glasstype(glasstype);
+        _time = time;
+        _glasstype = glasstype;
     }
 
     /**
@@ -33,8 +38,8 @@ public class Water {
      */
     public Water( Integer fkPerson,String time)
     {
-        set_time(time);
-        set_fkPerson(fkPerson);
+        _time=time;
+        _fkPerson=fkPerson;
     }
 
     /**
@@ -45,9 +50,9 @@ public class Water {
      */
     public Water( Integer glasstype,Integer fkPerson,String time )
     {
-        set_glasstype(glasstype);
-        set_time(time);
-        set_fkPerson(fkPerson);
+        _glasstype= glasstype;
+        _time=time;
+        _fkPerson=fkPerson;
     }
 
     /**
@@ -58,8 +63,8 @@ public class Water {
      */
     public Water(Integer suma , Integer cantidad)
     {
-        set_suma(suma);
-        set_cantidad(cantidad);
+        _suma = suma;
+        _cantidad=cantidad;
     }
 
     /**
@@ -72,9 +77,9 @@ public class Water {
 
     public Water(String time ,Integer suma , Integer cantidad)
     {
-        set_time(time);
-        set_suma(suma);
-        set_cantidad(cantidad);
+        _time= time;
+        _suma=suma;
+        _cantidad=cantidad;
 
     }
 
@@ -117,4 +122,8 @@ public class Water {
     public void set_suma(Integer _suma) {
         this._suma = _suma;
     }
+
+    public void set_error(String error){_error=error;};
+
+    public String get_error(){return _error;};
 }

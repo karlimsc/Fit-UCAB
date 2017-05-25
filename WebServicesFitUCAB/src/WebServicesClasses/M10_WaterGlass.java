@@ -1,6 +1,7 @@
 package WebServicesClasses;
 
 
+import Domain.Sql;
 import Domain.Water;
 import com.google.gson.Gson;
 
@@ -10,6 +11,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -22,27 +24,17 @@ public class M10_WaterGlass
 {
 
     private Gson _gson = new Gson();
-    private Connection conn =bdConnect();
+
     private ArrayList<Water> _array = new ArrayList<>() ;
-    private Water _water;
+    private Water _water ;
+    private Sql _sql =new Sql();
     private ResultSet _rs;
-    private Statement _st;
+
     private Integer _res;
+    private SimpleDateFormat _sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+    private SimpleDateFormat _sdf1 = new SimpleDateFormat("dd/MM");
 
-    public ResultSet  sql (String query)
-    {
 
-        try {
-                 _st = conn.createStatement();
-                 _rs  = _st.executeQuery(query);
-                 conn.close();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        return _rs;
-    }
 
 
     /**
@@ -61,21 +53,38 @@ public class M10_WaterGlass
                 
         try {
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-            ResultSet rs = sql("Select res from m10_addwater('"+dia+"',"+glassType+","+fkp+")");
+           _rs = _sql.sql("Select res from m10_addwater('"+dia+"',"+glassType+","+fkp+")");
 
             //recorro la consulta
-            while( rs.next() )
+            while( _rs.next() )
             {
                 _water = new Water();
-                _water.set_cantidad( rs.getInt("res") );
+                _water.set_cantidad( _rs.getInt("res") );
 
                 _array.add( _water );
+
+
+
+
             }// end while que recorre la consulta
-        } catch ( SQLException e) {
-            e.printStackTrace();
-            return _gson.toJson( e );
+        } catch (SQLException e) {
+            _water = new Water();
+            return _gson.toJson(  _array.add(_water) );
         }
-        return  _gson.toJson( _array );
+        catch (NullPointerException e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
+        }
+        catch (Exception e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
+        }
+
+
+        return  _gson.toJson( _water );
+
     }
 
 
@@ -96,12 +105,12 @@ public class M10_WaterGlass
         try {
 
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-            _rs = sql("Select * from M10_GetListFecha("+fkp+" ,'"+dia+"')");
+            _rs = _sql.sql("Select * from M10_GetListFecha("+fkp+" ,'"+dia+"')");
 
             while(_rs.next())
             {
                 //se agarran los valores de la consulta y se crea un objeto tipo water
-                _water = new Water( _rs.getTimestamp("GLASSTIME").toString()
+                _water = new Water( _sdf.format(_rs.getTimestamp("GLASSTIME")).toString()
                         ,_rs.getInt("GLASSTYPE"));
 
                 // se guardan los datos en un arraylist de tipo water
@@ -110,8 +119,19 @@ public class M10_WaterGlass
             } //end while que recorre la consulta
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            return _gson.toJson( e );
+
+            _water = new Water("sql");
+
+            return _gson.toJson(  _array.add(_water) );
+        }
+        catch (NullPointerException e)
+        {
+            _water = new Water("null");
+        }
+        catch (Exception e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
         }
         //se devuelve el arraylist
         return  _gson.toJson( _array );
@@ -135,7 +155,7 @@ public class M10_WaterGlass
         try {
 
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-            _rs = sql("Select * from M10_GetWaterGlass("+fkp+" ,'"+dia+"')");
+            _rs = _sql.sql("Select * from M10_GetWaterGlass("+fkp+" ,'"+dia+"')");
 
             while(_rs.next())
             {
@@ -149,8 +169,18 @@ public class M10_WaterGlass
             } //end while que recorre la consulta
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            return _gson.toJson( e );
+
+            return _gson.toJson(  _array.add(_water) );
+        }
+        catch (NullPointerException e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
+        }
+        catch (Exception e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
         }
         //se devuelve el arraylist
         return  _gson.toJson( _array );
@@ -167,14 +197,14 @@ public class M10_WaterGlass
         try {
 
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-            _rs = sql("Select * from M10_Fechainter ("+fkp+" ,'"+dia+"')");
+            _rs = _sql.sql("Select * from M10_Fechainter ("+fkp+" ,'"+dia+"')");
 
             while(_rs.next())
             {
                 //se agarran los valores de la consulta y se crea un objeto tipo water
 
 
-                _water = new Water (_rs.getDate("glasstime").toString(),
+                _water = new Water (_sdf.format(_rs.getDate("GLASSTIME")).toString(),
                                     _rs.getInt("sumg"),_rs.getInt("count"));
 
                 // se guardan los datos en un arraylist de tipo water
@@ -183,9 +213,20 @@ public class M10_WaterGlass
             } //end while que recorre la consulta
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            return _gson.toJson( e );
+
+            return _gson.toJson(  _array.add(_water) );
         }
+        catch (NullPointerException e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
+        }
+        catch (Exception e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
+        }
+
         //se devuelve el arraylist
         return  _gson.toJson( _array );
 
@@ -201,7 +242,7 @@ public class M10_WaterGlass
         try {
 
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-            _rs = sql("Select * from M10_DeletWaterLast('"+dia+"' ,"+fkp+")");
+            _rs = _sql.sql("Select * from M10_DeletWaterLast('"+dia+"' ,"+fkp+")");
 
             while(_rs.next())
             {
@@ -214,9 +255,21 @@ public class M10_WaterGlass
             } //end while que recorre la consulta
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            return _gson.toJson( e );
+
+            return _gson.toJson(  _array.add(_water) );
         }
+
+        catch (NullPointerException e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
+        }
+        catch (Exception e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
+        }
+
         //se devuelve el arraylist
         return  _gson.toJson( _array );
 
@@ -226,13 +279,13 @@ public class M10_WaterGlass
     @GET
     @Path("/DeletWaterTm")
     @Produces("application/json")
-    public String DeletWater( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
+    public String DeletWaterTm( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
 
         try {
 
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-            _rs = sql("Select * from M10_DeletWaterTm('"+dia+"' ,"+fkp+")");
+            _rs = _sql.sql("Select * from M10_DeletWaterTm('"+dia+"' ,"+fkp+")");
 
             while(_rs.next())
             {
@@ -244,9 +297,20 @@ public class M10_WaterGlass
 
             } //end while que recorre la consulta
 
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return _gson.toJson( e );
+        } catch (SQLException e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
+        }
+        catch (NullPointerException e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
+        }
+        catch (Exception e)
+        {
+
+            return _gson.toJson(  _array.add(_water) );
         }
         //se devuelve el arraylist
         return  _gson.toJson( _array );
@@ -254,27 +318,6 @@ public class M10_WaterGlass
 
     }
 
-    public Connection bdConnect()
-    {
-        Connection conn = null;
-        try
-        {
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/FitUcabDB";
-            conn = DriverManager.getConnection(url,"postgres", "root");
-        }
-        catch (ClassNotFoundException e)
-        {
-            e.printStackTrace();
-            System.exit(1);
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-            System.exit(2);
-        }
-        return conn;
-    }
 
 
 
