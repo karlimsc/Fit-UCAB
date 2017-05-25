@@ -82,7 +82,7 @@
     <string name="_ttl_m05_questiondeleteactivity">Confirmar</string>
     <string name="_tv_m05_thisweek">En esta semana</string>
 
-    <!--     Dialogos modulo 5             -->
+                                         <!--     Dialogos           -->
     <string name="_dlg_m05_cancel">CANCELAR</string>
     <string name="_dlg_m05_done">SI</string>
     <string name="_dlg_m05_quetiondeleteactivity">¿Desea realmente eliminar esta actividad?</string>
