@@ -40,7 +40,7 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
                 parent.removeView(_view);
         }
         try {
-            _view = inflater.inflate(R.layout.fragment_m05_track_exercise, container, false);
+            _view = inflater.inflate(R.layout.fragment_m05_track_activity, container, false);
         } catch (InflateException e) {
         /* map is already there, just return view as it is */
         }

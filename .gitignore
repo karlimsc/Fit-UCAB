@@ -1,3 +1,4 @@
+
 *.iml
 .gradle
 local.properties
@@ -24,8 +25,8 @@ local.properties
 /FitUCAB/gradlew.bat
 /FitUCAB/app/build/*
 *.*~
+*.properties
 
-/WebServicesFitUCAB/out/
-/WebServicesFitUCAB/.idea/
+FitUCAB/app/build/
 
 WebServicesFitUCAB/src/WebServicesClasses/HelloWorld\.java
