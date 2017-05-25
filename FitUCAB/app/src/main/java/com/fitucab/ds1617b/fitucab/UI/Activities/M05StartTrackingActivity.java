@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.Helper.FormatUtility;
 import com.fitucab.ds1617b.fitucab.Helper.GeoLocalization.GeoLocalization;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.M05_RequestList;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -51,10 +52,13 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     private float distance = 0;
     private LocationRequest mLocationRequest = new LocationRequest();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m05_start_tracking);
+        M05_RequestList requestList = new M05_RequestList(this.getApplicationContext(),
+                "http://10.0.2.2:8888/Prueba_war_exploded/M05_ServicesSport/getSport?idSpo=1");
 
         LocationPoints = new ArrayList<>();
 
@@ -86,6 +90,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
         //Creates a Location Request.
         super.createLocationRequest();
+
+        M05_textview_speed_tag.setText(requestList.makeRequest());
 
     }
 

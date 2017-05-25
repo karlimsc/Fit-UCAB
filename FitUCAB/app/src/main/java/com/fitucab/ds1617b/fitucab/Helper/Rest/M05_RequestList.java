@@ -28,6 +28,11 @@ public class M05_RequestList{
     private static Context mContext;
     String res;
 
+    public M05_RequestList(Context mContext, String url){
+        this.mContext = mContext;
+        this.url = url;
+    }
+
     public String makeRequest()
     {
 
@@ -38,6 +43,7 @@ public class M05_RequestList{
                     public void onResponse(JSONObject response) {
                         Log.i("RESPONSE",response.toString());
                         res = response.toString();
+                        Log.i("RES",res);
 
                        // mTxtDisplay.setText("Response: " + response.toString());
                     }
@@ -52,6 +58,7 @@ public class M05_RequestList{
                 });
 // Access the RequestQueue through your singleton class.
         VolleySingleton.getInstance(mContext).addToRequestQueue(jsObjRequest);
+
         return res;
     }
 }
