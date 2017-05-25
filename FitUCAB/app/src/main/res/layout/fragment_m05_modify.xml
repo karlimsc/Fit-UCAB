@@ -23,13 +23,13 @@
         android:id="@+id/btn_m05_updateactivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:text="@string/_btn_m05t_save"
         android:background="@color/ColorPrimary"
         android:textColor="@color/colorwhite"
-        android:layout_alignBottom="@+id/toolbar"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignBottom="@+id/toolbar" />
 
 
     <ImageView
@@ -41,7 +41,7 @@
         android:layout_marginEnd="39dp"
         android:layout_alignBottom="@+id/imageView8"
         android:layout_toLeftOf="@+id/btn_m05_updateactivity"
-        android:layout_toStartOf="@+id/btn_m05_updateactivity" />
+        android:layout_alignTop="@+id/imageView8" />
 
 
     <ImageView
@@ -50,20 +50,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="11dp"
-        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
-
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+        android:layout_above="@+id/scrollView4"
+        android:layout_alignParentTop="true" />
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@+id/toolbar">
+        android:id="@+id/scrollView4">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,7 +70,6 @@
             android:orientation="vertical"
             android:padding="20dp"
             android:weightSum="12">
-
 
             <TextView
                 android:id="@+id/textView4"
@@ -95,41 +93,58 @@
                 android:layout_below="@+id/textView4"
                 android:layout_gravity="center"></Spinner>
 
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1">
+
             <EditText
                 android:layout_width="250dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center"
                 android:hint="@string/_tv_m05_calories"
-                android:id="@+id/et_m05_calories"
-                android:layout_below="@+id/editText4"
+                android:id="@+id/editText"
+                android:layout_gravity="center"
+                android:layout_below="@+id/et_m05_calories"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp" />
+            </android.support.design.widget.TextInputLayout>
 
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1">
             <TextView
-                android:id="@+id/tv_m05_startdate"
+                android:id="@+id/tv_m05_dta"
                 style="@android:style/Widget.DeviceDefault.Light.Spinner"
-                android:layout_width="210dp"
+                android:layout_width="247dp"
                 android:layout_height="40dp"
+                android:layout_gravity="center"
                 android:layout_x="257dp"
                 android:hint="@string/_tv_m05_date"
                 android:layout_y="181dp"
                 android:fontFamily="sans-serif"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="18dp"
-                android:layout_gravity="center"
                 android:typeface="sans"
                 android:layout_below="@+id/spinner2"
                 android:layout_alignLeft="@+id/textView3"
                 android:layout_alignStart="@+id/textView3"
                 android:layout_marginTop="12dp"
                 android:layout_alignRight="@+id/textView3"
-                android:layout_alignEnd="@+id/textView3" />
+                android:layout_alignEnd="@+id/textView3"
+                android:layout_weight="1.29" />
+            </android.support.design.widget.TextInputLayout>
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1">
             <TextView
-                android:id="@+id/tv_m05_time"
+                android:id="@+id/tv_m05_tme"
                 style="@android:style/Widget.DeviceDefault.Light.Spinner"
-                android:layout_width="210dp"
+                android:layout_width="246dp"
                 android:layout_height="40dp"
                 android:layout_x="257dp"
                 android:hint="@string/_tv_m05_time"
@@ -144,10 +159,16 @@
                 android:layout_alignStart="@+id/editText4"
                 android:layout_marginTop="14dp"
                 android:layout_alignRight="@+id/editText4"
-                android:layout_alignEnd="@+id/editText4" />
+                android:layout_alignEnd="@+id/editText4"
+                android:layout_weight="1.29" />
+            </android.support.design.widget.TextInputLayout>
 
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1">
             <EditText
-                android:id="@+id/et_m05_distance"
+                android:id="@+id/et_m05_dtanc"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:layout_alignLeft="@+id/editText"
@@ -157,6 +178,12 @@
                 android:layout_marginTop="16dp"
                 android:hint="@string/_tv_m05_distance" />
 
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1">
             <EditText
                 android:id="@+id/et_m05_startsite"
                 android:layout_width="250dp"
@@ -166,6 +193,12 @@
                 android:layout_below="@+id/textView3"
                 android:layout_gravity="center"
                 android:layout_marginTop="14dp" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1">
             <EditText
                 android:id="@+id/et_m05_endsite"
                 android:layout_width="250dp"
@@ -175,13 +208,12 @@
                 android:layout_below="@+id/textView3"
                 android:layout_gravity="center"
                 android:layout_marginTop="14dp" />
+            </android.support.design.widget.TextInputLayout>
 
 
         </LinearLayout>
 
     </ScrollView>
-
-
 
 
 </RelativeLayout>
