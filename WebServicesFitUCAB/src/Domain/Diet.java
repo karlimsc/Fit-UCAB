@@ -1,6 +1,6 @@
 package Domain;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  * Created by jaorr on 22/05/17.
@@ -8,31 +8,40 @@ import java.sql.Date;
 public class Diet {
     private int _id;
     private int _calorie;
-    private Date _dateTime;
-    private Food _food;
+    private LocalDate _dateTime;
+    private String _food;
+    private String _momento;
+    private String _username;
 
 
     public Diet() {}
 
-    public Diet(int id, int calorie, Date dateTime, Food food) {
+    public Diet(int id, int calorie, LocalDate dateTime, String food) {
         this._id = id;
         this._calorie = calorie;
         this._dateTime = dateTime;
         this._food = food;
     }
 
-    public Diet(int _id, int calorie, Date dateTime) {
+    public Diet(int _calorie, String _food, String _momento, String _username) {
+        this._calorie = _calorie;
+        this._food = _food;
+        this._momento = _momento;
+        this._username = _username;
+    }
+
+    public Diet(int _id, int calorie, LocalDate dateTime) {
         this._id = _id;
         this._calorie = calorie;
         this._dateTime = dateTime;
     }
 
-    public Diet(int calorie, Date dateTime) {
+    public Diet(int calorie, LocalDate dateTime) {
         this._calorie = calorie;
         this._dateTime = dateTime;
     }
 
-    public Diet(Date dateTime) {
+    public Diet(LocalDate dateTime) {
         this._dateTime = dateTime;
     }
 
@@ -56,19 +65,35 @@ public class Diet {
         this._calorie = calorie;
     }
 
-    public Date get_dateTime() {
+    public LocalDate get_dateTime() {
         return _dateTime;
     }
 
-    public void set_dateTime(Date dateTime) {
+    public void set_dateTime(LocalDate dateTime) {
         this._dateTime = dateTime;
     }
 
-    public Food get_food() {
+    public String get_food() {
         return _food;
     }
 
-    public void set_food(Food food) {
+    public void set_food(String food) {
         this._food = food;
+    }
+
+    public String get_momento() {
+        return _momento;
+    }
+
+    public void set_momento(String _momento) {
+        this._momento = _momento;
+    }
+
+    public String get_username() {
+        return _username;
+    }
+
+    public void set_username(String _username) {
+        this._username = _username;
     }
 }

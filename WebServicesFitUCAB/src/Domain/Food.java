@@ -11,6 +11,17 @@ public class Food implements Serializable{
     private String foodCalorie;
     private Boolean foodPersonalized;
 
+    public Food() {
+    }
+
+    public Food(int id, String foodName, String foodWeight, String foodCalorie, Boolean foodPersonalized) {
+        this.id = id;
+        this.foodName = foodName;
+        this.foodWeight = foodWeight;
+        this.foodCalorie = foodCalorie;
+        this.foodPersonalized = foodPersonalized;
+    }
+
     public int getId() {
         return id;
     }

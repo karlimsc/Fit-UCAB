@@ -20,6 +20,11 @@ public class M11_ServicesMoment {
     private Gson gson = new Gson();
     private String respuesta;
 
+
+    /**
+     *
+     * @return
+     */
     @GET
     @Produces("application/json")
     public String obtenerMomentos() {
