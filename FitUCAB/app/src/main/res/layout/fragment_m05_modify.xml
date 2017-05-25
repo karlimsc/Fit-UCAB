@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhiteSmoke"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_x="0dp"
+        android:layout_y="0dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/TabHost_m05"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar4"
+        android:layout_width="391dp"
+        android:layout_height="28dp"
+        android:layout_x="-5dp"
+        android:layout_y="482dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/white_m05"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btn_m05_updateactivity"
+        android:layout_width="352dp"
+        android:layout_height="37dp"
+        android:layout_x="20dp"
+        android:layout_y="455dp"
+        android:background="@color/ColorPrimary"
+        android:gravity="center"
+        android:text="@string/_btn_m05t_save"
+        android:textColor="@color/colorwhite"
+        android:textSize="15dp"
+        android:layout_marginBottom="14dp"
+        android:layout_above="@+id/toolbar4"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/iv_m05_deleteactivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btn_m05_updateactivity"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/btn_m05_updateactivity"
+        app:srcCompat="@mipmap/ic_delete"
+        android:layout_alignBottom="@+id/toolbar3" />
+
+
+</RelativeLayout>
