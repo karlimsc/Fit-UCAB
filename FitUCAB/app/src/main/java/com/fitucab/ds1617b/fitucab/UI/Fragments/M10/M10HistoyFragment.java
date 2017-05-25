@@ -7,10 +7,13 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.fitucab.ds1617b.fitucab.Model.AdapterM10ListView;
+import com.fitucab.ds1617b.fitucab.Model.InfoGlass;
 import com.fitucab.ds1617b.fitucab.R;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,7 +25,7 @@ public class M10HistoyFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     ListView _waterlist;
-    String[] values = new String[]{"justing","ven","y","mamalo","fuego?"};
+    String[] values = new String[]{"justin","ven","y","mamalo","fuego?"};
 
     public M10HistoyFragment() {
         // Required empty public constructor
@@ -33,12 +36,32 @@ public class M10HistoyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_m10_histoy,container,false);
+        /*View rootView = inflater.inflate(R.layout.fragment_m10_histoy,container,false);
         //ArrayList<InfoGlass> FillWater = new ArrayList<InfoGlass>();
-        _waterlist = (ListView) rootView.findViewById(R.id.list_water);
         //cambien getcontext, lo tienes que agarrar del rootview que creaste jajaja
         ArrayAdapter<String> adapter = new ArrayAdapter<>(rootView.getContext(),android.R.layout.simple_expandable_list_item_1,values);
+        _waterlist = (ListView) rootView.findViewById(R.id.list_water);
+        _waterlist.setAdapter(adapter);*/
+
+        View rootView = inflater.inflate(R.layout.fragment_m10_histoy,container,false);
+        _waterlist = (ListView) rootView.findViewById(R.id.list_water);
+        ArrayList<InfoGlass> FillWater = new ArrayList<InfoGlass>();
+        AdapterM10ListView adapter = new AdapterM10ListView(rootView.getContext(),FillWater);
         _waterlist.setAdapter(adapter);
+
+        ArrayList<InfoGlass> prueba = new ArrayList<>();
+
+        prueba.add(new InfoGlass(1,"3:00",100));
+        prueba.add(new InfoGlass(2,"4:00",200));
+        prueba.add(new InfoGlass(3,"5:15",500));
+        prueba.add(new InfoGlass(4,"6:00",100));
+        prueba.add(new InfoGlass(5,"3:00",100));
+        prueba.add(new InfoGlass(6,"4:00",200));
+        prueba.add(new InfoGlass(7,"5:15",500));
+        prueba.add(new InfoGlass(8,"6:00",100));
+
+
+        adapter.addAll(prueba);
 
         return rootView;
 

@@ -7,10 +7,10 @@
     android:weightSum="1">
 
     <ImageView
-        android:id="@+id/img_glass"
-        android:layout_width="61dp"
-        android:layout_height="82dp"
-        android:src="@drawable/ic_water_glass" />
+        android:id="@+id/text_id"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:src="@drawable/ic_water_glass"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,16 +21,16 @@
         <TextView
             android:id="@+id/lv_Time"
             android:layout_width="match_parent"
-            android:layout_height="27dp"
-            android:text="Hola"
-            android:layout_weight="0.02" />
+            android:layout_height="15dp"
+            android:layout_weight="0.02"
+            android:text="Hola" />
 
         <TextView
             android:id="@+id/lv_ml"
             android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:text="Hola"
-            android:layout_weight="0.03" />
+            android:layout_height="15dp"
+            android:layout_weight="0.03"
+            android:text="Hola" />
 
 
     </LinearLayout>

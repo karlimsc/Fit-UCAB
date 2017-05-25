@@ -1,5 +1,6 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -13,12 +14,21 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10HistoyFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10WaterGlassFragment;
 
-public class M10WaterGlassActivity extends AppCompatActivity {
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+
+public class M10WaterGlassActivity extends AppCompatActivity implements View.OnClickListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -34,13 +44,20 @@ public class M10WaterGlassActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-
+    private ImageButton _btnAdd;
+    private ImageButton _btnLess;
+    private EditText _EtnDate;
+    private  View _view;
+    private Calendar _cal ;
+    private String _date;
+    private SimpleDateFormat _sdf =new SimpleDateFormat("dd/MM/yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_m10_home);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -57,9 +74,17 @@ public class M10WaterGlassActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_m10_Hidratacion));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_m10_Control));
         tabLayout.setupWithViewPager(mViewPager);
+        _cal=_cal.getInstance(TimeZone.getDefault());
+
+        setupViewValues();
+
+
+
+
+
+
 
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -77,11 +102,33 @@ public class M10WaterGlassActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onClick(View v) {
+
+        try {
+            _date =  _EtnDate.getText().toString();
+            _cal.setTime(_sdf.parse(_date));
+            _cal.add(Calendar.DATE,-1);
+            _date = _sdf.format(_cal.getTime());
+            _EtnDate.setText(_date.toString());
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
 
     /**
      * A placeholder fragment containing a simple view.
@@ -101,11 +148,14 @@ public class M10WaterGlassActivity extends AppCompatActivity {
          * number.
          */
         public static PlaceholderFragment newInstance(int sectionNumber) {
+
             PlaceholderFragment fragment = new PlaceholderFragment();
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
+
             return fragment;
+
         }
 
 
@@ -118,6 +168,9 @@ public class M10WaterGlassActivity extends AppCompatActivity {
             //me cago en tu mierda deja esto asi y despues te explico
             M10WaterGlassFragment m10 = new M10WaterGlassFragment();
             M10HistoyFragment list = new M10HistoyFragment();
+
+
+
 
 
             if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
@@ -134,9 +187,147 @@ public class M10WaterGlassActivity extends AppCompatActivity {
             else{
                 View rootView = inflater.inflate(R.layout.fragment_main, container, false);
                 return rootView;
+
             }
+
         }
     }
+
+    private  void setupViewValues()
+    {
+        try
+        {
+        _btnLess = (ImageButton) findViewById(R.id.btn_m10_lessDate);
+        _btnAdd = (ImageButton) findViewById(R.id.btn_m10_AddDate);
+        _EtnDate= (EditText) findViewById(R.id.et_m10_date);
+        _EtnDate.setText(giveDate().toString());
+
+         activarCalendario();
+           // instanciarCalendario();
+        addDate();
+        lessDate();
+        }
+        catch (Exception e) {
+        System.out.print(e);
+        }
+
+    }
+
+
+
+    private void addDate()
+    {
+        _btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+
+                    _date =  _EtnDate.getText().toString();
+
+                    _cal.setTime(_sdf.parse(_date));
+
+                    _cal.add(Calendar.DATE, 1);
+                    _date = _sdf.format(_cal.getTime());
+                    _EtnDate.setText(_date.toString());
+
+
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+    }
+
+    private void lessDate()
+    {
+        _btnLess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    _date =  _EtnDate.getText().toString();
+                    _cal.setTime(_sdf.parse(_date));
+                    _cal.add(Calendar.DATE,-1);
+                    _date = _sdf.format(_cal.getTime());
+                    _EtnDate.setText(_date.toString());
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                catch (Exception e)
+                {
+                    e.printStackTrace();
+                }
+
+
+            }
+        });
+    }
+
+
+    private void activarCalendario() {
+        _EtnDate.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+            public void onClick(View v) {
+
+                try {
+                    // _cal = Calendar.getInstance();
+                    instanciarCalendario();
+                }
+                catch (Exception e){
+                    System.out.print(e);
+                }
+            }
+        });
+    }
+
+
+
+    public void instanciarCalendario(){
+        // Create the DatePickerDialog instance
+        DatePickerDialog datePicker = new DatePickerDialog(this,
+                datePickerListener,_cal.get(Calendar.YEAR), _cal.get(Calendar.DAY_OF_MONTH),
+                _cal.get(Calendar.MONTH));
+
+        datePicker.setCancelable(false);
+        datePicker.setTitle("Select the date");
+        datePicker.show();
+    }
+
+    public String giveDate() {
+        Calendar ab = Calendar.getInstance();
+        SimpleDateFormat a = new SimpleDateFormat("dd/MM/yyyy");
+        Date Fecha = new Date();
+
+        String FActual = a.format(Fecha);
+        _EtnDate.setText(FActual);
+
+        return  FActual;
+    }
+
+
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+
+        // when dialog box is closed, below method will be called.
+
+        public void onDateSet(DatePicker view, int selectedYear,
+                              int selectedMonth, int selectedDay) {
+
+            String year1 = String.valueOf(selectedYear);
+            String month1 = String.valueOf(selectedMonth + 1);
+            String day1 = String.valueOf(selectedDay);
+            _EtnDate.setText(day1 + "/" + month1 + "/" + year1);
+
+        }
+
+    };
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to

@@ -1,4 +1,4 @@
-package com.fitucab.ds1617b.fitucab.UI.Fragments.M10;
+package com.fitucab.ds1617b.fitucab.Model;
 
 import android.media.Image;
 
@@ -11,10 +11,10 @@ import java.sql.Time;
 public class InfoGlass {
 
     private int _id;
-    private Time _hour;
+    private String _hour;
     private int _ml;
 
-    public InfoGlass (int id, Time hour, int ml){
+    public InfoGlass (int id, String hour, int ml){
 
         _id = id;
         _hour = hour;
@@ -27,18 +27,22 @@ public class InfoGlass {
     }
 
     public void set_id(int _id){
+
         this._id = _id;
     }
 
-    public Time get_hour(){
+    public String get_hour(){
+
         return _hour;
     }
 
-    public void set_hour(Time _hour){
+    public void set_hour(String _hour){
+
         this._hour = _hour;
     }
 
     public int get_ml(){
+
         return _ml;
     }
 
