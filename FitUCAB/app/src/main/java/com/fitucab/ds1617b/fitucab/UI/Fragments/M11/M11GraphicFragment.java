@@ -304,9 +304,6 @@ public class M11GraphicFragment extends Fragment {
    ultimos 7 dias de calorias consumidas, quemadas y su diferencia.
    OJO FUNCION NO COMPLETADA. SOLO BORRA LOS DATOS POR AHORA
    */
-    public void verGraficoDia(View _view){
-        _lineChart.clear();
-    }
 
 
 
