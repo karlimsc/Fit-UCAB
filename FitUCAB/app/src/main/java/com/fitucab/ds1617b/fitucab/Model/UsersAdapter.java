@@ -19,23 +19,34 @@ public class UsersAdapter extends ArrayAdapter<ArrayAuxiliar> {
 
     @Override
     public int getViewTypeCount(){
-        return 4;
+        return 7;
     }
 
     @Override
     public int getItemViewType(int position){
-        if (getItem(position).get_type() == 0){
+        if (getItem(position).get_type() == 0){         //CONTACTO CON APLICACION
             return 0;
         }
-        else if (getItem(position).get_type() == 1){
+        else if (getItem(position).get_type() == 1){    //CONTACTO SIN APLICACION
             return 1;
         }
-        else if (getItem(position).get_type() == 2){
+        else if (getItem(position).get_type() == 2){    //SEPARADOR CONTACTO CON APLICACION
             return 2;
         }
-        else if (getItem(position).get_type() == 3){
+        else if (getItem(position).get_type() == 3){    //SEPARADOR CONTACTO SIN APLICACION
             return 3;
         }
+        else if (getItem(position).get_type() == 4){    //PETICION DE AMIGO O AMIGO
+            return 4;
+        }
+        else if (getItem(position).get_type() == 5){    //SEPARADOR PETICION DE AMIGO
+            return 5;
+        }
+        else if (getItem(position).get_type() == 6){    //SEPARADOR AMIGO
+            return 6;
+        }
+
+
         return 0;
     }
 
@@ -64,7 +75,21 @@ public class UsersAdapter extends ArrayAdapter<ArrayAuxiliar> {
             else if(type == 3){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.separator_without_m03, parent, false);
             }
+            else if(type == 4){
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.friend_list_m03, parent, false);
+                TextView tvName = (TextView) convertView.findViewById(R.id.nombre);
+                tvName.setText(item.get_nombre());
+                TextView tvHome = (TextView) convertView.findViewById(R.id.puntaje);
+                tvHome.setText(Integer.toString(item.get_puntaje()));
+            }
+            else if(type == 5){
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.separator_request_m03, parent, false);
+            }
+            else if(type == 6){
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.separator_friends_m03, parent, false);
+            }
         }
+
 
 
         return convertView;

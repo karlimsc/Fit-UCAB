@@ -30,6 +30,8 @@ import android.widget.Toast;
 
 import com.fitucab.ds1617b.fitucab.R;
 
+import static com.fitucab.ds1617b.fitucab.R.id.contactsList;
+
 
 public class M03FriendsActivity extends AppCompatActivity
        /* implements NavigationView.OnNavigationItemSelectedListener*/ {
@@ -83,11 +85,6 @@ public class M03FriendsActivity extends AppCompatActivity
 
 
     }
-
-
-
-
-
 
    /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -48,56 +48,113 @@ public class M03FragmentAmigos extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         final View rootView = inflater.inflate(R.layout.fragment_m03_friends, container, false);
+        ArrayList<ArrayAuxiliar> arrayOfUsers = new ArrayList<ArrayAuxiliar>();
+        final UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
+        final ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
+        final ArrayList<ArrayAuxiliar> usuarios = new ArrayList<ArrayAuxiliar>();
+        listView.setAdapter(adapter);
 
-        String url = "http://192.168.1.109:8080/WebServicesFitUcab_war_exploded/friend/getAll?id=2&Action=Friends";
-        final Gson gson = new Gson();
+        usuarios.add(new ArrayAuxiliar(0,"", 650,5));
+
+        String urlreq = "http://192.168.1.109:8080/WebServicesFitUcab_war_exploded/friend/getAll?id=2&Action=Requests";
+        final Gson gsonreq = new Gson();
 
         // Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
+        RequestQueue queuereq = Volley.newRequestQueue(rootView.getContext());
 
 
         // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+        StringRequest stringRequestreq = new StringRequest(Request.Method.GET, urlreq,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        ArrayList<Person> ap = new ArrayList<Person>();
+                        ArrayList<Person> apreq = gsonreq.fromJson(response,new TypeToken<List<Person>>(){}.getType());
 
-                        ap = gson.fromJson(response,new TypeToken<List<Person>>(){}.getType());
+                        //ArrayList<ArrayAuxiliar> arrayOfUsers = new ArrayList<ArrayAuxiliar>();
+                        //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
+                        //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
+                        //listView.setAdapter(adapter);
+                        //ArrayList<ArrayAuxiliar> usuarios = new ArrayList<ArrayAuxiliar>();
 
-                        ArrayList<ArrayAuxiliar> arrayOfUsers = new ArrayList<ArrayAuxiliar>();
-                        UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-                        ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
-                        listView.setAdapter(adapter);
-                        ArrayList<ArrayAuxiliar> usuarios = new ArrayList<ArrayAuxiliar>();
-
-                        for(int i = 0;i<ap.size();i++){
-                            usuarios.add(new ArrayAuxiliar(ap.get(i).getPersonusername(), 200,0));
+                        for(int i = 0;i<apreq.size();i++){
+                            usuarios.add(new ArrayAuxiliar(apreq.get(i).getPersonid(),apreq.get(i).getPersonusername(), 200,4));
                         }
 
-                        adapter.addAll(usuarios);
+                        //adapter.addAll(usuarios);
+
+
+                        usuarios.add(new ArrayAuxiliar(0,"", 650,6));
+
+
+                        String url = "http://192.168.1.109:8080/WebServicesFitUcab_war_exploded/friend/getAll?id=2&Action=Friends";
+                        final Gson gson = new Gson();
+
+                        // Instantiate the RequestQueue.
+                        RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
+
+
+                        // Request a string response from the provided URL.
+                        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                                new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        ArrayList<Person> ap = gson.fromJson(response,new TypeToken<List<Person>>(){}.getType());
+
+                                        //ArrayList<ArrayAuxiliar> arrayOfUsers = new ArrayList<ArrayAuxiliar>();
+                                        //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
+                                        //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
+                                        //listView.setAdapter(adapter);
+                                        //ArrayList<ArrayAuxiliar> usuarios = new ArrayList<ArrayAuxiliar>();
+
+                                        for(int i = 0;i<ap.size();i++){
+                                            usuarios.add(new ArrayAuxiliar(ap.get(i).getPersonid(),ap.get(i).getPersonusername(), 200,4));
+                                        }
+
+                                        adapter.addAll(usuarios);
+
+
+                                    }
+                                }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                //ArrayList<ArrayAuxiliar> arrayOfUsers = new ArrayList<ArrayAuxiliar>();
+                                //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
+                                //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
+                                //listView.setAdapter(adapter);
+                                //ArrayList<ArrayAuxiliar> usuarios = new ArrayList<ArrayAuxiliar>();
+                                usuarios.add(new ArrayAuxiliar(0,error.toString(), 200,4));
+                                //adapter.addAll(usuarios);
+                            }
+                        });
+                        // Add the request to the RequestQueue.
+                        queue.add(stringRequest);
+
+
+
+
+
+                        //adapter.addAll(usuarios);
+
+
+
+
 
 
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                ArrayList<ArrayAuxiliar> arrayOfUsers = new ArrayList<ArrayAuxiliar>();
-                UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-                ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
-                listView.setAdapter(adapter);
-                ArrayList<ArrayAuxiliar> usuarios = new ArrayList<ArrayAuxiliar>();
-                usuarios.add(new ArrayAuxiliar(error.toString(), 200,0));
-                adapter.addAll(usuarios);
+                //ArrayList<ArrayAuxiliar> arrayOfUsers = new ArrayList<ArrayAuxiliar>();
+                //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
+                //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
+                //listView.setAdapter(adapter);
+                //ArrayList<ArrayAuxiliar> usuarios = new ArrayList<ArrayAuxiliar>();
+                usuarios.add(new ArrayAuxiliar(0,error.toString(), 200,4));
+                //adapter.addAll(usuarios);
             }
         });
         // Add the request to the RequestQueue.
-        queue.add(stringRequest);
-
-
-
-
-
+        queuereq.add(stringRequestreq);
 
 
         return rootView;
