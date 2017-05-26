@@ -9,14 +9,25 @@ import android.widget.BaseAdapter;
  */
 
 public class ItemAdapter extends BaseAdapter{
+
+    private int cant = 0;
+    private String[] ids;
+    private String[] name;
+
+    public ItemAdapter(int cantidad, String[] id, String[] nombre){
+        cant = cantidad;
+        name = nombre;
+        ids = id;
+    }
+
     @Override
     public int getCount() {
-        return 0;
+        return cant;
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return name[position];
     }
 
     @Override
