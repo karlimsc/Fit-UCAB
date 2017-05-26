@@ -17,18 +17,4 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 
-    @Test
-    public void testconverterMiles()
-    {
-        M04NotificationActivity noti = new M04NotificationActivity();
-        int x = noti.converterMiles(50);
-        assertEquals(31,x);
-    }
-    @Test
-    public void testconverterKm()
-    {
-        M04NotificationActivity noti = new M04NotificationActivity();
-        int y = noti.converterKm(5);
-        assertEquals(8,y);
-    }
 }

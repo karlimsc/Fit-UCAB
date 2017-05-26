@@ -57,13 +57,6 @@ public class M04NotificationActivity extends AppCompatActivity {
     int radio;
     int w;
 
-    public   M04NotificationActivity()
-    {
-
-        //radio = 0;
-        // _sendcorrect=0;
-
-    }
     private Switch _swAmigos;
     private Switch _swActividad;
     private Switch _swEntrenamiento;
