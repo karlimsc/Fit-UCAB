@@ -16,6 +16,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class Gamificacion extends AppCompatActivity implements View.OnClickListener, 
@@ -34,6 +36,12 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
 
         ImageView _perfil = (ImageView) findViewById(R.id.profile_image);
         _perfil.setOnClickListener(this);
+        TextView _nombreUsuarioVista = (TextView) findViewById(R.id.tv_nombreLabel);
+        _nombreUsuarioVista.setOnClickListener(this);
+        TextView _nivelVista = (TextView) findViewById(R.id.tv_nivelLabel);
+        _nivelVista.setOnClickListener(this);
+        TextView _puntajeVista = (TextView) findViewById(R.id.tv_puntos);
+        _puntajeVista.setOnClickListener(this);
 
         _lista = (ListView) findViewById(R.id.lista);
         //ARRAY DONDE SE LLENA VA LA LISTA
@@ -45,24 +53,22 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                TextView item = (TextView) view.findViewById(R.id.tv_logro);
-                Bundle bundle = new Bundle();
+                TextView _item = (TextView) view.findViewById(R.id.tv_logro);
+                Bundle _bundle = new Bundle();
                 //ASI LE PASO VALORES AL FRAGMENT CON EL BUNDLE
-                bundle.putString("item", (String) item.getText());
-                //PRINT DEL VALOR
-                Log.d("DATOOO", (String) item.getText());
+                _bundle.putString("item", (String) _item.getText());
                 //INSTANCIO EL FRAGMENT
-                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentManager _fragmentManager = getSupportFragmentManager();
                 //COMIENZO LA TRANSACCION
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                FragmentTransaction _transaction = _fragmentManager.beginTransaction();
                 //INSTANCIO LA CLASE LOGRO QUE ES EL FRAGMENT
-                Logros fragment = new Logros();
+                Logros _fragment = new Logros();
                 //LE PASO EL BUNDLE
-                fragment.setArguments(bundle);
+                _fragment.setArguments(_bundle);
                 //INDICO DONDE SE HARA LA TRANSACCION
-                transaction.add(R.id.gamificacion, fragment);
+                _transaction.add(R.id.gamificacion, _fragment);
                 //EJECUTO
-                transaction.commit();
+                _transaction.commit();
 
             }
         });
@@ -74,23 +80,19 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
 
-        if (v.getId()==R.id.profile_image){
+        if ((v.getId()== R.id.profile_image) || (v.getId() == R.id.tv_nombreLabel)
+                || (v.getId() == R.id.tv_nivelLabel) || (v.getId() == R.id.tv_puntos)){
 
-
-            Intent myIntent = new Intent(Gamificacion.this, GraficaNivel.class);
-            //myIntent.putExtra("key", value); //Optional parameters
-            Gamificacion.this.startActivity(myIntent);
-
-            //Toast.makeText(Gamificacion.this, "Vas bien gafito",
-            //        Toast.LENGTH_LONG).show();
-
+            Intent _myIntent = new Intent(Gamificacion.this, GraficaNivel.class);
+            //_myIntent.putExtra("key", value); //Optional parameters
+            Gamificacion.this.startActivity(_myIntent);
         }
         else {
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction transaction = fragmentManager.beginTransaction();
-            Logros fragment = new Logros();
-            transaction.add(R.id.gamificacion, fragment);
-            transaction.commit();
+            FragmentManager _fragmentManager = getSupportFragmentManager();
+            FragmentTransaction _transaction = _fragmentManager.beginTransaction();
+            Logros _fragment = new Logros();
+            _transaction.add(R.id.gamificacion, _fragment);
+            _transaction.commit();
         }
     }
 
