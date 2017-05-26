@@ -110,7 +110,7 @@ public class M04NotificationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sendMail("aagilazer@gmail.com", "mi asunto", "este es mi mensaje para ti", "ami");
+                sendMail("aagilazer@gmail.com", "mi asunto", "este es mi mensaje para ti", 9);
 
             }});
         //////////////////////////////////////////////////////////7
@@ -135,47 +135,47 @@ public class M04NotificationActivity extends AppCompatActivity {
      * @param mensaje mensaje del correo
      * @param identificacion  identificacion de cual switch pertenece
      */
-    public void sendMail ( String receptor, String asunto, String mensaje, String identificacion )
+    public void sendMail ( String receptor, String asunto, String mensaje, int identificacion )
     {
         switch (identificacion)
         {
-            case "ami":
+            case 3:
                 if (_swAmigos.isChecked())
                 {
                     checkMail(receptor, asunto, mensaje);
                 }
                 break;
-            case "acti":
+            case 7:
                 if (_swActividad.isChecked() )
                 {
                     checkMail(receptor, asunto, mensaje);
                 }
                 break;
-            case "entrena":
+            case 6:
                 if ( _swEntrenamiento.isChecked() )
                 {
                     checkMail(receptor, asunto, mensaje);
                 }
                 break;
-            case "reto":
+            case 8:
                 if ( _swRetos.isChecked() )
                 {
                     checkMail(receptor, asunto, mensaje);
                 }
                 break;
-            case "hidra":
+            case 10:
                 if ( _swHidratacion.isChecked() )
                 {
                     checkMail(receptor, asunto, mensaje);
                 }
                 break;
-            case "calori":
+            case 11:
                 if ( _swCalorias.isChecked() )
                 {
                     checkMail(receptor, asunto, mensaje);
                 }
                 break;
-            case "gami":
+            case 9:
                 if ( _swGamificacion.isChecked() )
                 {
                     checkMail(receptor, asunto, mensaje);
