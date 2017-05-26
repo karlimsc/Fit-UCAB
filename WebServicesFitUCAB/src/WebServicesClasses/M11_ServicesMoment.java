@@ -7,6 +7,8 @@ import com.google.gson.JsonArray;
 
 import javax.ws.rs.*;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -19,28 +21,27 @@ public class M11_ServicesMoment {
     private Connection conn = bdConnect();
     private Gson gson = new Gson();
     private String respuesta;
+    private ArrayList<Moment> arregloJson;
 
 
     /**
-     *
-     * @return
+     * Funcion que devulve los momentos del dia registrados en la BD
+     * @return Lista de momentos en formato json
      */
     @GET
     @Produces("application/json")
     public String obtenerMomentos() {
 
         String query = "Select * from get_momentos()";
-        Moment moment = new Moment();
-        JsonArray arregloJson = new JsonArray();
-
+        arregloJson = new ArrayList<>();
         try {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery();
-
+            int i = 0;
             while(rs.next()) {
-                moment.set_description(rs.getString("momento"));
-                moment.set_id(rs.getInt("momento_id"));
-                arregloJson.add(gson.toJson(moment));
+                arregloJson.add(new Moment());
+                arregloJson.get(rs.getRow() - 1).set_description(rs.getString("momento"));
+                arregloJson.get(rs.getRow() - 1).set_id(rs.getInt("momento_id"));
             }
             respuesta = gson.toJson(arregloJson);
 

@@ -2,6 +2,8 @@ package WebServicesClasses;
 
 
 import Domain.Food;
+import Exceptions.ParameterNullException;
+import Validations.ValidationWS;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
@@ -25,6 +27,8 @@ public class M11_ServicesFood {
     //Atributo que se utiliza para transformar a formado JSON las consultas.
     private Gson gson = new Gson();
     private String respuesta;
+    private ArrayList<Food> arregloJson;
+
     /**
      * Funcion que recibe el nombre del usuario, y con este extrae
      * la informacion de los alimentos que ha consumido el usuario.
@@ -36,20 +40,20 @@ public class M11_ServicesFood {
     @Produces("application/json")
     public String ObtenerAlimento(@QueryParam("username") String username) throws SQLException {
         String query = "SELECT * FROM get_alimentos_person(?)";
+        arregloJson = new ArrayList<>();
 
-        Food food = new Food();
-        JsonArray arregloJson = new JsonArray();
+
         try{
             PreparedStatement stm = conn.prepareStatement(query);
             stm.setString(1, username);
             ResultSet rs = stm.executeQuery();
 
             while(rs.next()){
-                food.setFoodName(rs.getString("nombre_comida"));
-                food.setFoodWeight(rs.getString("peso_comida"));
-                food.setFoodCalorie(rs.getString("calorias_comida"));
-                food.setId(rs.getInt("id_alimento"));
-                arregloJson.add(gson.toJson(food));
+                arregloJson.add(new Food());
+                arregloJson.get(rs.getRow() - 1).setFoodName(rs.getString("nombre_comida"));
+                arregloJson.get(rs.getRow() - 1).setFoodWeight(rs.getString("peso_comida"));
+                arregloJson.get(rs.getRow() - 1).setFoodCalorie(rs.getString("calorias_comida"));
+                arregloJson.get(rs.getRow() - 1).setId(rs.getInt("id_alimento"));
             }
 
             respuesta = gson.toJson(arregloJson);
@@ -75,8 +79,7 @@ public class M11_ServicesFood {
     public String obtenerTodosAlimentos(@QueryParam("username") String username){
 
         String query = "select * from get_todos_alimentos(?)";
-        Food food = new Food();
-        JsonArray arregloJson = new JsonArray();
+        arregloJson = new ArrayList<>();
 
         try {
             PreparedStatement st = conn.prepareStatement(query);
@@ -84,12 +87,12 @@ public class M11_ServicesFood {
             ResultSet rs = st.executeQuery();
 
             while(rs.next()) {
-                food.setFoodName(rs.getString("nombre_comida"));
+                arregloJson.add(new Food());
+                arregloJson.get(rs.getRow() - 1).setFoodName(rs.getString("nombre_comida"));
                 // revisar string
-                food.setFoodCalorie(rs.getString("calorias_comida"));
-                food.setFoodWeight(rs.getString("peso_comida"));
-                food.setId(rs.getInt("id_alimento"));
-                arregloJson.add(gson.toJson(food));
+                arregloJson.get(rs.getRow() - 1).setFoodCalorie(rs.getString("calorias_comida"));
+                arregloJson.get(rs.getRow() - 1).setFoodWeight(rs.getString("peso_comida"));
+                arregloJson.get(rs.getRow() - 1).setId(rs.getInt("id_alimento"));
             }
 
             respuesta = gson.toJson(arregloJson);
@@ -104,10 +107,13 @@ public class M11_ServicesFood {
     }
 
     /**
-     *
-     * @param username
-     * @param calorie
-     * @return
+     * Funcion que devuelve una lista de alimentos que pueden ser consumidos
+     * en la cena, la lista de alimentos es en base a las calorias que faltan
+     * para completar la cantidad de calorias consumidas recomendades es
+     * un dia
+     * @param username Indica el nombre del usuario
+     * @param calorie Indica las calorias que el usuario ha consumido hasta el momento
+     * @return Lista de alimentos con formato json
      */
     @GET
     @Path("obtener_sugerencia")
@@ -116,8 +122,7 @@ public class M11_ServicesFood {
                                     @QueryParam("calorie") int calorie){
 
         String query = "select * from get_alimentos_sugerencia(?, ?)";
-        Food food = new Food();
-        JsonArray arregloJson = new JsonArray();
+        arregloJson = new ArrayList<>();
 
         try {
             PreparedStatement st = conn.prepareStatement(query);
@@ -126,12 +131,12 @@ public class M11_ServicesFood {
             ResultSet rs = st.executeQuery();
 
             while(rs.next()) {
-                food.setFoodName(rs.getString("nombre_comida"));
+                arregloJson.add(new Food());
+                arregloJson.get(rs.getRow() - 1).setFoodName(rs.getString("nombre_comida"));
                 // revisar string
-                food.setFoodCalorie(rs.getString("calorias_comida"));
-                food.setFoodWeight(rs.getString("peso_comida"));
-                food.setId(rs.getInt("id_alimento"));
-                arregloJson.add(gson.toJson(food));
+                arregloJson.get(rs.getRow() - 1).setFoodCalorie(rs.getString("calorias_comida"));
+                arregloJson.get(rs.getRow() - 1).setFoodWeight(rs.getString("peso_comida"));
+                arregloJson.get(rs.getRow() - 1).setId(rs.getInt("id_alimento"));
             }
 
             respuesta = gson.toJson(arregloJson);
@@ -152,32 +157,37 @@ public class M11_ServicesFood {
      * @return
      */
     @GET
-    @Path("obtener_todoas_alimentos_auto")
+    @Path("obtener_todos_alimentos_auto")
     @Produces("application/json")
     public String obtenerAlimentosAuto(@QueryParam("username") String username){
-
-        String query = "select * from get_todos_alimentos_autocompletar(?)";
-        Food food = new Food();
-        JsonArray arregloJson = new JsonArray();
-
         try {
+            ValidationWS.validarParametrosNotNull(new HashMap<String, Object>(){ {
+            put("username", username);
+            }});
+            String query = "select * from get_todos_alimentos_autocompletar(?)";
+            arregloJson = new ArrayList<>();
+
+
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, username);
-            ResultSet rs = st.executeQuery();
-
+            ResultSet rs = st.executeQuery(query);
             while(rs.next()) {
-                food.setFoodName(rs.getString("nombre_comida"));
+                arregloJson.add(new Food());
+                arregloJson.get(rs.getRow() - 1).setFoodName(rs.getString("nombre_comida"));
                 // revisar string
-                food.setFoodCalorie(rs.getString("calorias_comida"));
-                food.setFoodWeight(rs.getString("peso_comida"));
-                food.setId(rs.getInt("id_alimento"));
-                arregloJson.add(gson.toJson(food));
+                arregloJson.get(rs.getRow() - 1).setFoodCalorie(rs.getString("calorias_comida"));
+                arregloJson.get(rs.getRow() - 1).setFoodWeight(rs.getString("peso_comida"));
+                arregloJson.get(rs.getRow() - 1).setId(rs.getInt("id_alimento"));
+
             }
 
             respuesta = gson.toJson(arregloJson);
         }
         catch (SQLException e){
             respuesta = e.getMessage();
+        }
+        catch (ParameterNullException e){
+            respuesta = "Hay un parametro nulo";
         }
         finally {
             bdClose();
@@ -186,9 +196,9 @@ public class M11_ServicesFood {
     }
 
     /**
-     * 
-     * @param alimento
-     * @return
+     * Funcion que elimina un alimento que ha personalizado un usuario
+     * @param alimento Indica el nombre del alimento a eliminar
+     * @return Devuelve un json con elemento llamado data, el cual contiene el mensaje de la peticion
      */
 
     @DELETE
@@ -214,11 +224,11 @@ public class M11_ServicesFood {
     }
 
     /**
-     *
-     * @param alimento
-     * @param peso
-     * @param calorie
-     * @return
+     * Funcion que actualiza los datos de un alimento personalizado por el usuario
+     * @param alimento Indica el nombre del usuario a actualizar
+     * @param peso Indica el peso del alimento con el que se actualizara
+     * @param calorie Indica las calorias con el que actualizara
+     * @return Devuelve un json con elemento llamado data, el cual contiene el mensaje de la peticion
      */
 
     @GET
@@ -248,9 +258,10 @@ public class M11_ServicesFood {
     }
 
     /**
-     *
-     * @param jsonAlimentos
-     * @return
+     * Funcion que inserta uno o varios alimentos personalizados
+     * @param jsonAlimentos Indica los alimento que se insertaran, debe cumplir con una estructura de
+     *                      un arreglo de objetos Food(foodName, foodWeight, FoodCalorie) convertido en json
+     * @return  Devuelve un json con elemento llamado data, el cual contiene el mensaje de la peticion
      */
 
     @POST
@@ -286,11 +297,7 @@ public class M11_ServicesFood {
         finally {
             bdClose();
             return gson.toJson(respuesta);
-
         }
-
-
-
     }
 
 
@@ -302,8 +309,8 @@ public class M11_ServicesFood {
         try
         {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/FitUcabDB";
-            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
+            String url = "jdbc:postgresql://localhost:5433/fitucabdb";
+            conn = DriverManager.getConnection(url,"postgres", "gagb");
         }
         catch (ClassNotFoundException e)
         {

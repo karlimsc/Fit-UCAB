@@ -84,7 +84,8 @@ public class M11DietFragment extends Fragment {
         _btn_m11_aceptar = (ImageButton) _view.findViewById(R.id.btn_m11_aceptar);
         _btn_m11_rechazar = (ImageButton) _view.findViewById(R.id.btn_m11_rechazar);
         _tl_m11_listaDieta = (TableLayout) _view.findViewById(R.id.tl_m11_listaDieta);
-        _btn_m11__diet_borrar = (ImageButton) _view.findViewById(R.id.btn_m11_diet_borrar);
+        //No lo borre por si acaso, pero creo que no va (me parece que es la papelera)
+        //_btn_m11__diet_borrar = (ImageButton) _view.findViewById(R.id.btn_m11_diet_borrar);
         setAlimento();
         AddListenerBack();
         return _view;
