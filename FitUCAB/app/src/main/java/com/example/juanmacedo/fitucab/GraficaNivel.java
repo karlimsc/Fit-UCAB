@@ -48,26 +48,7 @@ public class GraficaNivel extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nivel);
-        StringRequest stringRequest = new StringRequest(URLtamaño,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d("onResponse()", response.toString());
-                        showJSON2(response);
-
-                    }
-
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("onResponse()", error.toString());
-            }
-        });
-
-        RequestQueue request = Volley.newRequestQueue(this);
-
-        request.add(stringRequest);
-        Log.d("objetooo", stringRequest.toString());
+        traerTamaños();
 
 
         pieChart = (PieChart) findViewById(R.id.PieChartId);
@@ -89,7 +70,7 @@ public class GraficaNivel extends AppCompatActivity {
         //Efecto visual inicial de la grafica
         pieChart.animateXY(1400, 1400);
 
-        addDataSet();
+
 
 
     }
@@ -136,7 +117,26 @@ public class GraficaNivel extends AppCompatActivity {
     }
 
     public void traerTamaños(){
+        StringRequest stringRequest = new StringRequest(URLtamaño,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("onResponse()", response.toString());
+                        showJSON2(response);
 
+                    }
+
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("onResponse()", error.toString());
+            }
+        });
+
+        RequestQueue request = Volley.newRequestQueue(this);
+
+        request.add(stringRequest);
+        Log.d("objetooo", stringRequest.toString());
 
     }
 
@@ -152,7 +152,7 @@ public class GraficaNivel extends AppCompatActivity {
         } catch (JSONException e1) {
             e1.printStackTrace();
         }
-
+        addDataSet();
     }
 
 
