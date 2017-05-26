@@ -26,6 +26,7 @@ local.properties
 *.*~
 
 /WebServicesFitUCAB/out/
-/WebServicesFitUCAB/.idea/
+/WebServicesFitUCAB/.idea/*
+/WebServicesFitUCAB/*.xml
 
 FitUCAB/gradlew\.bat
