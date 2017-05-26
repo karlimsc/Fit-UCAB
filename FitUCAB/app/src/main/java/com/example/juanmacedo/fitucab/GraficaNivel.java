@@ -26,8 +26,8 @@ public class GraficaNivel extends AppCompatActivity {
     private static String TAG = "MainActivity";
 
     //Deben ser cantidades en int, no porcentajes
-    private int[] _valoresY = {30, 34, 20};
-    private String[] _valoresX = {"Sin terminar" , "Terminados" , "En proceso"};
+    private int[] _valoresY = {30, 34};
+    private String[] _valoresX = {"Terminados" , "Sin terminar" };
     PieChart pieChart;
 
     @Override
