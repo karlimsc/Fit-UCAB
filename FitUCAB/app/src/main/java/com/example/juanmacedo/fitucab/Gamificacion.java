@@ -37,7 +37,9 @@ import java.util.ArrayList;
 public class Gamificacion extends AppCompatActivity implements View.OnClickListener, 
         Logros.OnFragmentInteractionListener{
 
+    Nivel _nivel = new Nivel();
     TextView TextViewpuntaje;
+    TextView _textViewNivel;
     int puntajeTotal;
     public static int logrado;
     public static int noLogrado;
@@ -56,6 +58,7 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamificacion);
         TextViewpuntaje = (TextView) findViewById(R.id.tv_puntos);
+        _textViewNivel = (TextView) findViewById(R.id.tv_nivelLabel);
         _lista = (ListView) findViewById(R.id.lista);
      //   arrayList = new ArrayList<String>();                                               //ARRAY DONDE SE LLENA VA LA LISTA
     //
@@ -137,6 +140,8 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showJSON(String json, Context context){
+
+        int _resultadoNivel;
         ParseJSON pj = new ParseJSON(json);
         pj.parseJSON();
         String[] puntajes = ParseJSON.puntaje;
@@ -147,6 +152,9 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
         }
         String puntajeTotalS = String.valueOf(puntajeTotal);
         TextViewpuntaje = (TextView) ((Activity)context).findViewById(R.id.tv_puntos);
+        //_textViewNivel = (TextView) ((Activity)context).findViewById(R.id.tv_nivelLabel);
+        //_resultadoNivel= _nivel.calculoNivel( ID DEL USUARIO);
+        //_textViewNivel.setText("Nivel: " + nivel);
         TextViewpuntaje.setText("Puntos: " + puntajeTotalS);
         CustomList cl = new CustomList(this, ParseJSON.ids, ParseJSON.names,ParseJSON.descripciones, puntajeTotalS);
 
