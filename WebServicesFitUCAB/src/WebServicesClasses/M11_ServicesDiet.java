@@ -16,6 +16,7 @@ import static java.time.temporal.TemporalAdjusters.firstDayOfNextMonth;
 import javax.ws.rs.*;
 import java.sql.*;
 import java.time.temporal.TemporalAdjusters;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,15 +30,16 @@ public class M11_ServicesDiet {
     private Connection conn = bdConnect();
     private Gson gson = new Gson();
     private String respuesta;
+    private ArrayList<Diet> arregloJson;
 
 
     /**
      * Funcion que recibe como parametros la fecha y el nombre del usuario
      * para hacer la consulta de las calorias consumidas por el usuario durante
      * esa fecha.
-     * @param fecha
-     * @param username
-     * @return
+     * @param fecha Fecha del dia en que se quiere obtener las calorias consumidas. Debe ser en formato yyyy-mm-dd
+     * @param username Indica el nombre del usuario
+     * @return Devuelve las calorias consumidas en formato json
      */
     @GET
     @Path("obtener_calorias_fecha")
@@ -47,8 +49,7 @@ public class M11_ServicesDiet {
     {
 
         String query = "SELECT * FROM get_calorias_fecha(?, ?)";
-        Diet diet = new Diet();
-        JsonArray arregloJson = new JsonArray();
+        arregloJson = new ArrayList<>();
         try{
 
             PreparedStatement st = conn.prepareStatement(query);
@@ -57,8 +58,8 @@ public class M11_ServicesDiet {
             ResultSet rs = st.executeQuery();
             //La variable donde se almacena el resultado de la consulta.
             while(rs.next()){
-                diet.set_calorie(rs.getInt("calorias"));
-                arregloJson.add(gson.toJson(diet));
+                arregloJson.add(new Diet());
+                arregloJson.get(rs.getRow() - 1).set_calorie(rs.getInt("calorias"));
             }
             respuesta = gson.toJson(arregloJson);
         }
@@ -75,8 +76,9 @@ public class M11_ServicesDiet {
      * Metodo que recibe como parametros el momento (momento del dia en que se alimenta)
      * y el nombre del usuario para eliminar el alimento que ingirió en ese momento del
      * día.
-     * @param momento
-     * @param username
+     * @param momento Indica el momento del dia.
+     * @param username Indica el nombre del usuario.
+     * @return Devuelve un json con elemento llamado data, el cual contiene el mensaje de la peticion
      */
     @DELETE
     @Path("eliminar_alimento_dieta")
@@ -106,11 +108,11 @@ public class M11_ServicesDiet {
     }
 
     /**
-     *
-     * @param momento
-     * @param fecha
-     * @param username
-     * @return
+     * Funcion que obtiene los alimentos que ingirio el usuario para un momento y dia determinado
+     * @param momento Indica el momento
+     * @param fecha Indica la fecha en formato yyyy-mm-dd
+     * @param username Indica el nombre del usuario
+     * @return Devuelve un json con la informacion de calorias, id, nombre de los alimentos consumidos
      */
 
     @GET
@@ -121,9 +123,7 @@ public class M11_ServicesDiet {
                                            @QueryParam("username") String username) {
 
         String query = "select * from get_comida_momento(?, ?, ?)";
-        Diet diet = new Diet();
-        Food food = new Food();
-        JsonArray arregloJson = new JsonArray();
+        arregloJson = new ArrayList<>();
 
         try {
             PreparedStatement st = conn.prepareStatement(query);
@@ -133,10 +133,10 @@ public class M11_ServicesDiet {
             ResultSet rs = st.executeQuery();
 
             while(rs.next()){
-                diet.set_calorie(rs.getInt("calorias"));
-                diet.set_id(rs.getInt("id_dieta"));
-                diet.set_food(rs.getString("nombre"));
-                arregloJson.add(gson.toJson(diet));
+                arregloJson.add(new Diet());
+                arregloJson.get(rs.getRow() - 1).set_calorie(rs.getInt("calorias"));
+                arregloJson.get(rs.getRow() - 1).set_id(rs.getInt("id_dieta"));
+                arregloJson.get(rs.getRow() - 1).set_food(rs.getString("nombre"));
             }
             respuesta = gson.toJson(arregloJson);
         }
@@ -162,8 +162,7 @@ public class M11_ServicesDiet {
     public String caloriasConsumidasDia(@QueryParam("username") String username){
 
         String query = "select * from get_calorias_dia(?)";
-        Diet diet = new Diet();
-        JsonArray arregloJson = new JsonArray();
+        arregloJson = new ArrayList<>();
 
         try {
             PreparedStatement st = conn.prepareStatement(query);
@@ -171,8 +170,8 @@ public class M11_ServicesDiet {
             ResultSet rs = st.executeQuery();
 
             while (rs.next()){
-                diet.set_calorie(rs.getInt("calorias"));
-                arregloJson.add(gson.toJson(diet));
+                arregloJson.add(new Diet());
+                arregloJson.get(rs.getRow() - 1).set_calorie(rs.getInt("calorias"));
             }
 
             respuesta = gson.toJson(arregloJson);
@@ -199,17 +198,15 @@ public class M11_ServicesDiet {
     public String caloriasConsumidasSemana(@QueryParam("username") String username){
 
         String query = "select * from get_calorias_semana(?)";
-        Diet diet = new Diet();
-        JsonArray arregloJson = new JsonArray();
-
+        arregloJson = new ArrayList<>();
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, username);
             ResultSet rs = st.executeQuery();
 
             while (rs.next()){
-                diet.set_calorie(rs.getInt("calorias"));
-                arregloJson.add(gson.toJson(diet));
+                arregloJson.add(new Diet());
+                arregloJson.get(rs.getRow() - 1).set_calorie(rs.getInt("calorias"));
             }
 
             respuesta = gson.toJson(arregloJson);
@@ -225,9 +222,9 @@ public class M11_ServicesDiet {
     }
 
     /**
-     *
-     * @param username
-     * @return
+     * Funcion obtiene las calorias consumidas por un usuario en los ultimos 12 meses.
+     * @param username Indica el nombre del usuario.
+     * @return Devuelve un json con la informacion de las calorias consumidas relacionada con el mes correspondiente
      */
     @GET
     @Path("calorias_consumidas_mes")
@@ -235,9 +232,8 @@ public class M11_ServicesDiet {
     public String caloriasConsumidasMes(@QueryParam("username") String username){
 
         String query = "select * from get_calorias_mes(?, ?, ?)";
-        Diet diet = new Diet();
         ResultSet rs;
-        JsonArray arregloJson = new JsonArray();
+        arregloJson = new ArrayList<>();
         LocalDate fecha = LocalDate.now();
         Date fechaInicio = Date.valueOf(fecha.with(TemporalAdjusters.firstDayOfMonth()));
         Date fechafin = Date.valueOf(fecha.with(TemporalAdjusters.lastDayOfMonth()));
@@ -257,17 +253,16 @@ public class M11_ServicesDiet {
                 }
 
                 rs = st.executeQuery();
-
+                arregloJson.add(new Diet());
                 if (rs.wasNull()) {
-                    diet.set_calorie(0);
-                    diet.set_dateTime(fechaInicio.toLocalDate());
-                    arregloJson.add(gson.toJson(diet));
-                } else {
+                    arregloJson.get(rs.getRow() - 1).set_calorie(0);
+                    arregloJson.get(rs.getRow() - 1).set_dateTime(fechaInicio.toLocalDate());
+                }
+                else {
 
                     while (rs.next()) {
-                        diet.set_calorie(rs.getInt("calorias"));
-                        diet.set_dateTime(fechaInicio.toLocalDate());
-                        arregloJson.add(gson.toJson(diet));
+                        arregloJson.get(rs.getRow() - 1).set_calorie(rs.getInt("calorias"));
+                        arregloJson.get(rs.getRow() - 1).set_dateTime(fechaInicio.toLocalDate());
                     }
                 }
             }
@@ -283,9 +278,10 @@ public class M11_ServicesDiet {
     }
 
     /**
-     *
-     * @param jsonDieta
-     * @return
+     * Funcion que perimite ingresar varios alimentos que consumio el usuario
+     * @param jsonDieta Indica los alimentos que se insertaran en formato json, el json debe tener la estructura
+     *                  de un arreglo de un objeto Diet(_calorie, _food, momento_ username) convertido en  json
+     * @return Devuelve un json con elemento llamado data, el cual contiene el mensaje de la peticion
      */
     @POST
     @Path("insertar_dieta")
