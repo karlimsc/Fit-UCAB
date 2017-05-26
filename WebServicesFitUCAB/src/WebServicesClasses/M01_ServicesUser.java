@@ -53,31 +53,23 @@ public class M01_ServicesUser {
                              @QueryParam("height")String height
                             )
     {
-        String insertUserQuery= "INSERT INTO PERSON (PERSONUSERNAME, PERSONPASSWORD, PERSONEMAIL, PERSONSEX," +
-                                          " PERSONPHONE, PERSONBIRTHDATE)"+
-                       " VALUES ( '" +username+ "','" +password+ "','" +email+ "','" +sex+ "','" +phone+ "','" +birthdate+ "')";
+        String insertUserQuery =" SELECT M01_REGISTRAR('"+username+"','"+password+"','"+email+"','"+sex+"'" +
+                ",'"+phone+"','"+birthdate+"','"+weight+"','"+height+"')";
+
 
         try{
 
             Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(insertUserQuery);
             User user= null;
-            st.executeUpdate(insertUserQuery);
-            String idQuery="SELECT PERSONID as _id FROM PERSON WHERE PERSONUSERNAME='"+username+"'";
 
-            ResultSet rs = st.executeQuery(idQuery);
+            int iniciosesion=0;
+            while(rs.next()){
+                iniciosesion = rs.getRow();
 
-            int userId = 0;
-            if ( rs.next()) {
-                userId = rs.getInt("_id");
             }
 
-                String insertRegistryQuery="INSERT INTO REGISTRY (registryweight, registryheight, registrypoint, fk_personid)" +
-                    " VALUES (" +weight+" , "+height+" ,0, "+userId+" )";
-
-
-            st.executeUpdate(insertRegistryQuery);
-            user= new User(userId);
-            return gson.toJson(user);
+            return gson.toJson(iniciosesion);
 
         }
         catch(Exception e) {
@@ -85,6 +77,41 @@ public class M01_ServicesUser {
         }
     }
 
+    /***
+     * Metodo que devuelve la informacion completa de la persona
+     * @param username
+     * @return
+     */
+    @GET
+    @Path("/userView")
+    @Produces("application/json")
+    public String userView(@QueryParam("username") String username)
+    {
+        String insertUserQuery =" SELECT * FROM M01_INFORMACIONUSER('"+username+"')";
+        try {
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(insertUserQuery);
+            User user = null;
+            while(rs.next()){
+
+                String username1 = rs.getString("usuario");
+                String password =rs.getString("pwd");
+                int id =rs.getInt("id");
+                String mail=rs.getString("mail");
+                String sex=rs.getString("sex");
+                String phone=rs.getString("phone");
+                Date birthdate =rs.getDate("birthdate");
+                user= new User(id,username1,password,mail,sex,phone,birthdate);
+
+            }
+            return gson.toJson(user);
+        }
+        catch(Exception e) {
+        return e.getMessage();
+    }
+
+    }
     /**
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
      * @param userparam
@@ -97,29 +124,25 @@ public class M01_ServicesUser {
 
     public String getUser(@QueryParam("username") String userparam,@QueryParam("password") String passwordparam)
     {
-        String query="SELECT * FROM PERSON WHERE PERSONUSERNAME= '" + userparam + "' " +
-                     "AND PERSONPASSWORD = '" + passwordparam + "'";
+
+        String query="SELECT M01_INICIARSESION('"+userparam+"','"+passwordparam+"')";
+
 
         try{
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
-            User user= null;
+
+          //  User user= null;
+            int iniciosesion =0;
 
             while(rs.next()){
 
-                String username = rs.getString("PERSONUSERNAME");
-                int id = rs.getInt("PERSONID");
-                String password = rs.getString("PERSONPASSWORD");
-                String sexo= rs.getString("PERSONSEX");
-                String phone= rs.getString("PERSONPHONE");
-                String email= rs.getString("PERSONEMAIL");
-                Date birthdate= rs.getDate("PERSONBIRTHDATE");
+                 iniciosesion = rs.getRow();
 
-                user= new User(id,username,password,email,sexo,phone,birthdate);
 
             }
-            return gson.toJson(user);
+            return gson.toJson(iniciosesion);
         }
         catch(Exception e) {
             return e.getMessage();
