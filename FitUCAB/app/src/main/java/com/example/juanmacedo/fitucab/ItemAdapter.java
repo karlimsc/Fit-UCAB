@@ -25,18 +25,18 @@ public class ItemAdapter extends BaseAdapter{
         return cant;
     }
 
-    @Override
-    public Object getItem(int position) {
-        return name[position];
+    public Object getItem(int _position) {
+        return null;
+
     }
 
     @Override
-    public long getItemId(int position) {
+    public long getItemId(int _position) {
         return 0;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int _position, View _convertView, ViewGroup _parent) {
         return null;
     }
 }

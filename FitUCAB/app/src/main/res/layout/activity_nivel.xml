@@ -64,15 +64,13 @@
         android:background="#000000"
         android:paddingTop="5dip" />
 
-    <ListView
-        android:id="@+id/lista"
-        style="?android:attr/listSeparatorTextViewStyle"
-        android:layout_width="fill_parent"
-        android:layout_height="322dp"
-        android:divider="#000000"
-        android:dividerHeight="2.0dp"
-        android:layout_below="@+id/line"
-        android:layout_weight="4.97" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/PieChartId"
+        >
+    </com.github.mikephil.charting.charts.PieChart>
 
     <LinearLayout
         android:id="@+id/gamificacion"

@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,9 +15,7 @@ import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
@@ -32,18 +29,19 @@ import java.util.ArrayList;
 public class Logros extends Fragment {
 
     //**VARIABLES
-    TextView texto, detalle;
-    String nombreLogro;
-    BarChart barra;
-    BarData Data;
-    BarDataSet set1;
-    IBarDataSet barDataSet;
-    ArrayList<BarEntry> entradas;
-    ArrayList<String> dias;
-    ArrayList<IBarDataSet> barDataSets;
-    public static String TAG = "Logros";
-    private OnFragmentInteractionListener mListener;
-    //VARIABLES
+    TextView _texto, _detalle;
+    String _nombreLogro;
+    BarChart _barra;
+    BarData _data;
+    BarDataSet _set1;
+    IBarDataSet _barDataSet;
+    ArrayList<BarEntry> _entradas;
+    ArrayList<String> _dias;
+    ArrayList<IBarDataSet> _barDataSets;
+    public static String _TAG = "Logros";
+    private OnFragmentInteractionListener _mListener;
+    int _grafica;
+    //FIN VARIABLES
 
     public Logros(){
         // Required empty public constructor
@@ -54,37 +52,41 @@ public class Logros extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.graficobarra, null);
+        View view = inflater.inflate(R.layout._graficobarra, null);
 
-        nombreLogro = getArguments().getString("item");
-        texto = (TextView)view.findViewById(R.id.id_texto);
-        Log.d("DATOOO2", getArguments().getString("item"));                                         //IMPRIME EN EL LOG PARA PRUEBAS
-        Toast.makeText(getActivity(), getArguments().getString("item"), Toast.LENGTH_LONG).show();  //IMPRIME EN PANTALLA ANDROID DE FORMA EMERGENTE
+        _nombreLogro = getArguments().getString("item");
+        _texto = (TextView)view.findViewById(R.id.id_texto);
+        //IMPRIME EN EL LOG PARA PRUEBAS
+        Log.d("DATOOO2", getArguments().getString("item"));
+        //IMPRIME EN PANTALLA ANDROID DE FORMA EMERGENTE
+        Toast.makeText(getActivity(), getArguments().getString("item"), Toast.LENGTH_LONG).show();
+        //DEPENDIENDO DEL RETO, ENTRA EN UN IF DIFERENTE PARA GRAFICA
+        _grafica = 1;
+        //A DISCUTIR SI NO SE USARA GRAFICA
+        if(_grafica == 1){
 
-        int grafica = 1;                                                                            //DEPENDIENDO DEL RETO, ENTRA EN UN IF DIFERENTE PARA GRAFICA
-        if(grafica == 1){                                                                           //A DISCUTIR SI NO SE USARA GRAFICA
+            _texto = (TextView) view.findViewById(R.id.logro);
+            _texto.setText(getArguments().getString("item"));
 
-            texto = (TextView) view.findViewById(R.id.logro);
-            texto.setText(getArguments().getString("item"));
+            _detalle = (TextView) view.findViewById(R.id.detalleLogro);
+            _detalle.setText("Logro desbloqueado despues de haber completado los 5 km de distancia en trote");
+            //ID DEL BARCHART
+            _barra = (BarChart) view.findViewById(R.id.barra);
 
-            detalle = (TextView) view.findViewById(R.id.detalleLogro);
-            detalle.setText("Logro desbloqueado despues de haber completado los 5 km de distancia en trote");
+            //FUNCIONES QUE LLENAN
+            Entradas();
+            Etiquetas();
 
-            barra = (BarChart) view.findViewById(R.id.barra);                                       //ID DEL BARCHART
+            _barDataSets = new ArrayList<>();
 
-            Entradas();                       //FUNCION QUE LLENA
-            Etiquetas();                      //FUNCION QUE LLENA
-
-            barDataSets = new ArrayList<>();
-
-
-            set1 = new BarDataSet(entradas, "Semana");                                               //SE INTRODUCE DATOS CON ETIQUETA
-            barDataSets.add(set1);
+            //SE INTRODUCE DATOS CON ETIQUETA
+            _set1 = new BarDataSet(_entradas, "Semana");
+            _barDataSets.add(_set1);
 
 
-            Data = new BarData(dias, set1);
-            barra.setData(Data);
-            barra.setEnabled(true);
+           // _data = new BarData(_dias, _set1);
+            _barra.setData(_data);
+            _barra.setEnabled(true);
         }
 
         return view;
@@ -94,36 +96,38 @@ public class Logros extends Fragment {
 
     public void Entradas(){
 
-        entradas = new ArrayList<>();     //ARRAY DE DATOS DEL LOGRO
+        //ARRAY DE DATOS DEL LOGRO
+        _entradas = new ArrayList<>();
 
-        entradas.add(new BarEntry(44f,0, "Lunes"));
-        entradas.add(new BarEntry(88f,1, "Martes"));
-        entradas.add(new BarEntry(66f,2, "Miercoles"));
-        entradas.add(new BarEntry(12f,3, "Jueves"));
-        entradas.add(new BarEntry(19f,4, "Viernes"));
-        entradas.add(new BarEntry(91f,5, "Sabado"));
+        _entradas.add(new BarEntry(44f,0, "Lunes"));
+        _entradas.add(new BarEntry(88f,1, "Martes"));
+        _entradas.add(new BarEntry(66f,2, "Miercoles"));
+        _entradas.add(new BarEntry(12f,3, "Jueves"));
+        _entradas.add(new BarEntry(19f,4, "Viernes"));
+        _entradas.add(new BarEntry(91f,5, "Sabado"));
 
     }
 
     public void Etiquetas(){
 
-        dias = new ArrayList<>();         //ARRAY DE DIAS DE ETIQUETA
+        //ARRAY DE DIAS DE ETIQUETA
+        _dias = new ArrayList<>();
 
-        dias.add("Lunes");
-        dias.add("Martes");
-        dias.add("Miercoles");
-        dias.add("Jueves");
-        dias.add("Viernes");
-        dias.add("Sabado");
-        dias.add("Domingo");
+        _dias.add("Lunes");
+        _dias.add("Martes");
+        _dias.add("Miercoles");
+        _dias.add("Jueves");
+        _dias.add("Viernes");
+        _dias.add("Sabado");
+        _dias.add("Domingo");
     }
 
 
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+        if (_mListener != null) {
+            _mListener.onFragmentInteraction(uri);
         }
     }
 
@@ -131,7 +135,7 @@ public class Logros extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+            _mListener = (OnFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -141,7 +145,7 @@ public class Logros extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        mListener = null;
+        _mListener = null;
     }
 
     /**
