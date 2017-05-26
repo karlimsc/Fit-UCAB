@@ -5,13 +5,15 @@ import Domain.Training;
 import com.google.gson.Gson;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
+import java.util.ArrayList;
 
 
-@Path("/training")
+@Path("/M06_ServicesTraining")
 public class M06_ServicesTraining {
 
     Gson gson = new Gson();
@@ -51,7 +53,7 @@ public class M06_ServicesTraining {
     
     public String createPersonalizedTraining (@QueryParam("trainingName") String name, @QueryParam("trainingPeriod") int period,
                                               @QueryParam("trainingCalories") int calories) {
-
+            return null;
     }
 
     @GET
@@ -59,8 +61,7 @@ public class M06_ServicesTraining {
     @Produces("application/json")
 
     public String updateTraining (@QueryParam("idTraining") int id, @QueryParam("trainingName") String name, @QueryParam("trainingPeriod") int period, @QueryParam("trainingCalories") int calories) {
-        String query = "UPDATE TRAINING
-                        SET TRAININGNAME=" +name+ ", TRAININGPERIOD=" +period+ ", TRAININGCALORIES=" +calories+ "WHERE TRAININGID=" +idTraining;
+        String query = "UPDATE TRAINING SET TRAININGNAME=" +name+ ", TRAININGPERIOD=" +period+ ", TRAININGCALORIES=" +calories+ "WHERE TRAININGID=" +id;
 
         try {
             Connection conn = connectDb();
@@ -127,7 +128,7 @@ public class M06_ServicesTraining {
         
         try{
             
-            Connection conn = conectarADb();
+            Connection conn = connectDb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
