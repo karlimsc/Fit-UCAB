@@ -150,17 +150,6 @@ public class M01_ServicesUser {
     }
 
     /**
-     * Metodo que es llamado en otros metodos para obtener el ultimo id e incrementarlo
-     * @return devuelve un numero incrementado
-     */
-    public int idIncrease()
-    {
-        int Id=1;
-        //esto es para incrementar, no implemenrado por ahora
-        return Id;
-    }
-
-    /**
      * Sevicio Web para poder enviar el correo al usuario con su password
      * @return por ahora retorna un String
      */
