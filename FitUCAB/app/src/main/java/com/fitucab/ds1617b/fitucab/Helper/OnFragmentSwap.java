@@ -1,11 +1,6 @@
-package com.fitucab.ds1617b.fitucab.Model.Helper;
+package com.fitucab.ds1617b.fitucab.Helper;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTabHost;
-
-import java.util.List;
 
 
 /**
