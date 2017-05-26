@@ -7,7 +7,7 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <GridLayout
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:columnCount="3"
@@ -16,34 +16,37 @@
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:id="@+id/gl_m11_listaAlimento">
+        <TableRow>
+            <TextView
+                android:text="Nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tv_m11_nombreAlimento"/>
+            <TextView
+                android:text="Peso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tv_m11_pesoAlimento"/>
 
-        <TextView
-            android:text="Nombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:id="@+id/tv_m11_nombreAlimento"/>
+            <TextView
+                android:text="Calorias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tv_m11_caloriasAlimento"/>
+        </TableRow>
 
 
-        <TextView
-            android:text="Peso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="80dp"
-            android:id="@+id/tv_m11_pesoAlimento"/>
-
-        <TextView
-            android:text="Calorias"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="20dp"
-            android:id="@+id/tv_m11_caloriasAlimento"/>
 
 
-    </GridLayout>
+
+
+    </TableLayout>
 
     <ImageButton
         android:layout_width="wrap_content"
