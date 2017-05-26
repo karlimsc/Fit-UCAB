@@ -28,6 +28,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.ArrayAuxiliarTraining;
 import com.fitucab.ds1617b.fitucab.Model.Training;
@@ -173,7 +174,8 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
     public void fillListView(){
 
         //Url a la cual se va a hacer conexion
-        String url = "http://190.204.128.224:8888/ServiciosWebFitUCAB_war_exploded/training/displayTraining?userId=1";
+        IpStringConnection ip = new IpStringConnection();
+        String url = ip.getIp() + "M06_ServicesTraining/displayTraining?userId=1";
         final Gson gson = new Gson();
 
         // Instancia RequestQueue.

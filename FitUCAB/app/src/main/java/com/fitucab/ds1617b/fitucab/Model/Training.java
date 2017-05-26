@@ -9,12 +9,12 @@ public class Training {
     public Training() {} // Constructor vacio
 
     //Constructor con id
-    public Training(int id, String trainingName, int trainingPeriod, int trainingCalories) {
-        this._idTraining = id;
-        this._trainingName = trainingName;
-        this._trainingPeriod = trainingPeriod;
-        this._trainingCalories = trainingCalories;
-    }
+        public Training(int id, String trainingName, int trainingPeriod, int trainingCalories) {
+            this._idTraining = id;
+            this._trainingName = trainingName;
+            this._trainingPeriod = trainingPeriod;
+            this._trainingCalories = trainingCalories;
+        }
 
     //Constructor sin id
     public Training(String trainingName, int trainingPeriod, int trainingCalories) {
