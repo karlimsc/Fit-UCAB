@@ -18,7 +18,7 @@
         android:src="@mipmap/logofitucabnombre" />
 
     <TextView
-        android:id="@+id/tv_m01_acercaDeTi"
+        android:id="@+id/tv_m01_recuperacionPwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -55,7 +55,7 @@
                 android:fontFamily="sans-serif"
                 android:hint="@string/et_m01_correoRecovery"
                 android:inputType="textPersonName"
-                android:maxLength="20"
+                android:maxLength="50"
                 android:textColor="@color/softgrey"
                 android:textColorLink="@color/colorBtnAceptar"
                 android:textSize="18sp"

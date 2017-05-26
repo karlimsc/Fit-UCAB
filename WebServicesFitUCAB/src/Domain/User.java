@@ -88,6 +88,8 @@ public class User {
 
 
 
+
+
     /**
      * Constructor para solo el username y el password
      * @param user
