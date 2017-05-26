@@ -62,6 +62,38 @@
     <string name="tab_m05_track">Automática</string>
     <!--FIN Strings Modulo 5 -->
 
+    <!-- Inicio Strings Modulo 8 -->
+    --content_main--
+    <string name="tituloModulo">Mis Retos</string>
+    <string name="nombreReto">nombre del reto</string>
+    <string name="cantidadDiasReto">dias</string>
+    <string name="cantidadParticipantesReto">2</string>
+    <string name="statusReto">Status</string>
+
+
+    --informacion_reto--
+    <string name="reglasRetoText">Reglas del Reto</string>
+    <string name="contReglasReto">estas son las reglas del reto</string>
+    <string name="tituloFechaInicio">Fecha Inicio:</string>
+    <string name="tituloDuracionReto">Duracion:</string>
+    <string name="duracionReto">dias</string>
+    <string name="tituloStatusReto">Status</string>
+    <string name="tituloCronometro">Finaliza en:</string>
+
+    --agregar_reto--
+    <string name="tituloAgregarReto">Agregar Reto</string>
+    <string name="hintNombreDelReto">Nombre del Reto</string>
+    <string name="hintReglasReto">Reglas del Reto</string>
+    <string name="botonFechaInicio">Inicio</string>
+    <string name="botonFechaFin">Fin</string>
+    <string name="checkboxIndividual">Individual</string>
+    <string name="checkboxCompartido">Compartido</string>
+
+
+    <string name="editar">editar</string>
+    <string name="eliminar">eliminar</string>
+    <!--FIN Strings Modulo 8 -->
+
 
 
 
