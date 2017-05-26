@@ -78,3 +78,30 @@ PREFERENCERADIUS integer not null,
 FK_PERSON		integer not null
 );
 --TERMINA MODULO 4--
+
+---MODULO 8---
+ 
+CREATE TABLE CHALLENGE (
+ 
+CHALLENGEID serial primary key,
+CHALLENGENAME varchar(30) not null,
+CHALLENGEDESCRIPTION varchar(500) not null,
+CHALLENGELEVEL integer,
+CHALLENGESCORE integer,
+FK_ACTIVITYID integer,
+FK_FRIENDSHIPID integer
+);
+ 
+ 
+CREATE TABLE DETAIL (
+DETAILID serial primary key,
+DETAILDATESTART timestamp not null,
+DETAILDATEEND timestamp not null,
+DETAILPOSITION integer not null,
+DETAILACTIVE boolean not null,
+FK_REGISTRYID integer,
+FK_CHALLENGEID integer
+);
+ 
+---FIN MODULO 8---
+
