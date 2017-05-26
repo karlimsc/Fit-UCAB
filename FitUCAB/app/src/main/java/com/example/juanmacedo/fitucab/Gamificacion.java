@@ -39,7 +39,10 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
 
     TextView TextViewpuntaje;
     int puntajeTotal;
-    private static String URL = "http://192.168.56.1:8080/FitUcabService_war_exploded/db/obtener";
+    public static int logrado;
+    public static int noLogrado;
+    private static String URL = "http://192.168.1.8:8080/FitUcabService_war_exploded/db/obtener";
+    private static String URLtamaño = "http://192.168.43.152:8080/FitUcabService_war_exploded/dbgrafica/obtener";
     ItemAdapter itemAdapter;
     private ArrayList<String> _arrayList;
     private String[] _logros = {"5 Km recorrido", "10 km recorrido", 
@@ -81,6 +84,8 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+
+
                 TextView _item = (TextView) view.findViewById(R.id.tv_logro);
                 Bundle _bundle = new Bundle();
                 //ASI LE PASO VALORES AL FRAGMENT CON EL BUNDLE
@@ -102,26 +107,26 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
         });
 
         sendRequest(this);
-      if(puntajeTotal != 0)
-       TextViewpuntaje.setText(String.valueOf(puntajeTotal));
+     //   traerTamaños();
 
     }
+
 
     public void sendRequest(final Context context){
         StringRequest stringRequest = new StringRequest(URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                      Log.d("onResponse()", response.toString());
-                      showJSON(response, context);
+                        Log.d("onResponse()", response.toString());
+                        showJSON(response, context);
 
                     }
 
                 }, new Response.ErrorListener() {
             @Override
-                public void onErrorResponse(VolleyError error) {
-                    Log.e("onResponse()", error.toString());
-                }
+            public void onErrorResponse(VolleyError error) {
+                Log.e("onResponse()", error.toString());
+            }
         });
 
         RequestQueue request = Volley.newRequestQueue(this);
@@ -148,15 +153,57 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
         _lista.setAdapter(cl);
     }
 
+    public void traerTamaños(){
+        StringRequest stringRequest = new StringRequest(URLtamaño,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("onResponse()", response.toString());
+                        showJSON2(response);
+
+                    }
+
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("onResponse()", error.toString());
+            }
+        });
+
+        RequestQueue request = Volley.newRequestQueue(this);
+
+        request.add(stringRequest);
+        Log.d("objetooo", stringRequest.toString());
+
+    }
+
+    private void showJSON2(String json){
+        JSONObject jsonObject=null;
+        try {
+            jsonObject = new JSONObject(json);
+
+                logrado = Integer.parseInt(jsonObject.getString("Logrado"));
+                noLogrado = Integer.parseInt(jsonObject.getString("NoLogrado"));
+
+            } catch (JSONException e1) {
+            e1.printStackTrace();
+        }
+
+    }
+
+
     @Override
     public void onClick(View v) {
+
+
 
         if ((v.getId()== R.id.profile_image) || (v.getId() == R.id.tv_nombreLabel)
                 || (v.getId() == R.id.tv_nivelLabel) || (v.getId() == R.id.tv_puntos)){
 
             Intent _myIntent = new Intent(Gamificacion.this, GraficaNivel.class);
-            //_myIntent.putExtra("key", value); //Optional parameters
-            Gamificacion.this.startActivity(_myIntent);
+            _myIntent.putExtra("Logrado", logrado); //Optional parameters
+            _myIntent.putExtra("NoLogrado", noLogrado); //Optional parameters
+            startActivity(_myIntent);
         }
         else {
             FragmentManager _fragmentManager = getSupportFragmentManager();

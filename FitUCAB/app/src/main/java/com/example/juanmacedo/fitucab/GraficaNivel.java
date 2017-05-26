@@ -1,8 +1,16 @@
 package com.example.juanmacedo.fitucab;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.data.PieData;
@@ -11,6 +19,9 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -26,14 +37,19 @@ public class GraficaNivel extends AppCompatActivity {
     private static String TAG = "MainActivity";
 
     //Deben ser cantidades en int, no porcentajes
-    private int[] _valoresY = {30, 34};
-    private String[] _valoresX = {"Terminados" , "Sin terminar" };
+    private int[] _valoresY = {0,0};
+    private String[] _valoresX = {"Sin terminar" , "Terminados" };
     PieChart pieChart;
+    private int logrado, noLogrado;
+    private static String URLtamaño = "http://192.168.1.8:8080/FitUcabService_war_exploded/dbgrafica/obtener";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nivel);
+        traerTamaños();
+
 
         pieChart = (PieChart) findViewById(R.id.PieChartId);
 
@@ -54,7 +70,7 @@ public class GraficaNivel extends AppCompatActivity {
         //Efecto visual inicial de la grafica
         pieChart.animateXY(1400, 1400);
 
-        addDataSet();
+
 
 
     }
@@ -98,6 +114,45 @@ public class GraficaNivel extends AppCompatActivity {
         pieChart.setEntryLabelColor(Color.BLACK);
         pieChart.setData(pieData);
         pieChart.invalidate();
+    }
+
+    public void traerTamaños(){
+        StringRequest stringRequest = new StringRequest(URLtamaño,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("onResponse()", response.toString());
+                        showJSON2(response);
+
+                    }
+
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("onResponse()", error.toString());
+            }
+        });
+
+        RequestQueue request = Volley.newRequestQueue(this);
+
+        request.add(stringRequest);
+        Log.d("objetooo", stringRequest.toString());
+
+    }
+
+    private void showJSON2(String json){
+        JSONObject jsonObject=null;
+        try {
+            jsonObject = new JSONObject(json);
+
+            logrado = Integer.parseInt(jsonObject.getString("Logrado"));
+            noLogrado = Integer.parseInt(jsonObject.getString("NoLogrado"));
+            _valoresY[0] = logrado;
+            _valoresY[1] = noLogrado;
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+        }
+        addDataSet();
     }
 
 

@@ -23,7 +23,7 @@ public class Nivel {
     //Constructor vacio de la clase
     public Nivel (){
     }
-    
+
 
     //------------------METODOS DE LA CLASE
 
