@@ -202,7 +202,6 @@ public class M01SignUpFragment extends Fragment {
         }catch (Exception ex){
 
         }
-        //region validating username
         Pattern pat = Pattern.compile("[\\w-]+");
         Matcher mat = pat.matcher(username);
         if ((!username.equals("")) && (!password.equals("")) && (!email.equals("")) && (!phone.equals("")) && (!birthdate.equals("")) && (!weight.equals("")) && (!height.equals(""))) {
@@ -240,28 +239,6 @@ public class M01SignUpFragment extends Fragment {
         }else{
            return getString(R.string.m01_errorNullFields);
         }
-        /*if (!mat.matches()){
-            response=getString(R.string.m01_errorUsernameSpecialChar);
-        }
-        if(username.length()< 4){
-            response=getString(R.string.m01_errorUsernameTooShort);
-        }
-        //endregion
-        //region validating email
-        pat = Pattern.compile("^[\\w-]+(\\.[\\w-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
-        mat = pat.matcher(email);
-        if (!mat.find()) {
-            response = getString(R.string.m01_errorInvalidEmail);
-        }
-        //endregion
-        //region validating phone and password
-        if((phone.length() <11)){
-            response=getString(R.string.m01_errorPhoneTooShort);
-        }
-        if(password.length()< 6){
-            response=getString(R.string.m01_errorPasswordTooShort);
-        }
-        //endregion*/
 
     }
 
