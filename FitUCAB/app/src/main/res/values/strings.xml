@@ -1,4 +1,3 @@
-
 <resources>
     <string name="app_name">Fit UCAB</string>
     <string name="action_settings">Settings</string>
@@ -50,8 +49,7 @@
     <!--FIN Strings Modulo 2 -->
 
 
-
-   <!-- Inicio Strings Modulo 5 -->
+    <!-- Inicio Strings Modulo 5 -->
     <string name="app_name_title">Actividad</string>
     <string name="_tv_m05_type">Tipo de ejercicio:</string>
     <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
@@ -67,6 +65,13 @@
     <string name="title_activity_m10_water_glass">Agua</string>
     <string name="tab_m10_Hidratacion">Hidratacion</string>
     <string name="tab_m10_Control">Control</string>
+    <string name="textview_history_day">Día</string>
+    <string name="textview_history_week">Semana</string>
+    <string name="tv_m10_usuario">Usuario</string>
+    <string name="tv_m10_peso">Peso</string>
+    <string name="tv_m10_tipo">Tipo de Vaso</string>
+    <string name="tv_m10_cantidad">Cantidad Diaria</string>
+
     <!--FIN Strings Modulo 10 -->
 
     <!-- TODO: Remove or change this placeholder text -->

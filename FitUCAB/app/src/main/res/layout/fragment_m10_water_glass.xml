@@ -27,7 +27,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:layout_constraintVertical_bias="0.62"
-        app:srcCompat="@drawable/ic_water_glass" />
+        app:srcCompat="@drawable/ic_water_glass"
+        android:layout_marginBottom="142dp" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -38,65 +39,7 @@
         tools:layout_editor_absoluteY="0dp"
         tools:layout_editor_absoluteX="20dp" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="129dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginRight="8dp"
-        android:background="@color/colorwhite"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent">
 
-
-        <ImageButton
-            android:id="@+id/btn_m10_lessDate"
-            android:layout_width="wrap_content"
-            android:layout_height="58dp"
-            android:layout_alignTop="@+id/editText"
-            android:layout_marginEnd="27dp"
-            android:layout_marginLeft="27dp"
-            android:layout_marginRight="27dp"
-            android:layout_toLeftOf="@+id/imageButton4"
-            android:background="@color/colorwhite"
-            app:srcCompat="@drawable/ic_btn_atras"
-            tools:ignore="ObsoleteLayoutParam,RtlHardcoded" />
-
-        <EditText
-            android:id="@+id/et_m10_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:cursorVisible="false"
-            android:ems="10"
-            android:focusable="false"
-            android:focusableInTouchMode="false"
-            android:inputType="date"
-            android:textAlignment="center"
-            tools:ignore="ObsoleteLayoutParam" />
-
-        <ImageButton
-            android:id="@+id/btn_m10_AddDate"
-            android:layout_width="wrap_content"
-            android:layout_height="58dp"
-            android:layout_alignTop="@+id/editText"
-            android:layout_marginLeft="27dp"
-            android:layout_marginRight="27dp"
-            android:layout_marginStart="27dp"
-            android:layout_toEndOf="@+id/imageButton4"
-            android:layout_toRightOf="@+id/imageButton4"
-            android:background="@color/colorwhite"
-            android:contentDescription=""
-
-            app:srcCompat="@drawable/ic_btn_adelante"
-            tools:ignore="ObsoleteLayoutParam" />
-
-
-    </LinearLayout>
 
 
 </android.support.constraint.ConstraintLayout>

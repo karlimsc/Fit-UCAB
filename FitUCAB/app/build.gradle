@@ -1,4 +1,3 @@
-
 apply plugin: 'com.android.application'
 
 android {
@@ -35,8 +34,8 @@ dependencies {
     compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
     compile 'com.google.code.gson:gson:2.7'
     compile 'com.mcxiaoke.volley:library:1.0.19'
-    testCompile 'junit:junit:4.12'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    testCompile 'junit:junit:4.12'
 }
 
