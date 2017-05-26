@@ -7,7 +7,7 @@
     <string name="et_m01_correoRegistro">Email</string>
     <string name="et_m01_telefono">Telephone</string>
     <string name="et_m01_usuario">Username</string>
-    <string name="et_m01_usuarioCorreo">Username or Email</string>
+    <string name="et_m01_usuarioCorreo">Username</string>
     <string name="et_m01_estatura">Height</string>
     <string name="et_m01_peso">Weight</string>
     <string name="tv_m01_fechanac">Birthdate</string>
@@ -24,6 +24,14 @@
     <string name="et_m01_correoRecovery">Email</string>
     <string name="et_m01_passwordLogin">Password</string>
     <string name="et_m01_passwordRegistro">Password</string>
+    <string name="m01_errorUsernameSpecialCharEN">The username cannot contain special characters</string>
+    <string name="m01_errorUsernameTooShortEN">The username nust have 4 or more characters</string>
+    <string name="m01_errorPhoneTooShortEN">The phone number is not valid</string>
+    <string name="m01_errorPasswordTooShortEN">The password is too short</string>
+    <string name="m01_errorInvalidEmailEN">The email is not valid</string>
+    <string name="m01_errorNullFieldsEN">There are empty fields</string>
+    <string name="m01_errorWeightOutOfRangeEN">The weight range is between 30kg and 300kg</string>
+    <string name="m01_errorHeightOutOfRangeEN">El rango de altura es entre 1m y 3m The height range is between 1m and 3m</string>
 
 
     <!--FIN Strings Modulo 1 -->

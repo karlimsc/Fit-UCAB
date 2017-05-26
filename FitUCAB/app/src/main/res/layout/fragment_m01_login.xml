@@ -65,7 +65,7 @@
                 android:fontFamily="sans-serif"
                 android:hint="@string/et_m01_passwordLogin"
                 android:inputType="textPassword"
-                android:maxLength="20"
+                android:maxLength="8"
                 android:textColor="@color/softgrey"
                 android:textColorLink="@color/colorBtnAceptar"
                 android:typeface="sans" />

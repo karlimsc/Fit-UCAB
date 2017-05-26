@@ -16,7 +16,7 @@ import com.fitucab.ds1617b.fitucab.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class M01RecoveryFragment extends Fragment {
+public class  M01RecoveryFragment extends Fragment {
 
     private TextView _printTextTV;
     private Button _btnChangeActivity;

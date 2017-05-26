@@ -141,7 +141,7 @@ public class  M01LoginFragment extends Fragment {
                  }
                  catch (Exception e){
                      e.printStackTrace();
-                     System.out.println("Hice MAL la consulta");
+                     System.out.println("Hice mal la consulta");
 
                  }
 
