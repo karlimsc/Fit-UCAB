@@ -112,6 +112,34 @@ public class M01_ServicesUser {
     }
 
     }
+
+    @GET
+    @Path("/userView")
+    @Produces("application/json")
+    public String userOnly(@QueryParam("username") String username)
+    {
+        String insertUserQuery =" SELECT * FROM M01_INFORMACIONUSER('"+username+"')";
+        try {
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(insertUserQuery);
+            User user = null;
+            while(rs.next()){
+
+                String username1 = rs.getString("usuario");
+                String password =rs.getString("pwd");
+                int id =rs.getInt("id");
+
+                user= new User(id,username1,password);
+
+            }
+            return gson.toJson(user);
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+
+    }
     /**
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
      * @param userparam
