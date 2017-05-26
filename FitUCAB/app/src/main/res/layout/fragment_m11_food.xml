@@ -48,22 +48,13 @@
 
     </TableLayout>
 
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_delete_black"
-        android:id="@+id/btn_m11_borrar"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="70dp"
-        android:tint="@color/softgrey"
-        android:background="@color/colorWhiteSmoke" />
 
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@android:drawable/ic_input_add"
         android:layout_marginTop="400dp"
-        android:layout_marginLeft="150dp"
+        android:layout_marginLeft="100dp"
         android:id="@+id/btn_m11_agregar"
         android:background="#ffffff"/>
 

@@ -84,10 +84,9 @@ public class M11DietFragment extends Fragment {
         _btn_m11_aceptar = (ImageButton) _view.findViewById(R.id.btn_m11_aceptar);
         _btn_m11_rechazar = (ImageButton) _view.findViewById(R.id.btn_m11_rechazar);
         _tl_m11_listaDieta = (TableLayout) _view.findViewById(R.id.tl_m11_listaDieta);
-        //No lo borre por si acaso, pero creo que no va (me parece que es la papelera)
-        //_btn_m11__diet_borrar = (ImageButton) _view.findViewById(R.id.btn_m11_diet_borrar);
         setAlimento();
         AddListenerBack();
+        manageChangeHomeFragment();
         return _view;
     }
 
@@ -183,6 +182,19 @@ public class M11DietFragment extends Fragment {
         currentText.setId(_contadorAlimentos);
         tableRow.setLayoutParams(params);
         tableRow.addView(currentText);
+    }
+
+    /**
+     * Metodo para hacer swap a vista de FoodHome.
+     */
+    private void manageChangeHomeFragment()
+    {
+        _btn_m11_rechazar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _callBack.onSwap("M11Foodhome",null);
+            }
+        });
     }
 
 }

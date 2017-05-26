@@ -28,16 +28,21 @@ public class M11FooddialogFragment extends DialogFragment {
 
             AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
             LayoutInflater inflater = getActivity().getLayoutInflater();
+            //Infla el fragmento
 
             builder.setView(inflater.inflate(R.layout.fragment_m11_fooddialog, null))
+                    //Conecta con el XML que contiene la personalizacion del Dialog
+
                     .setTitle("Agregar Alimento Personalizado")
                     .setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
+                            //Si preciona el boton Agregar el alimento personalizado
                             dialog.cancel();
                         }
                     })
                     .setNegativeButton("Cancelar",new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
+                            //Si preciona el boton cancelar solo se cerrar el Dialog
                             dialog.cancel();
                         }
 

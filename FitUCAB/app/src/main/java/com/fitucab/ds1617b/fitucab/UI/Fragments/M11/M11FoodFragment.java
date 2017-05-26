@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,10 +71,10 @@ public class M11FoodFragment extends Fragment {
         _view = inflater.inflate(R.layout.fragment_m11_food, container, false);
 
         _btn_m11_agregar = (ImageButton)_view.findViewById(R.id.btn_m11_agregar);
-        _btn_m11_borrar = (ImageButton)_view.findViewById(R.id.btn_m11_borrar);
         _gl_m11_listaAlimento = (TableLayout) _view.findViewById(R.id.gl_m11_listaAlimento);
         //Aqui va el usuario como variable.....
-        PeticionAlimentos("Jesus");
+        PeticionAlimentos("PEDRO");
+        addAlimento(); //para agregar los personalizados
 
         // Inflate the layout for this fragment
         return _view;
@@ -89,7 +90,7 @@ public class M11FoodFragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
         //OJO esta no es la consulta en si, hay que colocar la que es de los personalizados......
         //La haré mañana temprano.
-        String jsonURL = "http://190.73.31.51:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
+        String jsonURL = "http://186.90.148.200:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
                 "/obtener_todoas_alimentos_auto?username=" + usuario;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL,
                 new Response.Listener<String>() {
@@ -146,5 +147,23 @@ public class M11FoodFragment extends Fragment {
         currentText.setTextColor(Color.BLACK);
         fila.setLayoutParams(params);
         fila.addView(currentText);
+    }
+
+    public void addAlimento() {
+
+        _btn_m11_agregar = (ImageButton) _view.findViewById(R.id.btn_m11_agregar);
+        _btn_m11_agregar.setOnClickListener(new View.OnClickListener() {
+            //Para detecta que se a presionado el boton agregar
+
+            @Override
+            public void onClick(View v) {
+
+                FragmentManager fm = getFragmentManager();
+                M11FooddialogFragment dialogFragment = new M11FooddialogFragment();
+                dialogFragment.show(getActivity().getFragmentManager(), "titulo");
+                //Muestrar el Dialog personalizado para agregar los alimentos.
+            }
+        });
+
     }
 }
