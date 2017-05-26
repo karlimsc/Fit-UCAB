@@ -1,9 +1,5 @@
 package com.fitucab.ds1617b.fitucab.Model;
 
-import android.media.Image;
-
-import java.sql.Time;
-
 /**
  * Created by JoseA2R on 21/5/17.
  */

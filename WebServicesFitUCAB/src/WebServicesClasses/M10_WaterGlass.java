@@ -13,6 +13,7 @@ import javax.ws.rs.QueryParam;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.Date;
 
 
 /**
@@ -24,17 +25,16 @@ public class M10_WaterGlass
 {
 
     private Gson _gson = new Gson();
-
-    private ArrayList<Water> _array = new ArrayList<>() ;
-    private Water _water ;
-    private Sql _sql =new Sql();
-    private ResultSet _rs;
-
-    private Integer _res;
     private SimpleDateFormat _sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+    private SimpleDateFormat _sdf2 = new SimpleDateFormat("dd/MM/yyyy");
     private SimpleDateFormat _sdf1 = new SimpleDateFormat("dd/MM");
-
-
+    private ArrayList<Water> _array = new ArrayList();
+    private Water _water;
+    private Sql _sql = new Sql();
+    private ResultSet _rs;
+    Date fecha = new Date();
+    private String aux;
+    private Integer _res;
 
 
     /**
@@ -318,6 +318,16 @@ public class M10_WaterGlass
 
     }
 
+
+    @GET
+    @Path("/getFecha")
+    @Produces({"application/json"})
+    public String GetFecha() {
+
+        return _gson.toJson(_sdf2.format(fecha));
+
+
+    }
 
 
 

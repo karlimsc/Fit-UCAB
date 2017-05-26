@@ -1,578 +1,642 @@
 [
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_exit.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/res/anim/design_fab_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_popup_exit.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_exit.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_exit.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/anim/abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/res/anim/design_fab_in.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_exit.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_fade_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/anim/abc_fade_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/anim/abc_slide_in_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_out.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/res/anim/design_bottom_sheet_slide_out.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/anim/abc_popup_exit.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_out.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/anim/abc_slide_out_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_in.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_snackbar_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_fab_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/anim/abc_slide_out_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_in.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/design_bottom_sheet_slide_in.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/res/anim/design_bottom_sheet_slide_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_enter.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_exit.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/anim/abc_shrink_fade_out_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_snackbar_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_exit.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/res/anim/design_snackbar_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/anim/abc_slide_in_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/anim/abc_popup_enter.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/anim/abc_fade_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\anim\\design_fab_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_out.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_exit.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_out_bottom.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
-        "source": "/Users/JoseA2R/.android/build-cache/294374d127466ed7d3d730fe3e73db71cfd8c4b9/output/res/anim/design_snackbar_out.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_fade_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\anim\\abc_slide_out_top.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_snackbar_out.xml"
+    },
+    {
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     }
 ]

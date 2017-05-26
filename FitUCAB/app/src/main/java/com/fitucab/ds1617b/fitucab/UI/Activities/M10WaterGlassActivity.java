@@ -1,6 +1,7 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -18,14 +19,21 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10HistoyFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10WaterGlassFragment;
+import com.google.gson.Gson;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.TimeZone;
 
 public class M10WaterGlassActivity extends AppCompatActivity implements View.OnClickListener {
@@ -50,14 +58,22 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     private  View _view;
     private Calendar _cal ;
     private String _date;
+    Gson gson ;
+    Context contexto;
+
+    IpStringConnection url = new IpStringConnection();
+    String Url = url.getIp();
     private SimpleDateFormat _sdf =new SimpleDateFormat("dd/MM/yyyy");
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        contexto =this;
 
         setContentView(R.layout.activity_m10_home);
-
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -75,6 +91,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_m10_Control));
         tabLayout.setupWithViewPager(mViewPager);
         _cal=_cal.getInstance(TimeZone.getDefault());
+
 
         setupViewValues();
 
@@ -109,10 +126,11 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     public void onClick(View v) {
 
-        try {
+       /* try {
             _date =  _EtnDate.getText().toString();
             _cal.setTime(_sdf.parse(_date));
             _cal.add(Calendar.DATE,-1);
@@ -126,7 +144,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         {
             e.printStackTrace();
         }
-
+*/
     }
 
 
@@ -173,19 +191,23 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
 
 
 
+
             if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
                 View rootView = m10.onCreateView(inflater,container,null);
+
                 return rootView;
             }
 
             else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2){
                 View rootView = list.onCreateView(inflater,container,null);
+
                 //inflater.inflate(R.layout.fragment_m10_histoy, container, false);;
                 return rootView;
             }
 
             else{
                 View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+
                 return rootView;
 
             }
@@ -200,10 +222,9 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         _btnLess = (ImageButton) findViewById(R.id.btn_m10_lessDate);
         _btnAdd = (ImageButton) findViewById(R.id.btn_m10_AddDate);
         _EtnDate= (EditText) findViewById(R.id.et_m10_date);
-        _EtnDate.setText(giveDate().toString());
 
-         activarCalendario();
-           // instanciarCalendario();
+        giveDate();
+            activarCalendario();
         addDate();
         lessDate();
         }
@@ -301,15 +322,36 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         datePicker.show();
     }
 
-    public String giveDate() {
-        Calendar ab = Calendar.getInstance();
-        SimpleDateFormat a = new SimpleDateFormat("dd/MM/yyyy");
-        Date Fecha = new Date();
+    public void giveDate() {
 
-        String FActual = a.format(Fecha);
-        _EtnDate.setText(FActual);
 
-        return  FActual;
+        String url1 = "M10_WaterGlass/getFecha";
+        String aux = Url+url1;
+        RequestQueue queue = Volley.newRequestQueue(contexto);
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,aux ,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.}
+                        try {
+                            _EtnDate.setText(response);
+                        }
+                        catch (Exception e){
+                            e.printStackTrace();
+                        }
+                        }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                _EtnDate.setText("That didn't work!");
+            }
+        });
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
+
+
+
     }
 
 
@@ -323,7 +365,12 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
             String year1 = String.valueOf(selectedYear);
             String month1 = String.valueOf(selectedMonth + 1);
             String day1 = String.valueOf(selectedDay);
-            _EtnDate.setText(day1 + "/" + month1 + "/" + year1);
+            String fecha = (day1 + "/" + month1 + "/" + year1);
+            try {
+                _EtnDate.setText(_sdf.format(_sdf.parse(fecha)).toString());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
 
         }
 
