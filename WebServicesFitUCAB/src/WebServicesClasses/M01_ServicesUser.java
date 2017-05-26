@@ -2,12 +2,21 @@ package WebServicesClasses;
 
 import Domain.User;
 import com.google.gson.Gson;
-
+//imports para poder hacer el recuperar password
+import javax.mail.MessagingException;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.PasswordAuthentication;
+//FIN de imports para poder hacer el recuperar password
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
+import java.util.Properties;
 
 /**
  * Clase de Servicios Web del Modulo 01
@@ -127,6 +136,77 @@ public class M01_ServicesUser {
         //esto es para incrementar, no implemenrado por ahora
         return Id;
     }
+
+    /**
+     * Sevicio Web para poder enviar el correo al usuario con su password
+     * @return por ahora retorna un String
+     */
+    @GET
+    @Path("/restorePassword")
+    @Produces("application/json")
+    public String testEmail()
+    {
+
+        try {
+            //Establecemos el usuario que es el correo que cree para hacer el recuperar
+            final String username = "ds1617b@gmail.com";
+            //la clave
+            final String password = "fitucab2017";
+            //Estas son las propiedades de seguridad de gmail
+            Properties props = new Properties();
+            props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.starttls.enable", "true");
+            props.put("mail.smtp.host", "smtp.gmail.com");
+            props.put("mail.smtp.port", "587");
+
+            /*
+             * EN ALGUNA PARTE DE AQUI ES DONDE DEBERIA HACER LA BUSQUEDA EN BD DEL USUARIO
+             * DESPUES EL CAMBIO DE CLAVE POR ALGUN STRING ALEATORIO Y ENCRIPTADO
+             * Y OBTENER EL CORREO ASOCIADO A ESE USUARIO
+             * Y LUEGO ENVIARLE EL STRING SIN ENCRIPTAR AL USUARIO
+             */
+
+
+            /*
+            Se crea la sesion para autenticar
+             */
+            Session session = Session.getInstance(props,
+                    new javax.mail.Authenticator() {
+                        protected PasswordAuthentication getPasswordAuthentication() {
+                            return new PasswordAuthentication(username, password);
+                        }
+                    });
+
+            try {
+
+                //creamos un objeto MIME
+                Message message = new MimeMessage(session);
+                //ponemos el remitente
+                message.setFrom(new InternetAddress("ds1617b@gmail.com"));
+                message.setRecipients(Message.RecipientType.TO,
+                //aqui va el destinatario
+                InternetAddress.parse("karlianamsuarez@gmail.com"));
+                //El tema del correo
+                message.setSubject("Password Recovery FitUCAB");
+                //El contenido del correo
+                message.setText("password");
+                //Enviamos
+                Transport.send(message);
+                //Aqui en adelante cualquier tipo de validacion
+                System.out.println("Done");
+                return ("done");
+
+            } catch (MessagingException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+
+    }
+
     @GET
     @Path("/helloWorld")
     @Produces("application/json")

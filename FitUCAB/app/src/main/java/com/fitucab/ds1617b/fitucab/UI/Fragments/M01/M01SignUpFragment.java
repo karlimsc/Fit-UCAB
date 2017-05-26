@@ -238,6 +238,7 @@ public class M01SignUpFragment extends Fragment {
                             String phone, String birthdate, String weight, String height){
 
         if (validateComponents(username,email,phone,password).equals("ok")) {
+
             ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
             Call<User> call = apiService.insertRegistry(username, password, email, sex, phone, birthdate, weight, height);
             call.enqueue(new Callback<User>() {
