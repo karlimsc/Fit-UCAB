@@ -24,6 +24,8 @@ import java.util.Properties;
 @Path("/M01_ServicesUser")
 public class M01_ServicesUser {
 
+    public M01_ServicesUser(){}
+
     private Connection conn =bdConnect();
     Gson gson = new Gson();
 
@@ -108,10 +110,6 @@ public class M01_ServicesUser {
 
 
     /***
-     * Metodo que devuelve la informacion completa de la persona
-     * @param username
-     * @return
-     */
 
     /**
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
