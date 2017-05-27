@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 
 
 
-public class M01_ServicesUserTest extends baseClass {
+public class M01_ServicesUserTest {
 
 
 
@@ -42,7 +42,7 @@ public class M01_ServicesUserTest extends baseClass {
     }
 
     @Test
-    public void userOnly() throws URISyntaxException {
+    public void userOnly() throws Exception {
 
 
         //RestAssured  se inicializa si no se importa static
@@ -55,16 +55,16 @@ public class M01_ServicesUserTest extends baseClass {
         //body  el cuerpo que va a retornar
         // asString de tipo string
         try {
-            URI prueba = new URI("/M01_ServicesUser/getUser?User=daniel&Password=daniel");
-            String json = given().accept(ContentType.JSON).when().get(prueba).thenReturn().body().asString();
-            assertNotNull(json);
+            URL prueba = new URL("http://localhost:8888/WebServicesFitUCAB_war_exploded/M01_ServicesUser/informationUser?username=daniel");
+            Response response = given().accept(ContentType.JSON).when().get(prueba);
+            System.out.println(response.asString() );
+          //  String json = given().accept(ContentType.JSON).when().get(prueba).thenReturn().body().asString();
+           // assertNotNull(json);
+
+            //given().accept(ContentType.JSON).when().get().then().assertThat().statusCode(200);
             // se pueden manejar los errore HTTP buscar como agaregar httpstatus.class
             //Response response = given().accept(ContentType.JSON).when().get(prueba);
-        }
-        catch (URISyntaxException e){
-
-        }
-        catch (Exception e){
+        } catch (Exception e){
 
         }
     }
@@ -73,9 +73,9 @@ public class M01_ServicesUserTest extends baseClass {
     public void getUser() throws Exception {
 
 
-        URL prueba =new URL("localhost:8888/WebServicesFitUCAB_war_exploded/M01_ServicesUser/getUser?User=daniel&Password=daniel");
+      /*  URL prueba =new URL("localhost:8888/WebServicesFitUCAB_war_exploded/M01_ServicesUser/getUser?User=daniel&Password=daniel");
         //RestAssured.(lo puse estatico el import)
-         when().get(prueba);
+         when().get(prueba);*/
     }
 
     @Test

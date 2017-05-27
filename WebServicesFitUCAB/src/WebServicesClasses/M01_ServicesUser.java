@@ -30,6 +30,40 @@ public class M01_ServicesUser {
     private Connection conn =bdConnect();
     Gson gson = new Gson();
 
+
+
+    @GET
+    @Path("/informationUser")
+    @Produces("application/json")
+    public String informationUser(@QueryParam("username") String userparam)
+    {
+        String query="SELECT * FROM M01_INFORMACIONUSER('"+ userparam +"')";
+        try{
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            User user= null;
+            while(rs.next()){
+                String username = rs.getString("usuario");
+                int id = rs.getInt("id");
+                String password = rs.getString("pwd");
+                String sexo= rs.getString("sex");
+                String phone= rs.getString("phone");
+                String email= rs.getString("mail");
+                Date birtdate= rs.getDate("birthdate");
+
+                user= new User(id,username,password,email,sexo,phone,birtdate);
+
+            }
+
+            return gson.toJson(user);
+
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+
+    }
     /**
      * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
      * @param username
@@ -41,7 +75,6 @@ public class M01_ServicesUser {
      * @param height
      * @return
      */
-
     @GET
     @Path("/insertRegistry")
     @Produces("application/json")
@@ -79,6 +112,12 @@ public class M01_ServicesUser {
         }
     }
 
+    /***
+     * Metodo que elimina a un usuario
+     * @param userparam
+     * @return
+     */
+
     @GET
     @Path("/deteleUser")
     @Produces("application/json")
@@ -105,6 +144,16 @@ public class M01_ServicesUser {
             return e.getMessage();
         }
     }
+
+    /***
+     * Metodo que realiza cambios en el usuario
+     * @param userparam
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @return
+     */
     @GET
     @Path("/updateUser")
     @Produces("application/json")
@@ -133,6 +182,11 @@ public class M01_ServicesUser {
         }
     }
 
+    /***
+     * Metodo que con el email recuperas tu usuario y contraseña
+     * @param email
+     * @return
+     */
     @GET
     @Path("/userView")
     @Produces("application/json")
@@ -325,8 +379,8 @@ public class M01_ServicesUser {
         try
         {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/fitucabdb";
-            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
+            String url = "jdbc:postgresql://localhost/fitucab";
+            conn = DriverManager.getConnection(url,"postgres", "123456");
         }
         catch (ClassNotFoundException e)
         {
