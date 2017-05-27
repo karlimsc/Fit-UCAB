@@ -31,6 +31,40 @@ public class M01_ServicesUser {
     private Connection conn =bdConnect();
     Gson gson = new Gson();
 
+
+
+    @GET
+    @Path("/informationUser")
+    @Produces("application/json")
+    public String informationUser(@QueryParam("username") String userparam)
+    {
+        String query="SELECT * FROM M01_INFORMACIONUSER('"+ userparam +"')";
+        try{
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            User user= null;
+            while(rs.next()){
+                String username = rs.getString("usuario");
+                int id = rs.getInt("id");
+                String password = rs.getString("pwd");
+                String sexo= rs.getString("sex");
+                String phone= rs.getString("phone");
+                String email= rs.getString("mail");
+                Date birtdate= rs.getDate("birthdate");
+
+                user= new User(id,username,password,email,sexo,phone,birtdate);
+
+            }
+
+            return gson.toJson(user);
+
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+
+    }
     /**
      * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
      * @param username
@@ -42,7 +76,6 @@ public class M01_ServicesUser {
      * @param height
      * @return
      */
-
     @GET
     @Path("/insertRegistry")
     @Produces("application/json")
@@ -83,8 +116,81 @@ public class M01_ServicesUser {
         }
     }
 
+    /***
+     * Metodo que elimina a un usuario
+     * @param userparam
+     * @return
+     */
+
+    @GET
+    @Path("/deteleUser")
+    @Produces("application/json")
+    public String deleteUser(@QueryParam("username") String userparam){
+
+        String query="SELECT M01_ELIMINARUSER('"+ userparam +"')";
 
 
+        try{
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            int delete =0;
+
+            while(rs.next()){
+
+                delete = rs.getRow();
+
+            }
+            return gson.toJson(delete);
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+    }
+
+    /***
+     * Metodo que realiza cambios en el usuario
+     * @param userparam
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @return
+     */
+    @GET
+    @Path("/updateUser")
+    @Produces("application/json")
+    public String updateUser(@QueryParam("username") String userparam,@QueryParam("password") String password,@QueryParam("email") String email,
+    @QueryParam("sex") String sex ,@QueryParam("phone") String phone){
+
+        String query="SELECT M01_MODIFICARUSER('"+userparam+"','"+password+"','"+email+"','"+sex+"'" +
+                ",'"+phone+"')";
+
+        try{
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            int update =0;
+
+            while(rs.next()){
+
+                update = rs.getRow();
+
+            }
+            return gson.toJson(update);
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+    }
+
+    /***
+     * Metodo que con el email recuperas tu usuario y contraseña
+     * @param email
+     * @return
+     */
     @GET
     @Path("/userView")
     @Produces("application/json")
