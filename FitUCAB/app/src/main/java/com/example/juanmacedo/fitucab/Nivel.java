@@ -30,19 +30,22 @@ public class Nivel {
     private int _nivel8= 13600;
     private int _nivel9= 16200;
     private int _nivel10= 19000;
+    private int _puntosTotales= 0;
+    int _nivel=0;
     public ConexionesServicioWeb _servicioWeb = new ConexionesServicioWeb();
     private String URL = _servicioWeb._dbObtener;
     public int _busquedaPuntos;
-
     //Constructor vacio de la clase
-    public Nivel (){
+    public Nivel (Context context){
+        sendRequest(context);
+
     }
 
 
 
     //------------------METODOS DE LA CLASE
 
-    /*
+    /**
     * VOID pasoNivel Metodo para determinar si con los puntos recien obtenidos, el jugador
     *   pasa de nivel y si es asi, enviar una notificacion
     * @PARAMS : _idUsuario, int _puntosParaSumar
@@ -126,23 +129,23 @@ public class Nivel {
     }
 
 
+
     /*
-    * INT calculoNivel Metodo para calcular el nivel actual de un usuario dado
-    * @PARAMS : Usuario.class
-    * @RETURN : int _nivel
-     */
-    public int calculoNivel(int _idUsuario){
+        * INT calculoNivel Metodo para calcular el nivel actual de un usuario dado
+        * @PARAMS : Usuario.class
+        * @RETURN : int _nivel
+         */
+    public int calculoNivel(int _idUsuario, Context context){
 
         //Declaracion de atributos del metodo
-        int _nivel=0;
-        int _puntosTotales=0;
 
+        sendRequest(context);
         //Llamada al metodo que obtiene todos los puntos ganados actualmente por el jugador
-        _puntosTotales= sendRequest();
+
 
         //Condicionales para asignar el nivel al usuario
         if (_puntosTotales < _nivel1)
-            _nivel=1;
+            _nivel = 1;
         else if ((_puntosTotales >= _nivel1)&&(_puntosTotales < _nivel2))
             _nivel=2;
         else if ((_puntosTotales >= _nivel2)&&(_puntosTotales < _nivel3))
@@ -166,14 +169,15 @@ public class Nivel {
     }
 
 
-    public int sendRequest(){
+
+    public void sendRequest(final Context context) {
         StringRequest stringRequest = new StringRequest(URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         Log.d("onResponse()", response.toString());
-                        _busquedaPuntos= llamadaJSON(response);
-
+                        //LE PASO LA ACTIVIDAD PARA INSTANCIAR PUNTAJE CON SU VALOR
+                        llamadaJSON(response);
                     }
 
                 }, new Response.ErrorListener() {
@@ -182,18 +186,16 @@ public class Nivel {
                 Log.e("onResponse()", error.toString());
             }
         });
-
-         RequestQueue request = Volley.newRequestQueue(this);
-         request.add(stringRequest);
-
-        return _busquedaPuntos;
-
        // Log.d("objetooo", stringRequest.toString());
+        //INSTANCIAR PETICION
+        RequestQueue request = Volley.newRequestQueue(context);
+        request.add(stringRequest);
+        Log.d("Request impreso", stringRequest.toString());
 
     }
 
 
-    private int llamadaJSON(String json){
+    private void llamadaJSON(String json){
 
         int _puntajeTotal=0;
         int _puntaje1 = 0;
@@ -207,7 +209,8 @@ public class Nivel {
             _puntajeTotal = _puntaje1;
         }
 
-        return _puntajeTotal;
+        this._puntosTotales=_puntajeTotal;
+        //calculoNivel(1);
     }
 
 

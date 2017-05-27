@@ -22,18 +22,50 @@
         android:paddingTop="6dp"
         android:text="Logro: "
         android:textColor="#000000"
-        android:textSize="20dp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/tv_logro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/tv_logroLabel"
         android:paddingTop="6dp"
         android:text=""
         android:textColor="#000000"
         android:textSize="12sp"
-        tools:text="logro" />
+        tools:text="logro"
+        android:layout_alignBaseline="@+id/tv_logroLabel"
+        android:layout_alignBottom="@+id/tv_logroLabel"
+        android:layout_toRightOf="@+id/tv_logroLabel"
+        android:layout_toEndOf="@+id/tv_logroLabel" />
+
+    <TextView
+        android:id="@+id/tv_recompensaLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_recompensa"
+        android:layout_alignBottom="@+id/tv_recompensa"
+        android:layout_toLeftOf="@+id/tv_recompensa"
+        android:layout_toStartOf="@+id/tv_recompensa"
+        android:paddingTop="6dp"
+        android:text="Recompensa: "
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_recompensa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="6dp"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="12sp"
+        tools:text="logro"
+        android:layout_marginRight="23dp"
+        android:layout_marginEnd="23dp"
+        android:layout_alignTop="@+id/i_copa"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
 
     <TextView
         android:id="@+id/tv_descripcion"

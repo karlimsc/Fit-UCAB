@@ -1,9 +1,8 @@
 package com.example.juanmacedo.fitucab;
 
-import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.android.volley.RequestQueue;
@@ -19,12 +18,10 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-
 
 
 /**
@@ -34,15 +31,14 @@ import java.util.ArrayList;
 public class GraficaNivel extends AppCompatActivity {
 
 
-    private static String TAG = "MainActivity";
-
-    //Deben ser cantidades en int, no porcentajes
-    private int[] _valoresY = {0,0};
-    private String[] _valoresX = {"Sin terminar" , "Terminados" };
-    PieChart pieChart;
-    private int logrado, noLogrado;
+    private static String TAG = "MainActivity", ERROR;
     private static String URLtamaño = "http://192.168.1.8:8080/FitUcabService_war_exploded/dbgrafica/obtener";
-
+    PieChart pieChart;
+    //Deben ser cantidades en int, no porcentajes
+    private int[] _valoresY = {0, 0};
+    private String[] _valoresX = {"No logrados", "Logrado"};
+    private int logrado, noLogrado;
+    private int _calculoNivel = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +46,13 @@ public class GraficaNivel extends AppCompatActivity {
         setContentView(R.layout.activity_nivel);
         traerTamaños();
 
+         llenado();
 
+
+
+    }
+
+    public void llenado(){
         pieChart = (PieChart) findViewById(R.id.PieChartId);
 
         //Habilitamos funcion de girar la torta al tocarla
@@ -61,7 +63,7 @@ public class GraficaNivel extends AppCompatActivity {
         pieChart.setHoleRadius(58f);
         pieChart.setTransparentCircleRadius(61f);
         pieChart.setTransparentCircleAlpha(110);
-        pieChart.setCenterText("Nivel X\n Usuario");
+        pieChart.setCenterText("Nivel: "+ _calculoNivel);
         pieChart.setCenterTextSize(30);
         //Desabilitamos atributo descripcion de la grafica
         pieChart.getDescription().setEnabled(false);
@@ -70,9 +72,6 @@ public class GraficaNivel extends AppCompatActivity {
         //Efecto visual inicial de la grafica
         pieChart.animateXY(1400, 1400);
 
-
-
-
     }
 
     //Funcion que realiza la carga de los datos a la grafica
@@ -80,13 +79,13 @@ public class GraficaNivel extends AppCompatActivity {
 
         ArrayList<PieEntry> entries = new ArrayList<>();
 
-        for (int i = 0; i < _valoresX.length ; i++) {
+        for (int i = 0; i < _valoresX.length; i++) {
             entries.add(new PieEntry(_valoresY[i], _valoresX[i]
-                    ));
+            ));
         }
 
         //create the data set
-        PieDataSet pieDataSet = new PieDataSet(entries,"");
+        PieDataSet pieDataSet = new PieDataSet(entries, "");
         //Espacio entre cada seccion de la grafica
         pieDataSet.setSliceSpace(3f);
         pieDataSet.setValueTextSize(20);
@@ -106,7 +105,6 @@ public class GraficaNivel extends AppCompatActivity {
         legend.setPosition(Legend.LegendPosition.BELOW_CHART_CENTER);
 
 
-
         //create pie data object
         PieData pieData = new PieData(pieDataSet);
         pieData.setValueFormatter(new PercentFormatter());
@@ -116,13 +114,13 @@ public class GraficaNivel extends AppCompatActivity {
         pieChart.invalidate();
     }
 
-    public void traerTamaños(){
+    public void traerTamaños() {
         StringRequest stringRequest = new StringRequest(URLtamaño,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         Log.d("onResponse()", response.toString());
-                        showJSON2(response);
+                        showJSON(response);
 
                     }
 
@@ -140,21 +138,24 @@ public class GraficaNivel extends AppCompatActivity {
 
     }
 
-    private void showJSON2(String json){
-        JSONObject jsonObject=null;
+    private void showJSON(String json) {
+        JSONObject jsonObject = null;
         try {
             jsonObject = new JSONObject(json);
-
             logrado = Integer.parseInt(jsonObject.getString("Logrado"));
             noLogrado = Integer.parseInt(jsonObject.getString("NoLogrado"));
-            _valoresY[0] = logrado;
-            _valoresY[1] = noLogrado;
+
+            _valoresY[0] = noLogrado;
+            _valoresY[1] = logrado;
         } catch (JSONException e1) {
             e1.printStackTrace();
+        } catch (NullPointerException e) {
+            Log.e(ERROR, "Valor NULL");
+        } catch (NumberFormatException e) {
+            Log.e(ERROR, "No es un numero");
         }
         addDataSet();
     }
-
 
 
 }
