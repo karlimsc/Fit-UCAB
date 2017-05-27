@@ -66,9 +66,13 @@ public class M01HomeFragment extends Fragment {
         setupViewValues();
         manageChangeFragmentLogin();
         manageChangeFragmentSignUp();
+
         return _view;
     }
 
+    /**
+     * metodo de listener del boton Login, para realizar el cambio al otro fragmento.
+     */
     private void manageChangeFragmentLogin() {
 
         _btnIrIniciarSesion.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +82,10 @@ public class M01HomeFragment extends Fragment {
             }
         });
     }
+
+    /**
+     * metodo de listener del boton SingUp, para realizar el cambio a ese fragmento.
+     */
     private void manageChangeFragmentSignUp() {
 
         _btnIrRegistro.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +99,9 @@ public class M01HomeFragment extends Fragment {
 
     }
 
+    /**
+     * Prepara los componentes de la vista.
+     */
     private void setupViewValues() {
 
         _btnIrIniciarSesion = (Button) _view.findViewById(R.id.btn_m01_iniciarSesion);

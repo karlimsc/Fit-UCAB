@@ -16,7 +16,6 @@ public class RegistryTest {
     public void setUp() throws Exception {
     }
 
-
     @After
     public void tearDown() throws Exception {
     }

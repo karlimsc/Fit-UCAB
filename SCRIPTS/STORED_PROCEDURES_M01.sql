@@ -35,7 +35,7 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************RECUPERAR PASSWORD**************************************************/
 
-CREATE OR REPLACE FUNCTION M01_RECUPERARPWD(varchar(30)) RETURNS TABLE (usuario varchar(20), password varchar(8)) AS $$
+CREATE OR REPLACE FUNCTION M01_RECUPERARPWD(varchar(30)) RETURNS TABLE (user varchar(20), password varchar(8)) AS $$
 
 BEGIN
  	RETURN QUERY

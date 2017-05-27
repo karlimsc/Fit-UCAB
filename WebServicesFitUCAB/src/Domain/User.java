@@ -1,14 +1,11 @@
 package Domain;
 
 
-import javax.xml.bind.annotation.XmlRootElement;
 import java.sql.Date;
 
 /**
  * Clase Usuario del Modulo 1
  */
-
-@XmlRootElement
 public class User {
 
     private int _id;

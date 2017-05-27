@@ -17,16 +17,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/appbar_padding_top"
-            android:theme="@style/TabHost_m05"
-            android:fontFamily="sans-serif"
-            android:typeface="sans"
-            >
+            android:theme="@style/AppTheme.AppBarOverlay">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
-
-                android:fontFamily="sans-serif"
-                android:typeface="sans"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
@@ -40,10 +34,7 @@
         <android.support.v4.app.FragmentTabHost
             android:id="@android:id/tabhost"
             android:layout_width="match_parent"
-            android:theme="@style/TabHost_m05"
             android:background="@color/colorPrimary"
-            android:fontFamily="sans-serif"
-            android:typeface="sans"
             android:layout_height="match_parent">
 
             <LinearLayout
@@ -53,8 +44,7 @@
 
                 <TabWidget
                     android:id="@android:id/tabs"
-                    android:fontFamily="sans-serif"
-                    android:typeface="sans"
+
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
