@@ -1,14 +1,14 @@
-package M01_Test;
+
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.*;
-import WebServicesClasses.M01_ServicesUser;
+import org.junit.Test;
+
 import java.net.URL;
 import java.sql.*;
 
-import static io.restassured.RestAssured.*;
+import static io.restassured.RestAssured.given;
 
 
 public class M01_ServicesUserTest {
