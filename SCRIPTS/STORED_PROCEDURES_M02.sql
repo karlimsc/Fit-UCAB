@@ -19,15 +19,15 @@ $$ LANGUAGE plpgsql;
 /**************************************************Consultar Perfil por ID**************************************************/
 
 CREATE OR REPLACE FUNCTION M02_CONSULTARPERFILID(codigo int) RETURNS TABLE (id int, usuario varchar(20),
-  password varchar(8), email varchar(30), sex varchar(20), phone varchar(20), birthdate date, weight real, height real,
+	email varchar(30), sex varchar(20), phone varchar(20), birthdate date, weight real, height real,
   points int) AS $$
 
 BEGIN
  	RETURN QUERY
-	 	SELECT P.PERSONID, P.PERSONUSERNAME, P.PERSONPASSWORD, P.PERSONEMAIL, P.PERSONSEX, P.PERSONPHONE, P.PERSONBIRTHDATE,
-      R.REGISTRYWEIGHT, R.REGISTRYHEIGHT, R.REGISTRYPOINT
+	 	SELECT P.PERSONID, P.PERSONUSERNAME, P.PERSONEMAIL, P.PERSONSEX, P.PERSONPHONE, P.PERSONBIRTHDATE,
+      R.REGISTRYWEIGHT, R.REGISTRYHEIGHT
 		FROM PERSON P, REGISTRY R
-		WHERE PERSONUSERNAME = codigo AND P.PERSONID = R.FK_PERSONID
+		WHERE PERSONID = codigo AND P.PERSONID = R.FK_PERSONID
 	;
 END;
 $$ LANGUAGE plpgsql;
@@ -40,7 +40,7 @@ DECLARE
 
 BEGIN
 	UPDATE person SET PERSONPASSWORD = password, PERSONEMAIL = email, PERSONSEX = sex, PERSONPHONE = phone,
-    PERSONBIRTHDATE = birthdate WHERE PERSONUSERNAME = id;
+    PERSONBIRTHDATE = birthdate WHERE PERSONID = id;
 END;
 $$ LANGUAGE plpgsql;
 
