@@ -23,6 +23,7 @@ import com.fitucab.ds1617b.fitucab.Helper.FormatUtility;
 import com.fitucab.ds1617b.fitucab.Helper.GeoLocalization.GeoLocalization;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.M05_RequestList;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
+import com.fitucab.ds1617b.fitucab.Model.Global;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -65,7 +66,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m05_start_tracking);
         M05_RequestList requestList = new M05_RequestList(this.getApplicationContext(),
-                "http://10.0.2.2:8888/Prueba_war_exploded/M05_ServicesSport/getSport?idSpo=1");
+                "http://localhost:8080/untitled_war_exploded/M05_ServicesSport/getSport?idSpo=1");
 
         LocationPoints = new ArrayList<>();
 
@@ -235,9 +236,10 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
     public void makeRequest()
     {
+        String consult = Global._url +"M05_ServicesSport/getSport?idSpo=1";
 
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, VolleySingleton.getStringConn(), (String)null,
+                (Request.Method.GET, consult, (String)null,
                         new Response.Listener<JSONObject>() {
                             @Override
                             public void onResponse(JSONObject response) {

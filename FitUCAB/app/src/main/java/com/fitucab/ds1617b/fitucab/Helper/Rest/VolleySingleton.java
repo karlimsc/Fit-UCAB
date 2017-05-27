@@ -14,7 +14,7 @@ public class VolleySingleton {
     private static VolleySingleton mInstance;
     private RequestQueue mRequestQueue;
     private static Context mCtx;
-    private static final String STRING_CONN= "http://10.0.2.2:8888/Prueba_war_exploded/M05_ServicesSport/getSport?idSpo=1";
+    private static final String STRING_CONN= "http://192.168.250.3:8080/untitled_war_exploded/M05_ServicesSport/getSport?idSpo=1";
 
 
     private VolleySingleton(Context context) {
