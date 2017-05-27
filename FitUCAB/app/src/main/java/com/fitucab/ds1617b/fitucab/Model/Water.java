@@ -5,6 +5,7 @@ package com.fitucab.ds1617b.fitucab.Model;
  */
 public class Water {
     private     String _time;
+    private     String  hora;
     private     Integer _glasstype;
     private     Integer  _fkPerson;
     private     Integer _cantidad;
@@ -126,4 +127,8 @@ public class Water {
     public void set_error(String error){_error=error;};
 
     public String get_error(){return _error;};
+
+    public void set_hora(String hora){this.hora=hora;};
+
+    public String get_get(){return hora;};
 }

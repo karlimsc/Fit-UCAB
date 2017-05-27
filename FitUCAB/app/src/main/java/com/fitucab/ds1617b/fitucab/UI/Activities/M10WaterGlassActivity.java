@@ -55,7 +55,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     private ViewPager mViewPager;
     private ImageButton _btnAdd;
     private ImageButton _btnLess;
-    private EditText _EtnDate;
+    public static EditText _EtnDate;
     private  View _view;
     private Calendar _cal ;
     private String _date;
@@ -188,10 +188,18 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
 
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
+
+            Bundle bundle = new Bundle();
+            String myMessage = _EtnDate.getText().toString();
+            bundle.putString("message", myMessage );
+
+
+
             //me cago en tu mierda deja esto asi y despues te explico
             M10WaterGlassFragment m10 = new M10WaterGlassFragment();
             M10HistoyFragment list = new M10HistoyFragment();
 
+            m10.setArguments(bundle);
 
 
 

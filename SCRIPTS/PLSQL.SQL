@@ -11,6 +11,9 @@ max integer;
 BEGIN
 	
 max = (Select max(glasshistoricid)+1 from glass_historic) ;
+	if max = null then
+	max := 1;
+	end if 
 	
 	INSERT INTO glass_historic(
 	glasshistoricid, GLASSTIME, GLASSTYPE, fk_person)
@@ -52,8 +55,7 @@ BEGIN
  
 
 	delete from glass_historic where glasshistoricid =
-	( select glasshistoricid from  glass_historic where
-	 DATE(GLASSTIME) = DATE(tm) and fk_person = fkp order by GLASSTIME desc limit 1);
+	( Select max(glasshistoricid) from glass_historic where fk_person = fkp);
 
 
 
@@ -62,6 +64,9 @@ BEGIN
 
 END;
 $$ LANGUAGE plpgsql VOLATILE;
+
+
+
 
 
 

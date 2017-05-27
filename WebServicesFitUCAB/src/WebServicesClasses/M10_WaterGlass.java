@@ -27,11 +27,13 @@ public class M10_WaterGlass
     private Gson _gson = new Gson();
     private SimpleDateFormat _sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
     private SimpleDateFormat _sdf2 = new SimpleDateFormat("dd/MM/yyyy");
+    private SimpleDateFormat _sdf3 = new SimpleDateFormat("hh:mm:ss");
     private SimpleDateFormat _sdf1 = new SimpleDateFormat("dd/MM");
     private ArrayList<Water> _array = new ArrayList();
     private Water _water;
     private Sql _sql = new Sql();
     private ResultSet _rs;
+    private String hora;
     Date fecha = new Date();
     private String aux;
     private Integer _res;
@@ -50,10 +52,10 @@ public class M10_WaterGlass
     public String addWater(@QueryParam("time") String dia , @QueryParam("glasstype") int glassType
             , @QueryParam("fkp") int fkp)
     {
-                
+                hora = _sdf3.format(fecha);
         try {
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-           _rs = _sql.sql("Select res from m10_addwater('"+dia+"',"+glassType+","+fkp+")");
+           _rs = _sql.sql("Select res from m10_addwater('"+dia+" "+hora+"',"+glassType+","+fkp+")");
 
             //recorro la consulta
             while( _rs.next() )
@@ -61,7 +63,7 @@ public class M10_WaterGlass
                 _water = new Water();
                 _water.set_cantidad( _rs.getInt("res") );
 
-                _array.add( _water );
+
 
 
 
@@ -69,17 +71,17 @@ public class M10_WaterGlass
             }// end while que recorre la consulta
         } catch (SQLException e) {
             _water = new Water();
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson(  _water);
         }
         catch (NullPointerException e)
         {
 
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson(  _water );
         }
         catch (Exception e)
         {
 
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson( _water );
         }
 
 
@@ -163,27 +165,28 @@ public class M10_WaterGlass
                 _water = new Water(_rs.getInt("sumG")
                         ,_rs.getInt("countg"));
 
+
                 // se guardan los datos en un arraylist de tipo water
-                _array.add(_water);
+
 
             } //end while que recorre la consulta
 
         } catch (SQLException e) {
 
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson(  _water );
         }
         catch (NullPointerException e)
         {
 
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson(  _water );
         }
         catch (Exception e)
         {
 
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson(  _water );
         }
         //se devuelve el arraylist
-        return  _gson.toJson( _array );
+        return  _gson.toJson( _water);
 
 
     }
@@ -246,32 +249,32 @@ public class M10_WaterGlass
 
             while(_rs.next())
             {
+                _water = new Water();
                 //se agarran los valores de la consulta y se crea un objeto tipo water
                 _water.set_cantidad(_rs.getInt("res"));
 
-                // se guardan los datos en un arraylist de tipo water
-                _array.add(_water);
+
 
             } //end while que recorre la consulta
 
         } catch (SQLException e) {
 
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson( _water );
         }
 
         catch (NullPointerException e)
         {
 
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson( _water );
         }
         catch (Exception e)
         {
 
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson(  _water );
         }
 
         //se devuelve el arraylist
-        return  _gson.toJson( _array );
+        return  _gson.toJson( _water );
 
 
     }
@@ -292,25 +295,22 @@ public class M10_WaterGlass
                 //se agarran los valores de la consulta y se crea un objeto tipo water
                 _water.set_cantidad(_rs.getInt("res"));
 
-                // se guardan los datos en un arraylist de tipo water
-                _array.add(_water);
-
             } //end while que recorre la consulta
 
         } catch (SQLException e)
         {
 
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson(  _water );
         }
         catch (NullPointerException e)
         {
 
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson(  _water  );
         }
         catch (Exception e)
         {
 
-            return _gson.toJson(  _array.add(_water) );
+            return _gson.toJson(  _water );
         }
         //se devuelve el arraylist
         return  _gson.toJson( _array );
