@@ -1,4 +1,4 @@
-package M01_Test;
+package Test.M01_Test;
 import io.restassured.RestAssured;
 import org.junit.*;
 

@@ -1,4 +1,4 @@
-package M01_Test;
+package Test.M01_Test;
 import WebServicesClasses.M01_ServicesUser;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
