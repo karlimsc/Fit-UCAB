@@ -98,8 +98,8 @@ CREATE SEQUENCE TRAININGID;
 CREATE TABLE SPOR_TRAINING ( 
 SPOR_TRAININGID integer not null, 
 TYPE_COMPLEXITY varchar (90) not null,
-TIMETRAINING integer not null,
-DISTANCE integer not null,
+TIMETRAINING integer ,
+DISTANCE integer ,
 FK_SPORTID integer ,
 FK_TRAININGID integer ,
 constraint PK_EXER_TRAININGID primary key (SPOR_TRAININGID) 
