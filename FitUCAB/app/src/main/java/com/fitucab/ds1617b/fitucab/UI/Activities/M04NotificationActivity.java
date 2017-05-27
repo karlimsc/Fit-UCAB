@@ -196,8 +196,8 @@ public class M04NotificationActivity extends AppCompatActivity {
      *
      */
     public int checkMail(String receptor, String asunto, String mensaje) {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //agregando politicas para que se envie el correo
-        StrictMode.setThreadPolicy(policy); //agregando la politica
+        //StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build(); //agregando politicas para que se envie el correo
+        //StrictMode.setThreadPolicy(policy); //agregando la politica
 
         Properties properties = new Properties(); // Ésta clase es la encargada de almacenar las propiedades de la conexión que vamos a establecer con el servidor de correo Saliente SMTP.
         properties.put("mail.smtp.host", "smtp.googlemail.com");//se coloca el servidor de correo electronico
@@ -205,7 +205,7 @@ public class M04NotificationActivity extends AppCompatActivity {
         properties.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory"); //seguridad ssl potocolo para qu se envie de forma segurala informacion
         properties.put("mail.smtp.auth", "true"); //autenticas
         properties.put("mail.smtp.port", "465"); //socket puerto de gmail
-
+        _sendcorrect = 0;
             /*Autenticar correo:*/
         try {
             session = Session.getDefaultInstance(properties, new Authenticator() {
@@ -217,13 +217,22 @@ public class M04NotificationActivity extends AppCompatActivity {
                 /*Verificar que la sesion no sea nula*/
             if (session != null)
             {
-                MimeMessage message = new MimeMessage(session);//Message message = new MimeMessage(session);
-                message.setFrom(new InternetAddress(CORREO)); //Emisor: quien enviara el correo
-                message.setSubject(asunto); //AQUI SE ENVIA EL  ASUNTO
-                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(receptor));//Receptor: el correo que le llegara el mensaje
-                message.setContent(mensaje, "text/html; charset=utf-8");//AQUI SE COLOCA EL MENSAJE. despues de la coma va el  formato del mensaje
+                //Crear el objeto que contiene al mensaje
+                MimeMessage message = new MimeMessage(session);
 
-                    /*Envia el correo:*/
+                //Emisor: quien enviara el correo
+                message.setFrom(new InternetAddress(CORREO));
+
+                //AQUI SE ENVIA EL  ASUNTO
+                message.setSubject(asunto);
+
+                //Receptor: el correo que le llegara el mensaje
+                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(receptor));
+
+                //AQUI SE COLOCA EL MENSAJE. despues de la coma va el  formato del mensaje
+                message.setContent(mensaje, "text/html; charset=utf-8");
+
+                //Envia el correo
                 Transport.send(message);
 
                 _sendcorrect=1; //verifico que lo haya mandado
@@ -239,7 +248,7 @@ public class M04NotificationActivity extends AppCompatActivity {
         catch (Exception e) {
             e.printStackTrace();
         }
-        return 0; //_sendcorrect;
+        return _sendcorrect; //_sendcorrect;
 
     }
 
@@ -398,7 +407,8 @@ public class M04NotificationActivity extends AppCompatActivity {
 
             public void onProgressChanged(SeekBar seekBar,int i,boolean b)
             {
-                textview.setText("KM:" + seekBar.getProgress());
+                String progreso = "KM: " + seekBar.getProgress();
+                textview.setText(progreso);
 
                   /*el SharedPreferences crea un archivo xml que solo sera accedido solo para esta aplicacion*/
                 SharedPreferences mispreferencias = getSharedPreferences( "PreferenciasUsuario", Context.MODE_PRIVATE );
@@ -426,14 +436,44 @@ public class M04NotificationActivity extends AppCompatActivity {
     public int converterMiles(double distanciakm)
     {
         double distanciamilla = distanciakm * 0.6213;
-        int z = (int)(distanciamilla);
-        return z;
+        return (int) (distanciamilla);
     }
 
     public int converterKm (double distanciamiles)
     {
         double distanciakm = distanciamiles * 1.609;
-        int w = (int)(distanciakm);
-        return w;
+        return (int) distanciakm;
     }
+
+    /**Metodo para cambiar los colores de entre las opciones
+     *
+     * @param viejo es la opcion que estaba elegida anteriormente
+     * @param nuevo es la nueva opcion que el usuario elige
+     */
+    public void cambiarColores( TextView viejo, TextView nuevo){
+        nuevo.setBackgroundColor(getResources().getColor(R.color.softgrey));
+        nuevo.setClickable(false);
+
+        viejo.setBackgroundColor(getResources().getColor(R.color.transparent));
+        viejo.setClickable(true);
+    }
+
+
+
+    public void cambiaAKm (View view){
+        TextView tvkm = (TextView) findViewById(R.id.tv_m04_km);
+        TextView tvmi = (TextView) findViewById(R.id.tv_m04_mi);
+
+        cambiarColores(tvmi,tvkm);
+    }
+
+
+    public void cambiaAMi (View view){
+        TextView tvkm = (TextView) findViewById(R.id.tv_m04_km);
+        TextView tvmi = (TextView) findViewById(R.id.tv_m04_mi);
+
+        cambiarColores(tvkm,tvmi);
+    }
+
+
 }

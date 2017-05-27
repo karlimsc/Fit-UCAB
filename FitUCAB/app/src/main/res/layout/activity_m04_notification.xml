@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@+id/widget42"
         android:layout_width="282dp"
-        android:layout_height="290dp"
+        android:layout_height="330dp"
         android:orientation="vertical"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -109,13 +109,26 @@
             android:id="@+id/tv_m04_idioma"
             android:layout_width="match_parent"
             android:layout_height="33dp"
+            android:layout_marginTop="10dp"
             android:clickable="true"
             android:onClick="showDialog"
             android:text="@string/lang_btn"
-            tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="290dp"
             android:textColor="@color/black"
-            android:layout_marginTop="10dp" />
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="290dp" />
+
+        <TextView
+            android:id="@+id/tv_m04_km"
+            android:layout_width="141dp"
+            android:layout_height="33dp"
+            android:background="@color/softgrey"
+            android:clickable="false"
+            android:onClick="cambiaAKm"
+            android:text="@string/kms"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="330dp"
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
 
 
     </LinearLayout>
@@ -126,7 +139,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="guardar cambios"
-        android:text="guardar"
+        android:text="@string/guardar"
         android:layout_below="@+id/tv_m04_distancia"
         android:layout_alignStart="@+id/tv_m04_radio2" />
 
@@ -157,6 +170,20 @@
         android:layout_below="@+id/widget42"
         android:layout_alignStart="@+id/widget42" />
 
+    <TextView
+        android:id="@+id/tv_m04_mi"
+        android:layout_width="141dp"
+        android:layout_height="33dp"
+        android:clickable="true"
+        android:onClick="cambiaAMi"
+        android:text="@string/millas"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="330dp"
+        android:textAlignment="center"
+        android:layout_alignBottom="@+id/widget42"
+        android:layout_toEndOf="@+id/tv_m04_distancia"
+        android:background="@color/transparent"/>
 
 
 </RelativeLayout>

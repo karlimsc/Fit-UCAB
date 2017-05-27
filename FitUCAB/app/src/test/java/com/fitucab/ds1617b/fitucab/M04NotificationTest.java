@@ -31,10 +31,13 @@ public class M04NotificationTest {
         assertEquals(8,y);
     }
 
-    /*@Test
-    public void testsetNotification()
+    @Test
+    public void testSendMail()
     {
+        int _cM;
         M04NotificationActivity noti = new M04NotificationActivity();
-        noti.onCreate();
-    }*/
+        _cM = noti.checkMail("luismzk@gmail.com","Asunto","Mensaje");
+        
+        assertEquals(1,_cM);
+    }
 }
