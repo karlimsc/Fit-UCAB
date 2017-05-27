@@ -31,6 +31,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.concurrent.ExecutionException;
 
 public class M05StartTrackingActivity extends GeoLocalization implements
         GoogleApiClient.ConnectionCallbacks,
@@ -127,10 +128,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     View.OnLongClickListener end = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
-            activity.set_endsite(LocationPoints.get(LocationPoints.size()-1).toString());
-            activity.set_endtime(getCurrentTime().toString());
-            activity.set_date(getCurrentTime().toString());
-            activity.set_km(distance);
+
             return false;
         }
     };
@@ -308,6 +306,20 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         }
 
         return ave/velocidadPromedio.size();
+    }
+
+    public String createActivity(){
+        try {
+            activity.set_endsite(LocationPoints.get(LocationPoints.size()-1).toString());
+            activity.set_endtime(getCurrentTime().toString());
+            activity.set_date(getCurrentTime().toString());
+            activity.set_km(distance);
+            return "Objeto Creado";
+        }
+        catch (Exception e){
+            return e.toString();
+        }
+
     }
 }
 
