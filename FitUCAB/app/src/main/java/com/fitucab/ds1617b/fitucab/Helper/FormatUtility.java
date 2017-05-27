@@ -37,5 +37,4 @@ public class FormatUtility {
         return (double) tmp / factor;
     }
 
-
 }
