@@ -113,6 +113,40 @@ public class M06_ServicesTraining {
         }
     }
 
+    @GET
+    @Path("/detailedTraining");
+    @Produces("application/json");
+
+    /**
+    * Metodo utilizado a traves de webservice para visualizar los detalles de un entrenamiento especifico
+    * @param trainingId
+    * @return
+    */
+
+    public String getDetailedTraining(@QueryParam("trainingId") int trainingId) {
+        String query = "SELECT S.SPORTNAME FROM S.SPORT WHERE S.SPORTID = (SELECT E.FK_SPORTID FROM E.SPOR_TRAINING WHERE E.FK_TRAININGID =" +trainingId+")"; 
+        try {
+            Connection conn = connectDb();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            Sport results = new Sport();
+            ArrayList<Sport> sport = new ArrayList<Sport>();
+            while (rs.next()) {
+
+                results.setId(rs.getInt("sportId"));
+                results.setName(rs.getString("sportName"));
+                sport.add(results);
+
+            }
+
+            return gson.toJson(sport);
+
+        }
+        catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+
     @DELETE
     @Path("/deleteTraining")
     
