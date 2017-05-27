@@ -15,15 +15,22 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.fitucab.ds1617b.fitucab.Helper.FormatUtility;
 import com.fitucab.ds1617b.fitucab.Helper.GeoLocalization.GeoLocalization;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.M05_RequestList;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -91,7 +98,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         //Creates a Location Request.
         super.createLocationRequest();
 
-        M05_textview_speed_tag.setText(requestList.makeRequest());
+        //M05_textview_speed_tag.setText(requestList.makeRequest());
+        makeRequest();
 
     }
 
@@ -223,6 +231,31 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         super.onLocationChanged(location);
         super.getLocationPoints(LocationPoints);
         updateUI();
+    }
+
+    public void makeRequest()
+    {
+
+        JsonObjectRequest jsObjRequest = new JsonObjectRequest
+                (Request.Method.GET, VolleySingleton.getStringConn(), (String)null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                Log.i("RESPONSE",response.toString());
+                                M05_textview_speed_tag.setText(response.toString());
+                                // mTxtDisplay.setText("Response: " + response.toString());
+                            }
+                        }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO Auto-generated method stub
+                        Log.i("no trajo nada","");
+
+                    }
+                });
+// Access the RequestQueue through your singleton class.
+        VolleySingleton.getInstance(this).addToRequestQueue(jsObjRequest);
     }
 
 }
