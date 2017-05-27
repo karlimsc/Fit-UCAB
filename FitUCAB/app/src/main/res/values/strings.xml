@@ -54,6 +54,7 @@
     <string name="_btn_m05_registermanual">REGISTRAR</string>
     <string name="_bt_start_tracking">INICIAR</string>
     <string name="_btn_m05t_save">GUARDAR</string>
+    <string name= "btn_m05_end">TERMINAR</string>
     <string name="_itm_m05_delete">Eliminar</string>
     <string name="_itm_m05_modify">Modificar</string>
     <string name="_tab_m05_log">MANUAL</string>
