@@ -46,6 +46,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     private Button M05_button_end;
     private long timeWhenStopped = 0;
     private FormatUtility formatUtility = new FormatUtility();
+    private String exception;
 
 
 
@@ -112,6 +113,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             M05_button_end.setVisibility(View.VISIBLE);
             M05_button_pause.setVisibility(View.INVISIBLE);
             M05_button_resume.setVisibility(View.VISIBLE);
+            M05_button_end.setVisibility(View.VISIBLE);
+            M05_button_pause.setVisibility(View.INVISIBLE);
 
 
 
@@ -268,6 +271,11 @@ public class M05StartTrackingActivity extends GeoLocalization implements
                 });
 // Access the RequestQueue through your singleton class.
         VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
+    }
+
+    public void requestInsertActivity(){
+        VolleySingleton.getInstance(this);
+
     }
 
 
