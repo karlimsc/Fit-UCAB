@@ -1,7 +1,9 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M06;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -24,6 +26,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.R;
@@ -112,6 +115,7 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
      */
     @Override
     public void onClick(View v) {
+        Training entrenamiento = new Training();
         String periodicidad;
 
         if ( v.getId() == R.id.m06_botonAgregarEntrenamientoPredefinido){
@@ -125,31 +129,31 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
                 Toast.makeText( getContext() , R.string.M06_toast_periodicidad, Toast.LENGTH_SHORT).show();
 
             }else{
-                String nombreEntrenamiento = _spinnerEntrenamiento.getSelectedItem().toString();
+                entrenamiento.setTrainingName( _spinnerEntrenamiento.getSelectedItem().toString() );
+                entrenamiento.setTrainingCalories( Integer.valueOf( _caloriasView.getText().toString() ) );
+                entrenamiento.setTrainingPeriod( Integer.valueOf( Integer.valueOf( periodicidad ) ) );
                 String nivelEntrenamiento = _spinnerTipo.getSelectedItem().toString();
                 String tipoEntrenamiento = _spinnerTipoEntrenamiento.getSelectedItem().toString();
-                String caloriasDelEntrenamiento = _caloriasView.getText().toString();
-                createTrainingPredefined( nombreEntrenamiento , nivelEntrenamiento , tipoEntrenamiento ,caloriasDelEntrenamiento , periodicidad);
+                createTrainingPredefined( entrenamiento , nivelEntrenamiento , tipoEntrenamiento );
 
             }
         }
     }
 
-    private void createTrainingPredefined(String nombreEntrenamiento, String nivelEntrenamiento,
-                                          String tipoEntrenamiento, String caloriasDelEntrenamiento, String periodicidad) {
+    private void createTrainingPredefined(Training entrenamiento, String nivelEntrenamiento, String tipoEntrenamiento) {
 
-        switch (nombreEntrenamiento){
+        switch (entrenamiento.getTrainingName()){
             case "Caminata":
                 if( nivelEntrenamiento.equals( "Fácil" ) ) {
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
 
-                        makeRequestKilometros( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento , periodicidad , 3 , 1);
+                        makeRequestKilometros( entrenamiento , nivelEntrenamiento , tipoEntrenamiento, 3 , 1);
 
                     } //Fin deli if en caso de que sea kilometros
                         else
                     {
-                        makeRequestTiempo( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento, periodicidad , 10 , 1);
+                        makeRequestTiempo(  entrenamiento , nivelEntrenamiento , tipoEntrenamiento, 10 , 1);
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del if en caso de que se fácil
@@ -158,11 +162,11 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
 
-                        makeRequestKilometros( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento, periodicidad , 5 , 1);
+                        makeRequestKilometros( entrenamiento , nivelEntrenamiento , tipoEntrenamiento, 5 , 1);
 
                     } //Fin deli if en caso de que sea kilometros
                     else {
-                        makeRequestTiempo( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento, periodicidad , 15 , 1);
+                        makeRequestTiempo(  entrenamiento , nivelEntrenamiento , tipoEntrenamiento, 15 , 1);
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del else en caso de que sea medio
@@ -170,11 +174,11 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
 
-                        makeRequestKilometros( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento, periodicidad , 10 , 1);
+                        makeRequestKilometros( entrenamiento , nivelEntrenamiento , tipoEntrenamiento, 10 , 1);
 
                     } //Fin deli if en caso de que sea kilometros
                     else{
-                        makeRequestTiempo( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento, periodicidad , 20 , 1);
+                        makeRequestTiempo(  entrenamiento , nivelEntrenamiento , tipoEntrenamiento, 20 , 1);
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del else en caso de que sea profesional
@@ -185,12 +189,12 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
 
-                        makeRequestKilometros( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento, periodicidad, 4, 2);
+                        makeRequestKilometros( entrenamiento , nivelEntrenamiento , tipoEntrenamiento, 4, 2);
 
                     } //Fin deli if en caso de que sea kilometros
                     else
                     {
-                        makeRequestTiempo( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento, periodicidad, 10,2 );
+                        makeRequestTiempo(  entrenamiento , nivelEntrenamiento , tipoEntrenamiento, 10,2 );
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del if en caso de que se fácil
@@ -199,11 +203,11 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
 
-                        makeRequestKilometros( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento, periodicidad, 7,2 );
+                        makeRequestKilometros( entrenamiento , nivelEntrenamiento , tipoEntrenamiento, 7,2 );
 
                     } //Fin deli if en caso de que sea kilometros
                     else {
-                        makeRequestTiempo( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento, periodicidad, 15, 2);
+                        makeRequestTiempo(  entrenamiento , nivelEntrenamiento , tipoEntrenamiento, 15, 2);
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del else en caso de que sea medio
@@ -211,11 +215,13 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
 
-                        makeRequestKilometros( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento, periodicidad, 10, 2);
+                        makeRequestKilometros( entrenamiento , nivelEntrenamiento , tipoEntrenamiento,  10, 2);
 
                     } //Fin deli if en caso de que sea kilometros
                     else{
-                        makeRequestTiempo( nombreEntrenamiento, nivelEntrenamiento, tipoEntrenamiento, caloriasDelEntrenamiento, periodicidad, 20, 2);
+
+                        makeRequestTiempo(  entrenamiento , nivelEntrenamiento , tipoEntrenamiento, 20, 2);
+
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del else en caso de que sea profesional
@@ -224,25 +230,25 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
         } //Fin del Switch
     }
 
+
     /**
-     * Se hace una peticion al servidor para guardar el entrenamiento predefinido con tiempo
-     * @param nombreEntrenamiento
+     * Recibe el niveldel entrenamiento y el tipo de entrenanmiento el nivel y el tiempo
+     * @param entrenamiento
      * @param nivelEntrenamiento
      * @param tipoEntrenamiento
-     * @param caloriasDelEntrenamiento
-     * @param periodicidad
      * @param tiempo
+     * @param tipo Si es 1 significa que será del tipo caminata si es 2 significa que será del tipo correr
      */
-    private void makeRequestTiempo(String nombreEntrenamiento, String nivelEntrenamiento, String tipoEntrenamiento,
-                                   String caloriasDelEntrenamiento, String periodicidad, int tiempo, int tipo) {
+    private void makeRequestTiempo(Training entrenamiento , String nivelEntrenamiento, String tipoEntrenamiento,
+                                                                int tiempo, int tipo) {
 
         IpStringConnection ip = new IpStringConnection();
         String url = ip.getIp() + "M06_ServicesTraining/createTrainingPredefined";
-        url = url + "?nombreEntrenamiento=" + nombreEntrenamiento + "&nivelEntrenamiento=" + nivelEntrenamiento;
-        url = url + "&tipoEntrenamiento=" + tipoEntrenamiento + "&calorias=" + caloriasDelEntrenamiento;
-        url = url + "&periodicidad=" + periodicidad + "&kilometros=" + tiempo + "&deporte=" + tipo;
+        url = url + "?nombreEntrenamiento=" + entrenamiento.getTrainingName() + "&nivelEntrenamiento=" + nivelEntrenamiento;
+        url = url + "&tipoEntrenamiento=" + tipoEntrenamiento + "&calorias=" + entrenamiento.getTrainingCalories();
+        url = url + "&periodicidad=" + entrenamiento.getTrainingPeriod() + "&tiempo=" + tiempo + "&deporte=" + tipo;
+        url = url + "&userId=" + ManagePreferences.getIdUser( getContext() );
         RequestQueue queue = Volley.newRequestQueue( getContext() );
-
         //Se hace la peticion y lo devuelve en String Request
         StringRequest stringRequest = new StringRequest( Request.Method.GET , url ,
                 new Response.Listener<String>() {
@@ -279,24 +285,24 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
     }
 
 
-
     /**
-     * Se hace una peticion al servidor para guardar el entrenamiento predefinido con kilometros.
-     * @param nombreEntrenamiento
+     * Recibe el entrenamiento del tipo de kilometros
+     * @param entrenamiento
      * @param nivelEntrenamiento
      * @param tipoEntrenamiento
-     * @param caloriasDelEntrenamiento
-     * @param periodicidad
      * @param kilometros
+     * @param tipo si es 1 significa que es correr, si es 2 significa que es trotar
      */
-    public void makeRequestKilometros(String nombreEntrenamiento, String nivelEntrenamiento,
-                                      String tipoEntrenamiento, String caloriasDelEntrenamiento, String periodicidad, int kilometros, int tipo){
+
+    public void makeRequestKilometros( Training entrenamiento , String nivelEntrenamiento, String tipoEntrenamiento,
+                                       int kilometros, int tipo){
 
         IpStringConnection ip = new IpStringConnection();
         String url = ip.getIp() + "M06_ServicesTraining/createTrainingPredefined";
-        url = url + "?nombreEntrenamiento=" + nombreEntrenamiento + "&nivelEntrenamiento=" + nivelEntrenamiento;
-        url = url + "&tipoEntrenamiento=" + tipoEntrenamiento + "&calorias=" + caloriasDelEntrenamiento;
-        url = url + "&periodicidad=" + periodicidad + "&kilometros=" + kilometros + "&deporte=" + tipo;
+        url = url + "?nombreEntrenamiento=" + entrenamiento.getTrainingName() + "&nivelEntrenamiento=" + nivelEntrenamiento;
+        url = url + "&tipoEntrenamiento=" + tipoEntrenamiento + "&calorias=" + entrenamiento.getTrainingCalories();
+        url = url + "&periodicidad=" + entrenamiento.getTrainingPeriod() + "&kilometros=" + kilometros + "&deporte=" + tipo;
+        url = url + "&userId=" + ManagePreferences.getIdUser( getContext() );
         RequestQueue queue = Volley.newRequestQueue( getContext() );
 
         //Se hace la peticion y lo devuelve en String Request
@@ -340,28 +346,89 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
         String entrenamiento, tipo;
         entrenamiento= _spinnerEntrenamiento.getSelectedItem().toString();
         tipo = _spinnerTipo.getSelectedItem().toString();
-        if(entrenamiento.equals("Caminata")) {
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences( getContext() );
+        int peso = Math.round( preferences.getFloat("weight", 0) );
+        int  calorias;
+        if(_spinnerTipoEntrenamiento.getSelectedItem().toString().equals("Por Tiempo")){
+                if(entrenamiento.equals("Caminata")) {
 
-            if (tipo.equals("Fácil")) {
-                _caloriasView.setText(_calorias[0]);
-            } else if (tipo.equals("Medio")) {
-                _caloriasView.setText(_calorias[1]);
-            } else if (tipo.equals("Profesional")) {
-                _caloriasView.setText(_calorias[2]);
-            }
+                    if (tipo.equals("Fácil")) {
 
-        }else if(entrenamiento.equals("Trote")){
+                        calorias =  peso * 10;
+                        _caloriasView.setText( Integer.toString( calorias ) );
 
-            if (tipo.equals("Fácil")) {
-                _caloriasView.setText(_calorias[3]);
-            } else if (tipo.equals("Medio")) {
-                _caloriasView.setText(_calorias[4]);
-            } else if (tipo.equals("Profesional")) {
-                _caloriasView.setText(_calorias[5]);
+                    } else if (tipo.equals("Medio")) {
+
+                        calorias =  peso * 15;
+                        _caloriasView.setText( Integer.toString( calorias ) );
+
+                    } else if (tipo.equals("Profesional")) {
+
+                        calorias =  peso * 20;
+                        _caloriasView.setText( Integer.toString( calorias ) );
+
+                    }
+
+                }else if(entrenamiento.equals("Trote")){
+
+                    if (tipo.equals("Fácil")) {
+                        calorias = peso * 10;
+                        _caloriasView.setText( Integer.toString( calorias ) );
+                    } else if (tipo.equals("Medio")) {
+                        calorias = peso * 15;
+                        _caloriasView.setText( Integer.toString( calorias ) );
+                    } else if (tipo.equals("Profesional")) {
+                        calorias = peso * 20;
+                        _caloriasView.setText( Integer.toString( calorias ) );
+                    }
+
+                }
+
+        }else{ //Si es por kilometros
+
+            if(entrenamiento.equals("Caminata")) {
+
+                if (tipo.equals("Fácil")) {
+
+                    calorias = peso * 3 ;
+                    _caloriasView.setText( Integer.toString( calorias ) );
+
+                } else if (tipo.equals("Medio")) {
+
+                    calorias =  peso * 5 ;
+                    _caloriasView.setText( Integer.toString( calorias ) );
+
+                } else if (tipo.equals("Profesional")) {
+
+                    calorias =  peso * 10 ;
+                    _caloriasView.setText( Integer.toString( calorias ) );
+
+                }
+
+            }else if(entrenamiento.equals("Trote")){
+
+                if (tipo.equals("Fácil")) {
+
+                    calorias = ( peso * 4 );
+                    _caloriasView.setText( Integer.toString( calorias ) );
+
+                } else if (tipo.equals("Medio")) {
+
+                    calorias = ( peso * 7 );
+                    _caloriasView.setText( Integer.toString( calorias ) );
+
+                } else if (tipo.equals("Profesional")) {
+
+                    calorias = ( peso * 10 );
+                    _caloriasView.setText( Integer.toString( calorias ) );
+
+                }
+
             }
 
         }
     }
+
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {

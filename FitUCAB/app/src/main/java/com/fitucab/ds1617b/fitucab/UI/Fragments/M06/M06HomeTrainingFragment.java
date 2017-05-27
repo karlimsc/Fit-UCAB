@@ -1,25 +1,20 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M06;
 
 import android.app.Activity;
-import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.AdapterViewAnimator;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 import com.android.volley.Request;
@@ -30,9 +25,9 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
-import com.fitucab.ds1617b.fitucab.Model.ArrayAuxiliarTraining;
+import com.fitucab.ds1617b.fitucab.Helper.ArrayAuxiliarTraining;
 import com.fitucab.ds1617b.fitucab.Model.Training;
-import com.fitucab.ds1617b.fitucab.Model.TrainingAdapter;
+import com.fitucab.ds1617b.fitucab.Helper.TrainingAdapter;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -89,6 +84,15 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
         fillListView();
         registerForContextMenu( _listView );
 
+        //eSTO SERÁ SOLO PARA PRUEBAS BORRAR
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putInt("idUser", 1);
+        editor.putFloat("weight", 55);
+
+        editor.commit();
+        //Recuerda borrarlooooo
     }
 
     /**
@@ -175,7 +179,7 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
 
         //Url a la cual se va a hacer conexion
         IpStringConnection ip = new IpStringConnection();
-        String url = ip.getIp() + "M06_ServicesTraining/displayTraining?userId=1";
+        String url = ip.getIp() + "M06_ServicesTraining/displayTraining?userId=";
         final Gson gson = new Gson();
 
         // Instancia RequestQueue.

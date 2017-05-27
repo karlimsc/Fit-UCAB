@@ -1,6 +1,8 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -54,6 +56,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         //Se declara el toolbar
         toolbar.setTitle(R.string.M06_nombre_modulo);
         setSupportActionBar(toolbar);
+
         //Seleccionamos el fragmento que queremos mostrar.
         onSwap("M06HomeTrainingFragment",null);
     }
