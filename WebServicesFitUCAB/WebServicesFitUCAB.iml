@@ -32,5 +32,6 @@
     <orderEntry type="library" name="gson-2.8.0" level="project" />
     <orderEntry type="library" name="GlassFish 4.1.2 - RESTful Web Service" level="application" />
     <orderEntry type="library" name="com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.5.3" level="project" />
+    <orderEntry type="library" name="ClasesProyectoFitUcab" level="project" />
   </component>
 </module>

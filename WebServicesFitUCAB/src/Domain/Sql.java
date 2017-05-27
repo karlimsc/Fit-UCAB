@@ -7,7 +7,7 @@ import java.sql.*;
  */
 public class Sql {
 
-    private Connection conn =bdConnect();
+    private Connection conn =this.bdConnect();
     private Statement _st;
     private ResultSet _rs;
 
@@ -20,8 +20,8 @@ public class Sql {
         try
         {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/FitUcabDB";
-            conn = DriverManager.getConnection(url,"postgres", "root");
+            String url = "jdbc:postgresql://127.0.0.1/fitucabdb";
+            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
         }
         catch (ClassNotFoundException e)
         {
