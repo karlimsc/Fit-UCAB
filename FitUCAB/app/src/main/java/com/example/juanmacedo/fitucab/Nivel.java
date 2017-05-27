@@ -183,11 +183,11 @@ public class Nivel {
             }
         });
 
+         RequestQueue request = Volley.newRequestQueue(this);
+         request.add(stringRequest);
 
         return _busquedaPuntos;
-       // RequestQueue request = Volley.newRequestQueue(this);
 
-       // request.add(stringRequest);
        // Log.d("objetooo", stringRequest.toString());
 
     }
