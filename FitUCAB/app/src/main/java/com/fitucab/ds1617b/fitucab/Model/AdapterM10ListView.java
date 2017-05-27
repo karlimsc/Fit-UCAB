@@ -16,15 +16,15 @@ import java.util.List;
  * Created by JoseA2R on 23/5/17.
  */
 
-public class AdapterM10ListView extends ArrayAdapter<InfoGlass> {
+public class AdapterM10ListView extends ArrayAdapter<Water> {
 
-    public AdapterM10ListView(Context context, List<InfoGlass> objects){
+    public AdapterM10ListView(Context context, List<Water> objects){
         super (context, 0, objects);
     }
 
     public View getView(int position, View convertView, ViewGroup parent){
 
-        InfoGlass item = getItem(position);
+        Water item = getItem(position);
         convertView = LayoutInflater.from(getContext()).
                 inflate(R.layout.fragment_m10_listview_item,parent,false);
         //TextView textid = (TextView) convertView.findViewById(R.id.text_id);
@@ -32,8 +32,8 @@ public class AdapterM10ListView extends ArrayAdapter<InfoGlass> {
         TextView textml   = (TextView) convertView.findViewById(R.id.lv_ml);
 
       //  textid.setText(Integer.toString(item.get_id()));
-        texthour.setText(item.get_hour());
-        textml.setText(Integer.toString(item.get_ml()));
+        texthour.setText(item.get_time());
+        textml.setText(Integer.toString(item.get_glasstype()));
 
         return convertView;
     }

@@ -15,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.Date;
 
-
 /**
  *
  * Clase para el manejo de la hidratacion

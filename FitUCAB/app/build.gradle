@@ -38,6 +38,7 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     testCompile 'junit:junit:4.12'
-    compile files('C:/Users/charbel/Desktop/DEsarrollo/Fit-UCAB/FitUCAB/libs/gson-2.8.0.jar')
+    //compile files('C:/Users/charbel/Desktop/DEsarrollo/Fit-UCAB/FitUCAB/libs/gson-2.8.0.jar')
+    compile files('/Users/JoseA2R/Desktop/Semestre9/Desarrollo/gson-2.8.0.jar')
 }
 

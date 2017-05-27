@@ -78,9 +78,9 @@ public class Water {
 
     public Water(String time ,Integer suma , Integer cantidad)
     {
-        _time= time;
-        _suma=suma;
-        _cantidad=cantidad;
+        _time = time;
+        _suma  =suma;
+        _cantidad = cantidad;
 
     }
 
@@ -89,10 +89,12 @@ public class Water {
     }
 
     public void set_time(String _time) {
+
         this._time = _time;
     }
 
     public Integer get_glasstype() {
+
         return _glasstype;
     }
 
