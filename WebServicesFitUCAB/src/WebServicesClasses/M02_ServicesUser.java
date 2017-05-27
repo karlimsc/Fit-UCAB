@@ -22,6 +22,7 @@ public class M02_ServicesUser {
      * Buscar el usuario con esa id.
      * @param id Id del usuario que se va a obtener
      * @return Clase User en formato json
+     * @throws Exception
      * @see User
      */
     @GET
@@ -58,6 +59,7 @@ public class M02_ServicesUser {
      * @param id Id del usuario que se quiere modificar
      * @param user Datos del usuario modificado
      * @return Clase User en formato json
+     * @throws Exception
      * @see User
      */
     @PUT
