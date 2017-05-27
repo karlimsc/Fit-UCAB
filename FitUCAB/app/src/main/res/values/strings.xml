@@ -49,8 +49,7 @@
     <!--FIN Strings Modulo 2 -->
 
 
-
-   <!-- Inicio Strings Modulo 5 -->
+    <!-- Inicio Strings Modulo 5 -->
     <string name="app_name_title">Actividad</string>
     <string name="_tv_m05_type">Tipo de ejercicio:</string>
     <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
@@ -62,39 +61,15 @@
     <string name="tab_m05_track">Automática</string>
     <!--FIN Strings Modulo 5 -->
 
-    <!-- Inicio Strings Modulo 8 -->
+    <!--Inicio Strings Modulo 8-->
     --content_main--
-    <string name="tituloModulo">Mis Retos</string>
-    <string name="nombreReto">nombre del reto</string>
-    <string name="cantidadDiasReto">dias</string>
-    <string name="cantidadParticipantesReto">2</string>
-    <string name="statusReto">Status</string>
-
-
+    <string name="tituloModuloRetos">Mis Retos</string>
     --informacion_reto--
-    <string name="reglasRetoText">Reglas del Reto</string>
-    <string name="contReglasReto">estas son las reglas del reto</string>
-    <string name="tituloFechaInicio">Fecha Inicio:</string>
-    <string name="tituloDuracionReto">Duracion:</string>
-    <string name="duracionReto">dias</string>
-    <string name="tituloStatusReto">Status</string>
-    <string name="tituloCronometro">Finaliza en:</string>
 
-    --agregar_reto--
-    <string name="tituloAgregarReto">Agregar Reto</string>
-    <string name="hintNombreDelReto">Nombre del Reto</string>
-    <string name="hintReglasReto">Reglas del Reto</string>
-    <string name="botonFechaInicio">Inicio</string>
-    <string name="botonFechaFin">Fin</string>
-    <string name="checkboxIndividual">Individual</string>
-    <string name="checkboxCompartido">Compartido</string>
-
-
-    <string name="editar">editar</string>
-    <string name="eliminar">eliminar</string>
-    <!--FIN Strings Modulo 8 -->
-
-
+    --menu--
+    <string name="editarReto">editar</string>
+    <string name="eliminarReto">eliminar</string>
+    <string name="action_settings_m08">Settings</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -105,6 +80,7 @@
     <string name="title_activity_m02_home">M02HomeActivity</string>
     <string name="title_activity_m05_track_exercise">Track</string>
     <string name="bt_start_tracking">Iniciar</string>
+    <string name="title_activity_actividad_prueba">ActividadPrueba</string>
 
 
 </resources>
