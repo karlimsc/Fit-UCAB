@@ -44,7 +44,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     public M05StartTrackingActivity() {
 
     }
-//Atributos para la interfaz
+
+    //Atributos para la interfaz
 
     private Chronometer M05_textview_time;
     private TextView    M05_textview_time_tag;
@@ -77,9 +78,9 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
 
     public M05StartTrackingActivity(Sport sport, User user){
-        this.sport = sport;
-        this.user = user;
-        this.mets = sport.getMets();
+        this.sport  = sport;
+        this.user   = user;
+        this.mets   = sport.getMets();
         this.weight = user.get_weight();
 
     }
@@ -215,18 +216,22 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             Location mPrevLocation;
 
             int lastIndexLP = LocationPoints.size() - 1;
-            int lastIndexTP = TimePassed.size() - 1;
+            int lastIndexTP = TimePassed.size()     - 1;
 
             if (LocationPoints.size() >= 2 && TimePassed.size() >= 2) {
-                mPrevLocation = LocationPoints.get(lastIndexLP - 1);
-                float lastDistance = mPrevLocation.distanceTo(LocationPoints.get(lastIndexLP));
+
+                mPrevLocation       = LocationPoints.get(lastIndexLP - 1);
+                float lastDistance  = mPrevLocation.distanceTo(LocationPoints.get(lastIndexLP));
+
                 distance = distance + lastDistance;
+
                 M05_textview_km.setText(formatUtility.fmt(distance));
 
                 double time = TimePassed.get(lastIndexTP - 1) - TimePassed.get(lastIndexTP);
-                velocidad = calculateSpeed(lastDistance, time);
+                velocidad   = calculateSpeed(lastDistance, time);
                 velocidadPromedio.add(velocidad);
                 M05_textview_speed.setText(formatUtility.fmt((velocidad)));
+
             }
 
         }
@@ -253,13 +258,19 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         super.onResume();
     }
 
+    /**
+     * Cambio de locacion
+     * @param location
+     */
 
     @Override
     public void onLocationChanged(Location location) {
+
         super.onLocationChanged(location);
         super.getLocationPoints(LocationPoints);
         TimePassed.add(M05_textview_time.getBase() - SystemClock.elapsedRealtime());
         updateUI();
+
     }
 
 
@@ -272,15 +283,17 @@ public class M05StartTrackingActivity extends GeoLocalization implements
      * Inicializa los elementos de la interfaz.
      */
     public void inflateInterface() {
-        M05_textview_time = (Chronometer) findViewById(R.id.tv_m05_tiempo);
-        M05_textview_time_tag = (TextView) findViewById(R.id.tv_m05_tiempo_tag);
-        M05_textview_speed = (TextView) findViewById(R.id.tv_m05_velocidad);
-        M05_textview_speed_tag = (TextView) findViewById(R.id.tv_m05_velocidad_tag);
-        M05_textview_km = (TextView) findViewById(R.id.tv_m05_km);
-        M05_textview_km_tag = (TextView) findViewById(R.id.tv_m05_km_tag);
-        M05_button_pause = (Button) findViewById(R.id.btn_m05_pause_track);
-        M05_button_resume = (Button) findViewById(R.id.btn_m05_resume_track);
-        M05_button_end = (Button) findViewById(R.id.btn_m05_end_track);
+
+        M05_textview_time        = (Chronometer) findViewById(R.id.tv_m05_tiempo);
+        M05_textview_time_tag    = (TextView)    findViewById(R.id.tv_m05_tiempo_tag);
+        M05_textview_speed       = (TextView)    findViewById(R.id.tv_m05_velocidad);
+        M05_textview_speed_tag   = (TextView)    findViewById(R.id.tv_m05_velocidad_tag);
+        M05_textview_km          = (TextView)    findViewById(R.id.tv_m05_km);
+        M05_textview_km_tag      = (TextView)    findViewById(R.id.tv_m05_km_tag);
+        M05_button_pause         = (Button)      findViewById(R.id.btn_m05_pause_track);
+        M05_button_resume        = (Button)      findViewById(R.id.btn_m05_resume_track);
+        M05_button_end           = (Button)      findViewById(R.id.btn_m05_end_track);
+
         M05_button_pause.setOnClickListener(pause);
         M05_button_resume.setOnClickListener(resume);
 
@@ -305,10 +318,12 @@ public class M05StartTrackingActivity extends GeoLocalization implements
      * @return fecha y hora actual.
      */
     public SimpleDateFormat getCurrentTime() {
+
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
         System.out.println(sdf.format(cal.getTime()));
         return sdf;
+
     }
 
     /**
