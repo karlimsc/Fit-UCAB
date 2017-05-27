@@ -83,7 +83,7 @@ FK_PERSON		integer not null
 );
 --TERMINA MODULO 4--
 
---Inicio de modulo 05--
+--Inicio de modulo 06--
 CREATE TABLE TRAINING (
 TRAININGID    integer not null,
 TRAININGNAME varchar (80) not null,
@@ -116,24 +116,3 @@ constraint PK_FRIEN_TRAINID primary key ( FRIEN_TRAINID)
 );
  
 --- TERMINA MODULO 6  ---
-
----MODULO 3---
- 
-CREATE TABLE STATUS(
- 
-STATUSID		integer  not null PRIMARY KEY,
-STATUSPENDING	integer,
-STATUSACCEPTED	integer,
-STATUSBLOCKED	integer,
-STATUSDECLINE	integer
-);
- 
-CREATE TABLE FRIENDSHIP(
-FRIENDSHIPID                        integer not null PRIMARY KEY,
-FK_PERSONONEID		integer,
-FK_PERSONTWOID	            integer,
-FK_STATUSID                       integer,
-FRIENDSHIPUSERACTIVITY	integer
-);
- 
----TERMINA MODULO 3---
