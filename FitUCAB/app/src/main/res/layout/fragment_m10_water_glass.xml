@@ -73,15 +73,17 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:focusable="false"
         android:inputType="numberDecimal"
-        android:singleLine="false"
+        android:singleLine="true"
         android:text="0"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/btn_m10_AddWater"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.363"
         app:layout_constraintLeft_toRightOf="@+id/btn_m10_lessWater"
         app:layout_constraintRight_toLeftOf="@+id/btn_m10_AddWater"
         app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
