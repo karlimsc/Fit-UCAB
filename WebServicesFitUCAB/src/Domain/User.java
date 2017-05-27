@@ -1,11 +1,14 @@
 package Domain;
 
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.sql.Date;
 
 /**
  * Clase Usuario del Modulo 1
  */
+
+@XmlRootElement
 public class User {
 
     private int _id;
@@ -20,6 +23,14 @@ public class User {
      * Constructor vacio
      */
     public User(){};
+
+    /**
+     * Constructor para crear el usuario solo con el id
+     * @param id userId
+     */
+    public User(int id){
+        _id=id;
+    }
 
     /**
      * Constructor con todos los atributos
