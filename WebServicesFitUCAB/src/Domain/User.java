@@ -50,7 +50,7 @@ public class User {
         _email = email;
         _sex = sex;
         _phone = phone;
-        _birthdate= birthdate;
+        _birthdate = birthdate;
 
     };
 
