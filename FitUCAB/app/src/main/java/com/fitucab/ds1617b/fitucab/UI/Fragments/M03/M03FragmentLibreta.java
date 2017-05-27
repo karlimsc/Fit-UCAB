@@ -6,7 +6,6 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M03;
 
 import android.content.ContentResolver;
 import android.content.pm.PackageManager;
-import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -18,13 +17,11 @@ import android.util.Log;
 import android.support.v7.app.AlertDialog;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -32,24 +29,19 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.fitucab.ds1617b.fitucab.Model.ArrayAuxiliar;
-import com.fitucab.ds1617b.fitucab.Model.Person;
 import com.fitucab.ds1617b.fitucab.Model.User;
+import com.fitucab.ds1617b.fitucab.Model.UserAuxiliar;
+import com.fitucab.ds1617b.fitucab.Model.Person;
 import com.fitucab.ds1617b.fitucab.Model.UsersAdapter;
 import com.fitucab.ds1617b.fitucab.R;
-import com.fitucab.ds1617b.fitucab.UI.Activities.MainActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.attr.name;
-import static android.R.attr.phoneNumber;
-import static android.R.attr.type;
-import static android.R.id.list;
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.L;
-import static com.google.gson.internal.UnsafeAllocator.create;
 import static java.lang.Integer.parseInt;
 
 public class M03FragmentLibreta extends Fragment {
@@ -71,11 +63,11 @@ public class M03FragmentLibreta extends Fragment {
         }
 
         rootView = inflater.inflate(R.layout.fragment_m03_contacts, container, false);
-        ArrayList<ArrayAuxiliar> arrayOfUsers = new ArrayList<ArrayAuxiliar>();
+        ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
         final UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
         listView = (ListView) rootView.findViewById(R.id.contactsList);
         listView.setAdapter(adapter);
-        final ArrayList<ArrayAuxiliar> usuarios = new ArrayList<ArrayAuxiliar>();
+        final ArrayList<UserAuxiliar> usuarios = new ArrayList<UserAuxiliar>();
         listView.setLongClickable(true);
         registerForContextMenu(listView);
 
@@ -116,7 +108,7 @@ public class M03FragmentLibreta extends Fragment {
                 }
                 emails.close();
 
-                usuarios.add(new ArrayAuxiliar(name,emailAddress, Long.parseLong(phoneNumber)));
+                usuarios.add(new UserAuxiliar(name,emailAddress, phoneNumber));
 
                 /*AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
                 builder1.setMessage(name);
@@ -146,39 +138,42 @@ public class M03FragmentLibreta extends Fragment {
                 emails.close();
             } while (cursor.moveToNext());
         }
-        // Close the cursor
 
         Gson gson = new Gson();
 
         String contacts = gson.toJson(usuarios);
         usuarios.clear();
-        String puto = "http://192.168.1.109:8080/WebServicesFitUcab_war_exploded/contacts/getContacts?id=2&contacts=[{%20%22personid%22:%203,%20%22personusername%22:%20%22Lon%20Parselon%22,%20%22personpassword%22:%20%22123456%22,%20%22personemail%22:%20%22mape@gmail.com%22,%20%22personsex%22:%20%22Femenino%22,%20%22personphone%22:%20%2204125217789%22,%20%22personingreso%22:%200%20},%20{%20%22personid%22:%201,%20%22personusername%22:%20%22Andres%20Rubio%22,%20%22personpassword%22:%20%22123456%22,%20%22personemail%22:%20%22andresfra92@gmail.com%22,%20%22personsex%22:%20%22Masculino%22,%20%22personphone%22:%20%2204123150284%22,%20%22personingreso%22:%201%20},%20{%20%22personid%22:%207,%20%22personusername%22:%20%22Juanciron%22,%20%22personpassword%22:%20%22123456%22,%20%22personemail%22:%20%22fsdfs@gmail.com%22,%20%22personsex%22:%20%22Femenino%22,%20%22personphone%22:%20%2204141f41145689%22,%20%22personingreso%22:%200%20},%20{%20%22personid%22:%206,%20%22personusername%22:%20%22Raul%2014io%22,%20%22personpassword%22:%20%22123456%22,%20%22personemail%22:%20%22sdfff@gmail.com%22,%20%22personsex%22:%20%22Masculino%22,%20%22personphone%22:%20%226512424651%22,%20%22personingreso%22:%201%20},{%20%22personid%22:%204,%20%22personusername%22:%20%22Emilio%20Monse%C3%B1or%22,%20%22personpassword%22:%20%22123456%22,%20%22personemail%22:%20%22emm@gmail.com%22,%20%22personsex%22:%20%22Masculino%22,%20%22personphone%22:%20%22651651%22,%20%22personingreso%22:%201%20}]";
-        //String url = "http://192.168.1.109:8080/WebServicesFitUcab_war_exploded/contacts/getContacts?id=2&contacts=" + puto;
-
+        String contactsEncoded = "";
+        try {
+            contactsEncoded = URLEncoder.encode(contacts, "utf-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/contact/getContacts?id=2&contacts=" + contactsEncoded;
+        //String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/contact/getContacts?id=2&contacts=[{%22_email%22:%22andresfra92@gmail.com%22,%22_username%22:%22Andres%20Rubio%22,%22_phone%22:%224145589633%22,%22_point%22:0,%22_type%22:0,%22_id%22:0},{%22_email%22:%22%22,%22_username%22:%22Pepe%20Grillo%22,%22_phone%22:%2204141150083%22,%22_point%22:0,%22_type%22:0,%22_id%22:0},{%22_email%22:%22fmeeksr@weebly.com%22,%22_username%22:%22Fabiano%20Meeks%22,%22_phone%22:%2204141150083%22,%22_point%22:0,%22_type%22:0,%22_id%22:0}]";
         final Gson gsonresp = new Gson();
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
 
         // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, puto,
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        ArrayList<Person> ap = gsonresp.fromJson(response,new TypeToken<List<Person>>(){}.getType());
-                        boolean withoutApp = true;
+                        ArrayList<User> ap = gsonresp.fromJson(response,new TypeToken<List<User>>(){}.getType());
+                        boolean withApp = true;
                         for(int i = 0;i<ap.size();i++) {
-                            if (ap.get(i).getPersonid() == -1){
-                                usuarios.add(new ArrayAuxiliar(0, "", 0, 2));
+                            if (ap.get(i).get_idUser() == -1){
+                                usuarios.add(new UserAuxiliar(0, "", 0, 2));
                             }
-                            else if (ap.get(i).getPersonid() == -2) {
-                                usuarios.add(new ArrayAuxiliar(0, "", 0, 3));
-                                withoutApp = false;
-                            }else if (withoutApp) {
-                                usuarios.add(new ArrayAuxiliar(ap.get(i).getPersonid(), ap.get(i).getPersonusername(), 200, 0));
-
+                            else if (ap.get(i).get_idUser() == -2) {
+                                usuarios.add(new UserAuxiliar(0, "", 0, 3));
+                                withApp = false;
+                            }else if (withApp) {
+                                usuarios.add(new UserAuxiliar(ap.get(i).get_idUser(), ap.get(i).get_username(),ap.get(i).get_point(),0));
                             }else
-                                usuarios.add(new ArrayAuxiliar(ap.get(i).getPersonid(), ap.get(i).getPersonusername(), 200, 1));
+                                usuarios.add(new UserAuxiliar(ap.get(i).get_username(), ap.get(i).get_email(), ap.get(i).get_phone(),1));
                         }
                         adapter.addAll(usuarios);
                     }
@@ -186,7 +181,7 @@ public class M03FragmentLibreta extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
 
-                usuarios.add(new ArrayAuxiliar(0,error.toString(), 200,4));
+                usuarios.add(new UserAuxiliar(0,error.toString(), 0,4));
                 adapter.addAll(usuarios);
             }
         });
@@ -208,8 +203,8 @@ public class M03FragmentLibreta extends Fragment {
 
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
 
-        menu.setHeaderTitle("menu");
-        ArrayAuxiliar user = (ArrayAuxiliar) listView.getItemAtPosition(info.position);
+        menu.setHeaderTitle("menu libreta");
+        UserAuxiliar user = (UserAuxiliar) listView.getItemAtPosition(info.position);
         if(user.get_type() == 0){
             menu.add(0, user.get_id(), 0, "Agregar");
         }
@@ -223,7 +218,7 @@ public class M03FragmentLibreta extends Fragment {
 
         switch (item.getGroupId()) {
             case 0:
-                String url = "http://192.168.1.109:8080/WebServicesFitUcab_war_exploded/friend/request?idRequester=2&idRequested=4";
+                String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/request?idRequester=2&idRequested="+Integer.toString(item.getItemId());
                 final Gson gson = new Gson();
 
                 // Instantiate the RequestQueue.

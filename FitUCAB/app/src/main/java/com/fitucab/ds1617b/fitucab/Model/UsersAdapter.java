@@ -12,14 +12,14 @@ import com.fitucab.ds1617b.fitucab.R;
 
 import java.util.ArrayList;
 
-public class UsersAdapter extends ArrayAdapter<ArrayAuxiliar> {
-    public UsersAdapter(Context context, ArrayList<ArrayAuxiliar> items) {
+public class UsersAdapter extends ArrayAdapter<UserAuxiliar> {
+    public UsersAdapter(Context context, ArrayList<UserAuxiliar> items) {
         super(context, 0, items);
     }
 
     @Override
     public int getViewTypeCount(){
-        return 7;
+        return 8;
     }
 
     @Override
@@ -36,8 +36,11 @@ public class UsersAdapter extends ArrayAdapter<ArrayAuxiliar> {
         else if (getItem(position).get_type() == 3){    //SEPARADOR CONTACTO SIN APLICACION
             return 3;
         }
-        else if (getItem(position).get_type() == 4){    //PETICION DE AMIGO O AMIGO
+        else if (getItem(position).get_type() == 4){    //PETICION DE AMIGO
             return 4;
+        }
+        else if (getItem(position).get_type() == 7){    //AMIGO
+            return 7;
         }
         else if (getItem(position).get_type() == 5){    //SEPARADOR PETICION DE AMIGO
             return 5;
@@ -53,21 +56,21 @@ public class UsersAdapter extends ArrayAdapter<ArrayAuxiliar> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // Get the data item for this position
-        ArrayAuxiliar item = getItem(position);
+        UserAuxiliar item = getItem(position);
         int type = getItemViewType(position);
         if (convertView == null) {
             if(type == 0){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.contact_with_m03, parent, false);
                 TextView tvName = (TextView) convertView.findViewById(R.id.nombre);
                 TextView tvHome = (TextView) convertView.findViewById(R.id.puntaje);
-                tvName.setText(item.get_nombre());
-                tvHome.setText(Integer.toString(item.get_puntaje()));
+                tvName.setText(item.get_username());
+                tvHome.setText(Integer.toString(item.get_point()));
 
             }
             else if(type == 1){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.contacts_without_m03, parent, false);
                 TextView tvName = (TextView) convertView.findViewById(R.id.nombre);
-                tvName.setText(item.get_nombre());
+                tvName.setText(item.get_username());
             }
             else if(type == 2){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.separator_with_m03, parent, false);
@@ -78,9 +81,16 @@ public class UsersAdapter extends ArrayAdapter<ArrayAuxiliar> {
             else if(type == 4){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.friend_list_m03, parent, false);
                 TextView tvName = (TextView) convertView.findViewById(R.id.nombre);
-                tvName.setText(item.get_nombre());
+                tvName.setText(item.get_username());
                 TextView tvHome = (TextView) convertView.findViewById(R.id.puntaje);
-                tvHome.setText(Integer.toString(item.get_puntaje()));
+                tvHome.setText(Integer.toString(item.get_point()));
+            }
+            else if(type == 7){
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.friend_list_m03, parent, false);
+                TextView tvName = (TextView) convertView.findViewById(R.id.nombre);
+                tvName.setText(item.get_username());
+                TextView tvHome = (TextView) convertView.findViewById(R.id.puntaje);
+                tvHome.setText(Integer.toString(item.get_point()));
             }
             else if(type == 5){
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.separator_request_m03, parent, false);

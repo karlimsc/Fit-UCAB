@@ -19,8 +19,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/imageView4"
-            android:layout_toRightOf="@+id/imageView4"
             android:text="Andres Rubio"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textSize="21sp"
@@ -28,19 +26,13 @@
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            /><![CDATA[
-
-        />
-
-        ]]>
+            />
 
         <TextView
             android:id="@+id/puntaje"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nombre"
-            android:layout_toEndOf="@+id/imageView4"
-            android:layout_toRightOf="@+id/imageView4"
             android:text="524"
             android:layout_marginTop="2dp"
             app:layout_constraintTop_toBottomOf="@+id/nombre"
