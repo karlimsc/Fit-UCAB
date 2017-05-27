@@ -114,7 +114,6 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
     public void onClick(View v) {
         String periodicidad;
 
-
         if ( v.getId() == R.id.m06_botonAgregarEntrenamientoPredefinido){
 
             /*Se valida si lo que trae el TextEdit de numero está vació, si no está vacío no
@@ -237,6 +236,46 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
     private void makeRequestTiempo(String nombreEntrenamiento, String nivelEntrenamiento, String tipoEntrenamiento,
                                    String caloriasDelEntrenamiento, String periodicidad, int tiempo, int tipo) {
 
+        IpStringConnection ip = new IpStringConnection();
+        String url = ip.getIp() + "M06_ServicesTraining/createTrainingPredefined";
+        url = url + "?nombreEntrenamiento=" + nombreEntrenamiento + "&nivelEntrenamiento=" + nivelEntrenamiento;
+        url = url + "&tipoEntrenamiento=" + tipoEntrenamiento + "&calorias=" + caloriasDelEntrenamiento;
+        url = url + "&periodicidad=" + periodicidad + "&kilometros=" + tiempo + "&deporte=" + tipo;
+        RequestQueue queue = Volley.newRequestQueue( getContext() );
+
+        //Se hace la peticion y lo devuelve en String Request
+        StringRequest stringRequest = new StringRequest( Request.Method.GET , url ,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response){
+
+                        boolean confirmacion = true;
+                        confirmacion = Boolean.parseBoolean(response);
+
+                        //Confimo si pudo insertar en la bdd
+                        if ( confirmacion == true){
+
+                            Toast.makeText( getContext() , R.string.M06_entrenamiento_creado_exito, Toast.LENGTH_SHORT).show();
+                            _callBack.onSwap( "M06HomeTrainingFragment" , null );
+
+                        }else{
+
+                            Toast.makeText( getContext() , R.string.M06_entrenamiento_creado_fallo, Toast.LENGTH_SHORT).show();
+
+                        }
+
+                    }
+
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText( getContext() , "Error connection" , Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        // Add the request to the RequestQueue.
+        queue.add( stringRequest );
     }
 
 
@@ -257,9 +296,8 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
         String url = ip.getIp() + "M06_ServicesTraining/createTrainingPredefined";
         url = url + "?nombreEntrenamiento=" + nombreEntrenamiento + "&nivelEntrenamiento=" + nivelEntrenamiento;
         url = url + "&tipoEntrenamiento=" + tipoEntrenamiento + "&calorias=" + caloriasDelEntrenamiento;
-        url = url + "&periodicidad=" + periodicidad + "&kilometros=" + kilometros;
+        url = url + "&periodicidad=" + periodicidad + "&kilometros=" + kilometros + "&deporte=" + tipo;
         RequestQueue queue = Volley.newRequestQueue( getContext() );
-
 
         //Se hace la peticion y lo devuelve en String Request
         StringRequest stringRequest = new StringRequest( Request.Method.GET , url ,
@@ -269,19 +307,27 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
 
                         boolean confirmacion = true;
                         confirmacion = Boolean.parseBoolean(response);
+
                         //Confimo si pudo insertar en la bdd
                         if ( confirmacion == true){
+
                             Toast.makeText( getContext() , R.string.M06_entrenamiento_creado_exito, Toast.LENGTH_SHORT).show();
                             _callBack.onSwap( "M06HomeTrainingFragment" , null );
+
                         }else{
+
                             Toast.makeText( getContext() , R.string.M06_entrenamiento_creado_fallo, Toast.LENGTH_SHORT).show();
+
                         }
+
                     }
 
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+
                 Toast.makeText( getContext() , "Error connection" , Toast.LENGTH_SHORT).show();
+
             }
         });
         // Add the request to the RequestQueue.

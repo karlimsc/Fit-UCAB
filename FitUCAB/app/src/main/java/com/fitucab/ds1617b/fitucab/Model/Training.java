@@ -57,5 +57,14 @@ public class Training {
         this._trainingCalories = trainingCalories;
     }
 
+    public int getCaloriesKilometros(float weight, int kilometros) {
+
+        return _trainingCalories;
+
+    }
+
+    public int getCaloriesTiempo(float weight, int tiempo){
+        return _trainingCalories;
+    }
 
 }
