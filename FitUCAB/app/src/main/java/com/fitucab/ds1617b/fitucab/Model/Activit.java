@@ -10,26 +10,26 @@ import java.util.Date;
  */
 
 public class Activit {
+    private int _id;
+    private String _startime;
+    private String _endtime;
+    private String _date;
+    private float  _km;
+    private float  _calor;
+    private String _starsite;
+    private String _endsite;
+    private String _name;
 
-    private int idActivity;
-    private int uptime;
-    private String sportName ;
-    private double metersActivity;
-    private double  speedActivity;
-    private Date starTimeActivity;
-    private Date endTimeAtivity;
-    private String placeStartActivity; // Para registro automatico
-    private String placeEndActivity;  // Registro Automatico
-    private int caloriesBurned;
-    private String dateActivity;
-    private ImageView imege;        // imagen para asignar en el list view, no esta en la BD
+
+
+    //private ImageView imege;        // imagen para asignar en el list view, no esta en la BD
 
     public Activit() {
     }
 
     // Usado para llenar el ListView de la ventana principal del modulo 5
 
-    public Activit(int uptime, String sportName, double metersActivity, double speedActivity,
+   /* public Activit(int uptime, String sportName, double metersActivity, double speedActivity,
                    String dateActivity) {
         this.uptime = uptime;
         this.sportName = sportName;
@@ -37,102 +37,84 @@ public class Activit {
         this.speedActivity = speedActivity;
         this.dateActivity = dateActivity;
 
+    }*/
+
+    public Activit(String _date, float _km, String _name) {
+        this._date = _date;
+        this._km = _km;
+        this._name = _name;
     }
 
-
-    public int getIdActivity() {
-        return idActivity;
+    public int get_id() {
+        return _id;
     }
 
-    public void setIdActivity(int idActivity) {
-        this.idActivity = idActivity;
+    public void set_id(int _id) {
+        this._id = _id;
     }
 
-    public int getUptime() {
-        return uptime;
+    public String get_startime() {
+        return _startime;
     }
 
-    public String getSportName() {
-        return sportName;
+    public void set_startime(String _startime) {
+        this._startime = _startime;
     }
 
-    public void setSportName(String sportName) {
-        this.sportName = sportName;
+    public String get_endtime() {
+        return _endtime;
     }
 
-    public void setUptime(int uptime) {
-        this.uptime = uptime;
+    public void set_endtime(String _endtime) {
+        this._endtime = _endtime;
     }
 
-    public double getMetersActivity() {
-        return metersActivity;
+    public String get_date() {
+        return _date;
     }
 
-    public ImageView getImege() {
-        return imege;
+    public void set_date(String _date) {
+        this._date = _date;
     }
 
-    public void setImege(ImageView imege) {
-        this.imege = imege;
+    public float get_km() {
+        return _km;
     }
 
-    public void setMetersActivity(double metersActivity) {
-        this.metersActivity = metersActivity;
+    public void set_km(float _km) {
+        this._km = _km;
     }
 
-    public double getSpeedActivity() {
-        return speedActivity;
+    public float get_calor() {
+        return _calor;
     }
 
-    public void setSpeedActivity(double speedActivity) {
-        this.speedActivity = speedActivity;
+    public void set_calor(float _calor) {
+        this._calor = _calor;
     }
 
-    public Date getStarTimeActivity() {
-        return starTimeActivity;
+    public String get_starsite() {
+        return _starsite;
     }
 
-    public void setStarTimeActivity(Date starTimeActivity) {
-        this.starTimeActivity = starTimeActivity;
+    public void set_starsite(String _starsite) {
+        this._starsite = _starsite;
     }
 
-    public Date getEndTimeAtivity() {
-        return endTimeAtivity;
+    public String get_endsite() {
+        return _endsite;
     }
 
-    public void setEndTimeAtivity(Date endTimeAtivity) {
-        this.endTimeAtivity = endTimeAtivity;
+    public void set_endsite(String _endsite) {
+        this._endsite = _endsite;
     }
 
-    public String getPlaceStartActivity() {
-        return placeStartActivity;
+    public String get_name() {
+        return _name;
     }
 
-    public void setPlaceStartActivity(String placeStartActivity) {
-        this.placeStartActivity = placeStartActivity;
+    public void set_name(String _name) {
+        this._name = _name;
     }
 
-    public String getPlaceEndActivity() {
-        return placeEndActivity;
-    }
-
-    public void setPlaceEndActivity(String placeEndActivity) {
-        this.placeEndActivity = placeEndActivity;
-    }
-
-    public int getCaloriesBurned() {
-        return caloriesBurned;
-    }
-
-    public void setCaloriesBurned(int caloriesBurned) {
-        this.caloriesBurned = caloriesBurned;
-    }
-
-    public String getDateActivity() {
-        return dateActivity;
-    }
-
-    public void setDateActivity(String dateActivity) {
-        this.dateActivity = dateActivity;
-    }
 }
