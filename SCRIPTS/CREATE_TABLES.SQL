@@ -106,3 +106,37 @@ CREATE TABLE DIET (
 
 -- FIN DE LAS TABLAS PERTENECIENTES AL MODULO 11
 
+--Inicio de modulo 06--
+CREATE TABLE TRAINING (
+TRAININGID    integer not null,
+TRAININGNAME varchar (80) not null,
+TRAININGPERIOD integer not null,
+TRAININGCALORIES integer not null,
+FK_FRIENDSHIPID integer,
+FK_USERID integer ,
+constraint  PK_TRAININGID primary key (TRAININGID)
+
+);
+
+CREATE SEQUENCE TRAININGID;
+
+CREATE TABLE SPOR_TRAINING (
+SPOR_TRAININGID integer not null,
+TYPE_COMPLEXITY varchar (90) not null,
+TIMETRAINING integer ,
+DISTANCE integer ,
+FK_SPORTID integer ,
+FK_TRAININGID integer ,
+constraint PK_EXER_TRAININGID primary key (SPOR_TRAININGID)
+);
+CREATE SEQUENCE SPOR_TRAININGID;
+
+CREATE TABLE FRIEN_TRAIN (
+FRIEN_TRAINID integer not null,
+FK_FRIENDSHIPID  integer,
+FK_TRAININGID integer ,
+constraint PK_FRIEN_TRAINID primary key ( FRIEN_TRAINID)
+);
+
+--- TERMINA MODULO 6  ---
+
