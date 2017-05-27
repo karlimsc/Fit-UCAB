@@ -86,11 +86,11 @@ CREATE TABLE CHALLENGE (
 CHALLENGEID serial primary key,
 CHALLENGENAME varchar(30) not null,
 CHALLENGEDESCRIPTION varchar(500) not null,
-CHALLENGELEVEL integer,
+CHALLENGEKILOMETERS integer,
 CHALLENGESCORE integer,
+CHALLENGEDAYS integer,
 CHALLENGETYPE check,
 CHALLENGEPREDEFINED check,
-FK_FRIENDSHIPID integer
 );
  
  
@@ -98,7 +98,6 @@ CREATE TABLE DETAIL (
 DETAILID serial primary key,
 DETAILDATESTART timestamp not null,
 DETAILDATEEND timestamp not null,
-DETAILPOSITION integer not null,
 DETAILACTIVE boolean not null,
 FK_FRIENDSHIPID integer,
 FK_CHALLENGEID integer
