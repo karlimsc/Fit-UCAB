@@ -112,6 +112,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             M05_button_end.setVisibility(View.VISIBLE);
             M05_button_pause.setVisibility(View.INVISIBLE);
             M05_button_resume.setVisibility(View.VISIBLE);
+            M05_button_end.setVisibility(View.VISIBLE);
+            M05_button_pause.setVisibility(View.INVISIBLE);
 
 
 
