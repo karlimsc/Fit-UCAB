@@ -225,14 +225,14 @@ public class M11_ServicesFood {
     @Path("/deletePersonalizedFood")
     @Produces("application/json")
     public String deletePersonalizedFood(@QueryParam("foodName") String foodName,
-                                         @QueryParam("idFood")  int idFood){
+                                         @QueryParam("IdUser")  int idUser){
 
         Map<String, String> response = new HashMap<String, String>();
         try {
 
             ValidationWS.validarParametrosNotNull(new HashMap<String, Object>(){ {
                 put("foodName", foodName);
-                put("idFood", idFood);
+                put("idUser", idUser);
             }});
 
         String query = "select * from m11_elimina_alimento_person(?, ?)";
@@ -241,7 +241,7 @@ public class M11_ServicesFood {
 
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, foodName);
-            st.setInt(2, idFood);
+            st.setInt(2, idUser);
             st.executeQuery();
             response.put("data", "Se elimino el alimento de forma exitosa");
         }
@@ -266,13 +266,13 @@ public class M11_ServicesFood {
      * @return Devuelve un json con elemento llamado data, el cual contiene el mensaje de la peticion
      */
 
-    @GET
+    @POST
     @Path("/updatePersonalized")
     @Produces("application/json")
     public String updatePersonalized(@QueryParam("foodName") String foodName,
-                                          @QueryParam("peso") double foodWeight,
-                                          @QueryParam("calorie") int calorie,
-                                          @QueryParam("idFood") int idFood){
+                                     @QueryParam("foodWeight") double foodWeight,
+                                     @QueryParam("calorie") int calorie,
+                                     @QueryParam("idUser") int idUser){
 
         Map<String, String> response = new HashMap<String, String>();
         try {
@@ -280,7 +280,7 @@ public class M11_ServicesFood {
                 put("foodName", foodName);
                 put("foodWeight", foodWeight);
                 put("calorie", calorie);
-                put("idFood", idFood);
+                put("idUser", idUser);
             }});
             String query = "select * from m11_act_alimento_person(?, ?, ?, ?)";
 
@@ -290,7 +290,7 @@ public class M11_ServicesFood {
             st.setString(1, foodName);
             st.setString(2, String.valueOf(foodWeight));
             st.setInt(3, calorie);
-            st.setInt(4, idFood);
+            st.setInt(4, idUser);
             st.executeQuery();
             response.put("data", "Se actualizo el alimento de forma exitosa");
         }
@@ -371,8 +371,9 @@ public class M11_ServicesFood {
                 put("username", username);
             }});
 
-            String query = "select * from m11_get_alimentos_person_lista";
+            String query = "select * from m11_get_alimentos_person_lista(?)";
             PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1, username);
             ResultSet rs = st.executeQuery();
             jsonArray = new ArrayList<>();
             while(rs.next()){
@@ -413,8 +414,8 @@ public class M11_ServicesFood {
         try
         {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5433/fitucabdb";
-            conn = DriverManager.getConnection(url,"postgres", "gagb");
+            String url = "jdbc:postgresql://localhost/FitUcabDB";
+            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
         }
         catch (ClassNotFoundException e)
         {
