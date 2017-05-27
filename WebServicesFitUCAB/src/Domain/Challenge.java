@@ -39,6 +39,7 @@ public class Challenge {
     }//cierre del contstructor challenge
 
 
+
     /**
      * constructor con todos los atributos
      *

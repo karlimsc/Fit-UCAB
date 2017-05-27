@@ -6,10 +6,7 @@ import Domain.DetailChallenge;
 import Domain.User;
 import com.google.gson.Gson;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -33,7 +30,7 @@ public class M08_ServicesChallenge {
     * @return
      */
 
-    @GET
+    @POST
     @Path("/insertChallenge")
     @Produces("application/json")
     /**
@@ -69,9 +66,11 @@ public class M08_ServicesChallenge {
                 CHALLENGEID = rs.getInt("_id");
             }
 
-            String insertDetailQuery = "INSERT INTO DETAIL (DETAILDATESTART, DETAILDATEEND, DETAILACTIVE ,FK_FRIENDSHIPID," +
+            String insertDetailQuery = "INSERT INTO DETAIL (DETAILDATESTART, " +
+                    "DETAILDATEEND, DETAILACTIVE ,FK_FRIENDSHIPID," +
                     "FK_CHALLENGEID)" +
-                    " VALUES (" + detailInitDay + ", " + detailEndDay + " ," + "'n'" + ", " + userId + "," + CHALLENGEID + " )";
+                    " VALUES (" + detailInitDay + ", " + detailEndDay + " ," + "'n'" + ", " + userId
+                    + "," + CHALLENGEID + " )";
 
             st.executeUpdate(insertDetailQuery);
 
@@ -86,8 +85,8 @@ public class M08_ServicesChallenge {
             @Path("/getPredefinedChallenges")
             @Produces("application/json")
             /**
-             * Carga todos los retor predefinidos
-             * @return
+             * Carga todos los retos predefinidos
+             * @return lista de retos
              */
 
             public String getPredefinedChallenges(){
