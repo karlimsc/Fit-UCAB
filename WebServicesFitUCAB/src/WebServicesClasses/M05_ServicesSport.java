@@ -152,7 +152,7 @@ public class M05_ServicesSport {
 
 
         Sport resultado = new Sport();
-        ArrayList<String> listaDeportes= new ArrayList<>();
+        ArrayList<Sport> listaDeportes= new ArrayList<>();
 
         String query = "select nombredeporte from M05_obtenerdeportesusuario('"+id+"')";
 
@@ -163,8 +163,9 @@ public class M05_ServicesSport {
             ResultSet rs =  st.executeQuery(query);
 
             while(rs.next()){
-
+				resultado.setId(rs.getInteger(  "id"));
                 resultado.setName(rs.getString(  "nombredeporte"));
+				resultado.setMet(rs.getFloat(  "met"));
                 listaDeportes.add(resultado.getName());
             }
 
