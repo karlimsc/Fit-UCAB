@@ -26,7 +26,7 @@ public class M02_ServicesUser {
      */
     @GET
     @Path("/{userId}")
-    public StatusMessage getUser( @PathParam("userId") int id ){
+    public Response getUser( @PathParam("userId") int id ){
         /*
         TODO implementar el searchUser() en la base de datos
         Buscar en la base de datos el usuario con esa id
@@ -40,7 +40,9 @@ public class M02_ServicesUser {
             _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
             throw new WebApplicationException( _response );
         }
-        return _message = new StatusMessage( 1, "Usuario encontrado" );
+        _message = new StatusMessage( 1, "Usuario encontrado" );
+        _response = Response.status( Response.Status.ACCEPTED ).entity( _message ).build();
+        return _response;
     }
 
     /**
@@ -54,7 +56,7 @@ public class M02_ServicesUser {
     @PUT
     @Path("/{userId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public StatusMessage updateUser( @PathParam("userId") int id, User user ){
+    public Response updateUser( @PathParam("userId") int id, User user ){
         user.setId(id);
         /*
         * TODO implementar updateUser en la BD
@@ -68,7 +70,9 @@ public class M02_ServicesUser {
             _response = Response.status( Response.Status.NOT_MODIFIED ).entity( _message ).build();
             throw new WebApplicationException(_response);
         }
-        return new StatusMessage( 1, "Usuario actualizado" );
+        _message = new StatusMessage( 1, "Usuario actualizado" );
+        _response = Response.status( Response.Status.ACCEPTED ).entity( _message ).build();
+        return _response;
     }
 
 }
