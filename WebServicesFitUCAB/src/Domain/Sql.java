@@ -32,8 +32,8 @@ public class Sql {
         try
         {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/FitUcabDB";
-            _conn = DriverManager.getConnection(url,"postgres", "root");
+            String url = "jdbc:postgresql://localhost/fitucabdb";
+            _conn = DriverManager.getConnection(url,"fitucab", "fitucab");
         }
         catch ( ClassNotFoundException e )
         {
