@@ -109,7 +109,7 @@ public class M11DietFragment extends Fragment {
         java.util.Date utilDate = new java.util.Date(); //fecha actual
         long lnMilisegundos = utilDate.getTime();
         java.sql.Date _fecha_actual = new java.sql.Date(lnMilisegundos);
-        PeticionCaloriasHoy("PEDRO", String.valueOf(_fecha_actual));
+        PeticionCaloriasHoy("Jesus", String.valueOf(_fecha_actual));
 
         return _view;
     }
@@ -210,8 +210,8 @@ public class M11DietFragment extends Fragment {
 
     public void PeticionCaloriasHoy(String usuario, String _fecha_actual) {
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-        String jsonURL = "http://201.210.245.191:8080/WebServicesFitUCAB_war_exploded/M11_Diet" +
-                "/obtener_calorias_fecha?fecha=" + _fecha_actual + "&username=" + usuario;
+        String jsonURL = "http://192.168.71.19:8080/WebServicesFitUCAB_war_exploded/M11_Diet" +
+                "/getCalorieByDate?date=" + _fecha_actual + "&username=" + usuario;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL,
                 new Response.Listener<String>() {
                     @Override

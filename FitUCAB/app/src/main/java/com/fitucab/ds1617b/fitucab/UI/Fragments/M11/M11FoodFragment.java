@@ -77,7 +77,7 @@ public class M11FoodFragment extends Fragment {
         _btn_m11_agregar = (ImageButton)_view.findViewById(R.id.btn_m11_agregar);
         _gl_m11_listaAlimento = (TableLayout) _view.findViewById(R.id.gl_m11_listaAlimento);
         //Aqui va el usuario como variable.....
-        PeticionAlimentos("PEDRO");
+        PeticionAlimentos("Jesus");
         addAlimento(); //para agregar los personalizados
 
         // Inflate the layout for this fragment
@@ -94,13 +94,14 @@ public class M11FoodFragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
         //OJO esta no es la consulta en si, hay que colocar la que es de los personalizados......
         //La haré mañana temprano.
-        String jsonURL = "http://201.210.245.191:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
-                "/obtener_todoas_alimentos_auto?username=" + usuario;
+        String jsonURL = "http://192.168.71.19:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
+                "/getPersonalizedList?username=" + usuario;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
+                        Log.wtf("Error!!" , response);
                         ArrayList<Food> foods = new ArrayList<>();
                         foods = gson.fromJson(response, new TypeToken<ArrayList<Food>>(){}.getType());
                         LlenaTablaAlimentos(foods);
@@ -134,6 +135,7 @@ public class M11FoodFragment extends Fragment {
 
             final String alimento = alimentos.get(i).getFoodName();
             final int pesoAlimento = Integer.valueOf(alimentos.get(i).getFoodWeight());
+
             final int caloriaAlimento = Integer.valueOf(alimentos.get(i).getFoodCalorie());
             fila.setOnClickListener(new View.OnClickListener(){
 
@@ -148,6 +150,7 @@ public class M11FoodFragment extends Fragment {
                             .setNegativeButton("Editar",new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     //El id del usuario debe ser variable
+
                                     editarAlimentoPersonalizad( alimento , pesoAlimento ,
                                             caloriaAlimento , 1);
                                 }
@@ -215,8 +218,8 @@ public class M11FoodFragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
         //OJO esta no es la consulta en si, hay que colocar la que es de los personalizados......
         //La haré mañana temprano.
-        String jsonURL = "http://201.210.245.191:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
-                "/eliminar_personalizado?alimento=" + nombreAlimento + "&usuario=" + usuarioID;
+        String jsonURL = "http://192.168.71.19:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
+                "/deletePersonalizedFood?foodName=" + nombreAlimento + "&idUser=" + usuarioID;
         StringRequest stringRequest = new StringRequest( Request.Method.DELETE, jsonURL,
                 new Response.Listener<String>() {
                     @Override
@@ -247,10 +250,10 @@ public class M11FoodFragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue( _view.getContext() );
         //OJO esta no es la consulta en si, hay que colocar la que es de los personalizados......
         //La haré mañana temprano.
-        String jsonURL = "http://201.210.245.191:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
-                "/eliminar_personalizado?alimento=" + nombreAlimento + "&peso" + peso + "&calorie" +
-                caloria + "&usuario=" + usuarioID;
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL,
+        String jsonURL = "http://192.168.71.19:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
+                "/updatePersonalized?foodName=" + nombreAlimento + "&foodWeight" + peso + "&calorie" +
+                caloria + "&idUser=" + usuarioID;
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, jsonURL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
