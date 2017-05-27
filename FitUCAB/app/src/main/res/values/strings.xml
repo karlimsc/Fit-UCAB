@@ -83,13 +83,14 @@
     <string name="gamificacion">Gamificacion</string> <!-- opcion de calorias al enviar correo -->
     <string name="SI">SI</string> <!--  -->
     <string name="NO">NO</string> <!-- -->
-    <string name="lang_btn">Idioma</string>
+    <string name="lang_btn">Idioma: Español</string>
     <string name="kms">Kms.</string>
     <string name="millas">Mi.</string>
     <string name="radio">Radio de cercania</string>
     <string name="ajustes">Ajustes</string>
     <string name="enviar">Enviar</string>
     <string name="guardar">Guardar</string>
+    <string name="language">Español</string>
     <!--Final Strings Modulo 4 -->
 
     <!-- TODO: Remove or change this placeholder text -->

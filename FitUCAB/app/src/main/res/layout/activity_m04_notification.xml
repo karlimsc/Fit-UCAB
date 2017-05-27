@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity">
-
-
 
     <LinearLayout
         android:id="@+id/widget42"
@@ -120,19 +120,6 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/enviar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="prueba para enviar correo"
-        android:text="enviar"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="337dp"
-        android:layout_marginTop="22dp"
-        android:layout_below="@+id/tv_m04_distancia"
-        android:layout_alignLeft="@+id/tv_m04_distancia"
-        android:layout_centerHorizontal="true" />
-
 
     <Button
         android:id="@+id/button_guardacambios"
@@ -140,8 +127,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="guardar cambios"
         android:text="guardar"
-        android:layout_alignBaseline="@+id/enviar"
-        android:layout_alignBottom="@+id/enviar"
+        android:layout_below="@+id/tv_m04_distancia"
         android:layout_alignStart="@+id/tv_m04_radio2" />
 
 
@@ -162,15 +148,14 @@
         android:text="" />
 
     <TextView
-        android:theme="@style/AppTheme"
         android:id="@+id/tv_m04_radio1"
+        android:theme="@style/AppTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/radio"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/widget42"
         android:layout_alignStart="@+id/widget42" />
-
 
 
 

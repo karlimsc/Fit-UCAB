@@ -8,14 +8,23 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.support.v4.app.Fragment;
 
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M04.M04NotificationFragment;
 
 import java.util.Locale;
 import java.util.Properties;
@@ -66,8 +75,6 @@ public class M04NotificationActivity extends AppCompatActivity {
     private Switch _swGamificacion;
 
 
-
-
     @Override
     protected void onCreate (Bundle savedInstanceState) {
         super.onCreate (savedInstanceState);
@@ -102,29 +109,9 @@ public class M04NotificationActivity extends AppCompatActivity {
                 saveReference(); //GUARDA LAS REFERENCIAS EDITADAS
             }
         });
-        ///////////////////////////////////////////////////
-
-        //////////////////////////////////////////////////////// ENVIAR CORREO
-        enviar = (Button) findViewById(R.id.enviar); //obteniendo la id del boton
-        enviar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                sendMail("aagilazer@gmail.com", "mi asunto", "este es mi mensaje para ti", 9);
-
-            }});
-        //////////////////////////////////////////////////////////7
-
-        ///////////////////////////////////////////////////////// CABMBIAR IDIOMA
-        /*lang = (Button)findViewById(R.id.idioma);//obteniendo la id del boton
-        lang.setOnClickListener(
-                new View.OnClickListener() {
-                    public void onClick(View view) {
-                        showDialog();
-                    }});*/
-        //////////////////////////////////////////////////////////////////////////
-
     }
+
+
 
     /**
      * Metodo que:  verifica si esta marcado el switch y envia el correo

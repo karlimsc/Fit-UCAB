@@ -8,7 +8,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="str_en">English</string>
     <string name="str_es">Español</string>
-    <string name="lang_btn">Language</string>
 
     <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_enviarCorreo">Send Email</string>
@@ -72,6 +71,7 @@
     <string name="reto">Challenges</string>
     <string name="hidratacion">Hydration</string>
     <string name="calorias">Calories</string>
+    <string name="lang_btn">Language: English</string>
     <string name="gamificacion">Gamification</string>
     <string name="SI">YES</string> <!-- -->
     <string name="NO">NO</string> <!-- -->
@@ -80,6 +80,7 @@
     <string name="guardar">Save</string><!-- Este es solo de ejemplo, no va en app final-->
     <string name="kms">Kms.</string>
     <string name="millas">Mi.</string>
+    <string name="language">Español</string>
     <!--Final Strings Modulo 4 -->
 
 </resources>
