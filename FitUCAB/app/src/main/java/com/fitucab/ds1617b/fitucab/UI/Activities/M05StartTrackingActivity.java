@@ -43,6 +43,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     private TextView M05_textview_km;
     private Button M05_button_pause;
     private Button M05_button_resume;
+    private Button M05_button_end;
     private long timeWhenStopped = 0;
     private FormatUtility formatUtility = new FormatUtility();
 
@@ -72,8 +73,10 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         M05_textview_km_tag = (TextView) findViewById(R.id.tv_m05_km_tag);
         M05_button_pause = (Button) findViewById(R.id.btn_m05_pause_track);
         M05_button_resume = (Button) findViewById(R.id.btn_m05_resume_track);
+        M05_button_end = (Button) findViewById(R.id.btn_m05_end_track);
         M05_button_pause.setOnClickListener(pause);
         M05_button_resume.setOnClickListener(resume);
+
 
         //Desde donde inicia.
         M05_textview_time.setBase(SystemClock.elapsedRealtime());
@@ -98,6 +101,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
     }
 
+
     /**
      * Listen when the button is pressed and makes actions.
      */
@@ -105,7 +109,11 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         public void onClick(View v) {
             timeWhenStopped = M05_textview_time.getBase() - SystemClock.elapsedRealtime();
             M05_textview_time.stop();
+            M05_button_end.setVisibility(View.VISIBLE);
+            M05_button_pause.setVisibility(View.INVISIBLE);
             M05_button_resume.setVisibility(View.VISIBLE);
+
+
 
         }
     };
@@ -118,6 +126,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             M05_textview_time.setBase(SystemClock.elapsedRealtime() + timeWhenStopped);
             M05_textview_time.start();
             M05_button_resume.setVisibility(View.INVISIBLE);
+            M05_button_end.setVisibility(View.INVISIBLE);
+            M05_button_pause.setVisibility(View.VISIBLE);
         }
     };
 
