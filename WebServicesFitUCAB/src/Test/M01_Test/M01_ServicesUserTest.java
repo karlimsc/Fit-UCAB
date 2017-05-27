@@ -8,6 +8,7 @@ import org.junit.Before;
 import org.junit.*;
 
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import static io.restassured.RestAssured.*;
@@ -41,7 +42,7 @@ public class M01_ServicesUserTest extends baseClass {
     }
 
     @Test
-    public void userOnly() throws Exception {
+    public void userOnly() throws URISyntaxException {
 
 
         //RestAssured  se inicializa si no se importa static
@@ -53,13 +54,19 @@ public class M01_ServicesUserTest extends baseClass {
         //then(); para validar thenreturn para capturar
         //body  el cuerpo que va a retornar
         // asString de tipo string
+        try {
+            URI prueba = new URI("/M01_ServicesUser/getUser?User=daniel&Password=daniel");
+            String json = given().accept(ContentType.JSON).when().get(prueba).thenReturn().body().asString();
+            assertNotNull(json);
+            // se pueden manejar los errore HTTP buscar como agaregar httpstatus.class
+            //Response response = given().accept(ContentType.JSON).when().get(prueba);
+        }
+        catch (URISyntaxException e){
 
-        URI prueba =new URI("/M01_ServicesUser/getUser?User=daniel&Password=daniel");
-        String  json = given().accept(ContentType.JSON).when().get(prueba).thenReturn().body().asString();
-        assertNotNull(json);
-        // se pueden manejar los errore HTTP buscar como agaregar httpstatus.class
-        //Response response = given().accept(ContentType.JSON).when().get(prueba);
+        }
+        catch (Exception e){
 
+        }
     }
 
     @Test

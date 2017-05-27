@@ -79,7 +79,59 @@ public class M01_ServicesUser {
         }
     }
 
+    @GET
+    @Path("/deteleUser")
+    @Produces("application/json")
+    public String deleteUser(@QueryParam("username") String userparam){
 
+        String query="SELECT M01_ELIMINARUSER('"+ userparam +"')";
+
+
+        try{
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            int delete =0;
+
+            while(rs.next()){
+
+                delete = rs.getRow();
+
+            }
+            return gson.toJson(delete);
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+    }
+    @GET
+    @Path("/updateUser")
+    @Produces("application/json")
+    public String updateUser(@QueryParam("username") String userparam,@QueryParam("password") String password,@QueryParam("email") String email,
+    @QueryParam("sex") String sex ,@QueryParam("phone") String phone){
+
+        String query="SELECT M01_MODIFICARUSER('"+userparam+"','"+password+"','"+email+"','"+sex+"'" +
+                ",'"+phone+"')";
+
+        try{
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            int update =0;
+
+            while(rs.next()){
+
+                update = rs.getRow();
+
+            }
+            return gson.toJson(update);
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+    }
 
     @GET
     @Path("/userView")
