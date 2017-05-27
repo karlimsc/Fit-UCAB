@@ -145,7 +145,7 @@ public class M05_ServicesActivity {
             ResultSet   rs  =  st.executeQuery(query);
 
             while(rs.next()){
-
+				resultado.setStartime(rs.getInteger("id"));
                 resultado.setStartime(rs.getString("horainicio"));
                 resultado.setEndtime (rs.getString("horafinal"));
                 resultado.setDate    (rs.getString("fecha"));
