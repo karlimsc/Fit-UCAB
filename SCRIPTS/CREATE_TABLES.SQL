@@ -82,6 +82,8 @@ PREFERENCERADIUS integer not null,
 FK_PERSON		integer not null
 );
 --TERMINA MODULO 4--
+
+--Inicio de modulo 05--
 CREATE TABLE TRAINING (
 TRAININGID    integer not null,
 TRAININGNAME varchar (80) not null,
