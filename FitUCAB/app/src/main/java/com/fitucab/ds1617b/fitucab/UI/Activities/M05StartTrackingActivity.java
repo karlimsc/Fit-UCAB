@@ -1,13 +1,8 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,22 +13,20 @@ import android.widget.TextView;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.fitucab.ds1617b.fitucab.Helper.FormatUtility;
 import com.fitucab.ds1617b.fitucab.Helper.GeoLocalization.GeoLocalization;
-import com.fitucab.ds1617b.fitucab.Helper.Rest.M05_RequestList;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.Model.Global;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
-
-import org.json.JSONObject;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class M05StartTrackingActivity extends GeoLocalization implements
         GoogleApiClient.ConnectionCallbacks,
@@ -54,21 +47,22 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     private FormatUtility formatUtility = new FormatUtility();
 
 
-    //Atributos para Geolocalización
 
     private ArrayList<Location> LocationPoints;
+    private ArrayList<Long> TimePassed;
+    private ArrayList<Double> velocidadPromedio;
     private float distance = 0;
-    private LocationRequest mLocationRequest = new LocationRequest();
+    private double velocidad=0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m05_start_tracking);
-        M05_RequestList requestList = new M05_RequestList(this.getApplicationContext(),
-                "http://localhost:8080/untitled_war_exploded/M05_ServicesSport/getSport?idSpo=1");
 
         LocationPoints = new ArrayList<>();
+        TimePassed = new ArrayList<>();
+        velocidadPromedio = new ArrayList<>();
 
         M05_textview_time = (Chronometer) findViewById(R.id.tv_m05_tiempo);
         M05_textview_time_tag = (TextView) findViewById(R.id.tv_m05_tiempo_tag);
@@ -100,7 +94,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         super.createLocationRequest();
 
         //M05_textview_speed_tag.setText(requestList.makeRequest());
-        makeRequest();
+        requestSportsListbyUser();
 
     }
 
@@ -177,13 +171,6 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         super.onConnectionFailed(connectionResult);
     }
 
-
-    /**
-     * Create the location request and set the parameters.
-     */
-
-
-
     /**
      * Actualiza la interfaz.
      */
@@ -196,18 +183,32 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
             Location mPrevLocation;
 
-            int lastIndex = LocationPoints.size() - 1;
+            int lastIndexLP = LocationPoints.size() - 1;
+            int lastIndexTP = TimePassed.size() - 1;
 
             //Log.i("CURRENT LOCATION", mCurrentLocation.toString());
 
-            if (LocationPoints.size() >= 2) {
-                mPrevLocation = LocationPoints.get(lastIndex - 1);
-                distance = distance + mPrevLocation.distanceTo(LocationPoints.get(lastIndex));
+            if (LocationPoints.size() >= 2 && TimePassed.size()>=2) {
+                mPrevLocation = LocationPoints.get(lastIndexLP - 1);
+                float lastDistance = mPrevLocation.distanceTo(LocationPoints.get(lastIndexLP));
+                distance = distance + lastDistance;
                 M05_textview_km.setText(formatUtility.fmt(distance));
+
+                double time = TimePassed.get(lastIndexTP-1)-TimePassed.get(lastIndexTP);
+                velocidad = calculateSpeed(lastDistance,time);
+                velocidadPromedio.add(velocidad);
+                M05_textview_speed.setText(formatUtility.fmt((velocidad)));
             }
 
         }
     }
+
+    public double calculateSpeed(float distance, double time) {
+        return (double) distance / time;
+    }
+
+
+
 
 
     /**
@@ -231,34 +232,35 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     public void onLocationChanged(Location location){
         super.onLocationChanged(location);
         super.getLocationPoints(LocationPoints);
+        TimePassed.add(M05_textview_time.getBase() - SystemClock.elapsedRealtime());
         updateUI();
     }
 
-    public void makeRequest()
+    public void requestSportsListbyUser()
     {
-        String consult = Global._url +"M05_ServicesSport/getSport?idSpo=1";
+        VolleySingleton.getInstance(this);
 
-        JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.GET, consult, (String)null,
-                        new Response.Listener<JSONObject>() {
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                Log.i("RESPONSE",response.toString());
-                                M05_textview_speed_tag.setText(response.toString());
-                                // mTxtDisplay.setText("Response: " + response.toString());
-                            }
-                        }, new Response.ErrorListener() {
-
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, VolleySingleton.getStringConn(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        Collection<String> sports = new ArrayList<String>();
+                            sports = gson.fromJson(response, new TypeToken<Collection<String>>(){}.getType());
+                            Log.i("Nombre",sports.toString());
+                    }
+                },
+                new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO Auto-generated method stub
-                        Log.i("no trajo nada","");
-
+                       // Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
                     }
                 });
 // Access the RequestQueue through your singleton class.
-        VolleySingleton.getInstance(this).addToRequestQueue(jsObjRequest);
+        VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
     }
+
+
 
 }
 

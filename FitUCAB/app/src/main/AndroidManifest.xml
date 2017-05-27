@@ -52,11 +52,6 @@
             android:label="@string/_ttl_m05_activity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity
-            android:name=".UI.Activities.M05TrackExerciseActivity"
-            android:label="@string/_ttl_m05_activity"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
 
         <!-- FIN MODULO 5-->
         <activity
