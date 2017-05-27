@@ -60,7 +60,8 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     private Calendar _cal ;
     private String _date;
     Water water ;
-
+    private static boolean banderag;
+    private static boolean banderah;
 
 
     Gson gson =new Gson();
@@ -189,9 +190,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
 
-            Bundle bundle = new Bundle();
-            String myMessage = _EtnDate.getText().toString();
-            bundle.putString("message", myMessage );
+
 
 
 
@@ -199,7 +198,6 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
             M10WaterGlassFragment m10 = new M10WaterGlassFragment();
             M10HistoyFragment list = new M10HistoyFragment();
 
-            m10.setArguments(bundle);
 
 
 
@@ -208,11 +206,15 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
             if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
                 View rootView = m10.onCreateView(inflater,container,null);
 
+
+
+
                 return rootView;
             }
 
             else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2){
                 View rootView = list.onCreateView(inflater,container,null);
+
 
                 //inflater.inflate(R.layout.fragment_m10_histoy, container, false);;
                 return rootView;
@@ -238,7 +240,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
 
 
         giveDate();
-            activarCalendario();
+        activarCalendario();
         addDate();
         lessDate();
         }
@@ -363,8 +365,11 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
             }
         });
 // Add the request to the RequestQueue.
-        queue.add(stringRequest);
-
+        try {
+            queue.add(stringRequest);
+        }
+        catch (Exception e)
+        {};
 
 
     }

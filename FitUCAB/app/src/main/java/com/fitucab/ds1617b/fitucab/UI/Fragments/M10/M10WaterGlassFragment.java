@@ -120,41 +120,7 @@ public class M10WaterGlassFragment extends Fragment {
         _btnAddWater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url1 = "M10_WaterGlass/addWater?time="+m10._EtnDate.getText()+"&glasstype=350&fkp=1";
-                String aux = Url.getIp()+url1;
-                RequestQueue queue = Volley.newRequestQueue(contexto);
-                // Request a string response from the provided URL.
-                StringRequest stringRequest = new StringRequest(Request.Method.GET,aux ,
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                // Display the first 500 characters of the response string.}
-                                try {
-                                    water = gson.fromJson(response,Water.class);
-                                    _EtnWater.setText(water.get_cantidad().toString());
-
-                                }
-                                catch (Exception e){
-                                    e.printStackTrace();
-                                }
-                            }
-                        }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        _EtnDate.setText("That didn't work!");
-                    }
-                });
-// Add the request to the RequestQueue.
-                try {
-                    Thread.sleep(40);
-                    queue.add(stringRequest);
-
-                }catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
-
-
+                addwateraux();
             }
         });
     }
@@ -186,7 +152,7 @@ public class M10WaterGlassFragment extends Fragment {
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        _EtnDate.setText("That didn't work!");
+
                     }
                 });
                 // Add the request to the RequestQueue.
@@ -201,6 +167,42 @@ public class M10WaterGlassFragment extends Fragment {
         });
     }
 
+    public void addwateraux()
+    {
+        String url1 = "M10_WaterGlass/addWater?time="+m10._EtnDate.getText()+"&glasstype=350&fkp=1";
+        String aux = Url.getIp()+url1;
+        RequestQueue queue = Volley.newRequestQueue(contexto);
+        // Request a string response from the provided URL.
+        try {
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, aux,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            // Display the first 500 characters of the response string.}
+                            try {
+                                water = gson.fromJson(response, Water.class);
+                                _EtnWater.setText(water.get_cantidad().toString());
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                }
+            });
+
+            queue.add(stringRequest);
+
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
 
 
     public interface OnFragmentInteractionListener {
