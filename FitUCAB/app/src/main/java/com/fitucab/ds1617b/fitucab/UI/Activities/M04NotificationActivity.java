@@ -23,6 +23,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.support.v4.app.Fragment;
 
+import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
+import com.fitucab.ds1617b.fitucab.Model.Notification_Settings;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M04.M04NotificationFragment;
 
@@ -38,6 +41,12 @@ import javax.mail.Transport;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 
 
 /**
@@ -303,8 +312,8 @@ public class M04NotificationActivity extends AppCompatActivity {
 ///
 
     /**
-     * Metodo que:  al momento de cerrar la aplicacion, guarda los nuevos   valores editados de los Switch de
-     * la vista de notificaciones
+     * Metodo que:  al momento de cerrar la aplicacion, guarda los nuevos  valores editados de los Switch de
+     * la vista de notificaciones en la app y llama al web service para hacer el update
      *
      */
     public void saveReference ()
@@ -322,8 +331,15 @@ public class M04NotificationActivity extends AppCompatActivity {
         boolean gamifica = _swGamificacion.isChecked();
         String idioma = locale.getCountry();
         int radio = seekbar.getProgress();
+        String unidad;
+        if(String.valueOf(_textKms) == "km"){
+            unidad = "km";
+        }
+        else{
+            unidad = "mi";
+        }
 
-        editor.putBoolean( "check_amigo",amigo ); //del indicador guardar el nuevo valor
+        editor.putBoolean( "check_amigo", amigo ); //del indicador guardar el nuevo valor
         editor.putBoolean( "check_actividad",actividades );
         editor.putBoolean( "check_entrenamiento",entrenar );
         editor.putBoolean( "check_reto",reto );
@@ -334,6 +350,35 @@ public class M04NotificationActivity extends AppCompatActivity {
         editor.putInt("check_radio",radio);
 
         editor.commit(); //Guardar los cambios
+
+        ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
+        int id = getIdUser(getApplicationContext());
+        Call<Notification_Settings> call= apiService.updateSetting(amigo, actividades, entrenar, reto, hidrata, caloria, gamifica, idioma, unidad, radio, id);
+        call.enqueue(new Callback<Notification_Settings>() {
+
+            @Override
+            public void onResponse(Call<Notification_Settings> call, Response<Notification_Settings> response) {
+
+                try{
+
+                    Notification_Settings settings = response.body();
+                    System.out.println("Hice bien la consulta");
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                    System.out.println("Hice MAL la consulta");
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Notification_Settings> call, Throwable t) {
+
+                System.out.println("FALLO TODO");
+
+            }
+        });
     }
 
 

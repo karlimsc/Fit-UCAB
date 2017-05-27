@@ -1,6 +1,7 @@
 package com.fitucab.ds1617b.fitucab.Helper.Rest;
 
 import com.fitucab.ds1617b.fitucab.Model.User;
+import com.fitucab.ds1617b.fitucab.Model.Notification_Settings;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -25,4 +26,34 @@ public interface ApiEndPointInterface {
                             @Query("height") String height
                             );
 
+    @GET("M04_ServicesNotificationSettings/insertSetting")
+    Call<Notification_Settings> insertSetting(@Query("preferenceFriends") boolean preferenceFriends,
+                                              @Query("preferenceActivity") boolean preferenceActivity,
+                                              @Query("preferenceTraining") boolean preferenceTraining,
+                                              @Query("preferenceChallenges") boolean preferenceChallenges,
+                                              @Query("preferenceHydration") boolean preferenceHydration,
+                                              @Query("preferenceCalories") boolean preferenceCalories,
+                                              @Query("preferenceGamification") boolean preferenceGamification,
+                                              @Query("preferenceLanguage") String preferenceLanguage,
+                                              @Query("preferenceUnit") String preferenceUnit,
+                                              @Query("preferenceRadius") int preferenceRadius,
+                                              @Query("userId") int userId
+    );
+
+    @GET("M04_ServicesNotificationSettings/updateSetting")
+    Call<Notification_Settings>  updateSetting(@Query("preferenceFriends") boolean preferenceFriends,
+                                               @Query("preferenceActivity") boolean preferenceActivity,
+                                               @Query("preferenceTraining") boolean preferenceTraining,
+                                               @Query("preferenceChallenges") boolean preferenceChallenges,
+                                               @Query("preferenceHydration") boolean preferenceHydration,
+                                               @Query("preferenceCalories") boolean preferenceCalories,
+                                               @Query("preferenceGamification") boolean preferenceGamification,
+                                               @Query("preferenceLanguage") String preferenceLanguage,
+                                               @Query("preferenceUnit") String preferenceUnit,
+                                               @Query("preferenceRadius") int preferenceRadius,
+                                               @Query("userId") int userId
+    );
+
+    @GET("M04_ServicesNotificationSettings/getSetting")
+    Call<Notification_Settings> getSetting(@Query("userId") int userId);
 }

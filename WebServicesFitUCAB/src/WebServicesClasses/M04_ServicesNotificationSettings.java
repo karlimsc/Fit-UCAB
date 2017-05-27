@@ -2,12 +2,14 @@ package WebServicesClasses;
 
 import Domain.Notification_Settings;
 import com.google.gson.Gson;
+import Domain.basedatosException;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
+
 
 /**
  * Clase de Servicios Web del Modulo 04
@@ -67,13 +69,6 @@ public class M04_ServicesNotificationSettings {
             return gson.toJson(notification);
 
         }
-        catch(SQLException ex)
-                {
-                    if (preferenceFriends==null) || (preferenceActivity==null) || (preferenceTraining==null) || (preferenceChallenges==null) ||
-                        (preferenceHydration==null) || (preferenceCalories==null) ||  (preferenceGamification==null) || (preferenceLanguage==null) ||
-                        (preferenceUnit==null) || (preferenceRadius==null) || (userId==null){
-                        throw new basedatosException("Posee parametros ingresados  NULOS");}
-                }
         catch(Exception e) {
             return e.getMessage();
         }
@@ -109,7 +104,7 @@ public class M04_ServicesNotificationSettings {
                                 @QueryParam("preferenceUnit") String preferenceUnit,
                                 @QueryParam("preferenceRadius") int preferenceRadius,
                                 @QueryParam("userId") int userId
-    ) throws basedatosException
+    )
     {
 
         try{
@@ -127,13 +122,6 @@ public class M04_ServicesNotificationSettings {
             return gson.toJson(notification);
 
         }
-         catch(SQLException ex)
-                {
-                    if (preferenceFriends==null) || (preferenceActivity==null) || (preferenceTraining==null) || (preferenceChallenges==null) ||
-                        (preferenceHydration==null) || (preferenceCalories==null) ||  (preferenceGamification==null) || (preferenceLanguage==null) ||
-                        (preferenceUnit==null) || (preferenceRadius==null) || (userId==null){
-                        throw new basedatosException("Posee parametros ingresados  NULOS");}
-                }
         catch(Exception e) {
             return e.getMessage();
         }
@@ -148,7 +136,7 @@ public class M04_ServicesNotificationSettings {
     @GET
     @Path("/getSetting")
     @Produces("application/json")
-    public String getSetting(@QueryParam("userId") int userId) throws basedatosException
+    public String getSetting(@QueryParam("userId") int userId)
     {
 
         try{
@@ -176,11 +164,6 @@ public class M04_ServicesNotificationSettings {
             return gson.toJson(notification);
 
         }
-         catch(SQLException ex)
-                {
-                    if (userId==null) {
-                        throw new basedatosException("Posee parametros ingresados  NULOS");}
-                }
         catch(Exception e) {
             return e.getMessage();
         }
