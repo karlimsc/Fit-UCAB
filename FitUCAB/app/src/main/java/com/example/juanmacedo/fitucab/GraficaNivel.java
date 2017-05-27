@@ -36,14 +36,17 @@ public class GraficaNivel extends AppCompatActivity {
     PieChart pieChart;
     //Deben ser cantidades en int, no porcentajes
     private int[] _valoresY = {0, 0};
-    private String[] _valoresX = {"No logrados", "Logros"};
+    private String[] _valoresX = {"No logrados", "Logrado"};
     private int logrado, noLogrado;
+    private int _calculoNivel = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nivel);
         traerTamaños();
+        Nivel _nivel = new Nivel(this);
+        _calculoNivel = _nivel.calculoNivel(1);
 
 
         pieChart = (PieChart) findViewById(R.id.PieChartId);
@@ -56,7 +59,7 @@ public class GraficaNivel extends AppCompatActivity {
         pieChart.setHoleRadius(58f);
         pieChart.setTransparentCircleRadius(61f);
         pieChart.setTransparentCircleAlpha(110);
-        pieChart.setCenterText("Logros");
+        pieChart.setCenterText("Nivel: "+ _calculoNivel);
         pieChart.setCenterTextSize(30);
         //Desabilitamos atributo descripcion de la grafica
         pieChart.getDescription().setEnabled(false);

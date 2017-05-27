@@ -25,11 +25,16 @@ import com.android.volley.toolbox.Volley;
 public class Gamificacion extends AppCompatActivity implements View.OnClickListener,
         Logros.OnFragmentInteractionListener {
 
+
+    TextView _textViewNivel;
+    int puntajeTotal;
     public static int logrado;
     public static int noLogrado;
-    private static String URL = "http://192.168.1.8:8080/FitUcabService_war_exploded/db/obtener";
-    private int puntajeTotal;
-    private ArrayAdapter<String> _adapter;
+    public ConexionesServicioWeb _servicioWeb = new ConexionesServicioWeb();
+    private String URL = _servicioWeb._dbObtener;
+    private String URLtamaño = _servicioWeb._dbGraficaObtener;
+    //private static String URL = "http://192.168.1.8:8080/FitUcabService_war_exploded/db/obtener";
+   // private static String URLtamaño = "http://192.168.43.152:8080/FitUcabService_war_exploded/dbgrafica/obtener";
     private ListView _lista;
     private String ERROR;
     TextView TextViewpuntaje;
@@ -40,6 +45,7 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
 
         setContentView(R.layout.activity_gamificacion);
         TextViewpuntaje = (TextView) findViewById(R.id.tv_puntos);
+        _textViewNivel = (TextView) findViewById(R.id.tv_nivelLabel);
         _lista = (ListView) findViewById(R.id.lista);
 
         //LLAMAR FUNCION DE VOLLEY
@@ -116,34 +122,39 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showJSON(String json, Context context) {
+
+        int _resultadoNivel;
         ParseJSON pj = new ParseJSON(json);
         pj.parseJSON();
         String[] puntajes = ParseJSON.puntaje;
         int puntaje1 = 0;
         for (int i = 0; i < ParseJSON.puntaje.length; i++) {
-            try {
-                puntaje1 = puntaje1 + Integer.parseInt(puntajes[i]);
-
-                puntajeTotal = puntaje1;
+          try {
+              puntaje1 = puntaje1 + Integer.parseInt(puntajes[i].toString());
+              puntajeTotal = puntaje1;
+          } catch (NullPointerException e) {
+              Log.e(ERROR, "Valor NULL");
+          } catch (NumberFormatException e) {
+              Log.e(ERROR, "No es un numero");
+          }
+        }
+            try{
+                String puntajeTotalS = String.valueOf(puntajeTotal);
+                TextViewpuntaje = (TextView) ((Activity) context).findViewById(R.id.tv_puntos);
+                TextViewpuntaje.setText("Puntos: " + puntajeTotalS);
             } catch (NullPointerException e) {
                 Log.e(ERROR, "Valor NULL");
             } catch (NumberFormatException e) {
                 Log.e(ERROR, "No es un numero");
             }
-        }
-        try {
-            String puntajeTotalS = String.valueOf(puntajeTotal);
-            TextViewpuntaje = (TextView) ((Activity) context).findViewById(R.id.tv_puntos);
-            TextViewpuntaje.setText("Puntos: " + puntajeTotalS);
-        } catch (NullPointerException e) {
-            Log.e(ERROR, "Valor NULL");
-        } catch (NumberFormatException e) {
-            Log.e(ERROR, "No es un numero");
-        }
-        //GENERO LA LISTA CON SUS CONTENIDOS
-        CustomList cl = new CustomList(this, ParseJSON.ids, ParseJSON.names, ParseJSON.descripciones, ParseJSON.puntaje);
-        _lista.setAdapter(cl);
+            //GENERO LA LISTA CON SUS CONTENIDOS
+            CustomList cl = new CustomList(this, ParseJSON.ids, ParseJSON.names, ParseJSON.descripciones, ParseJSON.puntaje);
+            _lista.setAdapter(cl);
+
     }
+
+
+
 
 
     @Override
