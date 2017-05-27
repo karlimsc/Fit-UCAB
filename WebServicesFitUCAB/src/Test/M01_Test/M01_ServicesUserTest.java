@@ -43,9 +43,8 @@ public class M01_ServicesUserTest {
     @Before
     public void setUp() throws Exception {
 
-        java.util.Date fecha = new Date();
         String insertUserQuery =" SELECT M01_REGISTRAR('"+"dan"+"','"+"dan"+"','"+"dan"+"','"+"dan"+"'" +
-                ",'"+"dan"+"','"+fecha+"','"+1.0+"','"+1.0+"')";
+                ",'"+"dan"+"','"+"1993-06-11"+"','"+1.0+"','"+1.0+"')";
 
 
         try {
