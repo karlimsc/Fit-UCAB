@@ -103,6 +103,8 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
     @Override
     public void onClick(View v) {
         String periodicidad;
+
+
         if ( v.getId() == R.id.m06_botonAgregarEntrenamientoPredefinido){
 
             /*Se valida si lo que trae el TextEdit de numero está vació, si no está vacío no
@@ -114,14 +116,93 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
                 Toast.makeText( getContext() , R.string.M06_toast_periodicidad, Toast.LENGTH_SHORT).show();
 
             }else{
-
-                //Aqui tengo que invocar un metodo con el servicio web para agregar el entrenamiento
-                //Y llenar la BDD
-                Toast.makeText( getContext() , R.string.M06_entrenamiento_creado_exito, Toast.LENGTH_SHORT).show();
+                String nombreEntrenamiento = _spinnerEntrenamiento.getSelectedItem().toString();
+                String nivelEntrenamiento = _spinnerTipo.getSelectedItem().toString();
+                String tipoEntrenamiento = _spinnerTipoEntrenamiento.getSelectedItem().toString();
+                String caloriasDelEntrenamiento = _caloriasView.getText().toString();
+                createTrainingPredefined( nombreEntrenamiento , nivelEntrenamiento , tipoEntrenamiento ,caloriasDelEntrenamiento , periodicidad);
+                                Toast.makeText( getContext() , R.string.M06_entrenamiento_creado_exito, Toast.LENGTH_SHORT).show();
                 _callBack.onSwap( "M06HomeTrainingFragment" , null );
 
             }
         }
+    }
+
+    private void createTrainingPredefined(String nombreEntrenamiento, String nivelEntrenamiento,
+                                          String tipoEntrenamiento, String caloriasDelEntrenamiento, String periodicidad) {
+
+        switch (nombreEntrenamiento){
+            case "Caminata":
+                if( nivelEntrenamiento.equals( "Fácil" ) ) {
+
+                    if(nivelEntrenamiento.equals("Por Kilometros")) {
+                        makeRequest();
+                    } //Fin deli if en caso de que sea kilometros
+                        else
+                    {
+
+                    } //Fin del else en caso de que sea por tiempo
+
+                } //Fin del if en caso de que se fácil
+
+                else if (nivelEntrenamiento.equals( "Medio" ) ) {
+
+                    if(nivelEntrenamiento.equals("Por Kilometros")) {
+
+                    } //Fin deli if en caso de que sea kilometros
+                    else {
+
+                    } //Fin del else en caso de que sea por tiempo
+
+                } //Fin del else en caso de que sea medio
+                    else {
+
+                    if(nivelEntrenamiento.equals("Por Kilometros")) {
+
+                    } //Fin deli if en caso de que sea kilometros
+                    else{
+
+                    } //Fin del else en caso de que sea por tiempo
+
+                } //Fin del else en caso de que sea profesional
+            break;
+
+            case "Trote":
+                if( nivelEntrenamiento.equals( "Fácil" ) ) {
+
+                    if(nivelEntrenamiento.equals("Por Kilometros")) {
+
+                    } //Fin deli if en caso de que sea kilometros
+                    else
+                    {
+
+                    } //Fin del else en caso de que sea por tiempo
+
+                } //Fin del if en caso de que se fácil
+
+                else if (nivelEntrenamiento.equals( "Medio" ) ) {
+
+                    if(nivelEntrenamiento.equals("Por Kilometros")) {
+
+                    } //Fin deli if en caso de que sea kilometros
+                    else {
+
+                    } //Fin del else en caso de que sea por tiempo
+
+                } //Fin del else en caso de que sea medio
+                else {
+
+                    if(nivelEntrenamiento.equals("Por Kilometros")) {
+
+                    } //Fin deli if en caso de que sea kilometros
+                    else{
+
+                    } //Fin del else en caso de que sea por tiempo
+
+                } //Fin del else en caso de que sea profesional
+                break;
+
+        } //Fin del Switch
     }
 
     @Override

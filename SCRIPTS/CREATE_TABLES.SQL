@@ -94,15 +94,18 @@ constraint  PK_TRAININGID primary key (TRAININGID)
 );
 
 CREATE SEQUENCE TRAININGID;
-CREATE TABLE EXER_TRAINING ( 
-EXER_TRAININGID integer not null, 
-TIPO_COMPLEJIDAD varchar (90) not null,
-TIEMPO integer not null,
-DISTANCIA integer not null,
-FK_EXERCISEID integer ,
+
+CREATE TABLE SPOR_TRAINING ( 
+SPOR_TRAININGID integer not null, 
+TYPE_COMPLEXITY varchar (90) not null,
+TIMETRAINING integer not null,
+DISTANCE integer not null,
+FK_SPORTID integer ,
 FK_TRAININGID integer ,
-constraint PK_EXER_TRAININGID primary key (EXER_TRAININGID) 
+constraint PK_EXER_TRAININGID primary key (SPOR_TRAININGID) 
 );
+CREATE SEQUENCE SPOR_TRAININGID;
+
 CREATE TABLE FRIEN_TRAIN (
 FRIEN_TRAINID integer not null,
 FK_FRIENDSHIPID  integer,
