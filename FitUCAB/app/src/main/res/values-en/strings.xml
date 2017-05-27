@@ -123,6 +123,7 @@
     <string name="M06_periodicidad">Periodicity</string>
     <string name="M06_toast_periodicidad">Please, insert periodicity of training</string>
     <string name="M06_tipo_entrenamiento">Training type</string>
+    <string name="M06_entrenamiento_creado_fallo">Ups, An error has occurred, try again</string>
 
     <!--Fin de modulo 06-->
 
