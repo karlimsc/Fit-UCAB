@@ -2,13 +2,12 @@ package WebServicesClasses;
 
 
 import Domain.Moment;
+import Exceptions.ParameterNullException;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 
 import javax.ws.rs.*;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -20,8 +19,8 @@ public class M11_ServicesMoment {
 
     private Connection conn = bdConnect();
     private Gson gson = new Gson();
-    private String respuesta;
-    private ArrayList<Moment> arregloJson;
+    private String response;
+    private ArrayList<Moment> jsonArray;
 
 
     /**
@@ -32,27 +31,28 @@ public class M11_ServicesMoment {
     @Produces("application/json")
     public String obtenerMomentos() {
 
-        String query = "Select * from get_momentos()";
-        arregloJson = new ArrayList<>();
+        String query = "Select * from m11_get_momentos()";
+        jsonArray = new ArrayList<>();
         try {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery();
-            int i = 0;
             while(rs.next()) {
-                arregloJson.add(new Moment());
-                arregloJson.get(rs.getRow() - 1).set_description(rs.getString("momento"));
-                arregloJson.get(rs.getRow() - 1).set_id(rs.getInt("momento_id"));
+                jsonArray.add(new Moment());
+                jsonArray.get(rs.getRow() - 1).set_description(rs.getString("momento"));
+                jsonArray.get(rs.getRow() - 1).set_id(rs.getInt("momento_id"));
             }
-            respuesta = gson.toJson(arregloJson);
+            response = gson.toJson(jsonArray);
 
         } catch (SQLException e) {
-            e.printStackTrace();
-            respuesta =  e.getMessage();
+            response =  e.getMessage();
+        }
+        catch (ParameterNullException e){
+            response = e.getMessage();
         }
 
         finally {
             bdClose();
-            return respuesta;
+            return response;
         }
     }
 

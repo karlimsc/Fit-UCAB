@@ -10,7 +10,7 @@ public class Diet {
     private int _calorie;
     private LocalDate _dateTime;
     private String _food;
-    private String _momento;
+    private String _moment;
     private String _username;
 
 
@@ -23,15 +23,15 @@ public class Diet {
         this._food = food;
     }
 
-    public Diet(int _calorie, String _food, String _momento, String _username) {
-        this._calorie = _calorie;
-        this._food = _food;
-        this._momento = _momento;
-        this._username = _username;
+    public Diet(int calorie, String food, String moment, String username) {
+        this._calorie = calorie;
+        this._food = food;
+        this._moment = moment;
+        this._username = username;
     }
 
-    public Diet(int _id, int calorie, LocalDate dateTime) {
-        this._id = _id;
+    public Diet(int id, int calorie, LocalDate dateTime) {
+        this._id = id;
         this._calorie = calorie;
         this._dateTime = dateTime;
     }
@@ -81,19 +81,19 @@ public class Diet {
         this._food = food;
     }
 
-    public String get_momento() {
-        return _momento;
+    public String get_moment() {
+        return _moment;
     }
 
-    public void set_momento(String _momento) {
-        this._momento = _momento;
+    public void set_moment(String moment) {
+        this._moment = moment;
     }
 
     public String get_username() {
         return _username;
     }
 
-    public void set_username(String _username) {
-        this._username = _username;
+    public void set_username(String username) {
+        this._username = username;
     }
 }

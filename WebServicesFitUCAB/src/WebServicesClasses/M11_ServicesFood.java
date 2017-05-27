@@ -5,13 +5,11 @@ import Domain.Food;
 import Exceptions.ParameterNullException;
 import Validations.ValidationWS;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
 
 import javax.ws.rs.*;
 import java.lang.reflect.Type;
 import java.sql.*;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,47 +24,54 @@ public class M11_ServicesFood {
     private Connection conn = bdConnect();
     //Atributo que se utiliza para transformar a formado JSON las consultas.
     private Gson gson = new Gson();
-    private String respuesta;
-    private ArrayList<Food> arregloJson;
+    private String response;
+    private ArrayList<Food> jsonArray;
 
     /**
      * Funcion que recibe el nombre del usuario, y con este extrae
-     * la informacion de los alimentos que ha consumido el usuario.
+     * la informacion de los alimentos personalizados que ha consumido el usuario
+     * en el dia.
      * @param username
-     * @return
+     * @return Devuelve un json con la estrutura de un objeto Food(foodName, foodWeight, foodCalorie, id)
      */
     @GET
-    @Path("/obtener_alimentos_personalizados")
+    @Path("/getFoodPersonalized")
     @Produces("application/json")
-    public String ObtenerAlimento(@QueryParam("username") String username) throws SQLException {
-        String query = "SELECT * FROM get_alimentos_person(?)";
-        arregloJson = new ArrayList<>();
-
-
+    public String getFood(@QueryParam("username") String username) {
         try{
+            ValidationWS.validarParametrosNotNull(new HashMap<String, Object>(){ {
+                put("username", username);
+            }});
+
+            String query = "SELECT * FROM m11_get_alimentos_person(?)";
+            jsonArray = new ArrayList<>();
+
+
             PreparedStatement stm = conn.prepareStatement(query);
             stm.setString(1, username);
             ResultSet rs = stm.executeQuery();
 
             while(rs.next()){
-                arregloJson.add(new Food());
-                arregloJson.get(rs.getRow() - 1).setFoodName(rs.getString("nombre_comida"));
-                arregloJson.get(rs.getRow() - 1).setFoodWeight(rs.getString("peso_comida"));
-                arregloJson.get(rs.getRow() - 1).setFoodCalorie(rs.getString("calorias_comida"));
-                arregloJson.get(rs.getRow() - 1).setId(rs.getInt("id_alimento"));
+                jsonArray.add(new Food());
+                jsonArray.get(jsonArray.size()).set_foodName(rs.getString("nombre_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
             }
 
-            respuesta = gson.toJson(arregloJson);
+            response = gson.toJson(jsonArray);
         }
-        catch(Exception e) {
-            respuesta = e.getMessage();
+        catch(SQLException e) {
+            response = e.getMessage();
+        }
+        catch (ParameterNullException e){
+            response = e.getMessage();
         }
         finally {
             bdClose();
-            return respuesta;
+            return response;
         }
     }
-
 
     /**
      *
@@ -74,35 +79,42 @@ public class M11_ServicesFood {
      * @return
      */
     @GET
-    @Path("obtener_todos_alimentos")
+    @Path("/getAllFood")
     @Produces("application/json")
-    public String obtenerTodosAlimentos(@QueryParam("username") String username){
-
-        String query = "select * from get_todos_alimentos(?)";
-        arregloJson = new ArrayList<>();
-
+    public String getAllFood(@QueryParam("username") String username){
         try {
+            ValidationWS.validarParametrosNotNull(new HashMap<String, Object>(){ {
+                put("username", username);
+            }});
+
+            String query = "select * from m11_get_todos_alimentos(?)";
+            jsonArray = new ArrayList<>();
+
+
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, username);
             ResultSet rs = st.executeQuery();
 
             while(rs.next()) {
-                arregloJson.add(new Food());
-                arregloJson.get(rs.getRow() - 1).setFoodName(rs.getString("nombre_comida"));
+                jsonArray.add(new Food());
+                jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
                 // revisar string
-                arregloJson.get(rs.getRow() - 1).setFoodCalorie(rs.getString("calorias_comida"));
-                arregloJson.get(rs.getRow() - 1).setFoodWeight(rs.getString("peso_comida"));
-                arregloJson.get(rs.getRow() - 1).setId(rs.getInt("id_alimento"));
+                jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
             }
 
-            respuesta = gson.toJson(arregloJson);
+            response = gson.toJson(jsonArray);
         }
         catch (SQLException e){
-            respuesta = e.getMessage();
+            response = e.getMessage();
+        }
+        catch (ParameterNullException e){
+            response = e.getMessage();
         }
         finally {
             bdClose();
-            return respuesta;
+            return response;
         }
     }
 
@@ -116,37 +128,45 @@ public class M11_ServicesFood {
      * @return Lista de alimentos con formato json
      */
     @GET
-    @Path("obtener_sugerencia")
+    @Path("/getSuggestion")
     @Produces("application/json")
-    public String obtenersugerencia(@QueryParam("username") String username,
-                                    @QueryParam("calorie") int calorie){
-
-        String query = "select * from get_alimentos_sugerencia(?, ?)";
-        arregloJson = new ArrayList<>();
+    public String getSuggestion(@QueryParam("username") String username,
+                                @QueryParam("calorie") int calorie) {
 
         try {
+            ValidationWS.validarParametrosNotNull(new HashMap<String, Object>(){ {
+                put("username", username);
+                put("calorie", calorie);
+            }});
+
+            String query = "select * from m11_get_alimentos_sugerencia(?, ?)";
+            jsonArray = new ArrayList<>();
+
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, username);
             st.setInt(2, calorie);
             ResultSet rs = st.executeQuery();
 
             while(rs.next()) {
-                arregloJson.add(new Food());
-                arregloJson.get(rs.getRow() - 1).setFoodName(rs.getString("nombre_comida"));
+                jsonArray.add(new Food());
+                jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
                 // revisar string
-                arregloJson.get(rs.getRow() - 1).setFoodCalorie(rs.getString("calorias_comida"));
-                arregloJson.get(rs.getRow() - 1).setFoodWeight(rs.getString("peso_comida"));
-                arregloJson.get(rs.getRow() - 1).setId(rs.getInt("id_alimento"));
+                jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
             }
 
-            respuesta = gson.toJson(arregloJson);
+            response = gson.toJson(jsonArray);
         }
         catch (SQLException e){
-            respuesta = e.getMessage();
+            response = e.getMessage();
+        }
+        catch (ParameterNullException e){
+            response = e.getMessage();
         }
         finally {
             bdClose();
-            return respuesta;
+            return response;
         }
     }
 
@@ -157,147 +177,231 @@ public class M11_ServicesFood {
      * @return
      */
     @GET
-    @Path("obtener_todos_alimentos_auto")
+    @Path("/getFoodAuto")
     @Produces("application/json")
-    public String obtenerAlimentosAuto(@QueryParam("username") String username){
+    public String getFoodAuto(@QueryParam("username") String username){
         try {
             ValidationWS.validarParametrosNotNull(new HashMap<String, Object>(){ {
             put("username", username);
             }});
-            String query = "select * from get_todos_alimentos_autocompletar(?)";
-            arregloJson = new ArrayList<>();
+            String query = "select * from m11_get_todos_alimentos_autocompletar(?)";
+            jsonArray = new ArrayList<>();
 
 
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, username);
-            ResultSet rs = st.executeQuery(query);
+            ResultSet rs = st.executeQuery();
             while(rs.next()) {
-                arregloJson.add(new Food());
-                arregloJson.get(rs.getRow() - 1).setFoodName(rs.getString("nombre_comida"));
+                jsonArray.add(new Food());
+                jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
                 // revisar string
-                arregloJson.get(rs.getRow() - 1).setFoodCalorie(rs.getString("calorias_comida"));
-                arregloJson.get(rs.getRow() - 1).setFoodWeight(rs.getString("peso_comida"));
-                arregloJson.get(rs.getRow() - 1).setId(rs.getInt("id_alimento"));
+                jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
 
             }
 
-            respuesta = gson.toJson(arregloJson);
+            response = gson.toJson(jsonArray);
         }
         catch (SQLException e){
-            respuesta = e.getMessage();
+            response = e.getMessage();
         }
         catch (ParameterNullException e){
-            respuesta = "Hay un parametro nulo";
+            response = e.getMessage();
         }
         finally {
             bdClose();
-            return respuesta;
+            return response;
         }
     }
 
     /**
      * Funcion que elimina un alimento que ha personalizado un usuario
-     * @param alimento Indica el nombre del alimento a eliminar
+     * @param foodName Indica el nombre del alimento a eliminar
      * @return Devuelve un json con elemento llamado data, el cual contiene el mensaje de la peticion
      */
 
     @DELETE
-    @Path("eliminar_personalizado")
+    @Path("/deletePersonalizedFood")
     @Produces("application/json")
-    public String eliminarAlimentoPersonalizado(@QueryParam("alimento") String alimento){
-        String query = "select * from elimina_alimento_person(?)";
-        Map<String, String> respuesta = new HashMap<String, String>();
+    public String deletePersonalizedFood(@QueryParam("foodName") String foodName,
+                                         @QueryParam("idFood")  int idFood){
 
+        Map<String, String> response = new HashMap<String, String>();
         try {
+
+            ValidationWS.validarParametrosNotNull(new HashMap<String, Object>(){ {
+                put("foodName", foodName);
+                put("idFood", idFood);
+            }});
+
+        String query = "select * from m11_elimina_alimento_person(?, ?)";
+
+
+
             PreparedStatement st = conn.prepareStatement(query);
-            st.setString(1, alimento);
+            st.setString(1, foodName);
+            st.setInt(2, idFood);
             st.executeQuery();
-            respuesta.put("data", "Se elimino el alimento de forma exitosa");
+            response.put("data", "Se elimino el alimento de forma exitosa");
         }
         catch (SQLException e){
-            respuesta.put("data", e.getMessage());
+            response.put("error", e.getMessage());
+        }
+        catch (ParameterNullException e){
+            response.put("error", e.getMessage());
         }
         finally {
             bdClose();
-            return gson.toJson(respuesta);
+            return gson.toJson(response);
         }
     }
 
     /**
      * Funcion que actualiza los datos de un alimento personalizado por el usuario
-     * @param alimento Indica el nombre del usuario a actualizar
-     * @param peso Indica el peso del alimento con el que se actualizara
+     * @param foodName Indica el nombre del usuario a actualizar
+     * @param foodWeight Indica el peso del alimento con el que se actualizara
      * @param calorie Indica las calorias con el que actualizara
+     * @param idFood Id del alimento a actualizar
      * @return Devuelve un json con elemento llamado data, el cual contiene el mensaje de la peticion
      */
 
     @GET
-    @Path("actualizar_personalizado")
+    @Path("/updatePersonalized")
     @Produces("application/json")
-    public String actualizarPersonalizado(@QueryParam("alimento") String alimento,
-                                          @QueryParam("peso") double peso,
-                                          @QueryParam("calorie") int calorie){
+    public String updatePersonalized(@QueryParam("foodName") String foodName,
+                                          @QueryParam("peso") double foodWeight,
+                                          @QueryParam("calorie") int calorie,
+                                          @QueryParam("idFood") int idFood){
 
-        String query = "select * from act_alimento_person(?, ?, ?)";
-        Map<String, String> respuesta = new HashMap<String, String>();
-
+        Map<String, String> response = new HashMap<String, String>();
         try {
+            ValidationWS.validarParametrosNotNull(new HashMap<String, Object>(){ {
+                put("foodName", foodName);
+                put("foodWeight", foodWeight);
+                put("calorie", calorie);
+                put("idFood", idFood);
+            }});
+            String query = "select * from m11_act_alimento_person(?, ?, ?, ?)";
+
+
+
             PreparedStatement st = conn.prepareStatement(query);
-            st.setString(1, alimento);
-            st.setString(2, String.valueOf(peso));
+            st.setString(1, foodName);
+            st.setString(2, String.valueOf(foodWeight));
             st.setInt(3, calorie);
+            st.setInt(4, idFood);
             st.executeQuery();
-            respuesta.put("data", "Se actualizo el alimento de forma exitosa");
+            response.put("data", "Se actualizo el alimento de forma exitosa");
         }
         catch (SQLException e){
-            respuesta.put("data", e.getMessage());
+            response.put("error", e.getMessage());
+        }
+        catch (ParameterNullException e){
+            response.put("error", e.getMessage());
         }
         finally {
-            return gson.toJson(respuesta);
+            return gson.toJson(response);
         }
     }
 
     /**
      * Funcion que inserta uno o varios alimentos personalizados
-     * @param jsonAlimentos Indica los alimento que se insertaran, debe cumplir con una estructura de
+     * @param jsonFood Indica los alimento que se insertaran, debe cumplir con una estructura de
      *                      un arreglo de objetos Food(foodName, foodWeight, FoodCalorie) convertido en json
      * @return  Devuelve un json con elemento llamado data, el cual contiene el mensaje de la peticion
      */
 
     @POST
-    @Path("insertar_personalizado")
+    @Path("/insertPersonalizedFood")
     @Produces("application/json")
-    public String insertarAlimentoPersonlizado(@QueryParam("alimentos") String jsonAlimentos){
+    public String insertPersonalizedFood(@QueryParam("jsonFood") String jsonFood){
 
-        String query = "select * from inserta_alim_person(? , ?, ?)";
-        Map<String, String> respuesta = new HashMap<String, String>();
-        Type type = new TypeToken<Food[]>(){}.getType();
-        /*
-        Food[] a = new Food[3];
-        a[0] = new Food(1, "cachapa", "20", "52", true);
-        a[2] = new Food(2, "cachap2", "21", "53", true);
-        a[1] = new Food(3, "cachap3", "22", "54", true);
-        jsonAlimentos = gson.toJson(a);
-        */
-        Food[] alimentos = gson.fromJson(jsonAlimentos, type);
+        Map<String, String> response = new HashMap<String, String>();
         try {
+            ValidationWS.validarParametrosNotNull(new HashMap<String, Object>(){ {
+                put("jsonFood", jsonFood);
+            }});
+
+            String query = "select * from m11_inserta_alim_person(? , ?, ?)";
+            Type type = new TypeToken<Food[]>(){}.getType();
+            /*
+            Food[] a = new Food[3];
+            a[0] = new Food(1, "cachapa", "20", "52", true);
+            a[2] = new Food(2, "cachap2", "21", "53", true);
+            a[1] = new Food(3, "cachap3", "22", "54", true);
+            jsonAlimentos = gson.toJson(a);
+            */
+            Food[] alimentos = gson.fromJson(jsonFood, type);
+
             PreparedStatement st = conn.prepareStatement(query);
             for (int i = 0; i < alimentos.length; i++) {
-                st.setString(1, alimentos[i].getFoodName());
-                st.setInt(2, Integer.parseInt(alimentos[i].getFoodWeight()));
-                st.setInt(3, Integer.parseInt(alimentos[i].getFoodCalorie()));
+                st.setString(1, alimentos[i].get_foodName());
+                st.setInt(2, Integer.parseInt(alimentos[i].get_foodWeight()));
+                st.setInt(3, Integer.parseInt(alimentos[i].get_foodCalorie()));
                 st.executeQuery();
             }
 
-            respuesta.put("data", "Se insertaron los alimentos de forma exitosa");
+            response.put("data", "Se insertaron los alimentos de forma exitosa");
         }
         catch (SQLException e) {
-            respuesta.put("data", e.getMessage());
+            response.put("error", e.getMessage());
+        }
+        catch (ParameterNullException e){
+            response.put("error", e.getMessage());
         }
         finally {
             bdClose();
-            return gson.toJson(respuesta);
+            return gson.toJson(response);
         }
+    }
+
+    /**
+     * Funcion que devuelve los alimentos personalizados de un usuario
+     * @param username
+     * @return
+     */
+    @GET
+    @Path("/getPersonalizedList")
+    @Produces("application/json")
+    public String getPersonalizedList(@QueryParam("username") String username) {
+
+        try {
+            ValidationWS.validarParametrosNotNull(new HashMap<String, Object>(){ {
+                put("username", username);
+            }});
+
+            String query = "select * from m11_get_alimentos_person_lista";
+            PreparedStatement st = conn.prepareStatement(query);
+            ResultSet rs = st.executeQuery();
+            jsonArray = new ArrayList<>();
+            while(rs.next()){
+                jsonArray.add(new Food());
+                jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
+                jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
+
+            }
+
+            response = gson.toJson(jsonArray);
+        }
+        catch (SQLException e){
+            Map<String, String> respuestaError = new HashMap<String, String>();
+            respuestaError.put("error", e.getMessage());
+            response = gson.toJson(respuestaError);
+        }
+        catch (ParameterNullException e) {
+            Map<String, String> respuestaError = new HashMap<String, String>();
+            respuestaError.put("error", e.getMessage());
+            response = gson.toJson(respuestaError);
+        }
+        finally {
+            bdClose();
+            return response;
+        }
+
+
     }
 
 
