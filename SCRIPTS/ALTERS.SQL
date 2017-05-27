@@ -45,7 +45,7 @@ ADD CONSTRAINT FK_PERSON FOREIGN KEY (FK_PERSON) REFERENCES PERSON(PERSONID) ON 
  
 alter table CHALLENGE add constraint CHECK_CHALLENGE check (CHALLENGETYPE IN ('run','walk'));
 alter table CHALLENGE add constraint CHECK_PREDEFINED check (CHALLENGEPREDEFINED IN ('s','n'));
-alter table CHALLENGE add constraint FK_FRIENDSHIP foreign key (FK_FRIENDSHIPID) references FRIENDSHIP (FRIENSHIPID);
+
  
 alter table DETAIL add constraint FK_CHALLENGE foreign key (FK_CHALLENGEID) references CHALLENGE (CHALLENGEID);
 alter table DETAIL add constraint FK_FRIENDSHIP foreign key (FK_FRIENDSHIPID) references FRIENDSHIP (FRIENDSHIPID);
