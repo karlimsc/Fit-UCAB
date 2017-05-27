@@ -2,6 +2,7 @@ package WebServicesClasses;
 
 import Domain.Sql;
 import Domain.User;
+import Domain.UserAuxiliar;
 import com.google.gson.Gson;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -42,26 +43,27 @@ public class M03_ServicesFriends{
 
 
 
-        String query = "SELECT * FROM friendship,person WHERE ((fk_persononeid = "+id
-                +" AND fk_persontwoid = personid) OR (fk_persontwoid = "+id
-                +" AND fk_persononeid = personid))AND fk_statusid = "+ActionNumber+RequestModifier;
+        String query = "SELECT * FROM friendship,person,registry WHERE ((fk_persononeid = "+id
+                +" AND fk_persontwoid = personid AND fk_personid = personid )  OR (fk_persontwoid = "+id
+                +" AND fk_persononeid = personid AND fk_personid = personid ))AND fk_statusid = "+ActionNumber+RequestModifier;
 
 
 
-        ArrayList<User> ap = new ArrayList<User>();
+        ArrayList<UserAuxiliar> ap = new ArrayList<UserAuxiliar>();
 
 
         try {
             ResultSet rs = base.sql(query);
 
             while(rs.next()) {
-                User resultado = new User();
-                resultado.setId(rs.getInt("personid"));
-                resultado.setUser((rs.getString("personusername")));
-                resultado.setPassword((rs.getString("personpassword")));
-                resultado.setEmail((rs.getString("personemail")));
-                resultado.setSex((rs.getString("personsex")));
-                resultado.setPhone((rs.getString("personphone")));
+                UserAuxiliar resultado = new UserAuxiliar();
+                resultado.set_id(rs.getInt("personid"));
+                resultado.set_username((rs.getString("personusername")));
+                resultado.set_sex((rs.getString("personsex")));
+                resultado.set_point((rs.getInt("registrypoint")));
+
+
+
                 //resultado.set_birthdate((rs.getString("personphone")));
                 ap.add(resultado);
 
@@ -87,7 +89,7 @@ public class M03_ServicesFriends{
         int idMayor;
         int idMenor;
 
-        if(Integer.parseInt(idRequested)>Integer.parseInt(idRequester)) {
+        if(Integer.parseInt(idRequested)>=Integer.parseInt(idRequester)) {
 
             idMayor = Integer.parseInt(idRequested);
             idMenor = Integer.parseInt(idRequester);
@@ -145,7 +147,7 @@ public class M03_ServicesFriends{
         int idMenor;
 
 
-        if (Integer.parseInt(idUpdated) > Integer.parseInt(idUpdater)) {
+        if (Integer.parseInt(idUpdated) >= Integer.parseInt(idUpdater)) {
 
             idMayor = Integer.parseInt(idUpdated);
             idMenor = Integer.parseInt(idUpdater);
