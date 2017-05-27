@@ -41,8 +41,10 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
+    public M05StartTrackingActivity() {
 
-    //Atributos para la interfaz
+    }
+//Atributos para la interfaz
 
     private Chronometer M05_textview_time;
     private TextView M05_textview_time_tag;
