@@ -2,6 +2,7 @@ package com.fitucab.ds1617b.fitucab.UI.Activities;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+
 import android.location.Location;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
@@ -14,18 +15,34 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.fitucab.ds1617b.fitucab.Helper.FormatUtility;
 import com.fitucab.ds1617b.fitucab.Helper.GeoLocalization.GeoLocalization;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.M05_RequestList;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
+import com.fitucab.ds1617b.fitucab.Model.Sport;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class M05StartTrackingActivity extends GeoLocalization implements
         GoogleApiClient.ConnectionCallbacks,
@@ -45,8 +62,6 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     private long timeWhenStopped = 0;
     private FormatUtility formatUtility = new FormatUtility();
 
-
-    //Atributos para Geolocalización
 
     private ArrayList<Location> LocationPoints;
     private float distance = 0;
@@ -91,7 +106,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         //Creates a Location Request.
         super.createLocationRequest();
 
-        M05_textview_speed_tag.setText(requestList.makeRequest());
+        //M05_textview_speed_tag.setText(requestList.makeRequest());
+        makeRequest();
 
     }
 
@@ -223,6 +239,37 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         super.onLocationChanged(location);
         super.getLocationPoints(LocationPoints);
         updateUI();
+    }
+
+    public void makeRequest()
+    {
+        VolleySingleton.getInstance(this);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, VolleySingleton.getStringConn(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        ArrayList<Sport> sports = new ArrayList<Sport>();
+                        try {
+                            sports = gson.fromJson(response, new TypeToken<ArrayList<Sport>>(){}.getType());
+                            Log.i("Nombre", sports.get(0).getName());
+                        }
+                        catch (Exception e){
+                            Log.i("JSON",response.toString());
+                        }
+
+                        //LlenaTablaAlimentos(foods);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                       // Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
+                    }
+                });
+// Access the RequestQueue through your singleton class.
+        VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
     }
 
 }
