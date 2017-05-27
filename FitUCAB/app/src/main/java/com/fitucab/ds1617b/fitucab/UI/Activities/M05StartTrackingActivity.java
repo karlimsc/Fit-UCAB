@@ -1,5 +1,6 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
+import android.app.Activity;
 import android.location.Location;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
@@ -17,6 +18,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.fitucab.ds1617b.fitucab.Helper.FormatUtility;
 import com.fitucab.ds1617b.fitucab.Helper.GeoLocalization.GeoLocalization;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
+import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.Model.Global;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.android.gms.common.ConnectionResult;
@@ -25,7 +27,9 @@ import com.google.android.gms.location.LocationListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
 
 public class M05StartTrackingActivity extends GeoLocalization implements
@@ -45,16 +49,19 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     private Button M05_button_resume;
     private Button M05_button_end;
     private long timeWhenStopped = 0;
+
+    Activit activity;
+
     private FormatUtility formatUtility = new FormatUtility();
+
     private String exception;
-
-
 
     private ArrayList<Location> LocationPoints;
     private ArrayList<Long> TimePassed;
     private ArrayList<Double> velocidadPromedio;
+    private double mets;
     private float distance = 0;
-    private double velocidad=0;
+    private double velocidad = 0;
 
 
     @Override
@@ -62,31 +69,17 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m05_start_tracking);
 
-        LocationPoints = new ArrayList<>();
-        TimePassed = new ArrayList<>();
-        velocidadPromedio = new ArrayList<>();
+        initArguments();
 
-        M05_textview_time = (Chronometer) findViewById(R.id.tv_m05_tiempo);
-        M05_textview_time_tag = (TextView) findViewById(R.id.tv_m05_tiempo_tag);
-        M05_textview_speed = (TextView) findViewById(R.id.tv_m05_velocidad);
-        M05_textview_speed_tag = (TextView) findViewById(R.id.tv_m05_velocidad_tag);
-        M05_textview_km = (TextView) findViewById(R.id.tv_m05_km);
-        M05_textview_km_tag = (TextView) findViewById(R.id.tv_m05_km_tag);
-        M05_button_pause = (Button) findViewById(R.id.btn_m05_pause_track);
-        M05_button_resume = (Button) findViewById(R.id.btn_m05_resume_track);
-        M05_button_end = (Button) findViewById(R.id.btn_m05_end_track);
-        M05_button_pause.setOnClickListener(pause);
-        M05_button_resume.setOnClickListener(resume);
+        inflateInterfaz();
 
-
-        //Desde donde inicia.
+        //Desde donde inicia el cronómetro.
         M05_textview_time.setBase(SystemClock.elapsedRealtime());
         M05_textview_time.start();
 
 
-
         // Update values using data stored in the Bundle.
-       // updateValuesFromBundle(savedInstanceState);
+        // updateValuesFromBundle(savedInstanceState);
 
         //Check for Location Permissions
         super.checkLocationPermission();
@@ -96,9 +89,6 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
         //Creates a Location Request.
         super.createLocationRequest();
-
-        //M05_textview_speed_tag.setText(requestList.makeRequest());
-        requestSportsListbyUser();
 
     }
 
@@ -115,9 +105,6 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             M05_button_resume.setVisibility(View.VISIBLE);
             M05_button_end.setVisibility(View.VISIBLE);
             M05_button_pause.setVisibility(View.INVISIBLE);
-
-
-
         }
     };
 
@@ -134,6 +121,23 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         }
     };
 
+    /**
+     * Listen when the button is pressed and makes actions.
+     */
+    View.OnLongClickListener end = new View.OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View v) {
+            activity.set_endsite(LocationPoints.get(LocationPoints.size()-1).toString());
+            activity.set_endtime(getCurrentTime().toString());
+            activity.set_date(getCurrentTime().toString());
+            activity.set_km(distance);
+
+
+            return false;
+        }
+
+    };
+
 
     /**Métodos Geolocalización**/
 
@@ -141,17 +145,20 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     /**
      * To request the last known location, call the getLastLocation() method,
      * passing it your instance of the GoogleApiClient object.
+     *
      * @param connectionHint
      */
     @Override
     public void onConnected(Bundle connectionHint) {
         super.startLocationUpdates();
         super.checkLastLocation(LocationPoints);
+        activity.set_startime(LocationPoints.get(0).toString());
     }
 
 
     /**
      * Método que pertenece a la interfaz.
+     *
      * @param i
      */
     @Override
@@ -177,6 +184,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
     /**
      * Método que pertenece a la interfaz.
+     *
      * @param connectionResult
      */
     @Override
@@ -192,7 +200,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
         super.updateLocationPoints(LocationPoints);
 
-        if (LocationPoints!=null) {
+        if (LocationPoints != null) {
 
             Location mPrevLocation;
 
@@ -201,14 +209,14 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
             //Log.i("CURRENT LOCATION", mCurrentLocation.toString());
 
-            if (LocationPoints.size() >= 2 && TimePassed.size()>=2) {
+            if (LocationPoints.size() >= 2 && TimePassed.size() >= 2) {
                 mPrevLocation = LocationPoints.get(lastIndexLP - 1);
                 float lastDistance = mPrevLocation.distanceTo(LocationPoints.get(lastIndexLP));
                 distance = distance + lastDistance;
                 M05_textview_km.setText(formatUtility.fmt(distance));
 
-                double time = TimePassed.get(lastIndexTP-1)-TimePassed.get(lastIndexTP);
-                velocidad = calculateSpeed(lastDistance,time);
+                double time = TimePassed.get(lastIndexTP - 1) - TimePassed.get(lastIndexTP);
+                velocidad = calculateSpeed(lastDistance, time);
                 velocidadPromedio.add(velocidad);
                 M05_textview_speed.setText(formatUtility.fmt((velocidad)));
             }
@@ -219,9 +227,6 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     public double calculateSpeed(float distance, double time) {
         return (double) distance / time;
     }
-
-
-
 
 
     /**
@@ -242,43 +247,67 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
 
     @Override
-    public void onLocationChanged(Location location){
+    public void onLocationChanged(Location location) {
         super.onLocationChanged(location);
         super.getLocationPoints(LocationPoints);
         TimePassed.add(M05_textview_time.getBase() - SystemClock.elapsedRealtime());
         updateUI();
     }
 
-    public void requestSportsListbyUser()
-    {
+
+    public void requestInsertActivity() {
         VolleySingleton.getInstance(this);
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, VolleySingleton.getStringConn(),
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Gson gson = new Gson();
-                        Collection<String> sports = new ArrayList<String>();
-                            sports = gson.fromJson(response, new TypeToken<Collection<String>>(){}.getType());
-                            Log.i("Nombre",sports.toString());
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                       // Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
-                    }
-                });
-// Access the RequestQueue through your singleton class.
-        VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
-    }
-
-    public void requestInsertActivity(){
-        VolleySingleton.getInstance(this);
-
     }
 
 
+    /**
+     * Inicializa los elementos de la interfaz.
+     */
+    public void inflateInterfaz() {
+        M05_textview_time = (Chronometer) findViewById(R.id.tv_m05_tiempo);
+        M05_textview_time_tag = (TextView) findViewById(R.id.tv_m05_tiempo_tag);
+        M05_textview_speed = (TextView) findViewById(R.id.tv_m05_velocidad);
+        M05_textview_speed_tag = (TextView) findViewById(R.id.tv_m05_velocidad_tag);
+        M05_textview_km = (TextView) findViewById(R.id.tv_m05_km);
+        M05_textview_km_tag = (TextView) findViewById(R.id.tv_m05_km_tag);
+        M05_button_pause = (Button) findViewById(R.id.btn_m05_pause_track);
+        M05_button_resume = (Button) findViewById(R.id.btn_m05_resume_track);
+        M05_button_end = (Button) findViewById(R.id.btn_m05_end_track);
+        M05_button_pause.setOnClickListener(pause);
+        M05_button_resume.setOnClickListener(resume);
+    }
+
+    /**
+     * Inicializa las variables de la clase.
+     */
+    public void initArguments() {
+        LocationPoints = new ArrayList<>();
+        TimePassed = new ArrayList<>();
+        velocidadPromedio = new ArrayList<>();
+        activity = new Activit();
+        activity.set_date(getCurrentTime().toString());
+    }
+
+    /**
+     * Obtiene la fecha y hora actual.
+     * @return fecha y hora actual.
+     */
+    public SimpleDateFormat getCurrentTime() {
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
+        System.out.println(sdf.format(cal.getTime()));
+        return sdf;
+    }
+
+    public double calculateAverageSpeed(){
+        double ave =0;
+
+        for (int i=0; i<velocidadPromedio.size(); i++){
+            ave = ave + velocidadPromedio.get(i);
+        }
+
+        return ave/velocidadPromedio.size();
+    }
 
 }
 
