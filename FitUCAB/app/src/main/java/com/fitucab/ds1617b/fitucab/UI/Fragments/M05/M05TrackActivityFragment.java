@@ -21,6 +21,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
@@ -86,10 +87,14 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
-                        Collection<String> sports = new ArrayList<String>();
+                        Collection<String> sports;
                         sports = gson.fromJson(response, new TypeToken<Collection<String>>() {
                         }.getType());
+
+                        JsonArray ja = new JsonArray();
+
                         Log.i("Nombre", sports.toString());
+
                     }
                 },
                 new Response.ErrorListener() {

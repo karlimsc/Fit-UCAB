@@ -20,13 +20,16 @@ import com.fitucab.ds1617b.fitucab.Helper.GeoLocalization.GeoLocalization;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.Model.Global;
+import com.fitucab.ds1617b.fitucab.Model.Sport;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -77,6 +80,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         //Desde donde inicia el cronómetro.
         M05_textview_time.setBase(SystemClock.elapsedRealtime());
         M05_textview_time.start();
+
+        requestSportsListbyUser();
 
 
         // Update values using data stored in the Bundle.
@@ -320,6 +325,33 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             return e.toString();
         }
 
+    }
+
+    public void requestSportsListbyUser() {
+        VolleySingleton.getInstance(this);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, VolleySingleton.getStringConn(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        Collection<String> sports;
+                        Sport sport = new Sport();
+                        sport = gson.fromJson(response,Sport.class);
+
+                        Log.i("Nombre", response.toString());
+                        Log.i("Nombre", String.valueOf(sport.getId()));
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
+                    }
+                });
+// Access the RequestQueue through your singleton class.
+        VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
     }
 }
 
