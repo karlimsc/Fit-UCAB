@@ -1,8 +1,10 @@
 package WebServicesClasses;
 
+import Domain.Sql;
 import Domain.User;
 import Domain.Registry;
 import com.google.gson.Gson;
+import org.postgresql.util.PSQLState;
 
 //imports para poder hacer el recuperar password
 import javax.mail.MessagingException;
@@ -26,47 +28,50 @@ import java.util.Properties;
 @Path("/M01_ServicesUser")
 public class M01_ServicesUser {
 
-    public M01_ServicesUser(){}
-
-    private Connection conn =bdConnect();
+    private Connection conn = bdConnect();
+    private int RESULT_CODE_OK=200;
+    private int RESULT_CODE_FAIL=500;
     Gson gson = new Gson();
 
+    public M01_ServicesUser() {
+
+    }
 
 
     @GET
     @Path("/informationUser")
     @Produces("application/json")
-    public String informationUser(@QueryParam("username") String userparam)
-    {
-        String query="SELECT * FROM M01_INFORMACIONUSER('"+ userparam +"')";
-        try{
+    public String informationUser(@QueryParam("username") String userparam) {
+        String query = "SELECT * FROM M01_INFORMACIONUSER('" + userparam + "')";
+        try {
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
-            User user= null;
-            while(rs.next()){
+            User user = null;
+            while (rs.next()) {
                 String username = rs.getString("usuario");
                 int id = rs.getInt("id");
                 String password = rs.getString("pwd");
-                String sexo= rs.getString("sex");
-                String phone= rs.getString("phone");
-                String email= rs.getString("mail");
-                Date birtdate= rs.getDate("birthdate");
+                String sexo = rs.getString("sex");
+                String phone = rs.getString("phone");
+                String email = rs.getString("mail");
+                Date birtdate = rs.getDate("birthdate");
 
-                user= new User(id,username,password,email,sexo,phone,birtdate);
+                user = new User(id, username, password, email, sexo, phone, birtdate);
 
             }
 
             return gson.toJson(user);
 
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             return e.getMessage();
         }
 
     }
+
     /**
      * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
+     *
      * @param username
      * @param password
      * @param email
@@ -86,32 +91,34 @@ public class M01_ServicesUser {
                              @QueryParam("phone") String phone,
                              @QueryParam("birthdate") String birthdate,
                              @QueryParam("weight") String weight,
-                             @QueryParam("height")String height
-                            )
-    {
-        String insertUserQuery =" SELECT * FROM M01_REGISTRAR('"+username+"','"+password+"','"+email+"','"+sex+"'" +
-                ",'"+phone+"','"+birthdate+"','"+weight+"','"+height+"')";
+                             @QueryParam("height") String height) {
 
+        String insertUserQuery = " SELECT * FROM M01_REGISTRAR('" + username + "','" + password + "','" + email + "','" + sex + "'" +
+                ",'" + phone + "','" + birthdate + "','" + weight + "','" + height + "')";
 
-        try{
+        try {
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(insertUserQuery);
-            User user= null;
-            Registry registry=null;
+            User user = null;
+            Registry registry = null;
 
-            int id=0;
-            while(rs.next()){
-                id=rs.getInt("personid");
-                registry= new Registry(Float.parseFloat(weight),Float.parseFloat(height));
-                user= new User(id,username,password,email,sex,phone,registry);
+            int id = 0;
+            while (rs.next()) {
+
+                id = rs.getInt("m01_registrar");
+                registry = new Registry(Float.parseFloat(weight), Float.parseFloat(height));
+                user = new User(id, username, password, email, sex, phone, registry);
 
             }
 
             return gson.toJson(user);
 
         }
-        catch(Exception e) {
+        catch (SQLException e) {
+            return e.getSQLState();
+        }
+        catch (Exception e) {
             return e.getMessage();
         }
     }
@@ -220,8 +227,6 @@ public class M01_ServicesUser {
     }
 
 
-    /***
-
     /**
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
      * @param userparam
@@ -234,7 +239,7 @@ public class M01_ServicesUser {
     public String getUser(@QueryParam("username") String userparam,@QueryParam("password") String passwordparam)
     {
 
-        String query="SELECT M01_INICIARSESION('"+userparam+"','"+passwordparam+"')";
+        String query="SELECT * FROM M01_INICIARSESION('"+userparam+"','"+passwordparam+"')";
 
 
         try{
@@ -246,10 +251,24 @@ public class M01_ServicesUser {
 
             while(rs.next()){
 
-                 iniciosesion = rs.getRow();
+                 iniciosesion = rs.getInt("m01_iniciarsesion");
 
             }
-            return gson.toJson(iniciosesion);
+            if (iniciosesion !=0){
+
+                return gson.toJson(iniciosesion);
+            }
+            else {
+
+                return gson.toJson(RESULT_CODE_FAIL);
+            }
+        }
+        catch (NullPointerException e){
+            return e.getMessage();
+        }
+        catch (SQLException e){
+            String error= e.getSQLState();
+            return e.getSQLState();
         }
         catch(Exception e) {
             return e.getMessage();
@@ -331,18 +350,21 @@ public class M01_ServicesUser {
                 //Enviamos
                 Transport.send(message);
                 //Aqui en adelante cualquier tipo de validacion
-                System.out.println("Done");
-                return ("done");
+
+                return gson.toJson(RESULT_CODE_OK);
             }
 
             else {
-                return gson.toJson(null);
+                return gson.toJson(RESULT_CODE_FAIL);
             }
 
 
         }
+        catch (SQLException e){
+            return e.getSQLState();
+        }
         catch (MessagingException e) {
-            throw new RuntimeException(e);
+            return e.getMessage();
         }
         catch (Exception e) {
             return e.getMessage();
