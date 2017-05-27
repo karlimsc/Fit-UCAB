@@ -107,24 +107,29 @@ public class AdapterItem extends BaseAdapter {
         // Se llenan los TextView con los datos de para visualizar los items
 
         TextView date = (TextView) v.findViewById(R.id.tv_m05_date);
-        date.setText(dir.getDateActivity().toString());
+        date.setText(dir.get_date().toString());
 
         TextView distance = (TextView) v.findViewById(R.id.tv_m05_distance);
-        distance.setText(String.valueOf(dir.getMetersActivity()));
+        distance.setText(String.valueOf(dir.get_km()));
 
         // Antes de poner esta iagen se evalua su fue puesta por registro automatico o manual
         ImageView imagen = (ImageView) v.findViewById(R.id.iv_m05_imagereference);
         imagen.setImageResource(R.mipmap.ic_sport);
 
-
+        /*
         TextView speed = (TextView) v.findViewById(R.id.tv_m05_speed);
-        speed.setText(String.valueOf(dir.getSpeedActivity()));
-
+        speed.setText(String.valueOf((dir.get_km()/dir.get));
+*/
         TextView name = (TextView) v.findViewById(R.id.tv_m05_sportname);
-        name.setText(dir.getSportName());
-
+        name.setText(dir.get_name());
+/*
         TextView uptime = (TextView) v.findViewById(R.id.tv_m05_uptime);
         uptime.setText(String.valueOf(dir.getUptime()));
+
+    */
         return v;
+
+
     }
+
 }

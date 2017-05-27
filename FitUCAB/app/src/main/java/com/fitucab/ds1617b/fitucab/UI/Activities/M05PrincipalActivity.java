@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,14 +19,26 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.Model.AdapterItem;
+import com.fitucab.ds1617b.fitucab.Model.Global;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05ModifyFragment;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONObject;
+
+import java.lang.reflect.Type;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 /**
  * Se implementa como View.OnClickListener para accionar los Dialgos
@@ -40,7 +53,7 @@ public class M05PrincipalActivity extends AppCompatActivity implements
     ArrayAdapter<Activit> adaptador;
     // Atributo para la posicion de la seleccion
     int selection;
-
+    Gson gson = new Gson();
     private TextView _tvdisplaydate;
     private FloatingActionButton _fabChangeDate;
 
@@ -134,10 +147,10 @@ public void listElement(){
     public void inflateActivitys() {
         //Aqui deberia haber un metodo que llene el ArrayList con los objetos
         //este add solo es una prueba para que se pueda ver ellist view personalizado
-        _activits.add(new Activit(12, "YOGA", 12.43, 34.34, "12-12-12"));
-        _activits.add(new Activit(12, "futbol", 12.43, 34.34, "12-12-12"));
-        _activits.add(new Activit(12, "tennis", 12.43, 34.34, "12-12-12"));
-        _activits.add(new Activit(12, "escala", 12.43, 34.34, "12-12-12"));
+
+       //El metodo conecta y llena el array list _activits
+         makeRequest();
+
         _listView.setAdapter(new AdapterItem(this, _activits));
     }
 
@@ -217,6 +230,44 @@ public void listElement(){
         }
     }
 
+    //Para la consulta de todos las actividades realizadas
+
+    public void makeRequest()
+    {
+        String consult = Global._url +"M05_ServicesSport/getSport?idSpo=1";
+
+        final JsonObjectRequest jsObjRequest = new JsonObjectRequest
+                (Request.Method.GET, consult, (String)null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                final Type tipyList = new TypeToken<List<Activit>>(){}.getRawType();
+                                _activits = gson.fromJson(response.toString(), tipyList);
+                                //final Activit activity = gson.fromJson(response.toString(),Activit.class);
+                                final Activit a1 = _activits.get(0);
+                                Log.e ("NOMBRE DEL DEPORTE: ",a1.get_name());
+
+                                /*
+                                Log.i("RESPONSE",response.toString());
+                                M05_textview_speed_tag.setText(response.toString());
+                                // mTxtDisplay.setText("Response: " + response.toString());
+
+                            */
+                            }
+                        }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO Auto-generated method stub
+                        Log.i("no trajo nada","");
+
+                    }
+                });
+// Access the RequestQueue through your singleton class.
+        VolleySingleton.getInstance(this).addToRequestQueue(jsObjRequest);
+    }
+
 
 }
+
 
