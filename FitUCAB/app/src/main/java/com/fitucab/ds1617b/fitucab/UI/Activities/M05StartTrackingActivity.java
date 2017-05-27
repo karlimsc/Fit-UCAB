@@ -246,13 +246,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
                     public void onResponse(String response) {
                         Gson gson = new Gson();
                         Collection<String> sports = new ArrayList<String>();
-                    //    try {
                             sports = gson.fromJson(response, new TypeToken<Collection<String>>(){}.getType());
                             Log.i("Nombre",sports.toString());
-                      //  }
-                        //catch (Exception e){
-                          //  Log.i("JSON",response.toString());
-                        //}
                     }
                 },
                 new Response.ErrorListener() {
