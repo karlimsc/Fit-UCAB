@@ -23,7 +23,7 @@ public class M05_ServicesActivity {
 
 
 
-    @GET
+    @POST
 
     @Path("/insertActivity")
 
@@ -68,7 +68,7 @@ public class M05_ServicesActivity {
     }
 
 
-    @GET
+    @POST
 
     @Path("/insertActivityT")
 
@@ -251,7 +251,7 @@ public class M05_ServicesActivity {
         }
     }
 
-    @GET
+    @PUT
 
     @Path("/updateKm")
 
@@ -289,7 +289,7 @@ public class M05_ServicesActivity {
 
     }
 
-    @GET
+    @PUT
 
     @Path("/updateCalor")
 
@@ -329,7 +329,7 @@ public class M05_ServicesActivity {
 
     }
 
-    @GET
+    @DELETE
 
     @Path("/deleteActivity")
 

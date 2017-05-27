@@ -21,7 +21,7 @@ public class M05_ServicesSport {
     Gson gson = new Gson();
 
 
-    @GET
+    @POST
 
     @Path("/insertSport")
 
@@ -177,7 +177,7 @@ public class M05_ServicesSport {
         }
     }
 
-    @GET
+    @DELETE
 
     @Path("/deleteSport")
 
