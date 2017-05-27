@@ -42,6 +42,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Map;
 
 public class M05StartTrackingActivity extends GeoLocalization implements
@@ -250,14 +251,14 @@ public class M05StartTrackingActivity extends GeoLocalization implements
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
-                        ArrayList<Sport> sports = new ArrayList<Sport>();
-                        try {
-                            sports = gson.fromJson(response, new TypeToken<ArrayList<Sport>>(){}.getType());
-                            Log.i("Nombre", sports.get(0).getName());
-                        }
-                        catch (Exception e){
-                            Log.i("JSON",response.toString());
-                        }
+                        Collection<String> sports = new ArrayList<String>();
+                    //    try {
+                            sports = gson.fromJson(response, new TypeToken<Collection<String>>(){}.getType());
+                            Log.i("Nombre",sports.toString());
+                      //  }
+                        //catch (Exception e){
+                          //  Log.i("JSON",response.toString());
+                        //}
 
                         //LlenaTablaAlimentos(foods);
                     }
