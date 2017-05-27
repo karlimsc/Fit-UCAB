@@ -52,6 +52,8 @@
     <string name="tab_03_amigos">Friends</string>
     <string name="tab_03_libreta">Contacts</string>
     <string name="tab_03_cercademi">Near me</string>
+    <string name="sep_03_request">Friend requests</string>
+    <string name="sep_03_friends">Friends</string>
 
     <!--FIN Strings Modulo 3 -->
 

@@ -30,13 +30,13 @@ import android.widget.Toast;
 
 import com.fitucab.ds1617b.fitucab.R;
 
+import static com.fitucab.ds1617b.fitucab.R.id.contactsList;
+
 
 public class M03FriendsActivity extends AppCompatActivity
        /* implements NavigationView.OnNavigationItemSelectedListener*/ {
 
     private ListView mListView;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,9 +59,6 @@ public class M03FriendsActivity extends AppCompatActivity
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_03_libreta));
         tabLayout.addTab(tabLayout.newTab().setText(R.string.tab_03_cercademi));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
-
-
 
 
 
@@ -88,11 +85,6 @@ public class M03FriendsActivity extends AppCompatActivity
 
 
     }
-
-
-
-
-
 
    /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {

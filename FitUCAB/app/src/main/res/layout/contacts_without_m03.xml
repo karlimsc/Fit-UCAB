@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
@@ -11,20 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageButton
-            android:background="@color/white"
-            android:id="@+id/imageButton2"
-            android:layout_width="35dp"
-            android:layout_height="31dp"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/imageButton"
-            app:srcCompat="@drawable/ic_send_msg"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="11dp"
-            android:layout_marginLeft="324dp"
-            app:layout_constraintLeft_toLeftOf="parent" />
-
         <TextView
+            android:gravity="center_vertical"
             android:id="@+id/nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,4 +29,4 @@
 
     </android.support.constraint.ConstraintLayout>
 
-</RelativeLayout>
+</LinearLayout>
