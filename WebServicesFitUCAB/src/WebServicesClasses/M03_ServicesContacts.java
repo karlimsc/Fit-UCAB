@@ -112,6 +112,7 @@ public class M03_ServicesContacts{
 
         ArrayList<User> amigoNo4 = new ArrayList<User>();
 
+        base = new Sql();
         ArrayList<User> noAmiyDeclined = new ArrayList<User>();
         try {
             ResultSet rs2 = base.sql(queryAmistades);
@@ -125,7 +126,7 @@ public class M03_ServicesContacts{
                 resultado.setSex((rs2.getString("personsex")));
                 resultado.setPhone((rs2.getString("personphone")));
                 //resultado.set_birthdate((rs2.getString("personphone")));
-                conFitUcab.add(resultado);
+                amigoNo4.add(resultado);
             }
 
             noAmiyDeclined = new ArrayList<User>();
@@ -138,8 +139,10 @@ public class M03_ServicesContacts{
                         break;
                     }
                 }
-                if(agregar)
+                if(agregar) {
                     noAmiyDeclined.add(conFitUcab.get(i));
+
+                }
             }
 
 
@@ -151,7 +154,7 @@ public class M03_ServicesContacts{
         ArrayList<User> salida = new ArrayList<User>();
 
         User sep1 = new User();
-        sep1.setId(1);
+        sep1.setId(-1);
         User sep2 = new User();
         sep2.setId(-2);
 
@@ -170,7 +173,7 @@ public class M03_ServicesContacts{
         return gson.toJson(salida);
     }
 
-    @PUT
+   /* @PUT
     @Path("/request")
     @Produces("plain/text")
     public String request(@QueryParam("idRequester") String idRequester, @QueryParam("idRequested") String idRequested) {
@@ -278,7 +281,7 @@ public class M03_ServicesContacts{
 
             return "0";//No Se ejecuto el query con exito.
         }
-    }
+    }*/
 }
 
 

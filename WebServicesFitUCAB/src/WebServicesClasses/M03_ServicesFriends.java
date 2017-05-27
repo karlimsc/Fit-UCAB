@@ -25,17 +25,28 @@ public class M03_ServicesFriends{
     @Path("/getAll")
     @Produces("application/json")
     public String getAll(@QueryParam("id") String id,@QueryParam("Action") String Action){
-
+        String RequestModifier="";
         String ActionNumber="";
-        if(Action.equals("Friends"))
-            ActionNumber="2";
-        else if(Action.equals("Requests"))
+        if(Action.equals("Friends")) {
+
+            ActionNumber = "2";
+
+        }
+        else if(Action.equals("Requests")){
+
+            RequestModifier=" AND friendshipuseractivity != " + id;
             ActionNumber="1";
+
+
+        }
+
 
 
         String query = "SELECT * FROM friendship,person WHERE ((fk_persononeid = "+id
                 +" AND fk_persontwoid = personid) OR (fk_persontwoid = "+id
-                +" AND fk_persononeid = personid))AND fk_statusid = "+ActionNumber;
+                +" AND fk_persononeid = personid))AND fk_statusid = "+ActionNumber+RequestModifier;
+
+
 
         ArrayList<User> ap = new ArrayList<User>();
 
@@ -106,10 +117,11 @@ public class M03_ServicesFriends{
         ResultSet rs = null;
         try {
             rs = base.sql(query);
-            return "1";//Se agrego con exito!!
+
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return "1";//Se agrego con exito!!
 
         }
 
@@ -161,17 +173,15 @@ public class M03_ServicesFriends{
         ResultSet rs = null;
         try {
             rs = base.sql(query);
+
         } catch (SQLException e) {
             e.printStackTrace();
+            return "1";//Se agrego con exito!!
         }
 
-        if (rs != null) {
-            return "1";//Se ejecuto el query con exito.
+        return "0";//No Se agrego
 
-        } else {
 
-            return "0";//No Se ejecuto el query con exito.
-        }
     }
 
 
