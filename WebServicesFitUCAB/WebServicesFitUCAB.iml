@@ -37,10 +37,9 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.5.3" level="project" />
-<<<<<<< HEAD
-=======
+
     <orderEntry type="library" scope="TEST" name="hamcrest-core-1.3" level="project" />
->>>>>>> 644b2819105d8d67646cda29f2bf18151bd66424
+
     <orderEntry type="library" name="mail" level="project" />
     <orderEntry type="library" name="Jersey-2.2" level="project" />
     <orderEntry type="library" name="mockito-core-2.7.22" level="project" />
@@ -48,15 +47,10 @@
     <orderEntry type="library" name="junit-4.12" level="project" />
     <orderEntry type="library" name="junit-4.12-sources" level="project" />
     <orderEntry type="library" name="postgresql-42.1.1" level="project" />
-    <orderEntry type="library" name="rest-assured-3.0.3" level="project" />
-<<<<<<< HEAD
     <orderEntry type="library" name="jersey-client" level="project" />
     <orderEntry type="library" name="jersey-server" level="project" />
     <orderEntry type="library" name="rest-assured-3.0.31" level="project" />
     <orderEntry type="library" name="javax.ws.rs-api-2.0" level="project" />
-=======
-    <orderEntry type="library" name="junit-4.12-sources" level="project" />
-    <orderEntry type="library" name="junit-4.12" level="project" />
->>>>>>> 644b2819105d8d67646cda29f2bf18151bd66424
+
   </component>
 </module>
