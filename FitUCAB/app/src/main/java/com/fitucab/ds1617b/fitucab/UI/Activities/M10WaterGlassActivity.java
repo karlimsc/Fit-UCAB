@@ -26,6 +26,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Model.Water;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10HistoyFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10WaterGlassFragment;
@@ -58,7 +59,11 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     private  View _view;
     private Calendar _cal ;
     private String _date;
-    Gson gson ;
+    Water water ;
+
+
+
+    Gson gson =new Gson();
     Context contexto;
 
     IpStringConnection url = new IpStringConnection();
@@ -223,6 +228,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         _btnAdd = (ImageButton) findViewById(R.id.btn_m10_AddDate);
         _EtnDate= (EditText) findViewById(R.id.et_m10_date);
 
+
         giveDate();
             activarCalendario();
         addDate();
@@ -335,7 +341,8 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.}
                         try {
-                            _EtnDate.setText(response);
+                            water = gson.fromJson(response,Water.class);
+                            _EtnDate.setText(water.get_time());
                         }
                         catch (Exception e){
                             e.printStackTrace();

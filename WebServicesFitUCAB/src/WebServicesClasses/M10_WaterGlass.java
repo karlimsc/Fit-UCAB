@@ -324,7 +324,9 @@ public class M10_WaterGlass
     @Produces({"application/json"})
     public String GetFecha() {
 
-        return _gson.toJson(_sdf2.format(fecha));
+        _water = new Water();
+        _water.set_time(_sdf2.format(fecha));
+        return _gson.toJson(_water);
 
 
     }
