@@ -88,7 +88,8 @@ CHALLENGENAME varchar(30) not null,
 CHALLENGEDESCRIPTION varchar(500) not null,
 CHALLENGELEVEL integer,
 CHALLENGESCORE integer,
-FK_ACTIVITYID integer,
+CHALLENGETYPE check,
+CHALLENGEPREDEFINED check,
 FK_FRIENDSHIPID integer
 );
  
@@ -99,7 +100,7 @@ DETAILDATESTART timestamp not null,
 DETAILDATEEND timestamp not null,
 DETAILPOSITION integer not null,
 DETAILACTIVE boolean not null,
-FK_REGISTRYID integer,
+FK_FRIENDSHIPID integer,
 FK_CHALLENGEID integer
 );
  

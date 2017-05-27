@@ -43,11 +43,12 @@ ADD CONSTRAINT FK_PERSON FOREIGN KEY (FK_PERSON) REFERENCES PERSON(PERSONID) ON 
 
 ---MODULO 8---
  
-alter table CHALLENGE add constraint FK_ACTIVITY foreign key (FK_ACTIVITYID) references ACTIVITY (ACTIVITYID);
+alter table CHALLENGE add constraint CHECK_CHALLENGE check (CHALLENGETYPE IN ('run','walk'));
+alter table CHALLENGE add constraint CHECK_PREDEFINED check (CHALLENGEPREDEFINED IN ('s','n'));
 alter table CHALLENGE add constraint FK_FRIENDSHIP foreign key (FK_FRIENDSHIPID) references FRIENDSHIP (FRIENSHIPID);
  
 alter table DETAIL add constraint FK_CHALLENGE foreign key (FK_CHALLENGEID) references CHALLENGE (CHALLENGEID);
-alter table DETAIL add constraint FK_REGISTRY foreign key (FK_REGISTRYID) references REGISTRY (REGISTRYID);
+alter table DETAIL add constraint FK_FRIENDSHIP foreign key (FK_FRIENDSHIPID) references FRIENDSHIP (FRIENDSHIPID);
  
  
 --- FIN MODULO 8---
