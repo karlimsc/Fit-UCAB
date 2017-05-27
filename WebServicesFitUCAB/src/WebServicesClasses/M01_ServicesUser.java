@@ -379,8 +379,8 @@ public class M01_ServicesUser {
         try
         {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/fitucab";
-            conn = DriverManager.getConnection(url,"postgres", "123456");
+            String url = "jdbc:postgresql://localhost/fitucabdb";
+            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
         }
         catch (ClassNotFoundException e)
         {
