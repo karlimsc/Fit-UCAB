@@ -28,6 +28,7 @@ import java.util.ArrayList;
  */
 public class Logros extends Fragment {
 
+    public static String _TAG = "Logros";
     //**VARIABLES
     TextView _texto, _detalle;
     String _nombreLogro;
@@ -38,12 +39,11 @@ public class Logros extends Fragment {
     ArrayList<BarEntry> _entradas;
     ArrayList<String> _dias;
     ArrayList<IBarDataSet> _barDataSets;
-    public static String _TAG = "Logros";
-    private OnFragmentInteractionListener _mListener;
     int _grafica;
+    private OnFragmentInteractionListener _mListener;
     //FIN VARIABLES
 
-    public Logros(){
+    public Logros() {
         // Required empty public constructor
     }
 
@@ -55,7 +55,7 @@ public class Logros extends Fragment {
         View view = inflater.inflate(R.layout._graficobarra, null);
 
         _nombreLogro = getArguments().getString("item");
-        _texto = (TextView)view.findViewById(R.id.id_texto);
+        _texto = (TextView) view.findViewById(R.id.id_texto);
         //IMPRIME EN EL LOG PARA PRUEBAS
         Log.d("DATOOO2", getArguments().getString("item"));
         //IMPRIME EN PANTALLA ANDROID DE FORMA EMERGENTE
@@ -63,7 +63,7 @@ public class Logros extends Fragment {
         //DEPENDIENDO DEL RETO, ENTRA EN UN IF DIFERENTE PARA GRAFICA
         _grafica = 1;
         //A DISCUTIR SI NO SE USARA GRAFICA
-        if(_grafica == 1){
+        if (_grafica == 1) {
 
             _texto = (TextView) view.findViewById(R.id.logro);
             _texto.setText(getArguments().getString("item"));
@@ -84,7 +84,7 @@ public class Logros extends Fragment {
             _barDataSets.add(_set1);
 
 
-           // _data = new BarData(_dias, _set1);
+            // _data = new BarData(_dias, _set1);
             _barra.setData(_data);
             _barra.setEnabled(true);
         }
@@ -94,21 +94,21 @@ public class Logros extends Fragment {
 
     }
 
-    public void Entradas(){
+    public void Entradas() {
 
         //ARRAY DE DATOS DEL LOGRO
         _entradas = new ArrayList<>();
 
-        _entradas.add(new BarEntry(44f,0, "Lunes"));
-        _entradas.add(new BarEntry(88f,1, "Martes"));
-        _entradas.add(new BarEntry(66f,2, "Miercoles"));
-        _entradas.add(new BarEntry(12f,3, "Jueves"));
-        _entradas.add(new BarEntry(19f,4, "Viernes"));
-        _entradas.add(new BarEntry(91f,5, "Sabado"));
+        _entradas.add(new BarEntry(44f, 0, "Lunes"));
+        _entradas.add(new BarEntry(88f, 1, "Martes"));
+        _entradas.add(new BarEntry(66f, 2, "Miercoles"));
+        _entradas.add(new BarEntry(12f, 3, "Jueves"));
+        _entradas.add(new BarEntry(19f, 4, "Viernes"));
+        _entradas.add(new BarEntry(91f, 5, "Sabado"));
 
     }
 
-    public void Etiquetas(){
+    public void Etiquetas() {
 
         //ARRAY DE DIAS DE ETIQUETA
         _dias = new ArrayList<>();
@@ -121,7 +121,6 @@ public class Logros extends Fragment {
         _dias.add("Sabado");
         _dias.add("Domingo");
     }
-
 
 
     // TODO: Rename method, update argument and hook method into UI event
