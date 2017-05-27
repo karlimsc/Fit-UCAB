@@ -37,6 +37,7 @@ public class Nivel {
     Context context;
     RequestQueue requestQueue;
     //Constructor vacio de la clase
+
     public Nivel (Context context){
         this.context = context;
         sendRequest(context);
