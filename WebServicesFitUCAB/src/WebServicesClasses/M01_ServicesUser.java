@@ -25,6 +25,8 @@ import java.util.Properties;
 @Path("/M01_ServicesUser")
 public class M01_ServicesUser {
 
+    public M01_ServicesUser(){}
+
     private Connection conn =bdConnect();
     Gson gson = new Gson();
 
@@ -43,7 +45,6 @@ public class M01_ServicesUser {
     @GET
     @Path("/insertRegistry")
     @Produces("application/json")
-
     public String insertUser(@QueryParam("username") String username,
                              @QueryParam("password") String password,
                              @QueryParam("email") String email,
@@ -78,48 +79,14 @@ public class M01_ServicesUser {
         }
     }
 
-    /***
-     * Metodo que devuelve la informacion completa de la persona
-     * @param username
-     * @return
-     */
-    @GET
-    @Path("/userView")
-    @Produces("application/json")
-    public String userView(@QueryParam("username") String username)
-    {
-        String insertUserQuery =" SELECT * FROM M01_INFORMACIONUSER('"+username+"')";
-        try {
 
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(insertUserQuery);
-            User user = null;
-            while(rs.next()){
-
-                String username1 = rs.getString("usuario");
-                String password =rs.getString("pwd");
-                int id =rs.getInt("id");
-                String mail=rs.getString("mail");
-                String sex=rs.getString("sex");
-                String phone=rs.getString("phone");
-                Date birthdate =rs.getDate("birthdate");
-                user= new User(id,username1,password,mail,sex,phone,birthdate);
-
-            }
-            return gson.toJson(user);
-        }
-        catch(Exception e) {
-        return e.getMessage();
-    }
-
-    }
 
     @GET
     @Path("/userView")
     @Produces("application/json")
-    public String userOnly(@QueryParam("username") String username)
+    public String userOnly(@QueryParam("email") String email)
     {
-        String insertUserQuery =" SELECT * FROM M01_INFORMACIONUSER('"+username+"')";
+        String insertUserQuery ="SELECT M01_RECUPERARPWD('" + email + "')";
         try {
 
             Statement st = conn.createStatement();
@@ -141,6 +108,10 @@ public class M01_ServicesUser {
         }
 
     }
+
+
+    /***
+
     /**
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
      * @param userparam
@@ -150,7 +121,6 @@ public class M01_ServicesUser {
     @GET
     @Path("/login_user")
     @Produces("application/json")
-
     public String getUser(@QueryParam("username") String userparam,@QueryParam("password") String passwordparam)
     {
 
@@ -162,13 +132,11 @@ public class M01_ServicesUser {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
 
-          //  User user= null;
             int iniciosesion =0;
 
             while(rs.next()){
 
                  iniciosesion = rs.getRow();
-
 
             }
             return gson.toJson(iniciosesion);
@@ -179,25 +147,15 @@ public class M01_ServicesUser {
     }
 
     /**
-     * Metodo que es llamado en otros metodos para obtener el ultimo id e incrementarlo
-     * @return devuelve un numero incrementado
-     */
-    public int idIncrease()
-    {
-        int Id=1;
-        //esto es para incrementar, no implemenrado por ahora
-        return Id;
-    }
-
-    /**
      * Sevicio Web para poder enviar el correo al usuario con su password
      * @return por ahora retorna un String
      */
     @GET
     @Path("/restorePassword")
     @Produces("application/json")
-    public String testEmail()
-    {
+    public String testEmail(@QueryParam("email") String email) {
+
+        String query = "SELECT M01_RECUPERARPWD('" + email + "')";
 
         try {
             //Establecemos el usuario que es el correo que cree para hacer el recuperar
@@ -213,50 +171,69 @@ public class M01_ServicesUser {
             props.put("mail.smtp.port", "587");
 
             /*
-             * EN ALGUNA PARTE DE AQUI ES DONDE DEBERIA HACER LA BUSQUEDA EN BD DEL USUARIO
-             * DESPUES EL CAMBIO DE CLAVE POR ALGUN STRING ALEATORIO Y ENCRIPTADO
-             * Y OBTENER EL CORREO ASOCIADO A ESE USUARIO
+             * EN ALGUNA PARTE DE AQUI ES DONDE DEBERIA HACER EL CAMBIO DE CLAVE POR
+             * ALGUN STRING ALEATORIO Y ENCRIPTADO
              * Y LUEGO ENVIARLE EL STRING SIN ENCRIPTAR AL USUARIO
              */
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            User user = null;
+            Boolean validaEmail = false;
+            String result = "";
 
+            while (rs.next()) {
+                validaEmail = true;
+                //la reasignacion es mas eficiente
+                result = rs.getString(1).replace("(","");
 
-            /*
-            Se crea la sesion para autenticar
-             */
-            Session session = Session.getInstance(props,
-                    new javax.mail.Authenticator() {
-                        protected PasswordAuthentication getPasswordAuthentication() {
-                            return new PasswordAuthentication(username, password);
-                        }
-                    });
+            }
 
-            try {
+            if(validaEmail==true) {
+                result = result.replace(")", "");
+                String[] arrayResult = result.split(",");
+                String usuario = arrayResult[0];
+                String pwd = arrayResult[1];
+                System.out.println(arrayResult[0]);
+
+                //Se crea la sesion para autenticar
+                Session session = Session.getInstance(props,
+                        new javax.mail.Authenticator() {
+                            protected PasswordAuthentication getPasswordAuthentication() {
+                                return new PasswordAuthentication(username, password);
+                            }
+                        });
 
                 //creamos un objeto MIME
                 Message message = new MimeMessage(session);
                 //ponemos el remitente
                 message.setFrom(new InternetAddress("ds1617b@gmail.com"));
                 message.setRecipients(Message.RecipientType.TO,
-                //aqui va el destinatario
-                InternetAddress.parse("karlianamsuarez@gmail.com"));
+                        //aqui va el destinatario
+                        InternetAddress.parse(email));
                 //El tema del correo
                 message.setSubject("Password Recovery FitUCAB");
                 //El contenido del correo
-                message.setText("password");
+                message.setText("Hola FitUcabista! tu usuario es:" + usuario + "y tu clave:" + pwd + "." +
+                        " Ahora puedes seguir entrenando");
                 //Enviamos
                 Transport.send(message);
                 //Aqui en adelante cualquier tipo de validacion
                 System.out.println("Done");
                 return ("done");
-
-            } catch (MessagingException e) {
-                throw new RuntimeException(e);
             }
+
+            else {
+                return gson.toJson(null);
+            }
+
+
         }
-        catch(Exception e) {
+        catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+        catch (Exception e) {
             return e.getMessage();
         }
-
     }
 
     @GET
