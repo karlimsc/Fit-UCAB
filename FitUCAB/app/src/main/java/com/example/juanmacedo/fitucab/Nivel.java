@@ -1,6 +1,17 @@
 package com.example.juanmacedo.fitucab;
 
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+import android.widget.TextView;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 /**
  * Created by Bryan Teixeira on 26/5/2017.
@@ -19,6 +30,9 @@ public class Nivel {
     private int _nivel8= 13600;
     private int _nivel9= 16200;
     private int _nivel10= 19000;
+    public ConexionesServicioWeb _servicioWeb = new ConexionesServicioWeb();
+    private String URL = _servicioWeb._dbObtener;
+    public int _busquedaPuntos;
 
     //Constructor vacio de la clase
     public Nivel (){
@@ -124,7 +138,7 @@ public class Nivel {
         int _puntosTotales=0;
 
         //Llamada al metodo que obtiene todos los puntos ganados actualmente por el jugador
-        //_puntosTotales= LLAMADA METODO
+        _puntosTotales= sendRequest();
 
         //Condicionales para asignar el nivel al usuario
         if (_puntosTotales < _nivel1)
@@ -150,6 +164,54 @@ public class Nivel {
 
         return _nivel;
     }
+
+
+    public int sendRequest(){
+        StringRequest stringRequest = new StringRequest(URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("onResponse()", response.toString());
+                        _busquedaPuntos= llamadaJSON(response);
+
+                    }
+
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("onResponse()", error.toString());
+            }
+        });
+
+
+        return _busquedaPuntos;
+       // RequestQueue request = Volley.newRequestQueue(this);
+
+       // request.add(stringRequest);
+       // Log.d("objetooo", stringRequest.toString());
+
+    }
+
+
+    private int llamadaJSON(String json){
+
+        int _puntajeTotal=0;
+        int _puntaje1 = 0;
+
+        ParseJSON _pj = new ParseJSON(json);
+        _pj.parseJSON();
+        String[] _puntajes = ParseJSON.puntaje;
+
+        for(int i=0; i< ParseJSON.puntaje.length; i++){
+            _puntaje1 = _puntaje1 + Integer.parseInt(_puntajes[i]);
+            _puntajeTotal = _puntaje1;
+        }
+
+        return _puntajeTotal;
+    }
+
+
+
 
 }
 

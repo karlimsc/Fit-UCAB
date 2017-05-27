@@ -43,8 +43,11 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
     int puntajeTotal;
     public static int logrado;
     public static int noLogrado;
-    private static String URL = "http://192.168.1.8:8080/FitUcabService_war_exploded/db/obtener";
-    private static String URLtamaño = "http://192.168.43.152:8080/FitUcabService_war_exploded/dbgrafica/obtener";
+    public ConexionesServicioWeb _servicioWeb = new ConexionesServicioWeb();
+    private String URL = _servicioWeb._dbObtener;
+    private String URLtamaño = _servicioWeb._dbGraficaObtener;
+    //private static String URL = "http://192.168.1.8:8080/FitUcabService_war_exploded/db/obtener";
+   // private static String URLtamaño = "http://192.168.43.152:8080/FitUcabService_war_exploded/dbgrafica/obtener";
     ItemAdapter itemAdapter;
     private ArrayList<String> _arrayList;
     private String[] _logros = {"5 Km recorrido", "10 km recorrido", 
