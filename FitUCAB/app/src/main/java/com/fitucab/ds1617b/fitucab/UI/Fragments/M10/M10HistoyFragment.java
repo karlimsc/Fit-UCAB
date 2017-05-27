@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.fitucab.ds1617b.fitucab.Model.AdapterM10ListView;
+import com.fitucab.ds1617b.fitucab.Model.InfoGlass;
 import com.fitucab.ds1617b.fitucab.Model.Water;
 import com.fitucab.ds1617b.fitucab.R;
 
@@ -25,7 +26,7 @@ public class M10HistoyFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     ListView _waterlist;
-    //String[] values = new String[]{"justin","ven","y","mamalo","fuego?"};
+    String[] values = new String[]{"justin","ven","y","mamalo","fuego?"};
 
     public M10HistoyFragment() {
         // Required empty public constructor
@@ -37,7 +38,7 @@ public class M10HistoyFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         /*View rootView = inflater.inflate(R.layout.fragment_m10_histoy,container,false);
-        //ArrayList<Water> FillWater = new ArrayList<Water>();
+        //ArrayList<InfoGlass> FillWater = new ArrayList<InfoGlass>();
         //cambien getcontext, lo tienes que agarrar del rootview que creaste jajaja
         ArrayAdapter<String> adapter = new ArrayAdapter<>(rootView.getContext(),android.R.layout.simple_expandable_list_item_1,values);
         _waterlist = (ListView) rootView.findViewById(R.id.list_water);

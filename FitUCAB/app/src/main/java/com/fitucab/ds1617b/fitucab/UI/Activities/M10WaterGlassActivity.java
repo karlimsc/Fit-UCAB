@@ -9,7 +9,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ThemedSpinnerAdapter;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -31,7 +30,6 @@ import com.fitucab.ds1617b.fitucab.Model.Water;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10HistoyFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10WaterGlassFragment;
-import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.google.gson.Gson;
 
 import java.text.ParseException;
