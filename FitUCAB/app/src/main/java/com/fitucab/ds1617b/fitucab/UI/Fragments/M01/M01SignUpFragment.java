@@ -145,9 +145,6 @@ public class M01SignUpFragment extends Fragment {
         });
     }
 
-    /**
-     * Metodo que prepara los componentes de la vista
-     */
     private void setupViewValues() {
         _btnRegistrar = (Button) _view.findViewById(R.id.btn_m01_entrar);
         _etBirthdate = (EditText) _view.findViewById(R.id.et_m01_fechanac);

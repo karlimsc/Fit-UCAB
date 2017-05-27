@@ -1,11 +1,8 @@
 package M01_Test;
 import Domain.User;
-
 import org.junit.Test;
-
 import java.util.Calendar;
 import java.util.Date;
-
 import static org.junit.Assert.*;
 
 /**

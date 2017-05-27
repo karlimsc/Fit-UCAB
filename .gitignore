@@ -1,3 +1,4 @@
+
 *.iml
 .gradle
 local.properties
@@ -24,6 +25,23 @@ local.properties
 /FitUCAB/gradlew.bat
 /FitUCAB/app/build/*
 *.*~
+*.properties
 
+FitUCAB/app/build/
 /WebServicesFitUCAB/out/
-/WebServicesFitUCAB/.idea/
+/WebServicesFitUCAB/.idea/*
+/WebServicesFitUCAB/*.xml
+
+WebServicesFitUCAB/src/WebServicesClasses/HelloWorld\.java
+
+WebServicesFitUCAB/lib/\.fuse_hidden0000003700000007
+
+FitUCAB/app/src/debug/
+
+WebServicesFitUCAB/out/
+
+WebServicesFitUCAB/src/WebServicesClasses/HelloWorld\.java
+
+WebServicesFitUCAB/lib/\.fuse_hidden00020c8600000004
+
+WebServicesFitUCAB/lib/

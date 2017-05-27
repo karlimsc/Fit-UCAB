@@ -70,5 +70,33 @@
     <string name="m01_errorUsernameSpecialChar">The only allowed special character are: _  and -</string>
     <string name="m01_errorUsernameTooShort">The username is too short</string>
     <string name="tv_m01_recuperacionContra">Password Recovery</string>
+    <string name="_tv_m05_titletabmanual">MANUAL</string>
+    <string name="_tv_m05_bt_pause">PAUSE</string>
+    <string name="_btn_m05_registermanual">LOG</string>
+    <string name="_tv_m05_calories">Calories</string>
+    <string name="_tv_m05_duration">Duration</string>
+    <string name="_tv_m05_startime">Start Time</string>
+    <string name="_tv_m05_type">Type</string>
+    <string name="app_name_title">Activity</string>
+    <string name="bt_start_tracking">Start</string>
+    <string name="_tv_m05_speed">Speed</string>
+    <string name="_tv_m05_time">Time</string>
+    <string name="_btn_m05_resume">RESUME</string>
+    <string name="_btn_m05_pause">PAUSE</string>
+    <string name="_btn_m05t_save">SAVE</string>
+    <string name="_dlg_m05_cancel">CANCEL</string>
+    <string name="_bt_start_tracking">START</string>
+    <string name="_app_name_title_m05">Activity</string>
+    <string name="_dlg_m05_done">Yes</string>
+    <string name="_tv_m05_day">Day</string>
+    <string name="_tv_m05_distance">Distance:</string>
+    <string name="_tv_m05_month">Month</string>
+    <string name="_tv_m05_starHour">Hour:</string>
+    <string name="_tv_m05_starDate">Date:</string>
+    <string name="_tv_m05_thisweek">This Week</string>
+    <string name="_tv_m05_year">Year</string>
+    <string name="_tv_m05_sport">Sport:</string>
+    <string name="_tab_m05_track">TRACK</string>
+    <string name="_tab_m05_log"></string>
     <!--FIN Strings Modulo 5 -->
 </resources>
