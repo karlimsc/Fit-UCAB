@@ -14,6 +14,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
+import com.fitucab.ds1617b.fitucab.Model.Sport;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -36,6 +37,7 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
     private OnFragmentSwap _callBack;
     private GoogleMap mMap;
     private static View _view;
+    private Sport sport = new Sport();
 
     public M05TrackActivityFragment (){
         // Required empty public constructor
@@ -79,7 +81,7 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
-    public void requestSportsListbyUser() {
+    public void requestSportbyName() {
         VolleySingleton.getInstance(this.getContext());
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, VolleySingleton.getStringConn(),
@@ -87,13 +89,10 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
-                        Collection<String> sports;
-                        sports = gson.fromJson(response, new TypeToken<Collection<String>>() {
-                        }.getType());
+                        sport = gson.fromJson(response,Sport.class);
 
-                        JsonArray ja = new JsonArray();
-
-                        Log.i("Nombre", sports.toString());
+                        Log.i("Nombre", response.toString());
+                        Log.i("ID", String.valueOf(sport.getId()));
 
                     }
                 },

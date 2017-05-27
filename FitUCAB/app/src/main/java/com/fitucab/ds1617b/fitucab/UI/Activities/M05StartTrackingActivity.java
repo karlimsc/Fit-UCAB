@@ -21,6 +21,7 @@ import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.Model.Global;
 import com.fitucab.ds1617b.fitucab.Model.Sport;
+import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -63,9 +64,23 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     private ArrayList<Location> LocationPoints;
     private ArrayList<Long> TimePassed;
     private ArrayList<Double> velocidadPromedio;
-    private double mets;
+    private float mets;
+    private float weight;
+
+    private Sport sport;
+    private User user;
+
     private float distance = 0;
     private double velocidad = 0;
+
+
+    public M05StartTrackingActivity(Sport sport, User user){
+        this.sport = sport;
+        this.user = user;
+        this.mets = sport.getMets();
+        this.weight = user.get_weight();
+
+    }
 
 
     @Override
@@ -75,14 +90,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
         initArguments();
 
-        inflateInterfaz();
-
-        //Desde donde inicia el cronómetro.
-        M05_textview_time.setBase(SystemClock.elapsedRealtime());
-        M05_textview_time.start();
-
-        requestSportsListbyUser();
-
+        inflateInterface();
 
         // Update values using data stored in the Bundle.
         // updateValuesFromBundle(savedInstanceState);
@@ -207,8 +215,6 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             int lastIndexLP = LocationPoints.size() - 1;
             int lastIndexTP = TimePassed.size() - 1;
 
-            //Log.i("CURRENT LOCATION", mCurrentLocation.toString());
-
             if (LocationPoints.size() >= 2 && TimePassed.size() >= 2) {
                 mPrevLocation = LocationPoints.get(lastIndexLP - 1);
                 float lastDistance = mPrevLocation.distanceTo(LocationPoints.get(lastIndexLP));
@@ -263,7 +269,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     /**
      * Inicializa los elementos de la interfaz.
      */
-    public void inflateInterfaz() {
+    public void inflateInterface() {
         M05_textview_time = (Chronometer) findViewById(R.id.tv_m05_tiempo);
         M05_textview_time_tag = (TextView) findViewById(R.id.tv_m05_tiempo_tag);
         M05_textview_speed = (TextView) findViewById(R.id.tv_m05_velocidad);
@@ -275,6 +281,10 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         M05_button_end = (Button) findViewById(R.id.btn_m05_end_track);
         M05_button_pause.setOnClickListener(pause);
         M05_button_resume.setOnClickListener(resume);
+
+        //Desde donde inicia el cronómetro.
+        M05_textview_time.setBase(SystemClock.elapsedRealtime());
+        M05_textview_time.start();
     }
 
     /**
@@ -319,28 +329,29 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             activity.set_endtime(getCurrentTime().toString());
             activity.set_date(getCurrentTime().toString());
             activity.set_km(distance);
+            activity.set_calor(calculateCalories(mets,weight));
             return "Objeto Creado";
         }
         catch (Exception e){
             return e.toString();
         }
-
     }
 
-    public void requestSportsListbyUser() {
+    public float calculateCalories(float mets, float weight){
+        float kcal = mets*weight;
+        return kcal;
+    }
+
+    public void insertActivityRequest(Activit activity){
         VolleySingleton.getInstance(this);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, VolleySingleton.getStringConn(),
+        Gson gson = new Gson();
+        String json = gson.toJson(activity);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, VolleySingleton.getStringConn(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Gson gson = new Gson();
-                        Collection<String> sports;
-                        Sport sport = new Sport();
-                        sport = gson.fromJson(response,Sport.class);
-
-                        Log.i("Nombre", response.toString());
-                        Log.i("Nombre", String.valueOf(sport.getId()));
 
                     }
                 },
@@ -352,6 +363,9 @@ public class M05StartTrackingActivity extends GeoLocalization implements
                 });
 // Access the RequestQueue through your singleton class.
         VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
+
+
     }
+
 }
 

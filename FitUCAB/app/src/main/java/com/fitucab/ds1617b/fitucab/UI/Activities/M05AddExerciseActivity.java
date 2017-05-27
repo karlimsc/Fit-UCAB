@@ -4,11 +4,21 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
+import com.fitucab.ds1617b.fitucab.Model.Sport;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05LogExerciseFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05TrackActivityFragment;
+import com.google.gson.Gson;
+
+import java.util.Collection;
 
 public class M05AddExerciseActivity extends AppCompatActivity implements OnFragmentSwap {
     private FragmentTabHost mTabHost;
@@ -59,5 +69,6 @@ public class M05AddExerciseActivity extends AppCompatActivity implements OnFragm
     public void onSwapActivity(String activityName, Bundle bundle) {
 
     }
+
 }
 
