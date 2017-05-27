@@ -1,34 +1,73 @@
 package M01_Test;
-import WebServicesClasses.M01_ServicesUser;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.*;
-
-import java.net.URI;
-import java.net.URISyntaxException;
+import WebServicesClasses.M01_ServicesUser;
 import java.net.URL;
+import java.sql.*;
 
 import static io.restassured.RestAssured.*;
-
-import static org.junit.Assert.*;
-
-
 
 
 public class M01_ServicesUserTest {
 
 
 
+    public Connection bdConnect()
+    {
+        Connection conn = null;
+        try
+        {
+            Class.forName("org.postgresql.Driver");
+            String url = "jdbc:postgresql://localhost/fitucabdb";
+            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+            System.exit(2);
+        }
+        return conn;
+    }
+
+    private Connection conn =bdConnect();
+
 
     @Before
     public void setUp() throws Exception {
+
+        java.util.Date fecha = new Date();
+        String insertUserQuery =" SELECT M01_REGISTRAR('"+"dan"+"','"+"dan"+"','"+"dan"+"','"+"dan"+"'" +
+                ",'"+"dan"+"','"+fecha+"','"+1.0+"','"+1.0+"')";
+
+
+        try {
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(insertUserQuery);
+        }
+        catch (Exception e){}
+
     }
 
     @After
     public void tearDown() throws Exception {
+
+        String query="SELECT M01_ELIMINARUSER('"+ "dan" +"')";
+
+        try {
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+        }
+        catch (Exception e){}
     }
 
 
@@ -55,7 +94,7 @@ public class M01_ServicesUserTest {
         //body  el cuerpo que va a retornar
         // asString de tipo string
         try {
-            URL prueba = new URL("http://localhost:8888/WebServicesFitUCAB_war_exploded/M01_ServicesUser/informationUser?username=daniel");
+            URL prueba = new URL("http://localhost:8888/WebServicesFitUCAB_war_exploded/M01_ServicesUser/informationUser?username=dan");
             Response response = given().accept(ContentType.JSON).when().get(prueba);
             System.out.println(response.asString() );
           //  String json = given().accept(ContentType.JSON).when().get(prueba).thenReturn().body().asString();
@@ -90,8 +129,6 @@ public class M01_ServicesUserTest {
     public void prueba() throws Exception {
     }
 
-    @Test
-    public void bdConnect() throws Exception {
-    }
+
 
 }
