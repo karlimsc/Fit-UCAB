@@ -17,8 +17,18 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 /**
  * Created by Alejandro Fernandez on 24/4/2017.
@@ -136,11 +146,11 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
                 if( nivelEntrenamiento.equals( "Fácil" ) ) {
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
-                        makeRequest();
+                       // makeRequestKilometros();
                     } //Fin deli if en caso de que sea kilometros
                         else
                     {
-
+                        // makeRequestTiempo();
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del if en caso de que se fácil
@@ -148,20 +158,20 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
                 else if (nivelEntrenamiento.equals( "Medio" ) ) {
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
-
+                        // makeRequestKilometros();
                     } //Fin deli if en caso de que sea kilometros
                     else {
-
+                        // makeRequestTiempo();
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del else en caso de que sea medio
                     else {
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
-
+                        // makeRequestKilometros();
                     } //Fin deli if en caso de que sea kilometros
                     else{
-
+                        // makeRequestTiempo();
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del else en caso de que sea profesional
@@ -171,11 +181,11 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
                 if( nivelEntrenamiento.equals( "Fácil" ) ) {
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
-
+                        // makeRequestKilometros();
                     } //Fin deli if en caso de que sea kilometros
                     else
                     {
-
+                        // makeRequestTiempo();
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del if en caso de que se fácil
@@ -183,20 +193,20 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
                 else if (nivelEntrenamiento.equals( "Medio" ) ) {
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
-
+                        // makeRequestKilometros();
                     } //Fin deli if en caso de que sea kilometros
                     else {
-
+                        // makeRequestTiempo();
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del else en caso de que sea medio
                 else {
 
                     if(nivelEntrenamiento.equals("Por Kilometros")) {
-
+                        // makeRequestKilometros();
                     } //Fin deli if en caso de que sea kilometros
                     else{
-
+                        // makeRequestTiempo();
                     } //Fin del else en caso de que sea por tiempo
 
                 } //Fin del else en caso de que sea profesional
@@ -204,6 +214,40 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
 
         } //Fin del Switch
     }
+
+    /**
+     * Metodo que hace peticion al volley para guardar el entrenamiento en la BDD
+     */
+    public void makeRequestKilometros(String nombreEntrenamiento, String nivelEntrenamiento,
+                                      String tipoEntrenamiento, String caloriasDelEntrenamiento, String periodicidad){
+        IpStringConnection ip = new IpStringConnection();
+
+        String url = ip.getIp() + "M06_ServicesTraining/displayTraining?userId=1";
+        final Gson gson = new Gson();
+        RequestQueue queue = Volley.newRequestQueue(getContext());
+
+
+        //Se hace la peticion y lo devuelve en String Request
+        StringRequest stringRequest = new StringRequest( Request.Method.GET , url ,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+
+
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+
+            }
+        });
+        // Add the request to the RequestQueue.
+        queue.add( stringRequest );
+    }
+
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
