@@ -28,6 +28,9 @@ local.properties
 *.properties
 
 FitUCAB/app/build/
+/WebServicesFitUCAB/out/
+/WebServicesFitUCAB/.idea/*
+/WebServicesFitUCAB/*.xml
 
 WebServicesFitUCAB/src/WebServicesClasses/HelloWorld\.java
 
