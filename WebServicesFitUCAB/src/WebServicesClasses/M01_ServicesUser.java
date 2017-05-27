@@ -1,6 +1,7 @@
 package WebServicesClasses;
 
 import Domain.User;
+import Domain.Registry;
 import com.google.gson.Gson;
 
 //imports para poder hacer el recuperar password
@@ -55,7 +56,7 @@ public class M01_ServicesUser {
                              @QueryParam("height")String height
                             )
     {
-        String insertUserQuery =" SELECT M01_REGISTRAR('"+username+"','"+password+"','"+email+"','"+sex+"'" +
+        String insertUserQuery =" SELECT * FROM M01_REGISTRAR('"+username+"','"+password+"','"+email+"','"+sex+"'" +
                 ",'"+phone+"','"+birthdate+"','"+weight+"','"+height+"')";
 
 
@@ -64,14 +65,17 @@ public class M01_ServicesUser {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(insertUserQuery);
             User user= null;
+            Registry registry=null;
 
-            int iniciosesion=0;
+            int id=0;
             while(rs.next()){
-                iniciosesion = rs.getRow();
+                id=rs.getInt("personid");
+                registry= new Registry(Float.parseFloat(weight),Float.parseFloat(height));
+                user= new User(id,username,password,email,sex,phone,registry);
 
             }
 
-            return gson.toJson(iniciosesion);
+            return gson.toJson(user);
 
         }
         catch(Exception e) {
@@ -157,6 +161,7 @@ public class M01_ServicesUser {
 
         String query = "SELECT M01_RECUPERARPWD('" + email + "')";
 
+
         try {
             //Establecemos el usuario que es el correo que cree para hacer el recuperar
             final String username = "ds1617b@gmail.com";
@@ -211,10 +216,12 @@ public class M01_ServicesUser {
                         //aqui va el destinatario
                         InternetAddress.parse(email));
                 //El tema del correo
-                message.setSubject("Password Recovery FitUCAB");
+                message.setSubject("Recuperar contraseña FitUCAB");
                 //El contenido del correo
-                message.setText("Hola FitUcabista! tu usuario es:" + usuario + "y tu clave:" + pwd + "." +
-                        " Ahora puedes seguir entrenando");
+                message.setText(" Hola FitUcabista! /n" +
+                                " tu usuario es:" + usuario +
+                                "/n y tu clave:" + pwd + "/n" +
+                                " Ahora puedes seguir entrenando");
                 //Enviamos
                 Transport.send(message);
                 //Aqui en adelante cualquier tipo de validacion

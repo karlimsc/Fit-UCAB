@@ -8,8 +8,8 @@ PERSONID		serial  primary key,
 PERSONUSERNAME	varchar(20) unique not null,
 PERSONPASSWORD	varchar(8) not null,
 PERSONEMAIL	varchar(30) unique not null,
-PERSONSEX		varchar(20) not null,
-PERSONPHONE	varchar(20) not null,
+PERSONSEX		varchar(1) not null,
+PERSONPHONE	varchar(11) not null,
 PERSONBIRTHDATE date not null
 );
 
