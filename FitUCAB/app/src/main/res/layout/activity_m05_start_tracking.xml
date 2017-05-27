@@ -103,6 +103,18 @@
             android:textSize="18sp" />
 
         <Button
+            android:id="@+id/btn_m05_end_track"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="-50dp"
+            android:background="@color/colorBtnDenegar"
+            android:text="@string/btn_m05_end"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <Button
             android:id="@+id/btn_m05_resume_track"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
