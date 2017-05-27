@@ -131,11 +131,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             activity.set_endtime(getCurrentTime().toString());
             activity.set_date(getCurrentTime().toString());
             activity.set_km(distance);
-
-
             return false;
         }
-
     };
 
 
@@ -299,6 +296,10 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         return sdf;
     }
 
+    /**
+     * Método que calcula la velocidad promedio durante la actividad.
+     * @return Velocidad promedio.
+     */
     public double calculateAverageSpeed(){
         double ave =0;
 
@@ -308,6 +309,5 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
         return ave/velocidadPromedio.size();
     }
-
 }
 
