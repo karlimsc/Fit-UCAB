@@ -22,6 +22,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Gamificacion extends AppCompatActivity implements View.OnClickListener,
         Logros.OnFragmentInteractionListener {
 
@@ -33,21 +36,22 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
     public ConexionesServicioWeb _servicioWeb = new ConexionesServicioWeb();
     private String URL = _servicioWeb._dbObtener;
     private String URLtamaño = _servicioWeb._dbGraficaObtener;
+    private String URLnivel = _servicioWeb._dbNivelObtener;
     //private static String URL = "http://192.168.1.8:8080/FitUcabService_war_exploded/db/obtener";
    // private static String URLtamaño = "http://192.168.43.152:8080/FitUcabService_war_exploded/dbgrafica/obtener";
     private ListView _lista;
     private String ERROR;
     TextView TextViewpuntaje;
-
+    public int _calculoNivel=0;
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_gamificacion);
         TextViewpuntaje = (TextView) findViewById(R.id.tv_puntos);
-        _textViewNivel = (TextView) findViewById(R.id.tv_nivelLabel);
         _lista = (ListView) findViewById(R.id.lista);
-
+        LlamadaNivel(this);
         //LLAMAR FUNCION DE VOLLEY
         sendRequest(this);
 
@@ -60,40 +64,6 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
         _nivelVista.setOnClickListener(this);
         TextView _puntajeVista = (TextView) findViewById(R.id.tv_puntos);
         _puntajeVista.setOnClickListener(this);
-
-/*
-        //ARRAY DONDE SE LLENA VA LA LISTA
-        _arrayList = new ArrayList<String>();
-        _adapter = new ArrayAdapter<String>(this, R.layout.contenido,R.id.tv_logro, _logros);
-        _lista.setAdapter(_adapter);
-
-        _lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-
-
-                TextView _item = (TextView) view.findViewById(R.id.tv_logro);
-                Bundle _bundle = new Bundle();
-                //ASI LE PASO VALORES AL FRAGMENT CON EL BUNDLE
-                _bundle.putString("item", (String) _item.getText());
-                //INSTANCIO EL FRAGMENT
-                FragmentManager _fragmentManager = getSupportFragmentManager();
-                //COMIENZO LA TRANSACCION
-                FragmentTransaction _transaction = _fragmentManager.beginTransaction();
-                //INSTANCIO LA CLASE LOGRO QUE ES EL FRAGMENT
-                Logros _fragment = new Logros();
-                //LE PASO EL BUNDLE
-                _fragment.setArguments(_bundle);
-                //INDICO DONDE SE HARA LA TRANSACCION
-                _transaction.add(R.id.gamificacion, _fragment);
-                //EJECUTO
-                _transaction.commit();
-
-            }
-        });*/
-
 
     }
 
@@ -165,6 +135,8 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
                 || (v.getId() == R.id.tv_nivelLabel) || (v.getId() == R.id.tv_puntos)) {
 
             Intent _myIntent = new Intent(Gamificacion.this, GraficaNivel.class);
+
+            _myIntent.putExtra("nivel", String.valueOf(_calculoNivel));
             startActivity(_myIntent);
         } else {
             FragmentManager _fragmentManager = getSupportFragmentManager();
@@ -181,5 +153,45 @@ public class Gamificacion extends AppCompatActivity implements View.OnClickListe
 
     }
 
+    public void LlamadaNivel(final Context context) {
 
+        StringRequest stringRequest = new StringRequest(URLnivel,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("onResponse()", response.toString());
+                        LLenarNivel(response, context);
+
+
+                    }
+
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("onResponse()", error.toString());
+            }
+        });
+
+        RequestQueue request = Volley.newRequestQueue(this);
+
+        request.add(stringRequest);
+        Log.d("objetooo", stringRequest.toString());
+
+    }
+
+    private void LLenarNivel(String json, Context context) {
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(json);
+            _calculoNivel = Integer.parseInt(jsonObject.getString("nivel"));
+        } catch (JSONException e1) {
+            e1.printStackTrace();
+        } catch (NullPointerException e) {
+            Log.e(ERROR, "Valor NULL");
+        } catch (NumberFormatException e) {
+            Log.e(ERROR, "No es un numero");
+        }
+        _textViewNivel = (TextView) ((Activity) context).findViewById(R.id.tv_nivelLabel);
+        _textViewNivel.setText("Nivel: " + _calculoNivel);
+    }
 }

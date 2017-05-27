@@ -1,5 +1,6 @@
 package com.example.juanmacedo.fitucab;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -32,7 +33,10 @@ public class GraficaNivel extends AppCompatActivity {
 
 
     private static String TAG = "MainActivity", ERROR;
-    private static String URLtamaño = "http://192.168.1.8:8080/FitUcabService_war_exploded/dbgrafica/obtener";
+    public ConexionesServicioWeb _servicioWeb = new ConexionesServicioWeb();
+    private String URL = _servicioWeb._dbObtener;
+    private String URLtamaño = _servicioWeb._dbGraficaObtener;
+    private String URLnivel = _servicioWeb._dbNivelObtener;
     PieChart pieChart;
     //Deben ser cantidades en int, no porcentajes
     private int[] _valoresY = {0, 0};
@@ -46,13 +50,7 @@ public class GraficaNivel extends AppCompatActivity {
         setContentView(R.layout.activity_nivel);
         traerTamaños();
 
-         llenado();
-
-
-
-    }
-
-    public void llenado(){
+        Intent myIntent = getIntent();
         pieChart = (PieChart) findViewById(R.id.PieChartId);
 
         //Habilitamos funcion de girar la torta al tocarla
@@ -63,7 +61,7 @@ public class GraficaNivel extends AppCompatActivity {
         pieChart.setHoleRadius(58f);
         pieChart.setTransparentCircleRadius(61f);
         pieChart.setTransparentCircleAlpha(110);
-        pieChart.setCenterText("Nivel: "+ _calculoNivel);
+        pieChart.setCenterText("Nivel: "+ myIntent.getStringExtra("nivel"));
         pieChart.setCenterTextSize(30);
         //Desabilitamos atributo descripcion de la grafica
         pieChart.getDescription().setEnabled(false);
@@ -72,7 +70,10 @@ public class GraficaNivel extends AppCompatActivity {
         //Efecto visual inicial de la grafica
         pieChart.animateXY(1400, 1400);
 
+
+
     }
+
 
     //Funcion que realiza la carga de los datos a la grafica
     private void addDataSet() {
@@ -156,6 +157,8 @@ public class GraficaNivel extends AppCompatActivity {
         }
         addDataSet();
     }
+
+
 
 
 }

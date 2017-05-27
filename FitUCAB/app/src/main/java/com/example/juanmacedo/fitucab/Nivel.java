@@ -36,6 +36,7 @@ public class Nivel {
     private String URL = _servicioWeb._dbObtener;
     public int _busquedaPuntos;
     //Constructor vacio de la clase
+
     public Nivel (Context context){
         sendRequest(context);
 

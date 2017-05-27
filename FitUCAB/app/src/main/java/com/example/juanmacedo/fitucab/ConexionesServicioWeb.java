@@ -10,6 +10,8 @@ public class ConexionesServicioWeb {
 
     public static String _dbGraficaObtener ="http://192.168.1.8:8080/FitUcabService_war_exploded/dbgrafica/obtener";
 
+    public static String _dbNivelObtener ="http://192.168.1.8:8080/FitUcabService_war_exploded/dbnivel/obtener";
+
     public ConexionesServicioWeb(){
 
     }
