@@ -1,13 +1,16 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M11;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -117,7 +120,7 @@ public class M11FoodFragment extends Fragment {
      * estaran todos los alimentos de los usuarios.
      * @param alimentos Recibe un arreglo del Servicio Web, del tipo Food.
      */
-    public void LlenaTablaAlimentos( ArrayList<Food> alimentos )
+    public void LlenaTablaAlimentos(final ArrayList<Food> alimentos )
     {
         for (int i = 0 ; i < alimentos.size() ; i++ ){
             final TableRow fila = new TableRow(getContext());
@@ -128,6 +131,47 @@ public class M11FoodFragment extends Fragment {
             AgregaColumna( alimentos.get(i).getFoodName(), fila , params);
             AgregaColumna( String.valueOf(alimentos.get(i).getFoodWeight()), fila , params);
             AgregaColumna( String.valueOf(alimentos.get(i).getFoodCalorie()), fila , params);
+
+            final String alimento = alimentos.get(i).getFoodName();
+            final int pesoAlimento = Integer.valueOf(alimentos.get(i).getFoodWeight());
+            final int caloriaAlimento = Integer.valueOf(alimentos.get(i).getFoodCalorie());
+            fila.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+                    //Confirmacion para eliminar alimento de la tabla de la die
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                    builder.setMessage("¿Que acción desea realizar?")
+                            .setTitle("Acción")
+                            .setCancelable(false)
+                            //Acciones para cuando dice no
+                            .setNegativeButton("Editar",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    //El id del usuario debe ser variable
+                                    editarAlimentoPersonalizad( alimento , pesoAlimento ,
+                                            caloriaAlimento , 1);
+                                }
+                            })
+                            .setNeutralButton("Volver", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                                }
+                            })
+                            //Acciones para cuando dice si
+                            .setPositiveButton("Eliminar",new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    //El id del usuario debe ser variable.
+                                    eliminarAlimentoPersonalizado( 1 , alimento );
+                                    //Elimina el alimento del TableRow
+                                    _gl_m11_listaAlimento.removeView(fila);
+
+
+                                }
+                            });
+                    AlertDialog alert = builder.create();
+                    alert.show();
+                }
+            });
         }
     }
 
@@ -152,7 +196,7 @@ public class M11FoodFragment extends Fragment {
 
     public void addAlimento() {
 
-        _btn_m11_agregar = (ImageButton) _view.findViewById(R.id.btn_m11_agregar);
+        _btn_m11_agregar = ( ImageButton ) _view.findViewById( R.id.btn_m11_agregar );
         _btn_m11_agregar.setOnClickListener(new View.OnClickListener() {
             //Para detecta que se a presionado el boton agregar
 
@@ -161,10 +205,73 @@ public class M11FoodFragment extends Fragment {
 
                 FragmentManager fm = getFragmentManager();
                 M11FooddialogFragment dialogFragment = new M11FooddialogFragment();
-                dialogFragment.show(getActivity().getFragmentManager(), "titulo");
+                dialogFragment.show( getActivity().getFragmentManager() , "titulo" );
                 //Muestrar el Dialog personalizado para agregar los alimentos.
             }
         });
+
+    }
+    public void eliminarAlimentoPersonalizado( int usuarioID , String nombreAlimento ){
+        RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
+        //OJO esta no es la consulta en si, hay que colocar la que es de los personalizados......
+        //La haré mañana temprano.
+        String jsonURL = "http://201.210.245.191:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
+                "/eliminar_personalizado?alimento=" + nombreAlimento + "&usuario=" + usuarioID;
+        StringRequest stringRequest = new StringRequest( Request.Method.DELETE, jsonURL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        ArrayList<String> respuesta = new ArrayList<>();
+                        respuesta = gson.fromJson( response ,
+                                new TypeToken<ArrayList<String>>(){}.getType() );
+                        Toast mensaje = new Toast(_view.getContext());
+                        mensaje.setText("El alimento fue eliminado correctamente");
+                        mensaje.setDuration(Toast.LENGTH_LONG);
+                        mensaje.setGravity( Gravity.CENTER , 0 , 0);
+                        mensaje.show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText( _view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG );
+                    }
+                });
+        requestQueue.add( stringRequest );
+
+    }
+
+    public void editarAlimentoPersonalizad( String nombreAlimento , int peso , int caloria ,
+                                            int usuarioID){
+        RequestQueue requestQueue = Volley.newRequestQueue( _view.getContext() );
+        //OJO esta no es la consulta en si, hay que colocar la que es de los personalizados......
+        //La haré mañana temprano.
+        String jsonURL = "http://201.210.245.191:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
+                "/eliminar_personalizado?alimento=" + nombreAlimento + "&peso" + peso + "&calorie" +
+                caloria + "&usuario=" + usuarioID;
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        ArrayList<String> respuesta = new ArrayList<>();
+                        respuesta = gson.fromJson( response,
+                                new TypeToken<ArrayList<String>>(){}.getType() );
+                        Toast mensaje = new Toast(_view.getContext());
+                        mensaje.setText( "El alimento fue actualizado correctamente" );
+                        mensaje.setDuration( Toast.LENGTH_LONG );
+                        mensaje.setGravity( Gravity.CENTER , 0 , 0);
+                        mensaje.show();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText( _view.getContext(), "Hola, no devolvio nada" , Toast.LENGTH_LONG);
+                    }
+                });
+        requestQueue.add( stringRequest );
 
     }
 }
