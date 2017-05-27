@@ -47,15 +47,15 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 //Atributos para la interfaz
 
     private Chronometer M05_textview_time;
-    private TextView M05_textview_time_tag;
-    private TextView M05_textview_speed;
-    private TextView M05_textview_speed_tag;
-    private TextView M05_textview_km_tag;
-    private TextView M05_textview_km;
-    private Button M05_button_pause;
-    private Button M05_button_resume;
-    private Button M05_button_end;
-    private long timeWhenStopped = 0;
+    private TextView    M05_textview_time_tag;
+    private TextView    M05_textview_speed;
+    private TextView    M05_textview_speed_tag;
+    private TextView    M05_textview_km_tag;
+    private TextView    M05_textview_km;
+    private Button      M05_button_pause;
+    private Button      M05_button_resume;
+    private Button      M05_button_end;
+    private long        timeWhenStopped = 0;
 
     Activit activity;
 

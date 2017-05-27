@@ -10,7 +10,7 @@ import java.util.Date;
  */
 
 public class Activit {
-    private int _id;
+    private int    _id;
     private String _startime;
     private String _endtime;
     private String _date;

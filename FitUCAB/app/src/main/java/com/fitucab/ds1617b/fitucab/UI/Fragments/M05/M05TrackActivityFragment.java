@@ -39,8 +39,9 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
     private static View _view;
     private Sport sport = new Sport();
 
+
+    //Constructor
     public M05TrackActivityFragment (){
-        // Required empty public constructor
 
     }
 
