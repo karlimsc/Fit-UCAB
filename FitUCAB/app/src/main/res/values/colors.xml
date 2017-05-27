@@ -16,7 +16,7 @@
     <color name="colorpink">#ec0b3c</color>
     <color name="gradvioletgrey">#1a0c38</color>
     <color name="gradlightgrey">#5a595e</color>
-
+    <color name="softgrey">#53535353</color>
 
     <color name="ColorPrimary">#3F51B5</color>
     <color name="ColorPrimaryDark">#303F9F</color>
