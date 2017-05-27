@@ -91,7 +91,7 @@ public class M11FoodFragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
         //OJO esta no es la consulta en si, hay que colocar la que es de los personalizados......
         //La haré mañana temprano.
-        String jsonURL = "http://186.90.148.200:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
+        String jsonURL = "http://201.210.245.191:8080/WebServicesFitUCAB_war_exploded/M11_Food" +
                 "/obtener_todoas_alimentos_auto?username=" + usuario;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL,
                 new Response.Listener<String>() {
