@@ -49,10 +49,22 @@ public class M03FragmentLibreta extends Fragment {
     private static final int PERMISSIONS_REQUEST_READ_CONTACTS = 100;
     ListView listView;
     View rootView;
+    /**
+     Es llamado cuando el fragmento es creado por primera vez ,devuelve una View (rootView)desde
+     este método que será la raíz del diseño de nuestro fragmento
+
+     @param savedInstanceState es un Bundle que proporciona datos acerca de la instancia previa del fragmento.
+     @param container Es el ViewGroup principal en el cual se insertará el diseño de nuestro fragmento.
+     @param inflater este parametro sirve para 3 argumentos pero aqui solo lo utilizamos para el
+                     Viewgroup. Para que el sistema aplique parámetros de diseño a la vista de raíz
+                     del diseño agrandado, especificada por la vista principal a la que se integra.
+     */
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
+       //Aqui nos aseguramos que la app solicita los permisos para leer los contactos de la libreta
         if (ActivityCompat.checkSelfPermission(getContext(),
                 android.Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED ) {
             ActivityCompat.requestPermissions(getActivity(),
@@ -61,25 +73,33 @@ public class M03FragmentLibreta extends Fragment {
         } else {
             Log.e("DB", "PERMISSION GRANTED");
         }
-
+        //se encarga de poner los atributos de diseño del ViewGroup padre
         rootView = inflater.inflate(R.layout.fragment_m03_contacts, container, false);
+        // se instancia un arrraylist
         ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
+        //nos proveera los datos del usuario
         final UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
+        //Tomamos id de listview desde xml
         listView = (ListView) rootView.findViewById(R.id.contactsList);
+        //Establecemos el adaptador que proporciona los datos y las vistas para representar los datos
         listView.setAdapter(adapter);
+        //instanciamos un arraylist auxiliar de usuarios
         final ArrayList<UserAuxiliar> usuarios = new ArrayList<UserAuxiliar>();
+        //Se llama cuando se ha hecho clic y se ha mantenido una vista y el True porque es el clic largo
         listView.setLongClickable(true);
+        // este es el llamado que hacemos para agregar los conexto de bloquear, aceptar declinar
+        // Asociamos los menús contextuales a los controles
         registerForContextMenu(listView);
 
-        // Get the ContentResolver
+        // obtenemos el ContentResolver
         ContentResolver cr = rootView.getContext().getContentResolver();
-        // Get the Cursor of all the contacts
+        // Obtener el Cursor de todos los contactos
         Cursor cursor = cr.query(ContactsContract.Contacts.CONTENT_URI, null, null, null, null);
-        // Move the cursor to first. Also check whether the cursor is empty or not.
+        //Mueva el cursor a la primera posición y Comprueba también si el cursor está vacío o no.
         if (cursor.moveToFirst()) {
-            // Iterate through the cursor
+            //Iterar a través del cursor
             do {
-                // Get the contacts name
+                // Obtiene los nombre de los contactos y el numero de telefono
                 String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
                 String contactId = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
                 Cursor phones = cr.query(Phone.CONTENT_URI, null, Phone.CONTACT_ID + " = " + contactId, null, null);
@@ -100,14 +120,14 @@ public class M03FragmentLibreta extends Fragment {
                     phones.close();
                 }
 
-
+                //obtenemos el email
                 Cursor emails = cr.query(CommonDataKinds.Email.CONTENT_URI, null, CommonDataKinds.Email.CONTACT_ID + " = " + contactId, null, null);
                 while (emails.moveToNext())
                 {
                     emailAddress = emails.getString(emails.getColumnIndex(ContactsContract.CommonDataKinds.Email.DATA));
                 }
                 emails.close();
-
+                //agregamos al usuario con nombre email y telefono
                 usuarios.add(new UserAuxiliar(name,emailAddress, phoneNumber));
 
                 /*AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
@@ -138,11 +158,13 @@ public class M03FragmentLibreta extends Fragment {
                 emails.close();
             } while (cursor.moveToNext());
         }
-
+        //creamos un objeto gson
         Gson gson = new Gson();
-
+        //Java objeto a JSON, y se lo asignamos a un string
         String contacts = gson.toJson(usuarios);
+
         usuarios.clear();
+
         String contactsEncoded = "";
         try {
             contactsEncoded = URLEncoder.encode(contacts, "utf-8");
@@ -153,10 +175,10 @@ public class M03FragmentLibreta extends Fragment {
         //String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/contact/getContacts?id=2&contacts=[{%22_email%22:%22andresfra92@gmail.com%22,%22_username%22:%22Andres%20Rubio%22,%22_phone%22:%224145589633%22,%22_point%22:0,%22_type%22:0,%22_id%22:0},{%22_email%22:%22%22,%22_username%22:%22Pepe%20Grillo%22,%22_phone%22:%2204141150083%22,%22_point%22:0,%22_type%22:0,%22_id%22:0},{%22_email%22:%22fmeeksr@weebly.com%22,%22_username%22:%22Fabiano%20Meeks%22,%22_phone%22:%2204141150083%22,%22_point%22:0,%22_type%22:0,%22_id%22:0}]";
         final Gson gsonresp = new Gson();
 
-        // Instantiate the RequestQueue.
+        // Inicializamos el RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
 
-        // Request a string response from the provided URL.
+        //Solicitar una respuesta de cadena desde la URL proporcionada.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
@@ -185,7 +207,7 @@ public class M03FragmentLibreta extends Fragment {
                 adapter.addAll(usuarios);
             }
         });
-        // Add the request to the RequestQueue.
+        // Agregue la solicitud al RequestQueue.
         queue.add(stringRequest);
 
 
@@ -194,6 +216,15 @@ public class M03FragmentLibreta extends Fragment {
 
         return rootView;
     }
+    /**
+     Este metodo se llama cada vez que se necesita mostrar un menú contextual
+     Aquí es donde se definen los elementos del menú
+
+     @param menu define que menu debe inflarce
+     @param menuInfo proporciona información adicional sobre el elemento seleccionado
+     @param v le pasamos la lista que en nuestro caso es el listview
+     */
+
 
     @Override
     public void onCreateContextMenu(ContextMenu menu,
@@ -212,6 +243,16 @@ public class M03FragmentLibreta extends Fragment {
             menu.add(1, user.get_id(), 0, "Invitar");
         }
     }
+    /**
+     Cuando el usuario selecciona un elemento de menú, el sistema llama a este método para
+     que pueda realizar la acción apropiada
+     En nuestro caso identificamos cada uno de los elementos  cuando se  hace la accion
+     onContectItemSelected podemos ver si ya existe la amistad , si ya existe una peticion enviada,
+     si existe algun error de conexion y enviamos la notificacion para descargar la app
+     la respuesta en el super.onContextItemSelected(item)
+     @param item le pasamos el item seleccionado
+
+     */
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {
@@ -221,11 +262,11 @@ public class M03FragmentLibreta extends Fragment {
                 String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/request?idRequester=2&idRequested="+Integer.toString(item.getItemId());
                 final Gson gson = new Gson();
 
-                // Instantiate the RequestQueue.
+                // Inicializamos el RequestQueue.
                 RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
 
 
-                // Request a string response from the provided URL.
+                // Solicitar una respuesta de cadena desde la URL proporcionada.
                 StringRequest stringRequest = new StringRequest(Request.Method.PUT, url,
                         new Response.Listener<String>() {
                             @Override
@@ -255,7 +296,7 @@ public class M03FragmentLibreta extends Fragment {
                         alert11.show();
                     }
                 });
-                // Add the request to the RequestQueue.
+                // agregamos la solicitud al RequestQueue.
                 queue.add(stringRequest);
                 return true;
             case 1:
