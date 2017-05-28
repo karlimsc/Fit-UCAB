@@ -21,7 +21,7 @@ public class M05_ServicesSport {
     Gson gson = new Gson();
 
 
-    @POST
+    @GET
 
     @Path("/insertSport")
 
@@ -152,7 +152,7 @@ public class M05_ServicesSport {
 
 
         Sport resultado = new Sport();
-        ArrayList<Sport> listaDeportes= new ArrayList<>();
+
 
         String query = "select nombredeporte from M05_obtenerdeportesusuario('"+id+"')";
 
@@ -161,6 +161,9 @@ public class M05_ServicesSport {
             Connection conn = conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
+            //Array creado para almacenar las deportes realizados
+	    ArrayList<Sport> listaDeportes= new ArrayList<Sport>();
+            
 
             while(rs.next()){
 				resultado.setId(rs.getInteger(  "id"));
@@ -178,7 +181,7 @@ public class M05_ServicesSport {
         }
     }
 
-    @DELETE
+    @GET
 
     @Path("/deleteSport")
 
