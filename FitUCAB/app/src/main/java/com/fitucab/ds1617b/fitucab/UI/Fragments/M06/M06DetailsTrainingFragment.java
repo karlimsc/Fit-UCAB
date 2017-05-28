@@ -61,26 +61,26 @@ public class M06DetailsTrainingFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         _view = inflater.inflate(R.layout.fragment_m06_details_training_fragment, container, false);
-        fillListView();
+        Bundle bundle = new Bundle();
+        fillListView( bundle );
         return _view;
     }
 
-    private void setupViewValues() {
-        //Llenando el list View
-
-    }
-
-    public void fillListView(){
+    /**
+     * Metodo que se encarga de llenar el list view a través de una petición al servidor
+     * @param bundle
+     */
+    public void fillListView( Bundle bundle  ){
 
         //Url a la cual se va a hacer conexion
         IpStringConnection ip = new IpStringConnection();
-        Bundle bundle = getArguments();
+        bundle = getArguments();
         String url = ip.getIp() + "M06_ServicesTraining/detailedTraining?trainingId=" + bundle.getInt("idEntrenamiento");
         final Gson gson = new Gson();
 
         // Instancia RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(getContext());
-        _listView = (ListView) _view.findViewById( R.id.m06_listViewEntrenamiento );
+        _listView = (ListView) _view.findViewById( R.id.m06_ListViewDeportes );
 
         //Se hace la peticion y lo devuelve en String Request
         StringRequest stringRequest = new StringRequest( Request.Method.GET , url ,

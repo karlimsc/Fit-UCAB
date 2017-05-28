@@ -83,7 +83,15 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
         //Llenando el list View
         fillListView();
         registerForContextMenu( _listView );
+            //Esto se borra luego, COÑO SE BORRA
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences.Editor editor = preferences.edit();
 
+        editor.putInt("idUser", 1);
+
+        editor.putFloat("weight", 55);
+
+        editor.commit();
     }
 
     /**
