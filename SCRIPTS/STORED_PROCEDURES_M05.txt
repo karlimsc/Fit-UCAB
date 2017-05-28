@@ -162,7 +162,7 @@ loop
 		fecha         :=var_r.ACTIVITYDATE;
 		km            :=var_r.ACTIVITYKM;
 		caloria       :=var_r.ACTIVITYCALOR;
-		lugarinicio   :=var_r ACTIVITYSTARTSITE;
+		lugarinicio   :=var_r.ACTIVITYSTARTSITE;
 		lugarfinal    :=var_r.ACTIVITYENDSITE;
 		nombredeporte :=var_r.SPORTNAME;
 		
