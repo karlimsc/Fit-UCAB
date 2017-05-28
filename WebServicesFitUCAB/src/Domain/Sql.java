@@ -2,53 +2,57 @@ package Domain;
 
 import java.sql.*;
 
-/**
- * Created by charbel on 25/05/2017.
- */
 public class Sql {
 
-    private Connection conn =this.bdConnect();
+    private static Connection conInstance;
+    private Connection conn =bdConnect();
     private Statement _st;
     private ResultSet _rs;
+    private static String BD_USER = "fitucab";
+    private static String BD_PASSWORD = "fitucab";
+    private static String BD_URL = "jdbc:postgresql://localhost/fitucabdb";
+    private static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
 
+    /**
+     * Metodo para devolver una unica instancia de la conexion
+     * @return instancia de la conexion
+     */
+    public static Connection getConInstance(){
+        if (conInstance == null){
+            conInstance = bdConnect();
+        }
+        return conInstance;
+    }
 
-
-
-    private Connection bdConnect()
+    /**
+     * Metodo que realiza la conexion contra la bd
+     * @return
+     */
+    private static Connection bdConnect()
     {
         Connection conn = null;
         try
         {
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://127.0.0.1/fitucabdb";
-            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
+            Class.forName(BD_CLASS_FOR_NAME);
+            conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
         }
         catch (ClassNotFoundException e)
         {
             e.printStackTrace();
-            System.exit(1);
         }
         catch (SQLException e)
         {
             e.printStackTrace();
-            System.exit(2);
         }
         return conn;
     }
 
     public ResultSet sql (String query) throws SQLException , NullPointerException {
 
-
         _st = conn.createStatement();
         _rs  = _st.executeQuery(query);
         conn.close();
-
-
-
-
         return _rs;
     }
-
-
 
 }

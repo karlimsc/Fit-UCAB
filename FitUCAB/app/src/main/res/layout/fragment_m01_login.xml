@@ -10,10 +10,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="103dp"
+        android:layout_width="@dimen/image_width"
+        android:layout_height="@dimen/image_height"
         android:layout_gravity="center_horizontal|center"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_top"
         android:layout_weight="2"
         android:src="@mipmap/logofitucabnombre" />
 
@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/margin_top"
                 android:layout_weight="3"
                 android:ems="10"
                 android:fontFamily="sans-serif"
@@ -45,6 +45,7 @@
                 android:maxLength="20"
                 android:textColor="@color/softgrey"
                 android:textColorLink="@color/colorBtnAceptar"
+                android:textSize="@dimen/text_button_standard"
                 android:typeface="sans" />
         </android.support.design.widget.TextInputLayout>
 
@@ -52,45 +53,46 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="@dimen/margin_top">
 
             <EditText
                 android:id="@+id/et_m01_passwordLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/margin_top"
                 android:layout_weight="2"
                 android:ems="10"
                 android:fontFamily="sans-serif"
                 android:hint="@string/et_m01_passwordLogin"
                 android:inputType="textPassword"
-                android:maxLength="20"
+                android:maxLength="12"
                 android:textColor="@color/softgrey"
                 android:textColorLink="@color/colorBtnAceptar"
+                android:textSize="@dimen/text_button_standard"
                 android:typeface="sans" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/btn_m01_aceptarLogin"
-            android:layout_width="200dp"
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_top"
             android:layout_weight="1"
             android:background="@color/colorBtnConfirmar"
             android:fontFamily="sans-serif"
             android:text="@string/btn_m01_aceptarLogin"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_button_standard"
             android:typeface="sans" />
 
         <TextView
             android:id="@+id/tv_m01_olvidoClave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/margin_top"
             android:layout_weight="3"
             android:fontFamily="sans-serif"
             android:gravity="center"
@@ -98,6 +100,7 @@
             android:textAlignment="center"
             android:textColor="@color/colorBtnAceptar"
             android:textColorLink="@color/colorBtnAceptar"
+            android:textSize="@dimen/text_forgotpassword"
             android:textStyle="bold"
             android:typeface="sans" />
 
