@@ -27,6 +27,8 @@ import java.util.Properties;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+import static Domain.Sql.getConInstance;
+
 
 /**
  * Clase de Servicios Web del Modulo 01
@@ -34,7 +36,7 @@ import java.io.UnsupportedEncodingException;
 @Path("/M01_ServicesUser")
 public class M01_ServicesUser {
 
-    private Connection conn = bdConnect();
+    private Connection conn = getConInstance();
     private int RESULT_CODE_OK=200;
     private int RESULT_CODE_FAIL=500;
     private static String DEFAULT_ENCODING1="UTF-8";
@@ -86,6 +88,7 @@ public class M01_ServicesUser {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             User user = null;
+
             while (rs.next()) {
                 String username = rs.getString("usuario");
                 int id = rs.getInt("id");
@@ -382,9 +385,9 @@ public class M01_ServicesUser {
                 //El tema del correo
                 message.setSubject("Recuperar contraseña FitUCAB");
                 //El contenido del correo
-                message.setText(" Hola FitUcabista! /n" +
-                                " tu usuario es:" + usernameResult +
-                                "/n y tu clave:" + passwordResult+ "/n" +
+                message.setText(" Hola FitUcabista! " +
+                                " tu usuario es: " + usernameResult +
+                                " y tu clave:" + passwordResult+ " " +
                                 " Ahora puedes seguir entrenando");
                 //Enviamos
                 Transport.send(message);
@@ -408,30 +411,6 @@ public class M01_ServicesUser {
         catch (Exception e) {
             return e.getMessage();
         }
-    }
-
-
-    //esto no va a aqui , se puso momentaneamente.
-    public Connection bdConnect()
-    {
-        Connection conn = null;
-        try
-        {
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/fitucab";
-            conn = DriverManager.getConnection(url,"postgres", "123456");
-        }
-        catch (ClassNotFoundException e)
-        {
-            e.printStackTrace();
-            System.exit(1);
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-            System.exit(2);
-        }
-        return conn;
     }
 
 }
