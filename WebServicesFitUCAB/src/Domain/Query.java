@@ -114,10 +114,10 @@ public class Query {
     public Home getHome() {
         try {
             _sql = new Sql();
-            ResultSet result = _sql.sql("");
+            ResultSet result = _sql.sql("select 2 totalAgua, 3 totalCalorias;");
             while (result.next()){
-                _home.setTotalAgua( result.getInt("") );
-                _home.setTotalCaloria( result.getFloat("") );
+                _home.setTotalAgua( result.getInt("totalAgua") );
+                _home.setTotalCaloria( result.getFloat("totalCalorias") );
             }
             return new Home( _home.getTotalCaloria(), _home.getTotalAgua() );
         } catch (SQLException e) {
