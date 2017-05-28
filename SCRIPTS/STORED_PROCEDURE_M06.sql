@@ -37,5 +37,37 @@ BEGIN
 	COMMIT;
 END;
 $$LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION updateTraining(
+							idTraining INTEGER,
+							trainingName CHARACTER VARYING(80),
+							trainingPeriod INTEGER,
+					   		trainingCalories INTEGER,
+					   		fk_userId INTEGER,
+					   		typeComplexity CHARACTER VARYING(80),
+					   		time_var INTEGER
+) RETURNS void AS $$
+BEGIN
+	UPDATE TRAINING SET TRAININGNAME=trainingName ,TRAININGPERIOD=trainingPeriod, TRAININGCALORIES= trainingCalories WHERE TRAININGID= idTraining;
+	COMMIT;
+END;
+$$LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION updatePersonalizedTraining(
+							idTraining INTEGER,
+							trainingName CHARACTER VARYING(80),
+							trainingPeriod INTEGER,
+					   		trainingCalories INTEGER,
+					   		fk_sportId INTEGER,
+					   		distance INTEGER,
+					   		typeComplexity CHARACTER VARYING(80),
+					   		time_var INTEGER
+) RETURNS void AS $$
+BEGIN
+	UPDATE TRAINING SET TRAININGNAME = trainingName ,TRAININGPERIOD = trainingPeriod, TRAININGCALORIES = trainingCalories WHERE TRAININGID = idTraining;
+	UPDATE SPOR_TRAINING SET TYPE_COMPLEXITY = typeComplexity, TIMETRAINING = time_var, DISTANCE = distance WHERE FK_TRAININGID = idTraining AND FK_SPORTID = fk_sportId; 
+	COMMIT;
+END;
+$$LANGUAGE plpgsql;
 --Fin Modulo 6--
 
