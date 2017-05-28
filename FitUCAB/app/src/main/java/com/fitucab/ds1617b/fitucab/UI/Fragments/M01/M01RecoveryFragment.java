@@ -89,7 +89,7 @@ public class  M01RecoveryFragment extends Fragment {
      */
     private void instantiateComponents(){
 
-        _printTextTV=(TextView) _view.findViewById(R.id.tv_m01_recuperacionPwd);
+        _printTextTV=(TextView) _view.findViewById(R.id.tv_m01_recuperacionContra);
         _btnChangeActivity=(Button) _view.findViewById(R.id.btn_m01_enviarCorreo);
         _etEmailRecovery=(EditText) _view.findViewById(R.id.et_m01_correoRecovery);
 

@@ -26,10 +26,13 @@ public class User {
     private float _height;
     @SerializedName("_weight")
     private float _weight;
-    private int _point;
-
+    @SerializedName("_status")
+    private String _status;
     @SerializedName("_registry")
     private Registry _registry;
+
+    private int _point;
+
     /**
      * Constructor vacio
      */
@@ -116,6 +119,13 @@ public class User {
 
     }
 
+    public String get_status() {
+        return _status;
+    }
+
+    public void set_status(String _status) {
+        this._status = _status;
+    }
 
     public int get_idUser() {
         return _idUser;
