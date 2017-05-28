@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Activities.M05StartTrackingActivity">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:background="@drawable/gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tv_m05_km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="0,000"
+            android:textColor="@color/colorwhite"
+            android:textSize="80sp" />
+
+        <TextView
+            android:id="@+id/tv_m05_km_tag"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.03"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="Km"
+            android:textColor="@color/colorWhiteSmoke"
+            android:textSize="24sp"
+            tools:text="Km" />
+
+        <TextView
+            android:id="@+id/tv_m05_tiempo_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="@string/_tv_m05_time"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <Chronometer
+            android:id="@+id/tv_m05_tiempo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="@string/_tv_m05_time"
+            android:textColor="@android:color/white"
+            android:textSize="36sp" />
+
+
+        <TextView
+            android:id="@+id/tv_m05_velocidad_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="@string/_tv_m05_speed"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_m05_velocidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:text="@string/_tv_m05_speed"
+            android:textColor="@android:color/white"
+            android:textSize="36sp" />
+
+        <Button
+            android:id="@+id/btn_m05_pause_track"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:background="@color/colorpink"
+            android:text="@string/_btn_m05_pause"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_m05_end_track"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="-50dp"
+            android:background="@color/colorBtnDenegar"
+            android:text="@string/btn_m05_end"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/btn_m05_resume_track"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorBtnConfirmar"
+            android:text="@string/_btn_m05_resume"
+            android:textColor="@color/colorwhite"
+            android:textSize="18sp"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

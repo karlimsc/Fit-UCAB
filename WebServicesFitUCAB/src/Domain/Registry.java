@@ -30,6 +30,12 @@ public class Registry {
      _registryPoint = registryPoint;
     };
 
+    public Registry(int idRegistry)
+    {
+        _idRegistry = idRegistry;
+
+    };
+
     /**
      * Contructor sin el id
      * @param weight
@@ -55,6 +61,7 @@ public class Registry {
         _weight = weight;
         _height = height;
     };
+
 
     public int getIdRegistry()
     {

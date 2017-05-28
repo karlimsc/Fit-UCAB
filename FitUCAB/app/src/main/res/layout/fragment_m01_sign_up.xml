@@ -38,7 +38,7 @@
                 android:layout_column="1">
 
                 <EditText
-                    android:id="@+id/et_m01_usuario"
+                    android:id="@+id/et_m01_userRegistry"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
@@ -61,7 +61,7 @@
                 android:layout_marginTop="20dp">
 
                 <EditText
-                    android:id="@+id/et_m01_passwordRegistro"
+                    android:id="@+id/et_m01_passwordRegistry"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -70,6 +70,7 @@
                     android:ems="10"
                     android:fontFamily="sans-serif"
                     android:hint="@string/et_m01_passwordRegistro"
+                    android:maxLength="8"
                     android:inputType="textPassword"
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
@@ -84,7 +85,7 @@
                 android:layout_marginTop="20dp">
 
                 <EditText
-                    android:id="@+id/et_m01_correoRegistro"
+                    android:id="@+id/et_m01_emailRegistro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
@@ -94,7 +95,7 @@
                     android:fontFamily="sans-serif"
                     android:hint="@string/et_m01_correoRegistro"
                     android:inputType="textPersonName"
-                    android:maxLength="28"
+                    android:maxLength="50"
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
                     android:textSize="18sp"
@@ -108,7 +109,7 @@
                 android:layout_marginTop="20dp">
 
                 <EditText
-                    android:id="@+id/et_m01_telefono"
+                    android:id="@+id/et_m01_phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
@@ -119,6 +120,7 @@
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
                     android:textSize="18sp"
+                    android:maxLength="20"
                     android:typeface="sans" />
             </android.support.design.widget.TextInputLayout>
 
@@ -161,7 +163,7 @@
                     android:layout_weight="3">
 
                     <EditText
-                        android:id="@+id/et_m01_peso"
+                        android:id="@+id/et_m01_weight"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
@@ -171,7 +173,7 @@
                         android:fontFamily="sans-serif"
                         android:hint="@string/et_m01_peso"
                         android:inputType="numberDecimal"
-                        android:maxLength="3"
+                        android:maxLength="6"
                         android:textColor="@color/softgrey"
                         android:textColorLink="@color/colorBtnAceptar"
                         android:textSize="18sp"
@@ -207,7 +209,7 @@
                     android:layout_weight="3">
 
                     <EditText
-                        android:id="@+id/et_m01_estatura"
+                        android:id="@+id/et_m01_height"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
@@ -217,7 +219,7 @@
                         android:fontFamily="sans-serif"
                         android:hint="@string/et_m01_estatura"
                         android:inputType="numberDecimal"
-                        android:maxLength="3"
+                        android:maxLength="4"
                         android:textColor="@color/softgrey"
                         android:textColorLink="@color/colorBtnAceptar"
                         android:textSize="18sp"
@@ -247,7 +249,7 @@
                 android:weightSum="2">
 
                 <RadioButton
-                    android:id="@+id/rb_m01_femenino"
+                    android:id="@+id/rb_m01_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -255,10 +257,11 @@
                     android:textColor="@color/common_google_signin_btn_text_light_default"
                     android:textColorLink="@color/colorBtnAceptar"
                     android:textSize="18sp"
+                    android:checked="true"
                     android:typeface="sans" />
 
                 <RadioButton
-                    android:id="@+id/rb_m01_masculino"
+                    android:id="@+id/rb_m01_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

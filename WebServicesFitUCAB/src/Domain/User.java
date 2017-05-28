@@ -1,11 +1,14 @@
 package Domain;
 
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.sql.Date;
 
 /**
  * Clase Usuario del Modulo 1
  */
+
+@XmlRootElement
 public class User {
 
     private int _id;
@@ -15,6 +18,7 @@ public class User {
     private String _sex;
     private String _phone;
     private Date _birthdate;
+    private Registry _registry;
 
     /**
      * Constructor vacio
@@ -51,6 +55,35 @@ public class User {
 
     };
 
+    public User(int id,String user,String password, String email,String sex,String phone,
+                Registry registry)
+    {
+        _id = id;
+        _username = user;
+        _password = password;
+        _email = email;
+        _sex = sex;
+        _phone = phone;
+        //_birthdate= birthdate;
+        _registry= registry;
+
+    };
+
+    /***
+     *
+     * @param id
+     * @param user
+     * @param password
+     */
+    public User(int id,String user,String password)
+    {
+        _id = id;
+        _username = user;
+        _password = password;
+
+
+    };
+
     /**
      * Constructor sin el id del usuario
      * @param user
@@ -70,6 +103,7 @@ public class User {
         _phone = phone;
         _birthdate= birthdate;
     };
+
 
     /**
      * Constructor para solo el username y el password
