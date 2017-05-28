@@ -31,15 +31,17 @@ public class M02_ServicesUser {
     @GET
     @Path("/{userId}")
     public Response getUser( @PathParam("userId") int id ){
-        /*Date date = new Date(1L);
-        User user = new User(1,"user","pass","mail","sex","phone", date);*/
-        _service = new M02Query();
+        Date date = new Date(1L);
+        User user = new User(1,"user","pass","mail","sex","phone", date);
+        user.setWeight(5);
+        user.setHeight(5);
+        /*_service = new M02Query();
         User user = _service.getUser( id );
         if ( user == null ) {
             _message = new StatusMessage( 0, "Usuario no encontrado" );
             _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
             throw new WebApplicationException( _response );
-        }
+        }*/
         _response = Response.status( Response.Status.ACCEPTED ).entity( user ).build();
         return _response;
     }

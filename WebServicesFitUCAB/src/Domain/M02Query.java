@@ -39,8 +39,8 @@ public class M02Query {
                 _user.setSex( result.getString( "sex" ) );
                 _user.setPhone( result.getString( "phone" ) );
                 _user.setBirthdate( result.getDate( "birthdate" ) );
-                /*_user.setAltura( result.getInt( "height" ) );
-                _user.setPeso( result.getInt( "weight" ) );*///TODO QUITAR
+                /*_user.setHeight( result.getInt( "height" ) );
+                _user.setWeight( result.getInt( "weight" ) );*///TODO QUITAR
             }
             return _user;
         } catch (NullPointerException e) {

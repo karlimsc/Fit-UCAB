@@ -188,7 +188,7 @@ public class User {
         return _peso;
     }
 
-    public void setPeso(int peso) {
+    public void setWeight(int peso) {
         _peso = peso;
     }
 
@@ -196,7 +196,7 @@ public class User {
         return _altura;
     }
 
-    public void setAltura(int altura) {
+    public void setHeight(int altura) {
         _altura = altura;
     }
 }
