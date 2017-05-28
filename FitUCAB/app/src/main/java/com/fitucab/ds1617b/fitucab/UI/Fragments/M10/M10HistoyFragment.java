@@ -9,11 +9,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Model.AdapterM10ListView;
 import com.fitucab.ds1617b.fitucab.Model.Water;
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,7 +38,14 @@ public class M10HistoyFragment extends Fragment {
     private static ListView _waterlist;
     static ArrayList<Water> FillWater = new ArrayList<>();
     static AdapterM10ListView adapter;
-    private static ArrayList<Water>  List = new ArrayList<>();
+    private static ArrayList<Water>  list = new ArrayList<>();
+    private Context contexto;
+    private IpStringConnection Url = new IpStringConnection();
+    int idusuario =1;
+    M10WaterGlassActivity m10 = new M10WaterGlassActivity();
+    Gson gson = new Gson();
+    Water water = new Water();
+
 
     public M10HistoyFragment() {
         // Required empty public constructor
@@ -41,7 +59,7 @@ public class M10HistoyFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_m10_histoy,container,false);
         _waterlist = (ListView) rootView.findViewById(R.id.list_water);
-
+        contexto=rootView.getContext();
          adapter = new AdapterM10ListView(rootView.getContext(),FillWater);
         _waterlist.setAdapter(adapter);
 
@@ -96,10 +114,51 @@ public class M10HistoyFragment extends Fragment {
     }
 
 
+    public void set_list(Context contexto)
+    {
+        String url1 = "M10_WaterGlass/GetList?time="+m10._EtnDate.getText()+"&fkp="+idusuario;
+        String aux = Url.getIp()+url1;
+        RequestQueue queue = Volley.newRequestQueue(contexto);
+        // Request a string response from the provided URL.
+        try {
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, aux,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            // Display the first 500 characters of the response string.}
+                            try {
+                                list = gson.fromJson(response, new TypeToken<List<Water>>(){}.getType());
+                                ViewList();
+
+
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                            finally {
+
+                            }
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+
+                }
+            });
+
+            queue.add(stringRequest);
+
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
+    }
 
     public void setElementList (Water water)
     {
-         List.add(water);
+         list.add(water);
 
     }
 
@@ -109,7 +168,7 @@ public class M10HistoyFragment extends Fragment {
             if (!adapter.isEmpty()) {
                 adapter.clear();
             }
-            adapter.addAll(List);
+            adapter.addAll(list);
         }catch (Exception e)
         {}
     }

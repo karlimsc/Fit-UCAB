@@ -35,13 +35,12 @@ import com.google.gson.Gson;
 public class M10WaterGlassFragment extends Fragment {
 
     M10WaterGlassActivity m10 = new M10WaterGlassActivity();
+    M10HistoyFragment m10h = new M10HistoyFragment();
     private OnFragmentInteractionListener mListener;
-    private ImageButton _btnAdd;
-    private ImageButton _btnLess;
-    private EditText _EtnDate;
-    private ImageButton _btnAddWater;
-    private ImageButton _btnLessWater;
-    private EditText _EtnWater;
+
+    public ImageButton _btnAddWater;
+    public ImageButton _btnLessWater;
+    public EditText _EtnWater;
     private Gson gson;
     private  String fecha;
     private Context contexto;
@@ -121,6 +120,7 @@ public class M10WaterGlassFragment extends Fragment {
         _btnAddWater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 addwateraux();
             }
         });
@@ -132,7 +132,7 @@ public class M10WaterGlassFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                //http://localhost:8888/WebServicesFitUCAB_war_exploded/M10_WaterGlass/DeletLast?time=27/05/2017&fkp=
+
                 String url1 = "M10_WaterGlass/DeletLast?time=" + m10._EtnDate.getText() + "&fkp="+idusuario;
                 String aux = Url.getIp() + url1;
                 RequestQueue queue = Volley.newRequestQueue(contexto);
@@ -145,6 +145,9 @@ public class M10WaterGlassFragment extends Fragment {
                                 try {
                                     water = gson.fromJson(response, Water.class);
                                     _EtnWater.setText(water.get_cantidad().toString());
+                                    Thread.sleep(10);
+                                    m10h.set_list(_view.getContext());
+
 
                                 } catch (Exception e) {
                                     e.printStackTrace();
@@ -183,6 +186,11 @@ public class M10WaterGlassFragment extends Fragment {
                             try {
                                 water = gson.fromJson(response, Water.class);
                                 _EtnWater.setText(water.get_cantidad().toString());
+                                Thread.sleep(10);
+                                m10h.set_list(_view.getContext());
+
+
+
 
                             } catch (Exception e) {
                                 e.printStackTrace();

@@ -1,5 +1,333 @@
 [
     {
+        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 106,
+                    "endOffset": 207
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 283,
+                        "endColumn": 102,
+                        "endOffset": 385
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 212,
+                    "endColumn": 181,
+                    "endOffset": 389
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 0,
+                        "startOffset": 386,
+                        "endColumn": 181,
+                        "endOffset": 567
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 394,
+                    "endColumn": 130,
+                    "endOffset": 520
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 0,
+                        "startOffset": 568,
+                        "endColumn": 126,
+                        "endOffset": 694
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 525,
+                    "endColumn": 110,
+                    "endOffset": 631
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 0,
+                        "startOffset": 695,
+                        "endColumn": 106,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 636,
+                    "endColumn": 203,
+                    "endOffset": 835
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 0,
+                        "startOffset": 802,
+                        "endColumn": 203,
+                        "endOffset": 1005
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 840,
+                    "endColumn": 134,
+                    "endOffset": 970
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 0,
+                        "startOffset": 1006,
+                        "endColumn": 130,
+                        "endOffset": 1136
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 975,
+                    "endColumn": 134,
+                    "endOffset": 1105
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 0,
+                        "startOffset": 1137,
+                        "endColumn": 130,
+                        "endOffset": 1267
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1110,
+                    "endColumn": 208,
+                    "endOffset": 1314
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 285,
+                        "endColumn": 208,
+                        "endOffset": 493
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1319,
+                    "endColumn": 230,
+                    "endOffset": 1545
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 0,
+                        "startOffset": 1268,
+                        "endColumn": 230,
+                        "endOffset": 1498
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1550,
+                    "endColumn": 109,
+                    "endOffset": 1655
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 0,
+                        "startOffset": 1499,
+                        "endColumn": 105,
+                        "endOffset": 1604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1660,
+                    "endColumn": 189,
+                    "endOffset": 1845
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 0,
+                        "startOffset": 1605,
+                        "endColumn": 189,
+                        "endOffset": 1794
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1850,
+                    "endColumn": 133,
+                    "endOffset": 1979
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 0,
+                        "startOffset": 1795,
+                        "endColumn": 129,
+                        "endOffset": 1924
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1984,
+                    "endColumn": 212,
+                    "endOffset": 2192
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 0,
+                        "startOffset": 1925,
+                        "endColumn": 212,
+                        "endOffset": 2137
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 2197,
+                    "endColumn": 191,
+                    "endOffset": 2384
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 0,
+                        "startOffset": 2138,
+                        "endColumn": 187,
+                        "endOffset": 2325
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 2389,
+                    "endColumn": 95,
+                    "endOffset": 2480
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 0,
+                        "startOffset": 2326,
+                        "endColumn": 91,
+                        "endOffset": 2417
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 2485,
+                    "endColumn": 90,
+                    "endOffset": 2571
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 0,
+                        "startOffset": 2418,
+                        "endColumn": 86,
+                        "endOffset": 2504
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 2576,
+                    "endColumn": 108,
+                    "endOffset": 2680
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 0,
+                        "startOffset": 2505,
+                        "endColumn": 104,
+                        "endOffset": 2609
+                    }
+                }
+            }
+        ]
+    },
+    {
         "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
         "map": [
             {
@@ -644,662 +972,6 @@
                 },
                 "from": {
                     "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 0,
-                        "startOffset": 2505,
-                        "endColumn": 104,
-                        "endOffset": 2609
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 105,
-                    "endColumn": 106,
-                    "endOffset": 207
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 0,
-                        "startOffset": 283,
-                        "endColumn": 102,
-                        "endOffset": 385
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 212,
-                    "endColumn": 181,
-                    "endOffset": 389
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 0,
-                        "startOffset": 386,
-                        "endColumn": 181,
-                        "endOffset": 567
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 394,
-                    "endColumn": 130,
-                    "endOffset": 520
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 0,
-                        "startOffset": 568,
-                        "endColumn": 126,
-                        "endOffset": 694
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 525,
-                    "endColumn": 110,
-                    "endOffset": 631
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 0,
-                        "startOffset": 695,
-                        "endColumn": 106,
-                        "endOffset": 801
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 636,
-                    "endColumn": 203,
-                    "endOffset": 835
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 0,
-                        "startOffset": 802,
-                        "endColumn": 203,
-                        "endOffset": 1005
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 840,
-                    "endColumn": 134,
-                    "endOffset": 970
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 0,
-                        "startOffset": 1006,
-                        "endColumn": 130,
-                        "endOffset": 1136
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 975,
-                    "endColumn": 134,
-                    "endOffset": 1105
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 0,
-                        "startOffset": 1137,
-                        "endColumn": 130,
-                        "endOffset": 1267
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 1110,
-                    "endColumn": 208,
-                    "endOffset": 1314
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c550caf18f45576f48f1892ed9cd9f23e7da1595\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 0,
-                        "startOffset": 285,
-                        "endColumn": 208,
-                        "endOffset": 493
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 1319,
-                    "endColumn": 230,
-                    "endOffset": 1545
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 0,
-                        "startOffset": 1268,
-                        "endColumn": 230,
-                        "endOffset": 1498
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1550,
-                    "endColumn": 109,
-                    "endOffset": 1655
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 0,
-                        "startOffset": 1499,
-                        "endColumn": 105,
-                        "endOffset": 1604
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1660,
-                    "endColumn": 189,
-                    "endOffset": 1845
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 0,
-                        "startOffset": 1605,
-                        "endColumn": 189,
-                        "endOffset": 1794
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1850,
-                    "endColumn": 133,
-                    "endOffset": 1979
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 0,
-                        "startOffset": 1795,
-                        "endColumn": 129,
-                        "endOffset": 1924
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1984,
-                    "endColumn": 212,
-                    "endOffset": 2192
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 0,
-                        "startOffset": 1925,
-                        "endColumn": 212,
-                        "endOffset": 2137
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 2197,
-                    "endColumn": 191,
-                    "endOffset": 2384
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 0,
-                        "startOffset": 2138,
-                        "endColumn": 187,
-                        "endOffset": 2325
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 2389,
-                    "endColumn": 95,
-                    "endOffset": 2480
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 0,
-                        "startOffset": 2326,
-                        "endColumn": 91,
-                        "endOffset": 2417
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 2485,
-                    "endColumn": 90,
-                    "endOffset": 2571
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 0,
-                        "startOffset": 2418,
-                        "endColumn": 86,
-                        "endOffset": 2504
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 2576,
-                    "endColumn": 108,
-                    "endOffset": 2680
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 0,
-                        "startOffset": 2505,
-                        "endColumn": 104,
-                        "endOffset": 2609
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 105,
-                    "endColumn": 106,
-                    "endOffset": 207
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 0,
-                        "startOffset": 283,
-                        "endColumn": 102,
-                        "endOffset": 385
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 212,
-                    "endColumn": 181,
-                    "endOffset": 389
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 0,
-                        "startOffset": 386,
-                        "endColumn": 181,
-                        "endOffset": 567
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 394,
-                    "endColumn": 130,
-                    "endOffset": 520
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 0,
-                        "startOffset": 568,
-                        "endColumn": 126,
-                        "endOffset": 694
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 525,
-                    "endColumn": 110,
-                    "endOffset": 631
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 0,
-                        "startOffset": 695,
-                        "endColumn": 106,
-                        "endOffset": 801
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 636,
-                    "endColumn": 203,
-                    "endOffset": 835
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 0,
-                        "startOffset": 802,
-                        "endColumn": 203,
-                        "endOffset": 1005
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 840,
-                    "endColumn": 134,
-                    "endOffset": 970
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 0,
-                        "startOffset": 1006,
-                        "endColumn": 130,
-                        "endOffset": 1136
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 975,
-                    "endColumn": 134,
-                    "endOffset": 1105
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 0,
-                        "startOffset": 1137,
-                        "endColumn": 130,
-                        "endOffset": 1267
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 1110,
-                    "endColumn": 208,
-                    "endOffset": 1314
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 0,
-                        "startOffset": 285,
-                        "endColumn": 208,
-                        "endOffset": 493
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 1319,
-                    "endColumn": 230,
-                    "endOffset": 1545
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 0,
-                        "startOffset": 1268,
-                        "endColumn": 230,
-                        "endOffset": 1498
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1550,
-                    "endColumn": 109,
-                    "endOffset": 1655
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 0,
-                        "startOffset": 1499,
-                        "endColumn": 105,
-                        "endOffset": 1604
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1660,
-                    "endColumn": 189,
-                    "endOffset": 1845
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 0,
-                        "startOffset": 1605,
-                        "endColumn": 189,
-                        "endOffset": 1794
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1850,
-                    "endColumn": 133,
-                    "endOffset": 1979
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 0,
-                        "startOffset": 1795,
-                        "endColumn": 129,
-                        "endOffset": 1924
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1984,
-                    "endColumn": 212,
-                    "endOffset": 2192
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 0,
-                        "startOffset": 1925,
-                        "endColumn": 212,
-                        "endOffset": 2137
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 2197,
-                    "endColumn": 191,
-                    "endOffset": 2384
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 0,
-                        "startOffset": 2138,
-                        "endColumn": 187,
-                        "endOffset": 2325
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 2389,
-                    "endColumn": 95,
-                    "endOffset": 2480
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 0,
-                        "startOffset": 2326,
-                        "endColumn": 91,
-                        "endOffset": 2417
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 2485,
-                    "endColumn": 90,
-                    "endOffset": 2571
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 0,
-                        "startOffset": 2418,
-                        "endColumn": 86,
-                        "endOffset": 2504
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 2576,
-                    "endColumn": 108,
-                    "endOffset": 2680
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 0,
@@ -1968,334 +1640,6 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 105,
-                    "endColumn": 106,
-                    "endOffset": 207
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 0,
-                        "startOffset": 283,
-                        "endColumn": 102,
-                        "endOffset": 385
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 3,
-                    "startColumn": 4,
-                    "startOffset": 212,
-                    "endColumn": 181,
-                    "endOffset": 389
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 0,
-                        "startOffset": 386,
-                        "endColumn": 181,
-                        "endOffset": 567
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 4,
-                    "startColumn": 4,
-                    "startOffset": 394,
-                    "endColumn": 130,
-                    "endOffset": 520
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 6,
-                        "startColumn": 0,
-                        "startOffset": 568,
-                        "endColumn": 126,
-                        "endOffset": 694
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 5,
-                    "startColumn": 4,
-                    "startOffset": 525,
-                    "endColumn": 110,
-                    "endOffset": 631
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 0,
-                        "startOffset": 695,
-                        "endColumn": 106,
-                        "endOffset": 801
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 6,
-                    "startColumn": 4,
-                    "startOffset": 636,
-                    "endColumn": 203,
-                    "endOffset": 835
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 8,
-                        "startColumn": 0,
-                        "startOffset": 802,
-                        "endColumn": 203,
-                        "endOffset": 1005
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 840,
-                    "endColumn": 134,
-                    "endOffset": 970
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 9,
-                        "startColumn": 0,
-                        "startOffset": 1006,
-                        "endColumn": 130,
-                        "endOffset": 1136
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 975,
-                    "endColumn": 134,
-                    "endOffset": 1105
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 10,
-                        "startColumn": 0,
-                        "startOffset": 1137,
-                        "endColumn": 130,
-                        "endOffset": 1267
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 9,
-                    "startColumn": 4,
-                    "startOffset": 1110,
-                    "endColumn": 208,
-                    "endOffset": 1314
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 0,
-                        "startOffset": 285,
-                        "endColumn": 208,
-                        "endOffset": 493
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 10,
-                    "startColumn": 4,
-                    "startOffset": 1319,
-                    "endColumn": 230,
-                    "endOffset": 1545
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 11,
-                        "startColumn": 0,
-                        "startOffset": 1268,
-                        "endColumn": 230,
-                        "endOffset": 1498
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 11,
-                    "startColumn": 4,
-                    "startOffset": 1550,
-                    "endColumn": 109,
-                    "endOffset": 1655
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 12,
-                        "startColumn": 0,
-                        "startOffset": 1499,
-                        "endColumn": 105,
-                        "endOffset": 1604
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 12,
-                    "startColumn": 4,
-                    "startOffset": 1660,
-                    "endColumn": 189,
-                    "endOffset": 1845
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 13,
-                        "startColumn": 0,
-                        "startOffset": 1605,
-                        "endColumn": 189,
-                        "endOffset": 1794
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 13,
-                    "startColumn": 4,
-                    "startOffset": 1850,
-                    "endColumn": 133,
-                    "endOffset": 1979
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 14,
-                        "startColumn": 0,
-                        "startOffset": 1795,
-                        "endColumn": 129,
-                        "endOffset": 1924
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 14,
-                    "startColumn": 4,
-                    "startOffset": 1984,
-                    "endColumn": 212,
-                    "endOffset": 2192
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 15,
-                        "startColumn": 0,
-                        "startOffset": 1925,
-                        "endColumn": 212,
-                        "endOffset": 2137
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 15,
-                    "startColumn": 4,
-                    "startOffset": 2197,
-                    "endColumn": 191,
-                    "endOffset": 2384
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 0,
-                        "startOffset": 2138,
-                        "endColumn": 187,
-                        "endOffset": 2325
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 16,
-                    "startColumn": 4,
-                    "startOffset": 2389,
-                    "endColumn": 95,
-                    "endOffset": 2480
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 17,
-                        "startColumn": 0,
-                        "startOffset": 2326,
-                        "endColumn": 91,
-                        "endOffset": 2417
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 17,
-                    "startColumn": 4,
-                    "startOffset": 2485,
-                    "endColumn": 90,
-                    "endOffset": 2571
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 0,
-                        "startOffset": 2418,
-                        "endColumn": 86,
-                        "endOffset": 2504
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 18,
-                    "startColumn": 4,
-                    "startOffset": 2576,
-                    "endColumn": 108,
-                    "endOffset": 2680
-                },
-                "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
-                    "position": {
-                        "startLine": 19,
-                        "startColumn": 0,
-                        "startOffset": 2505,
-                        "endColumn": 104,
-                        "endOffset": 2609
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
         "map": [
             {
@@ -2624,7 +1968,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
         "map": [
             {
                 "to": {
@@ -2635,7 +1979,7 @@
                     "endOffset": 207
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -2654,7 +1998,7 @@
                     "endOffset": 389
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 0,
@@ -2673,7 +2017,7 @@
                     "endOffset": 520
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 0,
@@ -2692,7 +2036,7 @@
                     "endOffset": 631
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 0,
@@ -2711,7 +2055,7 @@
                     "endOffset": 835
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 0,
@@ -2730,7 +2074,7 @@
                     "endOffset": 970
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 0,
@@ -2749,7 +2093,7 @@
                     "endOffset": 1105
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 0,
@@ -2768,7 +2112,7 @@
                     "endOffset": 1314
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c550caf18f45576f48f1892ed9cd9f23e7da1595\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -2787,7 +2131,7 @@
                     "endOffset": 1545
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 0,
@@ -2806,7 +2150,7 @@
                     "endOffset": 1655
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 0,
@@ -2825,7 +2169,7 @@
                     "endOffset": 1845
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 0,
@@ -2844,7 +2188,7 @@
                     "endOffset": 1979
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 0,
@@ -2863,7 +2207,7 @@
                     "endOffset": 2192
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 0,
@@ -2882,7 +2226,7 @@
                     "endOffset": 2384
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 0,
@@ -2901,7 +2245,7 @@
                     "endOffset": 2480
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 0,
@@ -2920,7 +2264,7 @@
                     "endOffset": 2571
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 0,
@@ -2939,7 +2283,663 @@
                     "endOffset": 2680
                 },
                 "from": {
-                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 0,
+                        "startOffset": 2505,
+                        "endColumn": 104,
+                        "endOffset": 2609
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 106,
+                    "endOffset": 207
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 283,
+                        "endColumn": 102,
+                        "endOffset": 385
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 212,
+                    "endColumn": 181,
+                    "endOffset": 389
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 0,
+                        "startOffset": 386,
+                        "endColumn": 181,
+                        "endOffset": 567
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 394,
+                    "endColumn": 130,
+                    "endOffset": 520
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 0,
+                        "startOffset": 568,
+                        "endColumn": 126,
+                        "endOffset": 694
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 525,
+                    "endColumn": 110,
+                    "endOffset": 631
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 0,
+                        "startOffset": 695,
+                        "endColumn": 106,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 636,
+                    "endColumn": 203,
+                    "endOffset": 835
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 0,
+                        "startOffset": 802,
+                        "endColumn": 203,
+                        "endOffset": 1005
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 840,
+                    "endColumn": 134,
+                    "endOffset": 970
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 0,
+                        "startOffset": 1006,
+                        "endColumn": 130,
+                        "endOffset": 1136
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 975,
+                    "endColumn": 134,
+                    "endOffset": 1105
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 0,
+                        "startOffset": 1137,
+                        "endColumn": 130,
+                        "endOffset": 1267
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1110,
+                    "endColumn": 208,
+                    "endOffset": 1314
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 285,
+                        "endColumn": 208,
+                        "endOffset": 493
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1319,
+                    "endColumn": 230,
+                    "endOffset": 1545
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 0,
+                        "startOffset": 1268,
+                        "endColumn": 230,
+                        "endOffset": 1498
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1550,
+                    "endColumn": 109,
+                    "endOffset": 1655
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 0,
+                        "startOffset": 1499,
+                        "endColumn": 105,
+                        "endOffset": 1604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1660,
+                    "endColumn": 189,
+                    "endOffset": 1845
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 0,
+                        "startOffset": 1605,
+                        "endColumn": 189,
+                        "endOffset": 1794
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1850,
+                    "endColumn": 133,
+                    "endOffset": 1979
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 0,
+                        "startOffset": 1795,
+                        "endColumn": 129,
+                        "endOffset": 1924
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1984,
+                    "endColumn": 212,
+                    "endOffset": 2192
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 0,
+                        "startOffset": 1925,
+                        "endColumn": 212,
+                        "endOffset": 2137
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 2197,
+                    "endColumn": 191,
+                    "endOffset": 2384
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 0,
+                        "startOffset": 2138,
+                        "endColumn": 187,
+                        "endOffset": 2325
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 2389,
+                    "endColumn": 95,
+                    "endOffset": 2480
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 0,
+                        "startOffset": 2326,
+                        "endColumn": 91,
+                        "endOffset": 2417
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 2485,
+                    "endColumn": 90,
+                    "endOffset": 2571
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 0,
+                        "startOffset": 2418,
+                        "endColumn": 86,
+                        "endOffset": 2504
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 2576,
+                    "endColumn": 108,
+                    "endOffset": 2680
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 0,
+                        "startOffset": 2505,
+                        "endColumn": 104,
+                        "endOffset": 2609
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 105,
+                    "endColumn": 106,
+                    "endOffset": 207
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 283,
+                        "endColumn": 102,
+                        "endOffset": 385
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 212,
+                    "endColumn": 181,
+                    "endOffset": 389
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 0,
+                        "startOffset": 386,
+                        "endColumn": 181,
+                        "endOffset": 567
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 394,
+                    "endColumn": 130,
+                    "endOffset": 520
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 0,
+                        "startOffset": 568,
+                        "endColumn": 126,
+                        "endOffset": 694
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 525,
+                    "endColumn": 110,
+                    "endOffset": 631
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 0,
+                        "startOffset": 695,
+                        "endColumn": 106,
+                        "endOffset": 801
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 636,
+                    "endColumn": 203,
+                    "endOffset": 835
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 0,
+                        "startOffset": 802,
+                        "endColumn": 203,
+                        "endOffset": 1005
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 840,
+                    "endColumn": 134,
+                    "endOffset": 970
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 0,
+                        "startOffset": 1006,
+                        "endColumn": 130,
+                        "endOffset": 1136
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 975,
+                    "endColumn": 134,
+                    "endOffset": 1105
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 0,
+                        "startOffset": 1137,
+                        "endColumn": 130,
+                        "endOffset": 1267
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 1110,
+                    "endColumn": 208,
+                    "endOffset": 1314
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 285,
+                        "endColumn": 208,
+                        "endOffset": 493
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 1319,
+                    "endColumn": 230,
+                    "endOffset": 1545
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 0,
+                        "startOffset": 1268,
+                        "endColumn": 230,
+                        "endOffset": 1498
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 1550,
+                    "endColumn": 109,
+                    "endOffset": 1655
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 0,
+                        "startOffset": 1499,
+                        "endColumn": 105,
+                        "endOffset": 1604
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1660,
+                    "endColumn": 189,
+                    "endOffset": 1845
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 0,
+                        "startOffset": 1605,
+                        "endColumn": 189,
+                        "endOffset": 1794
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1850,
+                    "endColumn": 133,
+                    "endOffset": 1979
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 0,
+                        "startOffset": 1795,
+                        "endColumn": 129,
+                        "endOffset": 1924
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1984,
+                    "endColumn": 212,
+                    "endOffset": 2192
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 0,
+                        "startOffset": 1925,
+                        "endColumn": 212,
+                        "endOffset": 2137
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 2197,
+                    "endColumn": 191,
+                    "endOffset": 2384
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 0,
+                        "startOffset": 2138,
+                        "endColumn": 187,
+                        "endOffset": 2325
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 2389,
+                    "endColumn": 95,
+                    "endOffset": 2480
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 0,
+                        "startOffset": 2326,
+                        "endColumn": 91,
+                        "endOffset": 2417
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 2485,
+                    "endColumn": 90,
+                    "endOffset": 2571
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 0,
+                        "startOffset": 2418,
+                        "endColumn": 86,
+                        "endOffset": 2504
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 2576,
+                    "endColumn": 108,
+                    "endOffset": 2680
+                },
+                "from": {
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 0,
@@ -3280,7 +3280,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+        "outputFile": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
         "map": [
             {
                 "to": {
@@ -3291,7 +3291,7 @@
                     "endOffset": 207
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -3310,7 +3310,7 @@
                     "endOffset": 389
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 0,
@@ -3329,7 +3329,7 @@
                     "endOffset": 520
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 0,
@@ -3348,7 +3348,7 @@
                     "endOffset": 631
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 0,
@@ -3367,7 +3367,7 @@
                     "endOffset": 835
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 0,
@@ -3386,7 +3386,7 @@
                     "endOffset": 970
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 0,
@@ -3405,7 +3405,7 @@
                     "endOffset": 1105
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 0,
@@ -3424,7 +3424,7 @@
                     "endOffset": 1314
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c550caf18f45576f48f1892ed9cd9f23e7da1595\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -3443,7 +3443,7 @@
                     "endOffset": 1545
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 0,
@@ -3462,7 +3462,7 @@
                     "endOffset": 1655
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 0,
@@ -3481,7 +3481,7 @@
                     "endOffset": 1845
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 0,
@@ -3500,7 +3500,7 @@
                     "endOffset": 1979
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 0,
@@ -3519,7 +3519,7 @@
                     "endOffset": 2192
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 0,
@@ -3538,7 +3538,7 @@
                     "endOffset": 2384
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 0,
@@ -3557,7 +3557,7 @@
                     "endOffset": 2480
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 0,
@@ -3576,7 +3576,7 @@
                     "endOffset": 2571
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 0,
@@ -3595,7 +3595,7 @@
                     "endOffset": 2680
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 0,
@@ -3608,7 +3608,7 @@
         ]
     },
     {
-        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
+        "outputFile": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-uz\\values-uz.xml",
         "map": [
             {
                 "to": {
@@ -3619,7 +3619,7 @@
                     "endOffset": 207
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -3638,7 +3638,7 @@
                     "endOffset": 389
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 0,
@@ -3657,7 +3657,7 @@
                     "endOffset": 520
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 0,
@@ -3676,7 +3676,7 @@
                     "endOffset": 631
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 0,
@@ -3695,7 +3695,7 @@
                     "endOffset": 835
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 0,
@@ -3714,7 +3714,7 @@
                     "endOffset": 970
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 0,
@@ -3733,7 +3733,7 @@
                     "endOffset": 1105
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 0,
@@ -3752,7 +3752,7 @@
                     "endOffset": 1314
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\5a8eb99b57a0d6e5a372b8f6b060f555447bb3ec\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c550caf18f45576f48f1892ed9cd9f23e7da1595\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -3771,7 +3771,7 @@
                     "endOffset": 1545
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 0,
@@ -3790,7 +3790,7 @@
                     "endOffset": 1655
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 0,
@@ -3809,7 +3809,7 @@
                     "endOffset": 1845
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 0,
@@ -3828,7 +3828,7 @@
                     "endOffset": 1979
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 0,
@@ -3847,7 +3847,7 @@
                     "endOffset": 2192
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 0,
@@ -3866,7 +3866,7 @@
                     "endOffset": 2384
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 0,
@@ -3885,7 +3885,7 @@
                     "endOffset": 2480
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 0,
@@ -3904,7 +3904,7 @@
                     "endOffset": 2571
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 0,
@@ -3923,7 +3923,7 @@
                     "endOffset": 2680
                 },
                 "from": {
-                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\values-uz\\values.xml",
+                    "file": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\values-uz\\values.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 0,

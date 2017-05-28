@@ -254,6 +254,8 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                     _date = _sdf.format(_cal.getTime());
                     _EtnDate.setText(_date.toString());
                     getValues(_date.toString(),idusuario);
+                    m10h.set_list(contexto);
+
 
 
 
@@ -278,12 +280,14 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onClick(View v) {
                 try {
+
                     _date =  _EtnDate.getText().toString();
                     _cal.setTime(_sdf.parse(_date));
                     _cal.add(Calendar.DATE,-1);
                     _date = _sdf.format(_cal.getTime());
                     _EtnDate.setText(_date.toString());
                     getValues(_date.toString(),idusuario);
+                    m10h.set_list(contexto);
 
                 } catch (ParseException e) {
                     e.printStackTrace();
@@ -382,6 +386,8 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                             water = gson.fromJson(response,Water.class);
                             _EtnDate.setText(water.get_time());
                             m10w.setCant(water.get_cantidad().toString());
+                            Thread.sleep(10);
+                            m10h.set_list(contexto);
 
                         }
                         catch (Exception e){
@@ -397,6 +403,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
 // Add the request to the RequestQueue.
         try {
             queue.add(stringRequest);
+
         }
         catch (Exception e)
         {};
@@ -430,6 +437,23 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
+    public void blockbtn()
+    {
+        _btnLess.setEnabled(false);
+        _btnAdd.setEnabled(false);
+        m10w._EtnWater.setEnabled(false);
+        m10w._btnAddWater.setEnabled(false);
+        m10w._btnLessWater.setEnabled(false);
+    }
+
+    public void unlock()
+    {
+        _btnLess.setEnabled(true);
+        _btnAdd.setEnabled(true);
+        m10w._EtnWater.setEnabled(true);
+        m10w._btnAddWater.setEnabled(true);
+        m10w._btnLessWater.setEnabled(true);
+    }
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
