@@ -23,7 +23,7 @@ public class M05_ServicesActivity {
 
 
 
-    @POST
+    @GET
 
     @Path("/insertActivity")
 
@@ -68,7 +68,7 @@ public class M05_ServicesActivity {
     }
 
 
-    @POST
+    @GET
 
     @Path("/insertActivityT")
 
@@ -136,13 +136,14 @@ public class M05_ServicesActivity {
 
         Activity resultado = new Activity();
 
-        //Array creado para almacenar las actividades realizadas
-        ArrayList<Activity> listaActividades = new ArrayList<>();
+        
 
         try{
             Connection conn = conectarADb();
             Statement   st  = conn.createStatement();
             ResultSet   rs  =  st.executeQuery(query);
+            //Array creado para almacenar las actividades realizadas
+            ArrayList<Activity> listaActividades = new ArrayList<Activity>();
 
             while(rs.next()){
 				resultado.setId      (rs.getInt(   "id"));
@@ -187,12 +188,14 @@ public class M05_ServicesActivity {
         String query = "select * from M05_obtenercaloriasactividades ('"+fmayor+"', '"+fmenor+"' ,'"+id+"')";
 
         Activity resultado = new Activity();
-        ArrayList<Activity> listaActividades = new ArrayList<>();
+        
 
         try{
             Connection conn=conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
+            //Array creado para almacenar las actividades realizadas
+            ArrayList<Activity> listaActividades = new ArrayList<Activity>();
 
             while(rs.next()){
                 resultado.setDate (rs.getString("dia"));
@@ -229,12 +232,14 @@ public class M05_ServicesActivity {
         String query = "select * from M05_obtenerkmactividades ('"+fmayor+"', '"+fmenor+"' ,'"+id+"')";
 
         Activity resultado = new Activity();
-        ArrayList<Activity> listaActividades = new ArrayList<>();
+
 
         try{
             Connection conn=conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
+            //Array creado para almacenar las actividades realizadas
+            ArrayList<Activity> listaActividades = new ArrayList<Activity>();
 
             while(rs.next()){
                 resultado.setDate(rs.getString("dia"));
@@ -251,7 +256,7 @@ public class M05_ServicesActivity {
         }
     }
 
-    @PUT
+    @GET
 
     @Path("/updateKm")
 
@@ -289,7 +294,7 @@ public class M05_ServicesActivity {
 
     }
 
-    @PUT
+    @GET
 
     @Path("/updateCalor")
 
@@ -329,7 +334,7 @@ public class M05_ServicesActivity {
 
     }
 
-    @DELETE
+    @GET
 
     @Path("/deleteActivity")
 
