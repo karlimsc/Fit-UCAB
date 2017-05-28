@@ -5,6 +5,8 @@ import Domain.User;
 import Domain.Registry;
 import com.google.gson.Gson;
 import org.postgresql.util.PSQLState;
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
 
 //imports para poder hacer el recuperar password
 import javax.mail.MessagingException;
@@ -21,6 +23,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
 import java.util.Properties;
+//imports para hacer el encrypt y decrypt
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+
 
 /**
  * Clase de Servicios Web del Modulo 01
@@ -31,12 +37,44 @@ public class M01_ServicesUser {
     private Connection conn = bdConnect();
     private int RESULT_CODE_OK=200;
     private int RESULT_CODE_FAIL=500;
+    private static String DEFAULT_ENCODING1="UTF-8";
     Gson gson = new Gson();
 
     public M01_ServicesUser() {
 
     }
 
+    /**
+     * Funcion encargada de realizar la encriptación de un password
+     * @param password El password a ser encriptado
+     * @return String encriptado con BASE64
+     */
+    private static String encryptPassword(@QueryParam("password") String password) {
+        //Instanciamos un encriptador BASE64
+        BASE64Encoder enc = new BASE64Encoder();
+        try {
+            //Utilizando la codificacion por defecto (UTF-8) encriptamos el string
+            return enc.encode(password.getBytes(DEFAULT_ENCODING1));
+        } catch (UnsupportedEncodingException e) {
+            return null;
+        }
+    }
+
+    /**
+     * Funcion encargada de realizar la desencriptacion de un password
+     * @param password El password a desencriptar
+     * @return String con el contenido original antes de ser encriptado
+     */
+    private static String decryptPassword(String password) {
+        //Instanciamos un decodificador de BASE64
+        BASE64Decoder dec = new BASE64Decoder();
+        try {
+            //Realizamos la decodificacion mediante el proceso inverso de la encriptacion
+            return new String(dec.decodeBuffer(password), DEFAULT_ENCODING1);
+        } catch (IOException e) {
+            return null;
+        }
+    }
 
     @GET
     @Path("/informationUser")
@@ -93,6 +131,8 @@ public class M01_ServicesUser {
                              @QueryParam("weight") String weight,
                              @QueryParam("height") String height) {
 
+
+        password=encryptPassword(password);
         String insertUserQuery = " SELECT * FROM M01_REGISTRAR('" + username + "','" + password + "','" + email + "','" + sex + "'" +
                 ",'" + phone + "','" + birthdate + "','" + weight + "','" + height + "')";
 
@@ -128,7 +168,6 @@ public class M01_ServicesUser {
      * @param userparam
      * @return
      */
-
     @GET
     @Path("/deteleUser")
     @Produces("application/json")
@@ -156,7 +195,8 @@ public class M01_ServicesUser {
         }
     }
 
-    /***
+
+    /**
      * Metodo que realiza cambios en el usuario
      * @param userparam
      * @param password
@@ -193,21 +233,60 @@ public class M01_ServicesUser {
         }
     }
 
+<<<<<<< HEAD
+=======
+
+    /***
+     * Metodo que con el email recuperas tu usuario y contraseña
+     * @param email
+     * @return
+     */
+    @GET
+    @Path("/userView")
+    @Produces("application/json")
+    public String userOnly(@QueryParam("email") String email)
+    {
+        String insertUserQuery ="SELECT M01_RECUPERARPWD('" + email + "')";
+        try {
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(insertUserQuery);
+            User user = null;
+            while(rs.next()){
+
+                String username1 = rs.getString("usuario");
+                String password =rs.getString("pwd");
+                int id =rs.getInt("id");
+
+                user= new User(id,username1,password);
+
+            }
+            return gson.toJson(user);
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+
+    }
+
+>>>>>>> abdf9049455ff806f986f99ac5800920b4012c17
 
     /**
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
-     * @param userparam
-     * @param passwordparam
+     * @param username
+     * @param password
      * @return el usuario con los datos que trae la consulta
      */
     @GET
     @Path("/login_user")
     @Produces("application/json")
-    public String getUser(@QueryParam("username") String userparam,@QueryParam("password") String passwordparam)
+    public String getUser(@QueryParam("username") String username, @QueryParam("password") String password)
     {
 
-        String query="SELECT * FROM M01_INICIARSESION('"+userparam+"','"+passwordparam+"')";
+        password= encryptPassword(password);
 
+
+        String query="SELECT * FROM M01_INICIARSESION('"+username+"','"+password+"')";
 
         try{
 
@@ -251,7 +330,7 @@ public class M01_ServicesUser {
     @Produces("application/json")
     public String testEmail(@QueryParam("email") String email) {
 
-        String query = "SELECT M01_RECUPERARPWD('" + email + "')";
+        String query = "SELECT * FROM M01_RECUPERARPWD('" + email + "')";
 
 
         try {
@@ -276,21 +355,18 @@ public class M01_ServicesUser {
             ResultSet rs = st.executeQuery(query);
             User user = null;
             Boolean validaEmail = false;
-            String result = "";
+            String usernameResult="";
+            String passwordResult="";
 
             while (rs.next()) {
                 validaEmail = true;
-                //la reasignacion es mas eficiente
-                result = rs.getString(1).replace("(","");
-
+                usernameResult=rs.getString("usuario");
+                passwordResult=rs.getString("password");
             }
 
             if(validaEmail==true) {
-                result = result.replace(")", "");
-                String[] arrayResult = result.split(",");
-                String usuario = arrayResult[0];
-                String pwd = arrayResult[1];
-                System.out.println(arrayResult[0]);
+
+                passwordResult=decryptPassword(passwordResult);
 
                 //Se crea la sesion para autenticar
                 Session session = Session.getInstance(props,
@@ -311,8 +387,8 @@ public class M01_ServicesUser {
                 message.setSubject("Recuperar contraseña FitUCAB");
                 //El contenido del correo
                 message.setText(" Hola FitUcabista! /n" +
-                                " tu usuario es:" + usuario +
-                                "/n y tu clave:" + pwd + "/n" +
+                                " tu usuario es:" + usernameResult +
+                                "/n y tu clave:" + passwordResult+ "/n" +
                                 " Ahora puedes seguir entrenando");
                 //Enviamos
                 Transport.send(message);
