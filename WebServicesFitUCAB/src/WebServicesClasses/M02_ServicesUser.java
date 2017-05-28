@@ -55,19 +55,14 @@ public class M02_ServicesUser {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response updateUser( @PathParam("userId") int id, User user ){
         user.setId(id);
-        /*
-        * TODO implementar updateUser en la BD
-        * Actualizar usuario con esa id
-        * Entrada User
-        * Actualizar usuario
-        * Salida True o False
-        * */
-        if ( user == null ){ // TODO Cambiar condicion
+        _service = new Query();
+        if ( _service.updateUser( user ) == false ){ // TODO Cambiar condicion
             _message = new StatusMessage( 0, "Usuario no actualizado" );
             _response = Response.status( Response.Status.NOT_MODIFIED ).entity( _message ).build();
             throw new WebApplicationException(_response);
         }
-        _response = Response.status( Response.Status.ACCEPTED ).entity( user ).build();
+        _message = new StatusMessage( 1, "Usuario actualizado" );
+        _response = Response.status( Response.Status.ACCEPTED ).entity( _message ).build();
         return _response;
     }
 

@@ -52,7 +52,7 @@ public class Sql {
     }
 
     /**
-     * Metodo que realiza un query a la base de datos
+     * Metodo que realiza un query a la base de datos con devolucion
      * Realizar preferiblemente antes de bdConnect
      * @param query
      * @return Tabla que representa la consulta del query
