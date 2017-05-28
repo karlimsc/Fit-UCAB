@@ -82,7 +82,7 @@ public class M01_ServicesUser {
      * @param username
      * @return
      */
-    @GET
+    /*@GET
     @Path("/userView")
     @Produces("application/json")
     public String userView(@QueryParam("username") String username)
@@ -111,7 +111,7 @@ public class M01_ServicesUser {
         return e.getMessage();
     }
 
-    }
+    }*/
 
     @GET
     @Path("/userView")
