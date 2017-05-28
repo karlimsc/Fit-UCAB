@@ -54,17 +54,80 @@ public class M06_ServicesTraining {
     @Path("/createPersonalizedTraining")
     @Produces ("application/json")
     
-    public String createPersonalizedTraining (@QueryParam("trainingName") String name,
-                                              @QueryParam("trainingPeriod") int period,
-                                              @QueryParam("trainingCalories") int calories) {
 
-            return null;
+    /**
+    * Metodo utilizado a traves de web service para agregar un ejercicio personalizado  a la base de datos con los parametros
+    * @param trainingName
+    * @param trainingPeriod 
+    * @param trainingCalories
+    * @param typeComplexity
+    * @param timeVar
+    * @param sportId
+    * @return
+    */
 
+    public String createPersonalizedTraining (@QueryParam("trainingName") String name, @QueryParam("trainingPeriod") int period,
+                                              @QueryParam("trainingCalories") int calories, @QueryParam("typeComplexity") String complexity,
+                                              @QueryParam("timeVar") int time,@QueryParam("fk_sportId") int sportId) {
+        String query = "INSERT INTO TRAINING (NAME, PERIOD, CALORIES) VALUES (" +name+ "," +period+ "," +calories+")";
+        String query2 = "INSERT INTO SPOR_TRAINING VALUES( nextval('SPOR_TRAININGID') ," +complexity+ "," +time+ ", NULL ," +sportId+ ", nextval('trainingid')-1 );"
+        try {
+            Connection conn = connectDb();
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+            return gson.toJson(true);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
     }
+
+    @GET
+    @Path("/updatePersonalizedTraining")
+    @Produces("application/json")
+
+    /**
+    * Metodo utilizado a traves de webservice para cambiar los parametros de un entrenamiento existente en la base de datos
+    * @param idTraining
+    * @param trainingName
+    * @param traningPeriod
+    * @param trainingCalories
+    * @param typeComplexity
+    * @param timeVar
+    * @param distance
+    * @param sportId    
+    * @return
+    */
+
+    public String updatePersonalizedTraining (@QueryParam("idTraining") int id, @QueryParam("trainingName") String name, 
+                                              @QueryParam("trainingPeriod") int period, @QueryParam("trainingCalories") int calories,
+                                              @QueryParam("typeComplexity") String complexity, @QueryParam("timeVar") int time, @QueryParam("distance") int distance
+                                              @QueryParam("sportId") int sportId) {
+        String query = "UPDATE TRAINING SET TRAININGNAME=" +name+ ", TRAININGPERIOD=" +period+ ", TRAININGCALORIES=" +calories+ "WHERE TRAININGID=" +id;
+        String query2 = "UPDATE SPOR_TRAINING SET TYPECOMPLEXITY=" +complexity+", TIMETRAINING=" +period+ ", DISTANCE=" +calories+ "WHERE FK_SPORTID=" +sportId+ "AND FK_TRAININGID=" +id;
+        try {
+            Connection conn = connectDb();
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+            return gson.toJson(true);
+        } catch (Exception e) {
+            return e.getMessage();
+        }
+    }
+
+
 
     @GET
     @Path("/updateTraining")
     @Produces("application/json")
+
+    /**
+    * Metodo utilizado a traves de webservice para cambiar los parametros de un entrenamiento existente en la base de datos
+    * @param idTraining
+    * @param trainingName
+    * @param traningPeriod
+    * @param trainingCalories
+    * @return
+    */
 
     public String updateTraining (@QueryParam("idTraining") int id,
                                   @QueryParam("trainingName") String name,
