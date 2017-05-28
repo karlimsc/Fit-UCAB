@@ -26,51 +26,51 @@ public class Food implements Serializable{
         this._foodDinner = foodDinner;
     }
 
-    public int getId() {
+    public int get_Id() {
         return _id;
     }
 
-    public void setId(int id) {
+    public void set_Id(int id) {
         this._id = id;
     }
 
-    public String getFoodName() {
+    public String get_FoodName() {
         return _foodName;
     }
 
-    public void setFoodName(String foodName) {
+    public void set_FoodName(String foodName) {
         this._foodName = foodName;
     }
 
-    public String getFoodWeight() {
+    public String get_FoodWeight() {
         return _foodWeight;
     }
 
-    public void setFoodWeight(String foodWeight) {
+    public void set_FoodWeight(String foodWeight) {
         this._foodWeight = foodWeight;
     }
 
-    public String getFoodCalorie() {
+    public String get_FoodCalorie() {
         return _foodCalorie;
     }
 
-    public void setFoodCalorie(String foodCalorie) {
+    public void set_FoodCalorie(String foodCalorie) {
         this._foodCalorie = foodCalorie;
     }
 
-    public Boolean getFoodPersonalized() {
+    public Boolean get_FoodPersonalized() {
         return _foodPersonalized;
     }
 
-    public void setFoodPersonalized(Boolean foodPersonalized) {
+    public void set_FoodPersonalized(Boolean foodPersonalized) {
         this._foodPersonalized = foodPersonalized;
     }
 
-    public Boolean getFoodDinner() {
+    public Boolean get_FoodDinner() {
         return _foodDinner;
     }
 
-    public void setFoodDinner(Boolean foodDinner) {
+    public void set_FoodDinner(Boolean foodDinner) {
         this._foodDinner = foodDinner;
     }
 }

@@ -17,21 +17,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:id="@+id/tv_m11_nombreAlimento" />
+        android:id="@+id/tv_m11_nombreAlimento5" />
 
     <EditText
         android:hint = "Peso"
         android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_m11_peso" />
+        android:id="@+id/tv_m11_peso5" />
 
     <EditText
         android:hint = "Calorias"
         android:inputType="number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_m11_calorias" />
+        android:id="@+id/tv_m11_calorias5" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sugerencia de Cena"
+        android:id="@+id/chbx_m11_cena"/>
 
     </LinearLayout>
 

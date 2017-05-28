@@ -25,6 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Diet;
 import com.fitucab.ds1617b.fitucab.Model.Food;
@@ -109,7 +110,7 @@ public class M11DietFragment extends Fragment {
         java.util.Date utilDate = new java.util.Date(); //fecha actual
         long lnMilisegundos = utilDate.getTime();
         java.sql.Date _fecha_actual = new java.sql.Date(lnMilisegundos);
-        PeticionCaloriasHoy("Jesus", String.valueOf(_fecha_actual));
+        PeticionCaloriasHoy("PEDRO", String.valueOf(_fecha_actual));
 
         return _view;
     }
@@ -210,9 +211,10 @@ public class M11DietFragment extends Fragment {
 
     public void PeticionCaloriasHoy(String usuario, String _fecha_actual) {
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-        String jsonURL = "http://192.168.71.19:8080/WebServicesFitUCAB_war_exploded/M11_Diet" +
-                "/getCalorieByDate?date=" + _fecha_actual + "&username=" + usuario;
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL,
+        IpStringConnection jsonURL = new IpStringConnection();
+        jsonURL.set_ip( jsonURL.get_ip() + "M11_Diet/getCalorieByDate?date="
+                + _fecha_actual + "&username=" + usuario );
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.get_ip(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -242,10 +244,15 @@ public class M11DietFragment extends Fragment {
 
 
     public void PeticionEliminarAlimento(String usuario, String _momento) {
-        RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-        String jsonURL = "http://201.210.245.191:8080/WebServicesFitUCAB_war_exploded/M11_Diet" +
-                "/eliminar_alimento_dieta?momento=" + _momento + "&username=" + usuario;
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL,
+        RequestQueue requestQueue = Volley.newRequestQueue( _view.getContext() );
+        //No se que hacer, tanto este como el metodo de abajo, tienen el mismo llamado.
+        //REVISAR.
+        IpStringConnection jsonURL = new IpStringConnection();
+        jsonURL.set_ip( jsonURL.get_ip() + "M11_Diet/deleteDiet?moment="
+                + _momento + "&username=" + usuario );
+        //String jsonURL = "http://201.210.245.191:8080/WebServicesFitUCAB_war_exploded/M11_Diet" +
+                //"/eliminar_alimento_dieta?momento=" + _momento + "&username=" + usuario;
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, jsonURL.get_ip(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -268,6 +275,7 @@ public class M11DietFragment extends Fragment {
 
     public void PeticionDietaMomento(String usuario, Date _fecha_actual, String _momento) {
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
+        //Leer comentario en el metodo de arriba "PeticionEliminarAlimento" con respecto a la peticion
         String jsonURL = "http://201.210.245.191:8080/WebServicesFitUCAB_war_exploded/M11_Diet" +
                 "/eliminar_alimento_dieta?momento=" + _momento + "&fecha=" + _fecha_actual + "&username" + usuario;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL,
