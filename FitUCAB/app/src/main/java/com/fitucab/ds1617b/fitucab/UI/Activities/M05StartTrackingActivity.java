@@ -1,6 +1,7 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.location.Location;
 import android.os.SystemClock;
 import android.support.annotation.NonNull;
@@ -81,7 +82,10 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     private float distance = 0;
     private double velocidad = 0;
 
-    IpStringConnection baseIp = new IpStringConnection();;
+    IpStringConnection baseIp = new IpStringConnection();
+
+    Bundle mExtras;
+    Intent mIntent;
 
 
     public M05StartTrackingActivity(Sport sport, User user){
@@ -97,6 +101,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m05_start_tracking);
+
+        mIntent = getIntent();
 
         initArguments();
 
@@ -304,6 +310,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
         M05_button_pause.setOnClickListener(pause);
         M05_button_resume.setOnClickListener(resume);
+        M05_button_end.setOnLongClickListener(end);
 
         //Desde donde inicia el cronómetro.
         M05_textview_time.setBase(SystemClock.elapsedRealtime());
@@ -319,6 +326,9 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         velocidadPromedio = new ArrayList<>();
         activity = new Activit();
         activity.set_date(getCurrentTime().toString());
+        mExtras = mIntent.getExtras();
+        sport = (Sport) mExtras.get("sport");
+        user = (User) mExtras.get("user");
     }
 
     /**
@@ -355,10 +365,12 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             activity.set_date(getCurrentTime().toString());
             activity.set_km(distance);
             activity.set_calor(calculateCalories(mets,weight));
+            activity.set_name(sport.getName());
+
             return "Objeto Creado";
         }
         catch (Exception e){
-            return e.toString();
+            return "NO CREÓ EL ACTIVITY" + e.toString();
         }
     }
 
@@ -370,13 +382,15 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
 
     public void insertActivityRequest(final Activit activity){
-        VolleySingleton.getInstance(this);
+        Log.i("TRACE", "INERT ACTIVITY REQUEST");
 
         //  M05UrlConsul m05IP = new M05UrlConsul();
 
         final String URL = baseIp.getIp() + "/insertActivity";
 
         Gson gson = new Gson();
+
+
         String json = gson.toJson(activity);
 
 
@@ -392,7 +406,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             new Response.ErrorListener() {
                 @Override
                  public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(M05StartTrackingActivity.this,error.toString(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(M05StartTrackingActivity.this,"NO INSERTÓ" + error.toString(),Toast.LENGTH_LONG).show();
                  }
              }){
             @Override

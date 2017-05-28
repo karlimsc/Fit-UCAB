@@ -51,7 +51,7 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
     private Button _startTracking;
     private ListView _sportsListView;
     private ArrayList<String> mSportsbyUser = new ArrayList<>();
-    private String mSportName;
+    private String _mSportName;
 
 
     //Constructor
@@ -83,6 +83,7 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
 
     View.OnClickListener startTracking = new View.OnClickListener(){
         public void onClick(View v) {
+
             Intent intent = new Intent(getContext(), M05StartTrackingActivity.class);
             intent.putExtra("user", mUser);
             intent.putExtra("sport", mSport);
@@ -110,10 +111,17 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
-    public void requestSportbyName() {
-        final String URL = baseIp.getIp() + "M05_ServicesSport/getMetSport?nameSpo=CAMINAR";
+    public User activityTestUser(){
+        User mUser = new User();
+        mUser.set_idUser(1);
+        mUser.set_weight((float) 63.7);
+        return mUser;
+    }
 
-        VolleySingleton.getInstance(this.getContext());
+    public void requestSportbyName(final String sportName) {
+        final String URL = baseIp.getIp() + "M05_ServicesSport/getMetSport?nameSpo=" + sportName;
+        Log.i("SPORTNAME",_mSportName);
+
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
@@ -121,6 +129,7 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
                     public void onResponse(String response) {
                         Gson gson = new Gson();
                         mSport = gson.fromJson(response,Sport.class);
+                        mSport.setName(sportName);
 
                         Log.i("Nombre", response.toString());
                         Log.i("ID", String.valueOf(mSport.getId()));
@@ -137,52 +146,14 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
         VolleySingleton.getInstance(this.getContext()).addToRequestQueue(stringRequest);
     }
 
-    public User activityTestUser(){
-        User mUser = new User();
-        mUser.set_idUser(1);
-        mUser.set_weight((float) 63.7);
-        return mUser;
-    }
 
-    public void requestSportsbyId(int id) {
-        Log.i("USERID", String.valueOf(mUser.get_idUser()));
 
-        String URL = baseIp.getIp() + "M05_ServicesSport/getSportsUser?idPer="+String.valueOf(mUser.get_idUser());
-
-        URL = "http://10.0.2.2:8888/Prueba_war_exploded/M05_ServicesSport/getSport?idSpo=1";
-        Log.i("URL",URL);
-
-        //VolleySingleton.getInstance(getContext());
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.i("ONRESPONSE", response.toString());
-                        Gson gson = new Gson();
-                        mSportsbyUser = gson.fromJson(response,new TypeToken<ArrayList<String>>(){}.getType());
-
-                        Log.i("RESPUESTA", response.toString());
-                        Log.i("ID", mSportsbyUser.toString());
-                        //Log.i("NOM", String.valueOf(mSports.get(0).getName()));
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.i("RESPUESTA", "HAY ERROR");
-                        // Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
-                    }
-                });
-// Access the RequestQueue through your singleton class.
-        VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
-    }
 
     public void inflateFragment(){
         _startTracking = (Button) _view.findViewById(R.id.bt_m05_startTracking);
         _sportsListView = (ListView) _view.findViewById( R.id.lv_m05_SportsListView );
         fillSportsListView();
+        _startTracking.setOnClickListener(startTracking);
     }
 
     public void initArguments(){
@@ -224,9 +195,12 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
         _sportsListView.setOnItemClickListener( this );
     }
 
+
+
+
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-         mSportName = parent.getItemAtPosition(position).toString();
-
+         _mSportName = parent.getItemAtPosition(position).toString();
+        requestSportbyName(_mSportName);
     }
 }
