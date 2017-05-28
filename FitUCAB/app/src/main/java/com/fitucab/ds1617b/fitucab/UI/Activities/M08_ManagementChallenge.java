@@ -1,8 +1,12 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,12 +16,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.R;
 
+import static android.R.id.list;
+
+
+/**
+ * clase principal de la aplicacion
+ */
 public class M08_ManagementChallenge extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    /**
+     * método que se llama cuando se crea la actividad
+     * @param savedInstanceState se usa para inicializar la creación de la interfaz de usuario.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,16 +44,7 @@ public class M08_ManagementChallenge extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        */
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -44,7 +54,46 @@ public class M08_ManagementChallenge extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        String[] items = {"correr 100 km", "trotar 10 km","caminar 5 km"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1, items);
+        final ListView list = (ListView)findViewById(R.id.listViewRetos);
+        list.setAdapter(adapter);
+
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // La posición donde se hace clic en el elemento de lista se obtiene de la
+                // la posición de parámetro de la vista de lista de Android
+                int posicion = position;
+
+                //obtengo el valor del string del elemento donde se hizo clic
+                String itemValue = (String) list.getItemAtPosition(position);
+
+                //Con el fin de empezar a mostrar una nueva actividad lo que necesitamos es una intención
+                Intent intent = new Intent(M08_ManagementChallenge.this,M08InformationChallenge.class);
+
+                // Aquí pasaremos el parámetro de la intención creada previamente
+                startActivity(intent);
+            }//cierre del onItemClickListener
+        });//cierre del setOnItemClickListener
+
+
+    }//cierre del metodo onCreate
+
+    private void mostrarListView() {
+
+
     }
+
+
+
+
+
+
+
 
     @Override
     public void onBackPressed() {
@@ -55,6 +104,14 @@ public class M08_ManagementChallenge extends AppCompatActivity
             super.onBackPressed();
         }
     }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_challenge, menu); //muestra el menu seleccionado
+    }//cierre del metodo onCreateContextMenu
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

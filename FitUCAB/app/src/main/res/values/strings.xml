@@ -71,6 +71,14 @@
     <string name="eliminarReto">eliminar</string>
     <string name="action_settings_m08">Settings</string>
 
+    --information_challenge--
+    <string name="textViewDescripcionReto">Descripcion:</string>
+    <string name="textViewRetoActivo">Activo:</string>
+    <string name="textViewTipoReto">Tipo:</string>
+    <string name="textViewKm">Km:</string>
+    <string name="textViewDiasReto">Días:</string>
+    <string name="buttonEmpezarAhora">Empezar Ahora</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Home</string>

@@ -47,10 +47,14 @@ public class M08_ServicesChallenge {
 
     {//abre el metodo insertChallenge
 
+        /*
         String insertChallengeQuery = "INSERT INTO CHALLENGE (CHALLENGENAME, CHALLENGEDESCRIPTION,CHALLENGESCORE, " +
                 "CHALLENGEPREDEFINED)" +
                 "VALUES ( '" + challengeName + "','" + challengeDescription + "','" + 0 + "','n')";
-
+        */
+        String insertChallengeQuery = "INSERT INTO CHALLENGE (CHALLENGENAME, CHALLENGEDESCRIPTION,CHALLENGESCORE, " +
+                "CHALLENGEPREDEFINED)" +
+                "VALUES ( 'noe','reto 1',12,'n')";
         try {
 
             Statement st = conn.createStatement();
