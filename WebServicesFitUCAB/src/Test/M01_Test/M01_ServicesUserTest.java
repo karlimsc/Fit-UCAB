@@ -1,4 +1,5 @@
 
+import Domain.Sql;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
@@ -16,31 +17,8 @@ import static org.junit.Assert.*;
 public class M01_ServicesUserTest {
 
 
-
-    public Connection bdConnect()
-    {
-        Connection conn = null;
-        try
-        {
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/fitucab";
-            conn = DriverManager.getConnection(url,"postgres", "123456");
-        }
-        catch (ClassNotFoundException e)
-        {
-            e.printStackTrace();
-            System.exit(1);
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-            System.exit(2);
-        }
-        return conn;
-    }
-
-    private Connection conn =bdConnect();
-
+    Sql Connn = new Sql();
+    ResultSet rs;
 
     @Before
     public void setUp() throws Exception {
@@ -51,8 +29,8 @@ public class M01_ServicesUserTest {
 
         try {
 
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(insertUserQuery);
+
+            rs =Connn.sql(insertUserQuery);
         }
         catch (Exception e){}
 
@@ -66,9 +44,9 @@ public class M01_ServicesUserTest {
 
         try {
 
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            ResultSet rs2 = st.executeQuery(query1);
+
+            ResultSet rs =Connn.sql(query);
+            ResultSet rs2 = Connn.sql(query1);
         }
         catch (Exception e){}
     }

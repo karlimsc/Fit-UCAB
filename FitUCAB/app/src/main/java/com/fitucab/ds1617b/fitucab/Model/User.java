@@ -121,6 +121,7 @@ public class User {
         return _idUser;
     }
 
+
     public void set_idUser(int _idUser) {
         this._idUser = _idUser;
     }
