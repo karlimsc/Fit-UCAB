@@ -37,6 +37,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
+
 public class M10WaterGlassActivity extends AppCompatActivity implements View.OnClickListener {
 
     /**
@@ -60,9 +61,9 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     private Calendar _cal ;
     private String _date;
     Water water ;
-    private static boolean banderag;
-    private static boolean banderah;
-
+    int idusuario =1;
+    static  M10HistoyFragment m10h = new M10HistoyFragment();
+    static M10WaterGlassFragment m10w = new M10WaterGlassFragment();
 
     Gson gson =new Gson();
     Context contexto;
@@ -191,20 +192,8 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                                  Bundle savedInstanceState) {
 
 
-
-
-
-            //me cago en tu mierda deja esto asi y despues te explico
-            M10WaterGlassFragment m10 = new M10WaterGlassFragment();
-            M10HistoyFragment list = new M10HistoyFragment();
-
-
-
-
-
-
             if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
-                View rootView = m10.onCreateView(inflater,container,null);
+                View rootView =  m10w.onCreateView(inflater,container,null);
 
 
 
@@ -213,7 +202,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
             }
 
             else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2){
-                View rootView = list.onCreateView(inflater,container,null);
+                View rootView = m10h.onCreateView(inflater,container,null);
 
 
                 //inflater.inflate(R.layout.fragment_m10_histoy, container, false);;
@@ -260,12 +249,13 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                 try {
 
                     _date =  _EtnDate.getText().toString();
-
                     _cal.setTime(_sdf.parse(_date));
-
                     _cal.add(Calendar.DATE, 1);
                     _date = _sdf.format(_cal.getTime());
                     _EtnDate.setText(_date.toString());
+                    getValues(_date.toString(),idusuario);
+
+
 
 
 
@@ -293,6 +283,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                     _cal.add(Calendar.DATE,-1);
                     _date = _sdf.format(_cal.getTime());
                     _EtnDate.setText(_date.toString());
+                    getValues(_date.toString(),idusuario);
 
                 } catch (ParseException e) {
                     e.printStackTrace();
@@ -315,7 +306,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
             public void onClick(View v) {
 
                 try {
-                    // _cal = Calendar.getInstance();
+
                     instanciarCalendario();
                 }
                 catch (Exception e){
@@ -326,6 +317,43 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     }
 
 
+    public void getValues(String fecha,int id)
+    {
+        String url1 = "M10_WaterGlass/GetWater?time="+fecha+"&fkp="+idusuario;
+        String aux = Url+url1;
+        RequestQueue queue = Volley.newRequestQueue(contexto);
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,aux ,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        // Display the first 500 characters of the response string.}
+                        try {
+                            water = gson.fromJson(response,Water.class);
+
+                            m10w.setCant(water.get_cantidad().toString());
+
+                        }
+                        catch (Exception e){
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                _EtnDate.setText("That didn't work!");
+            }
+        });
+// Add the request to the RequestQueue.
+        try {
+            queue.add(stringRequest);
+        }
+        catch (Exception e)
+        {};
+
+
+
+    }
 
     public void instanciarCalendario(){
         // Create the DatePickerDialog instance
@@ -341,7 +369,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     public void giveDate() {
 
 
-        String url1 = "M10_WaterGlass/getFecha";
+        String url1 = "M10_WaterGlass/getFecha?fkp="+idusuario;
         String aux = Url+url1;
         RequestQueue queue = Volley.newRequestQueue(contexto);
         // Request a string response from the provided URL.
@@ -353,11 +381,13 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                         try {
                             water = gson.fromJson(response,Water.class);
                             _EtnDate.setText(water.get_time());
+                            m10w.setCant(water.get_cantidad().toString());
+
                         }
                         catch (Exception e){
                             e.printStackTrace();
                         }
-                        }
+                    }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {

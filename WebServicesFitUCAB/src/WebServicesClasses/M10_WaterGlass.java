@@ -62,6 +62,7 @@ public class M10_WaterGlass
             {
                 _water = new Water();
                 _water.set_cantidad( _rs.getInt("res") );
+                _water.set_time(hora);
 
 
 
@@ -149,7 +150,7 @@ public class M10_WaterGlass
      * @return array con cantidad de agua total y cantidad de vasos
      */
     @GET
-    @Path("/GetWater")
+    @Path("/GetWater")//no se toca lo usa el equipo mario
     @Produces("application/json")
     public String GetWater( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
@@ -322,9 +323,9 @@ public class M10_WaterGlass
     @GET
     @Path("/getFecha")
     @Produces({"application/json"})
-    public String GetFecha() {
+    public String GetFecha(@QueryParam("fkp") int fkp) {
 
-        _water = new Water();
+        _water=_gson.fromJson(GetWater(_sdf2.format(fecha),fkp),Water.class);
         _water.set_time(_sdf2.format(fecha));
         return _gson.toJson(_water);
 

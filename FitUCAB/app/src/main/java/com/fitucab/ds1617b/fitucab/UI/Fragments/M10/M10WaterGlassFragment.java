@@ -47,6 +47,7 @@ public class M10WaterGlassFragment extends Fragment {
     private Context contexto;
     private  Water water;
     private View _view;
+    int idusuario =1;
     private IpStringConnection Url = new IpStringConnection();
 
 
@@ -131,8 +132,8 @@ public class M10WaterGlassFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                //http://localhost:8888/WebServicesFitUCAB_war_exploded/M10_WaterGlass/DeletLast?time=27/05/2017&fkp=1
-                String url1 = "M10_WaterGlass/DeletLast?time=" + m10._EtnDate.getText() + "&fkp=1";
+                //http://localhost:8888/WebServicesFitUCAB_war_exploded/M10_WaterGlass/DeletLast?time=27/05/2017&fkp=
+                String url1 = "M10_WaterGlass/DeletLast?time=" + m10._EtnDate.getText() + "&fkp="+idusuario;
                 String aux = Url.getIp() + url1;
                 RequestQueue queue = Volley.newRequestQueue(contexto);
                 // Request a string response from the provided URL.
@@ -169,7 +170,7 @@ public class M10WaterGlassFragment extends Fragment {
 
     public void addwateraux()
     {
-        String url1 = "M10_WaterGlass/addWater?time="+m10._EtnDate.getText()+"&glasstype=350&fkp=1";
+        String url1 = "M10_WaterGlass/addWater?time="+m10._EtnDate.getText()+"&glasstype=350&fkp="+idusuario;
         String aux = Url.getIp()+url1;
         RequestQueue queue = Volley.newRequestQueue(contexto);
         // Request a string response from the provided URL.
@@ -204,6 +205,11 @@ public class M10WaterGlassFragment extends Fragment {
 
     }
 
+
+    public void setCant (String cant)
+    {
+        _EtnWater.setText(cant);
+    }
 
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name

@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.fitucab.ds1617b.fitucab.Model.AdapterM10ListView;
-import com.fitucab.ds1617b.fitucab.Model.InfoGlass;
 import com.fitucab.ds1617b.fitucab.Model.Water;
 import com.fitucab.ds1617b.fitucab.R;
 
@@ -25,8 +24,10 @@ import java.util.ArrayList;
 public class M10HistoyFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
-    ListView _waterlist;
-    String[] values = new String[]{"justin","ven","y","mamalo","fuego?"};
+    private static ListView _waterlist;
+    static ArrayList<Water> FillWater = new ArrayList<>();
+    static AdapterM10ListView adapter;
+    private static ArrayList<Water>  List = new ArrayList<>();
 
     public M10HistoyFragment() {
         // Required empty public constructor
@@ -36,33 +37,20 @@ public class M10HistoyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        /*View rootView = inflater.inflate(R.layout.fragment_m10_histoy,container,false);
-        //ArrayList<InfoGlass> FillWater = new ArrayList<InfoGlass>();
-        //cambien getcontext, lo tienes que agarrar del rootview que creaste jajaja
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(rootView.getContext(),android.R.layout.simple_expandable_list_item_1,values);
-        _waterlist = (ListView) rootView.findViewById(R.id.list_water);
-        _waterlist.setAdapter(adapter);*/
+
 
         View rootView = inflater.inflate(R.layout.fragment_m10_histoy,container,false);
         _waterlist = (ListView) rootView.findViewById(R.id.list_water);
-        ArrayList<Water> FillWater = new ArrayList<>();
-        AdapterM10ListView adapter = new AdapterM10ListView(rootView.getContext(),FillWater);
+
+         adapter = new AdapterM10ListView(rootView.getContext(),FillWater);
         _waterlist.setAdapter(adapter);
 
-        ArrayList<Water> prueba = new ArrayList<>();
-
-        prueba.add(new Water("3:00",100));
-        prueba.add(new Water("4:00",200));
-        prueba.add(new Water("5:15",500));
-        prueba.add(new Water("6:00",100));
-        prueba.add(new Water("3:00",100));
-        prueba.add(new Water("4:00",200));
-        prueba.add(new Water("5:15",500));
-        prueba.add(new Water("6:00",100));
 
 
-        adapter.addAll(prueba);
+
+
+
+
 
         return rootView;
 
@@ -107,4 +95,22 @@ public class M10HistoyFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
+
+
+    public void setElementList (Water water)
+    {
+         List.add(water);
+
+    }
+
+    public void ViewList()
+    {
+        try {
+            if (!adapter.isEmpty()) {
+                adapter.clear();
+            }
+            adapter.addAll(List);
+        }catch (Exception e)
+        {}
+    }
 }
