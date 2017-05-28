@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
@@ -19,9 +20,14 @@ import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -43,6 +49,7 @@ public class  M01LoginFragment extends Fragment {
      * @param activity recibe la activity que llamo o instancio al fragment
      */
     public void onAttach(Activity activity) {
+
         super.onAttach(activity);
 
         try {
@@ -69,7 +76,7 @@ public class  M01LoginFragment extends Fragment {
                              Bundle savedInstanceState){
 
         _view = inflater.inflate(R.layout.fragment_m01_login, container, false);
-        instanciarComponentes();
+        instantiateComponents();
         manageChangeFragmentRecovery();
         manageButtonEntrar();
         return _view;
@@ -98,8 +105,7 @@ public class  M01LoginFragment extends Fragment {
 
                 String usernameLogin= _etUserLogin.getText().toString();
                 String passwordLogin= _etPasswordLogin.getText().toString();
-                 getRetrofit(usernameLogin,passwordLogin);
-                //_callBack.onSwapActivity("M02HomeActivity",null);
+                getRetrofit(usernameLogin,passwordLogin);
             }
         });
     }
@@ -107,13 +113,38 @@ public class  M01LoginFragment extends Fragment {
     /**
      * Metodo encargado para instanciar los componentes de esta vista
      */
-    private void instanciarComponentes (){
+    private void instantiateComponents(){
 
         _tvOlvidoClave=(TextView) _view.findViewById(R.id.tv_m01_olvidoClave);
         _btnEntrarLogin=(Button) _view.findViewById(R.id.btn_m01_aceptarLogin);
         _etUserLogin=(EditText) _view.findViewById(R.id.et_m01_usuarioCorreo);
         _etPasswordLogin=(EditText) _view.findViewById(R.id.et_m01_passwordLogin);
 
+    }
+
+    private String validateComponents(String username, String password){
+
+        String response = "ok";
+        Pattern pat = Pattern.compile("[\\w-]+");
+        Matcher mat = pat.matcher(username);
+
+        if ((!username.equals("")) && (!password.equals(""))) {
+            if (mat.matches()) {
+                if (username.length() >= 4) {
+                    if (password.length() >= 6) {
+                        return response;
+                    } else {
+                        return getString(R.string.m01_errorPasswordTooShort);
+                    }
+                } else {
+                    return getString(R.string.m01_errorUsernameTooShort);
+                }
+            } else {
+                return getString(R.string.m01_errorUsernameSpecialChar);
+            }
+        }else{
+            return getString(R.string.m01_errorNullFields);
+        }
     }
 
     /**
@@ -123,34 +154,71 @@ public class  M01LoginFragment extends Fragment {
      */
      public void getRetrofit(String usernameLogin, String passwordLogin){
 
-         ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
-         Call<User> call= apiService.loginUser(usernameLogin,passwordLogin);
-         call.enqueue(new Callback<User>() {
+         if (validateComponents(usernameLogin, passwordLogin).equals("ok")) {
 
-             @Override
-             public void onResponse(Call<User> call, Response<User> response) {
+             ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
+             Call<User> call= apiService.loginUser(usernameLogin,passwordLogin);
 
-                 try{
+             call.enqueue(new Callback<User>() {
 
-                     User user = response.body();
-                     onCompleted(user);
-                     System.out.println("Hice bien la consulta");
+                 @Override
+                 public void onResponse(Call<User> call, Response<User> response) {
+
+                     try{
+
+                         User user = response.body();
+                         onCompleted(user);
+                         int id=getIdUser(getContext());
+                         System.out.println(id);
+                         _callBack.onSwapActivity("M02HomeActivity",null);
+                         System.out.println("Hice bien la consulta");
+                     }
+                     catch (Exception e){
+                         e.printStackTrace();
+                         System.out.println("Hice mal la consulta");
+
+                     }
+
                  }
-                 catch (Exception e){
-                     e.printStackTrace();
-                     System.out.println("Hice MAL la consulta");
+
+                 @Override
+                 public void onFailure(Call<User> call, Throwable t) {
+
+                     System.out.println("FALLO TODO");
 
                  }
+             });
+         }
+         else{
+             if (validateComponents(usernameLogin, passwordLogin).equals(getString
+                     (R.string.m01_errorUsernameSpecialChar))) {
 
+                 Toast.makeText(getContext(),
+                         getString(R.string.m01_errorUsernameSpecialChar),
+                         Toast.LENGTH_LONG).show();
              }
+             if (validateComponents(usernameLogin, passwordLogin).equals(getString
+                     (R.string.m01_errorUsernameTooShort))) {
 
-             @Override
-             public void onFailure(Call<User> call, Throwable t) {
-
-                 System.out.println("FALLO TODO");
-
+                 Toast.makeText(getContext(),
+                         getString(R.string.m01_errorUsernameTooShort),
+                         Toast.LENGTH_LONG).show();
              }
-         });
+             if (validateComponents(usernameLogin, passwordLogin).equals(getString
+                     (R.string.m01_errorPasswordTooShort))) {
+
+                 Toast.makeText(getContext(),
+                         getString(R.string.m01_errorPasswordTooShort),
+                         Toast.LENGTH_LONG).show();
+             }
+             if (validateComponents(usernameLogin, passwordLogin).equals(getString
+                     (R.string.m01_errorNullFields))) {
+
+                 Toast.makeText(getContext(),
+                         getString(R.string.m01_errorNullFields),
+                         Toast.LENGTH_LONG).show();
+             }
+         }
      }
 
     /**

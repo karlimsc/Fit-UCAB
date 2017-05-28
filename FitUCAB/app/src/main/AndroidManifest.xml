@@ -5,7 +5,7 @@
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
-         location permissions for the 'MyLocation' functionality. 
+         location permissions for the 'MyLocation' functionality.
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -13,7 +13,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logofitucab"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -38,12 +38,8 @@
             android:name=".UI.Activities.M05AddExerciseActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
+
         <activity
             android:name=".UI.Activities.M10WaterGlassActivity"
             android:label="@string/title_activity_m10_water_glass"
@@ -51,7 +47,8 @@
         <activity
             android:name=".UI.Activities.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".UI.Activities.M05ReadExerciseActivity"
             android:label="Track Exercise"
@@ -60,10 +57,7 @@
             android:name=".UI.Activities.M02HomeActivity"
             android:label="Fit UCAB"
             android:theme="@style/AppTheme.NoActionBar">
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+
         </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -71,7 +65,8 @@
              Note that the API key is linked to the encryption key used to sign the APK.
              You need a different API key for each encryption key, including the release key that is used to
              sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -92,6 +87,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".UI.Activities.M11Food"
+            android:label="@string/app_name">
+            <intent-filter>
+                <!-- Esto va en el modulo de karliana, el main -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 
