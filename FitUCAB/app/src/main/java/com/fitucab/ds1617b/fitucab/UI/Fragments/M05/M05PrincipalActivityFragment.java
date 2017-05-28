@@ -3,8 +3,10 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M05;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -84,6 +86,9 @@ public class M05PrincipalActivityFragment extends Fragment implements
     String _sport,_date,_time,_calories;
 
 
+    /**
+     * Constuctor del fragmento Activity Principal
+     */
     public M05PrincipalActivityFragment() {
     }
 
@@ -139,39 +144,9 @@ public class M05PrincipalActivityFragment extends Fragment implements
         _calories = getResources().getString(R.string._tv_m05_calories);
         //Llena el ListView
         makeRequest();
-       // registerForContextMenu(_listView);
+       // Opciones para la seleccion del Item
+        selectedItem();
     }
-
-
-    /**
-     * Metodo para iniciar la seleccion de elemntos
-     */
-    public void selectedElement (){
-
-        // Para la seleccion individual
-        _listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-
-        _listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                // Obtención del manejador de fragmentos
-            //    FragmentManager fragmentManager = getFragmentManager();
-              //  new M05ModifyFragment().show(fragmentManager, "M05ModifyFragment");
-                return true;
-            }
-        });
-
-
-        _listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(), R.string._tst_m05_seletectitemonetouch,
-                        Toast.LENGTH_SHORT).show();
-
-            }
-        });
-    }
-
 
 
     /**
@@ -305,6 +280,34 @@ public class M05PrincipalActivityFragment extends Fragment implements
        // _listView.setOnClickListener(this);
     }
 
-    //On item Clivk Listener del Listiew
+
+    /**
+     * Metodo para iniciar la seleccion de elemntos
+     */
+
+    public void selectedItem(){
+        // Para la seleccion individual
+        _listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+
+        _listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                _callBack.onSwap("M05ModifyFragment",null);
+                return true;
+            }
+        });
+
+
+
+        _listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getContext(), R.string._tst_m05_seletectitemonetouch,
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
 
 }

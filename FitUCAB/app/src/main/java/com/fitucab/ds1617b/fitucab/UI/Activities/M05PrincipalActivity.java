@@ -20,6 +20,7 @@ import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.R;
 
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05ModifyFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05PrincipalActivityFragment;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -61,6 +62,12 @@ public class M05PrincipalActivity extends AppCompatActivity implements OnFragmen
                     fragmentToSwap = new M05PrincipalActivityFragment();
                     fragmentToSwap.setArguments(bundle);
                      fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
+                    break;
+
+                case "M05ModifyFragment":
+                    fragmentToSwap = new M05ModifyFragment();
+                    fragmentToSwap.setArguments(bundle);
+                    fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
                     break;
 
             }
