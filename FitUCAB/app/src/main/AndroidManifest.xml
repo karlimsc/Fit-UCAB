@@ -17,8 +17,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:debuggable="true">
+        android:theme="@style/AppTheme">
 
         <!-- ACTIVITIES MODULO 1 NO MODIFICAR EL CONTENIDO INTERNO -->
         <!-- Indica que esta actividad es la que va a iniciar primero -->
