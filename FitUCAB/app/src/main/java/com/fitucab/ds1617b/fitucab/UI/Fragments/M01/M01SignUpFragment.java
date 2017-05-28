@@ -161,6 +161,7 @@ public class M01SignUpFragment extends Fragment {
         DatePickerDialog datePicker = new DatePickerDialog(getContext(), R.style.AppTheme,
         datePickerListener,cal.get(Calendar.YEAR), cal.get(Calendar.DAY_OF_MONTH),
         cal.get(Calendar.MONTH));
+<<<<<<< HEAD
         cal.add(Calendar.YEAR,0);
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         int year = Calendar.getInstance().get(Calendar.YEAR);
@@ -170,6 +171,11 @@ public class M01SignUpFragment extends Fragment {
         calmin.set(year-80, 0, 1);
         datePicker.getDatePicker().setMaxDate(calmax.getTimeInMillis());
         datePicker.getDatePicker().setMinDate(calmin.getTimeInMillis());
+=======
+        cal.add(Calendar.YEAR,-15);
+        datePicker.getDatePicker().setMaxDate(cal.getTimeInMillis());
+
+>>>>>>> Develop
         datePicker.setCancelable(false);
         datePicker.setTitle("Select the date");
         datePicker.show();
@@ -188,6 +194,7 @@ public class M01SignUpFragment extends Fragment {
 
     }
 
+<<<<<<< HEAD
     private String validateComponents(String username, String email, String phone,
                                        String password, String birthdate, String weight, String height ){
         String response = "ok";
@@ -236,6 +243,38 @@ public class M01SignUpFragment extends Fragment {
         }else{
            return getString(R.string.m01_errorNullFields);
         }
+=======
+    private String validateComponents(String username, String email, String phone ,
+                                       String password ){
+        String response = "ok";
+        //region validating username
+        Pattern pat = Pattern.compile("[\\w-]+");
+        Matcher mat = pat.matcher(username);
+        if (!mat.matches()){
+            response=getString(R.string.m01_errorUsernameSpecialChar);
+        }
+        if(username.length()< 4){
+            response=getString(R.string.m01_errorUsernameTooShort);
+        }
+        //endregion
+        //region validating email
+        pat = Pattern.compile("^[\\w-]+(\\.[\\w-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        mat = pat.matcher(email);
+        if (!mat.find()) {
+            response = getString(R.string.m01_errorInvalidEmail);
+        }
+        //endregion
+        //region validating phone and password
+        if((phone.length() <11)){
+            response=getString(R.string.m01_errorPhoneTooShort);
+        }
+        if(password.length()< 6){
+            response=getString(R.string.m01_errorPasswordTooShort);
+        }
+        //endregion
+
+        return response;
+>>>>>>> Develop
 
     }
 
@@ -261,17 +300,30 @@ public class M01SignUpFragment extends Fragment {
     public void getRetrofit(String username, String password,String email,String sex,
                             String phone, String birthdate, String weight, String height){
 
+<<<<<<< HEAD
         if (validateComponents(username,email,phone,password, birthdate, weight, height).equals("ok")) {
+=======
+        if (validateComponents(username,email,phone,password).equals("ok")) {
+>>>>>>> Develop
 
             ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
             Call<User> call = apiService.insertRegistry(username, password, email, sex, phone, birthdate, weight, height);
             call.enqueue(new Callback<User>() {
+<<<<<<< HEAD
 
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
 
                     try {
 
+=======
+
+                @Override
+                public void onResponse(Call<User> call, Response<User> response) {
+
+                    try {
+
+>>>>>>> Develop
                         User user = response.body();
                         onCompleted(user);
                         int id = getIdUser(getContext());
@@ -296,41 +348,62 @@ public class M01SignUpFragment extends Fragment {
             });
         }
         else {
+<<<<<<< HEAD
             if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+=======
+            if (validateComponents(username,email,phone,password).equals(getString
+>>>>>>> Develop
                     (R.string.m01_errorUsernameSpecialChar))) {
 
                 Toast.makeText(getContext(),
                         getString(R.string.m01_errorUsernameSpecialChar),
                         Toast.LENGTH_LONG).show();
             }
+<<<<<<< HEAD
             if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+=======
+            if (validateComponents(username,email,phone,password).equals(getString
+>>>>>>> Develop
                     (R.string.m01_errorUsernameTooShort))) {
 
                 Toast.makeText(getContext(),
                         getString(R.string.m01_errorUsernameTooShort),
                         Toast.LENGTH_LONG).show();
             }
+<<<<<<< HEAD
             if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+=======
+            if (validateComponents(username,email,phone,password).equals(getString
+>>>>>>> Develop
                     (R.string.m01_errorInvalidEmail))) {
 
                 Toast.makeText(getContext(),
                         getString(R.string.m01_errorInvalidEmail),
                         Toast.LENGTH_LONG).show();
             }
+<<<<<<< HEAD
             if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+=======
+            if (validateComponents(username,email,phone,password).equals(getString
+>>>>>>> Develop
                     (R.string.m01_errorPhoneTooShort))) {
 
                 Toast.makeText(getContext(),
                         getString(R.string.m01_errorPhoneTooShort),
                         Toast.LENGTH_LONG).show();
             }
+<<<<<<< HEAD
             if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+=======
+            if (validateComponents(username,email,phone,password).equals(getString
+>>>>>>> Develop
                     (R.string.m01_errorPasswordTooShort))) {
 
                 Toast.makeText(getContext(),
                         getString(R.string.m01_errorPasswordTooShort),
                         Toast.LENGTH_LONG).show();
             }
+<<<<<<< HEAD
             if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
                     (R.string.m01_errorNullFields))) {
 
@@ -352,6 +425,8 @@ public class M01SignUpFragment extends Fragment {
                         getString(R.string.m01_errorHeightOutOfRange),
                         Toast.LENGTH_LONG).show();
             }
+=======
+>>>>>>> Develop
         }
     }
 

@@ -50,7 +50,22 @@ public class User {
         _email = email;
         _sex = sex;
         _phone = phone;
-        _birthdate= birthdate;
+        _birthdate = birthdate;
+
+    };
+
+    /***
+     *
+     * @param id
+     * @param user
+     * @param password
+     */
+    public User(int id,String user,String password)
+    {
+        _id = id;
+        _username = user;
+        _password = password;
+
 
     };
 
@@ -91,8 +106,11 @@ public class User {
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Develop
     /**
      * Constructor para solo el username y el password
      * @param user

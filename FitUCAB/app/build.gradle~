@@ -5,31 +5,19 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.fitucab.ds1617b.fitucab"
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
-        debug {
-            debuggable true
-        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-<<<<<<< HEAD
-=======
-    sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
-    dexOptions {
-        preDexLibraries = false
-    }
->>>>>>> Develop
 }
-
-
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -41,20 +29,5 @@ dependencies {
     compile 'com.android.support:design:25.3.0'
     compile 'com.android.support:support-v4:25.3.0'
     compile 'com.google.android.gms:play-services-maps:10.2.1'
-    compile 'com.google.android.gms:play-services-location:10.2.1'
-    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
-    compile 'com.google.code.gson:gson:2.7'
-    compile 'com.mcxiaoke.volley:library:1.0.19'
-    compile 'com.android.support:recyclerview-v7:25.3.0'
-    compile 'com.squareup.retrofit2:retrofit:2.1.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-<<<<<<< HEAD
-    compile 'com.android.support.test.espresso:espresso-core:2.2.2'
-    testCompile 'org.mockito:mockito-core:1.10.19'
-
-}
-=======
-    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     testCompile 'junit:junit:4.12'
 }
->>>>>>> Develop

@@ -71,6 +71,7 @@ public class M01_ServicesUser {
             }
 
             return gson.toJson(iniciosesion);
+<<<<<<< HEAD
 
         }
         catch(Exception e) {
@@ -78,8 +79,16 @@ public class M01_ServicesUser {
         }
     }
 
+=======
+>>>>>>> Develop
 
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+    }
 
+<<<<<<< HEAD
     @GET
     @Path("/userView")
     @Produces("application/json")
@@ -97,6 +106,61 @@ public class M01_ServicesUser {
                 String password =rs.getString("pwd");
                 int id =rs.getInt("id");
 
+=======
+    /***
+     * Metodo que devuelve la informacion completa de la persona
+     * @param username
+     * @return
+     */
+    @GET
+    @Path("/userView")
+    @Produces("application/json")
+    public String userView(@QueryParam("username") String username)
+    {
+        String insertUserQuery =" SELECT * FROM M01_INFORMACIONUSER('"+username+"')";
+        try {
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(insertUserQuery);
+            User user = null;
+            while(rs.next()){
+
+                String username1 = rs.getString("usuario");
+                String password =rs.getString("pwd");
+                int id =rs.getInt("id");
+                String mail=rs.getString("mail");
+                String sex=rs.getString("sex");
+                String phone=rs.getString("phone");
+                Date birthdate =rs.getDate("birthdate");
+                user= new User(id,username1,password,mail,sex,phone,birthdate);
+
+            }
+            return gson.toJson(user);
+        }
+        catch(Exception e) {
+        return e.getMessage();
+    }
+
+    }
+
+    @GET
+    @Path("/userView")
+    @Produces("application/json")
+    public String userOnly(@QueryParam("username") String username)
+    {
+        String insertUserQuery =" SELECT * FROM M01_INFORMACIONUSER('"+username+"')";
+        try {
+
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(insertUserQuery);
+            User user = null;
+            while(rs.next()){
+
+                String username1 = rs.getString("usuario");
+                String password =rs.getString("pwd");
+                int id =rs.getInt("id");
+
+>>>>>>> Develop
                 user= new User(id,username1,password);
 
             }
@@ -105,12 +169,17 @@ public class M01_ServicesUser {
         catch(Exception e) {
             return e.getMessage();
         }
+<<<<<<< HEAD
 
     }
 
 
     /***
 
+=======
+
+    }
+>>>>>>> Develop
     /**
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
      * @param userparam
@@ -130,12 +199,23 @@ public class M01_ServicesUser {
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
+<<<<<<< HEAD
+=======
+
+          //  User user= null;
+            int iniciosesion =0;
+>>>>>>> Develop
 
             int iniciosesion =0;
 
+<<<<<<< HEAD
             while(rs.next()){
 
                  iniciosesion = rs.getRow();
+=======
+                 iniciosesion = rs.getRow();
+
+>>>>>>> Develop
 
             }
             return gson.toJson(iniciosesion);
@@ -152,9 +232,14 @@ public class M01_ServicesUser {
     @GET
     @Path("/restorePassword")
     @Produces("application/json")
+<<<<<<< HEAD
     public String testEmail(@QueryParam("email") String email) {
 
         String query = "SELECT M01_RECUPERARPWD('" + email + "')";
+=======
+    public String testEmail()
+    {
+>>>>>>> Develop
 
         try {
             //Establecemos el usuario que es el correo que cree para hacer el recuperar
@@ -170,6 +255,7 @@ public class M01_ServicesUser {
             props.put("mail.smtp.port", "587");
 
             /*
+<<<<<<< HEAD
              * EN ALGUNA PARTE DE AQUI ES DONDE DEBERIA HACER EL CAMBIO DE CLAVE POR
              * ALGUN STRING ALEATORIO Y ENCRIPTADO
              * Y LUEGO ENVIARLE EL STRING SIN ENCRIPTAR AL USUARIO
@@ -201,12 +287,33 @@ public class M01_ServicesUser {
                                 return new PasswordAuthentication(username, password);
                             }
                         });
+=======
+             * EN ALGUNA PARTE DE AQUI ES DONDE DEBERIA HACER LA BUSQUEDA EN BD DEL USUARIO
+             * DESPUES EL CAMBIO DE CLAVE POR ALGUN STRING ALEATORIO Y ENCRIPTADO
+             * Y OBTENER EL CORREO ASOCIADO A ESE USUARIO
+             * Y LUEGO ENVIARLE EL STRING SIN ENCRIPTAR AL USUARIO
+             */
+
+
+            /*
+            Se crea la sesion para autenticar
+             */
+            Session session = Session.getInstance(props,
+                    new javax.mail.Authenticator() {
+                        protected PasswordAuthentication getPasswordAuthentication() {
+                            return new PasswordAuthentication(username, password);
+                        }
+                    });
+
+            try {
+>>>>>>> Develop
 
                 //creamos un objeto MIME
                 Message message = new MimeMessage(session);
                 //ponemos el remitente
                 message.setFrom(new InternetAddress("ds1617b@gmail.com"));
                 message.setRecipients(Message.RecipientType.TO,
+<<<<<<< HEAD
                         //aqui va el destinatario
                         InternetAddress.parse(email));
                 //El tema del correo
@@ -214,11 +321,20 @@ public class M01_ServicesUser {
                 //El contenido del correo
                 message.setText("Hola FitUcabista! tu usuario es:" + usuario + "y tu clave:" + pwd + "." +
                         " Ahora puedes seguir entrenando");
+=======
+                //aqui va el destinatario
+                InternetAddress.parse("karlianamsuarez@gmail.com"));
+                //El tema del correo
+                message.setSubject("Password Recovery FitUCAB");
+                //El contenido del correo
+                message.setText("password");
+>>>>>>> Develop
                 //Enviamos
                 Transport.send(message);
                 //Aqui en adelante cualquier tipo de validacion
                 System.out.println("Done");
                 return ("done");
+<<<<<<< HEAD
             }
 
             else {
@@ -233,6 +349,17 @@ public class M01_ServicesUser {
         catch (Exception e) {
             return e.getMessage();
         }
+=======
+
+            } catch (MessagingException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        catch(Exception e) {
+            return e.getMessage();
+        }
+
+>>>>>>> Develop
     }
 
     @GET
