@@ -23,7 +23,8 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_m05_principal_activity" />
+    <include
+        layout="@layout/content_m05_principal_activity" />
 
 
 </android.support.design.widget.CoordinatorLayout>

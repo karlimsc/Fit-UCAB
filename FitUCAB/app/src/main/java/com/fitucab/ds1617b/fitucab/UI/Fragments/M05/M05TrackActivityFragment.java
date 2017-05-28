@@ -53,8 +53,9 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
     private ArrayList<String> mSportsbyUser = new ArrayList<>();
     private String mSportName;
 
+
+    //Constructor
     public M05TrackActivityFragment (){
-        // Required empty public constructor
 
     }
 
