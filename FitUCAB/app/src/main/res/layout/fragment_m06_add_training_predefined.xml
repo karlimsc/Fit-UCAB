@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/m06_spinnerEntrenamientoPredefinido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/m06_textViewEntrenamientoPredefinido"
+                android:layout_alignStart="@+id/m06_textViewEntrenamientoPredefinido"
+                android:layout_below="@+id/m06_textViewEntrenamientoPredefinido"
+                android:layout_marginRight="36dp"
+                android:layout_marginTop="30dp" />
+
+            <TextView
+                android:id="@+id/m06_textViewEntrenamientoPredefinido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/M06_entrenamientoPredefinido" />
+
+            <TextView
+                android:id="@+id/m06_textViewDificultad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/m06_spinnerEntrenamientoPredefinido"
+                android:layout_alignStart="@+id/m06_spinnerEntrenamientoPredefinido"
+                android:layout_below="@+id/m06_spinnerEntrenamientoPredefinido"
+                android:layout_marginTop="30dp"
+                android:text="@string/M06_tipo" />
+
+            <Spinner
+                android:id="@+id/m06_spinnerTipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/m06_textViewDificultad"
+                android:layout_alignStart="@+id/m06_textViewDificultad"
+                android:layout_below="@+id/m06_textViewDificultad"
+                android:layout_marginRight="36dp"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/m06_textViewPeriodicidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/m06_spinnerEntrenamientoPredefinido"
+                android:layout_alignStart="@+id/m06_spinnerEntrenamientoPredefinido"
+                android:layout_below="@+id/m06_spinnerTipo"
+                android:layout_marginTop="30dp"
+                android:text="@string/M06_periodicidad" />
+
+            <EditText
+                android:id="@+id/m06_editTextPeriodicidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/m06_spinnerTipo"
+                android:layout_alignLeft="@+id/m06_textViewPeriodicidad"
+                android:layout_alignRight="@+id/m06_spinnerTipo"
+                android:layout_alignStart="@+id/m06_textViewPeriodicidad"
+                android:layout_below="@+id/m06_textViewPeriodicidad"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="number" />
+
+            <TextView
+                android:id="@+id/m06_textViewTipoEntrenamiento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/m06_editTextPeriodicidad"
+                android:layout_alignStart="@+id/m06_editTextPeriodicidad"
+                android:layout_below="@+id/m06_editTextPeriodicidad"
+                android:layout_marginTop="30dp"
+                android:text="@string/M06_tipo_entrenamiento" />
+
+            <Spinner
+                android:id="@+id/m06_spinnerTipoEntrenamiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/m06_textViewTipoEntrenamiento"
+                android:layout_alignStart="@+id/m06_textViewTipoEntrenamiento"
+                android:layout_below="@+id/m06_textViewTipoEntrenamiento"
+                android:layout_marginRight="36dp"
+                android:layout_marginTop="16dp" />
+
+
+            <TextView
+                android:id="@+id/m06_textViewCaloriasQuemadas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/m06_spinnerTipoEntrenamiento"
+                android:layout_alignStart="@+id/m06_spinnerTipoEntrenamiento"
+                android:layout_below="@+id/m06_spinnerTipoEntrenamiento"
+                android:layout_marginTop="30dp"
+                android:text="@string/M06_caloriasQuemadas" />
+
+            <TextView
+                android:id="@+id/m06_textViewCalorias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/m06_textViewCaloriasQuemadas"
+                android:layout_toEndOf="@+id/m06_textViewCaloriasQuemadas"
+                android:layout_toRightOf="@+id/m06_textViewCaloriasQuemadas"
+                android:text="0kcal" />
+
+            <Button
+                android:id="@+id/m06_botonAgregarEntrenamientoPredefinido"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/m06_textViewCalorias"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:background="@color/colorBtnAceptar"
+                android:text="@string/m06_agregar"
+                android:textAllCaps="false"
+                android:textColor="@android:color/background_light"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

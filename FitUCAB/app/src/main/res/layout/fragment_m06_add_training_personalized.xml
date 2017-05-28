@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_column="1"
+        android:id="@+id/textInputLayout2">
+
+        <EditText
+            android:id="@+id/m06_nombreEntrenamiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/appBarLayout4"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:ems="10"
+            android:hint="@string/M06_nombreEntrenamiento"
+            android:inputType="textPersonName"
+            android:maxLength="20"
+            android:textColorLink="@color/colorPrimary"
+            android:textSize="12sp" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <CheckBox
+        android:id="@+id/m06_checkBoxCorrer"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/m06_textViewTiempo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/M06_correr"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/m06_textViewActividad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/m06_checkBoxCorrer"
+        android:layout_alignLeft="@+id/m06_checkBoxCorrer"
+        android:layout_alignStart="@+id/m06_checkBoxCorrer"
+        android:text="@string/M06_actividad"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/m06_textViewTiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textInputLayout2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/M06_tiempo"
+        android:textColor="@android:color/black"
+        android:textSize="14sp" />
+
+    <CheckBox
+        android:id="@+id/m06_checkBoxCaminar"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_alignLeft="@+id/m06_checkBoxCorrer"
+        android:layout_alignStart="@+id/m06_checkBoxCorrer"
+        android:layout_below="@+id/m06_checkBoxCorrer"
+        android:text="@string/M06_caminar"
+        android:textSize="12sp" />
+
+    <EditText
+        android:id="@+id/m06_textBoxCorrer"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignEnd="@+id/m06_textViewTiempo"
+        android:layout_alignLeft="@+id/m06_textViewTiempo"
+        android:layout_alignRight="@+id/m06_textViewTiempo"
+        android:layout_alignStart="@+id/m06_textViewTiempo"
+        android:layout_alignTop="@+id/m06_checkBoxCorrer"
+        android:ems="10"
+        android:inputType="number"
+        android:selectAllOnFocus="false"
+        android:textSize="12sp"
+        android:layout_above="@+id/m06_checkBoxCaminar" />
+
+    <EditText
+        android:id="@+id/m06_textBoxCaminar"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_above="@+id/m06_textViewAviso"
+        android:layout_alignLeft="@+id/m06_textBoxCorrer"
+        android:layout_alignStart="@+id/m06_textBoxCorrer"
+        android:layout_below="@+id/m06_spinnerCorrer"
+        android:layout_toLeftOf="@+id/m06_spinnerCaminar"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="12sp" />
+
+    <Spinner
+        android:id="@+id/m06_spinnerCaminar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="RtlHardcoded"
+        android:layout_alignBottom="@+id/m06_checkBoxCaminar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/m06_spinnerCorrer"
+        android:layout_alignStart="@+id/m06_spinnerCorrer"
+        android:layout_below="@+id/m06_spinnerCorrer"
+        android:layout_marginRight="36dp"/>
+
+    <Spinner
+        android:id="@+id/m06_spinnerCorrer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/m06_checkBoxCaminar"
+        android:layout_toRightOf="@+id/m06_textBoxCorrer"
+        android:layout_toEndOf="@+id/m06_textBoxCorrer"
+        android:layout_alignTop="@+id/m06_textBoxCorrer"
+        android:layout_marginRight="36dp"
+        />
+
+    <Button
+        android:id="@+id/m06_botonAgregarEntrenamiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/m06_textViewAviso"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:background="@color/colorBtnAceptar"
+        android:text="@string/m06_agregar"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/m06_textViewAviso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/M06_details_training_personalized"
+        android:textSize="12sp"
+        android:layout_below="@+id/m06_spinnerCaminar"
+        android:layout_marginTop="36dp"
+        android:layout_centerVertical="true"
+        android:layout_alignLeft="@+id/m06_checkBoxCaminar"
+        android:layout_alignStart="@+id/m06_checkBoxCaminar" />
+</RelativeLayout>

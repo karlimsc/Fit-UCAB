@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/m06_activity_agregar_entrenamiento"
+        android:title="@string/M06_title_activity_opcion_agregar_entrenamiento"
+         />
+</menu>

@@ -10,11 +10,11 @@ import android.preference.PreferenceManager;
  */
 
 public class ManagePreferences {
+
     public static int getIdUser(Context context){
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         int storedPreference = preferences.getInt("idUser", 0);
         return storedPreference;
-
 
     }
 }

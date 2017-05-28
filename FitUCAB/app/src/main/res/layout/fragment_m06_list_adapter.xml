@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/m06_nombre_entrenamiento_adapter"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:background="@android:color/background_light"
+    android:fontFamily="sans-serif"
+    android:orientation="vertical"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:textSize="18dp"
+    android:typeface="sans"></TextView>

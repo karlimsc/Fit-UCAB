@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_m06_home"
+            android:icon="@drawable/ic_home_black"
+            android:title="@string/nav_02_inicio" />
+        <item
+            android:id="@+id/nav_m06_calories"
+            android:icon="@drawable/ic_calories"
+            android:title="@string/nav_02_calorias" />
+        <item
+            android:id="@+id/nav_m06_training"
+            android:icon="@drawable/ic_training"
+            android:title="@string/nav_02_entrenamiento" />
+        <item
+            android:id="@+id/nav_m06_account"
+            android:icon="@drawable/ic_account"
+            android:title="@string/nav_02_cuenta" />
+        <item
+            android:id="@+id/nav_m06_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/nav_02_cerrarsesion" />
+    </group>
+
+
+</menu>

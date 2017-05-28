@@ -1,5 +1,6 @@
 package com.fitucab.ds1617b.fitucab.Helper.Rest;
 
+import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -24,5 +25,6 @@ public interface ApiEndPointInterface {
                             @Query("weight") String weight,
                             @Query("height") String height
                             );
-
+    @GET("training/trainingDisplay")
+    Call<Training> getTraining(@Query("id") String id) ;
 }
