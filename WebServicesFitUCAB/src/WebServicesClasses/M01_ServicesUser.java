@@ -152,16 +152,18 @@ public class M01_ServicesUser {
                 valida=true;
                 id = rs.getInt("m01_registrar");
                 registry = new Registry(Float.parseFloat(weight), Float.parseFloat(height));
-                user = new User(id, username, password, email, sex, phone, registry);
 
             }
 
             if(valida == true){
+                user = new User(id, username, password, email, sex, phone, registry);
+                user.set_status(Integer.toString(RESULT_CODE_OK));
             return gson.toJson(user);
             }
             else{
 
-                User userFail = new User(Integer.toString(RESULT_CODE_FAIL));
+                User userFail = new User();
+                userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
                 return gson.toJson(userFail);
             }
         }
@@ -307,7 +309,8 @@ public class M01_ServicesUser {
                 return gson.toJson(idUser);
             }
             else {
-                User userFail = new User(Integer.toString(RESULT_CODE_FAIL));
+                User userFail = new User();
+                userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
                 return gson.toJson(userFail);
             }
         }
@@ -394,12 +397,14 @@ public class M01_ServicesUser {
                 //Enviamos
                 Transport.send(message);
                 //Aqui esta la validacion
-                User userOk= new User(Integer.toString(RESULT_CODE_OK));
+                User userOk = new User();
+                userOk.set_status(Integer.toString(RESULT_CODE_OK));
                 return gson.toJson(userOk);
             }
 
             else {
-                User userFail= new User(Integer.toString(RESULT_CODE_FAIL));
+                User userFail = new User();
+                userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
                 return gson.toJson(userFail);
             }
 
