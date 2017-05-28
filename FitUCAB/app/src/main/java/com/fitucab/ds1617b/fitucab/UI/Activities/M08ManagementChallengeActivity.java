@@ -44,7 +44,7 @@ import static android.R.id.list;
 /**
  * clase principal de la aplicacion
  */
-public class M08_ManagementChallenge extends AppCompatActivity
+public class M08ManagementChallengeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
 
@@ -101,7 +101,7 @@ public class M08_ManagementChallenge extends AppCompatActivity
                 String itemValue = (String) list.getItemAtPosition(position);
 
                 //Con el fin de empezar a mostrar una nueva actividad lo que necesitamos es una intención
-                Intent intent = new Intent(M08_ManagementChallenge.this, M08InformationChallenge.class);
+                Intent intent = new Intent(M08ManagementChallengeActivity.this, M08InformationChallenge.class);
 
                 // Aquí pasaremos el parámetro de la intención creada previamente
                 startActivity(intent);
@@ -111,10 +111,7 @@ public class M08_ManagementChallenge extends AppCompatActivity
 
     }//cierre del metodo onCreate
 
-    private void mostrarListView(ArrayList<Challenge> challenges) {
-
-
-    }
+    private void mostrarListView(ArrayList<Challenge> challenges) {}
 
     public void PeticionRetosPredefinidos()
     {
@@ -130,32 +127,39 @@ public class M08_ManagementChallenge extends AppCompatActivity
                         Gson gson = new Gson();
                         challenges = new ArrayList<>();
                         challenges = gson.fromJson(response, new TypeToken<ArrayList<Food>>(){}.getType());
-                    }
+                    }//cierra void onResponse
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(view.getContext(), "No existen Retos predefinidos", Toast.LENGTH_LONG);
-                    }
+                    }//cierra void onErrorResponse
                 });
         requestQueue.add(stringRequest);
-    }
+    }//cierra void PeticionRetosPredefinidos
 
 
 
 
 
-
+    /**
+    *metodo que define la vista a seleccionar cuando se selecciona volver o atras
+    */
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }//cierra if 
+        else {
             super.onBackPressed();
-        }
-    }
+        }//cierra else
+    }//cierra void onBackPressed
 
+
+    /**
+    *metodo para mostrar menu contextual, es el menu de editar y eliminar
+    */
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
@@ -164,13 +168,21 @@ public class M08_ManagementChallenge extends AppCompatActivity
         inflater.inflate(R.menu.menu_challenge, menu); //muestra el menu seleccionado
     }//cierre del metodo onCreateContextMenu
 
+
+    /**
+    *metodo del menu de settings
+    */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_m08, menu);
         return true;
-    }
+    }// cierra void onCreateOptionsMenu
 
+
+    /**
+    *redirecciona la vista al agregar cuando se pulsa +
+    */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -184,11 +196,16 @@ public class M08_ManagementChallenge extends AppCompatActivity
             startActivity(new Intent(this, M08AddChallenge.class));
 
             return true;
-        }
+        }//cierra if
 
         return super.onOptionsItemSelected(item);
-    }
+    }//cierra void onOptionsItemSelected
 
+
+
+    /**
+    *menu desplegable lado izquierdo
+    */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -212,8 +229,8 @@ public class M08_ManagementChallenge extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
+    }//cierre void onNavigationItemSelected
 
 
-}
+}//cierre class M08ManagementChallengeActivity
 
