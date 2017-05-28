@@ -109,7 +109,7 @@ DETAILID serial primary key,
 DETAILDATESTART timestamp not null,
 DETAILDATEEND timestamp not null,
 DETAILACTIVE boolean not null,
-FK_FRIENDSHIPID integer,
+FK_USERID integer,
 FK_CHALLENGEID integer
 );
  

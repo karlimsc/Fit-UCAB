@@ -141,6 +141,35 @@ public class M08_ManagementChallenge extends AppCompatActivity
         requestQueue.add(stringRequest);
     }
 
+    /**
+     * Peticion que devuelve todos los retos en lo que este un usuario pero no estan predefinidos
+     * @param userId
+     */
+    public void PeticionRetosNoPredefinidos(int userId)
+    {
+        RequestQueue requestQueue = Volley.newRequestQueue(view.getContext());
+        //OJO esta no es la consulta en si, hay que colocar la que es de los personalizados......
+        //La haré mañana temprano.
+        String jsonURL = "http://127.0.0.1:8080/WebServicesFitUCAB_war_exploded/" +
+                "M08_Gestion_retos/getPersonalChallenges?userid="+userId;
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        challenges = new ArrayList<>();
+                        challenges = gson.fromJson(response, new TypeToken<ArrayList<Food>>(){}.getType());
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(view.getContext(), "No existen Retos personalizados", Toast.LENGTH_LONG);
+                    }
+                });
+        requestQueue.add(stringRequest);
+    }
+
 
 
 

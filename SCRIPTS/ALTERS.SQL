@@ -48,7 +48,7 @@ alter table CHALLENGE add constraint CHECK_PREDEFINED check (CHALLENGEPREDEFINED
 
  
 alter table DETAIL add constraint FK_CHALLENGE foreign key (FK_CHALLENGEID) references CHALLENGE (CHALLENGEID);
-alter table DETAIL add constraint FK_FRIENDSHIP foreign key (FK_FRIENDSHIPID) references FRIENDSHIP (FRIENDSHIPID);
+alter table DETAIL add constraint FK_REGISTRYID foreign key (FK_REGISTRYID) references REGISTRY (FK_PERSONID);
  
  
 --- FIN MODULO 8---
