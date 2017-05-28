@@ -59,8 +59,8 @@ public class M05_ServicesSport {
 
     @Produces("application/json")
     /**
-     * 
-	 * Extrae el nombre de los deportes en funcion del id
+     *
+     * Extrae el nombre de los deportes en funcion del id
      * @param idSpo
      * @return
      */
@@ -152,7 +152,7 @@ public class M05_ServicesSport {
 
 
         Sport resultado = new Sport();
-
+        ArrayList<String> listaDeportes= new ArrayList<>();
 
         String query = "select nombredeporte from M05_obtenerdeportesusuario('"+id+"')";
 
@@ -161,14 +161,10 @@ public class M05_ServicesSport {
             Connection conn = conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
-            //Array creado para almacenar las deportes realizados
-	    ArrayList<Sport> listaDeportes= new ArrayList<Sport>();
-            
 
             while(rs.next()){
-				resultado.setId(rs.getInteger(  "id"));
+
                 resultado.setName(rs.getString(  "nombredeporte"));
-				resultado.setMet(rs.getFloat(  "met"));
                 listaDeportes.add(resultado.getName());
             }
 
@@ -226,7 +222,7 @@ public class M05_ServicesSport {
 
         String query = "select M05_obteneriddeporte('"+name.toUpperCase()+"');";
 
-       Sport resultado= new Sport();
+        Sport resultado= new Sport();
 
         try{
             Connection conn=conectarADb();
@@ -268,4 +264,3 @@ public class M05_ServicesSport {
     }
 
 }
-
