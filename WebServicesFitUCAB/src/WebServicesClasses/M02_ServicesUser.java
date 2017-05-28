@@ -56,7 +56,7 @@ public class M02_ServicesUser {
     public Response updateUser( @PathParam("userId") int id, User user ){
         user.setId(id);
         _service = new Query();
-        if ( _service.updateUser( user ) == false ){ // TODO Cambiar condicion
+        if ( _service.updateUser( user ) == false ){
             _message = new StatusMessage( 0, "Usuario no actualizado" );
             _response = Response.status( Response.Status.NOT_MODIFIED ).entity( _message ).build();
             throw new WebApplicationException(_response);

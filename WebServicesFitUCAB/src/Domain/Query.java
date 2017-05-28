@@ -71,8 +71,9 @@ public class Query {
             _sql.sql("select m02_modificarperfilr("+ user.getId() + ", "+ user.getPassword() +", " +
                     ""+ user.getEmail() +", "+ user.getSex() +", "+ user.getPhone() +", " +
                     ""+ user.getBirthdate() +", "+ user.getWeight() +", "+ user.getHeight() +")");
-            ResultSet result = _sql.sql("select * from m02_compararperfilid("+ user.getId() +")");
-            return compareUser( user, getUser( user.getId() ) );
+            User same = getUser(user.getId());
+            System.out.println("Comparador: " + compareUser(user, same));
+            return compareUser( user, same );
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
@@ -102,6 +103,7 @@ public class Query {
         }
     }
 
+    //TODO: Realizar consulta
     /**
      * Metodo que actualiza el Home
      * @return Clase Home con el total de las calorias y el total de los vasos tomados
