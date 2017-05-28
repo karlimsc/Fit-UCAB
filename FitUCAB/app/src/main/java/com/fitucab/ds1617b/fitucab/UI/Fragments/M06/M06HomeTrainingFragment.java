@@ -84,15 +84,6 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
         fillListView();
         registerForContextMenu( _listView );
 
-        //eSTO SERÁ SOLO PARA PRUEBAS BORRAR
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        SharedPreferences.Editor editor = preferences.edit();
-
-        editor.putInt("idUser", 1);
-        editor.putFloat("weight", 55);
-
-        editor.commit();
-        //Recuerda borrarlooooo
     }
 
     /**
@@ -109,10 +100,10 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
         String nombreEntrenamiento = parent.getItemAtPosition(position).toString();
         Bundle bundle= new Bundle();
         Training entrenamiento = new Training();
-        entrenamiento = buscarEntrenamiento( _posicionDeEntrenamiento );
+        entrenamiento = buscarEntrenamiento( nombreEntrenamiento );
         bundle.putInt( "idEntrenamiento" , entrenamiento.getidTraining() );
         bundle.putInt( "periodicidadEntrenamiento" , entrenamiento.getTrainingPeriod() ) ;
-        bundle.getInt( "calorias" , entrenamiento.getTrainingCalories() );
+        bundle.getInt( "caloriasEntrenamiento" , entrenamiento.getTrainingCalories() );
         bundle.putString( "nombreDeEntrenamiento" , entrenamiento.getTrainingName() );
         _callBack.onSwap("M06DetailsTrainingFragment",bundle);
 
@@ -190,6 +181,7 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
 
             if( _entrenamientos.get(i).getTrainingName().equals( posicionDeEntrenamiento )){
                 entrenamiento.setId( _entrenamientos.get(i).getidTraining() );
+                entrenamiento.setTrainingName( _entrenamientos.get(i).getTrainingName());
                 entrenamiento.setTrainingPeriod( _entrenamientos.get(i).getTrainingPeriod() );
                 entrenamiento.setTrainingCalories( _entrenamientos.get(i).getTrainingCalories() );
                 return entrenamiento;
@@ -236,7 +228,7 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
                             entrenamiento.add( at.get(i).getTrainingName() );
                         }
 
-                        adaptador.addAll( entrenamiento );
+
 
                     }
                 }, new Response.ErrorListener() {
@@ -246,7 +238,7 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
                 ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, entrenamiento);
                 _listView.setAdapter( adaptador );
                 entrenamiento.add( "Fallo la conexión intente mas tarde");
-                adaptador.addAll( entrenamiento );
+
             }
         });
         // Add the request to the RequestQueue.

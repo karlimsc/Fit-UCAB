@@ -21,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Model.Sport;
 import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
@@ -73,7 +74,8 @@ public class M06DetailsTrainingFragment extends Fragment {
 
         //Url a la cual se va a hacer conexion
         IpStringConnection ip = new IpStringConnection();
-        String url = ip.getIp() + "M06_ServicesTraining/displayTraining";
+        Bundle bundle = getArguments();
+        String url = ip.getIp() + "M06_ServicesTraining/detailedTraining?trainingId=" + bundle.getInt("idEntrenamiento");
         final Gson gson = new Gson();
 
         // Instancia RequestQueue.
@@ -85,34 +87,33 @@ public class M06DetailsTrainingFragment extends Fragment {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        ArrayList<String> entrenamiento = new ArrayList<String>();
-                        ArrayList<Training> at = new ArrayList<Training>();
-                        at = gson.fromJson( response , new TypeToken< List< Training > >(){}.getType() );
-                        _entrenamientos = at;
-                        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, entrenamiento);
+                        //Si hay conexion al web services
+                        ArrayList<String> deportes = new ArrayList<String>();
+                        ArrayList<Sport> at = new ArrayList<Sport>();
+                        at = gson.fromJson( response , new TypeToken< List< Sport > >(){}.getType() );
+                        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, deportes );
                         _listView.setAdapter( adaptador );
 
-
-                        //Hago el for para meter todo en el entrenamiento y asi pasarlo al listview
+                        //Hago el for para meter todo en el sport y asi pasarlo al listview
                         for(int i = 0;i<at.size();i++){
-                            entrenamiento.add( at.get(i).getTrainingName() );
+                            deportes.add( at.get(i).getName() );
                         }
 
-                        adaptador.addAll( entrenamiento );
+
 
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                ArrayList<String> entrenamiento = new ArrayList<String>();
-                ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, entrenamiento);
+                //En caso de que no haya conexión al SW
+                ArrayList<String> deporte = new ArrayList<String>();
+                ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, deporte );
                 _listView.setAdapter( adaptador );
-                entrenamiento.add( "Fallo la conexión intente mas tarde");
-                adaptador.addAll( entrenamiento );
+                deporte.add( "Fallo la conexión intente mas tarde");
+
             }
         });
         // Add the request to the RequestQueue.
         queue.add( stringRequest );
-        _listView.setOnItemClickListener( this );
     }
 }
