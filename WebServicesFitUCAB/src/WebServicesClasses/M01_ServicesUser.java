@@ -233,6 +233,8 @@ public class M01_ServicesUser {
         }
     }
 
+<<<<<<< HEAD
+=======
 
     /***
      * Metodo que con el email recuperas tu usuario y contraseña
@@ -267,6 +269,7 @@ public class M01_ServicesUser {
 
     }
 
+>>>>>>> abdf9049455ff806f986f99ac5800920b4012c17
 
     /**
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
@@ -411,35 +414,6 @@ public class M01_ServicesUser {
         }
     }
 
-    @GET
-    @Path("/helloWorld")
-    @Produces("application/json")
-    public String prueba()
-    {
-        String query="SELECT * FROM PERSON";
-
-        try{
-
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            User user= null;
-            while(rs.next()){
-                String username = rs.getString("PERSONUSERNAME");
-                int id = rs.getInt("PERSONID");
-                String password = rs.getString("PERSONPASSWORD");
-                String sexo= rs.getString("PERSONSEX");
-                String phone= rs.getString("PERSONPHONE");
-                String email= rs.getString("PERSONEMAIL");
-                Date birtdate= rs.getDate("PERSONBIRTHDATE");
-
-                user= new User(id,username,password,email,sexo,phone,birtdate);
-            }
-            return gson.toJson(user);
-        }
-        catch(Exception e) {
-            return e.getMessage();
-        }
-    }
 
     //esto no va a aqui , se puso momentaneamente.
     public Connection bdConnect()
@@ -448,8 +422,8 @@ public class M01_ServicesUser {
         try
         {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/fitucabdb";
-            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
+            String url = "jdbc:postgresql://localhost/fitucab";
+            conn = DriverManager.getConnection(url,"postgres", "123456");
         }
         catch (ClassNotFoundException e)
         {
