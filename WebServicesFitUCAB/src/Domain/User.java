@@ -18,6 +18,7 @@ public class User {
     private String _sex;
     private String _phone;
     private Date _birthdate;
+    private String _status;
     private Registry _registry;
 
     /**
@@ -196,5 +197,7 @@ public class User {
     public Date get_birthdate() {return _birthdate;}
     public void set_birthdate(Date _birthdate) { this._birthdate = _birthdate;}
 
-
+    public void set_status(String _status) {
+        this._status = _status;
+    }
 }
