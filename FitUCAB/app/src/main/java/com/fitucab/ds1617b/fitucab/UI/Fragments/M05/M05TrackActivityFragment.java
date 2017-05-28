@@ -8,6 +8,10 @@ import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -26,17 +30,17 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
-import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * Created by karo on 13/04/17.
  */
 
-public class M05TrackActivityFragment extends Fragment implements OnMapReadyCallback {
+public class M05TrackActivityFragment extends Fragment implements OnMapReadyCallback,
+        ListView.OnItemClickListener {
 
     private OnFragmentSwap _callBack;
     private GoogleMap mMap;
@@ -44,6 +48,10 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
     private Sport mSport = new Sport();
     private User mUser = new User();
     private IpStringConnection baseIp = new IpStringConnection();
+    private Button _startTracking;
+    private ListView _sportsListView;
+    private ArrayList<String> mSportsbyUser = new ArrayList<>();
+    private String mSportName;
 
     public M05TrackActivityFragment (){
         // Required empty public constructor
@@ -61,8 +69,12 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
         }
         try {
             _view = inflater.inflate(R.layout.fragment_m05_track_activity, container, false);
+            initArguments();
+            inflateFragment();
+
         } catch (InflateException e) {
         /* map is already there, just return view as it is */
+
         }
 
         return _view;
@@ -124,7 +136,7 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
         VolleySingleton.getInstance(this.getContext()).addToRequestQueue(stringRequest);
     }
 
-    public User activtyTestUser(){
+    public User activityTestUser(){
         User mUser = new User();
         mUser.set_idUser(1);
         mUser.set_weight((float) 63.7);
@@ -132,34 +144,88 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
     }
 
     public void requestSportsbyId(int id) {
+        Log.i("USERID", String.valueOf(mUser.get_idUser()));
 
-        final String URL = baseIp.getIp() + "M05_ServicesSport/getSport?idSpo="+String.valueOf(mUser.get_idUser());
+        String URL = baseIp.getIp() + "M05_ServicesSport/getSportsUser?idPer="+String.valueOf(mUser.get_idUser());
 
-        VolleySingleton.getInstance(this.getContext());
+        URL = "http://10.0.2.2:8888/Prueba_war_exploded/M05_ServicesSport/getSport?idSpo=1";
+        Log.i("URL",URL);
+
+        //VolleySingleton.getInstance(getContext());
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        Log.i("ONRESPONSE", response.toString());
                         Gson gson = new Gson();
-                        ArrayList<Sport> mSports = new ArrayList<>();
-                        mSports = gson.fromJson(response,new TypeToken<ArrayList<Sport>>(){}.getType());
+                        mSportsbyUser = gson.fromJson(response,new TypeToken<ArrayList<String>>(){}.getType());
 
-                        Log.i("Nombre", response.toString());
-                        Log.i("ID", mSports.toString());
-                        Log.i("NOM", String.valueOf(mSports.get(0).getName()));
+                        Log.i("RESPUESTA", response.toString());
+                        Log.i("ID", mSportsbyUser.toString());
+                        //Log.i("NOM", String.valueOf(mSports.get(0).getName()));
 
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        Log.i("RESPUESTA", "HAY ERROR");
                         // Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
                     }
                 });
 // Access the RequestQueue through your singleton class.
-        VolleySingleton.getInstance(this.getContext()).addToRequestQueue(stringRequest);
+        VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
     }
 
+    public void inflateFragment(){
+        _startTracking = (Button) _view.findViewById(R.id.bt_m05_startTracking);
+        _sportsListView = (ListView) _view.findViewById( R.id.lv_m05_SportsListView );
+        fillSportsListView();
+    }
 
+    public void initArguments(){
+        mUser = activityTestUser();
+        //requestSportsbyId(mUser.get_idUser());
+
+    }
+
+    public void fillSportsListView(){
+
+        final Gson gson = new Gson();
+        String URL = baseIp.getIp() + "M05_ServicesSport/getSportsUser?idPer="+String.valueOf(mUser.get_idUser());
+
+
+        //Se hace la peticion y lo devuelve en String Request
+        StringRequest stringRequest = new StringRequest( Request.Method.GET , URL ,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Type mSportsbyUser= new TypeToken<ArrayList<String>>(){}.getType();
+                        ArrayList<String> _mSportsbyUser = gson.fromJson(response, mSportsbyUser);
+                          Log.i("ENTRE",response.toString());
+                        Log.i("COLE",mSportsbyUser.toString());
+                        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, _mSportsbyUser);
+                        _sportsListView.setAdapter( adaptador );
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                ArrayList<String> mSportsbyUser = new ArrayList<String>();
+                ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, mSportsbyUser);
+                _sportsListView.setAdapter( adaptador );
+                mSportsbyUser.add( "Fallo la conexión intente mas tarde");
+
+            }
+        });
+        // Add the request to the RequestQueue.
+        VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
+        _sportsListView.setOnItemClickListener( this );
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+         mSportName = parent.getItemAtPosition(position).toString();
+
+    }
 }
