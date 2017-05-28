@@ -32,7 +32,10 @@ import com.fitucab.ds1617b.fitucab.R;
 
 import static com.fitucab.ds1617b.fitucab.R.id.contactsList;
 
+/**
+ Aqui falta lo que hace la clase como tal y ya
 
+ */
 public class M03FriendsActivity extends AppCompatActivity
        /* implements NavigationView.OnNavigationItemSelectedListener*/ {
 

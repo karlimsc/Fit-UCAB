@@ -44,6 +44,10 @@ import java.util.List;
 
 import static java.lang.Integer.parseInt;
 
+/**
+ Aqui falta lo que hace la clase como tal y ya
+
+ */
 public class M03FragmentLibreta extends Fragment {
 
     private static final int PERMISSIONS_REQUEST_READ_CONTACTS = 100;

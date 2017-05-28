@@ -34,7 +34,10 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ Aqui falta lo que hace la clase como tal y ya
 
+ */
 public class M03FragmentAmigos extends Fragment {
 
     ListView listView;
