@@ -184,7 +184,7 @@ public class User {
     public Date getBirthdate() {return _birthdate;}
     public void setBirthdate(Date _birthdate) { this._birthdate = _birthdate;}
 
-    public int getPeso() {
+    public int getWeight() {
         return _peso;
     }
 
@@ -192,7 +192,7 @@ public class User {
         _peso = peso;
     }
 
-    public int getAltura() {
+    public int Height() {
         return _altura;
     }
 

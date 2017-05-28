@@ -32,9 +32,10 @@ public class M02_ServicesUser {
     @Path("/{userId}")
     public Response getUser( @PathParam("userId") int id ){
         Date date = new Date(1L);
-        User user = new User(1,"user","pass","mail","sex","phone", date);
+        User user = new User(id,"user","pass","mail","sex","phone", date);
+        user.setPassword("");
         user.setWeight(5);
-        user.setHeight(5);
+        user.setHeight(6);
         /*_service = new M02Query();
         User user = _service.getUser( id );
         if ( user == null ) {
