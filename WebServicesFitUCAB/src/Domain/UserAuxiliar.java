@@ -14,6 +14,9 @@ public class UserAuxiliar {
     private String _email;
     private String _phone;
     private String _sex;
+    private String _birthdate;
+    private String _longitud;
+    private String _latitud;
 
 
     public UserAuxiliar() {
@@ -104,6 +107,30 @@ public class UserAuxiliar {
 
     public void set_phone(String _phone) {
         this._phone = _phone;
+    }
+
+    public String get_birthdate() {
+        return _birthdate;
+    }
+
+    public void set_birthdate(String _birthdate) {
+        this._birthdate = _birthdate;
+    }
+
+    public String get_longitud() {
+        return _longitud;
+    }
+
+    public void set_longitud(String _longitud) {
+        this._longitud = _longitud;
+    }
+
+    public String get_latitud() {
+        return _latitud;
+    }
+
+    public void set_latitud(String _latitud) {
+        this._latitud = _latitud;
     }
 }
 

@@ -172,6 +172,7 @@ public class M03_ServicesFriends{
                 "WHERE (fk_persononeid = "+idMenor+" AND fk_persontwoid = "+idMayor+");";
 
 
+
         ResultSet rs = null;
         try {
             rs = base.sql(query);

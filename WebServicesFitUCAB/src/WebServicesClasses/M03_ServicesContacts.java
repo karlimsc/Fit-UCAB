@@ -179,19 +179,20 @@ public class M03_ServicesContacts{
         UserAuxiliar sep2 = new UserAuxiliar();
         sep2.set_id(-2);
 
-        salida.add(sep1);
-        if(noAmiyDeclined!=null && !noAmiyDeclined.isEmpty()) {
 
+        if(noAmiyDeclined!=null && !noAmiyDeclined.isEmpty()) {
+            salida.add(sep1);
             for (int i = 0; i < noAmiyDeclined.size(); i++)
                 salida.add(noAmiyDeclined.get(i));
-
-
-            salida.add(sep2);
         }
 
-        for (int i = 0; i < sinFitUcab.size(); i++)
-            salida.add(sinFitUcab.get(i));
 
+
+        if(sinFitUcab!=null && !sinFitUcab.isEmpty()) {
+            salida.add(sep2);
+            for (int i = 0; i < sinFitUcab.size(); i++)
+                salida.add(sinFitUcab.get(i));
+        }
 
         return gson.toJson(salida);
 
