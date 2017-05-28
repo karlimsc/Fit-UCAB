@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -34,7 +35,7 @@ import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
-import com.fitucab.ds1617b.fitucab.Model.AdapterItem;
+
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Activities.M05AddExerciseActivity;
 import com.google.gson.Gson;
@@ -49,7 +50,8 @@ import java.util.List;
  * Created by elberg on 27/05/17.
  */
 
-public class M05PrincipalActivityFragment extends Fragment implements View.OnClickListener {
+public class M05PrincipalActivityFragment extends Fragment implements
+        View.OnClickListener{
 
     public ArrayList<Activit> _activits;
 
@@ -80,7 +82,7 @@ public class M05PrincipalActivityFragment extends Fragment implements View.OnCli
 
     View _view;
     private OnFragmentSwap _callBack;
-
+    String _sport,_date,_time,_calories;
 
 
     public M05PrincipalActivityFragment() {
@@ -130,9 +132,13 @@ public class M05PrincipalActivityFragment extends Fragment implements View.OnCli
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorWhiteSmoke));
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(R.string._ttl_m05_activity);
 
+        _sport = getResources().getString(R.string._tv_m05_sport);
+        _date = getResources().getString(R.string._tv_m05_starDate);
+        _time = getResources().getString(R.string._tv_m05_starHour);
+        _calories = getResources().getString(R.string._tv_m05_calories);
         //Llena el ListView
         makeRequest();
-        registerForContextMenu(_listView);
+       // registerForContextMenu(_listView);
     }
 
 
@@ -173,7 +179,13 @@ public class M05PrincipalActivityFragment extends Fragment implements View.OnCli
      * @param menu
      * @return
      */
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+    {
 
+        MenuInflater inflater = getActivity().getMenuInflater();
+        inflater.inflate(R.menu.menu_m05_principal, menu);
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
@@ -249,28 +261,34 @@ public class M05PrincipalActivityFragment extends Fragment implements View.OnCli
     {
         String consult ="http://192.168.250.3:8080/untitled_war_exploded/M05_ServicesActivity/" +
                 "getActivity?idPer=1&fechalejana=2017-05-20&fechacercana=2017-05-20";
-        RequestQueue queue = Volley.newRequestQueue(getContext());
+
         final StringRequest stringRequest = new StringRequest
                 (Request.Method.GET, consult,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
                                 ArrayList<Activit> at = new ArrayList<Activit>();
-                                at = gson.fromJson(response, new TypeToken<List<Activit>>(){}.getType());
+                                ArrayList<String> tab = new ArrayList<String>();
+                                at = gson.fromJson(response,
+                                        new TypeToken<List<Activit>>(){}.getType());
                                 _activits = at;
-                               // _listView.setAdapter(new AdapterItem(_view.getContext(), _activits);
-                                Log.e("RESPONSE ",at.get(0).get_name());
-/*                                ArrayList<Activit> activit = new ArrayList<Activit>();
+                                ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
+                                        android.R.layout.simple_list_item_1, tab);
+                                _listView.setAdapter(adapter);
+                                adapter.addAll(tab);
 
+                                Log.e("RESPONSE ",at.get(0).get_name());
+                                Log.e("RESPONSE ",String.valueOf(at.size()));
 
                                 for (int i = 0; i < at.size(); i++ ){
-                                    activit.add(new Activit(at.get(i).get_date(),at.get(i).get_name()));
+                                    tab.add(_sport+" "+at.get(i).get_name()+"\n"+
+                                            _date+" "+at.get(i).get_date()+"\n"+
+                                            _time+" "+at.get(i).get_startime()+"\n"+
+                                            _calories+": "+at.get(i).get_calor()
+                                    );
                                 }
+                                Log.e("RESPONSE TAB",tab.get(0));
 
-                                adaptador = new ArrayAdapter<Activit>(getContext(),
-                                        android.R.layout.simple_list_item_1, activit);
-                                adapter.addAll(activit);
-*/
 
                             }
                         }, new Response.ErrorListener() {
@@ -283,8 +301,10 @@ public class M05PrincipalActivityFragment extends Fragment implements View.OnCli
                     }
                 });
 // Access the RequestQueue through your singleton class.
-        queue.add( stringRequest );
-        //_listView.setOnClickListener(this);
+        VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
+       // _listView.setOnClickListener(this);
     }
+
+    //On item Clivk Listener del Listiew
 
 }
