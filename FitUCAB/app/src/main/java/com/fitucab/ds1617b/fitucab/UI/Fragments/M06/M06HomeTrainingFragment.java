@@ -15,6 +15,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.android.volley.Request;
@@ -24,10 +25,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
-import com.fitucab.ds1617b.fitucab.Helper.ArrayAuxiliarTraining;
 import com.fitucab.ds1617b.fitucab.Model.Training;
-import com.fitucab.ds1617b.fitucab.Helper.TrainingAdapter;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -106,13 +106,20 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         //Si se pulsa simple se abre para detalles
-       //String hola = parent.getItemAtPosition(position).toString();
-
-        _callBack.onSwap("M06DetailsTrainingFragment",null);
+        String nombreEntrenamiento = parent.getItemAtPosition(position).toString();
+        Bundle bundle= new Bundle();
+        Training entrenamiento = new Training();
+        entrenamiento = buscarEntrenamiento( _posicionDeEntrenamiento );
+        bundle.putInt( "idEntrenamiento" , entrenamiento.getidTraining() );
+        bundle.putInt( "periodicidadEntrenamiento" , entrenamiento.getTrainingPeriod() ) ;
+        bundle.getInt( "calorias" , entrenamiento.getTrainingCalories() );
+        bundle.putString( "nombreDeEntrenamiento" , entrenamiento.getTrainingName() );
+        _callBack.onSwap("M06DetailsTrainingFragment",bundle);
 
         //Si se deja pulsado mas tiempo se abre el menu contextual con diferentes opciones
         registerForContextMenu( _listView );
     }
+
 
     /**
      * Crea el menú contextual para mostrar las diferentes opciones
@@ -162,11 +169,36 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
      */
     public Bundle encapsulandoInformacionEntrenamiento( MenuItem item ){
         Bundle bundle= new Bundle();
+        Training entrenamiento = new Training();
+        entrenamiento = buscarEntrenamiento( _posicionDeEntrenamiento );
         AdapterView.AdapterContextMenuInfo info = ( AdapterView.AdapterContextMenuInfo ) item.getMenuInfo();
         _posicionDeEntrenamiento =  ( (TextView) info.targetView).getText().toString();
-        
-        bundle.putString("Nombre de Entrenamiento",_posicionDeEntrenamiento);
+        bundle.putInt( "idEntrenamiento" , entrenamiento.getidTraining() );
         return bundle;
+
+    }
+
+    /**
+     * Este metodo busca el id dentro del objeto para pasarlo al proximo fragment
+     * @param posicionDeEntrenamiento
+     * @return
+     */
+    private Training buscarEntrenamiento(String posicionDeEntrenamiento) {
+        int id = 0;
+        Training entrenamiento = new Training();
+        for (int i=0 ; i!=_entrenamientos.size() ; i++){
+
+            if( _entrenamientos.get(i).getTrainingName().equals( posicionDeEntrenamiento )){
+                entrenamiento.setId( _entrenamientos.get(i).getidTraining() );
+                entrenamiento.setTrainingPeriod( _entrenamientos.get(i).getTrainingPeriod() );
+                entrenamiento.setTrainingCalories( _entrenamientos.get(i).getTrainingCalories() );
+                return entrenamiento;
+
+            }
+
+        }
+
+        return entrenamiento;
 
     }
 
@@ -179,7 +211,7 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
 
         //Url a la cual se va a hacer conexion
         IpStringConnection ip = new IpStringConnection();
-        String url = ip.getIp() + "M06_ServicesTraining/displayTraining?userId=";
+        String url = ip.getIp() + "M06_ServicesTraining/displayTraining?userId=" + ManagePreferences.getIdUser(getContext());
         final Gson gson = new Gson();
 
         // Instancia RequestQueue.
@@ -191,33 +223,30 @@ public class M06HomeTrainingFragment extends Fragment implements ListView.OnItem
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
+                        ArrayList<String> entrenamiento = new ArrayList<String>();
                         ArrayList<Training> at = new ArrayList<Training>();
                         at = gson.fromJson( response , new TypeToken< List< Training > >(){}.getType() );
-                        ArrayList<ArrayAuxiliarTraining> arrayOfTrainings = new ArrayList< ArrayAuxiliarTraining >();
                         _entrenamientos = at;
-                        TrainingAdapter adapter = new TrainingAdapter( _view.getContext() , arrayOfTrainings );
-                        _listView.setAdapter( adapter );
-                        ArrayList< ArrayAuxiliarTraining > entrenamientos = new ArrayList<ArrayAuxiliarTraining>();
+                        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, entrenamiento);
+                        _listView.setAdapter( adaptador );
 
 
+                        //Hago el for para meter todo en el entrenamiento y asi pasarlo al listview
                         for(int i = 0;i<at.size();i++){
-                            entrenamientos.add( new ArrayAuxiliarTraining( at.get(i).getTrainingName() ) );
+                            entrenamiento.add( at.get(i).getTrainingName() );
                         }
 
-                        adapter.addAll( entrenamientos );
+                        adaptador.addAll( entrenamiento );
 
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
-                ArrayList<ArrayAuxiliarTraining> arrayOfTrainings = new ArrayList< ArrayAuxiliarTraining >();
-                TrainingAdapter adapter = new TrainingAdapter( _view.getContext() , arrayOfTrainings );
-                _listView.setAdapter( adapter );
-                ArrayList< ArrayAuxiliarTraining > usuarios = new ArrayList<ArrayAuxiliarTraining>();
-                usuarios.add( new ArrayAuxiliarTraining( "Error en la conexión, intente mas tarde" ) );
-                adapter.addAll( usuarios );
+                ArrayList<String> entrenamiento = new ArrayList<String>();
+                ArrayAdapter<String> adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, entrenamiento);
+                _listView.setAdapter( adaptador );
+                entrenamiento.add( "Fallo la conexión intente mas tarde");
+                adaptador.addAll( entrenamiento );
             }
         });
         // Add the request to the RequestQueue.
