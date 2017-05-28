@@ -1,10 +1,13 @@
 package com.fitucab.ds1617b.fitucab.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by karo on 26/05/17.
  */
 
-public class Sport {
+@SuppressWarnings("serial")
+public class Sport implements Serializable {
     private int id;
     private String name;
     private float mets;

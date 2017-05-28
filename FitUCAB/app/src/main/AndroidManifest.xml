@@ -46,6 +46,11 @@
             android:name=".UI.Activities.M05AddExerciseActivity"
             android:label="@string/_app_name_title_m05"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".UI.Activities.M05PrincipalActivity"
@@ -81,12 +86,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDCWy5j4NHRnwsS5il39SSFREQImlh7taI" />
 
-        <activity android:name=".UI.Activities.M05StartTrackingActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".UI.Activities.M05StartTrackingActivity"
+                android:label="Fit UCAB"
+            android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
     </application>

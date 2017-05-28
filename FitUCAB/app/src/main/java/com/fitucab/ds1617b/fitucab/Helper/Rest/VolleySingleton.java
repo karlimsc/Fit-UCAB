@@ -14,7 +14,7 @@ public class VolleySingleton {
     private static VolleySingleton mInstance;
     private RequestQueue mRequestQueue;
     private static Context mCtx;
-    private static final String STRING_CONN= "http://10.0.2.2:8888/Prueba_war_exploded/M05_ServicesSport/getMetSport?nameSpo=CAMINAR";
+    //private static final String STRING_CONN= "http://10.0.2.2:8888/Prueba_war_exploded/M05_ServicesSport/getMetSport?nameSpo=CAMINAR";
    // private static final String STRING_CONN= "http://10.0.2.2:8888/Prueba_war_exploded/M05_ServicesSport/getSport?idSpo=1";
 
 
@@ -45,9 +45,9 @@ public class VolleySingleton {
         getRequestQueue().add(req);
     }
 
-    public static String getStringConn() {
-        return STRING_CONN;
-    }
+    //public static String getStringConn() {
+      //  return STRING_CONN;
+   // }
 
 }
 

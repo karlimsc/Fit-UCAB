@@ -1,5 +1,6 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M05;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -12,10 +13,13 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.Model.Sport;
+import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Activities.M05StartTrackingActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -37,7 +41,9 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
     private OnFragmentSwap _callBack;
     private GoogleMap mMap;
     private static View _view;
-    private Sport sport = new Sport();
+    private Sport mSport = new Sport();
+    private User mUser = new User();
+    private IpStringConnection baseIp = new IpStringConnection();
 
     public M05TrackActivityFragment (){
         // Required empty public constructor
@@ -62,6 +68,16 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
         return _view;
     }
 
+    View.OnClickListener startTracking = new View.OnClickListener(){
+        public void onClick(View v) {
+            Intent intent = new Intent(getContext(), M05StartTrackingActivity.class);
+            intent.putExtra("user", mUser);
+            intent.putExtra("sport", mSport);
+            startActivity(intent);
+
+        }
+    };
+
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
@@ -82,17 +98,19 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
     }
 
     public void requestSportbyName() {
+        final String URL = baseIp.getIp() + "M05_ServicesSport/getMetSport?nameSpo=CAMINAR";
+
         VolleySingleton.getInstance(this.getContext());
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, VolleySingleton.getStringConn(),
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
-                        sport = gson.fromJson(response,Sport.class);
+                        mSport = gson.fromJson(response,Sport.class);
 
                         Log.i("Nombre", response.toString());
-                        Log.i("ID", String.valueOf(sport.getId()));
+                        Log.i("ID", String.valueOf(mSport.getId()));
 
                     }
                 },
@@ -105,4 +123,43 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
 // Access the RequestQueue through your singleton class.
         VolleySingleton.getInstance(this.getContext()).addToRequestQueue(stringRequest);
     }
+
+    public User activtyTestUser(){
+        User mUser = new User();
+        mUser.set_idUser(1);
+        mUser.set_weight((float) 63.7);
+        return mUser;
+    }
+
+    public void requestSportsbyId(int id) {
+
+        final String URL = baseIp.getIp() + "M05_ServicesSport/getSport?idSpo="+String.valueOf(mUser.get_idUser());
+
+        VolleySingleton.getInstance(this.getContext());
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, URL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        ArrayList<Sport> mSports = new ArrayList<>();
+                        mSports = gson.fromJson(response,new TypeToken<ArrayList<Sport>>(){}.getType());
+
+                        Log.i("Nombre", response.toString());
+                        Log.i("ID", mSports.toString());
+                        Log.i("NOM", String.valueOf(mSports.get(0).getName()));
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
+                    }
+                });
+// Access the RequestQueue through your singleton class.
+        VolleySingleton.getInstance(this.getContext()).addToRequestQueue(stringRequest);
+    }
+
+
 }

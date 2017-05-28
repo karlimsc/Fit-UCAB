@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -17,12 +18,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.fitucab.ds1617b.fitucab.Helper.FormatUtility;
 import com.fitucab.ds1617b.fitucab.Helper.GeoLocalization.GeoLocalization;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.Model.Global;
 import com.fitucab.ds1617b.fitucab.Model.Sport;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05UrlConsul;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -35,6 +38,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 public class M05StartTrackingActivity extends GeoLocalization implements
@@ -72,6 +77,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
     private float distance = 0;
     private double velocidad = 0;
+
+    IpStringConnection baseIp = new IpStringConnection();;
 
 
     public M05StartTrackingActivity(Sport sport, User user){
@@ -141,7 +148,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     View.OnLongClickListener end = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
-
+                createActivity();
+                insertActivityRequest(activity);
             return false;
         }
     };
@@ -337,33 +345,58 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         }
     }
 
-    public float calculateCalories(float mets, float weight){
-        float kcal = mets*weight;
+    public float calculateCalories(float mets, float weight) {
+        float kcal = mets * weight;
         return kcal;
     }
 
-    public void insertActivityRequest(Activit activity){
+
+
+    public void insertActivityRequest(final Activit activity){
         VolleySingleton.getInstance(this);
+
+        //  M05UrlConsul m05IP = new M05UrlConsul();
+
+        final String URL = baseIp.getIp() + "/insertActivity";
 
         Gson gson = new Gson();
         String json = gson.toJson(activity);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, VolleySingleton.getStringConn(),
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
 
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
-                    }
-                });
-// Access the RequestQueue through your singleton class.
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
+            new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    System.out.println(response);
+                    Toast.makeText(M05StartTrackingActivity.this,response,Toast.LENGTH_LONG).show();
+                }
+            },
+            new Response.ErrorListener() {
+                @Override
+                 public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(M05StartTrackingActivity.this,error.toString(),Toast.LENGTH_LONG).show();
+                 }
+             }){
+            @Override
+            protected Map<String,String> getParams(){
+                Map<String,String> params = new HashMap<String, String>();
+                params.put ("activitystarttime",activity.get_startime());
+                params.put ("activityendtime",activity.get_endtime());
+                params.put("activitydate", activity.get_date());
+                params.put("activitykm",String.valueOf(activity.get_km()));
+                params.put("activitycalor", String.valueOf(activity.get_calor()));
+                params.put("activitystartsite", activity.get_starsite());
+                params.put("activityendsite", activity.get_endsite());
+                params.put("fk_registry", String.valueOf(user.get_idUser()));
+                params.put("fk_sport", String.valueOf(sport.getId()));
+                params.put("fk_training", String.valueOf(1));
+                return params;
+            }
+
+        };
+
         VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
-
 
     }
 

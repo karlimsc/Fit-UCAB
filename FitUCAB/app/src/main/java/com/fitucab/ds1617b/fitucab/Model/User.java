@@ -2,11 +2,14 @@ package com.fitucab.ds1617b.fitucab.Model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 /**
  * Created by Colmenares on 26/03/2017.
  */
 
-public class User {
+@SuppressWarnings("serial")
+public class User implements Serializable {
 
     @SerializedName("_id")
     private int _idUser;
