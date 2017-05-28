@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
@@ -58,5 +59,6 @@
     <orderEntry type="library" name="io.rest-assured:rest-assured:3.0.2" level="project" />
     <orderEntry type="library" name="mail1" level="project" />
     <orderEntry type="library" name="postgresql-42.1.1" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
-</module>
+

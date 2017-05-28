@@ -19,6 +19,8 @@ public class User {
     private String _phone;
     private Date _birthdate;
     private Registry _registry;
+    private int _weight; // Se usan unicamente para uso del perfil de usuario
+    private int _height; // Se usan unicamente para uso del perfil de usuario
 
     /**
      * Constructor vacio
@@ -193,8 +195,22 @@ public class User {
         this._phone=phone;
     }
 
-    public Date get_birthdate() {return _birthdate;}
-    public void set_birthdate(Date _birthdate) { this._birthdate = _birthdate;}
+    public Date getBirthdate() {return _birthdate;}
+    public void setBirthdate(Date _birthdate) { this._birthdate = _birthdate;}
 
+    public int getWeight() {
+        return _weight;
+    }
 
+    public void setWeight(int peso) {
+        _weight = peso;
+    }
+
+    public int getHeight() {
+        return _height;
+    }
+
+    public void setHeight(int altura) {
+        _height = altura;
+    }
 }

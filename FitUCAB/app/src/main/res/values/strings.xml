@@ -39,11 +39,19 @@
 
 
     <!--Inicio Strings Modulo 2-->
+    <string name="nav_title">Ocnfiguración</string>
     <string name="nav_02_inicio">Inicio</string>
     <string name="nav_02_calorias">Calorias</string>
     <string name="nav_02_entrenamiento">Entrenamiento</string>
     <string name="nav_02_cuenta">Cuenta</string>
     <string name="nav_02_cerrarsesion">Cerrar Sesión</string>
+    <string name="nav_02_amigos">Amigos</string>
+    <string name="nav_02_actividades">Actividades</string>
+    <string name="nav_02_planificacion">Planificacion de Actividades</string>
+    <string name="nav_02_retos">Retos</string>
+    <string name="nav_02_gamificacion"> Gamificación</string>
+    <string name="nav_02_hidratacion">Hidratación</string>
+    <string name="nav_02_notificacion">Notificaciones</string>
     <string name="tv_m02_perfil">Perfil</string>
     <string name="et_m02_username">Nombre de usuario</string>
     <string name="et_m02_email">Correo electronico</string>

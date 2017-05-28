@@ -36,18 +36,32 @@ public class Sql {
             Class.forName(BD_CLASS_FOR_NAME);
             conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
         }
-        catch (ClassNotFoundException e)
+        catch ( ClassNotFoundException e )
         {
             e.printStackTrace();
         }
-        catch (SQLException e)
-        {
+        catch ( SQLException e ){
             e.printStackTrace();
         }
-        return conn;
+        catch ( Exception e ){
+            e.printStackTrace();
+        }
+        finally {
+            return _conn;
+        }
+
     }
 
-    public ResultSet sql (String query) throws SQLException , NullPointerException {
+    /**
+     * Metodo que realiza un query a la base de datos con devolucion
+     * Realizar preferiblemente antes de bdConnect
+     * @param query
+     * @return Tabla que representa la consulta del query
+     * @throws SQLException Error en SQL
+     * @throws Exception
+     * @see ResultSet
+     */
+    public ResultSet sql ( String query ) throws SQLException {
 
         _st = conn.createStatement();
         _rs  = _st.executeQuery(query);
