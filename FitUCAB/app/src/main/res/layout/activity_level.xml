@@ -16,7 +16,7 @@
     </com.github.mikephil.charting.charts.PieChart>
 
     <LinearLayout
-        android:id="@+id/gamificacion"
+        android:id="@+id/_gamificationXML"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"

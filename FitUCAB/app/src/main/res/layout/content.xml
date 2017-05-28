@@ -5,78 +5,78 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/i_copa"
+        android:id="@+id/_cupImage"
         android:layout_width="50dp"
         android:layout_height="55dp"
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="4dp"
-        android:src="@drawable/copa"
-        android:layout_alignBottom="@+id/tv_descripcion" />
+        android:src="@drawable/cup_image"
+        android:layout_alignBottom="@+id/_descriptionTV" />
 
     <TextView
-        android:id="@+id/tv_logroLabel"
+        android:id="@+id/_achievementLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/i_copa"
+        android:layout_toRightOf="@+id/_cupImage"
         android:paddingTop="6dp"
-        android:text="Logro: "
+        android:text="Achievement: "
         android:textColor="#000000"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/tv_logro"
+        android:id="@+id/_achievementTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="6dp"
         android:text=""
         android:textColor="#000000"
         android:textSize="12sp"
-        tools:text="logro"
-        android:layout_alignBaseline="@+id/tv_logroLabel"
-        android:layout_alignBottom="@+id/tv_logroLabel"
-        android:layout_toRightOf="@+id/tv_logroLabel"
-        android:layout_toEndOf="@+id/tv_logroLabel" />
+        tools:text="achievements"
+        android:layout_alignBaseline="@+id/_achievementLabel"
+        android:layout_alignBottom="@+id/_achievementLabel"
+        android:layout_toRightOf="@+id/_achievementLabel"
+        android:layout_toEndOf="@+id/_achievementLabel" />
 
     <TextView
-        android:id="@+id/tv_recompensaLabel"
+        android:id="@+id/_awardLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tv_recompensa"
-        android:layout_alignBottom="@+id/tv_recompensa"
-        android:layout_toLeftOf="@+id/tv_recompensa"
-        android:layout_toStartOf="@+id/tv_recompensa"
         android:paddingTop="6dp"
-        android:text="Recompensa: "
+        android:text="Award: "
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/_awardTV"
+        android:layout_toStartOf="@+id/_awardTV" />
 
     <TextView
-        android:id="@+id/tv_recompensa"
+        android:id="@+id/_awardTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="6dp"
         android:text=""
         android:textColor="#000000"
         android:textSize="12sp"
-        tools:text="logro"
-        android:layout_marginRight="23dp"
-        android:layout_marginEnd="23dp"
-        android:layout_alignTop="@+id/i_copa"
+        tools:text="award"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignBaseline="@+id/_awardLabel"
+        android:layout_alignBottom="@+id/_awardLabel"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
 
     <TextView
-        android:id="@+id/tv_descripcion"
+        android:id="@+id/_descriptionTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_logroLabel"
-        android:layout_toEndOf="@+id/i_copa"
-        android:layout_toRightOf="@+id/i_copa"
+        android:layout_below="@+id/_achievementLabel"
+        android:layout_toEndOf="@+id/_cupImage"
+        android:layout_toRightOf="@+id/_cupImage"
         android:fontFamily="monospace"
         android:paddingTop="6dp"
-        android:text="Descripcion:"
+        android:text="Description:"
         android:textColor="#353535"
         android:textSize="18dp"
         android:textStyle="italic" />

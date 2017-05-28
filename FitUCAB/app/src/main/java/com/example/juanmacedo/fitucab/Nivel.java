@@ -1,11 +1,8 @@
 package com.example.juanmacedo.fitucab;
 
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
-import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -32,15 +29,13 @@ public class Nivel {
     private int _nivel10= 19000;
     private int _puntosTotales= 0;
     int _nivel=0;
-    public ConexionesServicioWeb _servicioWeb = new ConexionesServicioWeb();
-    private String URL = _servicioWeb._dbObtener;
+    public WebServiceConnections _servicioWeb = new WebServiceConnections();
+    private String URL = _servicioWeb._dbGetAccomplishments;
     public int _busquedaPuntos;
+
     //Constructor vacio de la clase
-
-    public Nivel (Context context){
-        sendRequest(context);
-
-    }
+    public Nivel (){
+            }
 
 
 
@@ -128,94 +123,6 @@ public class Nivel {
 
         }
     }
-
-
-
-    /*
-        * INT calculoNivel Metodo para calcular el nivel actual de un usuario dado
-        * @PARAMS : Usuario.class
-        * @RETURN : int _nivel
-         */
-    public int calculoNivel(int _idUsuario, Context context){
-
-        //Declaracion de atributos del metodo
-
-        sendRequest(context);
-        //Llamada al metodo que obtiene todos los puntos ganados actualmente por el jugador
-
-
-        //Condicionales para asignar el nivel al usuario
-        if (_puntosTotales < _nivel1)
-            _nivel = 1;
-        else if ((_puntosTotales >= _nivel1)&&(_puntosTotales < _nivel2))
-            _nivel=2;
-        else if ((_puntosTotales >= _nivel2)&&(_puntosTotales < _nivel3))
-            _nivel=3;
-        else if ((_puntosTotales >= _nivel3)&&(_puntosTotales < _nivel4 ))
-            _nivel=4;
-        else if ((_puntosTotales >= _nivel4)&&(_puntosTotales < _nivel5 ))
-            _nivel=5;
-        else if ((_puntosTotales >= _nivel5)&&(_puntosTotales < _nivel6 ))
-            _nivel=6;
-        else if ((_puntosTotales >= _nivel6)&&(_puntosTotales < _nivel7 ))
-            _nivel=7;
-        else if ((_puntosTotales >= _nivel7)&&(_puntosTotales < _nivel8 ))
-            _nivel=8;
-        else if ((_puntosTotales >= _nivel8)&&(_puntosTotales < _nivel9 ))
-            _nivel=9;
-        else if (_puntosTotales >= _nivel9)
-            _nivel=10;
-
-        return _nivel;
-    }
-
-
-
-    public void sendRequest(final Context context) {
-        StringRequest stringRequest = new StringRequest(URL,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d("onResponse()", response.toString());
-                        //LE PASO LA ACTIVIDAD PARA INSTANCIAR PUNTAJE CON SU VALOR
-                        llamadaJSON(response);
-                    }
-
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("onResponse()", error.toString());
-            }
-        });
-       // Log.d("objetooo", stringRequest.toString());
-        //INSTANCIAR PETICION
-        RequestQueue request = Volley.newRequestQueue(context);
-        request.add(stringRequest);
-        Log.d("Request impreso", stringRequest.toString());
-
-    }
-
-
-    private void llamadaJSON(String json){
-
-        int _puntajeTotal=0;
-        int _puntaje1 = 0;
-
-        ParseJSON _pj = new ParseJSON(json);
-        _pj.parseJSON();
-        String[] _puntajes = ParseJSON.puntaje;
-
-        for(int i=0; i< ParseJSON.puntaje.length; i++){
-            _puntaje1 = _puntaje1 + Integer.parseInt(_puntajes[i]);
-            _puntajeTotal = _puntaje1;
-        }
-
-        this._puntosTotales=_puntajeTotal;
-        //calculoNivel(1);
-    }
-
-
-
 
 }
 
