@@ -13,7 +13,7 @@
         android:layout_width="@dimen/image_width"
         android:layout_height="@dimen/image_height"
         android:layout_gravity="center_horizontal|center"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="30dp"
         android:layout_weight="2"
         android:src="@mipmap/logofitucabnombre" />
 
