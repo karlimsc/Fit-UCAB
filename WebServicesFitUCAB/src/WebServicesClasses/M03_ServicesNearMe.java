@@ -19,7 +19,7 @@ public class M03_ServicesNearMe {
     Sql base = new Sql();
     @GET
     @Produces("application/json")
-    public String nearMe(@QueryParam("id") String id,@QueryParam("longitud") String longitud,@QueryParam("latitud") String latitud){
+    public String nearMe(@QueryParam("id") String id,@QueryParam("longitud") String longitud,@QueryParam("latitud") String latitud,@QueryParam("rango") String rango){
 
         String query = "SELECT personid,personusername,geolongitud,geolatitud,personsex,personbirthdate,registrypoint from person,geo,registry where (personid = geo.fk_personid)" +
                 " and (personid = registry.fk_personid)   EXCEPT("+
@@ -60,13 +60,21 @@ public class M03_ServicesNearMe {
         //userLocations.sort();
 
 
-    return gson.toJson(userLocations);
+        //Float.toString(distFrom(Float.parseFloat(latitud),Float.parseFloat(longitud),Float.parseFloat(userLocations.get(0).get_longitud()),Float.parseFloat(userLocations.get(0).get_latitud())));
+        float longitudFloat = Float.parseFloat(longitud);
+        float latitudFloat = Float.parseFloat(latitud);
+        float longitudFloatAux = Float.parseFloat(userLocations.get(0).get_longitud());
+        float latitudFloatAux = Float.parseFloat(userLocations.get(0).get_latitud());
+
+
+        //return Float.toString(latitudFloatAux)+Float.toString(longitudFloatAux);
+        return Float.toString(distFrom(latitudFloat,longitudFloat,latitudFloatAux,longitudFloatAux));
     }
 
     @PUT
     @Path("/setLocation")
     @Produces("application/json")
-    public String setLocation(@QueryParam("id") String id,@QueryParam("longitud") String longitud,@QueryParam("latitud") String latitud){
+    public String setLocation(@QueryParam("id") String id,@QueryParam("latitud") String latitud,@QueryParam("longitud") String longitud){
 
         String query="";
         String queryVerificar="Select * from public.geo where (fk_personid="+id+");";
@@ -109,6 +117,8 @@ public class M03_ServicesNearMe {
 
 
     public static float distFrom(float lat1, float lng1, float lat2, float lng2) {
+
+
         double earthRadius = 6371000; //meters
         double dLat = Math.toRadians(lat2-lat1);
         double dLng = Math.toRadians(lng2-lng1);
@@ -117,6 +127,7 @@ public class M03_ServicesNearMe {
                         Math.sin(dLng/2) * Math.sin(dLng/2);
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
         float dist = (float) (earthRadius * c);
+
 
         return dist;
     }
