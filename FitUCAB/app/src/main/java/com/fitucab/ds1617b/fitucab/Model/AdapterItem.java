@@ -1,8 +1,10 @@
 package com.fitucab.ds1617b.fitucab.Model;
 
 import android.annotation.TargetApi;
+
 import android.app.Activity;
 import android.content.Context;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,16 +25,16 @@ import java.util.ArrayList;
 
 public class AdapterItem extends BaseAdapter {
 
-    protected Activity _activity;
+    protected Fragment _fragment;
     protected ArrayList<Activit> _items;
 
     /**
      * Constructor del AdapterItem
-     * @param activity Actiidad que se le va a dartar el listView
+     * @param fragment Actiidad que se le va a dartar el listView
      * @param items  Lista de intems de la clase actividad
      */
-    public AdapterItem(Activity activity, ArrayList<Activit> items) {
-        this._activity = activity;
+    public AdapterItem(Fragment fragment, ArrayList<Activit> items) {
+        this._fragment = fragment;
         this. _items = items;
     }
 
@@ -97,11 +99,13 @@ public class AdapterItem extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
 
-        if (convertView == null) {
-            LayoutInflater inf = (LayoutInflater) _activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+     /*   if (convertView == null) {
+            LayoutInflater inf = (LayoutInflater) _activity.get
+                    etSystemService(
+                    Context.LAYOUT_INFLATER_SERVICE);
             v = inf.inflate(R.layout.item, null);
         }
-
+*/
         Activit dir = _items.get(position);
 
         // Se llenan los TextView con los datos de para visualizar los items

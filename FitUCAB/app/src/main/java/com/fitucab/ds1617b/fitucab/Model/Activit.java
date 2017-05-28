@@ -27,21 +27,9 @@ public class Activit {
     public Activit() {
     }
 
-    // Usado para llenar el ListView de la ventana principal del modulo 5
 
-   /* public Activit(int uptime, String sportName, double metersActivity, double speedActivity,
-                   String dateActivity) {
-        this.uptime = uptime;
-        this.sportName = sportName;
-        this.metersActivity = metersActivity;
-        this.speedActivity = speedActivity;
-        this.dateActivity = dateActivity;
-
-    }*/
-
-    public Activit(String _date, float _km, String _name) {
+    public Activit(String _date,  String _name) {
         this._date = _date;
-        this._km = _km;
         this._name = _name;
     }
 
