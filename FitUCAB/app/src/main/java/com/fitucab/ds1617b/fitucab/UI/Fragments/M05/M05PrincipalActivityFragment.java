@@ -40,6 +40,7 @@ import com.fitucab.ds1617b.fitucab.Model.Activit;
 
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Activities.M05AddExerciseActivity;
+import com.fitucab.ds1617b.fitucab.UI.Activities.M05PrincipalActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -81,6 +82,7 @@ public class M05PrincipalActivityFragment extends Fragment implements
     View _view;
 
     private OnFragmentSwap _callBack;
+    private Activit _act;
 
     // Variables que se muetran en la lista
     String _sport,_date,_time,_calories;
@@ -91,6 +93,8 @@ public class M05PrincipalActivityFragment extends Fragment implements
      */
     public M05PrincipalActivityFragment() {
     }
+
+
 
     /**
      * Una vez la activity llama a un fragment se ejecuta este metodo
@@ -292,6 +296,8 @@ public class M05PrincipalActivityFragment extends Fragment implements
         _listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                M05PrincipalActivity.set_activit(_activits.get(position));
+                Log.e("EN EL STATIC", String.valueOf(M05PrincipalActivity.get_activit().get_calor()));
                 _callBack.onSwap("M05ModifyFragment",null);
                 return true;
             }

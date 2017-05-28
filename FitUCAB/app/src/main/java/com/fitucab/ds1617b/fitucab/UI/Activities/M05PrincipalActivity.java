@@ -35,6 +35,21 @@ import java.util.List;
 public class M05PrincipalActivity extends AppCompatActivity implements OnFragmentSwap {
 
     private FragmentManager FM = getSupportFragmentManager();
+    public static Activit _activit  ;
+
+    public static Activit get_activit() {
+        return _activit;
+    }
+
+    public static void set_activit(Activit _activit) {
+        M05PrincipalActivity._activit = _activit;
+    }
+
+    public M05PrincipalActivity() {
+
+    }
+
+
 
 
     @Override
