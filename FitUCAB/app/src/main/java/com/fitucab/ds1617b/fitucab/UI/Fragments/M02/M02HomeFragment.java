@@ -1,17 +1,30 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M02;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +39,10 @@ public class M02HomeFragment extends Fragment {
     private ImageView _fitness;
     private ImageView _Account;
     private ImageView _Activitys;
+    private String TAG= "FitUCAB";
+    private User user;
+    private IpStringConnection ip= new IpStringConnection();
+
 
     public M02HomeFragment() {
         // Required empty public constructor
@@ -57,8 +74,47 @@ public class M02HomeFragment extends Fragment {
     }
 
     private void toAskWebService() {
+//        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+//        int id= preferences.getInt("idUser", user.get_idUser());
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
+        String webUrl= ip.getIp()+"M02Users/1";
+        Log.i(TAG, "toAskWebService: "+webUrl);
+        JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.i(TAG, "onResponse: "+response.toString());
+                setJsonView(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.i(TAG, " ERROR"+ error.toString());
+            }
+        });
+        requestQueue.add(jsonrequest);
 
     }
+
+    private void setJsonView(JSONObject response) {
+        try {
+
+            int weight= response.getInt("weight");
+            Log.i(TAG, "setJsonView: "+weight);
+            _tv_m02_home_peso.setText(Integer.toString(weight)+" Kg");
+
+
+        } catch (JSONException e) {
+
+            e.printStackTrace();
+        } catch (NullPointerException e){
+
+            e.printStackTrace();
+        }catch (Exception e){
+
+            e.printStackTrace();
+        }
+
+    }
+
 
 }
