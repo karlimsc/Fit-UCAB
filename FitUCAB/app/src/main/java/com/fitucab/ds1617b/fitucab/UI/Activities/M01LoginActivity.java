@@ -1,4 +1,5 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -26,7 +27,8 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        Intent _myIntent = new Intent(this, M09GamificationActivity.class);
+        startActivity(_myIntent);
         //Declaracion del Toolbar. si alguien necesita acceder al toolbar en un Fragment
         //debe declarar este atributo como privado y hacerle un Getter.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

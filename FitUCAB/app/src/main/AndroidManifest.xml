@@ -46,6 +46,8 @@
             </intent-filter>
         </activity>
 
+
+
         <activity
             android:name=".UI.Activities.MainActivity"
             android:label="@string/title_activity_main"
@@ -57,7 +59,16 @@
         <activity
             android:name=".UI.Activities.M02HomeActivity"
             android:label="Fit UCAB"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".UI.Activities.M09GamificationActivity"
+            android:label="Fit UCAB"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".UI.Activities.M09LevelGraphActivity"
+            android:label="Fit UCAB"
             android:theme="@style/AppTheme.NoActionBar">
+
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
@@ -105,7 +116,7 @@
                 <!-- Esto va en el modulo de karliana, el main -->
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter/>
+            </intent-filter>
         </activity>
 
     </application>
