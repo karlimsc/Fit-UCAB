@@ -67,7 +67,6 @@ public class M01SignUpFragment extends Fragment {
      */
     @Override
     public void onAttach(Activity activity) {
-
         super.onAttach(activity);
 
         try {
@@ -107,7 +106,6 @@ public class M01SignUpFragment extends Fragment {
      * el boton Registar.
      */
     private void manageBtnRegistrar() {
-
         _btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -148,7 +146,6 @@ public class M01SignUpFragment extends Fragment {
     }
 
     private void setupViewValues() {
-
         _btnRegistrar = (Button) _view.findViewById(R.id.btn_m01_entrar);
         _etBirthdate = (EditText) _view.findViewById(R.id.et_m01_fechanac);
 
@@ -196,12 +193,9 @@ public class M01SignUpFragment extends Fragment {
         String response = "ok";
         double _weight = 0;
         double _height = 0;
-
         try{
-
             _weight = Double.parseDouble(weight);
             _height = Double.parseDouble(height);
-
         }catch (Exception ex){
 
         }

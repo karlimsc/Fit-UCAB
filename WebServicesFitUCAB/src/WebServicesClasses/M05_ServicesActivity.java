@@ -131,6 +131,7 @@ public class M05_ServicesActivity {
                               @QueryParam("fechacercana") String fmenor,
                               @QueryParam("idPer")      Integer id){
 
+
         String query = "select * from M05_obteneractividades ('"+fmayor+"', '"+fmenor+"' ,'"+id+"')";
 
 
@@ -138,13 +139,12 @@ public class M05_ServicesActivity {
             Connection conn = conectarADb();
             Statement   st  = conn.createStatement();
             ResultSet   rs  =  st.executeQuery(query);
-
+            Activity resultado = new Activity();
 
             //Array creado para almacenar las actividades realizadas
             ArrayList<Activity> listaActividades = new ArrayList<Activity>();
 
             while(rs.next()){
-                Activity resultado = new Activity();
                 resultado.setId      (rs.getInt(   "id"));
                 resultado.setStartime(rs.getString("horainicio"));
                 resultado.setEndtime (rs.getString("horafinal"));
@@ -159,55 +159,6 @@ public class M05_ServicesActivity {
 
 
             }
-            return gson.toJson(listaActividades);
-
-        } catch (Exception e) {
-            return e.getMessage();
-        }
-    }
-
-    @GET
-
-    @Path("/getAllActivity")
-
-    @Produces("application/json")
-    /**
-     * Carga las actividades por fecha
-     * @param idPer
-     * @return
-     */
-    public String getAllActivity(@QueryParam("idPer")      Integer id){
-
-
-        String query = " select * from m05_obtenertodasactividades('"+id+"')";
-
-        try{
-            //Array creado para almacenar las actividades realizadas
-
-            ArrayList<Activity> listaActividades = new ArrayList<Activity>();
-            Connection conn = conectarADb();
-            Statement   st  = conn.createStatement();
-            ResultSet   rs  =  st.executeQuery(query);
-
-
-
-
-            while(rs.next()){
-                Activity resultado = new Activity();
-
-                resultado.setId      (rs.getInt(   "id"));
-                resultado.setStartime(rs.getString("horainicio"));
-                resultado.setEndtime (rs.getString("horafinal"));
-                resultado.setDate    (rs.getString("fecha"));
-                resultado.setKm      (rs.getFloat( "km"));
-                resultado.setCalor   (rs.getFloat( "caloria"));
-                resultado.setStarsite(rs.getString("lugarinicio"));
-                resultado.setEndsite (rs.getString("lugarfinal"));
-                resultado.setName    (rs.getString("nombredeporte"));
-                listaActividades.add(resultado);
-
-            }
-
             return gson.toJson(listaActividades);
 
         } catch (Exception e) {
@@ -235,11 +186,10 @@ public class M05_ServicesActivity {
 
         String query = "select * from M05_obtenercaloriasactividades ('"+fmayor+"', '"+fmenor+"' ,'"+id+"')";
 
-
+        Activity resultado = new Activity();
         ArrayList<Activity> listaActividades = new ArrayList<>();
 
         try{
-            Activity resultado = new Activity();
             Connection conn=conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
@@ -278,11 +228,10 @@ public class M05_ServicesActivity {
 
         String query = "select * from M05_obtenerkmactividades ('"+fmayor+"', '"+fmenor+"' ,'"+id+"')";
 
-
+        Activity resultado = new Activity();
         ArrayList<Activity> listaActividades = new ArrayList<>();
 
         try{
-            Activity resultado = new Activity();
             Connection conn=conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
@@ -323,7 +272,6 @@ public class M05_ServicesActivity {
 
 
         try{
-
             Connection conn=conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);

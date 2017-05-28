@@ -18,47 +18,46 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="@dimen/image_width"
-            android:layout_height="@dimen/image_height"
+            android:layout_width="100dp"
+            android:layout_height="103dp"
             android:layout_gravity="center"
-            app:srcCompat="@mipmap/logofitucabnombreblanco" />
+            android:layout_marginTop="-20dp"
+            android:layout_weight="2"
+            app:srcCompat="@mipmap/logofitucabnombre" />
 
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="165dp"
-            android:layout_weight="1.66"
-            android:fontFamily="sans-serif"
+            android:layout_marginTop="190dp"
+            android:layout_weight="6"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/tv_m01_intro"
             android:textAlignment="center"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:textSize="@dimen/title_standard"
-            android:textStyle="bold"
-            android:typeface="sans" />
+            android:textColor="@android:color/background_light"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_m01_comienza"
-            android:layout_width="@dimen/button_width"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="47dp"
+            android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:background="@color/colorBtnConfirmar"
             android:text="@string/btn_m01_comienza"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
-            android:textSize="@dimen/text_button_standard"
-            android:typeface="sans" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_m01_iniciarSesion"
-            android:layout_width="@dimen/button_width"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
@@ -68,8 +67,7 @@
             android:text="@string/btn_m01_iniciaSesion"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
-            android:textSize="@dimen/text_button_standard"
-            android:typeface="sans" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 

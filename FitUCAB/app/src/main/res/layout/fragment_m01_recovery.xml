@@ -9,8 +9,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="@dimen/image_width"
-        android:layout_height="@dimen/image_height"
+        android:layout_width="100dp"
+        android:layout_height="103dp"
+        android:layout_weight="2"
         android:layout_gravity="center_horizontal|center"
         android:layout_marginTop="13dp"
         android:src="@mipmap/logofitucabnombre"
@@ -22,13 +23,9 @@
         android:layout_height="wrap_content"
         android:text="@string/tv_m01_recuperacionContra"
         android:layout_gravity="center"
-        android:layout_marginTop="@dimen/margin_top"
-        android:fontFamily="sans-serif"
-        android:text="@string/tv_m01_recuperacionContra"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/title_standard"
-        android:textStyle="bold"
-        android:typeface="sans" />
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -49,31 +46,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginTop="20dp"
                 android:layout_weight="5"
                 android:ems="10"
                 android:hint="@string/et_m01_correoRecovery"
                 android:inputType="textPersonName"
-                android:maxLength="40"
+                android:maxLength="50"
                 android:textColor="@color/softgrey"
                 android:textColorLink="@color/colorBtnAceptar"
-                android:textSize="@dimen/text_button_standard"
+                android:textSize="18sp"
                 android:typeface="sans" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/btn_m01_enviarCorreo"
-            android:layout_width="@dimen/button_width"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginTop="20dp"
             android:layout_weight="5"
             android:background="@color/colorBtnConfirmar"
             android:text="@string/btn_m01_enviarCorreo"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
-            android:textSize="@dimen/text_button_standard"
-            android:typeface="sans" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 

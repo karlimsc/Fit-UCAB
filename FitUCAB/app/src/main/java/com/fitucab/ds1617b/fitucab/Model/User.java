@@ -28,8 +28,6 @@ public class User {
     private float _weight;
     private int _point;
 
-    @SerializedName("_registry")
-    private Registry _registry;
     /**
      * Constructor vacio
      */
@@ -100,19 +98,6 @@ public class User {
         _height=height;
         _weight=weight;
         _point=point;
-
-    }
-
-    public User(int idUser, String username, String password,String email, String phone,
-                char sex, String birthdate, Registry registry){
-        _idUser=idUser;
-        _username=username;
-        _password=password;
-        _email=email;
-        _phone=phone;
-        _sex=sex;
-        _birthdate=birthdate;
-       _registry=registry;
 
     }
 
@@ -195,14 +180,6 @@ public class User {
 
     public void set_point(int _point) {
         this._point = _point;
-    }
-
-    public Registry get_registry() {
-        return _registry;
-    }
-
-    public void set_registry(Registry _registry) {
-        this._registry = _registry;
     }
 
 }

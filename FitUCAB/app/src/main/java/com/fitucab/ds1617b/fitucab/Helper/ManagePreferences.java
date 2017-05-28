@@ -10,17 +10,11 @@ import android.preference.PreferenceManager;
  */
 
 public class ManagePreferences {
-
-    /**
-     * Metodo por el que cual puedes saber cual usuario esta logueado
-     * @param context
-     * @return el id del usuario
-     */
     public static int getIdUser(Context context){
-
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         int storedPreference = preferences.getInt("idUser", 0);
         return storedPreference;
+
 
     }
 }

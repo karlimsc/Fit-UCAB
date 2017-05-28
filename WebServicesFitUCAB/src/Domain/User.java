@@ -18,7 +18,6 @@ public class User {
     private String _sex;
     private String _phone;
     private Date _birthdate;
-    private Registry _registry;
 
     /**
      * Constructor vacio
@@ -52,20 +51,6 @@ public class User {
         _sex = sex;
         _phone = phone;
         _birthdate= birthdate;
-
-    };
-
-    public User(int id,String user,String password, String email,String sex,String phone,
-                Registry registry)
-    {
-        _id = id;
-        _username = user;
-        _password = password;
-        _email = email;
-        _sex = sex;
-        _phone = phone;
-        //_birthdate= birthdate;
-        _registry= registry;
 
     };
 
@@ -103,6 +88,9 @@ public class User {
         _phone = phone;
         _birthdate= birthdate;
     };
+
+
+
 
 
     /**
