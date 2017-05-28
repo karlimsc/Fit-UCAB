@@ -54,6 +54,21 @@ public class User {
 
     };
 
+    /***
+     *
+     * @param id
+     * @param user
+     * @param password
+     */
+    public User(int id,String user,String password)
+    {
+        _id = id;
+        _username = user;
+        _password = password;
+
+
+    };
+
     /**
      * Constructor sin el id del usuario
      * @param user
@@ -73,6 +88,8 @@ public class User {
         _phone = phone;
         _birthdate= birthdate;
     };
+
+
 
     /**
      * Constructor para solo el username y el password

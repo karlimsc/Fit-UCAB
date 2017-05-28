@@ -3,6 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
 
+
     <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_comienza">REGISTRATE</string>
     <string name="btn_m01_iniciaSesion">INICIA SESION</string>
@@ -27,6 +28,11 @@
     <string name="et_m01_kg">Kg</string>
     <string name="et_m01_estatura">Estatura</string>
     <string name="et_m01_mts">Mts</string>
+    <string name="m01_errorUsernameSpecialChar">El nombre de usuario no debe tener caracteres especiales</string>
+    <string name="m01_errorUsernameTooShort">El nombre de usuario debe poseer al menos 4 caracteres</string>
+    <string name="m01_errorPhoneTooShort">El teléfono es inválido</string>
+    <string name="m01_errorPasswordTooShort">La contraseña es muy corta </string>
+    <string name="m01_errorInvalidEmail">El email es inválido</string>
     <!--FIN Strings Modulo 1 -->
 
     <!--Inicio Strings Modulo 2-->
@@ -49,8 +55,7 @@
     <!--FIN Strings Modulo 2 -->
 
 
-
-   <!-- Inicio Strings Modulo 5 -->
+    <!-- Inicio Strings Modulo 5 -->
     <string name="app_name_title">Actividad</string>
     <string name="_tv_m05_type">Tipo de ejercicio:</string>
     <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
@@ -63,8 +68,6 @@
     <!--FIN Strings Modulo 5 -->
 
 
-
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Home</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
@@ -73,8 +76,7 @@
     <string name="title_activity_m02_home">M02HomeActivity</string>
     <string name="title_activity_m05_track_exercise">Track</string>
     <string name="bt_start_tracking">Iniciar</string>
-
-    <!-- Inicio Strings Modulo 6-->
+        <!-- Inicio Strings Modulo 6-->
     <string name="M06_nombre_modulo">Entrenamiento</string>
     <string name="M06_title_activity_opcion_agregar_entrenamiento">Agregar Entrenamiento</string>
     <string name="M06_entrenamientoPersonalizado">Entrenamiento Personalizado</string>
@@ -152,5 +154,3 @@
     <!--Fin Strings modulo 6-->
     <string name="M06_entrenamiento_creado_fallo">Ups, ha ocurrido un error, intente de nuevo</string>
 </resources>
-
-
