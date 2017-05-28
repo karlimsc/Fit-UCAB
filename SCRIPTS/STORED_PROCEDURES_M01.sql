@@ -1,6 +1,6 @@
 /**************************************************INICIO DE SESION**************************************************/
 
-CREATE OR REPLACE FUNCTION M01_INICIARSESION(varchar(20), varchar(8)) RETURNS integer AS $$
+CREATE OR REPLACE FUNCTION M01_INICIARSESION(varchar(20), varchar(80)) RETURNS integer AS $$
 DECLARE
  result integer;
 
@@ -20,7 +20,7 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************REGISTRO DE USUARIO**************************************************/
 
-CREATE OR REPLACE FUNCTION M01_REGISTRAR(varchar(20), varchar(15), varchar(50), varchar(1), varchar(20), date, real, real) RETURNS integer AS $$
+CREATE OR REPLACE FUNCTION M01_REGISTRAR(varchar(20), varchar(80), varchar(50), varchar(1), varchar(20), date, real, real) RETURNS integer AS $$
 DECLARE
  result integer;
 
@@ -34,7 +34,7 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************RECUPERAR PASSWORD**************************************************/
 
-CREATE OR REPLACE FUNCTION M01_RECUPERARPWD(varchar(50)) RETURNS TABLE (usuario varchar(20), password varchar(15)) AS $$
+CREATE OR REPLACE FUNCTION M01_RECUPERARPWD(varchar(50)) RETURNS TABLE (usuario varchar(20), password varchar(80)) AS $$
 
 BEGIN
  	RETURN QUERY
@@ -47,7 +47,7 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************CONSULTAR USUARIO**************************************************/
 
-CREATE OR REPLACE FUNCTION M01_INFORMACIONUSER(varchar(20)) RETURNS TABLE (id int, usuario varchar(20), pwd varchar(15), mail varchar(50), sex varchar(1), phone varchar(20), birthdate date, weight real, height real, points int) AS $$
+CREATE OR REPLACE FUNCTION M01_INFORMACIONUSER(varchar(20)) RETURNS TABLE (id int, usuario varchar(20), pwd varchar(80), mail varchar(50), sex varchar(1), phone varchar(20), birthdate date, weight real, height real, points int) AS $$
 
 BEGIN
  	RETURN QUERY
@@ -74,7 +74,7 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************ACTUALIZAR USUARIO**************************************************/
 
-CREATE OR REPLACE FUNCTION M01_MODIFICARUSER(varchar(20), varchar(15), varchar(50), varchar(1), varchar(20)) RETURNS integer AS $$
+CREATE OR REPLACE FUNCTION M01_MODIFICARUSER(varchar(20), varchar(80), varchar(50), varchar(1), varchar(20)) RETURNS integer AS $$
 DECLARE
  result integer;
 
