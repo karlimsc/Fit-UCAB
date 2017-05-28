@@ -27,6 +27,11 @@
     <string name="et_m01_kg">Kg</string>
     <string name="et_m01_estatura">Estatura</string>
     <string name="et_m01_mts">Mts</string>
+    <string name="m01_errorUsernameSpecialChar">El nombre de usuario no debe tener caracteres especiales</string>
+    <string name="m01_errorUsernameTooShort">El nombre de usuario debe poseer al menos 4 caracteres</string>
+    <string name="m01_errorPhoneTooShort">El teléfono es inválido</string>
+    <string name="m01_errorPasswordTooShort">La contraseña es muy corta </string>
+    <string name="m01_errorInvalidEmail">El email es inválido</string>
     <!--FIN Strings Modulo 1 -->
 
     <!--Inicio Strings Modulo 2-->
@@ -49,8 +54,7 @@
     <!--FIN Strings Modulo 2 -->
 
 
-
-   <!-- Inicio Strings Modulo 5 -->
+    <!-- Inicio Strings Modulo 5 -->
     <string name="app_name_title">Actividad</string>
     <string name="_tv_m05_type">Tipo de ejercicio:</string>
     <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
@@ -61,8 +65,6 @@
     <string name="tab_m05_log">Manual</string>
     <string name="tab_m05_track">Automática</string>
     <!--FIN Strings Modulo 5 -->
-
-
 
 
     <!-- TODO: Remove or change this placeholder text -->

@@ -22,7 +22,9 @@ public class User {
     private char _sex;
     @SerializedName("_birthdate")
     private String _birthdate;
+    @SerializedName("_height")
     private float _height;
+    @SerializedName("_weight")
     private float _weight;
     private int _point;
 
