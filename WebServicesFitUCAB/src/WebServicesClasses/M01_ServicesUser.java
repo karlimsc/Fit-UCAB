@@ -43,6 +43,7 @@ public class M01_ServicesUser {
     public M01_ServicesUser() {
 
     }
+
     /**
      * Funcion encargada de realizar la encriptación de un password
      * @param password El password a ser encriptado
@@ -167,7 +168,6 @@ public class M01_ServicesUser {
      * @param userparam
      * @return
      */
-
     @GET
     @Path("/deteleUser")
     @Produces("application/json")
@@ -195,7 +195,8 @@ public class M01_ServicesUser {
         }
     }
 
-    /***
+
+    /**
      * Metodo que realiza cambios en el usuario
      * @param userparam
      * @param password
@@ -231,6 +232,7 @@ public class M01_ServicesUser {
             return e.getMessage();
         }
     }
+
 
     /***
      * Metodo que con el email recuperas tu usuario y contraseña
