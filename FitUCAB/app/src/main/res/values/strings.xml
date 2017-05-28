@@ -6,7 +6,7 @@
     <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_comienza">REGISTRATE</string>
     <string name="btn_m01_iniciaSesion">INICIA SESION</string>
-    <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento físico</string>
+    <string name="tv_m01_intro">¡Bienvenido! \n \n Inicia tu entrenamiento físico</string>
     <string name="btn_m01_entrar">ENTRAR</string>
     <string name="et_m01_usuarioCorreo">Nombre de Usuario</string>
     <string name="et_m01_passwordLogin">Contraseña</string>

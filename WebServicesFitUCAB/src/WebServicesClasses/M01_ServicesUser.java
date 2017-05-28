@@ -234,8 +234,14 @@ public class M01_ServicesUser {
     }
 
 <<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
 =======
 
+>>>>>>> Stashed changes
+
+=======
+>>>>>>> M01_Gestion_Registro_Usuario
     /***
      * Metodo que con el email recuperas tu usuario y contraseña
      * @param email
