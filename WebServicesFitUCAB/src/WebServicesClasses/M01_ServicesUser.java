@@ -40,6 +40,7 @@ public class M01_ServicesUser {
     private int RESULT_CODE_OK=200;
     private int RESULT_CODE_FAIL=300;
     private int RESULT_USER_FAIL=400;
+    private int RESULT_EMAIL_OK=500;
     private static String DEFAULT_ENCODING1="UTF-8";
     Gson gson = new Gson();
 
@@ -400,7 +401,7 @@ public class M01_ServicesUser {
                 Transport.send(message);
                 //Aqui esta la validacion
                 User userOk = new User();
-                userOk.set_status(Integer.toString(RESULT_CODE_OK));
+                userOk.set_status(Integer.toString(RESULT_EMAIL_OK));
                 return gson.toJson(userOk);
             }
 
