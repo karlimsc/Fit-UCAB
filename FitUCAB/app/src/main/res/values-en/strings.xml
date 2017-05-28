@@ -24,7 +24,6 @@
     <string name="et_m01_correoRecovery">Email</string>
     <string name="et_m01_passwordLogin">Password</string>
     <string name="et_m01_passwordRegistro">Password</string>
-<<<<<<< HEAD
     <string name="m01_errorUsernameSpecialCharEN">The username cannot contain special characters</string>
     <string name="m01_errorUsernameTooShortEN">The username nust have 4 or more characters</string>
     <string name="m01_errorPhoneTooShortEN">The phone number is not valid</string>
@@ -33,8 +32,6 @@
     <string name="m01_errorNullFieldsEN">There are empty fields</string>
     <string name="m01_errorWeightOutOfRangeEN">The weight range is between 30kg and 300kg</string>
     <string name="m01_errorHeightOutOfRangeEN">El rango de altura es entre 1m y 3m The height range is between 1m and 3m</string>
-=======
->>>>>>> Develop
 
 
     <!--FIN Strings Modulo 1 -->
@@ -73,7 +70,6 @@
     <string name="m01_errorUsernameSpecialChar">The only allowed special character are: _  and -</string>
     <string name="m01_errorUsernameTooShort">The username is too short</string>
     <string name="tv_m01_recuperacionContra">Password Recovery</string>
-<<<<<<< HEAD
     <string name="_tv_m05_titletabmanual">MANUAL</string>
     <string name="_tv_m05_bt_pause">PAUSE</string>
     <string name="_btn_m05_registermanual">LOG</string>
@@ -102,7 +98,5 @@
     <string name="_tv_m05_sport">Sport:</string>
     <string name="_tab_m05_track">TRACK</string>
     <string name="_tab_m05_log"></string>
-=======
->>>>>>> Develop
     <!--FIN Strings Modulo 5 -->
 </resources>

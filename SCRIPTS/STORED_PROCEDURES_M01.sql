@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> Develop
 /**************************************************INICIO DE SESION**************************************************/
 
 CREATE OR REPLACE FUNCTION M01_INICIARSESION(varchar(20), varchar(8)) RETURNS integer AS $$
@@ -38,7 +35,6 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************RECUPERAR PASSWORD**************************************************/
 
-<<<<<<< HEAD
 CREATE OR REPLACE FUNCTION M01_RECUPERARPWD(varchar(30)) RETURNS TABLE (usuario varchar(20), password varchar(8)) AS $$
 
 BEGIN
@@ -46,15 +42,6 @@ BEGIN
 	 	SELECT PERSONUSERNAME, PERSONPASSWORD
 		FROM PERSON
 		WHERE PERSONEMAIL = $1
-=======
-CREATE OR REPLACE FUNCTION M01_RECUPERARPWD(varchar(20)) RETURNS TABLE (mail varchar(30), password varchar(8)) AS $$
-
-BEGIN
- 	RETURN QUERY
-	 	SELECT PERSONEMAIL, PERSONPASSWORD
-		FROM PERSON
-		WHERE PERSONUSERNAME = $1
->>>>>>> Develop
 	;
 END;
 $$ LANGUAGE plpgsql;

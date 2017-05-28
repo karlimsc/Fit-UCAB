@@ -120,11 +120,7 @@
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
                     android:textSize="18sp"
-<<<<<<< HEAD
                     android:maxLength="20"
-=======
-                    android:maxLength="11"
->>>>>>> Develop
                     android:typeface="sans" />
             </android.support.design.widget.TextInputLayout>
 

@@ -32,12 +32,9 @@
     <string name="m01_errorPhoneTooShort">El teléfono es inválido</string>
     <string name="m01_errorPasswordTooShort">La contraseña es muy corta </string>
     <string name="m01_errorInvalidEmail">El email es inválido</string>
-<<<<<<< HEAD
     <string name="m01_errorNullFields">Existen campos vacíos</string>
     <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
     <string name="m01_errorHeightOutOfRange">El rango de altura es entre 1m y 3m</string>
-=======
->>>>>>> Develop
     <!--FIN Strings Modulo 1 -->
 
     <!--Inicio Strings Modulo 2-->
@@ -60,7 +57,6 @@
     <!--FIN Strings Modulo 2 -->
 
 
-<<<<<<< HEAD
     <!-- Inicio Strings Modulo 5 (Estan en orden alfabetico)-->
     <string name="_app_name_title_m05">Actividad</string>
     <string name="_btn_m05_registermanual">REGISTRAR</string>
@@ -83,11 +79,6 @@
 
     <string name="_tv_m05_starDate">Fecha:</string>
     <string name="_tv_m05_time">Tiempo</string>
-=======
-    <!-- Inicio Strings Modulo 5 -->
-    <string name="app_name_title">Actividad</string>
-    <string name="_tv_m05_type">Tipo de ejercicio:</string>
->>>>>>> Develop
     <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
     <string name="_tv_m05_calories">Calorías quemadas</string>
     <string name="_tv_m05_duration">Duración en minutos:</string>
@@ -110,13 +101,9 @@
     <string name="_tst_m05_messagemodify">Debe seleccionar un item de la lista para modificar</string>
     <string name="_tst_m05_seletectitemonetouch">Debe seleccionar prolongadamente el item para ver opciones</string>
 
-<<<<<<< HEAD
     <!--FIN Strings Modulo 5 -->
 
 
-=======
-    <!-- TODO: Remove or change this placeholder text -->
->>>>>>> Develop
     <string name="hello_blank_fragment">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
