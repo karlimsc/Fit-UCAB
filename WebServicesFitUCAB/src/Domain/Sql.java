@@ -5,7 +5,7 @@ import java.sql.*;
 public class Sql {
 
     private static Connection conInstance;
-    private Connection conn =bdConnect();
+    private Connection _conn =bdConnect();
     private Statement _st;
     private ResultSet _rs;
     private static String BD_USER = "fitucab";
@@ -30,11 +30,11 @@ public class Sql {
      */
     private static Connection bdConnect()
     {
-        Connection conn = null;
+        Connection _conn = null;
         try
         {
             Class.forName(BD_CLASS_FOR_NAME);
-            conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
+            _conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
         }
         catch ( ClassNotFoundException e )
         {
@@ -63,9 +63,9 @@ public class Sql {
      */
     public ResultSet sql ( String query ) throws SQLException {
 
-        _st = conn.createStatement();
+        _st = _conn.createStatement();
         _rs  = _st.executeQuery(query);
-        conn.close();
+        _conn.close();
         return _rs;
     }
 

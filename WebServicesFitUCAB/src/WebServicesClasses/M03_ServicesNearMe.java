@@ -68,7 +68,8 @@ public class M03_ServicesNearMe {
 
 
         //return Float.toString(latitudFloatAux)+Float.toString(longitudFloatAux);
-        return Float.toString(distFrom(latitudFloat,longitudFloat,latitudFloatAux,longitudFloatAux));
+        //return Float.toString(distFrom(latitudFloat,longitudFloat,latitudFloatAux,longitudFloatAux));
+        return gson.toJson(userLocations);
     }
 
     @PUT

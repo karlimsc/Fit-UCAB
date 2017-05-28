@@ -1,4 +1,3 @@
-package M01_Test;
 import Domain.User;
 import WebServicesClasses.M01_ServicesUser;
 import org.junit.Test;
@@ -127,7 +126,7 @@ public class UserTest {
         long millis=System.currentTimeMillis();
         java.sql.Date date=new java.sql.Date(millis);
         User user = new User("daniel","daniel","daniel","daniel","daniel", (java.sql.Date) date);
-        assertEquals(date,user.get_birthdate());
+        assertEquals(date,user.getBirthdate());
 
     }
 
@@ -136,9 +135,9 @@ public class UserTest {
         long millis=System.currentTimeMillis();
         java.sql.Date fecha = new java.sql.Date(millis);
         User user = new User("daniel","daniel","daniel","daniel","daniel", fecha);
-        assertEquals(fecha,user.get_birthdate());
-        user.set_birthdate(null);
-        assertNull(user.get_birthdate());
+        assertEquals(fecha,user.getBirthdate());
+        user.setBirthdate(null);
+        assertNull(user.getBirthdate());
 
     }
 
