@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/pesasgirl"
-    android:orientation="vertical"
     android:paddingTop="20dp"
+    android:background="@mipmap/fitucab"
     android:weightSum="1">
 
     <LinearLayout
@@ -21,25 +21,24 @@
             android:layout_width="100dp"
             android:layout_height="103dp"
             android:layout_gravity="center"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="-20dp"
             android:layout_weight="2"
-            app:srcCompat="@mipmap/logofitucabnombreblanco" />
+            app:srcCompat="@mipmap/logofitucabnombre" />
 
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="258dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="180dp"
-            android:fontFamily="sans-serif"
+            android:layout_marginTop="190dp"
+            android:layout_weight="6"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/tv_m01_intro"
             android:textAlignment="center"
-            android:textColor="@color/common_google_signin_btn_text_dark_default"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:typeface="sans" />
+            android:textColor="@android:color/background_light"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_m01_comienza"
@@ -50,14 +49,11 @@
             android:layout_marginTop="30dp"
             android:layout_weight="1"
             android:background="@color/colorBtnConfirmar"
-            android:fontFamily="sans-serif"
             android:text="@string/btn_m01_comienza"
             android:textAlignment="center"
-            android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
-            android:textSize="18dp"
-            android:typeface="sans" />
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_m01_iniciarSesion"
@@ -68,12 +64,10 @@
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:background="@color/colorBtnAceptar"
-            android:fontFamily="sans-serif"
             android:text="@string/btn_m01_iniciaSesion"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
-            android:textSize="18dp"
-            android:typeface="sans" />
+            android:textStyle="bold" />
 
     </LinearLayout>
 

@@ -23,7 +23,7 @@ public class M05_ServicesActivity {
 
 
 
-    @GET
+    @POST
 
     @Path("/insertActivity")
 
@@ -68,7 +68,7 @@ public class M05_ServicesActivity {
     }
 
 
-    @GET
+    @POST
 
     @Path("/insertActivityT")
 
@@ -145,7 +145,7 @@ public class M05_ServicesActivity {
             ResultSet   rs  =  st.executeQuery(query);
 
             while(rs.next()){
-
+				resultado.setId      (rs.getInt(   "id"));
                 resultado.setStartime(rs.getString("horainicio"));
                 resultado.setEndtime (rs.getString("horafinal"));
                 resultado.setDate    (rs.getString("fecha"));
@@ -251,7 +251,7 @@ public class M05_ServicesActivity {
         }
     }
 
-    @GET
+    @PUT
 
     @Path("/updateKm")
 
@@ -289,7 +289,7 @@ public class M05_ServicesActivity {
 
     }
 
-    @GET
+    @PUT
 
     @Path("/updateCalor")
 
@@ -329,7 +329,7 @@ public class M05_ServicesActivity {
 
     }
 
-    @GET
+    @DELETE
 
     @Path("/deleteActivity")
 

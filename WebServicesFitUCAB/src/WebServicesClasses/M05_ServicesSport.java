@@ -21,13 +21,13 @@ public class M05_ServicesSport {
     Gson gson = new Gson();
 
 
-    @GET
+    @POST
 
     @Path("/insertSport")
 
     @Produces("application/json")
     /**
-     * Agrega a la lista de deportes disponibles del usuario el id seleccionado
+     *  Agrega a la lista de deportes disponibles del usuario el id seleccionado
      *  @param idPer
      *  @param idSpo
      *  @return
@@ -59,7 +59,8 @@ public class M05_ServicesSport {
 
     @Produces("application/json")
     /**
-     * Extrae el nombre de los deportes en funcion del id
+     * 
+	 * Extrae el nombre de los deportes en funcion del id
      * @param idSpo
      * @return
      */
@@ -151,7 +152,7 @@ public class M05_ServicesSport {
 
 
         Sport resultado = new Sport();
-        ArrayList<String> listaDeportes= new ArrayList<>();
+        ArrayList<Sport> listaDeportes= new ArrayList<>();
 
         String query = "select nombredeporte from M05_obtenerdeportesusuario('"+id+"')";
 
@@ -162,8 +163,9 @@ public class M05_ServicesSport {
             ResultSet rs =  st.executeQuery(query);
 
             while(rs.next()){
-
+				resultado.setId(rs.getInteger(  "id"));
                 resultado.setName(rs.getString(  "nombredeporte"));
+				resultado.setMet(rs.getFloat(  "met"));
                 listaDeportes.add(resultado.getName());
             }
 
@@ -176,7 +178,7 @@ public class M05_ServicesSport {
         }
     }
 
-    @GET
+    @DELETE
 
     @Path("/deleteSport")
 
