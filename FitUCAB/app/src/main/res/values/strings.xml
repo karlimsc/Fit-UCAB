@@ -4,6 +4,226 @@
     <string name="title_activity_main">MainActivity</string>
 
     <!--Inicio Strings Modulo 1 -->
+    <string name="btn_m01_comienza">REGISTRATE</string>
+    <string name="btn_m01_iniciaSesion">INICIA SESION</string>
+    <string name="tv_m01_intro">¡Bienvenido! \n \n Inicia tu entrenamiento físico</string>
+    <string name="btn_m01_entrar">ENTRAR</string>
+    <string name="et_m01_usuarioCorreo">Nombre de Usuario</string>
+    <string name="et_m01_passwordLogin">Contraseña</string>
+    <string name="et_m01_passwordRegistro">Contraseña</string>
+    <string name="btn_m01_aceptarLogin">Entrar</string>
+    <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
+    <string name="et_m01_correoRecovery">Correo Electrónico</string>
+    <string name="btn_m01_enviarCorreo">Enviar Correo</string>
+    <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
+    <string name="tv_m01_acercaDeTi">Acerca de ti</string>
+    <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
+    <string name="et_m01_usuario">Usuario</string>
+    <string name="et_m01_correoRegistro">Correo Electrónico</string>
+    <string name="et_m01_telefono">Teléfono</string>
+    <string name="rb_m01_femenino">Femenino</string>
+    <string name="rb_m01_masculino">Masculino</string>
+    <string name="et_m01_peso">Peso</string>
+    <string name="et_m01_kg">Kg</string>
+    <string name="et_m01_estatura">Estatura</string>
+    <string name="et_m01_mts">Mts</string>
+    <string name="m01_errorUsernameSpecialChar">El nombre de usuario no debe tener caracteres especiales</string>
+    <string name="m01_errorUsernameTooShort">El nombre de usuario debe poseer al menos 4 caracteres</string>
+    <string name="m01_errorPhoneTooShort">El teléfono es inválido</string>
+    <string name="m01_errorPasswordTooShort">La contraseña es muy corta </string>
+    <string name="m01_errorInvalidEmail">El email es inválido</string>
+    <string name="m01_errorNullFields">Existen campos vacíos</string>
+    <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
+    <string name="m01_errorHeightOutOfRange">El rango de altura es entre 1m y 3m</string>
+    <!--FIN Strings Modulo 1 -->
+
+    <!--Inicio Strings Modulo 2-->
+    <string name="nav_02_inicio">Inicio</string>
+    <string name="nav_02_calorias">Calorias</string>
+    <string name="nav_02_entrenamiento">Entrenamiento</string>
+    <string name="nav_02_cuenta">Cuenta</string>
+    <string name="nav_02_cerrarsesion">Cerrar Sesión</string>
+    <string name="tv_m02_perfil">Perfil</string>
+    <string name="et_m02_username">Nombre de usuario</string>
+    <string name="et_m02_email">Correo electronico</string>
+    <string name="et_m02_phone">Telefono</string>
+    <string name="et_m02_datenac">Fecha de Nacimiento</string>
+    <string name="et_m02_weight">Peso</string>
+    <string name="et_m02_height">Estatura</string>
+    <string name="et_m02_location">Locación</string>
+    <string name="et_m02_water">Vasos de Agua</string>
+    <string name="et_m02_Steps">Nro de Pasos</string>
+
+    <!--FIN Strings Modulo 2 -->
+
+
+    <!-- Inicio Strings Modulo 5 (Estan en orden alfabetico)-->
+    <string name="_app_name_title_m05">Actividad</string>
+    <string name="_btn_m05_registermanual">REGISTRAR</string>
+    <string name="_bt_start_tracking">INICIAR</string>
+    <string name="_btn_m05t_save">GUARDAR</string>
+    <string name= "btn_m05_end">TERMINAR</string>
+    <string name="_itm_m05_delete">Eliminar</string>
+    <string name="_itm_m05_modify">Modificar</string>
+    <string name="_tab_m05_log">MANUAL</string>
+    <string name="_tab_m05_track">AUTOMATICO</string>
+    <string name="_tv_m05_type">Tipo de ejercicio realizado : </string>
+    <string name="_tv_m05_sport">Deporte:</string>
+    <string name="_tv_m05_day">Dia</string>
+    <string name="_tv_m05_month">Mes</string>
+    <string name="_tv_m05_year">Año</string>
+    <string name="_tv_m05_distance">Distacia recorrida</string>
+    <string name="_tv_m05_speed">Velocidad:</string>
+    <string name="_tv_m05_starHour">Hora:</string>
+    <string name="_tv_m05_date">Fecha de inicio</string>
+
+    <string name="_tv_m05_starDate">Fecha:</string>
+    <string name="_tv_m05_time">Tiempo</string>
+    <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
+    <string name="_tv_m05_calories">Calorías quemadas</string>
+    <string name="_tv_m05_duration">Duración en minutos:</string>
+    <string name="_tv_m05_titletabmanual">MANUAL</string>
+    <string name="_btn_m05_pause">PAUSAR</string>
+    <string name="_btn_m05_resume">CONTINUAR</string>
+    <string name="tab_m05_log">Manual</string>
+    <string name="tab_m05_track">Automática</string>
+    <string name="_ttl_m05_activity">Actividad</string>
+    <string name="_ttl_m05_questiondeleteactivity">Confirmar</string>
+    <string name="_tv_m05_thisweek">En esta semana</string>
+
+                                         <!--     Dialogos           -->
+    <string name="_dlg_m05_cancel">CANCELAR</string>
+    <string name="_dlg_m05_done">SI</string>
+    <string name="_dlg_m05_quetiondeleteactivity">¿Desea realmente eliminar esta actividad?</string>
+    <string name="_dlg_m05_dateseleted">Seleccione fecha</string>
+    <string name="_dlg_m05_hourseleted">Seleccione hora</string>
+    <string name="_tst_m05_messagedelete">Debe seleccionar un item de la lista para eliminar</string>
+    <string name="_tst_m05_messagemodify">Debe seleccionar un item de la lista para modificar</string>
+    <string name="_tst_m05_seletectitemonetouch">Debe seleccionar prolongadamente el item para ver opciones</string>
+
+    <!--FIN Strings Modulo 5 -->
+
+
+    <string name="hello_blank_fragment">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_m02_home">M02HomeActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+
+</resources>
+
+    <!--Inicio Strings Modulo 1 -->
+    <string name="btn_m01_comienza">Comienza</string>
+    <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
+    <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento físico</string>
+    <string name="btn_m01_entrar">ENTRAR</string>
+    <string name="et_m01_usuarioCorreo">Nombre de Usuario</string>
+    <string name="et_m01_passwordLogin">Contraseña</string>
+    <string name="et_m01_passwordRegistro">Contraseña</string>
+    <string name="btn_m01_aceptarLogin">Entrar</string>
+    <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
+    <string name="et_m01_correoRecovery">Correo Electrónico</string>
+    <string name="btn_m01_enviarCorreo">Enviar Correo</string>
+    <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
+    <string name="tv_m01_acercaDeTi">Acerca de ti</string>
+    <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
+    <string name="et_m01_usuario">Usuario</string>
+    <string name="et_m01_correoRegistro">Correo Electrónico</string>
+    <string name="et_m01_telefono">Teléfono</string>
+    <string name="rb_m01_femenino">Femenino</string>
+    <string name="rb_m01_masculino">Masculino</string>
+    <string name="et_m01_peso">Peso</string>
+    <string name="et_m01_kg">Kg</string>
+    <string name="et_m01_estatura">Estatura</string>
+    <string name="et_m01_mts">Mts</string>
+    <string name="m01_errorUsernameSpecialChar">El nombre de usuario no debe tener caracteres especiales</string>
+    <string name="m01_errorUsernameTooShort">El nombre de usuario debe poseer al menos 4 caracteres</string>
+    <string name="m01_errorPhoneTooShort">El teléfono es inválido</string>
+    <string name="m01_errorPasswordTooShort">La contraseña es muy corta </string>
+    <string name="m01_errorInvalidEmail">El email es inválido</string>
+    <string name="m01_errorNullFields">Existen campos vacíos</string>
+    <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
+    <string name="m01_errorHeightOutOfRange">El rango de altura es entre 1m y 3m</string>
+    <!--FIN Strings Modulo 1 -->
+
+    <!--Inicio Strings Modulo 2-->
+    <string name="nav_02_inicio">Inicio</string>
+    <string name="nav_02_calorias">Calorias</string>
+    <string name="nav_02_entrenamiento">Entrenamiento</string>
+    <string name="nav_02_cuenta">Cuenta</string>
+    <string name="nav_02_cerrarsesion">Cerrar Sesión</string>
+    <string name="tv_m02_perfil">Perfil</string>
+    <string name="et_m02_username">Nombre de usuario</string>
+    <string name="et_m02_email">Correo electronico</string>
+    <string name="et_m02_phone">Telefono</string>
+    <string name="et_m02_datenac">Fecha de Nacimiento</string>
+    <string name="et_m02_weight">Peso</string>
+    <string name="et_m02_height">Estatura</string>
+    <string name="et_m02_location">Locación</string>
+    <string name="et_m02_water">Vasos de Agua</string>
+    <string name="et_m02_Steps">Nro de Pasos</string>
+
+    <!--FIN Strings Modulo 2 -->
+
+
+    <!-- Inicio Strings Modulo 5 (Estan en orden alfabetico)-->
+    <string name="_app_name_title_m05">Actividad</string>
+    <string name="_btn_m05_registermanual">REGISTRAR</string>
+    <string name="_bt_start_tracking">INICIAR</string>
+    <string name="_btn_m05t_save">GUARDAR</string>
+    <string name= "btn_m05_end">TERMINAR</string>
+    <string name="_itm_m05_delete">Eliminar</string>
+    <string name="_itm_m05_modify">Modificar</string>
+    <string name="_tab_m05_log">MANUAL</string>
+    <string name="_tab_m05_track">AUTOMATICO</string>
+    <string name="_tv_m05_type">Tipo de ejercicio realizado : </string>
+    <string name="_tv_m05_sport">Deporte:</string>
+    <string name="_tv_m05_day">Dia</string>
+    <string name="_tv_m05_month">Mes</string>
+    <string name="_tv_m05_year">Año</string>
+    <string name="_tv_m05_distance">Distacia recorrida</string>
+    <string name="_tv_m05_speed">Velocidad:</string>
+    <string name="_tv_m05_starHour">Hora:</string>
+    <string name="_tv_m05_date">Fecha de inicio</string>
+
+    <string name="_tv_m05_starDate">Fecha:</string>
+    <string name="_tv_m05_time">Tiempo</string>
+    <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
+    <string name="_tv_m05_calories">Calorías quemadas</string>
+    <string name="_tv_m05_duration">Duración en minutos:</string>
+    <string name="_tv_m05_titletabmanual">MANUAL</string>
+    <string name="_btn_m05_pause">PAUSAR</string>
+    <string name="_btn_m05_resume">CONTINUAR</string>
+    <string name="tab_m05_log">Manual</string>
+    <string name="tab_m05_track">Automática</string>
+    <string name="_ttl_m05_activity">Actividad</string>
+    <string name="_ttl_m05_questiondeleteactivity">Confirmar</string>
+    <string name="_tv_m05_thisweek">En esta semana</string>
+
+                                         <!--     Dialogos           -->
+    <string name="_dlg_m05_cancel">CANCELAR</string>
+    <string name="_dlg_m05_done">SI</string>
+    <string name="_dlg_m05_quetiondeleteactivity">¿Desea realmente eliminar esta actividad?</string>
+    <string name="_dlg_m05_dateseleted">Seleccione fecha</string>
+    <string name="_dlg_m05_hourseleted">Seleccione hora</string>
+    <string name="_tst_m05_messagedelete">Debe seleccionar un item de la lista para eliminar</string>
+    <string name="_tst_m05_messagemodify">Debe seleccionar un item de la lista para modificar</string>
+    <string name="_tst_m05_seletectitemonetouch">Debe seleccionar prolongadamente el item para ver opciones</string>
+
+    <!--FIN Strings Modulo 5 -->
+
+
+    <string name="hello_blank_fragment">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_m02_home">M02HomeActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+
+</resources>
+
+    <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_comienza">Comienza</string>
     <string name="btn_m01_iniciaSesion">Inicia Sesión</string>
     <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento físico</string>
