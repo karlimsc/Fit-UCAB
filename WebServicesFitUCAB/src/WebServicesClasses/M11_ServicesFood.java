@@ -262,16 +262,16 @@ public class M11_ServicesFood {
      * @param foodName Indica el nombre del usuario a actualizar
      * @param foodWeight Indica el peso del alimento con el que se actualizara
      * @param calorie Indica las calorias con el que actualizara
-     * @param idFood Id del alimento a actualizar
+     * @param idUser Id del alimento a actualizar
      * @return Devuelve un json con elemento llamado data, el cual contiene el mensaje de la peticion
      */
 
-    @POST
+    @GET
     @Path("/updatePersonalized")
     @Produces("application/json")
     public String updatePersonalized(@QueryParam("foodName") String foodName,
-                                     @QueryParam("foodWeight") double foodWeight,
-                                     @QueryParam("calorie") int calorie,
+                                     @QueryParam("foodWeight") String foodWeight,
+                                     @QueryParam("calorie") String calorie,
                                      @QueryParam("idUser") int idUser){
 
         Map<String, String> response = new HashMap<String, String>();
@@ -288,8 +288,8 @@ public class M11_ServicesFood {
 
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1, foodName);
-            st.setString(2, String.valueOf(foodWeight));
-            st.setInt(3, calorie);
+            st.setInt(2, Integer.parseInt(foodWeight));
+            st.setInt(3, Integer.parseInt(calorie));
             st.setInt(4, idUser);
             st.executeQuery();
             response.put("data", "Se actualizo el alimento de forma exitosa");
@@ -301,6 +301,54 @@ public class M11_ServicesFood {
             response.put("error", e.getMessage());
         }
         finally {
+            return gson.toJson(response);
+        }
+    }
+
+    /**
+     * Metodo que inserta un alimento ene specifico a la dieta del dia.
+     * @param foodName Representa el nombre del alimento a agregar.
+     * @param foodCalorie Represneta las calorias del alimento a agregar.
+     * @param foodWeight Representa el peso del alimento a agregar.
+     * @param foodDinner Representa el booleano, si esta en true, es un alimento que se va a sugerir para la cena.
+     * @param idUser Reprensenta el id del usuario que esta ingresando el alimento.
+     * @return Devuelve un mapa dentro de un json con la respuesta.
+     */
+    @GET
+    @Path("/insertOnePersonalizedFood")
+    @Produces("application/json")
+    public String insertUnAlimento( @QueryParam("foodName") String foodName ,
+                                  @QueryParam("foodCalorie") String foodCalorie ,
+                                  @QueryParam("foodWeight") String foodWeight ,
+                                    @QueryParam("foodDinner") String foodDinner,
+                                    @QueryParam("idUser") int idUser){
+
+        Map<String, String> response = new HashMap<String, String>();
+        try {
+
+
+            String query = "select m11_inserta_alim_person(? , ?, ?, ?, ?)";
+
+
+            PreparedStatement st = conn.prepareStatement(query);
+
+                st.setString(1, foodName);
+                st.setInt(2, Integer.parseInt(foodCalorie));
+                st.setInt(3, Integer.parseInt(foodWeight));
+                st.setBoolean(4 , Boolean.parseBoolean(foodDinner));
+                st.setInt(5, idUser);
+
+                st.executeQuery();
+            response.put("data", "Se insertaron los alimentos de forma exitosa");
+        }
+        catch (SQLException e) {
+            //response.put("error", e.getMessage());
+        }
+        catch (ParameterNullException e){
+            //.put("error", e.getMessage());
+        }
+        finally {
+            bdClose();
             return gson.toJson(response);
         }
     }
@@ -414,7 +462,7 @@ public class M11_ServicesFood {
         try
         {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/FitUcabDB";
+            String url = "jdbc:postgresql://localhost:5432/fitucabdb";
             conn = DriverManager.getConnection(url,"fitucab", "fitucab");
         }
         catch (ClassNotFoundException e)

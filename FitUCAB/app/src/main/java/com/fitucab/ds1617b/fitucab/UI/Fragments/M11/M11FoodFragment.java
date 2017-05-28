@@ -217,7 +217,7 @@ public class M11FoodFragment extends Fragment {
         });
 
     }
-
+    
     /**
      * Metodo que se utiliza para eliminar algun alimento personalizado del usuario
      * @param usuarioID Representa el ID del usuario
@@ -252,37 +252,4 @@ public class M11FoodFragment extends Fragment {
         requestQueue.add( stringRequest );
 
     }
-/* Este metodo va en el fragmento FooddialogFragment
-    public void editarAlimentoPersonalizad( String nombreAlimento , int peso , int caloria ,
-                                            int usuarioID){
-        RequestQueue requestQueue = Volley.newRequestQueue( _view.getContext() );
-        IpStringConnection jsonURL = new IpStringConnection();
-        jsonURL.set_ip( jsonURL.get_ip() + "M11_Food/updatePersonalized?foodName="
-                + nombreAlimento + "&foodWeight" + peso + "&calorie" + caloria +
-                "&idUser=" + usuarioID );
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, jsonURL.get_ip(),
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-                        Gson gson = new Gson();
-                        ArrayList<String> respuesta = new ArrayList<>();
-                        respuesta = gson.fromJson( response,
-                                new TypeToken<ArrayList<String>>(){}.getType() );
-                        Toast mensaje = new Toast(_view.getContext());
-                        mensaje.setText( "El alimento fue actualizado correctamente" );
-                        mensaje.setDuration( Toast.LENGTH_LONG );
-                        mensaje.setGravity( Gravity.CENTER , 0 , 0);
-                        mensaje.show();
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText( _view.getContext(), "Hola, no devolvio nada" , Toast.LENGTH_LONG);
-                    }
-                });
-        requestQueue.add( stringRequest );
-
-    }*/
 }
