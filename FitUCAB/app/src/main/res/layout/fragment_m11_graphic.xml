@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11GraphicFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <CheckBox
+        android:id="@+id/cb_m11_consumidas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="48dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="43dp"
+        android:checked="true"
+        android:onClick="activarDesactivarConsumidas"
+        android:text="Calorias consumidas" />
+
+    <CheckBox
+        android:id="@+id/cb_m11_quemadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/cb_m11_consumidas"
+        android:layout_alignLeft="@+id/cb_m11_consumidas"
+        android:layout_alignRight="@+id/cb_m11_consumidas"
+        android:layout_alignStart="@+id/cb_m11_consumidas"
+        android:layout_below="@+id/cb_m11_consumidas"
+        android:checked="true"
+        android:duplicateParentState="false"
+        android:onClick="activarDesactivarQuemadas"
+        android:text="Calorias quemadas" />
+
+
+    <Button
+        android:id="@+id/btn_m11_dia"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/cb_m11_quemadas"
+        android:text="D"
+        android:onClick="verGraficoDia"/>
+
+    <Button
+        android:id="@+id/btn_m11_semana"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="S"
+        android:layout_below="@+id/btn_m11_dia"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="verGraficoSemana"/>
+
+    <Button
+        android:id="@+id/btn_m11_mes"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/btn_m11_semana"
+        android:text="M"
+        android:onClick="verGraficaMes"/>
+
+    <Button
+        android:id="@+id/btn_m11_ano"
+        style="@style/Widget.AppCompat.Button.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        android:text="A"
+        android:layout_below="@+id/btn_m11_mes"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="verGraficaAno"/>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/cb_m11_quemadas"
+        android:layout_toLeftOf="@+id/btn_m11_dia"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+</RelativeLayout>
+

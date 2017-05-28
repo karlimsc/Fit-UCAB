@@ -8,7 +8,7 @@
     <string name="btn_m01_iniciaSesion">INICIA SESION</string>
     <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento físico</string>
     <string name="btn_m01_entrar">ENTRAR</string>
-    <string name="et_m01_usuarioCorreo">Usuario o Correo</string>
+    <string name="et_m01_usuarioCorreo">Nombre de Usuario</string>
     <string name="et_m01_passwordLogin">Contraseña</string>
     <string name="et_m01_passwordRegistro">Contraseña</string>
     <string name="btn_m01_aceptarLogin">ENTRAR</string>
@@ -27,6 +27,14 @@
     <string name="et_m01_kg">Kg</string>
     <string name="et_m01_estatura">Estatura</string>
     <string name="et_m01_mts">Mts</string>
+    <string name="m01_errorUsernameSpecialChar">El nombre de usuario no debe tener caracteres especiales</string>
+    <string name="m01_errorUsernameTooShort">El nombre de usuario debe poseer al menos 4 caracteres</string>
+    <string name="m01_errorPhoneTooShort">El teléfono es inválido</string>
+    <string name="m01_errorPasswordTooShort">La contraseña es muy corta </string>
+    <string name="m01_errorInvalidEmail">El email es inválido</string>
+    <string name="m01_errorNullFields">Existen campos vacíos</string>
+    <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
+    <string name="m01_errorHeightOutOfRange">El rango de altura es entre 1m y 3m</string>
     <!--FIN Strings Modulo 1 -->
 
     <!--Inicio Strings Modulo 2-->
