@@ -48,14 +48,10 @@ import java.util.List;
  */
 
 public class M05ModifyFragment extends Fragment {
-    TextView _tv_date, _tv_time;
+    TextView _tv_date, _tv_time,_tv_sport;
 
-    // Valores para los parametros  de fecha
-    int _year, _month, _day;
-    //Valorea para la hora
-    int _hour, _min;
 
-    EditText _et_Calories;
+    EditText _et_Calories,_et_km;
 
     Button _modify;
     ImageView _delete, _close;
@@ -106,7 +102,13 @@ public class M05ModifyFragment extends Fragment {
          _delete = (ImageView) _view.findViewById(R.id.iv_m05_deleteactivity);
          _modify = (Button) _view.findViewById(R.id.btn_m05_updateactivity);
         _close =  (ImageView) _view.findViewById(R.id.iv_m05_close);
+       //Campos para los datos de la actividad
         _et_Calories= (EditText) _view.findViewById(R.id.editText);
+        _tv_date = (TextView) _view.findViewById(R.id.tv_m05_dta);
+        _tv_time=(TextView) _view.findViewById(R.id.tv_m05_tme);
+        _tv_sport=(TextView) _view.findViewById(R.id.tv_m05_type);
+        _et_km = (EditText) _view.findViewById(R.id.et_m05_dtanc);
+
         setHasOptionsMenu(true);
 
         selectedOpcionToolbar();
@@ -115,11 +117,23 @@ public class M05ModifyFragment extends Fragment {
 
 // Aqui llena los copos can la inforacion de la actividad para posteriormente eliminarla o actualizarla
     public void inflateData(){
-        Log.e("STATIC DEL OTRO LADO ", M05PrincipalActivity.get_activit().get_name());
+       // Log.e("STATIC DEL OTRO LADO ", M05PrincipalActivity.get_activit().get_name());
         _activit = M05PrincipalActivity.get_activit();
         _idActivity= String.valueOf(_activit.get_id());
-        String cal = String.valueOf(_activit.get_calor());
-            _et_Calories.setText(cal);
+
+        // Llena los componentes de la ventana
+        String dato ;
+        dato = String.valueOf(_activit.get_calor());
+            _et_Calories.setText(dato);
+        dato = String.valueOf(_activit.get_km());
+            _et_km.setText(dato);
+        dato = _activit.get_startime();
+            _tv_time.setText(dato);
+        dato = _activit.get_date();
+            _tv_date.setText(dato);
+        dato = _activit.get_name();
+            _tv_sport.setText(dato);
+
     }
 
 
@@ -169,6 +183,7 @@ public class M05ModifyFragment extends Fragment {
                 .setPositiveButton(R.string._dlg_m05_done, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         makeDelete();
+                        _callBack.onSwap("M05PrincipalActivityFragment",null);
                     }
                 })
                 .setNegativeButton(R.string._dlg_m05_cancel, new DialogInterface.OnClickListener() {
@@ -184,8 +199,7 @@ public class M05ModifyFragment extends Fragment {
 
     public void makeDelete()
     {
-        String consult ="http://192.168.250.3:8080/untitled_war_exploded/M05_ServicesActivity/" +
-                "deleteActivity?idReg="+_idActivity;
+        String consult =M05UrlConsul._urlDeleteAct+_idActivity;
 
         final StringRequest stringRequest = new StringRequest
                 (Request.Method.GET, consult,

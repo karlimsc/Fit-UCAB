@@ -90,6 +90,8 @@
     <string name="_ttl_m05_activity">Actividad</string>
     <string name="_ttl_m05_questiondeleteactivity">Confirmar</string>
     <string name="_tv_m05_thisweek">En esta semana</string>
+    <string name="_tv_m05_emptyList">Lista vacia</string>
+
 
                                          <!--     Dialogos           -->
     <string name="_dlg_m05_cancel">CANCELAR</string>
@@ -99,6 +101,8 @@
     <string name="_dlg_m05_hourseleted">Seleccione hora</string>
     <string name="_tst_m05_messagedelete">Debe seleccionar un item de la lista para eliminar</string>
     <string name="_tst_m05_messagemodify">Debe seleccionar un item de la lista para modificar</string>
+    <string name="_tst_m05_messageempty">No tiene ninguna avtividad registrada</string>
+    <string name="_tst_m05_messagereload">No se puede conectar al servidor, intente mas tarde o refresque la ventana</string>
     <string name="_tst_m05_seletectitemonetouch">Debe seleccionar prolongadamente el item para ver opciones</string>
 
     <!--FIN Strings Modulo 5 -->

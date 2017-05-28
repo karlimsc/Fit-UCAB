@@ -37,33 +37,18 @@
                 android:text="@string/_tv_m05_type"
                 android:textSize="18dp" />
 
-            <Spinner
-                android:id="@+id/spn_m05_type"
+            <TextView
+                android:id="@+id/tv_m05_type"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
-
-                android:layout_alignLeft="@+id/textView4"
-                android:layout_alignStart="@+id/textView4"
-                android:layout_below="@+id/textView4"
-                android:layout_gravity="center"></Spinner>
-
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="1">
-
-                <EditText
-                    android:id="@+id/editText"
-                    android:layout_width="250dp"
-                    android:layout_height="40dp"
-                    android:layout_below="@+id/et_m05_calories"
-                    android:layout_centerHorizontal="true"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:hint="@string/_tv_m05_calories" />
-            </android.support.design.widget.TextInputLayout>
-
+                android:layout_alignLeft="@+id/textView2"
+                android:layout_alignStart="@+id/textView2"
+                android:layout_below="@+id/toolbar"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="@color/ColorPrimary"
+                android:layout_marginTop="27dp"
+                android:textSize="24dp" />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -117,6 +102,24 @@
                     android:textAppearance="?android:attr/textAppearanceSmall"
                     android:textSize="18dp"
                     android:typeface="sans" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="1"
+                    android:layout_weight="1.29">
+
+                    <EditText
+                        android:id="@+id/editText"
+                        android:layout_width="250dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/et_m05_calories"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/_tv_m05_calories"
+                        android:inputType="numberDecimal" />
+                </android.support.design.widget.TextInputLayout>
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -128,6 +131,7 @@
                     android:id="@+id/et_m05_dtanc"
                     android:layout_width="250dp"
                     android:layout_height="40dp"
+                    android:inputType="numberDecimal"
                     android:layout_alignLeft="@+id/editText"
                     android:layout_alignStart="@+id/editText"
                     android:layout_below="@+id/editText"

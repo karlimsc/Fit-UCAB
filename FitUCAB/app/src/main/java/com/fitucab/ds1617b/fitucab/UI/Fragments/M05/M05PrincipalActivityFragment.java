@@ -79,13 +79,15 @@ public class M05PrincipalActivityFragment extends Fragment implements
     private int _hour;
     private int _min;
 
+    int pos=0;
+
     View _view;
 
     private OnFragmentSwap _callBack;
     private Activit _act;
 
     // Variables que se muetran en la lista
-    String _sport,_date,_time,_calories;
+    String _sport,_date,_time,_calories,_empty;
 
 
     /**
@@ -146,6 +148,7 @@ public class M05PrincipalActivityFragment extends Fragment implements
         _date = getResources().getString(R.string._tv_m05_starDate);
         _time = getResources().getString(R.string._tv_m05_starHour);
         _calories = getResources().getString(R.string._tv_m05_calories);
+        _empty = getResources().getString(R.string._tst_m05_messageempty);
         //Llena el ListView
         makeRequest();
        // Opciones para la seleccion del Item
@@ -246,6 +249,7 @@ public class M05PrincipalActivityFragment extends Fragment implements
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
+
                                 ArrayList<Activit> at = new ArrayList<Activit>();
                                 ArrayList<String> tab = new ArrayList<String>();
                                 at = gson.fromJson(response,
@@ -256,18 +260,21 @@ public class M05PrincipalActivityFragment extends Fragment implements
                                 _listView.setAdapter(adapter);
                                 adapter.addAll(tab);
 
-                                Log.e("RESPONSE ",at.get(0).get_name());
-                                Log.e("RESPONSE ",String.valueOf(at.size()));
-
                                 for (int i = 0; i < at.size(); i++ ){
+                                    pos =0;
                                     tab.add(_sport+" "+at.get(i).get_name()+"\n"+
                                             _date+" "+at.get(i).get_date()+"\n"+
                                             _time+" "+at.get(i).get_startime()+"\n"+
                                             _calories+": "+at.get(i).get_calor()
                                     );
                                 }
-                                Log.e("RESPONSE TAB",tab.get(0));
 
+                                //Muestra un mensaje al usuario que no posee elemntos en la lista
+                                if (at.size()== 0){
+                                    tab.add(_empty);
+                                    //para que no escucheel 1er item en caso de que no tenga actiadas
+                                    pos=1;
+                                }
 
                             }
                         }, new Response.ErrorListener() {
@@ -275,13 +282,11 @@ public class M05PrincipalActivityFragment extends Fragment implements
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // TODO Auto-generated method stub
-                        Log.i("no trajo nada","");
 
                     }
                 });
-// Access the RequestQueue through your singleton class.
         VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
-       // _listView.setOnClickListener(this);
+
     }
 
 
@@ -293,12 +298,16 @@ public class M05PrincipalActivityFragment extends Fragment implements
         // Para la seleccion individual
         _listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
+
+
         _listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                M05PrincipalActivity.set_activit(_activits.get(position));
-                Log.e("EN EL STATIC", String.valueOf(M05PrincipalActivity.get_activit().get_calor()));
-                _callBack.onSwap("M05ModifyFragment",null);
+          if (position != 0 && pos==0  ) {
+              M05PrincipalActivity.set_activit(_activits.get(position));
+              Log.e("EN EL STATIC", String.valueOf(M05PrincipalActivity.get_activit().get_calor()));
+              _callBack.onSwap("M05ModifyFragment", null);
+          }
                 return true;
             }
         });

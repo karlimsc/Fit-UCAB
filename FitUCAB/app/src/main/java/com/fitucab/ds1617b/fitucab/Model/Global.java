@@ -10,7 +10,7 @@ public class Global {
 
     public static String _puerto = "8080";
 
-    // Lo normal s solo cambiar el 1er componente segun por el nombre del servicio que se este corriendo
+    // Lo normal s solo cambiar el 1er componente segun sea el nombre del servicio que se este corriendo
     public static String _nameProyec = "untitled"+"_war_exploded";
 
     //El parametro completo que se pasa al Response de volley
