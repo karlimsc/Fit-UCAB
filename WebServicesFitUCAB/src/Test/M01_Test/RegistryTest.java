@@ -75,7 +75,7 @@ public class RegistryTest {
     @Test
     public void getRegistryPoint() throws Exception {
         Registry user = new Registry(1,1,1);
-        assertEquals(1,user.getIdRegistry());
+        assertEquals(1.0,user.getIdRegistry(),1.0);
     }
 
     @Test

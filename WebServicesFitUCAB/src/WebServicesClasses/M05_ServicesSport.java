@@ -59,8 +59,8 @@ public class M05_ServicesSport {
 
     @Produces("application/json")
     /**
-     *
-     * Extrae el nombre de los deportes en funcion del id
+     * 
+	 * Extrae el nombre de los deportes en funcion del id
      * @param idSpo
      * @return
      */
@@ -222,7 +222,7 @@ public class M05_ServicesSport {
 
         String query = "select M05_obteneriddeporte('"+name.toUpperCase()+"');";
 
-        Sport resultado= new Sport();
+       Sport resultado= new Sport();
 
         try{
             Connection conn=conectarADb();
@@ -264,3 +264,4 @@ public class M05_ServicesSport {
     }
 
 }
+

@@ -44,6 +44,7 @@ public class  M01LoginFragment extends Fragment {
     }
 
     public void onAttach(Activity activity) {
+
         super.onAttach(activity);
 
         try {
@@ -113,9 +114,11 @@ public class  M01LoginFragment extends Fragment {
     }
 
     private String validateComponents(String username, String password){
+
         String response = "ok";
         Pattern pat = Pattern.compile("[\\w-]+");
         Matcher mat = pat.matcher(username);
+
         if ((!username.equals("")) && (!password.equals(""))) {
             if (mat.matches()) {
                 if (username.length() >= 4) {
@@ -133,10 +136,7 @@ public class  M01LoginFragment extends Fragment {
         }else{
             return getString(R.string.m01_errorNullFields);
         }
-
     }
-
-
 
     /**
      * Metodo para hacer las llamadas a los SW y hacer el login
@@ -146,8 +146,10 @@ public class  M01LoginFragment extends Fragment {
      public void getRetrofit(String usernameLogin, String passwordLogin){
 
          if (validateComponents(usernameLogin, passwordLogin).equals("ok")) {
+
              ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
              Call<User> call= apiService.loginUser(usernameLogin,passwordLogin);
+
              call.enqueue(new Callback<User>() {
 
                  @Override
@@ -177,7 +179,8 @@ public class  M01LoginFragment extends Fragment {
 
                  }
              });
-         }else{
+         }
+         else{
              if (validateComponents(usernameLogin, passwordLogin).equals(getString
                      (R.string.m01_errorUsernameSpecialChar))) {
 
