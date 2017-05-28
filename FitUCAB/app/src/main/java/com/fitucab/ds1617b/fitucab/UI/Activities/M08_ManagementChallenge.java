@@ -71,7 +71,7 @@ public class M08_ManagementChallenge extends AppCompatActivity
                 String itemValue = (String) list.getItemAtPosition(position);
 
                 //Con el fin de empezar a mostrar una nueva actividad lo que necesitamos es una intención
-                Intent intent = new Intent(M08_ManagementChallenge.this,M08InformationChallenge.class);
+                Intent intent = new Intent(M08_ManagementChallenge.this, M08InformationChallenge.class);
 
                 // Aquí pasaremos el parámetro de la intención creada previamente
                 startActivity(intent);
@@ -141,7 +141,7 @@ public class M08_ManagementChallenge extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings_m08) {
-            startActivity(new Intent(this, M01LoginActivity.class));
+            startActivity(new Intent(this, M08AddChallenge.class));
             return true;
         }//cierre if (id == R.id.action_settings)
 
