@@ -38,7 +38,8 @@ public class M01_ServicesUser {
 
     private Connection conn = getConInstance();
     private int RESULT_CODE_OK=200;
-    private int RESULT_CODE_FAIL=500;
+    private int RESULT_CODE_FAIL=300;
+    private int RESULT_USER_FAIL=400;
     private static String DEFAULT_ENCODING1="UTF-8";
     Gson gson = new Gson();
 
@@ -137,6 +138,7 @@ public class M01_ServicesUser {
         String insertUserQuery = " SELECT * FROM M01_REGISTRAR('" + username + "','" + password + "','" + email + "','" + sex + "'" +
                 ",'" + phone + "','" + birthdate + "','" + weight + "','" + height + "')";
 
+        User userFail= new User();
         try {
 
             Statement st = conn.createStatement();
@@ -162,13 +164,13 @@ public class M01_ServicesUser {
             }
             else{
 
-                User userFail = new User();
                 userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
                 return gson.toJson(userFail);
             }
         }
         catch (SQLException e) {
-            return e.getSQLState();
+            userFail.set_status(e.getSQLState());
+            return gson.toJson(userFail);
         }
         catch (Exception e) {
             return e.getMessage();
@@ -310,7 +312,7 @@ public class M01_ServicesUser {
             }
             else {
                 User userFail = new User();
-                userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+                userFail.set_status(Integer.toString(RESULT_USER_FAIL));
                 return gson.toJson(userFail);
             }
         }
