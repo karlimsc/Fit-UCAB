@@ -1,8 +1,8 @@
 package M01_Test;
 import Domain.User;
+import WebServicesClasses.M01_ServicesUser;
 import org.junit.Test;
-import java.util.Calendar;
-import java.util.Date;
+
 import static org.junit.Assert.*;
 
 /**
@@ -120,23 +120,27 @@ public class UserTest {
         assertNull(user1.getPhone());
     }
 
-   /* @Test
+    @Test
     public void get_birthdate() throws Exception {
 
 
-        java.util.Date fecha = new Date();
-        User user = new User("daniel","daniel","daniel","daniel","daniel", (java.sql.Date) fecha);
-        assertEquals(fecha,user.get_birthdate());
+        long millis=System.currentTimeMillis();
+        java.sql.Date date=new java.sql.Date(millis);
+        User user = new User("daniel","daniel","daniel","daniel","daniel", (java.sql.Date) date);
+        assertEquals(date,user.get_birthdate());
 
-    }*/
-/*
+    }
+
     @Test
     public void set_birthdate() throws Exception {
-        java.util.Date fecha = new Date();
-
+        long millis=System.currentTimeMillis();
+        java.sql.Date fecha = new java.sql.Date(millis);
         User user = new User("daniel","daniel","daniel","daniel","daniel", fecha);
         assertEquals(fecha,user.get_birthdate());
         user.set_birthdate(null);
         assertNull(user.get_birthdate());
-    }*/
+        
+    }
+
+
 }
