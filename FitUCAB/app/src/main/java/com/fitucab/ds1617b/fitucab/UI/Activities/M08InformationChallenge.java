@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,9 +31,24 @@ import static android.R.id.list;
  * Created by noe on 27/5/2017.
  */
 
+/**
+ * clase que maneja toda la parte de la informacion de retos
+ */
 public class M08InformationChallenge extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private TextView tituloNombreReto = (TextView)findViewById(R.id.tituloNombreReto);
+    private TextView textViewDescripcionReto = (TextView)findViewById(R.id.textViewDescripcionReto);
+    private TextView descripcionReto = (TextView)findViewById(R.id.descripcionReto);
+    private TextView textViewRetoActivo = (TextView)findViewById(R.id.textViewRetoActivo);
+    private TextView textViewRetoActivoSN = (TextView)findViewById(R.id.textViewRetoActivoSN);
+    private TextView textViewTipoReto = (TextView)findViewById(R.id.textViewTipoReto);
+    private TextView textViewInfTipoReto = (TextView)findViewById(R.id.textViewInfTipoReto);
+    private TextView textViewKm = (TextView)findViewById(R.id.textViewKm);
+    private TextView kilometros = (TextView)findViewById(R.id.kilometros);
+    private TextView textViewDiasReto = (TextView)findViewById(R.id.textViewDiasReto);
+    private TextView textViewInfDiasReto = (TextView)findViewById(R.id.textViewInfDiasReto);
+    private Button buttonEmpezarAhora = (Button)findViewById(R.id.buttonEmpezarAhora);
 
     /**
      * método que se llama cuando se crea la actividad
@@ -55,13 +71,17 @@ public class M08InformationChallenge extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }//cierre del void conCreate
 
 
-
-    }
-
+    /**
+     * menu lateral
+     * @param item
+     * @return
+     */
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
-    }
-}
+    }//cierre del onNavigationItemSelected
+
+}//cierre de la clase M08InformationChallenge
