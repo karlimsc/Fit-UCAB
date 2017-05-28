@@ -18,17 +18,29 @@ $$ LANGUAGE plpgsql;
 
 /**************************************************Consultar Perfil por ID**************************************************/
 
-CREATE OR REPLACE FUNCTION M02_CONSULTARPERFILID(codigo int) RETURNS TABLE (id int, usuario varchar(20),
-	email varchar(30), sex varchar(20), phone varchar(20), birthdate date, weight real, height real,
-  points int) AS $$
+CREATE OR REPLACE FUNCTION M02_CONSULTARPERFILID(codigo int)
+	RETURNS TABLE (id int,
+		usuario varchar(20),
+		email varchar(30),
+		sex varchar(20),
+		phone varchar(20),
+		birthdate date,
+		weight real,
+		height real)
+AS $$
 
 BEGIN
  	RETURN QUERY
-	 	SELECT P.PERSONID, P.PERSONUSERNAME, P.PERSONEMAIL, P.PERSONSEX, P.PERSONPHONE, P.PERSONBIRTHDATE,
-      R.REGISTRYWEIGHT, R.REGISTRYHEIGHT
-		FROM PERSON P, REGISTRY R
-		WHERE PERSONID = codigo AND P.PERSONID = R.FK_PERSONID
-	;
+	SELECT P.PERSONID,
+		P.PERSONUSERNAME,
+		P.PERSONEMAIL,
+		P.PERSONSEX,
+		P.PERSONPHONE,
+		P.PERSONBIRTHDATE,
+		R.REGISTRYWEIGHT,
+		R.REGISTRYHEIGHT
+	FROM PERSON P, REGISTRY R
+	WHERE PERSONID = codigo AND P.PERSONID = R.FK_PERSONID;
 END;
 $$ LANGUAGE plpgsql;
 
