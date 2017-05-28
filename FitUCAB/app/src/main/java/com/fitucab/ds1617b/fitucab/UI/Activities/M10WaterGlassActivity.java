@@ -54,8 +54,8 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
-    private ImageButton _btnAdd;
-    private ImageButton _btnLess;
+    private static ImageButton _btnAdd;
+    private static ImageButton _btnLess;
     public static EditText _EtnDate;
     private  View _view;
     private Calendar _cal ;
@@ -137,21 +137,8 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
 
-       /* try {
-            _date =  _EtnDate.getText().toString();
-            _cal.setTime(_sdf.parse(_date));
-            _cal.add(Calendar.DATE,-1);
-            _date = _sdf.format(_cal.getTime());
-            _EtnDate.setText(_date.toString());
 
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-*/
+
     }
 
 
@@ -247,7 +234,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onClick(View v) {
                 try {
-
+                    blockbtn();
                     _date =  _EtnDate.getText().toString();
                     _cal.setTime(_sdf.parse(_date));
                     _cal.add(Calendar.DATE, 1);
@@ -280,7 +267,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onClick(View v) {
                 try {
-
+                    blockbtn();
                     _date =  _EtnDate.getText().toString();
                     _cal.setTime(_sdf.parse(_date));
                     _cal.add(Calendar.DATE,-1);
@@ -386,7 +373,8 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                             water = gson.fromJson(response,Water.class);
                             _EtnDate.setText(water.get_time());
                             m10w.setCant(water.get_cantidad().toString());
-                            Thread.sleep(10);
+                           // Thread.sleep(10);
+
                             m10h.set_list(contexto);
 
                         }
@@ -397,16 +385,15 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                _EtnDate.setText("That didn't work!");
+                _EtnDate.setText("30/05/2017");
             }
         });
 // Add the request to the RequestQueue.
-        try {
+
+            blockbtn();
             queue.add(stringRequest);
 
-        }
-        catch (Exception e)
-        {};
+
 
 
     }
@@ -441,18 +428,15 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     {
         _btnLess.setEnabled(false);
         _btnAdd.setEnabled(false);
-        m10w._EtnWater.setEnabled(false);
-        m10w._btnAddWater.setEnabled(false);
-        m10w._btnLessWater.setEnabled(false);
+
     }
 
-    public void unlock()
+    public void unlockbtnm()
     {
+
         _btnLess.setEnabled(true);
         _btnAdd.setEnabled(true);
-        m10w._EtnWater.setEnabled(true);
-        m10w._btnAddWater.setEnabled(true);
-        m10w._btnLessWater.setEnabled(true);
+
     }
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 

@@ -43,7 +43,8 @@ public class M10HistoyFragment extends Fragment {
     private IpStringConnection Url = new IpStringConnection();
     int idusuario =1;
     M10WaterGlassActivity m10 = new M10WaterGlassActivity();
-    Gson gson = new Gson();
+    static M10WaterGlassFragment m10w;
+     Gson gson = new Gson();
     Water water = new Water();
 
 
@@ -62,6 +63,7 @@ public class M10HistoyFragment extends Fragment {
         contexto=rootView.getContext();
          adapter = new AdapterM10ListView(rootView.getContext(),FillWater);
         _waterlist.setAdapter(adapter);
+        m10w =new M10WaterGlassFragment();
 
 
 
@@ -128,6 +130,8 @@ public class M10HistoyFragment extends Fragment {
                             // Display the first 500 characters of the response string.}
                             try {
                                 list = gson.fromJson(response, new TypeToken<List<Water>>(){}.getType());
+                                m10.unlockbtnm();
+                                m10w.unlockbtn();
                                 ViewList();
 
 
@@ -161,6 +165,7 @@ public class M10HistoyFragment extends Fragment {
          list.add(water);
 
     }
+
 
     public void ViewList()
     {

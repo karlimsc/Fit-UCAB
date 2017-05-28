@@ -38,8 +38,8 @@ public class M10WaterGlassFragment extends Fragment {
     M10HistoyFragment m10h = new M10HistoyFragment();
     private OnFragmentInteractionListener mListener;
 
-    public ImageButton _btnAddWater;
-    public ImageButton _btnLessWater;
+    public  static ImageButton _btnAddWater;
+    public static ImageButton _btnLessWater;
     public EditText _EtnWater;
     private Gson gson;
     private  String fecha;
@@ -132,7 +132,7 @@ public class M10WaterGlassFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-
+                blockbtn();
                 String url1 = "M10_WaterGlass/DeletLast?time=" + m10._EtnDate.getText() + "&fkp="+idusuario;
                 String aux = Url.getIp() + url1;
                 RequestQueue queue = Volley.newRequestQueue(contexto);
@@ -145,8 +145,7 @@ public class M10WaterGlassFragment extends Fragment {
                                 try {
                                     water = gson.fromJson(response, Water.class);
                                     _EtnWater.setText(water.get_cantidad().toString());
-                                    Thread.sleep(10);
-                                    m10h.set_list(_view.getContext());
+                                     m10h.set_list(_view.getContext());
 
 
                                 } catch (Exception e) {
@@ -173,6 +172,7 @@ public class M10WaterGlassFragment extends Fragment {
 
     public void addwateraux()
     {
+        blockbtn();
         String url1 = "M10_WaterGlass/addWater?time="+m10._EtnDate.getText()+"&glasstype=350&fkp="+idusuario;
         String aux = Url.getIp()+url1;
         RequestQueue queue = Volley.newRequestQueue(contexto);
@@ -186,7 +186,6 @@ public class M10WaterGlassFragment extends Fragment {
                             try {
                                 water = gson.fromJson(response, Water.class);
                                 _EtnWater.setText(water.get_cantidad().toString());
-                                Thread.sleep(10);
                                 m10h.set_list(_view.getContext());
 
 
@@ -212,8 +211,16 @@ public class M10WaterGlassFragment extends Fragment {
         }
 
     }
+        public void blockbtn()
+    {
+        _btnAddWater.setEnabled(false);
+        _btnLessWater.setEnabled(false);
 
-
+    }
+        public void unlockbtn() {
+        _btnAddWater.setEnabled(true);
+        _btnLessWater.setEnabled(true);
+        }
     public void setCant (String cant)
     {
         _EtnWater.setText(cant);
