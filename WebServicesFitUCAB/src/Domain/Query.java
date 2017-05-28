@@ -4,18 +4,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Clase que manejara los querys del modulo 02
+ * Clase que manejara los querys
  */
-public class M02Query {
+public class Query {
 
     private Sql _sql;
     private User _user;
 
     /**
-     * Constructor que inicializa la clase con la conexion a la base de datos
+     * Constructor vacio
      */
-    public M02Query() {
-        _sql = new Sql();
+    public Query() {
     }
 
     /**
@@ -29,9 +28,9 @@ public class M02Query {
      */
     public User getUser( int id ){
         try {
+            _sql = new Sql();
             _user = new User();
-//            ResultSet result = _sql.sql("SELECT M02_CONSULTARPERFILID("+ id +")");
-            ResultSet result = _sql.sql("SELECT * FROM PERSON WHERE personid = "+ id +")");
+            ResultSet result = _sql.sql("select * from m02_consultarperfilid("+ id +")");
             while (result.next()){
                 _user.setId( result.getInt( "id" ) );
                 _user.setUser( result.getString( "usuario" ) );
@@ -39,8 +38,8 @@ public class M02Query {
                 _user.setSex( result.getString( "sex" ) );
                 _user.setPhone( result.getString( "phone" ) );
                 _user.setBirthdate( result.getDate( "birthdate" ) );
-                /*_user.setHeight( result.getInt( "height" ) );
-                _user.setWeight( result.getInt( "weight" ) );*///TODO QUITAR
+                _user.setHeight( result.getInt( "height" ) );
+                _user.setWeight( result.getInt( "weight" ) );
             }
             return _user;
         } catch (NullPointerException e) {

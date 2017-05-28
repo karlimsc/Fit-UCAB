@@ -1,16 +1,15 @@
 package WebServicesClasses;
 
-import Domain.M02Query;
-import Domain.StatusMessage;
+import Domain.Query;
+import Exceptions.StatusMessage;
 import Domain.User;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.sql.Date;
 
 /**
- * Clase del servicio web modulo 02
+ * Clase que realiza las consultas
  */
 @Path("/M02Users")
 @Produces(MediaType.APPLICATION_JSON)
@@ -18,7 +17,7 @@ public class M02_ServicesUser {
 
     private StatusMessage _message;
     private Response _response;
-    private M02Query _service;
+    private Query _service;
 
     /**
      * Metodo para obtener un usuario.
@@ -31,18 +30,18 @@ public class M02_ServicesUser {
     @GET
     @Path("/{userId}")
     public Response getUser( @PathParam("userId") int id ){
-        Date date = new Date(1L);
+        /*Date date = new Date(1L);
         User user = new User(id,"user","pass","mail","sex","phone", date);
         user.setPassword("");
         user.setWeight(5);
-        user.setHeight(6);
-        /*_service = new M02Query();
+        user.setHeight(6);*/
+        _service = new Query();
         User user = _service.getUser( id );
-        if ( user == null ) {
+        if ( user.getId() <= 0 ) {
             _message = new StatusMessage( 0, "Usuario no encontrado" );
             _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
             throw new WebApplicationException( _response );
-        }*/
+        }
         _response = Response.status( Response.Status.ACCEPTED ).entity( user ).build();
         return _response;
     }
