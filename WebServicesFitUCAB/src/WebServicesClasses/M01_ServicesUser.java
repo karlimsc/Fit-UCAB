@@ -4,7 +4,6 @@ import Domain.Sql;
 import Domain.User;
 import Domain.Registry;
 import com.google.gson.Gson;
-import org.postgresql.util.PSQLState;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -233,8 +232,7 @@ public class M01_ServicesUser {
         }
     }
 
-<<<<<<< HEAD
-=======
+
 
     /***
      * Metodo que con el email recuperas tu usuario y contraseña
@@ -269,7 +267,6 @@ public class M01_ServicesUser {
 
     }
 
->>>>>>> abdf9049455ff806f986f99ac5800920b4012c17
 
     /**
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
