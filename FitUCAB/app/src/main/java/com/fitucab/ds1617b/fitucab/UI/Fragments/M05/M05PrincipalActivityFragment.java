@@ -59,17 +59,13 @@ public class M05PrincipalActivityFragment extends Fragment implements
     Gson gson = new Gson();
 
     ListView _listView;
-    TextView imprime;
-    ArrayAdapter<Activit> adaptador;
+
     // Atributo para la posicion de la seleccion
     int selection;
 
     private TextView _tvdisplaydate;
     private FloatingActionButton _fabChangeDate;
 
-    // Para saber si hay elemntos seleccionados
-    int pase = 0;
-    int size;
 
     //Para las fechas
     private int _year;
@@ -81,7 +77,10 @@ public class M05PrincipalActivityFragment extends Fragment implements
     private int _min;
 
     View _view;
+
     private OnFragmentSwap _callBack;
+
+    // Variables que se muetran en la lista
     String _sport,_date,_time,_calories;
 
 
@@ -120,6 +119,8 @@ public class M05PrincipalActivityFragment extends Fragment implements
 
     private void setupViewValues() {
         toolbar = (Toolbar) _view.findViewById(R.id.toolbar);
+        //Permite que se visualice el menu en el action bar
+        setHasOptionsMenu(true);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         _listView = (ListView) _view.findViewById(R.id.lv_m05_listactivity);
         _fabChangeDate = (FloatingActionButton) _view.findViewById(R.id.fab_m05_datepickerserch);
@@ -182,7 +183,6 @@ public class M05PrincipalActivityFragment extends Fragment implements
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
     {
-
         MenuInflater inflater = getActivity().getMenuInflater();
         inflater.inflate(R.menu.menu_m05_principal, menu);
     }

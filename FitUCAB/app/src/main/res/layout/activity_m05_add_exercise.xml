@@ -24,7 +24,7 @@
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
-
+                android:theme="@style/TabHost_m05"
                 android:fontFamily="sans-serif"
                 android:typeface="sans"
                 android:layout_width="match_parent"
