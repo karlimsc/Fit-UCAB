@@ -49,7 +49,7 @@ public class M05AddExerciseActivity extends AppCompatActivity implements OnFragm
         mTabHost.addTab(mTabHost.newTabSpec("track").setIndicator(getResources().getString(R.string._tab_m05_track)),
 
                 M05TrackActivityFragment.class, null);
-        mTabHost.addTab(mTabHost.newTabSpec("log").setIndicator(getResources().getString(R.string._tab_m05_log)),
+        mTabHost.addTab(mTabHost.newTabSpec("log").setIndicator(getResources().getString(R.string._tv_m05_titletabmanual)),
                 M05LogExerciseFragment.class, null);
 
     }
@@ -61,7 +61,7 @@ public class M05AddExerciseActivity extends AppCompatActivity implements OnFragm
                 .setIndicator(String.valueOf(R.string._tab_m05_track)),
                 M05TrackActivityFragment.class, null);
         mTabHost.addTab(mTabHost.newTabSpec("log")
-                .setIndicator(String.valueOf(R.string._tab_m05_log)),
+                .setIndicator(String.valueOf(R.string._tv_m05_titletabmanual)),
                 M05LogExerciseFragment.class, null);
     }
 

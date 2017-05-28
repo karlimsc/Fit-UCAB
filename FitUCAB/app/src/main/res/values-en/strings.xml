@@ -70,7 +70,7 @@
     <string name="m01_errorUsernameSpecialChar">The only allowed special character are: _  and -</string>
     <string name="m01_errorUsernameTooShort">The username is too short</string>
     <string name="tv_m01_recuperacionContra">Password Recovery</string>
-    <string name="_tv_m05_titletabmanual">MANUAL</string>
+    <string name="_tv_m05_titletabmanual">LOG</string>
     <string name="_tv_m05_bt_pause">PAUSE</string>
     <string name="_btn_m05_registermanual">LOG</string>
     <string name="_tv_m05_calories">Calories</string>
