@@ -1,5 +1,6 @@
 package WebServicesClasses;
 
+import Domain.Sport;
 import Domain.Training;
 
 import com.google.gson.Gson;
@@ -32,8 +33,10 @@ public class M06_ServicesTraining {
      * @param trainingCalories
      * @return
      */
-    public String createTraining(@QueryParam("trainingName") String name, @QueryParam("trainingPeriod") int period,
+    public String createTraining(@QueryParam("trainingName") String name,
+                                 @QueryParam("trainingPeriod") int period,
                                  @QueryParam("trainingCalories") int calories) {
+
         String query = "INSERT INTO TRAINING (NAME, PERIOD, CALORIES) VALUES (name,period,calories)";
 
         try {
@@ -51,17 +54,26 @@ public class M06_ServicesTraining {
     @Path("/createPersonalizedTraining")
     @Produces ("application/json")
     
-    public String createPersonalizedTraining (@QueryParam("trainingName") String name, @QueryParam("trainingPeriod") int period,
+    public String createPersonalizedTraining (@QueryParam("trainingName") String name,
+                                              @QueryParam("trainingPeriod") int period,
                                               @QueryParam("trainingCalories") int calories) {
+
             return null;
+
     }
 
     @GET
     @Path("/updateTraining")
     @Produces("application/json")
 
-    public String updateTraining (@QueryParam("idTraining") int id, @QueryParam("trainingName") String name, @QueryParam("trainingPeriod") int period, @QueryParam("trainingCalories") int calories) {
-        String query = "UPDATE TRAINING SET TRAININGNAME=" +name+ ", TRAININGPERIOD=" +period+ ", TRAININGCALORIES=" +calories+ "WHERE TRAININGID=" +id;
+    public String updateTraining (@QueryParam("idTraining") int id,
+                                  @QueryParam("trainingName") String name,
+                                  @QueryParam("trainingPeriod") int period,
+                                  @QueryParam("trainingCalories") int calories) {
+
+        String query = "UPDATE TRAINING " +
+                        "SET TRAININGNAME=" +name+ ", TRAININGPERIOD=" +period+
+                        ", TRAININGCALORIES=" +calories+ "WHERE TRAININGID=" +id;
 
         try {
             Connection conn = connectDb();
@@ -87,7 +99,8 @@ public class M06_ServicesTraining {
 
 
      public String getTraining(@QueryParam("userId") int userId) {
-        String query = "SELECT TRAININGID, TRAININGNAME, TRAININGPERIOD, TRAININGCALORIES FROM TRAINING WHERE FK_USERID =" +userId;
+
+        String query = "SELECT * from M06_obtenerEntrenamientos("+ userId +")";
 
         try {
             Connection conn = connectDb();
@@ -112,19 +125,21 @@ public class M06_ServicesTraining {
             return e.getMessage();
         }
     }
-/*
+
     @GET
-    @Path("/detailedTraining");
-    @Produces("application/json");
-*/
+    @Path("/detailedTraining")
+    @Produces("application/json")
+
     /**
     * Metodo utilizado a traves de webservice para visualizar los detalles de un entrenamiento especifico
-    * @param trainingId
+    * trainingId
     * @return
     */
 
-/*    public String getDetailedTraining(@QueryParam("trainingId") int trainingId) {
-        String query = "SELECT S.SPORTNAME FROM S.SPORT WHERE S.SPORTID = (SELECT E.FK_SPORTID FROM E.SPOR_TRAINING WHERE E.FK_TRAININGID =" +trainingId+")"; 
+    public String getDetailedTraining(@QueryParam("trainingId") int trainingId) {
+        String query = "SELECT SPORTNAME " +
+                "FROM SPORT, SPOR_TRAINING, TRAINING" + " " +
+                "WHERE ( (TRAININGID = " + trainingId+ ") AND (FK_TRAININGID = TRAININGID) AND (FK_SPORTID = SPORTID))";
         try {
             Connection conn = connectDb();
             Statement st = conn.createStatement();
@@ -133,7 +148,6 @@ public class M06_ServicesTraining {
             ArrayList<Sport> sport = new ArrayList<Sport>();
             while (rs.next()) {
 
-                results.setId(rs.getInt("sportId"));
                 results.setName(rs.getString("sportName"));
                 sport.add(results);
 
@@ -146,7 +160,95 @@ public class M06_ServicesTraining {
             return e.getMessage();
         }
     }
-*/
+
+    @GET
+    @Path("/createPredefinedTrainingTime")
+    @Produces("application/json")
+
+    /**
+     * Metodo para insertar un entrenamiento predefinido con tiempo
+     */
+    public String createPredefinedTrainingTime(@QueryParam( "nombreEntrenamiento" ) String nombreEntrenamiento,
+                                               @QueryParam( "nivelEntrenamiento"  ) String nivelEntrenamiento,
+                                               @QueryParam( "tipoEntrenamiento"   ) String tipoEntrenamiento,
+                                               @QueryParam( "calorias"            ) String caloriasEntrenamiento,
+                                               @QueryParam( "periodicidad"        ) String periodicidad,
+                                               @QueryParam( "tiempo"              ) String tiempo,
+                                               @QueryParam( "deporte"             ) String deporte,
+                                               @QueryParam( "userId"              ) String userId                ) {
+
+        String query = "INSERT INTO TRAINING (TRAININGID , TRAININGNAME, TRAININGPERIOD,TRAININGCALORIES,FK_USERID)" +
+                "VALUES (nextval('TRAININGID'), '"+ nombreEntrenamiento+"', " + periodicidad + ", " +caloriasEntrenamiento+ ","+ userId+") " ;
+
+        try {
+            //Se inserta el entrenamiento
+            Connection conn = connectDb();
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+            conn.close();
+            //Se inserta el spor_training
+            query = "INSERT INTO SPOR_TRAINING (SPOR_TRAININGID, TYPE_COMPLEXITY, TIMETRAINING, FK_SPORTID, FK_TRAININGID) "
+                    +"VALUES (nextval( 'SPORT_TRAININGID' ), '" +nivelEntrenamiento+ "' , "+ tiempo +", "+ deporte +", (SELECT last_value FROM trainingid) )";
+            conn = connectDb();
+            st = conn.createStatement();
+            st.executeUpdate(query);
+            conn.close();
+
+            return gson.toJson(true);
+        } catch (Exception e) {
+
+            return e.getMessage();
+
+        }
+
+
+    }
+
+    @GET
+    @Path("/createPredefinedTrainingKilometros")
+    @Produces("application/json")
+
+    /**
+     * Metodo para insertar un entrenamiento predefinido con KILOMETROS
+     */
+    public String createPredefinedTrainingDistance(@QueryParam( "nombreEntrenamiento" ) String nombreEntrenamiento,
+                                               @QueryParam( "nivelEntrenamiento"  ) String nivelEntrenamiento,
+                                               @QueryParam( "tipoEntrenamiento"   ) String tipoEntrenamiento,
+                                               @QueryParam( "calorias"            ) int caloriasEntrenamiento,
+                                               @QueryParam( "periodicidad"        ) int periodicidad,
+                                               @QueryParam( "kilometros"          ) int kilometros,
+                                               @QueryParam( "deporte"             ) int deporte,
+                                               @QueryParam( "userId"              ) int userId                ) {
+
+        String query = "INSERT INTO TRAINING (TRAININGID , TRAININGNAME, TRAININGPERIOD,TRAININGCALORIES,FK_USERID)" +
+                "VALUES (nextval('TRAININGID'), '"+ nombreEntrenamiento+"', " + periodicidad + ", " +caloriasEntrenamiento+ ","+ userId+") " ;
+
+        try {
+            //Se inserta el entrenamiento
+            Connection conn = connectDb();
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+            conn.close();
+
+            //Se inserta el spor_training
+            query = "INSERT INTO SPORT_TRAINING (SPOR_TRAININGID, TYPE_COMPLEXITY, DISTANCE, FK_SPORTID, FK_TRAININGID) "
+                    +"VALUES (nextval( 'SPORT_TRAININGID' ), '" +nivelEntrenamiento+ "' , "+ kilometros +", "+ deporte +", SELECT last_value FROM trainingid)";
+            conn = connectDb();
+            st = conn.createStatement();
+            st.executeUpdate(query);
+            conn.close();
+
+
+            return gson.toJson(true);
+        } catch (Exception e) {
+
+            return e.getMessage();
+
+        }
+
+
+    }
+
     @DELETE
     @Path("/deleteTraining")
     

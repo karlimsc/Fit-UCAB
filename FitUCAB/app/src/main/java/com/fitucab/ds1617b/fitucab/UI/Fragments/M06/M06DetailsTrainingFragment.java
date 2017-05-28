@@ -10,7 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -38,9 +40,8 @@ public class M06DetailsTrainingFragment extends Fragment {
     private ListView _listView;
     private View _view;
     private OnFragmentSwap _callBack;
-    private ArrayAdapter<String> _adaptador;
-    private Toolbar _toolbar;
-
+    private EditText _editText;
+    private TextView _periodicidad , _calorias;
 
     @Override
     public void onAttach(Activity activity) {
@@ -62,8 +63,25 @@ public class M06DetailsTrainingFragment extends Fragment {
         // Inflate the layout for this fragment
         _view = inflater.inflate(R.layout.fragment_m06_details_training_fragment, container, false);
         Bundle bundle = new Bundle();
-        fillListView( bundle );
+        fillItemsView ( bundle );
+        fillListView ( bundle );
         return _view;
+    }
+
+    /**
+     * Metodo mete en los edit y text view los respectivos datos del bundle
+     * @param bundle contiene los argumentos del entrenamiento
+     */
+
+    private void fillItemsView(Bundle bundle) {
+
+        bundle = getArguments();
+        _editText = (EditText) _view.findViewById( R.id.m06_nombreEntrenamiento );
+        _calorias = (TextView) _view.findViewById( R.id.m06_textViewCaloriasDetails );
+        _periodicidad = (TextView) _view.findViewById( R.id.m06_textViewPeriodicidadDetails );
+        _editText.setText( bundle.getString( "nombreDeEntrenamiento" , "Error, intente nuevamente" ) );
+        _calorias.setText( _periodicidad.getText().toString() + bundle.getInt("caloriasEntrenamiento") + " kcal");
+        _periodicidad.setText( _periodicidad.getText().toString() + bundle.getInt(" periodicidadEntrenamiento" ) );
     }
 
     /**
@@ -98,8 +116,6 @@ public class M06DetailsTrainingFragment extends Fragment {
                         for(int i = 0;i<at.size();i++){
                             deportes.add( at.get(i).getName() );
                         }
-
-
 
                     }
                 }, new Response.ErrorListener() {

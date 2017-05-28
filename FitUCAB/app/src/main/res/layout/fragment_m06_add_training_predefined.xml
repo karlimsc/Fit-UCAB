@@ -33,7 +33,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="36dp"
                 android:layout_marginTop="16dp"
-                android:text="@string/M06_entrenamientoPredefinido" />
+                android:text="@string/M06_entrenamientoPredefinido"
+                android:typeface="sans" />
 
             <TextView
                 android:id="@+id/m06_textViewDificultad"
@@ -43,7 +44,8 @@
                 android:layout_alignStart="@+id/m06_spinnerEntrenamientoPredefinido"
                 android:layout_below="@+id/m06_spinnerEntrenamientoPredefinido"
                 android:layout_marginTop="30dp"
-                android:text="@string/M06_tipo" />
+                android:text="@string/M06_tipo"
+                android:typeface="sans" />
 
             <Spinner
                 android:id="@+id/m06_spinnerTipo"
@@ -63,7 +65,8 @@
                 android:layout_alignStart="@+id/m06_spinnerEntrenamientoPredefinido"
                 android:layout_below="@+id/m06_spinnerTipo"
                 android:layout_marginTop="30dp"
-                android:text="@string/M06_periodicidad" />
+                android:text="@string/M06_periodicidad"
+                android:typeface="sans" />
 
             <EditText
                 android:id="@+id/m06_editTextPeriodicidad"
@@ -76,7 +79,8 @@
                 android:layout_below="@+id/m06_textViewPeriodicidad"
                 android:layout_marginTop="16dp"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:typeface="sans" />
 
             <TextView
                 android:id="@+id/m06_textViewTipoEntrenamiento"
@@ -107,7 +111,8 @@
                 android:layout_alignStart="@+id/m06_spinnerTipoEntrenamiento"
                 android:layout_below="@+id/m06_spinnerTipoEntrenamiento"
                 android:layout_marginTop="30dp"
-                android:text="@string/M06_caloriasQuemadas" />
+                android:text="@string/M06_caloriasQuemadas"
+                android:typeface="sans" />
 
             <TextView
                 android:id="@+id/m06_textViewCalorias"
@@ -127,12 +132,13 @@
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
                 android:layout_marginTop="25dp"
-                android:background="@color/colorBtnAceptar"
+                android:background="@color/colorBtnConfirmar"
                 android:text="@string/m06_agregar"
                 android:textAllCaps="false"
                 android:textColor="@android:color/background_light"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:typeface="sans" />
 
         </RelativeLayout>
     </ScrollView>

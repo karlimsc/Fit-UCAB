@@ -243,7 +243,7 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
                                                                 int tiempo, int tipo) {
 
         IpStringConnection ip = new IpStringConnection();
-        String url = ip.getIp() + "M06_ServicesTraining/createTrainingPredefined";
+        String url = ip.getIp() + "M06_ServicesTraining/createTrainingPredefinedTime";
         url = url + "?nombreEntrenamiento=" + entrenamiento.getTrainingName() + "&nivelEntrenamiento=" + nivelEntrenamiento;
         url = url + "&tipoEntrenamiento=" + tipoEntrenamiento + "&calorias=" + entrenamiento.getTrainingCalories();
         url = url + "&periodicidad=" + entrenamiento.getTrainingPeriod() + "&tiempo=" + tiempo + "&deporte=" + tipo;
@@ -298,7 +298,7 @@ public class M06AddTrainingTypePredefinedFragment extends Fragment implements Vi
                                        int kilometros, int tipo){
 
         IpStringConnection ip = new IpStringConnection();
-        String url = ip.getIp() + "M06_ServicesTraining/createTrainingPredefined";
+        String url = ip.getIp() + "M06_ServicesTraining/createTrainingPredefinedKilometros";
         url = url + "?nombreEntrenamiento=" + entrenamiento.getTrainingName() + "&nivelEntrenamiento=" + nivelEntrenamiento;
         url = url + "&tipoEntrenamiento=" + tipoEntrenamiento + "&calorias=" + entrenamiento.getTrainingCalories();
         url = url + "&periodicidad=" + entrenamiento.getTrainingPeriod() + "&kilometros=" + kilometros + "&deporte=" + tipo;
