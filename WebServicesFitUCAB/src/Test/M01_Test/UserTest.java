@@ -139,7 +139,7 @@ public class UserTest {
         assertEquals(fecha,user.get_birthdate());
         user.set_birthdate(null);
         assertNull(user.get_birthdate());
-        
+
     }
 
 
