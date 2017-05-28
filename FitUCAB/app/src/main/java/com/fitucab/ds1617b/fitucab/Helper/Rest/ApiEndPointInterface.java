@@ -24,5 +24,7 @@ public interface ApiEndPointInterface {
                             @Query("weight") String weight,
                             @Query("height") String height
                             );
-
+    @GET("M01_ServicesUser/restorePassword")
+    Call<User> restorePassword(); //Aqui se debe pasar el correo
+    Call<User> restorePassword(@Query("email") String email);
 }

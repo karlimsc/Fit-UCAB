@@ -1,0 +1,115 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11FoodhomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Calorias Consumidas"
+        android:id="@+id/tv_m11_tituloCalorias"/>
+
+    <TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="Calorias Consumidas"
+    android:id="@+id/tv_m11_cantidadCalorias"/>
+
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:rowCount="4"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="75dp">
+
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/diet"
+            tools:layout_editor_absoluteY="355dp"
+            tools:layout_editor_absoluteX="33dp"
+            android:textAlignment="center"
+            android:id="@+id/btn_m11_diet"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/colorWhiteSmoke" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/suggestion"
+            tools:layout_editor_absoluteY="355dp"
+            tools:layout_editor_absoluteX="33dp"
+            android:textAlignment="center"
+            android:id="@+id/btn_m11_suggestion"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="45dp"
+            android:background="@color/colorWhiteSmoke"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dieta"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/tv_m11_dieta"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sugerencia"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/tv_m11_sugerencia"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/graphic"
+            tools:layout_editor_absoluteY="355dp"
+            tools:layout_editor_absoluteX="33dp"
+            android:textAlignment="center"
+            android:id="@+id/btn_m11_graphic"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@color/colorWhiteSmoke"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/food"
+            tools:layout_editor_absoluteY="355dp"
+            tools:layout_editor_absoluteX="33dp"
+            android:textAlignment="center"
+            android:id="@+id/btn_m11_food"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="45dp"
+            android:background="@color/colorWhiteSmoke"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seguimiento"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_m11_seguimiento"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Personalizados"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/tv_m11_personalizado"/>
+
+
+    </GridLayout>
+
+</FrameLayout>
+

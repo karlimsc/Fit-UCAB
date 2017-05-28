@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -20,14 +21,28 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Model.Challenge;
+import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.util.ArrayList;
+
+import static android.R.id.content;
 import static android.R.id.list;
 
 
 /**
- * clase principal del modulo 8
+ * clase principal de la aplicacion
  */
 public class M08_ManagementChallenge extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -37,28 +52,43 @@ public class M08_ManagementChallenge extends AppCompatActivity
      * método que se llama cuando se crea la actividad
      * @param savedInstanceState se usa para inicializar la creación de la interfaz de usuario.
      */
+    private DrawerLayout drawer;
+    private ActionBarDrawerToggle toggle;
+    private NavigationView navigationView;
+    private ArrayAdapter<String> adapter;
+    private ListView list;
+    private LayoutInflater inflater;
+    private View view;
+    private ArrayList<Challenge> challenges;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_m08_challenge);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        // Esto debes aplicarlo a todas las vistas
+        inflater = LayoutInflater.from(this);
+        view = inflater.inflate(R.layout.activity_main_m08_challenge,drawer,true);
+        // Hasta aqui
 
-
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+        drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Llena la lista challenges con todos los retos predefinidos
+        PeticionRetosPredefinidos();
         String[] items = {"correr 100 km", "trotar 10 km","caminar 5 km"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1, items);
-        final ListView list = (ListView)findViewById(R.id.listViewRetos);
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_expandable_list_item_1, items);
+        list = (ListView)findViewById(R.id.listViewRetos);
         list.setAdapter(adapter);
+
+        PeticionRetosPredefinidos();
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -78,33 +108,54 @@ public class M08_ManagementChallenge extends AppCompatActivity
             }//cierre del onItemClickListener
         });//cierre del setOnItemClickListener
 
-        registerForContextMenu(list);
+
     }//cierre del metodo onCreate
 
+    private void mostrarListView(ArrayList<Challenge> challenges) {
 
-    /**
-     * vuelve a la Actividad o Fragmento anterior al que el usuario se encuentra en el momento
-     *
-     */
+
+    }
+
+    public void PeticionRetosPredefinidos()
+    {
+        RequestQueue requestQueue = Volley.newRequestQueue(view.getContext());
+        //OJO esta no es la consulta en si, hay que colocar la que es de los personalizados......
+        //La haré mañana temprano.
+        String jsonURL = "http://127.0.0.1:8080/WebServicesFitUCAB_war_exploded/" +
+                "M08_Gestion_retos/getPredefinedChallenges";
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        challenges = new ArrayList<>();
+                        challenges = gson.fromJson(response, new TypeToken<ArrayList<Food>>(){}.getType());
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(view.getContext(), "No existen Retos predefinidos", Toast.LENGTH_LONG);
+                    }
+                });
+        requestQueue.add(stringRequest);
+    }
+
+
+
+
+
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }//cierre del if (drawer.isDrawerOpen(GravityCompat.START))
-        else {
+        } else {
             super.onBackPressed();
-        }//cierre del else
-    }//cierre del metodo onBackPressed
+        }
+    }
 
-
-    /**
-     * sobreescribe en la actividad el evento encargado de construir los menús contextuales asociados
-     a los diferentes controles de la aplicación
-     * @param menu
-     * @param v
-     * @param menuInfo
-     */
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
@@ -113,25 +164,13 @@ public class M08_ManagementChallenge extends AppCompatActivity
         inflater.inflate(R.menu.menu_challenge, menu); //muestra el menu seleccionado
     }//cierre del metodo onCreateContextMenu
 
-
-    /**
-     * Agrega el ítem (+) en el action bar
-     * @param menu
-     *
-     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_m08, menu);
         return true;
-    }//cierre del metodo onCreateOptionsMenu
+    }
 
-
-    /**
-     * Redirige al usuario a la vista de agregar un reto
-     * @param item icono de selección
-     *
-     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -140,20 +179,16 @@ public class M08_ManagementChallenge extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
+
         if (id == R.id.action_settings_m08) {
             startActivity(new Intent(this, M08AddChallenge.class));
+
             return true;
-        }//cierre if (id == R.id.action_settings)
+        }
 
         return super.onOptionsItemSelected(item);
-    }//cierre del metodo onOptionsItemSelected
+    }
 
-
-    /**
-     * menu lateral
-     * @param item
-     * @return
-     */
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -177,6 +212,8 @@ public class M08_ManagementChallenge extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }//cierre del metodo onNavigationItemSelected
-}//cierre de la class MainActivity
+    }
+
+
+}
 
