@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 
 /**
- * Clase que manejara los querys
+ * Clase perteneciente a PERFIL que manejara los querys
  */
 public class Query {
 

@@ -13,7 +13,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logofitucab"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -48,6 +48,7 @@
             android:name=".UI.Activities.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".UI.Activities.M05ReadExerciseActivity"
             android:label="Track Exercise"
@@ -95,11 +96,6 @@
         <activity
             android:name=".UI.Activities.M11Food"
             android:label="@string/app_name">
-            <!--<intent-filter>-->
-                <!--&lt;!&ndash; Esto va en el modulo de karliana, el main &ndash;&gt;-->
-                <!--&lt;!&ndash;<action android:name="android.intent.action.MAIN" />&ndash;&gt;-->
-                <!--&lt;!&ndash;<category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;-->
-            <!--</intent-filter>-->
         </activity>
 
     </application>
