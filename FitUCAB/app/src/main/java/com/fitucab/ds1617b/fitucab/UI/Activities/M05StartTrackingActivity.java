@@ -83,6 +83,15 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     Intent mIntent;
 
 
+    public M05StartTrackingActivity(Sport sport, User user){
+        this.sport  = sport;
+        this.user   = user;
+        this.mets   = sport.get_met();
+        this.weight = user.get_weight();
+
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -327,11 +336,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         sport = (Sport) mExtras.get("sport");
         user = (User) mExtras.get("user");
 
-        mets = sport.get_met();
-        weight = user.get_weight();
-
-        Log.i("SPORT",sport.getName());
-        Log.i("SPORT",String.valueOf(sport.get_met()));
+        Log.i("SPORT",sport.get_name());
         Log.i("USER", String.valueOf(user.get_idUser()));
     }
 
@@ -370,7 +375,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             activity.set_date(String.valueOf(sdfDate.format(new Date())));
             activity.set_km(distance);
             activity.set_calor(calculateCalories(mets,weight));
-            activity.set_name(sport.getName());
+            activity.set_name(sport.get_name());
 
             return "Objeto Creado";
         }
@@ -380,10 +385,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     }
 
     public float calculateCalories(float mets, float weight) {
-        Log.i("METVCALO", String.valueOf(mets));
-        Log.i("WEIGHTVCALO", String.valueOf(weight));
-        float kcal = mets * weight * (float)(0.0175) * ((SystemClock.elapsedRealtime()-M05_textview_time.getBase())/60);
-
+        float kcal = mets * weight;
         return kcal;
     }
 

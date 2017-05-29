@@ -1,7 +1,5 @@
 package com.fitucab.ds1617b.fitucab.Model;
 
-import com.google.gson.annotations.SerializedName;
-
 import java.io.Serializable;
 
 /**
@@ -11,25 +9,33 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Sport implements Serializable {
 
-    private int id;
-    private String name;
-    @SerializedName("_met")
-    private float _met;
+        private int    _id;
+        private String _name;
+        private float  _met;
 
-    public String getName() {
-        return name;
+    public Sport(int _id, String _name, float _met) {
+        this._id = _id;
+        this._name = _name;
+        this._met = _met;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public Sport() {
     }
 
-    public int getId() {
-        return id;
+    public int get_id() {
+        return _id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void set_id(int _id) {
+        this._id = _id;
+    }
+
+    public String get_name() {
+        return _name;
+    }
+
+    public void set_name(String _name) {
+        this._name = _name;
     }
 
     public float get_met() {

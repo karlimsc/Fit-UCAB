@@ -128,12 +128,11 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
-                        mSport = gson.fromJson(response.toString(),Sport.class);
-                        mSport.setName(sportName);
-
+                        mSport = gson.fromJson(response,Sport.class);
+                        mSport.set_name(sportName);
 
                         Log.i("Nombre", response.toString());
-                        Log.i("MET", String.valueOf(mSport.get_met()));
+                        Log.i("ID", String.valueOf(mSport.get_id()));
 
                     }
                 },
@@ -167,7 +166,7 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
 
         final Gson gson = new Gson();
         String URL = baseIp.getIp() + "M05_ServicesSport/getSportsUser?idPer="+String.valueOf(mUser.get_idUser());
-
+       // http://192.168.250.3:8080/untitled_war_exploded/M05_ServicesSport/getSportsUser?idPer=
 
         //Se hace la peticion y lo devuelve en String Request
         StringRequest stringRequest = new StringRequest( Request.Method.GET , URL ,
