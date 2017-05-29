@@ -136,6 +136,7 @@ public class Query {
     public Home getHome( int id ) {
         try {
             _sql = new Sql();
+            _home = new Home();
             User user = getUser(id);
             ResultSet rsW = _sql.sqlConn("SELECT countg FROM m10_getwaterglass("+user.getId()+"," +
                     "'"+user.getBirthdate()+"')");
