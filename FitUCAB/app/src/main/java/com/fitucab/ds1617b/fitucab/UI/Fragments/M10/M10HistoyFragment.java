@@ -26,6 +26,8 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10WaterGlassFragment.user;
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
@@ -59,6 +61,13 @@ public class M10HistoyFragment extends Fragment {
 
 
         View rootView = inflater.inflate(R.layout.fragment_m10_histoy,container,false);
+        try {
+            idusuario = user.getIdUser(contexto);
+
+        }catch (Exception e)
+        {
+
+        }
         _waterlist = (ListView) rootView.findViewById(R.id.list_water);
         contexto=rootView.getContext();
          adapter = new AdapterM10ListView(rootView.getContext(),FillWater);

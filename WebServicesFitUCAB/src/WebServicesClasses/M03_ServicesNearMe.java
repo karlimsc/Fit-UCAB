@@ -50,7 +50,8 @@ public class M03_ServicesNearMe {
                 aux.set_longitud(rs.getString("geolongitud"));
                 aux.set_latitud(rs.getString("geolatitud"));
 
-                userLocations.add(aux);
+                if(aux.get_id()!=Integer.parseInt(id))
+                    userLocations.add(aux);
 
             }
         }

@@ -2,6 +2,7 @@ package com.fitucab.ds1617b.fitucab.UI.Activities;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -26,6 +27,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.Water;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10HistoyFragment;
@@ -57,7 +59,8 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     private static ImageButton _btnAdd;
     private static ImageButton _btnLess;
     public static EditText _EtnDate;
-    private  View _view;
+    ManagePreferences user = new ManagePreferences();
+
     private Calendar _cal ;
     private String _date;
     Water water ;
@@ -88,7 +91,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         // primary sections of the activity.
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -99,6 +102,11 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         tabLayout.setupWithViewPager(mViewPager);
         _cal=_cal.getInstance(TimeZone.getDefault());
 
+        try {
+            idusuario = user.getIdUser(contexto);
+
+        }catch (Exception e)
+        {}
 
         setupViewValues();
 
@@ -171,10 +179,10 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         }
 
 
+
+
+
         @Override
-
-
-
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
 
@@ -219,13 +227,13 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         activarCalendario();
         addDate();
         lessDate();
+
         }
         catch (Exception e) {
         System.out.print(e);
         }
 
     }
-
 
 
     private void addDate()
@@ -292,6 +300,9 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     }
 
 
+
+
+
     private void activarCalendario() {
         _EtnDate.setOnClickListener(new View.OnClickListener() {
 
@@ -312,7 +323,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
 
     public void getValues(String fecha,int id)
     {
-        String url1 = "M10_WaterGlass/GetWater?time="+fecha+"&fkp="+idusuario;
+        String url1 = "M10_WaterGlass/GetWater?time="+fecha+"&fkp="+id;
         String aux = Url+url1;
         RequestQueue queue = Volley.newRequestQueue(contexto);
         // Request a string response from the provided URL.
@@ -334,7 +345,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                _EtnDate.setText("That didn't work!");
+               unlockbtnm();
             }
         });
 // Add the request to the RequestQueue.

@@ -79,6 +79,27 @@
     <string name="tab_03_cercademi">Near me</string>
     <string name="sep_03_request">Friend requests</string>
     <string name="sep_03_friends">Friends</string>
+    <string name="btn_03_agregar">Add</string>
+    <string name="btn_03_declinar">Decline</string>
+    <string name="et_03_nohayusuariocercadeti">There are no users near you</string>
+    <string name="et_03_hombre">Male</string>
+    <string name="et_03_mujer">Female</string>
+    <string name="et_03_edad">Age</string>
+    <string name="et_03_kmdeti">Km of you</string>
+    <string name="et_03_errorconexion">Connection failed</string>
+    <string name="btn_03_invitar">Invite</string>
+    <string name="et_03_menulibreta">Menu Option</string>
+    <string name="et_03_peticionenviada">Request sent</string>
+    <string name="et_03_yaexisteamistad">This friendship already exists</string>
+    <string name="et_03_bloquear">Block</string>
+    <string name="et_03_aceptar">Accept</string>
+    <string name="et_03_menuamigos">Menu Friends</string>
+    <string name="et_03_usuariobloqueado">User blocked</string>
+    <string name="et_03_nosepudobloquear">Could not block</string>
+    <string name="et_03_usuarioagregado">User added</string>
+    <string name="et_03_nosepudoagregar">Could not add</string>
+    <string name="et_03_usuariodeclinado">User declined</string>
+    <string name="et_03_nosepudodeclinar">Could not decline</string>
 
     <!--FIN Strings Modulo 3 -->
 
@@ -109,6 +130,12 @@
     <string name="m01_errorWeightOutOfRange">The weight range is between 30kg and 300kg</string>
     <!--FIN Strings Modulo 5 -->
 
+
+    <!-- Inicio Strings Modulo 10 -->
+    <string name="title_activity_m10_water_glass">Water</string>
+    <string name="tab_m10_Hidratacion">Hydratation</string>
+    <string name="tab_m10_Control">Control</string>
+
     <!--Inicio Strings Modulo 4 -->
     <string name="amigo">Friends</string>
     <string name="actividad">Activity</string>
@@ -127,5 +154,6 @@
     <string name="millas">Mi.</string>
     <string name="language">Español</string>
     <!--Final Strings Modulo 4 -->
+
 
 </resources>

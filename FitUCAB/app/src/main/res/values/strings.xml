@@ -92,6 +92,27 @@
     <string name="tab_03_cercademi">Cerca De Mi</string>
     <string name="sep_03_request">Solicitudes de amistad</string>
     <string name="sep_03_friends">Amigos</string>
+    <string name="btn_03_agregar">Agregar</string>
+    <string name="btn_03_declinar">Declinar</string>
+    <string name="et_03_nohayusuariocercadeti">No hay usuarios cerca de ti</string>
+    <string name="et_03_hombre">Hombre</string>
+    <string name="et_03_mujer">Mujer</string>
+    <string name="et_03_edad">Edad</string>
+    <string name="et_03_kmdeti">Km de ti</string>
+    <string name="et_03_errorconexion">Error en la conexion</string>
+    <string name="btn_03_invitar">Invitar</string>
+    <string name="et_03_menulibreta">Menu libreta</string>
+    <string name="et_03_peticionenviada">Peticion enviada</string>
+    <string name="et_03_yaexisteamistad">Ya Existe esta amistad</string>
+    <string name="et_03_bloquear">Bloquear</string>
+    <string name="et_03_aceptar">Aceptar</string>
+    <string name="et_03_menuamigos">Menu amigos</string>
+    <string name="et_03_usuariobloqueado">Usuario bloqueado</string>
+    <string name="et_03_nosepudobloquear">No se pudo bloquear</string>
+    <string name="et_03_usuarioagregado">Usuario agregado</string>
+    <string name="et_03_nosepudoagregar">No se pudo agregar</string>
+    <string name="et_03_usuariodeclinado">Usuario declinado</string>
+    <string name="et_03_nosepudodeclinar">No se pudo declinar</string>
 
     <!--FIN Strings Modulo 3 -->
 
@@ -115,12 +136,6 @@
     <string name="title_activity_m10_water_glass">Agua</string>
     <string name="tab_m10_Hidratacion">Hidratacion</string>
     <string name="tab_m10_Control">Control</string>
-    <string name="textview_history_day">Día</string>
-    <string name="textview_history_week">Semana</string>
-    <string name="tv_m10_usuario">Usuario</string>
-    <string name="tv_m10_peso">Peso</string>
-    <string name="tv_m10_tipo">Tipo de Vaso</string>
-    <string name="tv_m10_cantidad">Cantidad Diaria</string>
 
     <!--FIN Strings Modulo 10 -->
 
