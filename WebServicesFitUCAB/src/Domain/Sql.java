@@ -8,7 +8,7 @@ import java.sql.*;
 public class Sql {
 
     private static Connection conInstance;
-    private Connection conn =bdConnect();
+    private Connection _conn =bdConnect();
     private Statement _st;
     private ResultSet _rs;
     private static String BD_USER = "fitucab";
@@ -31,7 +31,7 @@ public class Sql {
      */
 
     public Sql() {
-        conn = bdConnect();
+        _conn = bdConnect();
     }
 
     /**
@@ -45,11 +45,11 @@ public class Sql {
      */
     private static Connection bdConnect()
     {
-        Connection conn = null;
+        Connection _conn = null;
         try
         {
             Class.forName(BD_CLASS_FOR_NAME);
-            conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
+            _conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
         }
         catch ( ClassNotFoundException e )
         {
@@ -62,7 +62,7 @@ public class Sql {
             e.printStackTrace();
         }
         finally {
-            return conn;
+            return _conn;
         }
     }
 
@@ -79,7 +79,7 @@ public class Sql {
     public ResultSet sql ( String query ) throws SQLException {
 
         try {
-            _st = conn.createStatement();
+            _st = _conn.createStatement();
             _rs  = _st.executeQuery( query );
         }
         catch ( NullPointerException e ){
@@ -91,7 +91,7 @@ public class Sql {
             e.printStackTrace();
         }
         finally {
-            conn.close();
+            _conn.close();
             return _rs;
         }
 
@@ -106,7 +106,7 @@ public class Sql {
     public ResultSet sqlConn ( String query ) throws SQLException {
 
         try {
-            _st = conn.createStatement();
+            _st = _conn.createStatement();
             _rs  = _st.executeQuery( query );
         }
         catch ( NullPointerException e ){
@@ -133,7 +133,7 @@ public class Sql {
     }
 
     public Connection getConn() {
-        return conn;
+        return _conn;
     }
 
 }

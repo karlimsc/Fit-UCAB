@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+*.iml
+.gradle
+local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.idea
+=======
 *.iml
 .gradle
 local.properties
@@ -9,3 +21,4 @@ local.properties
 .externalNativeBuild
 .idea
 /app/build
+>>>>>>> Develop

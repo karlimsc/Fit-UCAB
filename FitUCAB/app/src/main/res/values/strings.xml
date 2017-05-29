@@ -6,7 +6,7 @@
     <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_comienza">REGISTRATE</string>
     <string name="btn_m01_iniciaSesion">INICIA SESION</string>
-    <string name="tv_m01_intro">¡Bienvenido! \n \n Inicia tu entrenamiento físico</string>
+    <string name="tv_m01_intro">¡Bienvenido! \n \n  Inicia tu entrenamiento físico</string>
     <string name="btn_m01_entrar">ENTRAR</string>
     <string name="et_m01_usuarioCorreo">Nombre de Usuario</string>
     <string name="et_m01_passwordLogin">Contraseña</string>
@@ -35,7 +35,19 @@
     <string name="m01_errorNullFields">Existen campos vacíos</string>
     <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
     <string name="m01_errorHeightOutOfRange">El rango de altura es entre 1m y 3m</string>
+    <string name="M01_ERROR_CONNECTION_MESSAGE">Revise su conexion a internet o la ip del servidor</string>
+    <string name="M01_ERROR_CONNECTION_FALSE">Ocurrio un error inesperdado, intente de nuevo</string>
+    <string name="M01_REGISTRY_OK_MESSAGE">Bienvenido a FitUCAB</string>
+    <string name="M01_REGISTRY_FAIL_MESSAGE">Fallo el registro, intente de nuevo</string>
+    <string name="M01_DUPLICATED_KEY_MESSAGE">Este username y/o email ya esta registrado</string>
+    <string name="M01_LOGIN_FAIL_MESSAGE">Este username y/o contrasena son incorrectos</string>
+    <string name="M01_RESTORE_MESSAGE">El correo con sus datos fue enviado</string>
+
+
+
+
     <!--FIN Strings Modulo 1 -->
+
 
     <!--Inicio Strings Modulo 2-->
     <string name="nav_title">Ocnfiguración</string>
@@ -64,6 +76,21 @@
 
     <!--FIN Strings Modulo 2 -->
 
+    <!--Inicio Strings Modulo 3-->
+
+    <string name="sep_03_with">Contactos con FIT-Ucab</string>
+    <string name="sep_03_without">Contactos sin FIT-Ucab</string>
+    <string name="tab_03_amigos">Amigos</string>
+    <string name="tab_03_libreta">Libreta</string>
+    <string name="tab_03_cercademi">Cerca De Mi</string>
+    <string name="sep_03_request">Solicitudes de amistad</string>
+    <string name="sep_03_friends">Amigos</string>
+
+    <!--FIN Strings Modulo 3 -->
+
+
+
+
 
     <!-- Inicio Strings Modulo 5 -->
     <string name="app_name_title">Actividad</string>
@@ -77,6 +104,18 @@
     <string name="tab_m05_track">Automática</string>
     <!--FIN Strings Modulo 5 -->
 
+    <!-- Inicio Strings Modulo 10 -->
+    <string name="title_activity_m10_water_glass">Agua</string>
+    <string name="tab_m10_Hidratacion">Hidratacion</string>
+    <string name="tab_m10_Control">Control</string>
+    <string name="textview_history_day">Día</string>
+    <string name="textview_history_week">Semana</string>
+    <string name="tv_m10_usuario">Usuario</string>
+    <string name="tv_m10_peso">Peso</string>
+    <string name="tv_m10_tipo">Tipo de Vaso</string>
+    <string name="tv_m10_cantidad">Cantidad Diaria</string>
+
+    <!--FIN Strings Modulo 10 -->
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Home</string>
@@ -89,3 +128,4 @@
 
 
 </resources>
+

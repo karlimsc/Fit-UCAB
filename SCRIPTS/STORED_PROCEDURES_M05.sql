@@ -151,13 +151,13 @@ for var_r in  (SELECT ACTIVITYID,ACTIVITYSTARTTIME, ACTIVITYENDTIME,ACTIVITYDATE
 			   WHERE  FK_PERSONID=usuario  and FK_REGISTRY=REGISTRYID and
 					  FK_SPORT=SPORTID and ACTIVITYDATE>=fechamenor and ACTIVITYDATE<=fechamayor)
 loop
-		id			  :=var_r.ACTIVITYID;
+		id	      :=var_r.ACTIVITYID;
 		horainicio    :=var_r.ACTIVITYSTARTTIME;
 		horafinal     :=var_r.ACTIVITYENDTIME;
 		fecha         :=var_r.ACTIVITYDATE;
 		km            :=var_r.ACTIVITYKM;
 		caloria       :=var_r.ACTIVITYCALOR;
-		lugarinicio   :=var_r ACTIVITYSTARTSITE;
+		lugarinicio   :=var_r.ACTIVITYSTARTSITE;
 		lugarfinal    :=var_r.ACTIVITYENDSITE;
 		nombredeporte :=var_r.SPORTNAME;
 		
@@ -166,6 +166,68 @@ end loop;
 END
 $$
 LANGUAGE 'plpgsql' VOLATILE; 
+
+-- Actividades id usuario
+
+CREATE OR REPLACE FUNCTION public.m05_obtenertodasactividades(IN usuario integer)
+  RETURNS TABLE(id integer, horainicio time without time zone, horafinal time without time zone, fecha date, km numeric, caloria numeric, lugarinicio character varying, lugarfinal character varying, nombredeporte character varying) AS
+$BODY$
+DECLARE
+ var_r record;
+
+BEGIN 
+
+for var_r in  (SELECT ACTIVITYID,ACTIVITYSTARTTIME, ACTIVITYENDTIME,ACTIVITYDATE,ACTIVITYKM ,ACTIVITYCALOR,ACTIVITYSTARTSITE,ACTIVITYENDSITE,SPORTNAME
+               FROM   ACTIVITY,SPORT,REGISTRY
+               WHERE  FK_PERSONID=usuario and REGISTRYID=FK_REGISTRY and FK_SPORT=SPORTID)
+                    
+loop
+        id            :=var_r.ACTIVITYID;
+        horainicio    :=var_r.ACTIVITYSTARTTIME;
+        horafinal     :=var_r.ACTIVITYENDTIME;
+        fecha         :=var_r.ACTIVITYDATE;
+        km            :=var_r.ACTIVITYKM;
+        caloria       :=var_r.ACTIVITYCALOR;
+        lugarinicio   :=var_r.ACTIVITYSTARTSITE;
+        lugarfinal    :=var_r.ACTIVITYENDSITE;
+        nombredeporte :=var_r.SPORTNAME;
+        
+        return next;
+end loop;
+END
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+
+-- Carga actividades por id usuario
+
+CREATE OR REPLACE FUNCTION public.m05_obtenertodasactividades(IN usuario integer)
+  RETURNS TABLE(id integer, horainicio time without time zone, horafinal time without time zone, fecha date, km numeric, caloria numeric, lugarinicio character varying, lugarfinal character varying, nombredeporte character varying) AS
+$BODY$
+DECLARE
+ var_r record;
+
+BEGIN 
+
+for var_r in  (SELECT ACTIVITYID,ACTIVITYSTARTTIME, ACTIVITYENDTIME,ACTIVITYDATE,ACTIVITYKM ,ACTIVITYCALOR,ACTIVITYSTARTSITE,ACTIVITYENDSITE,SPORTNAME
+               FROM   ACTIVITY,SPORT,REGISTRY
+               WHERE  FK_PERSONID=usuario and REGISTRYID=FK_REGISTRY and FK_SPORT=SPORTID)
+                    
+loop
+        id          :=var_r.ACTIVITYID;
+        horainicio    :=var_r.ACTIVITYSTARTTIME;
+        horafinal     :=var_r.ACTIVITYENDTIME;
+        fecha         :=var_r.ACTIVITYDATE;
+        km            :=var_r.ACTIVITYKM;
+        caloria       :=var_r.ACTIVITYCALOR;
+        lugarinicio   :=var_r.ACTIVITYSTARTSITE;
+        lugarfinal    :=var_r.ACTIVITYENDSITE;
+        nombredeporte :=var_r.SPORTNAME;
+        
+        return next;
+end loop;
+END
+$BODY$
+  LANGUAGE plpgsql VOLATILE
 
 -- CARGA LAS CALORIAS QUEMADAS POR ACTIVIDAD---
 
@@ -213,7 +275,7 @@ END
 $$
 LANGUAGE 'plpgsql' VOLATILE; 
 
--- FUNCIONA PERO CARGA 2 VECES EL VALOR DEL ID DE LA ACTIVIDAD;
+
 -- CARGAR ID DE ACTIVIDAD---
 CREATE OR REPLACE FUNCTION M05_obtenerIDactividades (fechamenor TIMESTAMP ,horainicio TIMESTAMP ,idregistro INTEGER) RETURNS TABLE (id INTEGER) AS $$
 DECLARE
