@@ -13,9 +13,9 @@ public class Sql {
     private Connection _conn;
     private Statement _st;
     private ResultSet _rs;
-    private static String BD_USER = "postgres";
-    private static String BD_PASSWORD = "root";
-    private static String BD_URL = "jdbc:postgresql://localhost/FitUcabDB";
+    private static String BD_USER = "fitucab";
+    private static String BD_PASSWORD = "fitucab";
+    private static String BD_URL = "jdbc:postgresql://localhost/fitucabdb";
     private static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
 
     /**
