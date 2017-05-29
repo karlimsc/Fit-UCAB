@@ -33,22 +33,24 @@ application
 ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:14:5-121:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /root/.android/build-cache/ac4790f4d16237f913714fd0cf5d9f672550e060/output/AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.0] /root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /root/.android/build-cache/e0d29ff062368d2736012d8ab78e4d3018a1e96a/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /root/.android/build-cache/336387f6c0b22a4bf9a6194261742c253d31bce2/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:transition:25.3.0] /root/.android/build-cache/4b39a18c49108457c3009f25ea92305d977a1e47/output/AndroidManifest.xml:26:5-20
 MERGED from [com.google.android.gms:play-services-maps:10.2.1] /root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/AndroidManifest.xml:24:5-19
 MERGED from [com.google.android.gms:play-services-location:10.2.1] /root/.android/build-cache/4b9a328c2771cc570d23cc39de7a7d2ea7f41975/output/AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-base:10.2.1] /root/.android/build-cache/7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6/output/AndroidManifest.xml:18:5-20:19
 MERGED from [com.google.android.gms:play-services-tasks:10.2.1] /root/.android/build-cache/2951ce2cf8e686ef94df81e70621df7d6231bbb7/output/AndroidManifest.xml:4:5-19
 MERGED from [com.google.android.gms:play-services-basement:10.2.1] /root/.android/build-cache/fee9d0bc14766dafff341209176c5e133767795a/output/AndroidManifest.xml:19:5-21:19
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /root/.android/build-cache/1992987a356e34b2c5ea448cc170f9142e325a2f/output/AndroidManifest.xml:9:5-20
+MERGED from [com.afollestad.material-dialogs:commons:0.9.0.2] /root/.android/build-cache/a4c0a27947dd6ad37b5574c5cbef932f9902f18c/output/AndroidManifest.xml:12:5-20
+MERGED from [com.afollestad.material-dialogs:core:0.9.0.2] /root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.0] /root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:25.3.0] /root/.android/build-cache/9619af34af9eb95f9a341656e1e96c96a98b17d3/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.0] /root/.android/build-cache/114c7b77c425269547cc9362efa6148f90010893/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:25.3.0] /root/.android/build-cache/01a1ca0b2498cb34ca2c9920a0468729c317c79c/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.0] /root/.android/build-cache/93cb81b1a31d2a735f78019eb69cff9fd4106d38/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-core-ui:25.3.0] /root/.android/build-cache/f2f6aff2052ec8679730301bb363001dc9d2fb3c/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.0] /root/.android/build-cache/93cb81b1a31d2a735f78019eb69cff9fd4106d38/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /root/.android/build-cache/e0d29ff062368d2736012d8ab78e4d3018a1e96a/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /root/.android/build-cache/336387f6c0b22a4bf9a6194261742c253d31bce2/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-compat:25.3.0] /root/.android/build-cache/66653b14ee7f41ed98a67d6e86a2761ab871af19/output/AndroidManifest.xml:29:5-20
-MERGED from [de.hdodenhof:circleimageview:2.1.0] /root/.android/build-cache/1992987a356e34b2c5ea448cc170f9142e325a2f/output/AndroidManifest.xml:9:5-20
 	android:label
 		ADDED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:17:9-41
 	android:supportsRtl
@@ -165,23 +167,26 @@ uses-sdk
 INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /root/.android/build-cache/ac4790f4d16237f913714fd0cf5d9f672550e060/output/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.3.0] /root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /root/.android/build-cache/e0d29ff062368d2736012d8ab78e4d3018a1e96a/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /root/.android/build-cache/336387f6c0b22a4bf9a6194261742c253d31bce2/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:transition:25.3.0] /root/.android/build-cache/4b39a18c49108457c3009f25ea92305d977a1e47/output/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:10.2.1] /root/.android/build-cache/00627d0446a28055b849d718eb11040177f9ea89/output/AndroidManifest.xml:23:5-43
 MERGED from [com.google.android.gms:play-services-location:10.2.1] /root/.android/build-cache/4b9a328c2771cc570d23cc39de7a7d2ea7f41975/output/AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-base:10.2.1] /root/.android/build-cache/7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6/output/AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-tasks:10.2.1] /root/.android/build-cache/2951ce2cf8e686ef94df81e70621df7d6231bbb7/output/AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-basement:10.2.1] /root/.android/build-cache/fee9d0bc14766dafff341209176c5e133767795a/output/AndroidManifest.xml:17:5-43
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /root/.android/build-cache/1992987a356e34b2c5ea448cc170f9142e325a2f/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.afollestad.material-dialogs:commons:0.9.0.2] /root/.android/build-cache/a4c0a27947dd6ad37b5574c5cbef932f9902f18c/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.afollestad.material-dialogs:core:0.9.0.2] /root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/AndroidManifest.xml:8:5-11:75
+MERGED from [com.android.support:recyclerview-v7:25.3.0] /root/.android/build-cache/09ef6aff04b7b4e0f660bc0121e42138e931d003/output/AndroidManifest.xml:20:5-43
+MERGED from [me.zhanghai.android.materialprogressbar:library:1.1.7] /root/.android/build-cache/c26d52304b99831608d54f122bc40558838c401c/output/AndroidManifest.xml:12:5-14:41
+MERGED from [com.android.support:appcompat-v7:25.3.0] /root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.3.0] /root/.android/build-cache/9619af34af9eb95f9a341656e1e96c96a98b17d3/output/AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.3.0] /root/.android/build-cache/114c7b77c425269547cc9362efa6148f90010893/output/AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.3.0] /root/.android/build-cache/01a1ca0b2498cb34ca2c9920a0468729c317c79c/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:25.3.0] /root/.android/build-cache/93cb81b1a31d2a735f78019eb69cff9fd4106d38/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:recyclerview-v7:25.3.0] /root/.android/build-cache/09ef6aff04b7b4e0f660bc0121e42138e931d003/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-core-ui:25.3.0] /root/.android/build-cache/f2f6aff2052ec8679730301bb363001dc9d2fb3c/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.0] /root/.android/build-cache/93cb81b1a31d2a735f78019eb69cff9fd4106d38/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /root/.android/build-cache/e0d29ff062368d2736012d8ab78e4d3018a1e96a/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /root/.android/build-cache/336387f6c0b22a4bf9a6194261742c253d31bce2/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-compat:25.3.0] /root/.android/build-cache/66653b14ee7f41ed98a67d6e86a2761ab871af19/output/AndroidManifest.xml:21:5-23:58
-MERGED from [de.hdodenhof:circleimageview:2.1.0] /root/.android/build-cache/1992987a356e34b2c5ea448cc170f9142e325a2f/output/AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
@@ -192,16 +197,16 @@ MERGED from [de.hdodenhof:circleimageview:2.1.0] /root/.android/build-cache/1992
 		INJECTED from /home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
 meta-data#android.support.VERSION
 ADDED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.0] /root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /root/.android/build-cache/e0d29ff062368d2736012d8ab78e4d3018a1e96a/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /root/.android/build-cache/336387f6c0b22a4bf9a6194261742c253d31bce2/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:transition:25.3.0] /root/.android/build-cache/4b39a18c49108457c3009f25ea92305d977a1e47/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.0] /root/.android/build-cache/09ef6aff04b7b4e0f660bc0121e42138e931d003/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.0] /root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-v4:25.3.0] /root/.android/build-cache/9619af34af9eb95f9a341656e1e96c96a98b17d3/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-fragment:25.3.0] /root/.android/build-cache/114c7b77c425269547cc9362efa6148f90010893/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-media-compat:25.3.0] /root/.android/build-cache/01a1ca0b2498cb34ca2c9920a0468729c317c79c/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.0] /root/.android/build-cache/93cb81b1a31d2a735f78019eb69cff9fd4106d38/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:recyclerview-v7:25.3.0] /root/.android/build-cache/09ef6aff04b7b4e0f660bc0121e42138e931d003/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-core-ui:25.3.0] /root/.android/build-cache/f2f6aff2052ec8679730301bb363001dc9d2fb3c/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.0] /root/.android/build-cache/93cb81b1a31d2a735f78019eb69cff9fd4106d38/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /root/.android/build-cache/e0d29ff062368d2736012d8ab78e4d3018a1e96a/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /root/.android/build-cache/336387f6c0b22a4bf9a6194261742c253d31bce2/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-compat:25.3.0] /root/.android/build-cache/66653b14ee7f41ed98a67d6e86a2761ab871af19/output/AndroidManifest.xml:25:5-27:34
 	android:value
 		ADDED from [com.android.support:design:25.3.0] /root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/AndroidManifest.xml:27:9-31

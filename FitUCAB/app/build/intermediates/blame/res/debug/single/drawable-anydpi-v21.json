@@ -92,6 +92,10 @@
         "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_fitness.xml"
     },
     {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/md_nav_back.xml",
+        "source": "/root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/res/drawable-anydpi-v21/md_nav_back.xml"
+    },
+    {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_remove_black.xml",
         "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_remove_black.xml"
     },

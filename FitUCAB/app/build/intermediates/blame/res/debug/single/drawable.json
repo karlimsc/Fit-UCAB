@@ -24,6 +24,10 @@
         "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable/notification_bg_low.xml"
     },
     {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_btn_selector_dark.xml",
+        "source": "/root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/res/drawable/md_btn_selector_dark.xml"
+    },
+    {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",
         "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable/abc_spinner_textfield_background_material.xml"
     },
@@ -42,6 +46,10 @@
     {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_ic_go_search_api_material.xml",
         "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable/abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_selector_dark.xml",
+        "source": "/root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/res/drawable/md_selector_dark.xml"
     },
     {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
@@ -100,6 +108,10 @@
         "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable/abc_btn_colored_material.xml"
     },
     {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_transparent.xml",
+        "source": "/root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/res/drawable/md_transparent.xml"
+    },
+    {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/btn_adelantegris.png",
         "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/drawable/btn_adelantegris.png"
     },
@@ -156,16 +168,28 @@
         "source": "/root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/res/drawable/design_password_eye.xml"
     },
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/rectangle.xml",
-        "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/drawable/rectangle.xml"
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_btn_selected_dark.xml",
+        "source": "/root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/res/drawable/md_btn_selected_dark.xml"
+    },
+    {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_btn_selector.xml",
+        "source": "/root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/res/drawable/md_btn_selector.xml"
     },
     {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
         "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/rectangle.xml",
+        "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/drawable/rectangle.xml"
+    },
+    {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
         "source": "/root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/res/drawable/design_snackbar_background.xml"
+    },
+    {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_selector.xml",
+        "source": "/root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/res/drawable/md_selector.xml"
     },
     {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/ic_btn_calendar.png",
@@ -196,6 +220,10 @@
         "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
     {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/gray_circle.xml",
+        "source": "/root/.android/build-cache/a4c0a27947dd6ad37b5574c5cbef932f9902f18c/output/res/drawable/gray_circle.xml"
+    },
+    {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml",
         "source": "/root/.android/build-cache/7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6/output/res/drawable/common_google_signin_btn_icon_dark.xml"
     },
@@ -216,16 +244,20 @@
         "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable/abc_ic_arrow_drop_right_black_24dp.xml"
     },
     {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_btn_selected.xml",
+        "source": "/root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/res/drawable/md_btn_selected.xml"
+    },
+    {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
         "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable/abc_seekbar_track_material.xml"
     },
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
-        "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable/abc_btn_check_material.xml"
-    },
-    {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
         "source": "/root/.android/build-cache/46906b420be1eec549069c5ffe2d39cd75575737/output/res/drawable/design_fab_background.xml"
+    },
+    {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_btn_check_material.xml",
+        "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable/abc_btn_check_material.xml"
     },
     {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/cup_image.png",
@@ -242,6 +274,10 @@
     {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/ic_water_glass.png",
         "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/drawable/ic_water_glass.png"
+    },
+    {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_item_selected.xml",
+        "source": "/root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/res/drawable/md_item_selected.xml"
     },
     {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
@@ -294,6 +330,10 @@
     {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
         "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_item_selected_dark.xml",
+        "source": "/root/.android/build-cache/05ac90eb6a976cdb2bc66f7e613c5ae97de9dc35/output/res/drawable/md_item_selected_dark.xml"
     },
     {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_material.xml",
