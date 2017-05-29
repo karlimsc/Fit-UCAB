@@ -1,19 +1,10 @@
 DROP TABLE IF EXISTS PERSON;
 DROP TABLE IF EXISTS REGISTRY;
 DROP TABLE IF EXISTS NOTIFICATION_SETTINGS;
+Drop table  IF EXISTS GLASSHISTORICID;
 
-<<<<<<< HEAD
+
 CREATE TABLE PERSON(
-
-PERSONID		serial  primary key,
-PERSONUSERNAME	varchar(20) unique not null,
-PERSONPASSWORD	varchar(80) not null,
-PERSONEMAIL	varchar(30) unique not null,
-PERSONSEX		varchar(1) not null,
-PERSONPHONE	varchar(11) not null,
-PERSONBIRTHDATE date not null
-=======
-CREATE TABLE PERSON(¿
 	PERSONID		serial  primary key,
 	PERSONUSERNAME	varchar(20) unique not null,
 	PERSONPASSWORD	varchar(15) not null,
@@ -21,7 +12,7 @@ CREATE TABLE PERSON(¿
 	PERSONSEX		varchar(1) not null,
 	PERSONPHONE		varchar(20) not null,
 	PERSONBIRTHDATE date not null
->>>>>>> 644b2819105d8d67646cda29f2bf18151bd66424
+
 );
 
 CREATE TABLE REGISTRY (
@@ -149,4 +140,28 @@ constraint PK_FRIEN_TRAINID primary key ( FRIEN_TRAINID)
 );
 
 --- TERMINA MODULO 6  ---
+
+
+
+---MODULO 10---
+
+
+
+
+CREATE TABLE GLASS_HISTORIC(
+
+GLASSHISTORICID     INTEGER      NOT NULL,
+GLASSTIME           TIMESTAMP    NOT NULL,
+GLASSTYPE			INTEGER 	 NOT NULL,
+FK_PERSON			INTEGER,
+
+CONSTRAINT PK_HISCTORIC PRIMARY KEY (GLASSHISTORICID)
+
+);
+
+
+
+
+
+---TERMINA MODULO 10---
 

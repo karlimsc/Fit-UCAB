@@ -609,6 +609,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="button_width">200dp</dimen>
     <dimen name="design_appbar_elevation">4dp</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168dp</dimen>
     <dimen name="design_bottom_navigation_active_text_size">14sp</dimen>
@@ -657,9 +658,12 @@
     <item format="float" name="hint_alpha_material_light" type="dimen">0.38</item>
     <item format="float" name="hint_pressed_alpha_material_dark" type="dimen">0.70</item>
     <item format="float" name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
+    <dimen name="image_height">103dp</dimen>
+    <dimen name="image_width">100dp</dimen>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="margin_top">20dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
@@ -677,7 +681,10 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="text_button_standard">18sp</dimen>
+    <dimen name="text_forgotpassword">14sp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="title_standard">20sp</dimen>
     <item name="ic_menu_camera" type="drawable">@android:drawable/ic_menu_camera</item>
     <item name="ic_menu_gallery" type="drawable">@android:drawable/ic_menu_gallery</item>
     <item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>
@@ -787,7 +794,7 @@
     <string name="et_m01_peso">Peso</string>
     <string name="et_m01_telefono">Teléfono</string>
     <string name="et_m01_usuario">Usuario</string>
-    <string name="et_m01_usuarioCorreo">Usuario o Correo</string>
+    <string name="et_m01_usuarioCorreo">Nombre de Usuario</string>
     <string name="et_m02_Steps">Nro de Pasos</string>
     <string name="et_m02_datenac">Fecha de Nacimiento</string>
     <string name="et_m02_email">Correo electronico</string>
@@ -801,6 +808,14 @@
         AIzaSyDVMlc2ldblEldVTrtxka5_WXeoA4fUL1s
     </string>
     <string name="hello_blank_fragment">Home</string>
+    <string name="m01_errorHeightOutOfRange">El rango de altura es entre 1m y 3m</string>
+    <string name="m01_errorInvalidEmail">El email es inválido</string>
+    <string name="m01_errorNullFields">Existen campos vacíos</string>
+    <string name="m01_errorPasswordTooShort">La contraseña es muy corta </string>
+    <string name="m01_errorPhoneTooShort">El teléfono es inválido</string>
+    <string name="m01_errorUsernameSpecialChar">El nombre de usuario no debe tener caracteres especiales</string>
+    <string name="m01_errorUsernameTooShort">El nombre de usuario debe poseer al menos 4 caracteres</string>
+    <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
     <string name="nav_02_calorias">Calorias</string>
     <string name="nav_02_cerrarsesion">Cerrar Sesión</string>
     <string name="nav_02_cuenta">Cuenta</string>
@@ -830,7 +845,7 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="tv_m01_acercaDeTi">Acerca de ti</string>
     <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
-    <string name="tv_m01_intro">¡Bienvenido! \n Inicia tu entrenamiento físico</string>
+    <string name="tv_m01_intro">¡Bienvenido! \n \n Inicia tu entrenamiento físico</string>
     <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
     <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
     <string name="tv_m02_perfil">Perfil</string>

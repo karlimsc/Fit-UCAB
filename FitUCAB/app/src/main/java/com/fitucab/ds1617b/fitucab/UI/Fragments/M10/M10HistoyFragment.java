@@ -130,8 +130,7 @@ public class M10HistoyFragment extends Fragment {
                             // Display the first 500 characters of the response string.}
                             try {
                                 list = gson.fromJson(response, new TypeToken<List<Water>>(){}.getType());
-                                m10.unlockbtnm();
-                                m10w.unlockbtn();
+
                                 ViewList();
 
 
@@ -140,13 +139,15 @@ public class M10HistoyFragment extends Fragment {
                                 e.printStackTrace();
                             }
                             finally {
-
+                                m10.unlockbtnm();
+                                m10w.unlockbtn();
                             }
                         }
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-
+                    m10.unlockbtnm();
+                    m10w.unlockbtn();
                 }
             });
 

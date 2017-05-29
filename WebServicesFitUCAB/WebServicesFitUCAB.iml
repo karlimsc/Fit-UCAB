@@ -53,5 +53,6 @@
     <orderEntry type="library" name="mail1" level="project" />
     <orderEntry type="library" name="postgresql-42.1.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2" level="application_server_libraries" />
+    <orderEntry type="library" name="postgresql-42.1.1" level="project" />
   </component>
 </module>

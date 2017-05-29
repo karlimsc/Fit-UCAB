@@ -1,6 +1,4 @@
 
-select res from m10_addwater('03/04/2014',300,1);
-
 
 
 CREATE OR REPLACE  FUNCTION M10_AddWater( tm timestamp, gt integer, fkP integer,
@@ -9,15 +7,10 @@ AS $$
 DECLARE  
 max integer;
 BEGIN
-	
-max = (Select max(glasshistoricid)+1 from glass_historic) ;
-	if max = null then
-	max := 1;
-	end if 
-	
+		
 	INSERT INTO glass_historic(
-	glasshistoricid, GLASSTIME, GLASSTYPE, fk_person)
-	VALUES (max, tm, gt, fkp);
+	 GLASSTIME, GLASSTYPE, fk_person)
+	VALUES ( tm, gt, fkp);
 
     
 
@@ -27,7 +20,9 @@ END;
 $$ LANGUAGE plpgsql VOLATILE;
 
 
-
+INSERT INTO public.glass_historic(
+            glasshistoricid, glasstime, glasstype, fk_person)
+    VALUES (0, '11/11/2011', 0, 0);
 
 CREATE OR REPLACE FUNCTION M10_DeletWaterTm (tm timestamp , fkP integer  , out res integer)
 AS $$
@@ -75,6 +70,7 @@ CREATE OR REPLACE FUNCTION M10_GetListFecha(fkp int, date_stamp date)
 RETURNS TABLE(GLASSTIME timestamp, GLASSTYPE int) AS $$
 BEGIN
   RETURN QUERY
+
     SELECT t.GLASSTIME,t.GLASSTYPE FROM glass_historic as t
       WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp;
  end;

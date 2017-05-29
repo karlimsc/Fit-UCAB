@@ -386,6 +386,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
             @Override
             public void onErrorResponse(VolleyError error) {
                 _EtnDate.setText("30/05/2017");
+                unlockbtnm();
             }
         });
 // Add the request to the RequestQueue.

@@ -16,24 +16,28 @@
         "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\ic_water_glass.png"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_adelantegris.png",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\btn_adelantegris.png"
-    },
-    {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\btn_adelantegris.png",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\btn_adelantegris.png"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\notification_tile_bg.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\notification_bg_low.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\food.png",
+        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\food.png"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_normal.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\notification_bg_low.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
@@ -48,12 +52,16 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_textfield_search_material.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\notification_bg_low.xml"
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\graphic.png",
+        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\graphic.png"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
         "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\notification_bg_low.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
@@ -156,12 +164,12 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_edit_text_material.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\drawable\\design_snackbar_background.xml"
-    },
-    {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\drawable\\design_snackbar_background.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
@@ -204,16 +212,16 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_ic_search_api_material.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
-        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_ic_search_api_material.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\side_nav_bar.xml",
@@ -248,12 +256,12 @@
         "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\ic_action_discard.png"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
         "source": "C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_normal.xml",
@@ -324,12 +332,12 @@
         "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_vector_test.xml"
     },
     {
-        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
-        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_btn_radio_material.xml"
-    },
-    {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
@@ -372,12 +380,12 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\drawable\\navigation_empty_icon.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_btn_colored_material.xml"
-    },
-    {
         "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\border.xml",
         "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\border.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_btn_colored_material.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_btn_adelante.png",
@@ -464,12 +472,12 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\ic_water_glass.png"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
         "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_normal.xml",
@@ -636,12 +644,12 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\side_nav_bar.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
-    },
-    {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
@@ -700,28 +708,28 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_ratingbar_material.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\notification_icon_background.xml"
-    },
-    {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\notification_tile_bg.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\notification_icon_background.xml"
     },
     {
         "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
         "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_dialog_material_background.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\navigation_empty_icon.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\drawable\\navigation_empty_icon.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\notification_tile_bg.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\navigation_empty_icon.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\drawable\\navigation_empty_icon.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
@@ -756,20 +764,20 @@
         "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\notification_icon_background.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\border.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\border.xml"
-    },
-    {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\notification_icon_background.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_normal.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\border.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\border.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_focused.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\drawable\\common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light_normal.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark_focused.xml",
@@ -984,16 +992,16 @@
         "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\drawable\\common_google_signin_btn_text_disabled.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\circle_progress.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\circle_progress.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
@@ -1004,12 +1012,12 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\7c8b994bd1695fc9d60ce9251fc184a65f6bcdc6\\output\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_focused.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
-    },
-    {
         "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
         "source": "C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\notification_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light_focused.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\8dfb67043918953381d460c987d0e679f2c3378e\\output\\res\\drawable\\common_google_signin_btn_text_light_focused.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_light.xml",
@@ -1040,16 +1048,16 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_vector_test.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
         "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_tab_indicator_material.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_vector_test.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_vector_test.xml"
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_action_discard.png",
@@ -1200,12 +1208,12 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
-        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_ic_clear_material.xml"
-    },
-    {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_water_glass.png",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\ic_water_glass.png"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
@@ -1216,12 +1224,12 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\drawable\\common_google_signin_btn_icon_light_focused.xml"
     },
     {
-        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
-        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_cab_background_top_material.xml"
-    },
-    {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\40e237ab9dfe95058f4621dd57bb5e213f0c00e8\\output\\res\\drawable\\abc_cab_background_top_material.xml"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
@@ -1432,12 +1440,12 @@
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
-        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_btn_clock.png",
-        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\ic_btn_clock.png"
-    },
-    {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\\output\\res\\drawable\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_btn_clock.png",
+        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\ic_btn_clock.png"
     },
     {
         "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_action_good.png",
@@ -1970,6 +1978,10 @@
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\\output\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\diet.png",
+        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\diet.png"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
@@ -3066,6 +3078,10 @@
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_icon_dark.xml",
         "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\.android\\build-cache\\c7cfdbea3d98cf92d5025de26851e6e30b65c8e5\\output\\res\\drawable\\common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\suggestion.png",
+        "source": "C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\drawable\\suggestion.png"
     },
     {
         "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
