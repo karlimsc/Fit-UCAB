@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Clase que manejara los querys
+ * Clase perteneciente a PERFIL que manejara los querys
  */
 public class Query {
 

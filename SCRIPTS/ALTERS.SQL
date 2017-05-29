@@ -104,3 +104,8 @@ REFERENCES FRIENDSHIP (FRIENDSHIPID);
 
 
 --Fin alters Modulo6--
+
+--- MODULO 8 ---
+alter table DETAIL add constraint FK_CHALLENGE foreign key (FK_CHALLENGEID) references CHALLENGE (CHALLENGEID);
+alter table DETAIL add constraint FK_REGISTRYID foreign key (FK_USERID) references REGISTRY (FK_PERSONID);
+--- fin MODULO 8 ---
