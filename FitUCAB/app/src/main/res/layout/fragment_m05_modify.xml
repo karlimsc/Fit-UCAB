@@ -146,15 +146,6 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1">
 
-                <EditText
-                    android:id="@+id/et_m05_startsite"
-                    android:layout_width="250dp"
-                    android:layout_height="40dp"
-                    android:layout_alignLeft="@+id/editText"
-                    android:layout_alignStart="@+id/editText"
-                    android:layout_below="@+id/textView3"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="14dp" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
@@ -162,15 +153,6 @@
                 android:layout_height="wrap_content"
                 android:layout_column="1">
 
-                <EditText
-                    android:id="@+id/et_m05_endsite"
-                    android:layout_width="250dp"
-                    android:layout_height="40dp"
-                    android:layout_alignLeft="@+id/editText"
-                    android:layout_alignStart="@+id/editText"
-                    android:layout_below="@+id/textView3"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="14dp" />
             </android.support.design.widget.TextInputLayout>
 
 
