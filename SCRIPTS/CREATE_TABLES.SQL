@@ -10,8 +10,11 @@ DROP TABLE IF EXISTS SPOR_TRAINING;
 DROP TABLE IF EXISTS FRIEN_TRAIN;
 DROP TABLE IF EXISTS REGISTRY;
 DROP TABLE IF EXISTS PERSON;
+DROP TABLE IF EXISTS FRIENDSHIP;
+DROP TABLE IF EXISTS STATUS;
+DROP TABLE IF EXISTS GEO;
 
-<<<<<<< HEAD
+
 CREATE TABLE PERSON(
 
 PERSONID		serial  primary key,
@@ -21,17 +24,7 @@ PERSONEMAIL	varchar(30) unique not null,
 PERSONSEX		varchar(1) not null,
 PERSONPHONE	varchar(11) not null,
 PERSONBIRTHDATE date not null
-=======
-CREATE TABLE PERSON(¿
-	PERSONID		serial  primary key,
-	PERSONUSERNAME	varchar(20) unique not null,
-	PERSONPASSWORD	varchar(15) not null,
-	PERSONEMAIL		varchar(50) unique not null,
-	PERSONSEX		varchar(1) not null,
-	PERSONPHONE		varchar(20) not null,
-	PERSONBIRTHDATE date not null
->>>>>>> 644b2819105d8d67646cda29f2bf18151bd66424
-);
+
 
 CREATE TABLE REGISTRY (
 	REGISTRYID 		serial primary key,
@@ -69,10 +62,6 @@ GEOLATITUD	varchar(30) not null
 );
 
 
-
-
-INSERT INTO public.status(statusid, statuspending, statusaccepted, statusblocked, statusdecline)
-VALUES (1, 1,0, 0,0),(2,0,1,0,0),(3,0,0,1,0),(4,0,0,0,1);
 --TERMINA MODULO 3--
 
 

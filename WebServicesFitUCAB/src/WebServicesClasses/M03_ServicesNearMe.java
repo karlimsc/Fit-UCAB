@@ -127,7 +127,6 @@ public class M03_ServicesNearMe {
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return "1";//Se agrego con exito!!
 
         }
 
