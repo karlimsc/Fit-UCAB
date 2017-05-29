@@ -8,6 +8,8 @@ import javax.ws.rs.*;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 /**
  * Created by andres on 13/05/17.
@@ -57,25 +59,39 @@ public class M03_ServicesNearMe {
 
         }
 
-        //userLocations.sort();
-
-
-        //Float.toString(distFrom(Float.parseFloat(latitud),Float.parseFloat(longitud),Float.parseFloat(userLocations.get(0).get_longitud()),Float.parseFloat(userLocations.get(0).get_latitud())));
         float longitudFloat = Float.parseFloat(longitud);
         float latitudFloat = Float.parseFloat(latitud);
-        float longitudFloatAux = Float.parseFloat(userLocations.get(0).get_longitud());
-        float latitudFloatAux = Float.parseFloat(userLocations.get(0).get_latitud());
+        for(int i=0;i<userLocations.size();i++){
+            float d = 0;
+            float longitudFloatAux = Float.parseFloat(userLocations.get(i).get_longitud());
+            float latitudFloatAux = Float.parseFloat(userLocations.get(i).get_latitud());
 
 
-        //return Float.toString(latitudFloatAux)+Float.toString(longitudFloatAux);
-        //return Float.toString(distFrom(latitudFloat,longitudFloat,latitudFloatAux,longitudFloatAux));
+            d=distFrom(latitudFloat,longitudFloat,latitudFloatAux,longitudFloatAux)/1000;
+
+
+            userLocations.get(i).set_distancia(Float.toString(d));
+
+        }
+
+        for(int i=userLocations.size()-1;i>=0;i--){
+
+            if(Float.parseFloat(userLocations.get(i).get_distancia())>Float.parseFloat((rango))){
+                userLocations.remove(i);
+            }
+        }
+
+
+        Collections.sort(userLocations,(u1,u2)->Float.compare(Float.parseFloat(u1.get_distancia()),Float.parseFloat(u2.get_distancia())));
+
+
         return gson.toJson(userLocations);
     }
 
     @PUT
     @Path("/setLocation")
     @Produces("application/json")
-    public String setLocation(@QueryParam("id") String id,@QueryParam("latitud") String latitud,@QueryParam("longitud") String longitud){
+    public String setLocation(@QueryParam("id") String id,@QueryParam("longitud") String longitud,@QueryParam("latitud") String latitud){
 
         String query="";
         String queryVerificar="Select * from public.geo where (fk_personid="+id+");";
