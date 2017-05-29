@@ -1,27 +1,12 @@
 <component name="libraryTable">
   <library name="animated-vector-drawable-25.3.0">
     <CLASSES>
-<<<<<<< HEAD
-      <root url="jar://$USER_HOME$/.android/build-cache/bde3fd6f923f5f804ebcf58625afdc446219ea4e/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/bde3fd6f923f5f804ebcf58625afdc446219ea4e/output/res" />
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <root url="file://$USER_HOME$/.android/build-cache/dd9a96ad7c7fa6f8c3ac82cbd0ca82ab0f070b94/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/dd9a96ad7c7fa6f8c3ac82cbd0ca82ab0f070b94/output/jars/classes.jar!/" />
-=======
-      <root url="jar://$USER_HOME$/.android/build-cache/2d7e0d95b6cb886af57bb5db7aa16cdd7282da7a/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/2d7e0d95b6cb886af57bb5db7aa16cdd7282da7a/output/res" />
->>>>>>> Develop
-=======
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.3.0/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.3.0/res" />
->>>>>>> Develop
->>>>>>> Develop
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/animated-vector-drawable/25.3.0/animated-vector-drawable-25.3.0-sources.jar!/" />
+      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/animated-vector-drawable/25.3.0/animated-vector-drawable-25.3.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

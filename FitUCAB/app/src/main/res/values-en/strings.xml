@@ -130,12 +130,12 @@
     <string name="m01_errorWeightOutOfRange">The weight range is between 30kg and 300kg</string>
     <!--FIN Strings Modulo 5 -->
 
-<<<<<<< HEAD
+
     <!-- Inicio Strings Modulo 10 -->
     <string name="title_activity_m10_water_glass">Water</string>
     <string name="tab_m10_Hidratacion">Hydratation</string>
     <string name="tab_m10_Control">Control</string>
-=======
+
     <!--Inicio Strings Modulo 4 -->
     <string name="amigo">Friends</string>
     <string name="actividad">Activity</string>
@@ -154,6 +154,6 @@
     <string name="millas">Mi.</string>
     <string name="language">Español</string>
     <!--Final Strings Modulo 4 -->
->>>>>>> Develop
+
 
 </resources>
