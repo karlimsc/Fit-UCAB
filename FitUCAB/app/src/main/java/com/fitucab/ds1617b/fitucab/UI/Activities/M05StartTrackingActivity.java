@@ -35,10 +35,12 @@ import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Array;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -47,6 +49,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
+    private SimpleDateFormat sdfDate;
+
     public M05StartTrackingActivity() {
 
     }
@@ -75,6 +79,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     private ArrayList<Double> velocidadPromedio;
     private float mets;
     private float weight;
+    SimpleDateFormat sdf;
+    String currentDateandTime;
 
     private Sport sport;
     private User user;
@@ -157,7 +163,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     View.OnLongClickListener end = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View v) {
-                createActivity();
+                String crar = createActivity();
+                Log.i("RESCREAR",crar);
                 insertActivityRequest(activity);
             return false;
         }
@@ -177,7 +184,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     public void onConnected(Bundle connectionHint) {
         super.startLocationUpdates();
         super.checkLastLocation(LocationPoints);
-        activity.set_startime(LocationPoints.get(0).toString());
+        activity.set_starsite(LocationPoints.get(0).toString());
     }
 
 
@@ -321,14 +328,24 @@ public class M05StartTrackingActivity extends GeoLocalization implements
      * Inicializa las variables de la clase.
      */
     public void initArguments() {
+
+        sdfDate = new SimpleDateFormat("yyyy-MM-dd");
+        sdf = new SimpleDateFormat("HH:mm:ss");
         LocationPoints = new ArrayList<>();
         TimePassed = new ArrayList<>();
         velocidadPromedio = new ArrayList<>();
+        currentDateandTime = sdf.format(new Date());
+
         activity = new Activit();
-        activity.set_date(getCurrentTime().toString());
+
+        activity.set_date(String.valueOf(currentDateandTime));
+        activity.set_startime(String.valueOf(sdf.format(new Date())));
         mExtras = mIntent.getExtras();
         sport = (Sport) mExtras.get("sport");
         user = (User) mExtras.get("user");
+
+        Log.i("SPORT",sport.getName());
+        Log.i("USER", String.valueOf(user.get_idUser()));
     }
 
     /**
@@ -361,7 +378,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     public String createActivity(){
         try {
             activity.set_endsite(LocationPoints.get(LocationPoints.size()-1).toString());
-            activity.set_endtime(getCurrentTime().toString());
+            activity.set_endtime(String.valueOf(sdf.format(new Date())));
             activity.set_date(getCurrentTime().toString());
             activity.set_km(distance);
             activity.set_calor(calculateCalories(mets,weight));
@@ -386,13 +403,21 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
         //  M05UrlConsul m05IP = new M05UrlConsul();
 
-        final String URL = baseIp.getIp() + "/insertActivity";
+        final String URL = baseIp.getIp() + "insertActivity";
 
         Gson gson = new Gson();
 
 
         String json = gson.toJson(activity);
 
+        Log.i("START", String.valueOf(activity.get_starsite()));
+        Log.i("CALOR", String.valueOf(activity.get_calor()));
+        Log.i("DATE", String.valueOf(activity.get_date()));
+        Log.i("ENDSITE", String.valueOf(activity.get_endsite()));
+        Log.i("ENDTIME", String.valueOf(activity.get_endtime()));
+        Log.i("KM", String.valueOf(activity.get_km()));
+        Log.i("NAME", String.valueOf(activity.get_name()));
+        Log.i("STARTTIME", String.valueOf(activity.get_startime()));
 
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
