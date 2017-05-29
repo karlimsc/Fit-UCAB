@@ -83,8 +83,8 @@ public class M05_ServicesSport {
 
                 Integer numero = rs.getInt(   "iddeporte");
                 String  nombre = rs.getString("nombredeporte");
-
-                resultado=new Sport(numero,nombre);
+		float   mets   = rs.getFloat("metdeporte");
+                 resultado=new Sport(numero,nombre,mets);
 
 
             }
