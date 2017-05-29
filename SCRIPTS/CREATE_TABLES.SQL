@@ -180,8 +180,6 @@ DETAILACTIVE boolean not null,
 FK_USERID integer,
 FK_CHALLENGEID integer
 );
-	
-alter table DETAIL add constraint FK_CHALLENGE foreign key (FK_CHALLENGEID) references CHALLENGE (CHALLENGEID);
-alter table DETAIL add constraint FK_REGISTRYID foreign key (FK_USERID) references REGISTRY (FK_PERSONID);	
----
+		
+--- FIN MODULO 8 ---
 
