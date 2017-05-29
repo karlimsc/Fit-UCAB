@@ -51,7 +51,7 @@ public class Sql {
         try
         {
             Class.forName(BD_CLASS_FOR_NAME);
-            conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
+            _conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
 
         }
         catch ( ClassNotFoundException e )
@@ -65,7 +65,7 @@ public class Sql {
             e.printStackTrace();
         }
         finally {
-            return conn;
+            return _conn;
         }
     }
 
