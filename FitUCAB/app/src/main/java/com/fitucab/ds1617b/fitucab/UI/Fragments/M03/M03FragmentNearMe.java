@@ -36,7 +36,8 @@ import static android.media.CamcorderProfile.get;
 import static java.lang.Thread.sleep;
 
 /**
-Aqui falta lo que hace la clase como tal y ya
+Este fragmento nos permite la busqueda de usuarios por cercania ,lo cual tenemos un perfil de informacion
+ y dos botones en los cuales agregamos y declinamos amigos.
 
 */
 public class M03FragmentNearMe extends Fragment{
@@ -105,8 +106,9 @@ public class M03FragmentNearMe extends Fragment{
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
+                    //dialogo de alerta de un error de conexion
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                    builder1.setMessage("Error en la conexion");
+                    builder1.setMessage(R.string.et_03_errorconexion);
                     builder1.setCancelable(true);
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
@@ -116,14 +118,14 @@ public class M03FragmentNearMe extends Fragment{
             // agregamos la solicitud al RequestQueue.
             queuereq.add(stringRequest);
 
-
+            //Tomamos nombre,puntos,sexo,edad,distancia de listview .
             nombre = (TextView) rootView.findViewById(R.id.nearMeName);
             puntos = (TextView) rootView.findViewById(R.id.nearMePoints);
             sexo = (TextView) rootView.findViewById(R.id.nearMeSex);
             edad = (TextView) rootView.findViewById(R.id.nearMeAge);
             distancia = (TextView) rootView.findViewById(R.id.nearMeDistance);
 
-            String urlNear = ipString.getIp()+"nearMe?id="+userId+"&longitud="+ Double.toString(dlong) +"&latitud="+ Double.toString(dlat) +"&rango=999999999999";
+            String urlNear = ipString.getIp()+"nearMe?id="+userId+"&longitud="+ Double.toString(dlong) +"&latitud="+ Double.toString(dlat) +"&rango=5";
             final Gson gson = new Gson();
             // Inicializamos el RequestQueue.
             final RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
@@ -132,14 +134,14 @@ public class M03FragmentNearMe extends Fragment{
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
-
+                            //setea los botones
                             accept.setEnabled(true);
                             decline.setEnabled(true);
                             ArrayList<UserAuxiliar> ap = gson.fromJson(response,new TypeToken<List<UserAuxiliar>>(){}.getType());
 
                             if ((ap != null) && (ap.size()==0)){
                                 usersNear[0] = false;
-                                nombre.setText("No hay usuarios cerca de ti");
+                                nombre.setText(R.string.et_03_nohayusuariocercadeti);
                             }else {
 
                                 for (int i = 0; i < ap.size(); i++) {
@@ -151,9 +153,9 @@ public class M03FragmentNearMe extends Fragment{
                                 nombre.setText(usuarios.get(0).get_username());
                                 puntos.setText(Integer.toString(usuarios.get(0).get_point()));
                                 if (usuarios.get(0).get_sex().equals("m") || usuarios.get(0).get_sex().equals("M"))
-                                    sexo.setText("Hombre");
+                                    sexo.setText(R.string.et_03_hombre);
                                 else
-                                    sexo.setText("Mujer");
+                                    sexo.setText(R.string.et_03_mujer);
 
                                 try {
                                     bDate[0] = df.parse(usuarios.get(0).get_birthdate());
@@ -165,8 +167,8 @@ public class M03FragmentNearMe extends Fragment{
 
                                 Long time= today.getTimeInMillis() / 1000 - bDate[0].getTime() / 1000;
                                 int years = Math.round(time) / 31536000;
-                                edad.setText("Edad "+Integer.toString(years));
-                                distancia.setText(usuarios.get(0).get_distancia()+" Km de ti");
+                                edad.setText(R.string.et_03_edad+Integer.toString(years));
+                                distancia.setText(usuarios.get(0).get_distancia()+R.string.et_03_kmdeti);
                                 }
 
                         }
@@ -174,7 +176,7 @@ public class M03FragmentNearMe extends Fragment{
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                    builder1.setMessage("Error en la conexion");
+                    builder1.setMessage(R.string.et_03_errorconexion);
                     builder1.setCancelable(true);
                     AlertDialog alert11 = builder1.create();
                     alert11.show();
@@ -187,6 +189,7 @@ public class M03FragmentNearMe extends Fragment{
 
 
             }
+            //Se llama cuando se ha hecho clic en un accept
             accept.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -206,8 +209,9 @@ public class M03FragmentNearMe extends Fragment{
                                 }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
+                                //dialogo de alerta de un error de conexion
                                 AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                builder1.setMessage("Error en la conexion");
+                                builder1.setMessage(R.string.et_03_errorconexion);
                                 builder1.setCancelable(true);
                                 AlertDialog alert11 = builder1.create();
                                 alert11.show();
@@ -218,6 +222,7 @@ public class M03FragmentNearMe extends Fragment{
                         queuereq.add(stringRequest);
                         getFragmentManager().beginTransaction().detach(fragment).attach(fragment).commit();
                     }else
+                        //para que no se pueda dar click cuando no tenga nearme
                         accept.setEnabled(false);
 
                         try {
@@ -234,7 +239,7 @@ public class M03FragmentNearMe extends Fragment{
                         }
                 }
             });
-
+        //Se llama cuando se ha hecho clic en un decline
             decline.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -263,7 +268,7 @@ public class M03FragmentNearMe extends Fragment{
                                                 @Override
                                                 public void onErrorResponse(VolleyError error) {
                                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                                    builder1.setMessage("Error en la conexion:"+error.toString());
+                                                    builder1.setMessage(R.string.et_03_errorconexion +error.toString());
                                                     builder1.setCancelable(true);
                                                     AlertDialog alert11 = builder1.create();
                                                     alert11.show();
@@ -276,8 +281,9 @@ public class M03FragmentNearMe extends Fragment{
                                 }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
+                                //dialogo de alerta de un error de conexion
                                 AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                builder1.setMessage("Error en la conexion");
+                                builder1.setMessage(R.string.et_03_errorconexion);
                                 builder1.setCancelable(true);
                                 AlertDialog alert11 = builder1.create();
                                 alert11.show();

@@ -48,7 +48,8 @@ import static java.lang.Integer.parseInt;
 import static java.lang.Thread.sleep;
 
 /**
- Aqui falta lo que hace la clase como tal y ya
+ Este fragmento nos permite ver a los usuarios con y sin la aplicacion en el cual si no tiene la app
+ podemos enviarle una solicitud de descarga , tambien si tiene la aplicacion agregar a ese amigo.
 
  */
 public class M03FragmentLibreta extends Fragment {
@@ -146,29 +147,6 @@ public class M03FragmentLibreta extends Fragment {
                 //agregamos al usuario con nombre email y telefono
                 usuarios.add(new UserAuxiliar(name,emailAddress, phoneNumber));
 
-                /*AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                builder1.setMessage(name);
-                builder1.setCancelable(true);
-
-                builder1.setPositiveButton(
-                        emailAddress,
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-
-                builder1.setNegativeButton(
-                        phoneNumber,
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
-                            }
-                        });
-
-                AlertDialog alert11 = builder1.create();
-                alert11.show();*/
-
               //adapter.addAll(usuarios);
                 phones.close();
                 emails.close();
@@ -215,8 +193,9 @@ public class M03FragmentLibreta extends Fragment {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                //dialogo de alerta de un error de conexion
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                builder1.setMessage("Error en la conexion");
+                builder1.setMessage(R.string.et_03_errorconexion);
                 builder1.setCancelable(true);
                 AlertDialog alert11 = builder1.create();
                 alert11.show();
@@ -236,7 +215,6 @@ public class M03FragmentLibreta extends Fragment {
      @param v le pasamos la lista que en nuestro caso es el listview
      */
 
-
     @Override
     public void onCreateContextMenu(ContextMenu menu,
                                     View v,
@@ -245,13 +223,13 @@ public class M03FragmentLibreta extends Fragment {
 
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
 
-        menu.setHeaderTitle("menu libreta");
+        menu.setHeaderTitle(R.string.et_03_menulibreta);
         UserAuxiliar user = (UserAuxiliar) listView.getItemAtPosition(info.position);
         if(user.get_type() == 0){
-            menu.add(0, user.get_id(), 0, "Agregar");
+            menu.add(0, user.get_id(), 0, R.string.btn_03_agregar);
         }
         else if(user.get_type() == 1){
-            menu.add(1, user.get_id(), 0, "Invitar");
+            menu.add(1, user.get_id(), 0, R.string.btn_03_invitar);
         }
     }
     /**
@@ -280,13 +258,12 @@ public class M03FragmentLibreta extends Fragment {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                if (response.equals("Ya Existe esta amistad.")){
+                                if (response.equals(R.string.et_03_yaexisteamistad)){
                                     String urlAccept = ipString.getIp()+"friend/update?idUpdater="+userId+"&idUpdated="+Integer.toString(item.getItemId())+"&Action=Request";
                                     final Gson gsonAccept = new Gson();
 
                                     // Inicializamos el RequestQueue.
                                     RequestQueue queueUpdate = Volley.newRequestQueue(rootView.getContext());
-
 
                                     // Solicitar una respuesta de cadena desde la URL proporcionada.
                                     StringRequest stringRequestUpdate = new StringRequest(Request.Method.POST, urlAccept,
@@ -298,8 +275,9 @@ public class M03FragmentLibreta extends Fragment {
                                             }, new Response.ErrorListener() {
                                         @Override
                                         public void onErrorResponse(VolleyError error) {
+                                            //dialogo de alerta de un error de conexion
                                             AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                            builder1.setMessage("Error en la conexion");
+                                            builder1.setMessage(R.string.et_03_errorconexion);
                                             builder1.setCancelable(true);
                                             AlertDialog alert11 = builder1.create();
                                             alert11.show();
@@ -308,8 +286,9 @@ public class M03FragmentLibreta extends Fragment {
                                     queueUpdate.add(stringRequestUpdate);
                                 }
                                 else{
+                                    //dialogo de alerta de una peticion enviada
                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Peticion enviada");
+                                    builder1.setMessage(R.string.et_03_peticionenviada);
                                     builder1.setCancelable(true);
                                     AlertDialog alert11 = builder1.create();
                                     alert11.show();
@@ -318,8 +297,9 @@ public class M03FragmentLibreta extends Fragment {
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        //dialogo de alerta de un error de conexion
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                        builder1.setMessage("Error en la conexion");
+                        builder1.setMessage(R.string.et_03_errorconexion);
                         builder1.setCancelable(true);
                         AlertDialog alert11 = builder1.create();
                         alert11.show();

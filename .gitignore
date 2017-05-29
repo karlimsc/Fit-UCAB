@@ -29,3 +29,5 @@ local.properties
 /WebServicesFitUCAB/out/
 /WebServicesFitUCAB/.idea/*
 /WebServicesFitUCAB/*.xml
+
+FitUCAB/\.directory

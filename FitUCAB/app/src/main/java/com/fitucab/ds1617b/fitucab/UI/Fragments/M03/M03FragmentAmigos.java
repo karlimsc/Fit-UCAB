@@ -39,7 +39,9 @@ import java.util.List;
 import static java.lang.Thread.sleep;
 
 /**
- Aqui falta lo que hace la clase como tal y ya
+ Este fragmento nos permite ver todos nuestros amigos de la aplicacion y todas las peticiones de
+ amistad enviadas, por otra parte nos permite aceptar ,declinar las peticiones .
+ y bloquear algun amigo que no deseemos.
 
  */
 public class M03FragmentAmigos extends Fragment {
@@ -126,8 +128,9 @@ public class M03FragmentAmigos extends Fragment {
                                 }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
+                                //dialogo de alerta de un error de conexion
                                 AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                builder1.setMessage("Error en la conexion");
+                                builder1.setMessage(R.string.et_03_errorconexion);
                                 builder1.setCancelable(true);
                                 AlertDialog alert11 = builder1.create();
                                 alert11.show();
@@ -140,8 +143,9 @@ public class M03FragmentAmigos extends Fragment {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                //dialogo de alerta de un error de conexion
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                builder1.setMessage("Error en la conexion");
+                builder1.setMessage(R.string.et_03_errorconexion);
                 builder1.setCancelable(true);
                 AlertDialog alert11 = builder1.create();
                 alert11.show();
@@ -171,14 +175,14 @@ public class M03FragmentAmigos extends Fragment {
 
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
 
-        menu.setHeaderTitle("menu amigos");
+        menu.setHeaderTitle(R.string.et_03_menuamigos);
         UserAuxiliar user = (UserAuxiliar) listView.getItemAtPosition(info.position);
         if(user.get_type() == 7){
-            menu.add(99, user.get_id(), 0, "Bloquear");
+            menu.add(99, user.get_id(), 0, R.string.et_03_bloquear);
         }
         else if(user.get_type() == 4){
-            menu.add(2, user.get_id(), 0, "Aceptar");
-            menu.add(3, user.get_id(), 0, "Declinar");
+            menu.add(2, user.get_id(), 0, R.string.et_03_aceptar);
+            menu.add(3, user.get_id(), 0, R.string.btn_03_declinar);
         }
     }
 
@@ -207,8 +211,9 @@ public class M03FragmentAmigos extends Fragment {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
+                                //dialogo de alerta de un usuario bloqueado
                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Usuario Bloqueado");
+                                    builder1.setMessage(R.string.et_03_usuariobloqueado);
                                     builder1.setCancelable(true);
                                     AlertDialog alert11 = builder1.create();
                                     alert11.show();
@@ -216,8 +221,9 @@ public class M03FragmentAmigos extends Fragment {
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        //dialogo de alerta de un no se pudo bloquear
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                        builder1.setMessage("No se pudo bloquear");
+                        builder1.setMessage(R.string.et_03_nosepudobloquear);
                         builder1.setCancelable(true);
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
@@ -254,8 +260,9 @@ public class M03FragmentAmigos extends Fragment {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
+                                //dialogo de alerta de un usuario agregado
                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Usuario Agregado");
+                                    builder1.setMessage(R.string.et_03_usuarioagregado);
                                     builder1.setCancelable(true);
                                     AlertDialog alert11 = builder1.create();
                                     alert11.show();
@@ -263,8 +270,9 @@ public class M03FragmentAmigos extends Fragment {
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        //dialogo de alerta de un no se pudo agregar
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                        builder1.setMessage("No se pudo agregar");
+                        builder1.setMessage(R.string.et_03_nosepudoagregar);
                         builder1.setCancelable(true);
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
@@ -302,8 +310,9 @@ public class M03FragmentAmigos extends Fragment {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
+                                //dialogo de alerta de un usuario declinado
                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Usuario Declinado");
+                                    builder1.setMessage(R.string.et_03_usuariodeclinado);
                                     builder1.setCancelable(true);
                                     AlertDialog alert11 = builder1.create();
                                     alert11.show();
@@ -311,8 +320,9 @@ public class M03FragmentAmigos extends Fragment {
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        //dialogo de alerta de un no se pudo declinar
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                        builder1.setMessage("No se pudo declinar");
+                        builder1.setMessage(R.string.et_03_nosepudodeclinar);
                         builder1.setCancelable(true);
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
@@ -342,8 +352,4 @@ public class M03FragmentAmigos extends Fragment {
 
 
 }
-
-
-
-
 

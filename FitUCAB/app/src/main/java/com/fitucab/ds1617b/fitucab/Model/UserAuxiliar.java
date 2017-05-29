@@ -22,6 +22,10 @@ public class UserAuxiliar {
     private String _distancia;
 
 
+    public UserAuxiliar(String longitud, String latitud){
+        _longitud = longitud;
+        _latitud = latitud;
+    }
 
     public UserAuxiliar(int id, String nombre, int puntaje, String sexo, String fechaNac, String distancia){
         _id = id;

@@ -2,11 +2,16 @@
   <library name="espresso-idling-resource-2.2.2">
     <CLASSES>
 <<<<<<< HEAD
+<<<<<<< HEAD
       <root url="jar://$USER_HOME$/.android/build-cache/5eb15c0cb912b9371f4abe4177a51200f1603b1a/output/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.android/build-cache/5eb15c0cb912b9371f4abe4177a51200f1603b1a/output/res" />
 =======
       <root url="file://$USER_HOME$/.android/build-cache/cd939a9c21c4635af80b4148ac2b8ed452242dff/output/res" />
       <root url="jar://$USER_HOME$/.android/build-cache/cd939a9c21c4635af80b4148ac2b8ed452242dff/output/jars/classes.jar!/" />
+>>>>>>> Develop
+=======
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-idling-resource/2.2.2/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-idling-resource/2.2.2/jars/classes.jar!/" />
 >>>>>>> Develop
     </CLASSES>
     <JAVADOC />

@@ -2,37 +2,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11SuggestionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnCount="2"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:id="@+id/gl_m11_listaSugerencia">
 
-        <TextView
-            android:text="Nombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="5dp"
-            android:id="@+id/tv_m11_nombreSugerencia"/>
+        <!-- TODO: Update blank fragment layout -->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:id="@+id/gl_m11_listaSugerencia">
 
-
-        <TextView
-            android:text="Calorias"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginLeft="80dp"
-            android:id="@+id/tv_m11_caloriasSugerencia"/>
+            <TextView
+                android:text="Nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tv_m11_nombreSugerencia"/>
 
 
-    </GridLayout>
+            <TextView
+                android:text="Calorias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="80dp"
+                android:id="@+id/tv_m11_caloriasSugerencia"/>
 
-</FrameLayout>
+
+        </TableLayout>
+
+    </FrameLayout>
