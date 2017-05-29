@@ -4,16 +4,26 @@
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable-mdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_000.png",
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_000.png"
+=======
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\design_ic_visibility_off.png",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\root\\.android\\build-cache\\46906b420be1eec549069c5ffe2d39cd75575737\\output\\res\\drawable-mdpi-v4\\design_ic_visibility_off.png"
+>>>>>>> Stashed changes
     },
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_015.png",
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_015.png"
     },
     {
+<<<<<<< Updated upstream
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_scrubber_control_off_mtrl_alpha.png",
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable-mdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
+=======
+        "merged": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\design_ic_visibility.png",
+        "source": "C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\Documents\\Fit-UCAB\\FitUCAB\\C:\\Users\\JoseA2R\\.android\\build-cache\\294374d127466ed7d3d730fe3e73db71cfd8c4b9\\output\\res\\drawable-mdpi-v4\\design_ic_visibility.png"
+>>>>>>> Stashed changes
     },
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_popup_background_mtrl_mult.9.png",
