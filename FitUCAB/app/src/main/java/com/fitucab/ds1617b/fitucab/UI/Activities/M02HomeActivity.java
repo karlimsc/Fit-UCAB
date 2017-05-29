@@ -138,6 +138,8 @@ public class M02HomeActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.flContent_m02_home, fragmentToSwap).commit();
             // Handle the camera action
         } else if (id == R.id.nav_m02_calories) {
+            Intent myintent = new Intent(M02HomeActivity.this, M11Food.class);
+            startActivity(myintent);
 
         } else if (id == R.id.nav_m02_training) {
 

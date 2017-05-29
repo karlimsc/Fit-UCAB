@@ -181,10 +181,10 @@ public class M11FooddialogFragment extends DialogFragment {
                                             int usuarioID , final Context inflater){
         RequestQueue requestQueue = Volley.newRequestQueue( inflater );
         IpStringConnection jsonURL = new IpStringConnection();
-        jsonURL.set_ip( jsonURL.get_ip() + "M11_Food/updatePersonalized?foodName="
+        jsonURL.set_ip( jsonURL.getIp() + "M11_Food/updatePersonalized?foodName="
                 + nombreAlimento + "&foodWeight=" + peso + "&calorie="
                 + caloria + "&idUser=" + usuarioID );
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.get_ip(),
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -228,11 +228,11 @@ public class M11FooddialogFragment extends DialogFragment {
         if (_chbx_m11_cena.isChecked())
             foodJson.get(0).set_FoodDinner(true);
         else foodJson.get(0).set_FoodDinner(false);
-        jsonURL.set_ip( jsonURL.get_ip() + "M11_Food/insertOnePersonalizedFood?foodName="+
+        jsonURL.set_ip( jsonURL.getIp() + "M11_Food/insertOnePersonalizedFood?foodName="+
                 get_nombreAlimento() + "&foodCalorie=" + get_caloriasAlimento() + "&foodWeight=" +
                 get_pesoAlimento() + "&foodDinner=" + foodJson.get(0).get_FoodDinner() +
                 "&idUser=" + foodJson.get(0).get_Id() );
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.get_ip(),
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

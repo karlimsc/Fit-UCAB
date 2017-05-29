@@ -1,8 +1,10 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M11;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -10,8 +12,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Model.Diet;
+import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.R;
 
 import com.fitucab.ds1617b.fitucab.UI.Activities.M11Food;
@@ -24,6 +37,8 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.Utils;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +68,9 @@ public class M11GraphicFragment extends Fragment {
     private LineDataSet _dataDiferencia;
     private TabLayout tabLayout;
     private ArrayList<Integer> arrayDiferencial = new ArrayList<>();
+    private ArrayList<Diet> _monthCalorie;
+    private ArrayList<Diet> _dayCalorie;
+    private ArrayList<Diet> _weekCalorie;
 
 
     public M11GraphicFragment() {
@@ -153,7 +171,7 @@ public class M11GraphicFragment extends Fragment {
     }
 
 
-    public void setDataGraphic(ArrayList<Integer> dataQuemadas, ArrayList<Integer> dataConsumidas) {
+    public void setDataGraphic(ArrayList<Integer> dataQuemadas, ArrayList<Diet> dataConsumidas) {
         try {
 
             List<Entry> calQuemadas = new ArrayList<Entry>();
@@ -165,7 +183,7 @@ public class M11GraphicFragment extends Fragment {
             }
 
             for(int i=0; i<dataConsumidas.size(); i++){
-                calConsumidas.add(new Entry( (float) i,(float) dataConsumidas.get(i)));
+                calConsumidas.add(new Entry( (float) i,(float) dataConsumidas.get(i).get_calorie()));
             }
 
             for(int i=0; i<arrayDiferencial.size(); i++){
@@ -217,13 +235,13 @@ public class M11GraphicFragment extends Fragment {
 
     }
 
-    public void setDiferecial(ArrayList<Integer> dataQuemadas, ArrayList<Integer> dataConsumidas) {
+    public void setDiferecial(ArrayList<Integer> dataQuemadas, ArrayList<Diet> dataConsumidas) {
         arrayDiferencial.clear();
         int q;
         int c;
         for (int i=0; i<dataConsumidas.size(); i++){
             q = dataQuemadas.get(i);
-            c = dataConsumidas.get(i);
+            c = dataConsumidas.get(i).get_calorie();
             arrayDiferencial.add(c-q);
         }
         Log.i(_TAG, "tamano del arreglo diferencial "+ arrayDiferencial.size());
@@ -272,37 +290,53 @@ public class M11GraphicFragment extends Fragment {
     */
     public void verGraficoMes(){
         _lineChart.clear();
-        ArrayList<Integer> prueba7diasC = new ArrayList<>();
-        ArrayList<Integer> prueba7diasQ = new ArrayList<>();
-        prueba7diasC.add(1400);
-        prueba7diasC.add(1000);
-        prueba7diasC.add(900);
-        prueba7diasC.add(600);
-        prueba7diasC.add(1200);
-        prueba7diasC.add(1400);
-        prueba7diasC.add(350);
-        prueba7diasC.add(3500);
-        prueba7diasC.add(2000);
-        prueba7diasC.add(1000);
-        prueba7diasC.add(800);
-        prueba7diasC.add(650);
+        RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
+        IpStringConnection jsonURL = new IpStringConnection();
+        //SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        //SharedPreferences.Editor editor = preferences.edit();
+        //editor.putString("username", "PABLO" );
+        //editor.commit();
 
-        prueba7diasQ.add(200);
-        prueba7diasQ.add(40);
-        prueba7diasQ.add(100);
-        prueba7diasQ.add(0);
-        prueba7diasQ.add(35);
-        prueba7diasQ.add(75);
-        prueba7diasQ.add(0);
-        prueba7diasQ.add(350);
-        prueba7diasQ.add(250);
-        prueba7diasQ.add(500);
-        prueba7diasQ.add(200);
-        prueba7diasQ.add(0);
-        setDiferecial(prueba7diasQ, prueba7diasC);
-        setDataGraphic(prueba7diasQ, prueba7diasC);
-        activateDeactivateQuemadasConsumidas(_cb_m11_quemadas, "Quemadas", _dataQuemadas);
-        activateDeactivateQuemadasConsumidas(_cb_m11_consumidas, "Consumidas", _dataConsumidas);
+        String usuario = ManagePreferences.getUsername(getContext());
+        jsonURL.set_ip( jsonURL.getIp() + "/M11_Diet/getConsumedCalorieByMonth?username=" + usuario );
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        Log.i(_TAG, "Peticion exitosa calorias por mes");
+                        _monthCalorie = new ArrayList<>();
+                        _monthCalorie = gson.fromJson(response, new TypeToken<ArrayList<Diet>>(){}.getType());
+                        ArrayList<Integer> prueba12mesesQ = new ArrayList<>();
+
+                        prueba12mesesQ.add(200);
+                        prueba12mesesQ.add(40);
+                        prueba12mesesQ.add(100);
+                        prueba12mesesQ.add(0);
+                        prueba12mesesQ.add(35);
+                        prueba12mesesQ.add(75);
+                        prueba12mesesQ.add(0);
+                        prueba12mesesQ.add(350);
+                        prueba12mesesQ.add(250);
+                        prueba12mesesQ.add(500);
+                        prueba12mesesQ.add(200);
+                        prueba12mesesQ.add(0);
+                        setDiferecial(prueba12mesesQ, _monthCalorie);
+                        setDataGraphic(prueba12mesesQ, _monthCalorie);
+                        activateDeactivateQuemadasConsumidas(_cb_m11_quemadas, "Quemadas", _dataQuemadas);
+                        activateDeactivateQuemadasConsumidas(_cb_m11_consumidas, "Consumidas", _dataConsumidas);
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i(_TAG, "Fallo la peticion calorias por mes: "+ error.toString());
+                        Toast.makeText(_view.getContext(), "No se pudo obtener las calorias", Toast.LENGTH_LONG);
+                    }
+                });
+        requestQueue.add(stringRequest);
+
     }
 
     /*
@@ -312,22 +346,45 @@ public class M11GraphicFragment extends Fragment {
     */
     public void verGraficoSemana(){
         _lineChart.clear();
-        ArrayList<Integer> prueba7diasC = new ArrayList<>();
-        ArrayList<Integer> prueba7diasQ = new ArrayList<>();
-        prueba7diasC.add(2000);
-        prueba7diasC.add(350);
-        prueba7diasC.add(439);
-        prueba7diasC.add(1000);
+        RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
+        IpStringConnection jsonURL = new IpStringConnection();
+        //SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        //SharedPreferences.Editor editor = preferences.edit();
+        //editor.putString("username", "PABLO" );
+        //editor.commit();
+        String usuario = ManagePreferences.getUsername(getContext());
+        jsonURL.set_ip( jsonURL.getIp() + "/M11_Diet/getConsumedCalorieByWeek?username=" + usuario );
+        Log.i(_TAG, "El usuario desde local storage es " + usuario);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        Log.i(_TAG, "Peticion exitosa calorias por semana");
+                        _weekCalorie = new ArrayList<>();
+                        _weekCalorie = gson.fromJson(response, new TypeToken<ArrayList<Diet>>(){}.getType());
+                        ArrayList<Integer> prueba4semanasQ = new ArrayList<>();
 
-        prueba7diasQ.add(1000);
-        prueba7diasQ.add(0);
-        prueba7diasQ.add(36);
-        prueba7diasQ.add(230);
+                        prueba4semanasQ.add(200);
+                        prueba4semanasQ.add(40);
+                        prueba4semanasQ.add(100);
+                        prueba4semanasQ.add(0);
+                        setDiferecial(prueba4semanasQ, _weekCalorie);
+                        setDataGraphic(prueba4semanasQ, _weekCalorie);
+                        activateDeactivateQuemadasConsumidas(_cb_m11_quemadas, "Quemadas", _dataQuemadas);
+                        activateDeactivateQuemadasConsumidas(_cb_m11_consumidas, "Consumidas", _dataConsumidas);
 
-        setDiferecial(prueba7diasQ, prueba7diasC);
-        setDataGraphic(prueba7diasQ, prueba7diasC);
-        activateDeactivateQuemadasConsumidas(_cb_m11_quemadas, "Quemadas", _dataQuemadas);
-        activateDeactivateQuemadasConsumidas(_cb_m11_consumidas, "Consumidas", _dataConsumidas);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i(_TAG, "Fallo la peticion calorias por semana: "+ error.toString());
+                        Toast.makeText(_view.getContext(), "No se pudo obtener las calorias", Toast.LENGTH_LONG);
+                    }
+                });
+        requestQueue.add(stringRequest);
+
     }
 
     /*
@@ -338,29 +395,53 @@ public class M11GraphicFragment extends Fragment {
 
     public void verGraficoDia(){
         _lineChart.clear();
-        ArrayList<Integer> prueba7diasC = new ArrayList<>();
-        ArrayList<Integer> prueba7diasQ = new ArrayList<>();
-        prueba7diasC.add(1400);
-        prueba7diasC.add(1000);
-        prueba7diasC.add(900);
-        prueba7diasC.add(600);
-        prueba7diasC.add(1200);
-        prueba7diasC.add(1400);
-        prueba7diasC.add(350);
+        RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
+        IpStringConnection jsonURL = new IpStringConnection();
+        //SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        //SharedPreferences.Editor editor = preferences.edit();
+        //editor.putString("username", "PABLO" );
+        //editor.commit();
+        String usuario = ManagePreferences.getUsername(getContext());
+        jsonURL.set_ip( jsonURL.getIp() + "/M11_Diet/getConsumedCalorieByDay?username=" + usuario );
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        Log.i(_TAG, "Peticion exitosa calorias por dia");
+                        _dayCalorie = new ArrayList<>();
+                        _dayCalorie = gson.fromJson(response, new TypeToken<ArrayList<Diet>>(){}.getType());
 
-        prueba7diasQ.add(200);
-        prueba7diasQ.add(40);
-        prueba7diasQ.add(100);
-        prueba7diasQ.add(0);
-        prueba7diasQ.add(35);
-        prueba7diasQ.add(75);
-        prueba7diasQ.add(0);
-        setDiferecial(prueba7diasQ, prueba7diasC);
-        setDataGraphic(prueba7diasQ, prueba7diasC);
-        activateDeactivateQuemadasConsumidas(_cb_m11_quemadas, "Quemadas", _dataQuemadas);
-        activateDeactivateQuemadasConsumidas(_cb_m11_consumidas, "Consumidas", _dataConsumidas);
+                        ArrayList<Integer> prueba7diasQ = new ArrayList<>();
+
+                        // cable
+                        prueba7diasQ.add(200);
+                        prueba7diasQ.add(40);
+                        prueba7diasQ.add(100);
+                        prueba7diasQ.add(0);
+                        prueba7diasQ.add(35);
+                        prueba7diasQ.add(75);
+                        prueba7diasQ.add(0);
+
+                        setDiferecial(prueba7diasQ, _dayCalorie);
+                        setDataGraphic(prueba7diasQ, _dayCalorie);
+                        activateDeactivateQuemadasConsumidas(_cb_m11_quemadas, "Quemadas", _dataQuemadas);
+                        activateDeactivateQuemadasConsumidas(_cb_m11_consumidas, "Consumidas", _dataConsumidas);
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.i(_TAG, "Fallo la peticion calorias por dia: "+ error.toString());
+                        Toast.makeText(_view.getContext(), "No se pudoeron obtener las calorias", Toast.LENGTH_LONG);
+                    }
+                });
+        requestQueue.add(stringRequest);
+
 
     }
+
 
 
 }

@@ -94,8 +94,8 @@ public class M11FoodFragment extends Fragment {
     {
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
         IpStringConnection jsonURL = new IpStringConnection();
-        jsonURL.set_ip( jsonURL.get_ip() + "M11_Food/getPersonalizedList?username=" + usuario );
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.get_ip(),
+        jsonURL.set_ip( jsonURL.getIp() + "M11_Food/getPersonalizedList?username=" + usuario );
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -226,9 +226,9 @@ public class M11FoodFragment extends Fragment {
     public void eliminarAlimentoPersonalizado( int usuarioID , String nombreAlimento ){
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
         IpStringConnection jsonURL = new IpStringConnection();
-        jsonURL.set_ip( jsonURL.get_ip() + "M11_Food/deletePersonalizedFood?foodName="
+        jsonURL.set_ip( jsonURL.getIp() + "M11_Food/deletePersonalizedFood?foodName="
                 + nombreAlimento + "&idUser=" + usuarioID );
-        StringRequest stringRequest = new StringRequest( Request.Method.DELETE, jsonURL.get_ip(),
+        StringRequest stringRequest = new StringRequest( Request.Method.DELETE, jsonURL.getIp(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

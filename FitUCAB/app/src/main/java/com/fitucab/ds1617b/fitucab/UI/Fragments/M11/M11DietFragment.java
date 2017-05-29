@@ -212,9 +212,9 @@ public class M11DietFragment extends Fragment {
     public void PeticionCaloriasHoy(String usuario, String _fecha_actual) {
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
         IpStringConnection jsonURL = new IpStringConnection();
-        jsonURL.set_ip( jsonURL.get_ip() + "M11_Diet/getCalorieByDate?date="
+        jsonURL.set_ip( jsonURL.getIp() + "M11_Diet/getCalorieByDate?date="
                 + _fecha_actual + "&username=" + usuario );
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.get_ip(),
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -248,11 +248,11 @@ public class M11DietFragment extends Fragment {
         //No se que hacer, tanto este como el metodo de abajo, tienen el mismo llamado.
         //REVISAR.
         IpStringConnection jsonURL = new IpStringConnection();
-        jsonURL.set_ip( jsonURL.get_ip() + "M11_Diet/deleteDiet?moment="
+        jsonURL.set_ip( jsonURL.getIp() + "M11_Diet/deleteDiet?moment="
                 + _momento + "&username=" + usuario );
         //String jsonURL = "http://201.210.245.191:8080/WebServicesFitUCAB_war_exploded/M11_Diet" +
                 //"/eliminar_alimento_dieta?momento=" + _momento + "&username=" + usuario;
-        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, jsonURL.get_ip(),
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, jsonURL.getIp(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

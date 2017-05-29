@@ -1,5 +1,9 @@
 package com.fitucab.ds1617b.fitucab.Model;
 
+import com.fitucab.ds1617b.fitucab.Helper.LocalDate;
+
+import java.util.Date;
+
 /**
  * Created by marvian on 27/05/17.
  */
@@ -13,6 +17,13 @@ public class Diet {
     private String _food;
     private String _moment;
     private String _username;
+    private LocalDate _dateTime;
+
+    public Diet(int _calorie, LocalDate _dateTime) {
+        this._calorie = _calorie;
+        this._dateTime = _dateTime;
+    }
+
 
     public Diet() {
         // Required empty public constructor
