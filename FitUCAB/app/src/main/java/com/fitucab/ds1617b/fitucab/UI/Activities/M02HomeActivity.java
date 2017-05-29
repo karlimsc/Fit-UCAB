@@ -186,8 +186,8 @@ public class M02HomeActivity extends AppCompatActivity
 
         }
         else if (id == R.id.nav_m02_friends) {
-//            Intent myintent = new Intent(M02HomeActivity.this, M03FriendsActivity.class);
-//            startActivity(myintent);
+            Intent myintent = new Intent(M02HomeActivity.this, M03FriendsActivity.class);
+            startActivity(myintent);
         }
         else if (id == R.id.nav_m02_gamification) {
             //            Intent myintent = new Intent(M02HomeActivity.this, M09GamificationActivity.class);
