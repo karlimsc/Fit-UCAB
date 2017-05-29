@@ -28,6 +28,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
@@ -72,69 +73,73 @@ public class M11FooddialogFragment extends DialogFragment {
      * @return Devuelve el dialogo construido.
      */
     @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            //Infla el fragmento
-            final LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            _view =  inflater.inflate(R.layout.fragment_m11_fooddialog, null);
-            _tv_m11_nombreAlimento = (EditText) _view.findViewById(R.id.tv_m11_nombreAlimento5);
-            _tv_m11_peso = (EditText) _view.findViewById(R.id.tv_m11_peso5);
-            _tv_m11_calorias = (EditText) _view.findViewById(R.id.tv_m11_calorias5);
-            _chbx_m11_cena = (CheckBox) _view.findViewById(R.id.chbx_m11_cena);
-            //Si voy a agregar un alimento.
-            if ( get_idAlimento() == 0 ) {
-                builder.setView(_view);
-                //Conecta con el XML que contiene la personalizacion del Dialog
-                builder.setTitle("Agregar Alimento Personalizado");
-                builder.setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                //Si preciona el boton Agregar el alimento personalizado
-                                set_nombreAlimento(_tv_m11_nombreAlimento.getText().toString());
-                                set_caloriasAlimento(_tv_m11_calorias.getText().toString());
-                                set_pesoAlimento(_tv_m11_peso.getText().toString());
-                                insertarAlimentoPersonalizado (get_nombreAlimento() , get_pesoAlimento() ,
-                                        get_caloriasAlimento() , 1 , inflater.getContext());
-                            }
-                        })
-                        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                //Si preciona el boton cancelar solo se cerrar el Dialog
-                                dialog.cancel();
-                            }
-                        });
-            }
-            //Si voy a editar un alimento.
-            else{
-                _tv_m11_nombreAlimento.setText(String.valueOf(get_nombreAlimento()));
-                _tv_m11_peso.setText(String.valueOf(get_pesoAlimento()));
-                _tv_m11_calorias.setText(String.valueOf(get_caloriasAlimento()));
-                builder.setView(_view);
-                        //Conecta con el XML que contiene la personalizacion del Dialog
-                        builder.setTitle("Editar Alimento Personalizado");
-                        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                //Si preciona el boton Agregar el alimento personalizado
-                                // Es necesario extraer el usuario!!!
-
-
-                                set_nombreAlimento(_tv_m11_nombreAlimento.getText().toString());
-                                set_caloriasAlimento(_tv_m11_calorias.getText().toString());
-                                set_pesoAlimento(_tv_m11_peso.getText().toString());
-                                editarAlimentoPersonalizado( get_nombreAlimento() , get_pesoAlimento() ,
-                                        get_caloriasAlimento() , 1 , inflater.getContext() );
-                            }
-                        })
-                        .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                //Si preciona el boton cancelar solo se cerrar el Dialog
-                                dialog.cancel();
-                            }
-
-                        });
-
-            }
-            return builder.create();
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        //Infla el fragmento
+        final LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        _view =  inflater.inflate(R.layout.fragment_m11_fooddialog, null);
+        _tv_m11_nombreAlimento = (EditText) _view.findViewById(R.id.tv_m11_nombreAlimento5);
+        _tv_m11_peso = (EditText) _view.findViewById(R.id.tv_m11_peso5);
+        _tv_m11_calorias = (EditText) _view.findViewById(R.id.tv_m11_calorias5);
+        _chbx_m11_cena = (CheckBox) _view.findViewById(R.id.chbx_m11_cena);
+        //Si voy a agregar un alimento.
+        if ( get_idAlimento() == 0 ) {
+            builder.setView(_view);
+            //Conecta con el XML que contiene la personalizacion del Dialog
+            builder.setTitle("Agregar Alimento Personalizado");
+            builder.setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    //Si preciona el boton Agregar el alimento personalizado
+                    set_nombreAlimento(_tv_m11_nombreAlimento.getText().toString());
+                    set_caloriasAlimento(_tv_m11_calorias.getText().toString());
+                    set_pesoAlimento(_tv_m11_peso.getText().toString());
+                    int idUser = 0;
+                    idUser = ManagePreferences.getIdUser(inflater.getContext());
+                    insertarAlimentoPersonalizado (get_nombreAlimento() , get_pesoAlimento() ,
+                            get_caloriasAlimento() , idUser , inflater.getContext());
+                }
+            })
+                    .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            //Si preciona el boton cancelar solo se cerrar el Dialog
+                            dialog.cancel();
+                        }
+                    });
         }
+        //Si voy a editar un alimento.
+        else{
+            _tv_m11_nombreAlimento.setText(String.valueOf(get_nombreAlimento()));
+            _tv_m11_peso.setText(String.valueOf(get_pesoAlimento()));
+            _tv_m11_calorias.setText(String.valueOf(get_caloriasAlimento()));
+            builder.setView(_view);
+            //Conecta con el XML que contiene la personalizacion del Dialog
+            builder.setTitle("Editar Alimento Personalizado");
+            builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    //Si preciona el boton Agregar el alimento personalizado
+                    // Es necesario extraer el usuario!!!
+
+
+                    set_nombreAlimento(_tv_m11_nombreAlimento.getText().toString());
+                    set_caloriasAlimento(_tv_m11_calorias.getText().toString());
+                    set_pesoAlimento(_tv_m11_peso.getText().toString());
+                    int idUser = 0;
+                    idUser = ManagePreferences.getIdUser(inflater.getContext());
+                    editarAlimentoPersonalizado( get_nombreAlimento() , get_pesoAlimento() ,
+                            get_caloriasAlimento() , 1 , inflater.getContext() );
+                }
+            })
+                    .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int id) {
+                            //Si preciona el boton cancelar solo se cerrar el Dialog
+                            dialog.cancel();
+                        }
+
+                    });
+
+        }
+        return builder.create();
+    }
 
 
     public String get_nombreAlimento() {
@@ -216,7 +221,7 @@ public class M11FooddialogFragment extends DialogFragment {
      * @param inflater recibe el contexto sobre el cual se maneja.
      */
     public void insertarAlimentoPersonalizado ( String nombreAlimento , String peso , String caloria ,
-                                               int usuarioID , final Context inflater ){
+                                                int usuarioID , final Context inflater ){
         RequestQueue requestQueue = Volley.newRequestQueue( inflater );
         IpStringConnection jsonURL = new IpStringConnection();
         ArrayList<Food> foodJson = new ArrayList<>();
@@ -224,14 +229,15 @@ public class M11FooddialogFragment extends DialogFragment {
         foodJson.get(0).set_FoodCalorie( caloria );
         foodJson.get(0).set_FoodName( nombreAlimento );
         foodJson.get(0).set_FoodWeight( peso );
-        foodJson.get(0).set_Id(1); //idUser
+        int idUser = 0;
+        idUser = ManagePreferences.getIdUser(inflater);
         if (_chbx_m11_cena.isChecked())
             foodJson.get(0).set_FoodDinner(true);
         else foodJson.get(0).set_FoodDinner(false);
         jsonURL.set_ip( jsonURL.getIp() + "M11_Food/insertOnePersonalizedFood?foodName="+
                 get_nombreAlimento() + "&foodCalorie=" + get_caloriasAlimento() + "&foodWeight=" +
                 get_pesoAlimento() + "&foodDinner=" + foodJson.get(0).get_FoodDinner() +
-                "&idUser=" + foodJson.get(0).get_Id() );
+                "&idUser=" + idUser );
         StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
                 new Response.Listener<String>() {
                     @Override
@@ -243,12 +249,12 @@ public class M11FooddialogFragment extends DialogFragment {
                         Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Toast.makeText( inflater , "Hola, no devolvio nada" , Toast.LENGTH_LONG);
-                        }
-                    });
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText( inflater , "Hola, no devolvio nada" , Toast.LENGTH_LONG);
+                    }
+                });
         requestQueue.add( stringRequest );
     }
 }

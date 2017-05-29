@@ -1,5 +1,6 @@
 package WebServicesClasses;
 import Domain.Diet;
+import Domain.Sql;
 import Exceptions.ParameterNullException;
 import Validations.ValidationWS;
 import com.google.gson.Gson;
@@ -21,7 +22,7 @@ import java.util.Map;
 @Path("/M11_Diet")
 public class M11_ServicesDiet {
 
-    private Connection conn = bdConnect();
+    private Connection conn = Sql.getConInstance();
     private Gson gson = new Gson();
     private String response;
     private ArrayList<Diet> jsonArray;
@@ -66,7 +67,7 @@ public class M11_ServicesDiet {
             response = e.getMessage();
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return response;
         }
     }
@@ -107,7 +108,7 @@ public class M11_ServicesDiet {
             response.put("error", e.getMessage());
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return gson.toJson(response);
 
         }
@@ -158,7 +159,7 @@ public class M11_ServicesDiet {
             response = e.getMessage();
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return response;
         }
 
@@ -214,7 +215,7 @@ public class M11_ServicesDiet {
             response = e.getMessage();
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return response;
         }
     }
@@ -269,7 +270,7 @@ public class M11_ServicesDiet {
             response = e.getMessage();
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return response;
         }
     }
@@ -333,7 +334,7 @@ public class M11_ServicesDiet {
             response = e.getMessage();
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return response;
         }
     }
@@ -384,47 +385,57 @@ public class M11_ServicesDiet {
             response.put("error", e.getMessage());
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return gson.toJson(response);
         }
 
     }
 
-    //esto no va a aqui , se puso momentaneamente.
-    public Connection bdConnect()
-    {
-        Connection conn = null;
-        try
-        {
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/FitUcabDB";
-            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
-        }
-        catch (ClassNotFoundException e)
-        {
-            e.printStackTrace();
-            bdClose();
-            System.exit(1);
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-            bdClose();
-            System.exit(2);
-        }
-        return conn;
-    }
 
-    public int bdClose(){
-        try{
-            conn.close();
-        }
+    /**
+     *
+     * @param idUser
+     * @param dietCalorie
+     * @param foodName
+     * @param moment
+     * @return
+     */
+    @GET
+    @Path("/insertOneDiet")
+    @Produces("application/json")
+    public String insertDiet(@QueryParam("idUser") int idUser , @QueryParam("dietCalorie") String dietCalorie ,
+                             @QueryParam("foodName") String foodName , @QueryParam("moment") String moment) {
 
-        catch (java.sql.SQLException e) {
-            System.out.println("fallo cerrar");
-            System.exit( 0);
+        Map<String, String> response = new HashMap<String, String>();
+        try {
+            ValidationWS.validarParametrosNotNull(new HashMap<String, Object>() {
+                {
+                    put("idUser", idUser);
+                    put("dietCalorie", dietCalorie);
+                    put("foodName", foodName);
+                    put("moment", moment);
+                }
+            });
+
+            String query = "select * from m11_inserta_dieta(?, ?, ?, ?)";
+            PreparedStatement st = conn.prepareStatement(query);
+            Type type = new TypeToken<Diet[]>() {}.getType();
+
+            st.setInt(1, Integer.parseInt(dietCalorie));
+            st.setString(2, foodName);
+            st.setString(3, moment);
+            st.setInt(4, idUser);
+            st.executeQuery();
+
+            response.put("data", "Se inserto la dieta de forma exitosa");
+        } catch (SQLException e) {
+            response.put("error", e.getMessage());
+        } catch (ParameterNullException e) {
+            response.put("error", e.getMessage());
+        } finally {
+            Sql.bdClose(conn);
+            return gson.toJson(response);
         }
-        return 1;
     }
 
 }

@@ -254,32 +254,43 @@ public class M11GraphicFragment extends Fragment {
     onClick en el archivo xml
     */
     public void activateDeactivateQuemadasConsumidas(CheckBox cb, String label, LineDataSet data){
-        if (!cb.isChecked()){
-            // obtengo la data del grafico
-            LineData lineData = _lineChart.getData();
 
-            // obtengo los datos pertenecientes a la linea de quemadas
-            ILineDataSet quemadas = lineData.getDataSetByLabel(label,false);
-            // remuevo los datos
-            lineData.removeDataSet(quemadas);
-            // se actualiza tanto el grafico como la variable que contiene los datos
-            lineData.notifyDataChanged();
-            _lineChart.notifyDataSetChanged();
-            // refresco el grafico para que detecte los cambios
-            _lineChart.invalidate();
+        try {
+
+            if (!cb.isChecked()){
+                // obtengo la data del grafico
+                LineData lineData = _lineChart.getData();
+
+                // obtengo los datos pertenecientes a la linea de quemadas
+                ILineDataSet quemadas = lineData.getDataSetByLabel(label,false);
+                // remuevo los datos
+                lineData.removeDataSet(quemadas);
+                // se actualiza tanto el grafico como la variable que contiene los datos
+                lineData.notifyDataChanged();
+                _lineChart.notifyDataSetChanged();
+                // refresco el grafico para que detecte los cambios
+                _lineChart.invalidate();
+            }
+            // si el check esta seleccionado
+            else {
+                // obtengo los datos de la grafica
+                LineData lineData = _lineChart.getData();
+                // agrego los datos pertenecientes a calorias quemadas
+                lineData.addDataSet(data);
+                // notifico los cambios
+                lineData.notifyDataChanged();
+                _lineChart.notifyDataSetChanged();
+                // refresco el grafico para que agarre los cambios
+                _lineChart.invalidate();
+            }
+
+        } catch (NullPointerException e) {
+            Log.w(_TAG, "Grafico no cargado", e);
+            e.printStackTrace();
+        } catch (Exception e){
+            Log.w(_TAG, "Error durante la carga o descarga datos en la tabla", e);
         }
-        // si el check esta seleccionado
-        else {
-            // obtengo los datos de la grafica
-            LineData lineData = _lineChart.getData();
-            // agrego los datos pertenecientes a calorias quemadas
-            lineData.addDataSet(data);
-            // notifico los cambios
-            lineData.notifyDataChanged();
-            _lineChart.notifyDataSetChanged();
-            // refresco el grafico para que agarre los cambios
-            _lineChart.invalidate();
-        }
+
     }
 
 

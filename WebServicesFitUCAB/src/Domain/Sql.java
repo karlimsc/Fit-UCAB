@@ -13,7 +13,7 @@ public class Sql {
     private ResultSet _rs;
     private static String BD_USER = "fitucab";
     private static String BD_PASSWORD = "fitucab";
-    private static String BD_URL = "jdbc:postgresql://localhost/fitucabdb";
+    private static String BD_URL = "jdbc:postgresql://localhost/FitUcabDB";
     private static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
 
     /**
@@ -134,6 +134,21 @@ public class Sql {
 
     public Connection getConn() {
         return _conn;
+    }
+
+    /**
+     * metodo estatico para cerrar
+     * la conexion a la base de datos
+     * @param conn
+     */
+
+    public static void bdClose(Connection conn) {
+        try{
+            conn.close();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
 }

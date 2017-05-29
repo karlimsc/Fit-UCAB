@@ -28,6 +28,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.R;
@@ -37,7 +38,7 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 
 /**
-* A simple {@link Fragment} subclass.
+ * A simple {@link Fragment} subclass.
  **/
 public class M11FoodFragment extends Fragment {
 
@@ -78,7 +79,9 @@ public class M11FoodFragment extends Fragment {
         _btn_m11_agregar = (ImageButton)_view.findViewById(R.id.btn_m11_agregar);
         _gl_m11_listaAlimento = (TableLayout) _view.findViewById(R.id.gl_m11_listaAlimento);
         //Aqui va el usuario como variable.....
-        PeticionAlimentos("PEDRO");
+        String username;
+        username = ManagePreferences.getUsername(getContext());
+        PeticionAlimentos(username);
         addAlimento(); //para agregar los personalizados
 
         // Inflate the layout for this fragment
@@ -152,19 +155,21 @@ public class M11FoodFragment extends Fragment {
                                                     String.valueOf(caloriaAlimento), fila.getId() );
                                     dialogFragment.show( getActivity().getFragmentManager() , "titulo" );
                                     //editarAlimentoPersonalizad( alimento , pesoAlimento ,
-                                      //      caloriaAlimento , 1);
+                                    //      caloriaAlimento , 1);
                                 }
                             })
                             .setNeutralButton("Volver", new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
-                                dialog.cancel();
+                                    dialog.cancel();
                                 }
                             })
                             //Acciones para cuando dice si
                             .setPositiveButton("Eliminar",new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     //El id del usuario debe ser variable.
-                                    eliminarAlimentoPersonalizado( 1 , alimento );
+                                    int idUser = 0;
+                                    idUser = ManagePreferences.getIdUser(getContext());
+                                    eliminarAlimentoPersonalizado( idUser , alimento );
                                     //Elimina el alimento del TableRow
                                     _gl_m11_listaAlimento.removeView(fila);
 
@@ -236,11 +241,7 @@ public class M11FoodFragment extends Fragment {
                         ArrayList<String> respuesta = new ArrayList<>();
                         respuesta = gson.fromJson( response ,
                                 new TypeToken<ArrayList<String>>(){}.getType() );
-                        Toast mensaje = new Toast(_view.getContext());
-                        mensaje.setText("El alimento fue eliminado correctamente");
-                        mensaje.setDuration(Toast.LENGTH_LONG);
-                        mensaje.setGravity( Gravity.CENTER , 0 , 0);
-                        mensaje.show();
+
                     }
                 },
                 new Response.ErrorListener() {

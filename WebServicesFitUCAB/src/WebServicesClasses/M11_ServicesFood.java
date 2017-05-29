@@ -13,6 +13,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import  Domain.Sql;
 
 
 /**
@@ -21,7 +22,7 @@ import java.util.Map;
 @Path("/M11_Food")
 public class M11_ServicesFood {
 
-    private Connection conn = bdConnect();
+    private Connection conn = Sql.getConInstance();
     //Atributo que se utiliza para transformar a formado JSON las consultas.
     private Gson gson = new Gson();
     private String response;
@@ -68,7 +69,7 @@ public class M11_ServicesFood {
             response = e.getMessage();
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return response;
         }
     }
@@ -113,7 +114,7 @@ public class M11_ServicesFood {
             response = e.getMessage();
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return response;
         }
     }
@@ -165,7 +166,7 @@ public class M11_ServicesFood {
             response = e.getMessage();
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return response;
         }
     }
@@ -210,7 +211,7 @@ public class M11_ServicesFood {
             response = e.getMessage();
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return response;
         }
     }
@@ -252,7 +253,7 @@ public class M11_ServicesFood {
             response.put("error", e.getMessage());
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return gson.toJson(response);
         }
     }
@@ -301,6 +302,7 @@ public class M11_ServicesFood {
             response.put("error", e.getMessage());
         }
         finally {
+            Sql.bdClose(conn);
             return gson.toJson(response);
         }
     }
@@ -348,7 +350,7 @@ public class M11_ServicesFood {
             //.put("error", e.getMessage());
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return gson.toJson(response);
         }
     }
@@ -399,7 +401,7 @@ public class M11_ServicesFood {
             response.put("error", e.getMessage());
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return gson.toJson(response);
         }
     }
@@ -446,49 +448,11 @@ public class M11_ServicesFood {
             response = gson.toJson(respuestaError);
         }
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return response;
         }
 
 
     }
 
-
-
-    //esto no va a aqui , se puso momentaneamente.
-    public Connection bdConnect()
-    {
-        Connection conn = null;
-        try
-        {
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/fitucabdb";
-            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
-        }
-        catch (ClassNotFoundException e)
-        {
-            e.printStackTrace();
-            bdClose();
-            System.exit(1);
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-            bdClose();
-            System.exit(2);
-        }
-        return conn;
-    }
-
-    public int bdClose(){
-        try{
-            conn.close();
-        }
-
-        catch (java.sql.SQLException e) {
-            System.out.println("fallo cerrar");
-            System.exit( 0);
-        }
-        return 1;
-    }
 }
