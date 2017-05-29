@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -101,7 +102,7 @@ public class M08_ManagementChallenge extends AppCompatActivity
                 String itemValue = (String) list.getItemAtPosition(position);
 
                 //Con el fin de empezar a mostrar una nueva actividad lo que necesitamos es una intención
-                Intent intent = new Intent(M08_ManagementChallenge.this, M08InformationChallenge.class);
+                Intent intent = new Intent(getApplicationContext(), M08InformationChallenge.class);
 
                 // Aquí pasaremos el parámetro de la intención creada previamente
                 startActivity(intent);

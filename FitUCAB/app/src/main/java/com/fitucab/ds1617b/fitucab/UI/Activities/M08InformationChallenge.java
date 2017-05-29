@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.ContextMenu;
+import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -22,6 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fitucab.ds1617b.fitucab.R;
 
@@ -35,7 +37,7 @@ import static android.R.id.list;
  * clase que maneja toda la parte de la informacion de retos
  */
 public class M08InformationChallenge extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener{
 
     private Toolbar toolbar;
     private TextView tituloNombreReto;
@@ -51,6 +53,10 @@ public class M08InformationChallenge extends AppCompatActivity
     private TextView textViewInfDiasReto;
     private Button buttonEmpezarAhora;
 
+
+    private View view;
+    private LayoutInflater inflater;
+
     /**
      * método que se llama cuando se crea la actividad
      * @param savedInstanceState se usa para inicializar la creación de la interfaz de usuario.
@@ -59,32 +65,43 @@ public class M08InformationChallenge extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.m08_information_challenge);
+        // Esto debes aplicarlo a todas las vistas
+        inflater = LayoutInflater.from(this);
+
+        // Hasta aqui
+        ;
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        TextView tituloNombreReto = (TextView)findViewById(R.id.tituloNombreReto);
-        TextView textViewDescripcionReto = (TextView)findViewById(R.id.textViewDescripcionReto);
-        TextView descripcionReto = (TextView)findViewById(R.id.descripcionReto);
-        TextView textViewRetoActivo = (TextView)findViewById(R.id.textViewRetoActivo);
-        TextView textViewRetoActivoSN = (TextView)findViewById(R.id.textViewRetoActivoSN);
-        TextView textViewTipoReto = (TextView)findViewById(R.id.textViewTipoReto);
-        TextView textViewInfTipoReto = (TextView)findViewById(R.id.textViewInfTipoReto);
-        TextView textViewKm = (TextView)findViewById(R.id.textViewKm);
-        TextView kilometros = (TextView)findViewById(R.id.kilometros);
-        TextView textViewDiasReto = (TextView)findViewById(R.id.textViewDiasReto);
-        TextView textViewInfDiasReto = (TextView)findViewById(R.id.textViewInfDiasReto);
-        Button buttonEmpezarAhora = (Button)findViewById(R.id.buttonEmpezarAhora);
+        tituloNombreReto = (TextView)findViewById(R.id.tituloNombreReto);
+        textViewDescripcionReto = (TextView)findViewById(R.id.textViewDescripcionReto);
+        descripcionReto = (TextView)findViewById(R.id.descripcionReto);
+        textViewRetoActivo = (TextView)findViewById(R.id.textViewRetoActivo);
+        textViewRetoActivoSN = (TextView)findViewById(R.id.textViewRetoActivoSN);
+        textViewTipoReto = (TextView)findViewById(R.id.textViewTipoReto);
+        textViewInfTipoReto = (TextView)findViewById(R.id.textViewInfTipoReto);
+        textViewKm = (TextView)findViewById(R.id.textViewKm);
+        kilometros = (TextView)findViewById(R.id.kilometros);
+        textViewDiasReto = (TextView)findViewById(R.id.textViewDiasReto);
+        textViewInfDiasReto = (TextView)findViewById(R.id.textViewInfDiasReto);
+        buttonEmpezarAhora = (Button)findViewById(R.id.buttonEmpezarAhora);
 
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //view = inflater.inflate(R.layout.activity_main_m08_challenge,drawer,true);
 
+        buttonEmpezarAhora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast activarReto = Toast.makeText(getApplicationContext(), "Se ha activado el reto exitosamente", Toast.LENGTH_LONG);
+                activarReto.show();
+            }
+        });
 
         setSupportActionBar(toolbar);
-
-
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
+
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -100,5 +117,6 @@ public class M08InformationChallenge extends AppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         return false;
     }//cierre del onNavigationItemSelected
+
 
 }//cierre de la clase M08InformationChallenge
