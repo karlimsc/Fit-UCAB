@@ -1,18 +1,34 @@
 [
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
-        "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
+        "source": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/btn_m10_clock.png",
-        "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xxxhdpi/btn_m10_clock.png"
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher_round.png",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/btn_m10_calendar.png",
-        "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xxxhdpi/btn_m10_calendar.png"
+        "merged": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\btn_m10_clock.png",
+        "source": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xxxhdpi\\btn_m10_clock.png"
     },
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher_round.png",
-        "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\btn_m10_calendar.png",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xxxhdpi\\btn_m10_calendar.png"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\ic_launcher.png",
+        "source": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\btn_m10_clock.png",
+        "source": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xxxhdpi\\btn_m10_clock.png"
+    },
+    {
+        "merged": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi\\btn_m10_calendar.png",
+        "source": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xxxhdpi\\btn_m10_calendar.png"
     }
 ]

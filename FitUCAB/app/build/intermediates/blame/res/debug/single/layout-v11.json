@@ -1,26 +1,50 @@
 [
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow.xml",
-        "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/layout-v11/notification_template_big_media_narrow.xml"
+        "merged": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\Users\\danie\\.android\\build-cache\\9238160701d09fe176dbb0d2e67c524fe8e608c8\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout-v11/notification_media_cancel_action.xml",
-        "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/layout-v11/notification_media_cancel_action.xml"
+        "merged": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\Users\\danie\\.android\\build-cache\\9238160701d09fe176dbb0d2e67c524fe8e608c8\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_custom.xml",
-        "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/layout-v11/notification_template_big_media_custom.xml"
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\layout-v11\\notification_template_big_media.xml"
     },
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media.xml",
-        "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/layout-v11/notification_template_big_media.xml"
+        "merged": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\Users\\danie\\.android\\build-cache\\9238160701d09fe176dbb0d2e67c524fe8e608c8\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
     },
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout-v11/notification_media_action.xml",
-        "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/layout-v11/notification_media_action.xml"
+        "merged": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\Users\\danie\\.android\\build-cache\\9238160701d09fe176dbb0d2e67c524fe8e608c8\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
     },
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout-v11/notification_template_big_media_narrow_custom.xml",
-        "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/layout-v11/notification_template_big_media_narrow_custom.xml"
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_custom.xml",
+        "source": "C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\layout-v11\\notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_cancel_action.xml",
+        "source": "C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\layout-v11\\notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\Users\\danie\\.android\\build-cache\\9238160701d09fe176dbb0d2e67c524fe8e608c8\\output\\res\\layout-v11\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow.xml",
+        "source": "C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\layout-v11\\notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media_narrow_custom.xml",
+        "source": "C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\layout-v11\\notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_media_action.xml",
+        "source": "C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\layout-v11\\notification_media_action.xml"
+    },
+    {
+        "merged": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout-v11\\notification_template_big_media.xml",
+        "source": "C:\\Users\\danie\\.android\\build-cache\\9238160701d09fe176dbb0d2e67c524fe8e608c8\\output\\res\\layout-v11\\notification_template_big_media.xml"
     }
 ]

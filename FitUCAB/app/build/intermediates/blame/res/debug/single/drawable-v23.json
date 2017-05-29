@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v23/abc_control_background_material.xml",
-        "source": "/root/.android/build-cache/ac79bc354028c2b4433687b558aabab5155fee17/output/res/drawable-v23/abc_control_background_material.xml"
+        "merged": "C:\\Users\\danie\\Documents\\repos ucab\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "C:\\Users\\danie\\.android\\build-cache\\9238160701d09fe176dbb0d2e67c524fe8e608c8\\output\\res\\drawable-v23\\abc_control_background_material.xml"
+    },
+    {
+        "merged": "C:\\home\\karliana\\Documentos\\Desarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v23\\abc_control_background_material.xml",
+        "source": "C:\\root\\.android\\build-cache\\ac79bc354028c2b4433687b558aabab5155fee17\\output\\res\\drawable-v23\\abc_control_background_material.xml"
     }
 ]

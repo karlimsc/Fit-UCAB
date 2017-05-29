@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="17"
         android:targetSdkVersion="25" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -129,6 +129,15 @@
         <activity
             android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M11Food"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity"
+            android:label="Notificaciones" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"

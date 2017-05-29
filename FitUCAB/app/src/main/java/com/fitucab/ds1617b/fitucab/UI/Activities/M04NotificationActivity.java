@@ -293,72 +293,121 @@ public class M04NotificationActivity extends AppCompatActivity {
 
 
     /**
-     * Metodo que asigna de forma  predeterminada los valores de los Switch al momento de entrar a la vista de notificaciones
+     * Metodo que asigna valores los Switch al momento de entrar a la vista de notificaciones conectandose con el WS para obtener la configuración del usuario
      *
      * Usando SharedPreferences hace que dentro del xml, cree  su indicador y valor
      *
      */
     public void loadReference()
     {
-        SharedPreferences mispreferencias = getSharedPreferences( "PreferenciasUsuario", Context.MODE_PRIVATE );
-        //el SharedPreferences crea un archivo xml que solo sera accedido solo para esta aplicacion
+        ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
+        int id = getIdUser(getApplicationContext());
+        Call<Notification_Settings> call= apiService.getSetting(id);
+        call.enqueue(new Callback<Notification_Settings>() {
 
-        locale = new Locale(mispreferencias.getString("check_locale","es" ));
-        config.setLocale(locale);
-        getResources().updateConfiguration(config, null);
+            @Override
+            public void onResponse(Call<Notification_Settings> call, Response<Notification_Settings> response) {
 
-        _swAmigos.setChecked(mispreferencias.getBoolean( "check_amigo",true ));
-        _swActividad.setChecked(mispreferencias.getBoolean( "check_actividad",true ));
-        _swEntrenamiento.setChecked(mispreferencias.getBoolean("check_entrenamiento",true));
-        _swRetos.setChecked(mispreferencias.getBoolean( "check_reto",true ));
-        _swHidratacion.setChecked(mispreferencias.getBoolean( "check_hidratacion",true ));
-        _swCalorias.setChecked(mispreferencias.getBoolean( "check_calorias",true ));
-        _swGamificacion.setChecked(mispreferencias.getBoolean( "check_gamificacion",true ));
+                try{
+                    Notification_Settings settings = response.body();
+                    locale = new Locale(settings.get_preferenceLanguage());
+                    config.setLocale(locale);
+                    getResources().updateConfiguration(config, null);
+                    _swAmigos.setChecked(settings.is_preferenceFriends());
+                    _swActividad.setChecked(settings.is_preferenceActivity());
+                    _swEntrenamiento.setChecked(settings.is_preferenceTraining());
+                    _swRetos.setChecked(settings.is_preferenceChallenges());
+                    _swHidratacion.setChecked(settings.is_preferenceHydration());
+                    _swCalorias.setChecked(settings.is_preferenceCalories());
+                    _swGamificacion.setChecked(settings.is_preferenceGamification());
+                    seekbar.setProgress(settings.get_preferenceRadius());
+                    TextView tvkm = (TextView) findViewById(R.id.tv_m04_km);
+                    TextView tvmi = (TextView) findViewById(R.id.tv_m04_mi);
+                    if(settings.get_preferenceUnit().equals("km")){
+                        cambiarColores(tvmi,tvkm);
+                    }
+                    else{
+                        cambiarColores(tvkm,tvmi);
+                    }
+                    System.out.println("Hice bien la consulta");
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                    System.out.println("Hice MAL la consulta");
 
-        seekbar.setProgress(mispreferencias.getInt("check_radio",5));
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Notification_Settings> call, Throwable t) {
+
+                System.out.println("FALLO TODO");
+
+            }
+        });
+
 
     }
 ///
 
+    public void insert(boolean amigo, boolean actividades, boolean entrenar, boolean reto, boolean hidrata, boolean caloria, boolean gamifica, String idioma, String unidad, int radio, int id){
+        ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
+        Call<Notification_Settings> call= apiService.insertSetting(amigo, actividades, entrenar, reto, hidrata, caloria, gamifica, idioma, unidad, radio, id);
+        call.enqueue(new Callback<Notification_Settings>() {
+
+            @Override
+            public void onResponse(Call<Notification_Settings> call, Response<Notification_Settings> response) {
+
+                try{
+                    System.out.println("Hice bien el insert");
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                    System.out.println("Hice MAL el insert");
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Notification_Settings> call, Throwable t) {
+
+                System.out.println("FALLO TODO");
+
+            }
+        });
+
+    }
     /**
      * Metodo que:  al momento de cerrar la aplicacion, guarda los nuevos  valores editados de los Switch de
      * la vista de notificaciones en la app y llama al web service para hacer el update
      *
      */
+
     public void saveReference ()
     {
             /*el SharedPreferences crea un archivo xml que solo sera accedido solo para esta aplicacion*/
         SharedPreferences mispreferencias = getSharedPreferences( "PreferenciasUsuario", Context.MODE_PRIVATE );
-        SharedPreferences.Editor editor = mispreferencias.edit(); //empezar a editar al archivo xml
+        final SharedPreferences.Editor editor = mispreferencias.edit(); //empezar a editar al archivo xml
 
-        boolean amigo = _swAmigos.isChecked();
-        boolean actividades = _swActividad.isChecked();
-        boolean entrenar = _swEntrenamiento.isChecked();
-        boolean reto = _swRetos.isChecked();
-        boolean hidrata = _swHidratacion.isChecked();
-        boolean caloria = _swCalorias.isChecked();
-        boolean gamifica = _swGamificacion.isChecked();
-        String idioma = locale.getCountry();
-        int radio = seekbar.getProgress();
+        final boolean amigo = _swAmigos.isChecked();
+        final boolean actividades = _swActividad.isChecked();
+        final boolean entrenar = _swEntrenamiento.isChecked();
+        final boolean reto = _swRetos.isChecked();
+        final boolean hidrata = _swHidratacion.isChecked();
+        final boolean caloria = _swCalorias.isChecked();
+        final boolean gamifica = _swGamificacion.isChecked();
+        final String idioma = locale.getDefault().toString();
+        final int radio = seekbar.getProgress();
+        TextView tvkm = (TextView) findViewById(R.id.tv_m04_km);
         String unidad;
-        if(String.valueOf(_textKms) == "km"){
-            unidad = "km";
-        }
-        else{
+        if(tvkm.isClickable()){
             unidad = "mi";
         }
-
-        editor.putBoolean( "check_amigo", amigo ); //del indicador guardar el nuevo valor
-        editor.putBoolean( "check_actividad",actividades );
-        editor.putBoolean( "check_entrenamiento",entrenar );
-        editor.putBoolean( "check_reto",reto );
-        editor.putBoolean( "check_hidratacion",hidrata );
-        editor.putBoolean( "check_calorias",caloria );
-        editor.putBoolean( "check_gamificacion",gamifica );
-        editor.putString("check_locale",idioma);
-        editor.putInt("check_radio",radio);
-
-        editor.commit(); //Guardar los cambios
+        else{
+            unidad = "km";
+        }
 
         ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
         int id = getIdUser(getApplicationContext());
@@ -369,13 +418,23 @@ public class M04NotificationActivity extends AppCompatActivity {
             public void onResponse(Call<Notification_Settings> call, Response<Notification_Settings> response) {
 
                 try{
-
                     Notification_Settings settings = response.body();
-                    System.out.println("Hice bien la consulta");
+                    editor.putBoolean( "check_amigo", amigo ); //del indicador guardar el nuevo valor
+                    editor.putBoolean( "check_actividad",actividades );
+                    editor.putBoolean( "check_entrenamiento",entrenar );
+                    editor.putBoolean( "check_reto",reto );
+                    editor.putBoolean( "check_hidratacion",hidrata );
+                    editor.putBoolean( "check_calorias",caloria );
+                    editor.putBoolean( "check_gamificacion",gamifica );
+                    editor.putString("check_locale", idioma);
+                    editor.putInt("check_radio",radio);
+
+                    editor.commit(); //Guardar los cambios
+                    System.out.println("Hice bien el update");
                 }
                 catch (Exception e){
                     e.printStackTrace();
-                    System.out.println("Hice MAL la consulta");
+                    System.out.println("Hice MAL el insert");
 
                 }
 
