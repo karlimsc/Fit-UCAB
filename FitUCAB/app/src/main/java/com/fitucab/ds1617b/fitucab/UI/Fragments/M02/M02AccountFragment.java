@@ -19,7 +19,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.M02Exception;
@@ -152,15 +151,14 @@ public class M02AccountFragment extends Fragment {
         toAskWebService();
     }
 
-    private void toPutWebService(final User user) {
+    private void toPutWebService(User user) {
         try {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             int id= preferences.getInt("idUser",0);
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-            String webUrl= ip.getIp()+"M02Users/"+id+"&user="+user.get_username()+"&email="+user.get_email()+"&phone="+user.get_phone();
+            String webUrl= ip.getIp()+"M02Users/"+id+"&user="+user;
             Log.i(TAG, "toAskWebService: "+webUrl);
             JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.PUT, webUrl, new Response.Listener<JSONObject>() {
-
                 @Override
                 public void onResponse(JSONObject response) {
                     Log.i(TAG, "onResponse: "+response.toString());
@@ -169,7 +167,7 @@ public class M02AccountFragment extends Fragment {
             }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                    Log.i(TAG, " ERROR "+ error.toString());
+                    Log.i(TAG, " ERROR"+ error.toString());
                 }
             });
 
