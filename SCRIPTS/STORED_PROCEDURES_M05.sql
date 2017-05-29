@@ -1,4 +1,4 @@
--- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++DEPORTES++++++++++++++++++++++++++++++++++++++++++++
+﻿-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++DEPORTES++++++++++++++++++++++++++++++++++++++++++++
 
 -- INSERTA EL ID DEL USUARIO Y EL ID DEL DEPORTE PARA HABILITARLO 
 
@@ -140,7 +140,12 @@ LANGUAGE 'plpgsql' VOLATILE;
 
 -- CARGA ACTIVIDADES DADAS DOS FECHAS + EL ID DE USUARIO
 
-CREATE OR REPLACE FUNCTION M05_obteneractividades (fechamenor TIMESTAMP, fechamayor TIMESTAMP,usuario INTEGER) RETURNS TABLE (id integer,horainicio TIME, horafinal TIME, fecha DATE, km NUMERIC, caloria NUMERIC, lugarinicio VARCHAR(200),lugarfinal VARCHAR(200),nombredeporte VARCHAR(200)) AS $$
+CREATE OR REPLACE FUNCTION public.m05_obteneractividades(
+    IN fechamenor timestamp without time zone,
+    IN fechamayor timestamp without time zone,
+    IN usuario integer)
+  RETURNS TABLE(id integer,horainicio time without time zone, horafinal time without time zone, fecha date, km numeric, caloria numeric, lugarinicio character varying, lugarfinal character varying, nombredeporte character varying) AS
+$BODY$
 DECLARE
  var_r record;
 
@@ -151,7 +156,7 @@ for var_r in  (SELECT ACTIVITYID,ACTIVITYSTARTTIME, ACTIVITYENDTIME,ACTIVITYDATE
 			   WHERE  FK_PERSONID=usuario  and FK_REGISTRY=REGISTRYID and
 					  FK_SPORT=SPORTID and ACTIVITYDATE>=fechamenor and ACTIVITYDATE<=fechamayor)
 loop
-		id			  :=var_r.ACTIVITYID;
+		id	      	  :=var_r.ACTIVITYID;
 		horainicio    :=var_r.ACTIVITYSTARTTIME;
 		horafinal     :=var_r.ACTIVITYENDTIME;
 		fecha         :=var_r.ACTIVITYDATE;
@@ -164,8 +169,39 @@ loop
 		return next;
 end loop;
 END
-$$
-LANGUAGE 'plpgsql' VOLATILE; 
+$BODY$
+  LANGUAGE plpgsql VOLATILE
+
+-- OBTENER TODAS LAS ACTIVIDADES DEL USUARIO---
+
+ CREATE OR REPLACE FUNCTION public.m05_obtenertodasactividades(usuario integer)
+  RETURNS TABLE(id integer,horainicio time without time zone, horafinal time without time zone, fecha date, km numeric, caloria numeric, lugarinicio character varying, lugarfinal character varying, nombredeporte character varying) AS
+$BODY$
+DECLARE
+ var_r record;
+
+BEGIN 
+
+for var_r in  (SELECT ACTIVITYID,ACTIVITYSTARTTIME, ACTIVITYENDTIME,ACTIVITYDATE,ACTIVITYKM ,ACTIVITYCALOR,ACTIVITYSTARTSITE,ACTIVITYENDSITE,SPORTNAME
+			   FROM   ACTIVITY,SPORT,REGISTRY
+			   WHERE  FK_PERSONID=usuario and REGISTRYID=FK_REGISTRY and FK_SPORT=SPORTID)
+					
+loop
+		id	      :=var_r.ACTIVITYID;
+		horainicio    :=var_r.ACTIVITYSTARTTIME;
+		horafinal     :=var_r.ACTIVITYENDTIME;
+		fecha         :=var_r.ACTIVITYDATE;
+		km            :=var_r.ACTIVITYKM;
+		caloria       :=var_r.ACTIVITYCALOR;
+		lugarinicio   :=var_r.ACTIVITYSTARTSITE;
+		lugarfinal    :=var_r.ACTIVITYENDSITE;
+		nombredeporte :=var_r.SPORTNAME;
+		
+		return next;
+end loop;
+END
+$BODY$
+  LANGUAGE plpgsql VOLATILE
 
 -- CARGA LAS CALORIAS QUEMADAS POR ACTIVIDAD---
 

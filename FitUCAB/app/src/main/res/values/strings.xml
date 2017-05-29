@@ -37,6 +37,7 @@
     <string name="m01_errorHeightOutOfRange">El rango de altura es entre 1m y 3m</string>
     <!--FIN Strings Modulo 1 -->
 
+
     <!--Inicio Strings Modulo 2-->
     <string name="nav_title">Ocnfiguración</string>
     <string name="nav_02_inicio">Inicio</string>
@@ -63,6 +64,21 @@
     <string name="et_m02_Steps">Nro de Pasos</string>
 
     <!--FIN Strings Modulo 2 -->
+
+    <!--Inicio Strings Modulo 3-->
+
+    <string name="sep_03_with">Contactos con FIT-Ucab</string>
+    <string name="sep_03_without">Contactos sin FIT-Ucab</string>
+    <string name="tab_03_amigos">Amigos</string>
+    <string name="tab_03_libreta">Libreta</string>
+    <string name="tab_03_cercademi">Cerca De Mi</string>
+    <string name="sep_03_request">Solicitudes de amistad</string>
+    <string name="sep_03_friends">Amigos</string>
+
+    <!--FIN Strings Modulo 3 -->
+
+
+
 
 
     <!-- Inicio Strings Modulo 5 -->
