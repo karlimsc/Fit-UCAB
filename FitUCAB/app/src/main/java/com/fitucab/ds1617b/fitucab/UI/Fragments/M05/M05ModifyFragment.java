@@ -26,6 +26,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -156,7 +157,8 @@ public class M05ModifyFragment extends Fragment {
                new View.OnClickListener() {
                    @Override
                    public void onClick(View v) {
-
+                       makeUpdateKm();
+                       makeUpdateCal();
                    }
                }
 
@@ -214,6 +216,20 @@ public class M05ModifyFragment extends Fragment {
         dialog.show();
     }
 
+    public void dialogDone() {
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string._ttl_m05_information);
+        builder.setMessage(R.string._dlg_m05_doneUpdate)
+                .setPositiveButton(R.string._dlg_m05_done, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        _callBack.onSwap("M05PrincipalActivityFragment",null);
+                    }
+                });
+
+        android.app.AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
 
     public void makeDelete()
     {
@@ -226,6 +242,8 @@ public class M05ModifyFragment extends Fragment {
                             public void onResponse(String response) {
 
                                 Log.e("RESPONSE ", response);
+                                Toast.makeText(getContext(), R.string._tst_m05_messageupdate,
+                                        Toast.LENGTH_SHORT).show();
                             }
                         }, new Response.ErrorListener() {
 
@@ -233,6 +251,8 @@ public class M05ModifyFragment extends Fragment {
                     public void onErrorResponse(VolleyError error) {
                         // TODO Auto-generated method stub
                         Log.i("no trajo nada","");
+                        Toast.makeText(getContext(), R.string._tst_m05_messageerrordelete,
+                                Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -240,9 +260,39 @@ public class M05ModifyFragment extends Fragment {
     }
 
 
-    public void makeUpdate()
+    public void makeUpdateKm()
     {
-        String consult =M05UrlConsul._urlDeleteAct+_idActivity;
+        String consult =M05UrlConsul._urlUpdateKm(_idActivity,String.valueOf(_et_km.getText()));
+
+        final StringRequest stringRequest = new StringRequest
+                (Request.Method.GET, consult,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+
+                                Log.e("RESPONSE ", response);
+                                Toast.makeText(getContext(), R.string._tst_m05_messageupdate,
+                                        Toast.LENGTH_SHORT).show();
+                                dialogDone();
+                            }
+                        }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO Auto-generated method stub
+                        Log.i("no trajo nada","");
+                        Toast.makeText(getContext(), R.string._tst_m05_messageerrormodify,
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+        VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
+    }
+
+    public void makeUpdateCal()
+    {
+        String consult =M05UrlConsul._urlUpdateCal(_idActivity,String.valueOf( _et_Calories.getText()));
+        Log.e("URI DE LA CONSULTAAAAAAAAAAAAA*********+", consult);
 
         final StringRequest stringRequest = new StringRequest
                 (Request.Method.GET, consult,
@@ -258,6 +308,8 @@ public class M05ModifyFragment extends Fragment {
                     public void onErrorResponse(VolleyError error) {
                         // TODO Auto-generated method stub
                         Log.i("no trajo nada","");
+                        Toast.makeText(getContext(), R.string._tst_m05_messageerrormodify,
+                                Toast.LENGTH_SHORT).show();
 
                     }
                 });

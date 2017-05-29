@@ -13,4 +13,21 @@ public class M05UrlConsul {
 
     // Elimina Actividad por id del mismo
     public static String _urlDeleteAct = Global._url+"M05_ServicesActivity/deleteActivity?idAct=";
+
+    // Actualiza km
+    public static String _urlUpdateKm(String id, String km) {
+        String dir;
+        dir =Global._url + "M05_ServicesActivity/updateKm?idAct="+id+"&km="+km;
+        return dir;
+     }
+
+    //Actualiza Calorias
+    public static String _urlUpdateCal(String id, String calorias) {
+       String dir;
+       dir = Global._url + "M05_ServicesActivity/updateCalor?idAct="+id+"&calorias="+calorias;
+        return  dir;
+    }
+
+    //Esta consulta tre todas lasactividades de la persona
+    public static String _urlActivitys =Global._url+"M05_ServicesActivity/getAllActivity?idPer=";
 }
