@@ -21,4 +21,9 @@ public class HomeTest {
         assertEquals("Home sin crear: ", null, home);
     }
 
+    @Test
+    public void testHomeEmpty() {
+        home = new Home();
+        assertTrue(home.getTotalAgua() == 0);
+    }
 }

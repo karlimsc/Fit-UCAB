@@ -58,27 +58,27 @@ public class QueryTest {
         assertFalse(query instanceof Query);
     }
 
-    @Test
-    public void testGetUserSuccess() {
-        User user = query.getUser(500);
-        assertTrue(user.getId() > 0);
-    }
-
-    @Test(expected = SQLException.class)
-    public void testGetUserFail() {
-        User user = new User();
-        user = query.getUser(501);
-        assertTrue(user.getId() == 0);
-    }
-
-    @Test
-    public void updateUser() throws Exception {
-
-    }
-
-    @Test
-    public void getHome() throws Exception {
-
-    }
+//    @Test
+//    public void testGetUserSuccess() {
+//        User user = query.getUser(500);
+//        assertTrue(user.getId() > 0);
+//    }
+//
+//    @Test(expected = SQLException.class)
+//    public void testGetUserFail() {
+//        User user = new User();
+//        user = query.getUser(501);
+//        assertTrue(user.getId() == 0);
+//    }
+//
+//    @Test
+//    public void updateUser() throws Exception {
+//
+//    }
+//
+//    @Test
+//    public void getHome() throws Exception {
+//
+//    }
 
 }
