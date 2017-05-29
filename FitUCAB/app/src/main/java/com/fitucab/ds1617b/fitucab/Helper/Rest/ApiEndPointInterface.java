@@ -11,6 +11,13 @@ import retrofit2.http.Query;
 
 public interface ApiEndPointInterface {
 
+    /**
+     * Declaracion de servicios web a los cuales les hago peticiones
+     * @param userparam
+     * @param passwordparam
+     * @return
+     */
+
     @GET("M01_ServicesUser/login_user")
     Call<User> loginUser(@Query("username") String userparam,@Query("password") String passwordparam);
 
