@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.Water;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity;
@@ -48,6 +49,10 @@ public class M10WaterGlassFragment extends Fragment {
     private View _view;
     int idusuario =1;
     private IpStringConnection Url = new IpStringConnection();
+    public  static EditText _Etml;
+    private static ImageButton addwater ;
+    private static ImageButton lesswater;
+     static ManagePreferences user = new ManagePreferences();
 
 
 
@@ -76,7 +81,12 @@ public class M10WaterGlassFragment extends Fragment {
 
         _view = inflater.inflate(R.layout.fragment_m10_water_glass, container, false);
         contexto = _view.getContext();
-        Setup();
+        try {
+            idusuario = user.getIdUser(contexto);
+
+        }catch (Exception e)
+        {}
+            Setup();
         addWater();
         deletWater();
 
@@ -106,12 +116,25 @@ public class M10WaterGlassFragment extends Fragment {
 
     public void Setup()
     {
-        _btnAddWater = (ImageButton) _view.findViewById(R.id.btn_m10_AddWater);
-        _btnLessWater = (ImageButton) _view.findViewById(R.id.btn_m10_lessWater);
-        _EtnWater=(EditText)_view.findViewById(R.id.Et_m10_water);
+        try {
 
-        gson = new Gson();
-    }
+
+            _btnAddWater = (ImageButton) _view.findViewById(R.id.btn_m10_AddWater);
+            _btnLessWater = (ImageButton) _view.findViewById(R.id.btn_m10_lessWater);
+            _EtnWater = (EditText) _view.findViewById(R.id.Et_m10_water);
+            addwater = (ImageButton) _view.findViewById(R.id.btn_m10_addwaterMain);
+            lesswater = (ImageButton) _view.findViewById(R.id.btn_m10_lessWaterMain);
+            _Etml = (EditText) _view.findViewById(R.id.tv_m10_ml);
+
+
+
+            lesswatermain();
+            addwatermain();
+            gson = new Gson();
+        }catch (Exception e){
+
+        }
+        }
 
 
     public void addWater()
@@ -174,7 +197,7 @@ public class M10WaterGlassFragment extends Fragment {
     public void addwateraux()
     {
         blockbtn();
-        String url1 = "M10_WaterGlass/addWater?time="+m10._EtnDate.getText()+"&glasstype=350&fkp="+idusuario;
+        String url1 = "M10_WaterGlass/addWater?time="+m10._EtnDate.getText()+"&glasstype="+_Etml.getText()+"&fkp="+idusuario;
         String aux = Url.getIp()+url1;
         RequestQueue queue = Volley.newRequestQueue(contexto);
         // Request a string response from the provided URL.
@@ -200,7 +223,7 @@ public class M10WaterGlassFragment extends Fragment {
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
-                unlockbtn();
+                    unlockbtn();
                     m10.unlockbtnm();
                 }
             });
@@ -216,17 +239,61 @@ public class M10WaterGlassFragment extends Fragment {
     }
         public void blockbtn()
     {
+        addwater.setEnabled(false);
+        lesswater.setEnabled(false);
         _btnAddWater.setEnabled(false);
         _btnLessWater.setEnabled(false);
 
     }
         public void unlockbtn() {
+            addwater.setEnabled(true);
+            lesswater.setEnabled(true);
         _btnAddWater.setEnabled(true);
         _btnLessWater.setEnabled(true);
         }
+
+
+
     public void setCant (String cant)
     {
         _EtnWater.setText(cant);
+    }
+
+    public void addwatermain()
+    {
+        addwater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                try {
+                    int ml = Integer.parseInt(_Etml.getText().toString());
+                    if (ml+100<=2500) {
+                        ml += 100;
+
+                        _Etml.setText(Integer.toString(ml));
+                    }
+                }catch (Exception e){}
+            }
+        });
+    }
+
+
+    public void lesswatermain()
+    {
+        lesswater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            try{
+                int m2 =Integer.parseInt(_Etml.getText().toString());
+                if (m2-100 >0)
+                {    m2 -= 100;
+                    _Etml.setText(Integer.toString(m2));
+                }
+
+            }catch (Exception e){}
+
+            }
+        });
     }
 
     public interface OnFragmentInteractionListener {
