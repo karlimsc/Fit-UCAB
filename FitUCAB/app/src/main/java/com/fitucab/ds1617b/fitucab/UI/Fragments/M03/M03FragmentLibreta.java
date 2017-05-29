@@ -29,6 +29,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.Model.UserAuxiliar;
 import com.fitucab.ds1617b.fitucab.Model.Person;
@@ -43,12 +45,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
+import static java.lang.Thread.sleep;
 
 /**
  Aqui falta lo que hace la clase como tal y ya
 
  */
 public class M03FragmentLibreta extends Fragment {
+
+    ManagePreferences manageId = new ManagePreferences();
+    int userId;
+    IpStringConnection ipString = new IpStringConnection();
 
     private static final int PERMISSIONS_REQUEST_READ_CONTACTS = 100;
     ListView listView;
@@ -68,6 +75,8 @@ public class M03FragmentLibreta extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        String hasPhone = "";
+
        //Aqui nos aseguramos que la app solicita los permisos para leer los contactos de la libreta
         if (ActivityCompat.checkSelfPermission(getContext(),
                 android.Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED ) {
@@ -79,6 +88,7 @@ public class M03FragmentLibreta extends Fragment {
         }
         //se encarga de poner los atributos de diseño del ViewGroup padre
         rootView = inflater.inflate(R.layout.fragment_m03_contacts, container, false);
+        userId = manageId.getIdUser(rootView.getContext());
         // se instancia un arrraylist
         ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
         //nos proveera los datos del usuario
@@ -103,12 +113,14 @@ public class M03FragmentLibreta extends Fragment {
         if (cursor.moveToFirst()) {
             //Iterar a través del cursor
             do {
+
                 // Obtiene los nombre de los contactos y el numero de telefono
                 String name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
                 String contactId = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID));
                 Cursor phones = cr.query(Phone.CONTENT_URI, null, Phone.CONTACT_ID + " = " + contactId, null, null);
                 phones.moveToFirst();
-                String hasPhone = phones.getString(phones.getColumnIndex(Phone.HAS_PHONE_NUMBER));
+                if (phones!=null && phones.moveToFirst())
+                    hasPhone = phones.getString(phones.getColumnIndex(Phone.HAS_PHONE_NUMBER));
                 String phoneNumber = "0";
                 String emailAddress = "";
                 if ( hasPhone.equalsIgnoreCase("1"))
@@ -175,13 +187,10 @@ public class M03FragmentLibreta extends Fragment {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/contact/getContacts?id=2&contacts=" + contactsEncoded;
-        //String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/contact/getContacts?id=2&contacts=[{%22_email%22:%22andresfra92@gmail.com%22,%22_username%22:%22Andres%20Rubio%22,%22_phone%22:%224145589633%22,%22_point%22:0,%22_type%22:0,%22_id%22:0},{%22_email%22:%22%22,%22_username%22:%22Pepe%20Grillo%22,%22_phone%22:%2204141150083%22,%22_point%22:0,%22_type%22:0,%22_id%22:0},{%22_email%22:%22fmeeksr@weebly.com%22,%22_username%22:%22Fabiano%20Meeks%22,%22_phone%22:%2204141150083%22,%22_point%22:0,%22_type%22:0,%22_id%22:0}]";
+        String url = ipString.getIp()+"contact/getContacts?id="+userId+"&contacts=" + contactsEncoded;
         final Gson gsonresp = new Gson();
-
         // Inicializamos el RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
-
         //Solicitar una respuesta de cadena desde la URL proporcionada.
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -206,18 +215,16 @@ public class M03FragmentLibreta extends Fragment {
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
-                usuarios.add(new UserAuxiliar(0,error.toString(), 0,4));
-                adapter.addAll(usuarios);
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
+                builder1.setMessage("Error en la conexion");
+                builder1.setCancelable(true);
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
             }
         });
         // Agregue la solicitud al RequestQueue.
         queue.add(stringRequest);
-
-
-
         cursor.close();
-
         return rootView;
     }
     /**
@@ -259,28 +266,46 @@ public class M03FragmentLibreta extends Fragment {
      */
 
     @Override
-    public boolean onContextItemSelected(MenuItem item) {
+    public boolean onContextItemSelected(final MenuItem item) {
 
         switch (item.getGroupId()) {
             case 0:
-                String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/request?idRequester=2&idRequested="+Integer.toString(item.getItemId());
+                String url = ipString.getIp()+"friend/request?idRequester="+userId+"&idRequested="+Integer.toString(item.getItemId());
                 final Gson gson = new Gson();
 
                 // Inicializamos el RequestQueue.
                 RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
-
-
                 // Solicitar una respuesta de cadena desde la URL proporcionada.
                 StringRequest stringRequest = new StringRequest(Request.Method.PUT, url,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                if (response.equals("Ya Existe esta amistad.")) {
-                                    AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Ya Existe esta amistad.");
-                                    builder1.setCancelable(true);
-                                    AlertDialog alert11 = builder1.create();
-                                    alert11.show();
+                                if (response.equals("Ya Existe esta amistad.")){
+                                    String urlAccept = ipString.getIp()+"friend/update?idUpdater="+userId+"&idUpdated="+Integer.toString(item.getItemId())+"&Action=Request";
+                                    final Gson gsonAccept = new Gson();
+
+                                    // Inicializamos el RequestQueue.
+                                    RequestQueue queueUpdate = Volley.newRequestQueue(rootView.getContext());
+
+
+                                    // Solicitar una respuesta de cadena desde la URL proporcionada.
+                                    StringRequest stringRequestUpdate = new StringRequest(Request.Method.POST, urlAccept,
+                                            new Response.Listener<String>() {
+                                                @Override
+                                                public void onResponse(String response) {
+
+                                                }
+                                            }, new Response.ErrorListener() {
+                                        @Override
+                                        public void onErrorResponse(VolleyError error) {
+                                            AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
+                                            builder1.setMessage("Error en la conexion");
+                                            builder1.setCancelable(true);
+                                            AlertDialog alert11 = builder1.create();
+                                            alert11.show();
+                                        }
+                                    });
+                                    queueUpdate.add(stringRequestUpdate);
                                 }
                                 else{
                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
@@ -294,7 +319,7 @@ public class M03FragmentLibreta extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                        builder1.setMessage("Error en la conexion:"+error.toString());
+                        builder1.setMessage("Error en la conexion");
                         builder1.setCancelable(true);
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
@@ -302,6 +327,20 @@ public class M03FragmentLibreta extends Fragment {
                 });
                 // agregamos la solicitud al RequestQueue.
                 queue.add(stringRequest);
+
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                getFragmentManager().beginTransaction().detach(this).attach(this).commit();
+
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
                 return true;
             case 1:
                     //ENVIAR NOTIFICACION PARA DESCARGAR LA APP
