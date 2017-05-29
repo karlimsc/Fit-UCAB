@@ -14,7 +14,7 @@ public class M05UrlConsul {
      * Deporte por id de deporte - consulta para traer id , nombre y met
      */
 
-    public static String _urlSportid = IP.getIp() +"M05_ServicesSport/getSport?idSpo=1";
+   // public static String _urlSportid = IP.getIp() +"M05_ServicesSport/getSport?idSpo=1";
 
     /**
      * Elimina Actividad por id del mismoactualizar

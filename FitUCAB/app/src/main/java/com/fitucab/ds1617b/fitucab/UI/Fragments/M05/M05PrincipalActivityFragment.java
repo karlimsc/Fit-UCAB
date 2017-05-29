@@ -6,6 +6,8 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -44,6 +46,7 @@ import com.fitucab.ds1617b.fitucab.UI.Activities.M05PrincipalActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.security.AccessController;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -89,6 +92,11 @@ public class M05PrincipalActivityFragment extends Fragment implements
     // Variables que se muetran en la lista
     String _sport,_date,_time,_calories,_empty;
 
+    ManagePreferences manageId=new ManagePreferences();
+    int userId;
+
+
+
 
     /**
      * Constuctor del fragmento Activity Principal
@@ -123,6 +131,7 @@ public class M05PrincipalActivityFragment extends Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         _view = inflater.inflate(R.layout.activity_m05_principal_activity, container, false);
+        userId= manageId.getIdUser(_view.getContext());
         setupViewValues();
         return _view;
 
@@ -247,7 +256,7 @@ public class M05PrincipalActivityFragment extends Fragment implements
 
     public void makeRequest()
     {                                     // Aqui va ManagePreferences.getIdUser()
-        String consult =M05UrlConsul._urlActivitys+"1";
+        String consult =M05UrlConsul._urlActivitys+String.valueOf(userId);
 
         final StringRequest stringRequest = new StringRequest
                 (Request.Method.GET, consult,

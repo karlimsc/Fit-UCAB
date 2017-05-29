@@ -109,7 +109,8 @@ public class M05LogExerciseFragment extends Fragment implements
         _btn_resg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                makeInsertLog();
+                nombreDeport= _spin.getSelectedItem().toString();
+                makeIdSport();
             }
         });
     }
@@ -177,7 +178,7 @@ public class M05LogExerciseFragment extends Fragment implements
 
     public void makeIdSport()
     {                    //Esta es la consulta para insertar una actividad
-        String consult = M05UrlConsul._urlSportid+nombreDeport;
+        String consult = M05UrlConsul._urlIdSport+nombreDeport;
 
         final StringRequest stringRequest = new StringRequest
                 (Request.Method.GET, consult,
@@ -186,6 +187,7 @@ public class M05LogExerciseFragment extends Fragment implements
                             public void onResponse(String response) {
                                 //Limpia los textos
                                 _idDeporte = response;
+                                Log.e("ID DEL DEPOOOOORTEEE",response);
                             }
                         }, new Response.ErrorListener() {
 
@@ -207,8 +209,10 @@ public class M05LogExerciseFragment extends Fragment implements
 
     public void makeInsertLog()
     {                    //Esta es la consulta para insertar una actividad
-        String consult =M05UrlConsul._urlInsertAct(_tv_time.getText(),,_tv_date.getText(),null
-                ,_cal.getText(),null,null,1,spot);
+
+        /*
+        String consult =M05UrlConsul._urlInsertAct(_tv_time.getText(),"12:12",_tv_date.getText(),""
+                ,_cal.getText(),null,null,"1",_idDeporte);
 
         final StringRequest stringRequest = new StringRequest
                 (Request.Method.GET, consult,
@@ -234,7 +238,7 @@ public class M05LogExerciseFragment extends Fragment implements
                     }
                 });
         VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
-
+*/
     }
 
     /**
