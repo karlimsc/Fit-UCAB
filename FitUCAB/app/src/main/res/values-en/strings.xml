@@ -91,4 +91,9 @@
     <string name="tv_m01_recuperacionContra">Password Recovery</string>
     <!--FIN Strings Modulo 5 -->
 
+    <!-- Inicio Strings Modulo 10 -->
+    <string name="title_activity_m10_water_glass">Water</string>
+    <string name="tab_m10_Hidratacion">Hydratation</string>
+    <string name="tab_m10_Control">Control</string>
+
 </resources>

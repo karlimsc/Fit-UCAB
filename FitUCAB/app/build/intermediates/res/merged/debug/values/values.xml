@@ -848,8 +848,6 @@
     <string name="tab_m05_track">Automática</string>
     <string name="tab_m10_Control">Control</string>
     <string name="tab_m10_Hidratacion">Hidratacion</string>
-    <string name="textview_history_day">Día</string>
-    <string name="textview_history_week">Semana</string>
     <string name="title_activity_m02_home">M02HomeActivity</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
     <string name="title_activity_m05_track_exercise">Track</string>
@@ -861,10 +859,6 @@
     <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
     <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
     <string name="tv_m02_perfil">Perfil</string>
-    <string name="tv_m10_cantidad">Cantidad Diaria</string>
-    <string name="tv_m10_peso">Peso</string>
-    <string name="tv_m10_tipo">Tipo de Vaso</string>
-    <string name="tv_m10_usuario">Usuario</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
