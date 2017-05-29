@@ -22,7 +22,7 @@ $$ LANGUAGE plpgsql VOLATILE;
 
 INSERT INTO public.glass_historic(
             glasshistoricid, glasstime, glasstype, fk_person)
-    VALUES (0, '11/11/2011', 0, 0);
+    VALUES (0, '11/11/2011', 0, 100);
 
 CREATE OR REPLACE FUNCTION M10_DeletWaterTm (tm timestamp , fkP integer  , out res integer)
 AS $$
@@ -50,7 +50,7 @@ BEGIN
  
 
 	delete from glass_historic where glasshistoricid =
-	( Select max(glasshistoricid) from glass_historic where fk_person = fkp);
+	( Select max(GLASSTIME) from glass_historic where fk_person = fkp);
 
 
 
@@ -62,19 +62,6 @@ $$ LANGUAGE plpgsql VOLATILE;
 
 
 
-
-
-
-
-CREATE OR REPLACE FUNCTION M10_GetListFecha(fkp int, date_stamp date)
-RETURNS TABLE(GLASSTIME timestamp, GLASSTYPE int) AS $$
-BEGIN
-  RETURN QUERY
-
-    SELECT t.GLASSTIME,t.GLASSTYPE FROM glass_historic as t
-      WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp;
- end;
-$$ LANGUAGE 'plpgsql';
 
 
 
@@ -94,19 +81,12 @@ END;
 $$ LANGUAGE plpgsql VOLATILE;
 
 
-
 CREATE OR REPLACE FUNCTION M10_GetListFecha(fkp int, date_stamp date)
-RETURNS TABLE(GLASSTIME timestamp, count int , sumg) AS $$
-
-DECLARE  
-date2 timestamp ;
+RETURNS TABLE(GLASSTIME timestamp, GLASSTYPE int) AS $$
 BEGIN
-	date2 := DATE(date_stamp)+7;
   RETURN QUERY
-  	SELECT DATE(t.glasstime) fecha  ,Count(t.glasshistoricid) ,  Sum(t.GLASSTYPE)  
-	FROM glass_historic as t WHERE DATE(t.glasstime) >= DATE(date_stamp) and   t.glasstime < date2 
- 	and fk_person = 1 group by t.GLASSTIME;
-
+    SELECT t.GLASSTIME,t.GLASSTYPE FROM glass_historic as t
+      WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp;
  end;
 $$ LANGUAGE 'plpgsql';
 

@@ -250,10 +250,12 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
 
                 } catch (ParseException e) {
                     e.printStackTrace();
+                    unlockbtnm();
                 }
                 catch (Exception e)
                 {
                     e.printStackTrace();
+                    unlockbtnm();
                 }
 
 
@@ -281,7 +283,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                 }
                 catch (Exception e)
                 {
-                    e.printStackTrace();
+                 unlockbtnm();
                 }
 
 

@@ -192,7 +192,7 @@ public class M10WaterGlassFragment extends Fragment {
 
 
                             } catch (Exception e) {
-                                e.printStackTrace();
+                                unlockbtn();
                             }
                         }
                     }, new Response.ErrorListener() {
