@@ -1,25 +1,44 @@
-DROP TABLE IF EXISTS PERSON;
-DROP TABLE IF EXISTS REGISTRY;
+DROP TABLE IF EXISTS SPORT;
+DROP TABLE IF EXISTS EXERCISE;
+DROP TABLE IF EXISTS ACTIVITY;
 DROP TABLE IF EXISTS NOTIFICATION_SETTINGS;
+DROP TABLE IF EXISTS FOOD;
+DROP TABLE IF EXISTS MOMENT;
+DROP TABLE IF EXISTS DIET;
+DROP TABLE IF EXISTS TRAINING;
+DROP TABLE IF EXISTS SPOR_TRAINING;
+DROP TABLE IF EXISTS FRIEN_TRAIN;
+DROP TABLE IF EXISTS REGISTRY;
+DROP TABLE IF EXISTS PERSON;
 
+<<<<<<< HEAD
 CREATE TABLE PERSON(
 
 PERSONID		serial  primary key,
 PERSONUSERNAME	varchar(20) unique not null,
-PERSONPASSWORD	varchar(8) not null,
+PERSONPASSWORD	varchar(80) not null,
 PERSONEMAIL	varchar(30) unique not null,
-PERSONSEX		varchar(20) not null,
-PERSONPHONE	varchar(20) not null,
+PERSONSEX		varchar(1) not null,
+PERSONPHONE	varchar(11) not null,
 PERSONBIRTHDATE date not null
+=======
+CREATE TABLE PERSON(¿
+	PERSONID		serial  primary key,
+	PERSONUSERNAME	varchar(20) unique not null,
+	PERSONPASSWORD	varchar(15) not null,
+	PERSONEMAIL		varchar(50) unique not null,
+	PERSONSEX		varchar(1) not null,
+	PERSONPHONE		varchar(20) not null,
+	PERSONBIRTHDATE date not null
+>>>>>>> 644b2819105d8d67646cda29f2bf18151bd66424
 );
 
 CREATE TABLE REGISTRY (
-
-REGISTRYID 	serial primary key,
-REGISTRYWEIGHT	real not null,
-REGISTRYHEIGHT	real not null,
-REGISTRYPOINT	integer,
-FK_PERSONID	integer not null
+	REGISTRYID 		serial primary key,
+	REGISTRYWEIGHT	real not null,
+	REGISTRYHEIGHT	real not null,
+	REGISTRYPOINT	integer,
+	FK_PERSONID		integer not null
 );
 
 
@@ -139,4 +158,28 @@ constraint PK_FRIEN_TRAINID primary key ( FRIEN_TRAINID)
 );
 
 --- TERMINA MODULO 6  ---
+	
+--- MODULO 8 ---
+	CREATE TABLE CHALLENGE (
+
+CHALLENGEID serial primary key,
+CHALLENGENAME varchar(30) not null,
+CHALLENGEDESCRIPTION varchar(500) not null,
+CHALLENGEKILOMETERS integer,
+CHALLENGESCORE integer,
+CHALLENGEDAYS integer,
+CHALLENGETYPE varchar(4) not null,
+CHALLENGEPREDEFINED varchar(1) not null
+);
+
+CREATE TABLE DETAIL (
+DETAILID serial primary key,
+DETAILDATESTART timestamp not null,
+DETAILDATEEND timestamp not null,
+DETAILACTIVE boolean not null,
+FK_USERID integer,
+FK_CHALLENGEID integer
+);
+		
+--- FIN MODULO 8 ---
 
