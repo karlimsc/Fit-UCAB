@@ -1,45 +1,35 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M11;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.ImageButton;
 
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 
 import com.fitucab.ds1617b.fitucab.UI.Activities.M11Food;
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.components.Legend.LegendForm;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.components.YAxis.AxisDependency;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
-import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.fitucab.ds1617b.fitucab.R.layout.fragment_m11_graphic;
-
 /**
+ *
  * A simple {@link Fragment} subclass.
  */
 
@@ -49,10 +39,6 @@ public class M11GraphicFragment extends Fragment {
 
     private CheckBox _cb_m11_consumidas;
     private CheckBox _cb_m11_quemadas;
-    private Button _btn_m11_dia;
-    private Button _btn_m11_semana;
-    private Button _btn_m11_mes;
-    private Button _btn_m11_ano;
     private View _view;
     private OnFragmentSwap _callBack;
 
@@ -60,13 +46,15 @@ public class M11GraphicFragment extends Fragment {
     // variable del grafico
     private LineChart _lineChart;
     // setcomp1 contendra el conjunto de datos de la calorias quemadas
-    private LineDataSet _setComp1;
+    private LineDataSet _dataQuemadas;
     // setcomp2 contendra el conjunto de datos de la calorias consumidas
-    private LineDataSet _setComp2;
+    private LineDataSet _dataConsumidas;
     // setcomp3 contendra el conjunto de datos de la diferencia de las calorias quemadas y consumidas
-    private LineDataSet _setComp3;
+    private LineDataSet _dataDiferencia;
+    private TabLayout tabLayout;
+    private ArrayList<Integer> arrayDiferencial = new ArrayList<>();
 
-    
+
     public M11GraphicFragment() {
         // Required empty public constructor
     }
@@ -95,80 +83,119 @@ public class M11GraphicFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         _view = inflater.inflate(R.layout.fragment_m11_graphic, container, false);
+        // obtengo el grafico del archivo xml
+        _lineChart = (LineChart) _view.findViewById(R.id.chart);
+        // la documentacion dice que hay que poner esto.. xd
+        Utils.init(getResources());
+        manageCheckboxConsumidas();
+        manageCheckboxQuemadas();
+        manageTabs();
+        verGraficoDia();
+
+        // Inflate the layout for this fragment
+        return _view;
+    }
+
+    public void manageTabs() {
+        tabLayout =  (TabLayout) _view.findViewById(R.id.tablayout);
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
+
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch (tab.getPosition()) {
+                    case 0:
+                        Log.i(_TAG, "Filtro por dia");
+                        verGraficoDia();
+
+                        break;
+                    case 1:
+                        Log.i(_TAG, "Filtro por semana");
+                        verGraficoSemana();
+                        break;
+                    case 2:
+                        Log.i(_TAG, "Filtro por mes");
+                        verGraficoMes();
+                        break;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+    }
+
+    public void manageCheckboxConsumidas() {
+        _cb_m11_consumidas = (CheckBox) _view.findViewById(R.id.cb_m11_consumidas);
+        _cb_m11_consumidas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activateDeactivateQuemadasConsumidas(_cb_m11_consumidas, "Consumidas", _dataConsumidas);
+            }
+        });
+    }
+
+    public void manageCheckboxQuemadas() {
+        _cb_m11_quemadas = (CheckBox) _view.findViewById(R.id.cb_m11_quemadas);
+        _cb_m11_quemadas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                activateDeactivateQuemadasConsumidas(_cb_m11_quemadas, "Quemadas", _dataQuemadas);
+            }
+        });
+    }
 
 
-        _btn_m11_dia = (Button) _view.findViewById(R.id.btn_m11_dia);
-        _btn_m11_semana = (Button) _view.findViewById(R.id.btn_m11_semana);
-        _btn_m11_mes = (Button) _view.findViewById(R.id.btn_m11_mes);
-        _btn_m11_ano = (Button) _view.findViewById(R.id.btn_m11_ano);
-
+    public void setDataGraphic(ArrayList<Integer> dataQuemadas, ArrayList<Integer> dataConsumidas) {
         try {
 
-            // obtengo el grafico del archivo xml
-            _lineChart = (LineChart) _view.findViewById(R.id.chart);
-            // la documentacion dice que hay que poner esto.. xd
-            Utils.init(getResources());
-            // declaro las variables donde se guardaran los datos de entrada
-            // es decir la cantidad de calorias.
             List<Entry> calQuemadas = new ArrayList<Entry>();
             List<Entry> calConsumidas = new ArrayList<Entry>();
             List<Entry> calDiferencial = new ArrayList<Entry>();
 
-            // datos de las calorias quemadas
-            Entry c1e1 = new Entry(0f, 100000f);
-            calQuemadas.add(c1e1);
-            Entry c1e2 = new Entry(1f, 140000f);
-            calQuemadas.add(c1e2);
-            Entry c1e3 = new Entry(2f, 120000f);
-            calQuemadas.add(c1e3);
-            Entry c1e4 = new Entry(3f, 140000f);
-            calQuemadas.add(c1e4);
+            for(int i=0; i<dataQuemadas.size(); i++){
+                calQuemadas.add(new Entry( (float) i,(float) dataQuemadas.get(i)));
+            }
 
+            for(int i=0; i<dataConsumidas.size(); i++){
+                calConsumidas.add(new Entry( (float) i,(float) dataConsumidas.get(i)));
+            }
 
-            // datos de la calorias consumidas
-            Entry c2e1 = new Entry(0f, 130000f);
-            calConsumidas.add(c2e1);
-            Entry c2e2 = new Entry(1f, 115000f);
-            calConsumidas.add(c2e2);
-            Entry c2e3 = new Entry(2f, 90000f);
-            calConsumidas.add(c2e3);
-            Entry c2e4 = new Entry(3f, 105000f);
-            calConsumidas.add(c2e4);
+            for(int i=0; i<arrayDiferencial.size(); i++){
+                calDiferencial.add(new Entry( (float) i,(float) arrayDiferencial.get(i)));
+            }
 
-
-
-            // datos de las calorias consumidas - quemadas
-            Entry c3e1 = new Entry(0f, 30000f);
-            calDiferencial.add(c3e1);
-            Entry c3e2 = new Entry(1f, -25000f);
-            calDiferencial.add(c3e2);
-            Entry c3e3 = new Entry(2f, -30000f);
-            calDiferencial.add(c3e3);
-            Entry c3e4 = new Entry(3f, -35000f);
-            calDiferencial.add(c3e4);
+            Log.i(_TAG, "Tamano del entry de consumidas: " + calConsumidas.size());
+            Log.i(_TAG, "Tamano del entry de quemadas: " + calQuemadas.size());
+            Log.i(_TAG, "Tamano del entry de diferencia: " + calDiferencial.size());
 
             // creo el dataset de caloria quemadas y vinculo una etiqueta
             // al conjunto de datos ademas asignarle color y otra propiedad
-            _setComp1 = new LineDataSet(calQuemadas, "Quemadas");
-            _setComp1.setColor(Color.BLUE);
-            _setComp1.setAxisDependency(AxisDependency.LEFT);
+            _dataQuemadas = new LineDataSet(calQuemadas, "Quemadas");
+            _dataQuemadas.setColor(Color.BLUE);
+            _dataQuemadas.setAxisDependency(AxisDependency.LEFT);
             // creo el dataset de caloria consumidas y vinculo una etiqueta
             // al conjunto de datos ademas asignarle color y otra propiedad
-            _setComp2 = new LineDataSet(calConsumidas, "Consumidas");
-            _setComp2.setColor(Color.YELLOW);
-            _setComp2.setAxisDependency(AxisDependency.LEFT);
+            _dataConsumidas = new LineDataSet(calConsumidas, "Consumidas");
+            _dataConsumidas.setColor(Color.YELLOW);
+            _dataConsumidas.setAxisDependency(AxisDependency.LEFT);
             // creo el dataset de caloria diferencial y vinculo una etiqueta
             // al conjunto de datos ademas asignarle color y otra propiedad
-            _setComp3 = new LineDataSet(calDiferencial, "Diferencial");
-            _setComp3.setColor(Color.GREEN);
-            _setComp3.setAxisDependency(AxisDependency.LEFT);
+            _dataDiferencia = new LineDataSet(calDiferencial, "Diferencial");
+            _dataDiferencia.setColor(Color.GREEN);
+            _dataDiferencia.setAxisDependency(AxisDependency.LEFT);
 
             // los LineDataSets anteriores(setComp1, setComp2 y setComp3)
             // los introduzco en una sola estructura de datos
             List<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
-            dataSets.add(_setComp1);
-            dataSets.add(_setComp2);
-            dataSets.add(_setComp3);
+            dataSets.add(_dataDiferencia);
             // creo el objeto LineData que es lo que se le pasa a la vista para que
             // se visualice la grafica
             LineData data = new LineData(dataSets);
@@ -188,69 +215,33 @@ public class M11GraphicFragment extends Fragment {
 
         }
 
-
-
-
-        // Inflate the layout for this fragment
-        return _view;
     }
 
-    /*
-   funcion que muestra o elimina la linea que indica las calorias
-   consumidas de la grafica. El metodo es llamado con la propiedad
-   onClick en el archivo xml
-   */
-    public void activarDesactivarConsumidas (View _view) {
-        // obtengo el checkbox que indica si desea ver o no
-        // la linea de calorias consumidas
-         _cb_m11_consumidas = (CheckBox) _view.findViewById(R.id.cb_m11_consumidas);
-        // pregunto si el check no esta seleccionado
-        if (!_cb_m11_consumidas.isChecked()) {
-            // obtengo la data del grafico
-            LineData lineData = _lineChart.getData();
-            //ILineDataSet set = lineData.getDataSetByIndex(0);
-
-            // obtengo los datos pertenecientes a la linea de consumidas
-            ILineDataSet consumidas = lineData.getDataSetByLabel("Consumidas",false);
-            // remuevo los datos
-            lineData.removeDataSet(consumidas);
-            // se actualiza tanto el grafico como la variable que contiene los datos
-            lineData.notifyDataChanged();
-            _lineChart.notifyDataSetChanged();
-            // refresco el grafico para que detecte los cambios
-            _lineChart.invalidate();
+    public void setDiferecial(ArrayList<Integer> dataQuemadas, ArrayList<Integer> dataConsumidas) {
+        arrayDiferencial.clear();
+        int q;
+        int c;
+        for (int i=0; i<dataConsumidas.size(); i++){
+            q = dataQuemadas.get(i);
+            c = dataConsumidas.get(i);
+            arrayDiferencial.add(c-q);
         }
-        // si el check esta seleccionado
-        else {
-            // obtengo los datos de la grafica
-            LineData lineData = _lineChart.getData();
-            // agrego los datos pertenecientes a calorias consumidas
-            lineData.addDataSet(_setComp2);
-            // notifico los cambios
-            lineData.notifyDataChanged();
-            _lineChart.notifyDataSetChanged();
-            // refresco el grafico para que agarre los cambios
-            _lineChart.invalidate();
-        }
+        Log.i(_TAG, "tamano del arreglo diferencial "+ arrayDiferencial.size());
     }
+
 
     /*
     funcion que muestra o elimina la linea que indica las calorias
     quemadas de la grafica. El metodo es llamado con la propiedad
     onClick en el archivo xml
     */
-    public void activarDesactivarQuemadas(View _view) {
-        // obtengo el checkbox que indica si desea ver o no
-        // la linea de calorias quemadas
-         _cb_m11_quemadas = (CheckBox) _view.findViewById(R.id.cb_m11_quemadas);
-        // pregunto si el check no esta seleccionado
-        if (!_cb_m11_quemadas.isChecked()){
+    public void activateDeactivateQuemadasConsumidas(CheckBox cb, String label, LineDataSet data){
+        if (!cb.isChecked()){
             // obtengo la data del grafico
             LineData lineData = _lineChart.getData();
-            //ILineDataSet set = lineData.getDataSetByIndex(0);
 
             // obtengo los datos pertenecientes a la linea de quemadas
-            ILineDataSet quemadas = lineData.getDataSetByLabel("Quemadas",false);
+            ILineDataSet quemadas = lineData.getDataSetByLabel(label,false);
             // remuevo los datos
             lineData.removeDataSet(quemadas);
             // se actualiza tanto el grafico como la variable que contiene los datos
@@ -264,7 +255,7 @@ public class M11GraphicFragment extends Fragment {
             // obtengo los datos de la grafica
             LineData lineData = _lineChart.getData();
             // agrego los datos pertenecientes a calorias quemadas
-            lineData.addDataSet(_setComp1);
+            lineData.addDataSet(data);
             // notifico los cambios
             lineData.notifyDataChanged();
             _lineChart.notifyDataSetChanged();
@@ -273,21 +264,45 @@ public class M11GraphicFragment extends Fragment {
         }
     }
 
-    /*
-    esta funcion ya no va.
-    igual que su correspodiente boton del xml
-    */
-    public void verGraficaAno(View _view){
-        _lineChart.clear();
-    }
 
     /*
     funcion que refrescara la grafica para poder ver los
     ultimos 12 meses de calorias consumidas, quemadas y su diferencia.
     OJO FUNCION NO COMPLETADA. SOLO BORRA LOS DATOS POR AHORA
     */
-    public void verGraficoMes(View _view){
+    public void verGraficoMes(){
         _lineChart.clear();
+        ArrayList<Integer> prueba7diasC = new ArrayList<>();
+        ArrayList<Integer> prueba7diasQ = new ArrayList<>();
+        prueba7diasC.add(1400);
+        prueba7diasC.add(1000);
+        prueba7diasC.add(900);
+        prueba7diasC.add(600);
+        prueba7diasC.add(1200);
+        prueba7diasC.add(1400);
+        prueba7diasC.add(350);
+        prueba7diasC.add(3500);
+        prueba7diasC.add(2000);
+        prueba7diasC.add(1000);
+        prueba7diasC.add(800);
+        prueba7diasC.add(650);
+
+        prueba7diasQ.add(200);
+        prueba7diasQ.add(40);
+        prueba7diasQ.add(100);
+        prueba7diasQ.add(0);
+        prueba7diasQ.add(35);
+        prueba7diasQ.add(75);
+        prueba7diasQ.add(0);
+        prueba7diasQ.add(350);
+        prueba7diasQ.add(250);
+        prueba7diasQ.add(500);
+        prueba7diasQ.add(200);
+        prueba7diasQ.add(0);
+        setDiferecial(prueba7diasQ, prueba7diasC);
+        setDataGraphic(prueba7diasQ, prueba7diasC);
+        activateDeactivateQuemadasConsumidas(_cb_m11_quemadas, "Quemadas", _dataQuemadas);
+        activateDeactivateQuemadasConsumidas(_cb_m11_consumidas, "Consumidas", _dataConsumidas);
     }
 
     /*
@@ -295,8 +310,24 @@ public class M11GraphicFragment extends Fragment {
     ultimas 4 semanas de calorias consumidas, quemadas y su diferencia.
     OJO FUNCION NO COMPLETADA. SOLO BORRA LOS DATOS POR AHORA
     */
-    public void verGraficoSemana(View _view){
+    public void verGraficoSemana(){
         _lineChart.clear();
+        ArrayList<Integer> prueba7diasC = new ArrayList<>();
+        ArrayList<Integer> prueba7diasQ = new ArrayList<>();
+        prueba7diasC.add(2000);
+        prueba7diasC.add(350);
+        prueba7diasC.add(439);
+        prueba7diasC.add(1000);
+
+        prueba7diasQ.add(1000);
+        prueba7diasQ.add(0);
+        prueba7diasQ.add(36);
+        prueba7diasQ.add(230);
+
+        setDiferecial(prueba7diasQ, prueba7diasC);
+        setDataGraphic(prueba7diasQ, prueba7diasC);
+        activateDeactivateQuemadasConsumidas(_cb_m11_quemadas, "Quemadas", _dataQuemadas);
+        activateDeactivateQuemadasConsumidas(_cb_m11_consumidas, "Consumidas", _dataConsumidas);
     }
 
     /*
@@ -305,6 +336,31 @@ public class M11GraphicFragment extends Fragment {
    OJO FUNCION NO COMPLETADA. SOLO BORRA LOS DATOS POR AHORA
    */
 
+    public void verGraficoDia(){
+        _lineChart.clear();
+        ArrayList<Integer> prueba7diasC = new ArrayList<>();
+        ArrayList<Integer> prueba7diasQ = new ArrayList<>();
+        prueba7diasC.add(1400);
+        prueba7diasC.add(1000);
+        prueba7diasC.add(900);
+        prueba7diasC.add(600);
+        prueba7diasC.add(1200);
+        prueba7diasC.add(1400);
+        prueba7diasC.add(350);
+
+        prueba7diasQ.add(200);
+        prueba7diasQ.add(40);
+        prueba7diasQ.add(100);
+        prueba7diasQ.add(0);
+        prueba7diasQ.add(35);
+        prueba7diasQ.add(75);
+        prueba7diasQ.add(0);
+        setDiferecial(prueba7diasQ, prueba7diasC);
+        setDataGraphic(prueba7diasQ, prueba7diasC);
+        activateDeactivateQuemadasConsumidas(_cb_m11_quemadas, "Quemadas", _dataQuemadas);
+        activateDeactivateQuemadasConsumidas(_cb_m11_consumidas, "Consumidas", _dataConsumidas);
+
+    }
 
 
 }

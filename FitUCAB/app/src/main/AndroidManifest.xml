@@ -105,7 +105,7 @@
                 <!-- Esto va en el modulo de karliana, el main -->
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter/>
+            </intent-filter>
         </activity>
 
     </application>
