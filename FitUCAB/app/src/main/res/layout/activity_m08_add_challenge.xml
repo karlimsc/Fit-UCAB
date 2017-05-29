@@ -42,7 +42,7 @@
             android:text="@string/addNombreReto"
             android:textColor="@android:color/background_dark" />
 
-        <EditText    
+        <EditText
             android:id="@+id/editTextNombreReto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -56,9 +56,9 @@
             android:paddingLeft="15dp"
             android:paddingTop="20dp"
             android:text="@string/addDescripcionReto"
-            android:textColor="@android:color/background_dark" /> 
+            android:textColor="@android:color/background_dark" />
 
-        <EditText    
+        <EditText
             android:id="@+id/editTextDescripcionReto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

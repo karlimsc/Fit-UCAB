@@ -91,6 +91,7 @@ public class M08InformationChallenge extends AppCompatActivity
         buttonEmpezarAhora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String respuesta = PeticionActivarRetoPredefinido();
                 Toast activarReto = Toast.makeText(getApplicationContext(), "Se ha activado el reto exitosamente", Toast.LENGTH_LONG);
                 activarReto.show();
             }
@@ -106,6 +107,11 @@ public class M08InformationChallenge extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }//cierre del void conCreate
+
+    private String PeticionActivarRetoPredefinido() {
+
+        return null;
+    }
 
 
     /**
