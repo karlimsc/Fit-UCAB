@@ -127,15 +127,16 @@ public class Query {
 
     /**
      * Metodo que actualiza el Home
-     * @param user Usuario que brinda sus atributos
+     * @param id id del usuario a buscar
      * @return Clase Home con el total de las calorias y el total de los vasos tomados
      * @throws SQLException Si hay un error en sql
      * @throws Exception
      * @see Home
      */
-    public Home getHome(User user) {
+    public Home getHome( int id ) {
         try {
             _sql = new Sql();
+            User user = getUser(id);
             ResultSet rsW = _sql.sqlConn("SELECT countg FROM m10_getwaterglass("+user.getId()+"," +
                     "'"+user.getBirthdate()+"')");
             ResultSet rsC = _sql.sqlConn("SELECT calorias FROM m11_get_calorias_dia('"+user.getUser()+"')");
