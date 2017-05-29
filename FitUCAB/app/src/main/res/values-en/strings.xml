@@ -15,16 +15,16 @@
     <string name="et_m01_correoRegistro">Email</string>
     <string name="et_m01_telefono">Telephone</string>
     <string name="et_m01_usuario">Username</string>
-    <string name="et_m01_usuarioCorreo">Username or Email</string>
+    <string name="et_m01_usuarioCorreo">Username</string>
     <string name="et_m01_estatura">Height</string>
     <string name="et_m01_peso">Weight</string>
     <string name="tv_m01_fechanac">Birthdate</string>
-    <string name="tv_m01_intro">Welcome! \n Start your physical training</string>
+    <string name="tv_m01_intro">Welcome! \n \n Start your physical training</string>
     <string name="tv_m01_acercaDeTi">About you</string>
     <string name="rb_m01_femenino">Female</string>
     <string name="rb_m01_masculino">Male</string>
-    <string name="et_m01_kg">Lbs</string>
-    <string name="et_m01_mts">Feet</string>
+    <string name="et_m01_kg">Kg</string>
+    <string name="et_m01_mts">Mts</string>
     <string name="tv_m01_olvidoClave">Forgot your password?</string>
     <string name="btn_m01_comienza">Begin</string>
     <string name="btn_m01_aceptarLogin">Login</string>
@@ -32,11 +32,28 @@
     <string name="et_m01_correoRecovery">Email</string>
     <string name="et_m01_passwordLogin">Password</string>
     <string name="et_m01_passwordRegistro">Password</string>
+    <string name="m01_errorUsernameSpecialCharEN">The username cannot contain special characters</string>
+    <string name="m01_errorUsernameTooShortEN">The username nust have 4 or more characters</string>
+    <string name="m01_errorPhoneTooShortEN">The phone number is not valid</string>
+    <string name="m01_errorPasswordTooShortEN">The password is too short</string>
+    <string name="m01_errorInvalidEmailEN">The email is not valid</string>
+    <string name="m01_errorWeightOutOfRangeEN">The weight range is between 30kg and 300kg</string>
+
+    <!--FIN Strings Modulo 1 -->
+    <!--Inicio Strings Modulo 1 -->
+    <string name="nav_title">Settings</string>
     <string name="nav_02_inicio">Home</string>
     <string name="nav_02_calorias">Calories</string>
     <string name="nav_02_entrenamiento">Training</string>
     <string name="nav_02_cuenta">Account</string>
     <string name="nav_02_cerrarsesion">Logout</string>
+    <string name="nav_02_amigos">Friends</string>
+    <string name="nav_02_actividades">Activitys</string>
+    <string name="nav_02_planificacion">Planning Activitys</string>
+    <string name="nav_02_retos">Challenges</string>
+    <string name="nav_02_gamificacion"> Gamification</string>
+    <string name="nav_02_hidratacion">Hydration</string>
+    <string name="nav_02_notificacion">Notifications</string>
     <!--FIN Strings Modulo 1 -->
 
     <!--Inicio Strings Modulo 2-->
@@ -54,6 +71,18 @@
     <string name="tv_m01_recuperacionContra">Recover Password</string>
     <!--FIN Strings Modulo 2 -->
 
+
+    <!--Inicio Strings Modulo 3-->
+    <string name="sep_03_with">Contacts with FIT-Ucab</string>
+    <string name="sep_03_without">Contacts without FIT-Ucab</string>
+    <string name="tab_03_amigos">Friends</string>
+    <string name="tab_03_libreta">Contacts</string>
+    <string name="tab_03_cercademi">Near me</string>
+    <string name="sep_03_request">Friend requests</string>
+    <string name="sep_03_friends">Friends</string>
+
+    <!--FIN Strings Modulo 3 -->
+
     <!--Inicio Strings Modulo 5-->
     <string name="tab_m05_log">Log</string>
     <string name="tab_m05_track">Track</string>
@@ -63,7 +92,24 @@
     <string name="permission_title">Location Permission Denied</string>
     <string name="cancel_permission_notice">Wow, please come back again when you need it and grant the permission</string>
     <string name="start_tracking">Start</string>
+    <string name="m01_errorInvalidEmail">The email is invalid</string>
+    <string name="m01_errorPasswordTooShort">The password is too short</string>
+    <string name="m01_errorPhoneTooShort">The phone is too short</string>
+    <string name="m01_errorUsernameSpecialChar">The only allowed special character are: _  and -</string>
+    <string name="m01_errorUsernameTooShort">The username is too short</string>
+    <string name="tv_m01_recuperacionContra">Password Recovery</string>
+    <string name="M01_DUPLICATED_KEY_MESSAGE">username or email is already registered</string>
+    <string name="M01_ERROR_CONNECTION_FALSE">Unexpected error occurred</string>
+    <string name="M01_ERROR_CONNECTION_MESSAGE">Check your connection or server Ip</string>
+    <string name="M01_LOGIN_FAIL_MESSAGE">"Wrong username or password, try again "</string>
+    <string name="M01_REGISTRY_OK_MESSAGE">Welcome to FitUCAB</string>
+    <string name="M01_REGISTRY_FAIL_MESSAGE">Log failed, try again</string>
+    <string name="M01_RESTORE_MESSAGE">The mail with the request data was sent</string>
+    <string name="m01_errorHeightOutOfRange">The height range is between 1m and 3m</string>
+    <string name="m01_errorNullFields">There are empty fields</string>
+    <string name="m01_errorWeightOutOfRange">The weight range is between 30kg and 300kg</string>
     <!--FIN Strings Modulo 5 -->
+
     <!--Inicio Strings Modulo 4 -->
     <string name="amigo">Friends</string>
     <string name="actividad">Activity</string>

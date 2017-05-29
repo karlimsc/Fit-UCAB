@@ -25,6 +25,8 @@ public interface ApiEndPointInterface {
                             @Query("weight") String weight,
                             @Query("height") String height
                             );
+    @GET("M01_ServicesUser/restorePassword")
+    Call<User> restorePassword(@Query("email") String email);
 
     @GET("M04_ServicesNotificationSettings/insertSetting")
     Call<Notification_Settings> insertSetting(@Query("preferenceFriends") boolean preferenceFriends,

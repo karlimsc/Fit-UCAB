@@ -1,6 +1,8 @@
+
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
@@ -11,18 +13,29 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.checkInsertResponse;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
+
+
 
 /**
  * A placeholder fragment containing a simple view.
@@ -44,6 +57,7 @@ public class  M01LoginFragment extends Fragment {
      * @param activity recibe la activity que llamo o instancio al fragment
      */
     public void onAttach(Activity activity) {
+
         super.onAttach(activity);
 
         try {
@@ -73,6 +87,7 @@ public class  M01LoginFragment extends Fragment {
         instantiateComponents();
         manageChangeFragmentRecovery();
         manageButtonEntrar();
+        Context context=getContext();
         return _view;
     }
     /**
@@ -116,6 +131,31 @@ public class  M01LoginFragment extends Fragment {
 
     }
 
+    private String validateComponents(String username, String password){
+
+        String response = "ok";
+        Pattern pat = Pattern.compile("[\\w-]+");
+        Matcher mat = pat.matcher(username);
+
+        if ((!username.equals("")) && (!password.equals(""))) {
+            if (mat.matches()) {
+                if (username.length() >= 4) {
+                    if (password.length() >= 6) {
+                        return response;
+                    } else {
+                        return getString(R.string.m01_errorPasswordTooShort);
+                    }
+                } else {
+                    return getString(R.string.m01_errorUsernameTooShort);
+                }
+            } else {
+                return getString(R.string.m01_errorUsernameSpecialChar);
+            }
+        }else{
+            return getString(R.string.m01_errorNullFields);
+        }
+    }
+
     /**
      * Metodo para hacer las llamadas a los SW y hacer el login
      * @param usernameLogin
@@ -123,37 +163,81 @@ public class  M01LoginFragment extends Fragment {
      */
      public void getRetrofit(String usernameLogin, String passwordLogin){
 
-         ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
-         Call<User> call= apiService.loginUser(usernameLogin,passwordLogin);
-         call.enqueue(new Callback<User>() {
+         if (validateComponents(usernameLogin, passwordLogin).equals("ok")) {
 
-             @Override
-             public void onResponse(Call<User> call, Response<User> response) {
+             ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
+             Call<User> call= apiService.loginUser(usernameLogin,passwordLogin);
 
-                 try{
+             final MaterialDialog dialog =getInstaceDialog(getContext());
 
-                     User user = response.body();
-                     onCompleted(user);
-                     int id=getIdUser(getContext());
-                     System.out.println(id);
-                     _callBack.onSwapActivity("M02HomeActivity",null);
-                     System.out.println("Hice bien la consulta");
+             call.enqueue(new Callback<User>() {
+
+                 @Override
+                 public void onResponse(Call<User> call, Response<User> response) {
+
+                     dialog.dismiss();
+
+                     try{
+
+                         User user = response.body();
+
+                         if (checkInsertResponse(user,getContext()) ){
+
+                         onCompleted(user);
+                         int id=getIdUser(getContext());
+                         System.out.println(id);
+                         _callBack.onSwapActivity("M02HomeActivity",null);
+
+                         }
+                     }
+                     catch (Exception e){
+                         e.printStackTrace();
+                         System.out.println("No es problema de bd ni internet");
+
+                     }
+
                  }
-                 catch (Exception e){
-                     e.printStackTrace();
-                     System.out.println("Hice MAL la consulta");
 
+                 @Override
+                 public void onFailure(Call<User> call, Throwable t) {
+
+                     dialog.dismiss();
+                     String error=t.getMessage();
+                     String errorResult= validateExceptionMessage(error,getContext());
+                     showToast(getContext(),errorResult);
                  }
+             });
+         }
+         else{
+             if (validateComponents(usernameLogin, passwordLogin).equals(getString
+                     (R.string.m01_errorUsernameSpecialChar))) {
 
+                 Toast.makeText(getContext(),
+                         getString(R.string.m01_errorUsernameSpecialChar),
+                         Toast.LENGTH_LONG).show();
              }
+             if (validateComponents(usernameLogin, passwordLogin).equals(getString
+                     (R.string.m01_errorUsernameTooShort))) {
 
-             @Override
-             public void onFailure(Call<User> call, Throwable t) {
-
-                 System.out.println("FALLO TODO");
-
+                 Toast.makeText(getContext(),
+                         getString(R.string.m01_errorUsernameTooShort),
+                         Toast.LENGTH_LONG).show();
              }
-         });
+             if (validateComponents(usernameLogin, passwordLogin).equals(getString
+                     (R.string.m01_errorPasswordTooShort))) {
+
+                 Toast.makeText(getContext(),
+                         getString(R.string.m01_errorPasswordTooShort),
+                         Toast.LENGTH_LONG).show();
+             }
+             if (validateComponents(usernameLogin, passwordLogin).equals(getString
+                     (R.string.m01_errorNullFields))) {
+
+                 Toast.makeText(getContext(),
+                         getString(R.string.m01_errorNullFields),
+                         Toast.LENGTH_LONG).show();
+             }
+         }
      }
 
     /**

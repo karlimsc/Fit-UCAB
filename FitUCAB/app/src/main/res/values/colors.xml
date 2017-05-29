@@ -10,6 +10,7 @@
     <color name="softgrey">#53535353</color>
     <color name="white">#FFFFFF</color>
     <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
 
     <color name="colorwhite">#FFFFFF</color>
     <color name="colorGreenBtn">#6aca25</color>
@@ -17,3 +18,4 @@
 
 
 </resources>
+
