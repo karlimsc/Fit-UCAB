@@ -1,8 +1,23 @@
 <component name="libraryTable">
   <library name="support-core-utils-25.3.0">
     <CLASSES>
+<<<<<<< HEAD
       <root url="file://$USER_HOME$/.android/build-cache/6ee473d32aae7f9c2d7dcdee82525360e86bc303/output/res" />
       <root url="jar://$USER_HOME$/.android/build-cache/6ee473d32aae7f9c2d7dcdee82525360e86bc303/output/jars/classes.jar!/" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <root url="file://$USER_HOME$/.android/build-cache/38554151addc7ecd97fe39bbc096a7d96c6633ed/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/38554151addc7ecd97fe39bbc096a7d96c6633ed/output/jars/classes.jar!/" />
+=======
+      <root url="jar://$USER_HOME$/.android/build-cache/d8af8b95c7287e55c1ba965b64f3c6fbc42a6f3a/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/d8af8b95c7287e55c1ba965b64f3c6fbc42a6f3a/output/res" />
+>>>>>>> Develop
+=======
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.3.0/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.3.0/jars/classes.jar!/" />
+>>>>>>> Develop
+>>>>>>> Develop
     </CLASSES>
     <JAVADOC />
     <SOURCES>

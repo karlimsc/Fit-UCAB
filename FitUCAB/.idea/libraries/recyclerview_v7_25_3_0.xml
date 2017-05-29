@@ -1,8 +1,23 @@
 <component name="libraryTable">
   <library name="recyclerview-v7-25.3.0">
     <CLASSES>
+<<<<<<< HEAD
       <root url="file://$USER_HOME$/.android/build-cache/4566ab557688b6e0a2db893c2410cb443adbf2f1/output/res" />
       <root url="jar://$USER_HOME$/.android/build-cache/4566ab557688b6e0a2db893c2410cb443adbf2f1/output/jars/classes.jar!/" />
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <root url="jar://$USER_HOME$/.android/build-cache/6cdc6dca559c7632b52ddadf8249e3f91f0e0c7d/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/6cdc6dca559c7632b52ddadf8249e3f91f0e0c7d/output/res" />
+=======
+      <root url="file://$USER_HOME$/.android/build-cache/26724ac3ba95326c3d038608219a434ebd1cd294/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/26724ac3ba95326c3d038608219a434ebd1cd294/output/jars/classes.jar!/" />
+>>>>>>> Develop
+=======
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.3.0/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.3.0/jars/classes.jar!/" />
+>>>>>>> Develop
+>>>>>>> Develop
     </CLASSES>
     <JAVADOC />
     <SOURCES>

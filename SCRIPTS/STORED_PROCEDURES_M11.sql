@@ -75,16 +75,19 @@ END; $$
   LANGUAGE plpgsql;
 
 -- INSERTA UN ALIMENTO PERSONALIZADO
-CREATE OR REPLACE FUNCTION m11_inserta_alim_person(
-    nombre VARCHAR,
-    peso INT,
-    calorias INT)
-  RETURNS void
-  AS $$
+CREATE OR REPLACE FUNCTION m11_inserta_alim_person(nombre character varying, peso integer, calorias integer, cena boolean, id_usuario integer)
+  RETURNS void AS
+$BODY$
+  DECLARE
+  id_alimento integer;
+  id_user    integer;
     BEGIN
-        INSERT INTO FOOD (FOODNAME, FOODWEIGHT, FOODCALORIE, FOODPERSONALIZED) VALUES (nombre, peso, calorias, true);
-    END; $$
-  LANGUAGE plpgsql;
+        INSERT INTO FOOD (FOODNAME, FOODWEIGHT, FOODCALORIE, FOODPERSONALIZED, FOODDINNER) VALUES (nombre, peso, calorias, true, cena);
+        id_alimento = (SELECT distinct FOODID FROM FOOD WHERE FOODNAME = nombre and FOODWEIGHT = peso and FOODCALORIE = calorias and
+        FOODDINNER = cena);
+        INSERT INTO DIET (DIETCALORIE, DIETDATETIME, FK_FOODID, FK_MOMENTID, FK_PERSONID) VALUES (0, '01-01-1990', id_alimento, 1, id_usuario);
+    END; $BODY$
+  LANGUAGE plpgsql
 
 -- INSERTA UN ALIMENTO A LA DIETA
 CREATE OR REPLACE FUNCTION m11_inserta_dieta(
