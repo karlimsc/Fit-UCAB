@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:2:1-127:12
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:2:1-123:12
 	package
 		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:3:5-42
 		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
@@ -8,13 +8,13 @@ ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\And
 		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\debug\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:2:1-127:12
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:2:1-123:12
 		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\debug\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
 		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:2:1-127:12
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:2:1-123:12
 		INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\debug\AndroidManifest.xml
 uses-permission#android.permission.READ_CONTACTS
 ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:4:5-71
@@ -34,7 +34,7 @@ MERGED from [com.google.android.gms:play-services-maps:10.2.1] C:\Users\charbel\
 	android:name
 		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:14:22-64
 application
-ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:16:5-124:19
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:16:5-120:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\charbel\.android\build-cache\b056c6a19af71468e714d489d848eb05d8757c5b\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.0] C:\Users\charbel\.android\build-cache\e8e2f3bfeb72e1420e054817d4efd9f2666786ad\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.0] C:\Users\charbel\.android\build-cache\49a5a30c7900583ddf1bcd827d90e94d7b7d6283\output\AndroidManifest.xml:29:5-20
@@ -99,7 +99,7 @@ ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\And
 	android:name
 		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:55:13-65
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity
-ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:60:9-69:20
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:60:9-65:20
 	android:label
 		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:62:13-67
 	android:theme
@@ -107,53 +107,53 @@ ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\And
 	android:name
 		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:61:13-64
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.MainActivity
-ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:70:9-73:59
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:66:9-69:59
 	android:label
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:72:13-56
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:68:13-56
 	android:theme
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:73:13-56
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:69:13-56
 	android:name
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:71:13-55
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:67:13-55
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05ReadExerciseActivity
-ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:75:9-78:59
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:71:9-74:59
 	android:label
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:77:13-43
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:73:13-43
+	android:theme
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:74:13-56
+	android:name
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:72:13-66
+activity#com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:75:9-86:20
+	android:label
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:77:13-37
 	android:theme
 		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:78:13-56
 	android:name
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:76:13-66
-activity#com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity
-ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:79:9-90:20
-	android:label
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:81:13-37
-	android:theme
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:82:13-56
-	android:name
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:80:13-58
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:76:13-58
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:87:13-89:94
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:83:13-85:94
 	android:value
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:89:17-91
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:85:17-91
 	android:name
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:88:17-63
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:84:17-63
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:100:9-102:55
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:96:9-98:55
 	android:value
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:102:13-52
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:98:13-52
 	android:name
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:101:13-58
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:97:13-58
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05TrackExerciseActivity
-ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:106:9-118:20
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:102:9-114:20
 	android:label
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:108:13-70
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:104:13-70
 	android:name
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:107:13-67
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:103:13-67
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M11Food
-ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:119:9-122:20
+ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:115:9-118:20
 	android:label
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:121:13-45
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:117:13-45
 	android:name
-		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:120:13-50
+		ADDED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml:116:13-50
 uses-sdk
 INJECTED from C:\Users\charbel\Desktop\DEsarrollo\Fit-UCAB\FitUCAB\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\charbel\.android\build-cache\b056c6a19af71468e714d489d848eb05d8757c5b\output\AndroidManifest.xml:5:5-7:41

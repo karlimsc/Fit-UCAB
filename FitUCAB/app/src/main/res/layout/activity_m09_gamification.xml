@@ -1,0 +1,86 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="#FFFFFF"
+    android:name="Fit-UCAB"
+    android:weightSum="1"
+    android:id="@+id/main">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/_profileImage"
+        android:layout_width="96dp"
+        android:layout_height="66dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:src="@drawable/user_profile_image"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp" />
+
+    <TextView
+        android:id="@+id/_nameLabelTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/_profileImage"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:text="Name: "
+        android:textColor="#353535"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/_levelLabelTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/_nameLabelTV"
+        android:layout_alignStart="@+id/_nameLabelTV"
+        android:layout_below="@+id/_nameLabelTV"
+        android:layout_gravity="center"
+        android:text=""
+        android:textColor="#353535"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/_pointsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/_levelLabelTV"
+        android:layout_alignStart="@+id/_levelLabelTV"
+        android:layout_below="@+id/_levelLabelTV"
+        android:layout_gravity="center"
+        android:text=""
+        android:textColor="#353535"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/_lineXML"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layout_above="@+id/_listXML"
+        android:layout_below="@+id/_pointsTV"
+        android:background="#000000"
+        android:paddingTop="5dip" />
+
+    <ListView
+        android:id="@+id/_listXML"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:layout_width="fill_parent"
+        android:layout_height="322dp"
+        android:divider="#000000"
+        android:dividerHeight="2.0dp"
+        android:layout_below="@+id/_lineXML"
+        android:layout_weight="4.97" />
+
+    <LinearLayout
+        android:id="@+id/_gamificationXML"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+    </LinearLayout>
+
+
+</LinearLayout>

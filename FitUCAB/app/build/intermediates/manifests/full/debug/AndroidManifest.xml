@@ -77,11 +77,6 @@
             android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity"
             android:label="@string/title_activity_m10_water_glass"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.fitucab.ds1617b.fitucab.UI.Activities.MainActivity"
