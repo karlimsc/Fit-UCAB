@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:typeface="sans"
+    android:id="@+id/it_m05_iditem"
+    >
+
+    <TextView
+        android:id="@+id/tv_m05_sportname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="93dp"
+        android:layout_y="9dp"
+        android:fontFamily="sans-serif"
+        android:text="Sport"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:typeface="sans"
+        android:layout_marginTop="19dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/iv_m05_imagereference"
+        android:layout_toEndOf="@+id/iv_m05_imagereference"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp" />
+
+</RelativeLayout>
