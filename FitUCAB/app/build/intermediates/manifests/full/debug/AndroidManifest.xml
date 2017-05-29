@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="15"
+        android:minSdkVersion="17"
         android:targetSdkVersion="25" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <meta-data
         android:name="android.support.VERSION"
@@ -40,16 +41,27 @@
             android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M01LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
-<<<<<<< HEAD
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-=======
->>>>>>> M10_Gestion_Hidratacion
         </activity>
         <!-- FIN ACTIVITIES MODULO 1 -->
+
+
+        <!-- ACTIVITIES MODULO 3 NO MODIFICAR EL CONTENIDO INTERNO -->
+
+        <activity
+            android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M03FriendsActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
+
+            <!--
+            <intent-filter>
+                 <uses-permission android:name="android.permission.READ_CONTACTS" />
+                 <uses-permission android:name="android.permission.INTERNET" />
+                    <action android:name="android.intent.action.MAIN" />
+                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <!-- FIN ACTIVITIES MODULO 3 -->
 
         <activity
             android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M05AddExerciseActivity"
@@ -64,16 +76,6 @@
             <!-- </intent-filter> -->
         </activity>
         <activity
-<<<<<<< HEAD
-            android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M05AddExerciseActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity"
-            android:label="@string/title_activity_m10_water_glass"
-            android:theme="@style/AppTheme.NoActionBar" >
-=======
             android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity"
             android:label="@string/title_activity_m10_water_glass"
             android:theme="@style/AppTheme.NoActionBar" >
@@ -82,7 +84,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
->>>>>>> M10_Gestion_Hidratacion
         </activity>
         <activity
             android:name="com.fitucab.ds1617b.fitucab.UI.Activities.MainActivity"
@@ -140,9 +141,30 @@
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
         </activity>
+        <!--
+              <activity
+              android:name=".UI.Activities.M11Food"
+              android:label="@string/app_name">
+              <intent-filter>
+        -->
+        <!-- Esto va en el modulo de karliana, el main -->
+        <!--
+       <action android:name="android.intent.action.MAIN" />
+           <category android:name="android.intent.category.LAUNCHER" />
+       </intent-filter>
+        -->
+        <!--
+       <category android:name="android.intent.category.LAUNCHER" />
+       </intent-filter>
+        -->
+        <!-- </activity> -->
         <activity
             android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M11Food"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity"
+            android:label="Notificaciones" >
         </activity>
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"

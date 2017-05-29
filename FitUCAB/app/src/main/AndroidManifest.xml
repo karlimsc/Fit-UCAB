@@ -52,7 +52,7 @@
             android:name=".UI.Activities.M05AddExerciseActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-<<<<<<< HEAD
+
             <!--<intent-filter>-->
             <!--<action android:name="android.intent.action.MAIN" />-->
 
@@ -61,9 +61,7 @@
         </activity>
 
 
-=======
-        </activity>
->>>>>>> Develop
+
 
         <activity
             android:name=".UI.Activities.M10WaterGlassActivity"

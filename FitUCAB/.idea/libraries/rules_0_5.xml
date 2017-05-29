@@ -1,22 +1,12 @@
 <component name="libraryTable">
   <library name="rules-0.5">
     <CLASSES>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <root url="file://$USER_HOME$/.android/build-cache/4ee1b9c1a64f2d24ece000c61486c8b92396023c/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/4ee1b9c1a64f2d24ece000c61486c8b92396023c/output/jars/classes.jar!/" />
-=======
-      <root url="jar://$USER_HOME$/.android/build-cache/68f05acab38d3e32f30ca00ce2dec5bfef3d6b72/output/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.android/build-cache/68f05acab38d3e32f30ca00ce2dec5bfef3d6b72/output/res" />
->>>>>>> Develop
-=======
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/res" />
       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/jars/classes.jar!/" />
->>>>>>> Develop
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/test/rules/0.5/rules-0.5-sources.jar!/" />
+      <root url="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/test/rules/0.5/rules-0.5-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

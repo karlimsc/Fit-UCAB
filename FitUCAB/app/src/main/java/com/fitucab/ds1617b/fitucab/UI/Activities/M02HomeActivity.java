@@ -195,8 +195,8 @@ public class M02HomeActivity extends AppCompatActivity
 
         }
         else if (id == R.id.nav_m02_hydration) {
-//            Intent myintent = new Intent(M02HomeActivity.this, M10WaterGlassActivity.class);
-//            startActivity(myintent);
+            Intent myintent = new Intent(M02HomeActivity.this, M10WaterGlassActivity.class);
+            startActivity(myintent);
 
         }
         else if (id == R.id.nav_m02_planing_activitys) {
