@@ -128,11 +128,12 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
-                        mSport = gson.fromJson(response,Sport.class);
+                        mSport = gson.fromJson(response.toString(),Sport.class);
                         mSport.setName(sportName);
 
+
                         Log.i("Nombre", response.toString());
-                        Log.i("ID", String.valueOf(mSport.getId()));
+                        Log.i("MET", String.valueOf(mSport.get_met()));
 
                     }
                 },
