@@ -239,4 +239,29 @@ public class M05ModifyFragment extends Fragment {
         VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
     }
 
+
+    public void makeUpdate()
+    {
+        String consult =M05UrlConsul._urlDeleteAct+_idActivity;
+
+        final StringRequest stringRequest = new StringRequest
+                (Request.Method.GET, consult,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+
+                                Log.e("RESPONSE ", response);
+                            }
+                        }, new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO Auto-generated method stub
+                        Log.i("no trajo nada","");
+
+                    }
+                });
+        VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
+    }
+
 }
