@@ -1,3 +1,4 @@
+
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 
@@ -14,7 +15,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
@@ -22,13 +23,21 @@ import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.TimeZone;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.checkInsertResponse;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 
 /**
@@ -62,6 +71,7 @@ public class M01SignUpFragment extends Fragment {
      */
     @Override
     public void onAttach(Activity activity) {
+
         super.onAttach(activity);
 
         try {
@@ -101,6 +111,7 @@ public class M01SignUpFragment extends Fragment {
      * el boton Registar.
      */
     private void manageBtnRegistrar() {
+
         _btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -144,6 +155,7 @@ public class M01SignUpFragment extends Fragment {
      * Metodo que prepara los componentes de la vista
      */
     private void setupViewValues() {
+
         _btnRegistrar = (Button) _view.findViewById(R.id.btn_m01_entrar);
         _etBirthdate = (EditText) _view.findViewById(R.id.et_m01_fechanac);
 
@@ -159,7 +171,15 @@ public class M01SignUpFragment extends Fragment {
         DatePickerDialog datePicker = new DatePickerDialog(getContext(), R.style.AppTheme,
         datePickerListener,cal.get(Calendar.YEAR), cal.get(Calendar.DAY_OF_MONTH),
         cal.get(Calendar.MONTH));
-
+        cal.add(Calendar.YEAR,0);
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        int year = Calendar.getInstance().get(Calendar.YEAR);
+        Calendar calmax = Calendar.getInstance();
+        calmax.set(year-15, 11, 31);
+        Calendar calmin = Calendar.getInstance();
+        calmin.set(year-80, 0, 1);
+        datePicker.getDatePicker().setMaxDate(calmax.getTimeInMillis());
+        datePicker.getDatePicker().setMinDate(calmin.getTimeInMillis());
         datePicker.setCancelable(false);
         datePicker.setTitle("Select the date");
         datePicker.show();
@@ -167,16 +187,71 @@ public class M01SignUpFragment extends Fragment {
 
     private void instantiateComponents(){
 
-        _etUsernameRegistry= (EditText) _view.findViewById(R.id.et_m01_usuario);
-        _etPasswordRegistry= (EditText) _view.findViewById(R.id.et_m01_passwordRegistro);
-        _etEmailRegistry= (EditText) _view.findViewById(R.id.et_m01_correoRegistro);
-        _etPhone = (EditText) _view.findViewById(R.id.et_m01_telefono);
-        _rbSexFem = (RadioButton) _view.findViewById(R.id.rb_m01_femenino);
-        _rbSexMale= (RadioButton) _view.findViewById(R.id.rb_m01_masculino);
-        _etHeight= (EditText) _view.findViewById(R.id.et_m01_estatura);
-        _etWeight= (EditText) _view.findViewById(R.id.et_m01_peso);
+        _etUsernameRegistry= (EditText) _view.findViewById(R.id.et_m01_userRegistry);
+        _etPasswordRegistry= (EditText) _view.findViewById(R.id.et_m01_passwordRegistry);
+        _etEmailRegistry= (EditText) _view.findViewById(R.id.et_m01_emailRegistro);
+        _etPhone = (EditText) _view.findViewById(R.id.et_m01_phone);
+        _rbSexFem = (RadioButton) _view.findViewById(R.id.rb_m01_female);
+        _rbSexMale= (RadioButton) _view.findViewById(R.id.rb_m01_male);
+        _etHeight= (EditText) _view.findViewById(R.id.et_m01_height);
+        _etWeight= (EditText) _view.findViewById(R.id.et_m01_weight);
 
     }
+
+    private String validateComponents(String username, String email, String phone,
+                                       String password, String birthdate, String weight, String height ){
+        String response = "ok";
+        double _weight = 0;
+        double _height = 0;
+
+        try{
+
+            _weight = Double.parseDouble(weight);
+            _height = Double.parseDouble(height);
+
+        }catch (Exception ex){
+
+        }
+        Pattern pat = Pattern.compile("[\\w-]+");
+        Matcher mat = pat.matcher(username);
+        if ((!username.equals("")) && (!password.equals("")) && (!email.equals("")) && (!phone.equals("")) && (!birthdate.equals("")) && (!weight.equals("")) && (!height.equals(""))) {
+            if (mat.matches()) {
+                if (username.length() >= 4) {
+                    if (password.length() >= 6) {
+                        pat = Pattern.compile("^[\\w-]+(\\.[\\w-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+                        mat = pat.matcher(email);
+                        if (mat.find()) {
+                            if ((phone.length() >= 11)) {
+                                if ((_weight >= 30) && (_weight <= 300)) {
+                                    if ((_height >= 1) && (_height <= 3)) {
+                                        return response;
+                                    } else {
+                                        return getString(R.string.m01_errorHeightOutOfRange);
+                                    }
+                                } else {
+                                    return getString(R.string.m01_errorWeightOutOfRange);
+                                }
+                            } else {
+                                return getString(R.string.m01_errorPhoneTooShort);
+                            }
+                        } else {
+                            return getString(R.string.m01_errorInvalidEmail);
+                        }
+                    } else {
+                        return getString(R.string.m01_errorPasswordTooShort);
+                    }
+                } else {
+                    return getString(R.string.m01_errorUsernameTooShort);
+                }
+            } else {
+                return getString(R.string.m01_errorUsernameSpecialChar);
+            }
+        }else{
+           return getString(R.string.m01_errorNullFields);
+        }
+
+    }
+
 
     /**
      *Le asigno al editText lo seleccionado en el calendario
@@ -199,37 +274,102 @@ public class M01SignUpFragment extends Fragment {
     public void getRetrofit(String username, String password,String email,String sex,
                             String phone, String birthdate, String weight, String height){
 
-        ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
-        Call<User> call= apiService.insertRegistry(username,password,email,sex,phone,birthdate,weight,height);
-        call.enqueue(new Callback<User>() {
+        if (validateComponents(username,email,phone,password, birthdate, weight, height).equals("ok")) {
 
-            @Override
-            public void onResponse(Call<User> call, Response<User> response) {
+            ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
+            Call<User> call = apiService.insertRegistry(username, password, email, sex, phone, birthdate, weight, height);
+            call.enqueue(new Callback<User>() {
 
-                try{
+                @Override
+                public void onResponse(Call<User> call, Response<User> response) {
 
-                   User user = response.body();
-                   onCompleted(user);
-                   int id=getIdUser(getContext());
-                   System.out.println(id);
-                   System.out.println("Hice bien  el insert");
-                   _callBack.onSwapActivity("M02HomeActivity",null);
+                    try {
+
+                        User user = response.body();
+                        if (checkInsertResponse(user,getContext()) ){
+                            onCompleted(user);
+                            int id = getIdUser(getContext());
+                            System.out.println(id);
+                            _callBack.onSwapActivity("M02HomeActivity", null);
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        System.out.println("No es problema de bd ni internet");
+
+                    }
+
                 }
-                catch (Exception e){
-                   e.printStackTrace();
-                   System.out.println("Hice MAL el insert");
 
+                @Override
+                public void onFailure(Call<User> call, Throwable t) {
+
+                    String error=t.getMessage();
+                    String errorResult= validateExceptionMessage(error);
+                    showToast(getContext(),errorResult);
+                    //Toast.makeText(getContext(), errorResult, Toast.LENGTH_SHORT).show();
                 }
 
+            });
+        }
+        else {
+            if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+                    (R.string.m01_errorUsernameSpecialChar))) {
+
+                Toast.makeText(getContext(),
+                        getString(R.string.m01_errorUsernameSpecialChar),
+                        Toast.LENGTH_LONG).show();
             }
+            if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+                    (R.string.m01_errorUsernameTooShort))) {
 
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
-
-                System.out.println("FALLO TODO en el insert");
-
+                Toast.makeText(getContext(),
+                        getString(R.string.m01_errorUsernameTooShort),
+                        Toast.LENGTH_LONG).show();
             }
-        });
+            if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+                    (R.string.m01_errorInvalidEmail))) {
+
+                Toast.makeText(getContext(),
+                        getString(R.string.m01_errorInvalidEmail),
+                        Toast.LENGTH_LONG).show();
+            }
+            if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+                    (R.string.m01_errorPhoneTooShort))) {
+
+                Toast.makeText(getContext(),
+                        getString(R.string.m01_errorPhoneTooShort),
+                        Toast.LENGTH_LONG).show();
+            }
+            if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+                    (R.string.m01_errorPasswordTooShort))) {
+
+                Toast.makeText(getContext(),
+                        getString(R.string.m01_errorPasswordTooShort),
+                        Toast.LENGTH_LONG).show();
+            }
+            if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+                    (R.string.m01_errorNullFields))) {
+
+                Toast.makeText(getContext(),
+                        getString(R.string.m01_errorNullFields),
+                        Toast.LENGTH_LONG).show();
+            }
+            if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+                    (R.string.m01_errorWeightOutOfRange))) {
+
+                Toast.makeText(getContext(),
+                        getString(R.string.m01_errorWeightOutOfRange),
+                        Toast.LENGTH_LONG).show();
+            }
+            if (validateComponents(username,email,phone,password, birthdate, weight, height).equals(getString
+                    (R.string.m01_errorHeightOutOfRange))) {
+
+                Toast.makeText(getContext(),
+                        getString(R.string.m01_errorHeightOutOfRange),
+                        Toast.LENGTH_LONG).show();
+            }
+        }
     }
 
     public void onCompleted(User user){

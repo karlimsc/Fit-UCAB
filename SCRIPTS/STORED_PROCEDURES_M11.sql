@@ -187,7 +187,7 @@ DECLARE
 BEGIN
    FOR var_r IN(SELECT  FOODNAME, FOODWEIGHT, FOODCALORIE, FOODID
         FROM PERSON inner join  DIET on personid = fk_personid inner join FOOD on fk_foodid = foodid
-        WHERE personusername = usuario OR FOODPERSONALIZED == FALSE)
+        WHERE personusername = usuario OR FOODPERSONALIZED = FALSE)
    LOOP
     nombre_comida := var_r.FOODNAME;
     peso_comida := var_r.FOODWEIGHT;

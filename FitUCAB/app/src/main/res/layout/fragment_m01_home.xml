@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="40dp"
+        android:layout_margin="@dimen/layout_margin"
         android:orientation="vertical"
         android:weightSum="16">
 
@@ -31,7 +31,7 @@
             android:layout_width="258dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="180dp"
+            android:layout_marginTop="@dimen/layout_marginTop"
             android:fontFamily="sans-serif"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/tv_m01_intro"
@@ -76,5 +76,6 @@
             android:typeface="sans" />
 
     </LinearLayout>
+
 
 </LinearLayout>

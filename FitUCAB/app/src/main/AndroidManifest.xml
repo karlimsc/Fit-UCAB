@@ -13,12 +13,11 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logofitucab"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:debuggable="true">
+        android:theme="@style/AppTheme">
 
         <!-- ACTIVITIES MODULO 1 NO MODIFICAR EL CONTENIDO INTERNO -->
         <!-- Indica que esta actividad es la que va a iniciar primero -->
@@ -29,27 +28,48 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-        <!--<category android:name="android.intent.category.LAUNCHER" />-->
-    </intent-filter>
-</activity>
-<!-- FIN ACTIVITIES MODULO 1 -->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- FIN ACTIVITIES MODULO 1 -->
 
         <activity
             android:name=".UI.Activities.M05AddExerciseActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            </intent-filter>
+            <!--&lt;!&ndash;<category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;-->
+            <!--</intent-filter>-->
         </activity>
 
+        <activity
+            android:name=".UI.Activities.M05AddExerciseActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+
+        <activity
+            android:name=".UI.Activities.M10WaterGlassActivity"
+            android:label="@string/title_activity_m10_water_glass"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".UI.Activities.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UI.Activities.M09GamificationActivity"
+            android:label="Fit UCAB"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".UI.Activities.M09LevelGraphActivity"
+            android:label="Fit UCAB"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
         <activity
             android:name=".UI.Activities.M05ReadExerciseActivity"
             android:label="Track Exercise"
@@ -58,17 +78,13 @@
             android:name=".UI.Activities.M02HomeActivity"
             android:label="Fit UCAB"
             android:theme="@style/AppTheme.NoActionBar">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
-
-             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-             </intent-filter>
-
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.fitucab.ds1617b.fitucab.UI.Activities.M01LoginActivity" />
         </activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -77,7 +93,6 @@
              You need a different API key for each encryption key, including the release key that is used to
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
-
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -92,22 +107,29 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
 
                 <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
              </intent-filter>
          </activity>
-         <activity
+        <!-- <activity
              android:name=".UI.Activities.M11Food"
              android:label="@string/app_name">
              <intent-filter>
-                 <!-- Esto va en el modulo de karliana, el main -->
+                 <!-- Esto va en el modulo de karliana, el main
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter> -->
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity
+            android:name=".UI.Activities.M11Food"
+            android:label="@string/app_name">
         </activity>
 
     </application>
+
 
 </manifest>
