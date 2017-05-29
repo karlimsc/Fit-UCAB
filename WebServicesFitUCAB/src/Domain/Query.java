@@ -1,7 +1,10 @@
 package Domain;
 
+import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 /**
  * Clase perteneciente a PERFIL que manejara los querys
@@ -68,57 +71,86 @@ public class Query {
     public boolean updateUser( User user ){
         try {
             _sql = new Sql();
-            _sql.sql("select m02_modificarperfilr("+ user.getId() + ", "+ user.getPassword() +", " +
-                    ""+ user.getEmail() +", "+ user.getSex() +", "+ user.getPhone() +", " +
-                    ""+ user.getBirthdate() +", "+ user.getWeight() +", "+ user.getHeight() +")");
-            User same = getUser(user.getId());
-            System.out.println("Comparador: " + compareUser(user, same));
-            return compareUser( user, same );
+
+            if (!user.getPassword().isEmpty()){
+                _sql.sqlConn("select m02_modperfilpass("+ user.getId() +", '"+ user.getPassword() +"')");
+            }
+            if (!user.getEmail().isEmpty()){
+                _sql.sqlConn("select m02_modperfilmail("+ user.getId() +", '"+ user.getEmail() +"')");
+            }
+            if (!user.getSex().isEmpty()){
+                _sql.sqlConn("select m02_modperfilsex("+ user.getId() +", '"+ user.getSex() +"')");
+            }
+            if (!user.getPhone().isEmpty()){
+                _sql.sqlConn("select m02_modperfilphone("+ user.getId() +", '"+ user.getPhone() +"')");
+            }
+            _sql.closeConnection(_sql.getConn());
+            return true;
+
+            /*ResultSet rs = _sql.sql("SELECT m02_personexiste("+user.getId()+")");
+            ResultSetMetaData meta = rs.getMetaData();
+            String name = meta.getColumnLabel(1);
+            while (rs.next()) {
+                if (rs.getInt(name) == 1) {
+
+                    if (!user.getPassword().isEmpty()){
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getPassword() +"')");
+                    }
+                    if (!user.getEmail().isEmpty()){
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getEmail() +"')");
+                    }
+                    if (!user.getSex().isEmpty()){
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getSex() +"')");
+                    }
+                    if (!user.getPhone().isEmpty()){
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getPhone() +"')");
+                    }
+                }
+                else {
+                    return false;
+                }
+            }
+            return true;*/
         } catch (SQLException e) {
             e.printStackTrace();
+            System.err.println("SQLExceptionUpdate: " + e.getMessage());
+            System.exit(1);
             return false;
         }
         catch (Exception e){
             e.printStackTrace();
+            System.err.println("ExceptionUpdate: " + e.getMessage());
+            System.exit(1);
             return false;
         }
     }
 
-    /**
-     * Metodo para comparar dos usuarios
-     * @param user Usuario que se quiere comparar
-     * @param same Usuario que debe ser igual
-     * @return boolean true si los usuarios son iguales y false si son diferentes
-     * @see User
-     */
-    public boolean compareUser(User user, User same){
-        if ( user.getId() == same.getId() && /*user.getPassword() == same.getPassword() &&*/
-                user.getEmail() == same.getEmail() && user.getSex() == same.getSex() &&
-                user.getPhone() == same.getPhone() && user.getBirthdate() == same.getBirthdate() &&
-                user.getWeight() == same.getWeight() && user.getHeight() == same.getHeight() ){
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    //TODO: Realizar consulta
     /**
      * Metodo que actualiza el Home
+     * @param id id del usuario a buscar
      * @return Clase Home con el total de las calorias y el total de los vasos tomados
      * @throws SQLException Si hay un error en sql
      * @throws Exception
      * @see Home
      */
-    public Home getHome() {
+    public Home getHome( int id ) {
         try {
             _sql = new Sql();
-            ResultSet result = _sql.sql("select 2 totalAgua, 3 totalCalorias;");
-            while (result.next()){
-                _home.setTotalAgua( result.getInt("totalAgua") );
-                _home.setTotalCaloria( result.getFloat("totalCalorias") );
+            User user = getUser(id);
+            ResultSet rsW = _sql.sqlConn("SELECT countg FROM m10_getwaterglass("+user.getId()+"," +
+                    "'"+user.getBirthdate()+"')");
+            ResultSet rsC = _sql.sqlConn("SELECT calorias FROM m11_get_calorias_dia('"+user.getUser()+"')");
+            while (rsW.next()){
+                _home.setTotalAgua( rsW.getInt("countg") );
+                System.out.println("Agua: "+ _home.getTotalAgua());
             }
+            while (rsC.next()){
+                _home.setTotalCaloria( rsC.getInt("calorias") );
+                System.out.println("Calorias: "+ _home.getTotalCaloria());
+            }
+            _sql.closeConnection(_sql.getConn());
+            System.out.println("Calorias: "+ _home.getTotalCaloria());
+            System.out.println("Agua: "+ _home.getTotalAgua());
             return new Home( _home.getTotalCaloria(), _home.getTotalAgua() );
         } catch (SQLException e) {
             e.printStackTrace();

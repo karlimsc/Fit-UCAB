@@ -15,6 +15,8 @@ import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01LoginFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01RecoveryFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01SignUpFragment;
 
+import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
+
 public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwap {
 
     private FragmentManager FM = getSupportFragmentManager();
@@ -32,9 +34,15 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Seleccionamos el fragmento que queremos mostrar.
-        onSwap("M01HomeFragment",null);
+        int id= getIdUser(this);
+        if(id==0){
+            //Seleccionamos el fragmento que queremos mostrar.
+            onSwap("M01HomeFragment",null);
+        }
+        else{
 
+            onSwapActivity("M02HomeActivity",null);
+        }
 
     }
 
@@ -99,6 +107,8 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
             case "M02HomeActivity":
                 Intent newActivity = new Intent(this, M02HomeActivity.class);
                 startActivity(newActivity);
+                //Esto es para que una vez cambie de actividad muera el login
+                this.finish();
                 break;
 
         }

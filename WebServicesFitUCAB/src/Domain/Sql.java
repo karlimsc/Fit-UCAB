@@ -8,14 +8,12 @@ import java.sql.*;
 public class Sql {
 
     private static Connection conInstance;
-    private Connection conn =bdConnect();
-
-    private Connection _conn;
+    private Connection _conn =bdConnect();
     private Statement _st;
     private ResultSet _rs;
-    private static String BD_USER = "postgres";
-    private static String BD_PASSWORD = "root";
-    private static String BD_URL = "jdbc:postgresql://localhost/FitUcabDB";
+    private static String BD_USER = "fitucab";
+    private static String BD_PASSWORD = "fitucab";
+    private static String BD_URL = "jdbc:postgresql://localhost/fitucabdb";
     private static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
 
     /**
@@ -52,7 +50,6 @@ public class Sql {
         {
             Class.forName(BD_CLASS_FOR_NAME);
             _conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
-
         }
         catch ( ClassNotFoundException e )
         {
@@ -87,8 +84,10 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
+            System.err.println("NullPointerExceptionSql: " + e.getMessage());
         }
         catch ( Exception e ){
+            System.err.println("ExceptionSql: " + e.getMessage() + " , Query: " + query);
             e.printStackTrace();
         }
         finally {
@@ -97,4 +96,44 @@ public class Sql {
         }
 
     }
+
+    /**
+     * Metodo que se conecta a la base de datos sin cerrar la conexion
+     * @param query Consulta a la base de datos
+     * @return Tabla que representa la consulta del query
+     * @throws SQLException
+     */
+    public ResultSet sqlConn ( String query ) throws SQLException {
+
+        try {
+            _st = _conn.createStatement();
+            _rs  = _st.executeQuery( query );
+        }
+        catch ( NullPointerException e ){
+            e.printStackTrace();
+            System.err.println("NullPointerExceptionSql: " + e.getMessage());
+        }
+        catch ( Exception e ){
+            System.err.println("ExceptionSql: " + e.getMessage() + " , Query: " + query);
+            e.printStackTrace();
+        }
+        finally {
+            return _rs;
+        }
+
+    }
+
+    /**
+     * Metodo para cerrar la conexion
+     * @param conn conexion activa
+     * @throws SQLException Error al cerrar la conexion
+     */
+    public void closeConnection(Connection conn) throws SQLException {
+        conn.close();
+    }
+
+    public Connection getConn() {
+        return _conn;
+    }
+
 }

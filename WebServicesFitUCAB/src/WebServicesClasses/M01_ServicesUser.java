@@ -4,7 +4,6 @@ import Domain.Sql;
 import Domain.User;
 import Domain.Registry;
 import com.google.gson.Gson;
-import org.postgresql.util.PSQLState;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
