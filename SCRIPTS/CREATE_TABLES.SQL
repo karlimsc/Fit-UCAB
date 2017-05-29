@@ -158,4 +158,30 @@ constraint PK_FRIEN_TRAINID primary key ( FRIEN_TRAINID)
 );
 
 --- TERMINA MODULO 6  ---
+	
+--- MODULO 8 ---
+	CREATE TABLE CHALLENGE (
+
+CHALLENGEID serial primary key,
+CHALLENGENAME varchar(30) not null,
+CHALLENGEDESCRIPTION varchar(500) not null,
+CHALLENGEKILOMETERS integer,
+CHALLENGESCORE integer,
+CHALLENGEDAYS integer,
+CHALLENGETYPE varchar(4) not null,
+CHALLENGEPREDEFINED varchar(1) not null
+);
+
+CREATE TABLE DETAIL (
+DETAILID serial primary key,
+DETAILDATESTART timestamp not null,
+DETAILDATEEND timestamp not null,
+DETAILACTIVE boolean not null,
+FK_USERID integer,
+FK_CHALLENGEID integer
+);
+	
+alter table DETAIL add constraint FK_CHALLENGE foreign key (FK_CHALLENGEID) references CHALLENGE (CHALLENGEID);
+alter table DETAIL add constraint FK_REGISTRYID foreign key (FK_USERID) references REGISTRY (FK_PERSONID);	
+---
 
