@@ -195,6 +195,9 @@ public class M05PrincipalActivityFragment extends Fragment implements
             Intent newActivity = new Intent(getContext(), M05AddExerciseActivity.class);
             startActivity(newActivity);
         }
+        else if (id == R.id.itm_m05_refresh){
+            makeRequest();
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -282,6 +285,8 @@ public class M05PrincipalActivityFragment extends Fragment implements
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // TODO Auto-generated method stub
+                        Toast.makeText(getContext(), R.string._tst_m05_messagereload,
+                                Toast.LENGTH_SHORT).show();
 
                     }
                 });
@@ -303,7 +308,7 @@ public class M05PrincipalActivityFragment extends Fragment implements
         _listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-          if (position != 0 && pos==0  ) {
+          if (position == 0 && pos!=0  ) {
               M05PrincipalActivity.set_activit(_activits.get(position));
               Log.e("EN EL STATIC", String.valueOf(M05PrincipalActivity.get_activit().get_calor()));
               _callBack.onSwap("M05ModifyFragment", null);

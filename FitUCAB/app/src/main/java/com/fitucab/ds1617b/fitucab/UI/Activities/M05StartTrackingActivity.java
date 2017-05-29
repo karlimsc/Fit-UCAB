@@ -13,13 +13,19 @@ import android.widget.Chronometer;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.FormatUtility;
 import com.fitucab.ds1617b.fitucab.Helper.GeoLocalization.GeoLocalization;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.Model.Global;
@@ -33,6 +39,9 @@ import com.google.android.gms.location.LocationListener;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.lang.reflect.Array;
 import java.text.DateFormat;
@@ -165,7 +174,8 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         public boolean onLongClick(View v) {
                 String crar = createActivity();
                 Log.i("RESCREAR",crar);
-                insertActivityRequest(activity);
+                //insertActivityRequest(activity);
+            otroInsert(activity);
             return false;
         }
     };
@@ -403,12 +413,12 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
         //  M05UrlConsul m05IP = new M05UrlConsul();
 
-        final String URL = baseIp.getIp() + "insertActivity";
+        final String URL = baseIp.getIp() + "M05_ServicesSport/insertActivity";
 
         Gson gson = new Gson();
 
 
-        String json = gson.toJson(activity);
+        String jsonActivity = gson.toJson(activity);
 
         Log.i("START", String.valueOf(activity.get_starsite()));
         Log.i("CALOR", String.valueOf(activity.get_calor()));
@@ -450,9 +460,100 @@ public class M05StartTrackingActivity extends GeoLocalization implements
                 return params;
             }
 
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String,String> params = new HashMap<String, String>();
+                params.put("Content-Type","application/json");
+                return params;
+            }
+
         };
 
         VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
+
+    }
+
+    /*private void makeRequestInsert(Training entrenamiento , String nivelEntrenamiento, String tipoEntrenamiento,
+                                   int tiempo, int tipo) {
+
+        IpStringConnection ip = new IpStringConnection();
+        String url = ip.getIp() + "M05_S/createTrainingPredefinedTime";
+        url = url + "?nombreEntrenamiento=" + entrenamiento.getTrainingName() + "&nivelEntrenamiento=" + nivelEntrenamiento;
+        url = url + "&tipoEntrenamiento=" + tipoEntrenamiento + "&calorias=" + entrenamiento.getTrainingCalories();
+        url = url + "&periodicidad=" + entrenamiento.getTrainingPeriod() + "&tiempo=" + tiempo + "&deporte=" + tipo;
+        url = url + "&userId=" + ManagePreferences.getIdUser( getContext() );
+        RequestQueue queue = Volley.newRequestQueue( getContext() );
+        //Se hace la peticion y lo devuelve en String Request
+        StringRequest stringRequest = new StringRequest( Request.Method.GET , url ,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response){
+
+                        boolean confirmacion = true;
+                        confirmacion = Boolean.parseBoolean(response);
+
+                        //Confimo si pudo insertar en la bdd
+                        if ( confirmacion == true){
+
+                            Toast.makeText( getContext() , R.string.M06_entrenamiento_creado_exito, Toast.LENGTH_SHORT).show();
+                            _callBack.onSwap( "M06HomeTrainingFragment" , null );
+
+                        }else{
+
+                            Toast.makeText( getContext() , R.string.M06_entrenamiento_creado_fallo, Toast.LENGTH_SHORT).show();
+
+                        }
+
+                    }
+
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText( getContext() , "Error connection" , Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        // Add the request to the RequestQueue.
+        queue.add( stringRequest );
+    }*/
+
+    public void otroInsert(Activit activity){
+        final String URL = baseIp.getIp() + "M05_ServicesActivity/insertActivity";
+// Post params to be sent to the server
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put ("horainicial",activity.get_startime());
+        params.put ("horafinal",activity.get_endtime());
+        params.put("fecha", activity.get_date());
+        params.put("km",String.valueOf(activity.get_km()));
+        params.put("calorias", String.valueOf(activity.get_calor()));
+        params.put("lugarinicial", activity.get_starsite());
+        params.put("lugarfinal", activity.get_endsite());
+        params.put("idReg", String.valueOf(user.get_idUser()));
+        params.put("idSpo", String.valueOf(sport.getId()));
+
+        JsonObjectRequest request_json = new JsonObjectRequest(Request.Method.POST,URL, new JSONObject(params),
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            Log.i("INSTÖ","PUES Sí");
+                            throw new JSONException("I am Exception Alpha!");
+                            //Process os success response
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.e("Error: ", error.getMessage());
+            }
+        });
+
+// add the request object to the queue to be executed
+        VolleySingleton.getInstance(this).addToRequestQueue(request_json);
 
     }
 
