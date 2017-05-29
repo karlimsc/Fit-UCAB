@@ -35,6 +35,7 @@ import java.util.List;
 public class M05PrincipalActivity extends AppCompatActivity implements OnFragmentSwap {
 
     private FragmentManager FM = getSupportFragmentManager();
+
     public static Activit _activit  ;
 
     public static Activit get_activit() {
@@ -48,17 +49,13 @@ public class M05PrincipalActivity extends AppCompatActivity implements OnFragmen
     public M05PrincipalActivity() {
 
     }
-
-
-
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m05_princ);
         //Declaracion del Toolbar. si alguien necesita acceder al toolbar en un Fragment
         //debe declarar este atributo como privado y hacerle un Getter.
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_m05);
         setSupportActionBar(toolbar);
 
         //Seleccionamos el fragmento que queremos mostrar.
@@ -76,13 +73,13 @@ public class M05PrincipalActivity extends AppCompatActivity implements OnFragmen
                 case "M05PrincipalActivityFragment":
                     fragmentToSwap = new M05PrincipalActivityFragment();
                     fragmentToSwap.setArguments(bundle);
-                     fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
+                     fragmentTransaction.replace(R.id.flContent_m05, fragmentToSwap);
                     break;
 
                 case "M05ModifyFragment":
                     fragmentToSwap = new M05ModifyFragment();
                     fragmentToSwap.setArguments(bundle);
-                    fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
+                    fragmentTransaction.replace(R.id.flContent_m05, fragmentToSwap);
                     break;
 
             }

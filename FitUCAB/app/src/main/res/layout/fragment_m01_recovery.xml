@@ -7,7 +7,7 @@
     android:weightSum="10">
 
 
-    <ImageView
+    <!--ImageView
         android:id="@+id/imageView"
         android:layout_width="100dp"
         android:layout_height="103dp"
@@ -69,8 +69,8 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
-            android:textStyle="bold" />
+            android:textSize="@dimen/text_button_standard"
+            android:typeface="sans" />-->
 
-    </LinearLayout>
 
 </LinearLayout>
