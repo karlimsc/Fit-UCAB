@@ -2,9 +2,6 @@ package Domain;
 
 import java.sql.*;
 
-/**
- * Clase que maneja la conexion con la base de datos
- */
 public class Sql {
 
     private static Connection conInstance;
@@ -26,13 +23,8 @@ public class Sql {
         }
         return conInstance;
     }
-    /**
-    * Constructor que inicializa la conexion con la BD
-     */
 
-    public Sql() {
-        _conn = bdConnect();
-    }
+
 
     /**
      * Metodo que realiza la conexion con la base de datos
@@ -45,25 +37,21 @@ public class Sql {
      */
     private static Connection bdConnect()
     {
-        Connection _conn = null;
+        Connection conn = null;
         try
         {
             Class.forName(BD_CLASS_FOR_NAME);
-            _conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
+            conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
         }
-        catch ( ClassNotFoundException e )
+        catch (ClassNotFoundException e)
         {
             e.printStackTrace();
         }
-        catch ( SQLException e ){
+        catch (SQLException e)
+        {
             e.printStackTrace();
         }
-        catch ( Exception e ){
-            e.printStackTrace();
-        }
-        finally {
-            return _conn;
-        }
+        return conn;
     }
 
 
@@ -76,23 +64,47 @@ public class Sql {
      * @throws Exception
      * @see ResultSet
      */
-    public ResultSet sql ( String query ) throws SQLException {
+    public ResultSet sql (String query) throws SQLException , NullPointerException {
 
         try {
             _st = _conn.createStatement();
             _rs  = _st.executeQuery( query );
+
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
             System.err.println("NullPointerExceptionSql: " + e.getMessage());
         }
-        catch ( Exception e ){
-            System.err.println("ExceptionSql: " + e.getMessage() + " , Query: " + query);
-            e.printStackTrace();
-        }
+
         finally {
             _conn.close();
             return _rs;
+        }
+    }
+
+    /**
+     * Metodo que realiza un query a la base de datos sin devolucion
+     * Realizar preferiblemente antes de bdConnect
+     * @param query
+     * @return boolean
+     * @throws SQLException Error en SQL
+     * @throws Exception
+     * @see boolean
+     */
+    public boolean sqlNoReturn ( String query ) throws SQLException {
+        boolean salida = false;
+        try {
+            _st = _conn.createStatement();
+            salida  = _st.execute( query );
+
+        }
+        catch ( NullPointerException e ){
+            e.printStackTrace();
+        }
+        finally {
+
+            _conn.close();
+            return salida;
         }
 
     }
@@ -136,6 +148,7 @@ public class Sql {
         return _conn;
     }
 
+
     /**
      * metodo estatico para cerrar
      * la conexion a la base de datos
@@ -152,3 +165,4 @@ public class Sql {
     }
 
 }
+
