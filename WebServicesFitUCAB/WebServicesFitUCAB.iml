@@ -24,7 +24,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/Test/M01_Test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/Test/M09_Test" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Test/M02_Test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/out" />
     </content>
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2" level="application_server_libraries" />

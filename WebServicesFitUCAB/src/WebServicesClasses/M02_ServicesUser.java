@@ -7,7 +7,6 @@ import Domain.User;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.sql.Date;
 
 /**
  * Clase que realiza las consultas
@@ -46,10 +45,7 @@ public class M02_ServicesUser {
      * Metodo para actualizar un usuario.
      * Actualizar usuario con esa id.
      * @param id Id del usuario que se quiere modificar
-     * @param email
-     * @param sex
-     * @param phone
-     * @param birthdate
+     * @param user Datos del usuario modificado
      * @return Clase User en formato json
      * @throws WebApplicationException
      * @see User
@@ -57,17 +53,8 @@ public class M02_ServicesUser {
     @PUT
     @Path("/{userId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateUser( @PathParam("userId") int id,
-                                @QueryParam("email") String email,
-                                @QueryParam("sex") String sex,
-                                @QueryParam("phone") String phone,
-                                @QueryParam("birthdate") String birthdate ){
-        User user = new User();
+    public Response updateUser( @PathParam("userId") int id, @QueryParam("user") User user ){
         user.setId(id);
-        user.setEmail(email);
-        user.setSex(sex);
-        user.setPhone(phone);
-        user.setBirthdate(Date.valueOf(birthdate));
         _service = new Query();
         if ( _service.updateUser( user ) == false ){
             _message = new StatusMessage( 0, "Usuario no actualizado" );

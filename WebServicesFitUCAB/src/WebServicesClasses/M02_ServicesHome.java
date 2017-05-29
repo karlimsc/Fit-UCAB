@@ -29,10 +29,9 @@ public class M02_ServicesHome {
      * @see Home
      */
     @GET
-    @Path("/{userId}")
-    public Response getHome(@PathParam("userId") int id) {
+    public Response getHome(User user) {
         _service = new Query();
-        Home home = _service.getHome(id);
+        Home home = _service.getHome(user);
         if ( home == null ){
             _message = new StatusMessage( 0, "Home no actualizado" );
             _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
