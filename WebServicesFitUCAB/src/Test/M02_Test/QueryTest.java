@@ -68,7 +68,7 @@ public class QueryTest {
     public void testGetUserFail() {
         User user = new User();
         user = query.getUser(501);
-        assertTrue(user.getId() > 0);
+        assertTrue(user.getId() == 0);
     }
 
     @Test
