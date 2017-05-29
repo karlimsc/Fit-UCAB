@@ -27,4 +27,75 @@
         app:menu="@menu/activity_main_drawer_m08" />
 
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="150dp">
+
+        <TextView
+            android:id="@+id/addNombreReto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="30dp"
+            android:text="@string/addNombreReto"
+            android:textColor="@android:color/background_dark" />
+
+        <EditText    
+            android:id="@+id/editTextNombreReto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"/>
+
+        <TextView
+            android:id="@+id/addDescripcionReto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="20dp"
+            android:text="@string/addDescripcionReto"
+            android:textColor="@android:color/background_dark" /> 
+
+        <EditText    
+            android:id="@+id/editTextDescripcionReto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="15dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="30dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonFechaInicio"
+                android:text="@string/buttonFechaInicio"/>
+            <EditText
+                android:layout_width="144dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextButtonFechaInicio"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonFechaFin"
+                android:text="@string/buttonFechaFin"/>
+            <EditText
+                android:layout_width="158dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/editTextButtonFechaFin"/>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
 </android.support.v4.widget.DrawerLayout>

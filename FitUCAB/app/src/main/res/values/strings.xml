@@ -87,6 +87,12 @@
     <string name="textViewDiasReto">Días:</string>
     <string name="buttonEmpezarAhora">Empezar Ahora</string>
 
+    --add challenge--
+    <string name="addNombreReto">Ingrese Nombre del Reto</string>
+    <string name="addDescripcionReto">Ingrese la Descripcion del Reto</string>
+    <string name="buttonFechaInicio">Fecha Inicio</string>
+    <string name="buttonFechaFin">Fecha Fin</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Home</string>
