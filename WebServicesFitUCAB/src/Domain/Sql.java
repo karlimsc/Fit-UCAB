@@ -7,13 +7,31 @@ import java.sql.*;
  */
 public class Sql {
 
+    private static Connection conInstance;
+    private Connection conn =bdConnect();
+
     private Connection _conn;
     private Statement _st;
     private ResultSet _rs;
+    private static String BD_USER = "fitucab";
+    private static String BD_PASSWORD = "fitucab";
+    private static String BD_URL = "jdbc:postgresql://localhost/fitucabdb";
+    private static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
 
     /**
-     * Constructor que inicializa la conexion con la BD
+     * Metodo para devolver una unica instancia de la conexion
+     * @return instancia de la conexion
      */
+    public static Connection getConInstance(){
+        if (conInstance == null){
+            conInstance = bdConnect();
+        }
+        return conInstance;
+    }
+    /**
+    * Constructor que inicializa la conexion con la BD
+     */
+
     public Sql() {
         _conn = bdConnect();
     }
@@ -27,13 +45,14 @@ public class Sql {
      * @see Connection
      * @see Statement
      */
-    public Connection bdConnect(){
-
+    private static Connection bdConnect()
+    {
+        Connection _conn = null;
         try
         {
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/FitUcabDB";
-            _conn = DriverManager.getConnection(url,"fitucab", "fitucab");
+            Class.forName(BD_CLASS_FOR_NAME);
+            _conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
+
         }
         catch ( ClassNotFoundException e )
         {
@@ -48,8 +67,8 @@ public class Sql {
         finally {
             return _conn;
         }
-
     }
+
 
     /**
      * Metodo que realiza un query a la base de datos con devolucion
@@ -78,5 +97,4 @@ public class Sql {
         }
 
     }
-
 }

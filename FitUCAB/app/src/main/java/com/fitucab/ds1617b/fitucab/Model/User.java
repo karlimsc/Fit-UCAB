@@ -1,5 +1,6 @@
 package com.fitucab.ds1617b.fitucab.Model;
 
+import com.fitucab.ds1617b.fitucab.Model.Registry;
 import com.google.gson.annotations.SerializedName;
 
 /**
@@ -26,6 +27,11 @@ public class User {
     private float _height;
     @SerializedName("_weight")
     private float _weight;
+    @SerializedName("_status")
+    private String _status;
+    @SerializedName("_registry")
+    private Registry _registry;
+
     private int _point;
 
     /**
@@ -101,10 +107,31 @@ public class User {
 
     }
 
+    public User(int idUser, String username, String password,String email, String phone,
+                char sex, String birthdate, Registry registry){
+        _idUser=idUser;
+        _username=username;
+        _password=password;
+        _email=email;
+        _phone=phone;
+        _sex=sex;
+        _birthdate=birthdate;
+       _registry=registry;
+
+    }
+
+    public String get_status() {
+        return _status;
+    }
+
+    public void set_status(String _status) {
+        this._status = _status;
+    }
 
     public int get_idUser() {
         return _idUser;
     }
+
 
     public void set_idUser(int _idUser) {
         this._idUser = _idUser;
@@ -180,6 +207,14 @@ public class User {
 
     public void set_point(int _point) {
         this._point = _point;
+    }
+
+    public Registry get_registry() {
+        return _registry;
+    }
+
+    public void set_registry(Registry _registry) {
+        this._registry = _registry;
     }
 
 }

@@ -7,7 +7,7 @@
     <string name="et_m01_correoRegistro">Email</string>
     <string name="et_m01_telefono">Telephone</string>
     <string name="et_m01_usuario">Username</string>
-    <string name="et_m01_usuarioCorreo">Username or Email</string>
+    <string name="et_m01_usuarioCorreo">Username</string>
     <string name="et_m01_estatura">Height</string>
     <string name="et_m01_peso">Weight</string>
     <string name="tv_m01_fechanac">Birthdate</string>
@@ -24,7 +24,14 @@
     <string name="et_m01_correoRecovery">Email</string>
     <string name="et_m01_passwordLogin">Password</string>
     <string name="et_m01_passwordRegistro">Password</string>
-
+    <string name="m01_errorUsernameSpecialCharEN">The username cannot contain special characters</string>
+    <string name="m01_errorUsernameTooShortEN">The username nust have 4 or more characters</string>
+    <string name="m01_errorPhoneTooShortEN">The phone number is not valid</string>
+    <string name="m01_errorPasswordTooShortEN">The password is too short</string>
+    <string name="m01_errorInvalidEmailEN">The email is not valid</string>
+    <string name="m01_errorNullFieldsEN">There are empty fields</string>
+    <string name="m01_errorWeightOutOfRangeEN">The weight range is between 30kg and 300kg</string>
+    <string name="m01_errorHeightOutOfRangeEN">The height range is between 1m and 3m</string>
 
     <!--FIN Strings Modulo 1 -->
     <!--Inicio Strings Modulo 1 -->
@@ -54,6 +61,18 @@
     <string name="et_m02_water">Water</string>
     <string name="et_m02_Steps">Steps</string>
         <!--FIN Strings Modulo 2 -->
+
+
+    <!--Inicio Strings Modulo 3-->
+    <string name="sep_03_with">Contacts with FIT-Ucab</string>
+    <string name="sep_03_without">Contacts without FIT-Ucab</string>
+    <string name="tab_03_amigos">Friends</string>
+    <string name="tab_03_libreta">Contacts</string>
+    <string name="tab_03_cercademi">Near me</string>
+    <string name="sep_03_request">Friend requests</string>
+    <string name="sep_03_friends">Friends</string>
+
+    <!--FIN Strings Modulo 3 -->
 
     <!--Inicio Strings Modulo 5-->
     <string name="tab_m05_log">Log</string>

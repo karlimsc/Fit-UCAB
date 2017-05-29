@@ -70,6 +70,7 @@
                     android:ems="10"
                     android:fontFamily="sans-serif"
                     android:hint="@string/et_m01_passwordRegistro"
+                    android:maxLength="8"
                     android:inputType="textPassword"
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
@@ -94,7 +95,7 @@
                     android:fontFamily="sans-serif"
                     android:hint="@string/et_m01_correoRegistro"
                     android:inputType="textPersonName"
-                    android:maxLength="28"
+                    android:maxLength="50"
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
                     android:textSize="18sp"
@@ -119,7 +120,7 @@
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
                     android:textSize="18sp"
-                    android:maxLength="11"
+                    android:maxLength="20"
                     android:typeface="sans" />
             </android.support.design.widget.TextInputLayout>
 
@@ -172,7 +173,7 @@
                         android:fontFamily="sans-serif"
                         android:hint="@string/et_m01_peso"
                         android:inputType="numberDecimal"
-                        android:maxLength="3"
+                        android:maxLength="6"
                         android:textColor="@color/softgrey"
                         android:textColorLink="@color/colorBtnAceptar"
                         android:textSize="18sp"
@@ -218,7 +219,7 @@
                         android:fontFamily="sans-serif"
                         android:hint="@string/et_m01_estatura"
                         android:inputType="numberDecimal"
-                        android:maxLength="3"
+                        android:maxLength="4"
                         android:textColor="@color/softgrey"
                         android:textColorLink="@color/colorBtnAceptar"
                         android:textSize="18sp"
