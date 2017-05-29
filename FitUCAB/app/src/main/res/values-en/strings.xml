@@ -11,7 +11,7 @@
     <string name="et_m01_estatura">Height</string>
     <string name="et_m01_peso">Weight</string>
     <string name="tv_m01_fechanac">Birthdate</string>
-    <string name="tv_m01_intro">Welcome! \n Start your physical training</string>
+    <string name="tv_m01_intro">Welcome! \n \n Start your physical training</string>
     <string name="tv_m01_acercaDeTi">About you</string>
     <string name="rb_m01_femenino">Female</string>
     <string name="rb_m01_masculino">Male</string>
