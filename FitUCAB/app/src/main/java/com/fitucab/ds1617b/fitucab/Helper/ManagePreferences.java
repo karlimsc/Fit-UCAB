@@ -20,8 +20,7 @@ public class ManagePreferences {
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         int storedPreference = preferences.getInt("idUser", 0);
-        return 2;
-        //return storedPreference;
+        return storedPreference;
 
     }
 }
