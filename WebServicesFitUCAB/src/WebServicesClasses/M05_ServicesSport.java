@@ -62,13 +62,13 @@ public class M05_ServicesSport {
     /**
      * 
 	 * Extrae el nombre de los deportes en funcion del id
-     * @param idSpo
+     * @param nameSpo
      * @return
      */
 
-    public String getSport(@QueryParam("idSpo") Integer id){
-
-
+    public String getSport(@QueryParam("nameSpo") String nombre){
+ 
+        idSpo=obtenerIdSport(nombre)
         Sport resultado = null;
 
         //Declarando la sentencia de la funcion de obtenerDatosDeporte que devuelve todos los datos de los deportes
@@ -83,7 +83,7 @@ public class M05_ServicesSport {
 
                 Integer numero = rs.getInt(   "iddeporte");
                 String  nombre = rs.getString("nombredeporte");
-		float   mets   = rs.getFloat("metdeporte");
+		        float   mets   = rs.getFloat("metdeporte");
                  resultado=new Sport(numero,nombre,mets);
 
 
