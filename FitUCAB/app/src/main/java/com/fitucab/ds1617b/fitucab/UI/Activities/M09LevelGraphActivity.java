@@ -38,13 +38,14 @@ public class M09LevelGraphActivity extends AppCompatActivity {
 
     //Declaracion de atributos de la clase
     public IpStringConnection _ip = new IpStringConnection();
-    private String _graphsURL = _ip.getIp()+"dbgrafica/obtener";
+    private String _graphsURL = _ip.getIp()+"M09_ServicesGamification/obtenerlogrados";
     PieChart _pieChart;
     private int[] _yValues = {0, 0};
     private String[] _xValues = {"Not Completed", "Completed"};
     private int _accomplished;
     private int _notAccomplished;
     private String _error;
+    private String _paramVolley = "?id=";
 
     /**
      * VOID onCreate que genera la actividad M09LevelGraphActivity
@@ -127,6 +128,12 @@ public class M09LevelGraphActivity extends AppCompatActivity {
      * @RETURN: Null
      */
     public void accomplishmentsRequest() {
+        //SharedPreferences _preferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        //int _userID = _preferences.getInt("idUser", _user.get_idUser());
+        //cableado mientras SharedPreferences no funciona
+        int _userID = 1;
+        //Colocamos la direccion correctamente para realizar la peticion con parametros
+        _graphsURL= _graphsURL+_paramVolley+""+_userID;
         StringRequest _stringRequest = new StringRequest(_graphsURL,
                 new Response.Listener<String>() {
                     @Override

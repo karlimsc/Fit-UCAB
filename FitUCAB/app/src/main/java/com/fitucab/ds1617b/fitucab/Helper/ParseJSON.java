@@ -48,12 +48,15 @@ public class ParseJSON {
         try {
             _jsonObject = new JSONObject(json);
             users = _jsonObject.getJSONArray(JSON_ARRAY);
-            _ids = new String[_jsonObject.length()];
-            _names = new String[_jsonObject.length()];
-            _score = new String[_jsonObject.length()];
-            _descriptions = new String[_jsonObject.length()];
+            _ids = new String[users.length()];
+            _names = new String[users.length()];
+            _score = new String[users.length()];
+            _descriptions = new String[users.length()];
 
-            for (int i = 0; i < _jsonObject.length(); i++) {
+            for (int i = 0; i <= users.length(); i++) {
+                int prueba;
+                prueba=_jsonObject.length();
+
                 JSONObject jo = users.getJSONObject(i);
                 _ids[i] = jo.getString(KEY_ID);
                 _names[i] = jo.getString(KEY_NOMBRE);

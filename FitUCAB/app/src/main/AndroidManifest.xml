@@ -63,7 +63,8 @@
         <activity
             android:name=".UI.Activities.M09GamificationActivity"
             android:label="Fit UCAB"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".UI.Activities.M09LevelGraphActivity"
             android:label="Fit UCAB"

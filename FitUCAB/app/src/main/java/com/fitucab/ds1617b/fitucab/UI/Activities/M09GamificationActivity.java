@@ -4,7 +4,9 @@ package com.fitucab.ds1617b.fitucab.UI.Activities;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -19,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.Helper.ParseJSON;
 import com.fitucab.ds1617b.fitucab.Helper.CustomList;
@@ -40,10 +43,12 @@ public class M09GamificationActivity extends AppCompatActivity implements View.O
     private static int _accomplished;
     private static int _notAccomplished;
     public IpStringConnection _ip = new IpStringConnection();
-    private String _acomplishmentsURL = _ip.getIp()+"db/obtener";
-    private String _levelURL = _ip.getIp()+"dbnivel/obtener";
+    private String _acomplishmentsURL = _ip.getIp()+"M09_ServicesGamification/obtenerretos";
+    private String _levelURL = _ip.getIp()+"M09_ServicesGamification/obtenernivel";
     private ListView _listAccomplishments;
     private String _error;
+    private ManagePreferences _user = new ManagePreferences();
+    private String _paramVolley = "?id=";
 
 
     /**
@@ -84,6 +89,13 @@ public class M09GamificationActivity extends AppCompatActivity implements View.O
      * @param _context en el cual se llenara los datos obtenidos
      */
     public void scoreRequest(final Context _context) {
+
+        //SharedPreferences _preferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        //int _userID = _preferences.getInt("idUser", _user.get_idUser());
+        //cableado mientras SharedPreferences no funciona
+        int _userID = 1;
+        //Colocamos la direccion correctamente para realizar la peticion con parametros
+        _acomplishmentsURL= _acomplishmentsURL+_paramVolley+""+_userID;
         StringRequest _stringRequest = new StringRequest(_acomplishmentsURL,
                 new Response.Listener<String>() {
                     @Override
@@ -149,6 +161,12 @@ public class M09GamificationActivity extends AppCompatActivity implements View.O
      */
     public void levelRequest(final Context _context) {
 
+        //SharedPreferences _preferences = PreferenceManager.getDefaultSharedPreferences(_context);
+        //int _userID = _preferences.getInt("idUser", _user.get_idUser());
+        //cableado mientras SharedPreferences no funciona
+        int _userID = 1;
+        //Colocamos la direccion correctamente para realizar la peticion con parametros
+        _levelURL= _levelURL+_paramVolley+""+_userID;
         StringRequest _stringRequest = new StringRequest(_levelURL,
                 new Response.Listener<String>() {
                     @Override
