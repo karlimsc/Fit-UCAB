@@ -1,0 +1,118 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11DietFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:text="Calorias cosumidas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tv_m11_caloriasConsumidas"/>
+
+        <TextView
+            android:text="Cantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/tv_m11_cantidadCalorias" />
+
+        <TextView
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"/>
+
+
+
+        <AutoCompleteTextView
+            android:hint="Escriba un alimento"
+            android:inputType="text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:id="@+id/tv_m11_nombreAlimento" />
+
+        <EditText
+            android:hint = "Peso"
+            android:inputType="number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/tv_m11_peso" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_input_add"
+            android:layout_marginTop="5dp"
+            android:id="@+id/btn_m11_agregar"
+            android:background="#ffffff"/>
+
+    </GridLayout>
+
+    <Spinner
+        android:id="@+id/spinner_comida"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="135dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+
+    </Spinner>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="15dp"
+        android:contextClickable="true"
+        android:id="@+id/tl_m11_listaDieta">
+
+
+    </TableLayout>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_check_black"
+        android:id="@+id/btn_m11_aceptar"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="100dp"
+        android:background="@color/colorWhiteSmoke"
+        android:tint="@android:color/holo_green_light" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_close_black"
+        android:id="@+id/btn_m11_rechazar"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="260dp"
+        android:background="@color/colorWhiteSmoke"
+        android:tint="@android:color/holo_red_light" />
+
+
+
+
+</FrameLayout>
+
