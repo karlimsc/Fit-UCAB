@@ -29,16 +29,25 @@ public class M02_ServicesHome {
      * @see Home
      */
     @GET
-    public Response getHome(User user) {
-        _service = new Query();
-        Home home = _service.getHome(user);
-        if ( home == null ){
-            _message = new StatusMessage( 0, "Home no actualizado" );
-            _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
-            throw new WebApplicationException( _response );
+    @Path("/{userId}")
+    public Response getHome(@PathParam("userId") int id) {
+        try {
+            _service = new Query();
+            Home home = _service.getHome(id);
+            if ( home == null ){
+                _message = new StatusMessage( 0, "Home no actualizado" );
+                _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
+                throw new WebApplicationException( _response );
+            }
+            _response = Response.status( Response.Status.ACCEPTED ).entity( home ).build();
+            return _response;
+        } catch (WebApplicationException e) {
+            e.printStackTrace();
+            StatusMessage _message = new StatusMessage( 0, "Home no actualizado" );
+            Response _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
+            System.err.println("Error getHome: " + e.getMessage());
+            return _response;
         }
-        _response = Response.status( Response.Status.ACCEPTED ).entity( home ).build();
-        return _response;
     }
 
 }

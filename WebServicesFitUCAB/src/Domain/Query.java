@@ -48,13 +48,16 @@ public class Query {
             return _user;
         } catch (NullPointerException e) {
             e.printStackTrace();
+            System.err.println("NullPointerGetUserException : " + e.getMessage() + "id: " + id);
             return null;
         } catch (SQLException e) {
             e.printStackTrace();
+            System.err.println("SQLGetUserException :" + e.getMessage() + "id: " + id);
             return null;
         }
         catch (Exception e) {
             e.printStackTrace();
+            System.err.println("GetUserException : " + e.getMessage() + "id: " + id);
             return null;
         }
     }
@@ -71,71 +74,55 @@ public class Query {
     public boolean updateUser( User user ){
         try {
             _sql = new Sql();
-
-            if (!user.getPassword().isEmpty()){
-                _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getPassword() +"')");
-            }
-            if (!user.getEmail().isEmpty()){
-                _sql.sqlConn("select m02_modperfilmail("+ user.getId() +", '"+ user.getEmail() +"')");
-            }
-            if (!user.getSex().isEmpty()){
-                _sql.sqlConn("select m02_modperfilsex("+ user.getId() +", '"+ user.getSex() +"')");
-            }
-            if (!user.getPhone().isEmpty()){
-                _sql.sqlConn("select m02_modperfilphone("+ user.getId() +", '"+ user.getPhone() +"')");
-            }
-            _sql.closeConnection(_sql.getConn());
-            return true;
-
-            /*ResultSet rs = _sql.sql("SELECT m02_personexiste("+user.getId()+")");
-            ResultSetMetaData meta = rs.getMetaData();
-            String name = meta.getColumnLabel(1);
-            while (rs.next()) {
-                if (rs.getInt(name) == 1) {
-
-                    if (!user.getPassword().isEmpty()){
-                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getPassword() +"')");
-                    }
-                    if (!user.getEmail().isEmpty()){
-                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getEmail() +"')");
-                    }
-                    if (!user.getSex().isEmpty()){
-                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getSex() +"')");
-                    }
-                    if (!user.getPhone().isEmpty()){
-                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getPhone() +"')");
-                    }
+            ResultSet rs = _sql.sqlConn("select m02_personexiste("+ user.getId() +")");
+            rs.next();
+            if (rs.getInt("m02_personexiste") == 1){
+                if (!user.getPassword().isEmpty()){
+                    _sql.sqlConn("select m02_modperfilpass("+ user.getId() +", '"+ user.getPassword() +"')");
                 }
-                else {
-                    return false;
+                if (!user.getEmail().isEmpty()){
+                    _sql.sqlConn("select m02_modperfilmail("+ user.getId() +", '"+ user.getEmail() +"')");
                 }
+                if (!user.getSex().isEmpty()){
+                    _sql.sqlConn("select m02_modperfilsex("+ user.getId() +", '"+ user.getSex() +"')");
+                }
+                if (!user.getPhone().isEmpty()){
+                    _sql.sqlConn("select m02_modperfilphone("+ user.getId() +", '"+ user.getPhone() +"')");
+                }
+                _sql.closeConnection(_sql.getConn());
+                return true;
             }
-            return true;*/
+            else {
+                return false;
+            }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.err.println("SQLExceptionUpdate: " + e.getMessage());
-            System.exit(1);
+            System.err.println("SQLExceptionUpdate: " + e.getMessage() + " , User: " + user.getId());
+            return false;
+        } catch (NullPointerException e){
+            e.printStackTrace();
+            System.err.println("NullPointerExceptionUpdate: " + e.getMessage() + " , User: " + user.getPassword());
             return false;
         }
         catch (Exception e){
             e.printStackTrace();
-            System.err.println("ExceptionUpdate: " + e.getMessage());
-            System.exit(1);
+            System.err.println("ExceptionUpdate: " + e.getMessage() + " , User: " + user.getId());
             return false;
         }
     }
 
     /**
      * Metodo que actualiza el Home
-     * @param user Usuario que brinda sus atributos
+     * @param id Usuario que brinda sus atributos
      * @return Clase Home con el total de las calorias y el total de los vasos tomados
      * @throws SQLException Si hay un error en sql
      * @throws Exception
      * @see Home
      */
-    public Home getHome(User user) {
+    public Home getHome(int id) {
         try {
             _sql = new Sql();
+            User user = new User();
             ResultSet rsW = _sql.sqlConn("SELECT countg FROM m10_getwaterglass("+user.getId()+"," +
                     "'"+user.getBirthdate()+"')");
             ResultSet rsC = _sql.sqlConn("SELECT calorias FROM m11_get_calorias_dia('"+user.getUser()+"')");

@@ -52,11 +52,11 @@ public class M02HomeActivity extends AppCompatActivity
     private FragmentManager FM = getSupportFragmentManager();
 
 
-
     /**
      * Void onCreate que genera la vista M02HomeActivity
      * @param  savedInstanceState el estado de la instancia
      */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -129,7 +129,6 @@ public class M02HomeActivity extends AppCompatActivity
 
             e.printStackTrace();
         }
-
     }
     /**
      * VOID setJsonView que setea todos los componentes de la vista con los valores
@@ -234,10 +233,7 @@ public class M02HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_m02_notifications) {
             //            Intent myintent = new Intent(M02HomeActivity.this, M04NotificationActivity.class);
 //            startActivity(myintent);
-
-
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

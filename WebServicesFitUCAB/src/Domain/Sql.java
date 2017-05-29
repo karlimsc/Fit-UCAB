@@ -73,7 +73,8 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
-            System.err.println("NullPointerExceptionSql: " + e.getMessage());
+            System.err.println("NullPointerExceptionSql: " + e.getMessage() + " , Query: " + query);
+            return null;
         }
 
         finally {
@@ -100,6 +101,7 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
+            return false;
         }
         finally {
 
