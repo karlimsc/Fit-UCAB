@@ -188,6 +188,7 @@
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
     <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode">
             
             <enum name="normal" value="0"/>
@@ -609,7 +610,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
-    <dimen name="button_width">200dp</dimen>
     <dimen name="design_appbar_elevation">4dp</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168dp</dimen>
     <dimen name="design_bottom_navigation_active_text_size">14sp</dimen>
@@ -658,12 +658,11 @@
     <item format="float" name="hint_alpha_material_light" type="dimen">0.38</item>
     <item format="float" name="hint_pressed_alpha_material_dark" type="dimen">0.70</item>
     <item format="float" name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
-    <dimen name="image_height">103dp</dimen>
-    <dimen name="image_width">100dp</dimen>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
-    <dimen name="margin_top">20dp</dimen>
+    <dimen name="layout_margin">40dp</dimen>
+    <dimen name="layout_marginTop">180dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
@@ -681,10 +680,7 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
-    <dimen name="text_button_standard">18sp</dimen>
-    <dimen name="text_forgotpassword">14sp</dimen>
     <dimen name="text_margin">16dp</dimen>
-    <dimen name="title_standard">20sp</dimen>
     <item name="ic_menu_camera" type="drawable">@android:drawable/ic_menu_camera</item>
     <item name="ic_menu_gallery" type="drawable">@android:drawable/ic_menu_gallery</item>
     <item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>
@@ -816,11 +812,19 @@
     <string name="m01_errorUsernameSpecialChar">El nombre de usuario no debe tener caracteres especiales</string>
     <string name="m01_errorUsernameTooShort">El nombre de usuario debe poseer al menos 4 caracteres</string>
     <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
+    <string name="nav_02_actividades">Actividades</string>
+    <string name="nav_02_amigos">Amigos</string>
     <string name="nav_02_calorias">Calorias</string>
     <string name="nav_02_cerrarsesion">Cerrar Sesión</string>
     <string name="nav_02_cuenta">Cuenta</string>
     <string name="nav_02_entrenamiento">Entrenamiento</string>
+    <string name="nav_02_gamificacion"> Gamificación</string>
+    <string name="nav_02_hidratacion">Hidratación</string>
     <string name="nav_02_inicio">Inicio</string>
+    <string name="nav_02_notificacion">Notificaciones</string>
+    <string name="nav_02_planificacion">Planificacion de Actividades</string>
+    <string name="nav_02_retos">Retos</string>
+    <string name="nav_title">Ocnfiguración</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
@@ -831,7 +835,14 @@
     <string name="rb_m01_femenino">Femenino</string>
     <string name="rb_m01_masculino">Masculino</string>
     <string name="search_menu_title">Search</string>
+    <string name="sep_03_friends">Amigos</string>
+    <string name="sep_03_request">Solicitudes de amistad</string>
+    <string name="sep_03_with">Contactos con FIT-Ucab</string>
+    <string name="sep_03_without">Contactos sin FIT-Ucab</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="tab_03_amigos">Amigos</string>
+    <string name="tab_03_cercademi">Cerca De Mi</string>
+    <string name="tab_03_libreta">Libreta</string>
     <string name="tab_m05_log">Manual</string>
     <string name="tab_m05_track">Automática</string>
     <string name="tab_m10_Control">Control</string>
