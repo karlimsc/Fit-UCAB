@@ -1,7 +1,9 @@
 package Domain;
 
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 /**
  * Clase que manejara los querys
@@ -68,34 +70,56 @@ public class Query {
     public boolean updateUser( User user ){
         try {
             _sql = new Sql();
-            ResultSet rs = _sql.sql("SELECT m02_personexiste("+user.getId()+")");
-            rs.getRow();
+
+            if (!user.getPassword().isEmpty()){
+                _sql.sqlConn("select m02_modperfilpass("+ user.getId() +", '"+ user.getPassword() +"')");
+            }
+            if (!user.getEmail().isEmpty()){
+                _sql.sqlConn("select m02_modperfilmail("+ user.getId() +", '"+ user.getEmail() +"')");
+            }
+            if (!user.getSex().isEmpty()){
+                _sql.sqlConn("select m02_modperfilsex("+ user.getId() +", '"+ user.getSex() +"')");
+            }
+            if (!user.getPhone().isEmpty()){
+                _sql.sqlConn("select m02_modperfilphone("+ user.getId() +", '"+ user.getPhone() +"')");
+            }
+            _sql.closeConnection(_sql.getConn());
+            return true;
+
+            /*ResultSet rs = _sql.sql("SELECT m02_personexiste("+user.getId()+")");
+            ResultSetMetaData meta = rs.getMetaData();
+            String name = meta.getColumnLabel(1);
             while (rs.next()) {
-                if (rs.getInt("result") == 1) {
+                if (rs.getInt(name) == 1) {
+
                     if (!user.getPassword().isEmpty()){
-                        _sql.sql("select m02_modperfilpass("+ user.getId() +","+ user.getPassword() +")");
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getPassword() +"')");
                     }
                     if (!user.getEmail().isEmpty()){
-                        _sql.sql("select m02_modperfilpass("+ user.getId() +","+ user.getEmail() +")");
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getEmail() +"')");
                     }
                     if (!user.getSex().isEmpty()){
-                        _sql.sql("select m02_modperfilpass("+ user.getId() +","+ user.getSex() +")");
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getSex() +"')");
                     }
                     if (!user.getPhone().isEmpty()){
-                        _sql.sql("select m02_modperfilpass("+ user.getId() +","+ user.getPhone() +")");
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getPhone() +"')");
                     }
                 }
                 else {
                     return false;
                 }
             }
-            return true;
+            return true;*/
         } catch (SQLException e) {
             e.printStackTrace();
+            System.err.println("SQLExceptionUpdate: " + e.getMessage());
+            System.exit(1);
             return false;
         }
         catch (Exception e){
             e.printStackTrace();
+            System.err.println("ExceptionUpdate: " + e.getMessage());
+            System.exit(1);
             return false;
         }
     }

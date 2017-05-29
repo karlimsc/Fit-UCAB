@@ -68,9 +68,13 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
+            System.err.println("NullPointerExceptionSql: " + e.getMessage());
+            System.exit(1);
         }
         catch ( Exception e ){
+            System.err.println("ExceptionSql: " + e.getMessage() + " , Query: " + query);
             e.printStackTrace();
+            System.exit(1);
         }
         finally {
             _conn.close();
@@ -79,4 +83,44 @@ public class Sql {
 
     }
 
+    /**
+     * Metodo que se conecta a la base de datos sin cerrar la conexion
+     * @param query Consulta a la base de datos
+     * @return Tabla que representa la consulta del query
+     * @throws SQLException
+     */
+    public ResultSet sqlConn ( String query ) throws SQLException {
+
+        try {
+            _st = _conn.createStatement();
+            _rs  = _st.executeQuery( query );
+        }
+        catch ( NullPointerException e ){
+            e.printStackTrace();
+            System.err.println("NullPointerExceptionSql: " + e.getMessage());
+            System.exit(1);
+        }
+        catch ( Exception e ){
+            System.err.println("ExceptionSql: " + e.getMessage() + " , Query: " + query);
+            e.printStackTrace();
+            System.exit(1);
+        }
+        finally {
+            return _rs;
+        }
+
+    }
+
+    /**
+     * Metodo para cerrar la conexion
+     * @param conn conexion activa
+     * @throws SQLException Error al cerrar la conexion
+     */
+    public void closeConnection(Connection conn) throws SQLException {
+        conn.close();
+    }
+
+    public Connection getConn() {
+        return _conn;
+    }
 }
