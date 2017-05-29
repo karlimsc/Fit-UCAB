@@ -54,7 +54,7 @@ import static java.lang.Thread.sleep;
 public class M03FragmentLibreta extends Fragment {
 
     ManagePreferences manageId = new ManagePreferences();
-    int userId = 0;
+    int userId;
     IpStringConnection ipString = new IpStringConnection();
 
     private static final int PERMISSIONS_REQUEST_READ_CONTACTS = 100;

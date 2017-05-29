@@ -42,7 +42,7 @@ Aqui falta lo que hace la clase como tal y ya
 public class M03FragmentNearMe extends Fragment{
 
     ManagePreferences manageId = new ManagePreferences();
-    int userId = 0;
+    int userId;
 
     IpStringConnection ipString = new IpStringConnection();
 

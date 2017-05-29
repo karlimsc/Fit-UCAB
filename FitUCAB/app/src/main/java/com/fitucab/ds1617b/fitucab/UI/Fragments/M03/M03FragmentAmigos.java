@@ -46,7 +46,7 @@ public class M03FragmentAmigos extends Fragment {
 
 
     ManagePreferences manageId = new ManagePreferences();
-    int userId = 0;
+    int userId;
     IpStringConnection ipString = new IpStringConnection();
     ListView listView;
     View rootView;
