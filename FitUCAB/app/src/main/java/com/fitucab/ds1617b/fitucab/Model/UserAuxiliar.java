@@ -16,8 +16,22 @@ public class UserAuxiliar {
     private String _email;
     private String _phone;
     private String _sex;
+    private String _birthdate;
+    private String _longitud;
+    private String _latitud;
+    private String _distancia;
 
 
+
+    public UserAuxiliar(int id, String nombre, int puntaje, String sexo, String fechaNac, String distancia){
+        _id = id;
+        _username = nombre;
+        _point = puntaje;
+        _sex = sexo;
+        _birthdate = fechaNac;
+        _distancia = distancia;
+
+    }
 
     public UserAuxiliar(String nombre, String email, String phone){
         _username = nombre;
@@ -49,6 +63,62 @@ public class UserAuxiliar {
     public UserAuxiliar(int id, String nombre){
         _id = id;
         _username = nombre;
+    }
+
+    public String get_distancia() {
+        return _distancia;
+    }
+
+    public void set_distancia(String _distancia) {
+        this._distancia = _distancia;
+    }
+
+    public String get_email() {
+        return _email;
+    }
+
+    public void set_email(String _email) {
+        this._email = _email;
+    }
+
+    public String get_phone() {
+        return _phone;
+    }
+
+    public void set_phone(String _phone) {
+        this._phone = _phone;
+    }
+
+    public String get_sex() {
+        return _sex;
+    }
+
+    public void set_sex(String _sex) {
+        this._sex = _sex;
+    }
+
+    public String get_birthdate() {
+        return _birthdate;
+    }
+
+    public void set_birthdate(String _birthdate) {
+        this._birthdate = _birthdate;
+    }
+
+    public String get_longitud() {
+        return _longitud;
+    }
+
+    public void set_longitud(String _longitud) {
+        this._longitud = _longitud;
+    }
+
+    public String get_latitud() {
+        return _latitud;
+    }
+
+    public void set_latitud(String _latitud) {
+        this._latitud = _latitud;
     }
 
     public String get_username()
