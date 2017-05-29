@@ -29,15 +29,17 @@ public class M03_ServicesNearMe {
                 "where ((fk_persononeid = "+id+" and fk_persontwoid = personid) or " +
                 "(fk_persontwoid = "+id+" and fk_persononeid = personid)) and  (personid = geo.fk_personid) and (personid = registry.fk_personid)" +
                 " group by personid,friendshipid,geolongitud,geolatitud,registrypoint);";
-        base = new Sql();
+
+
+        Sql baseNearMe = new Sql();
         ResultSet rs = null;
         ArrayList<UserAuxiliar> userLocations = new ArrayList<UserAuxiliar>();
 
         try {
-            rs = base.sql(query);
+            rs = baseNearMe.sql(query);
 
-
-            while (rs.next()){
+        if(rs!=null && rs.isBeforeFirst()) {
+            while (rs.next()) {
                 UserAuxiliar aux = new UserAuxiliar();
 
                 aux.set_id(rs.getInt("personid"));
@@ -51,6 +53,7 @@ public class M03_ServicesNearMe {
                 userLocations.add(aux);
 
             }
+        }
 
 
         } catch (SQLException e) {
@@ -96,8 +99,9 @@ public class M03_ServicesNearMe {
         String query="";
         String queryVerificar="Select * from public.geo where (fk_personid="+id+");";
         ResultSet verificar = null;
+        Sql baseSetLocationVerify = new Sql();
         try {
-            verificar = base.sql(queryVerificar);
+            verificar = baseSetLocationVerify.sql(queryVerificar);
 
             if (verificar.isBeforeFirst()) {
 
@@ -115,19 +119,18 @@ public class M03_ServicesNearMe {
         }
 
 
-        base = new Sql();
-        ResultSet rs = null;
+        Sql baseSetLocation = new Sql();
+        Boolean rs = null;
         try {
-            rs = base.sql(query);
+            rs = baseSetLocation.sqlNoReturn(query);
 
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return "1";//Se agrego con exito!!
 
         }
 
-        return "0";
+        return rs.toString();
 
 
     }

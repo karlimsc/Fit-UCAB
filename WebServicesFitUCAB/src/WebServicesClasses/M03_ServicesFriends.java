@@ -21,7 +21,6 @@ import java.util.ArrayList;
 public class M03_ServicesFriends{
 
     Gson gson = new Gson();
-    Sql base = new Sql();
     @GET
     @Path("/getAll")
     @Produces("application/json")
@@ -51,11 +50,13 @@ public class M03_ServicesFriends{
 
         ArrayList<UserAuxiliar> ap = new ArrayList<UserAuxiliar>();
 
+        Sql baseGetAllFriends = new Sql();
 
         try {
-            ResultSet rs = base.sql(query);
+            ResultSet rs = baseGetAllFriends.sql(query);
 
-            while(rs.next()) {
+        if(rs!=null && rs.isBeforeFirst()) {
+            while (rs.next()) {
                 UserAuxiliar resultado = new UserAuxiliar();
                 resultado.set_id(rs.getInt("personid"));
                 resultado.set_username((rs.getString("personusername")));
@@ -63,11 +64,11 @@ public class M03_ServicesFriends{
                 resultado.set_point((rs.getInt("registrypoint")));
 
 
-
                 //resultado.set_birthdate((rs.getString("personphone")));
                 ap.add(resultado);
 
             }
+        }
 
 
 
@@ -102,8 +103,10 @@ public class M03_ServicesFriends{
         }
         String queryVerificar="Select * from public.friendship where (fk_persononeid="+idMayor+" and fk_persontwoid= "+idMenor+") or (fk_persononeid="+idMenor+" and fk_persontwoid= "+idMayor+")  ";
         ResultSet verificar = null;
+
+        Sql baseRequestsVerify = new Sql();
         try {
-            verificar = base.sql(queryVerificar);
+            verificar = baseRequestsVerify.sql(queryVerificar);
 
             if (verificar.isBeforeFirst())
                 return "Ya Existe esta amistad.";
@@ -115,20 +118,20 @@ public class M03_ServicesFriends{
         String query = "INSERT INTO public.friendship(fk_persononeid, fk_persontwoid, fk_statusid, friendshipuseractivity) VALUES ("
                 +idMenor+", "+idMayor+", 1, "+idRequester+")";
 
-        base = new Sql();
-        ResultSet rs = null;
+        Sql baseRequests = new Sql();
+        Boolean rs2 = null;
         try {
-            rs = base.sql(query);
+            rs2 = baseRequests.sqlNoReturn(query);
 
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return "1";//Se agrego con exito!!
+
 
         }
 
 
-        return "0";//No se agrego
+        return rs2.toString();//No se agrego
 
 
 
@@ -165,24 +168,27 @@ public class M03_ServicesFriends{
             ActionNumber="3";
         else if(Action.equals("Decline"))
             ActionNumber="4";
+        else if(Action.equals("Request"))
+            ActionNumber="1";
 
 
 
         String query = "UPDATE public.friendship SET fk_persononeid=" + idMenor + ", fk_persontwoid=" + idMayor + ", fk_statusid="+ActionNumber+", friendshipuseractivity =" + idUpdater +
-                "WHERE (fk_persononeid = "+idMenor+" AND fk_persontwoid = "+idMayor+");";
+                " WHERE (fk_persononeid = "+idMenor+" AND fk_persontwoid = "+idMayor+");";
 
 
 
-        ResultSet rs = null;
+        Boolean rs = null;
+        Sql baseUpdateFriendship = new Sql();
         try {
-            rs = base.sql(query);
+            rs = baseUpdateFriendship.sqlNoReturn(query);
 
         } catch (SQLException e) {
             e.printStackTrace();
-            return "1";//Se agrego con exito!!
+
         }
 
-        return "0";//No Se agrego
+        return rs.toString();
 
 
     }
