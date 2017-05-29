@@ -30,23 +30,15 @@ public class M02_ServicesUser {
     @GET
     @Path("/{userId}")
     public Response getUser( @PathParam("userId") int id ){
-        try {
-            _service = new Query();
-            User user = _service.getUser( id );
-            if ( user.getId() <= 0 ) {
-                _message = new StatusMessage( 0, "Usuario no encontrado" );
-                _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
-                throw new WebApplicationException( _response );
-            }
-            _response = Response.status( Response.Status.ACCEPTED ).entity( user ).build();
-            return _response;
-        } catch (WebApplicationException e) {
-            e.printStackTrace();
-            StatusMessage _message = new StatusMessage( 0, "Home no actualizado" );
-            Response _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
-            System.err.println("Error getHome: " + e.getMessage());
-            return _response;
+        _service = new Query();
+        User user = _service.getUser( id );
+        if ( user.getId() <= 0 ) {
+            _message = new StatusMessage( 0, "Usuario no encontrado" );
+            _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
+            throw new WebApplicationException( _response );
         }
+        _response = Response.status( Response.Status.ACCEPTED ).entity( user ).build();
+        return _response;
     }
 
     /**
