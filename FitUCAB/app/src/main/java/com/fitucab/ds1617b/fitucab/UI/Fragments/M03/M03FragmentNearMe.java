@@ -125,7 +125,7 @@ public class M03FragmentNearMe extends Fragment{
             edad = (TextView) rootView.findViewById(R.id.nearMeAge);
             distancia = (TextView) rootView.findViewById(R.id.nearMeDistance);
 
-            String urlNear = ipString.getIp()+"nearMe?id="+userId+"&longitud="+ Double.toString(dlong) +"&latitud="+ Double.toString(dlat) +"&rango=999999999999";
+            String urlNear = ipString.getIp()+"nearMe?id="+userId+"&longitud="+ Double.toString(dlong) +"&latitud="+ Double.toString(dlat) +"&rango=5";
             final Gson gson = new Gson();
             // Inicializamos el RequestQueue.
             final RequestQueue queue = Volley.newRequestQueue(rootView.getContext());

@@ -1,5 +1,6 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -113,4 +114,11 @@ public class M03FriendsActivity extends AppCompatActivity
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(M03FriendsActivity.this, M02HomeActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }
