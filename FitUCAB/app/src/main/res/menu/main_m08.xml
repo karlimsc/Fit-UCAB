@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/action_settings_m08"
+
+    android:orderInCategory="100"
+    android:title="@string/action_settings_m08"
+    app:showAsAction="ifRoom"
+    android:icon="@mipmap/icono_agregar"
+    />
+</menu>

@@ -127,6 +127,33 @@ FK_PERSON		integer not null
 );
 --TERMINA MODULO 4--
 
+---MODULO 8---
+ 
+CREATE TABLE CHALLENGE (
+ 
+CHALLENGEID serial primary key,
+CHALLENGENAME varchar(30) not null,
+CHALLENGEDESCRIPTION varchar(500) not null,
+CHALLENGEKILOMETERS integer,
+CHALLENGESCORE integer,
+CHALLENGEDAYS integer,
+CHALLENGETYPE check,
+CHALLENGEPREDEFINED check,
+);
+ 
+ 
+CREATE TABLE DETAIL (
+DETAILID serial primary key,
+DETAILDATESTART timestamp not null,
+DETAILDATEEND timestamp not null,
+DETAILACTIVE boolean not null,
+FK_USERID integer,
+FK_CHALLENGEID integer
+);
+ 
+---FIN MODULO 8---
+
+
 -- TABLAS PERTENECIENTES AL MODULO 11
 
 CREATE TABLE FOOD (

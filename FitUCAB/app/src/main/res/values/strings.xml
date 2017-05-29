@@ -93,6 +93,10 @@
     <string name="tab_m05_track">Automática</string>
     <!--FIN Strings Modulo 5 -->
 
+    <!--Inicio Strings Modulo 8-->
+    --content_main--
+    <string name="tituloModuloRetos">Mis Retos</string>
+    --informacion_reto--
     <!-- Inicio Strings Modulo 10 -->
     <string name="title_activity_m10_water_glass">Agua</string>
     <string name="tab_m10_Hidratacion">Hidratacion</string>
@@ -104,6 +108,26 @@
     <string name="tv_m10_tipo">Tipo de Vaso</string>
     <string name="tv_m10_cantidad">Cantidad Diaria</string>
 
+    --menu--
+    <string name="editarReto">editar</string>
+    <string name="eliminarReto">eliminar</string>
+    <string name="action_settings_m08">Settings</string>
+
+    --information_challenge--
+    <string name="textViewDescripcionReto">Descripcion:</string>
+    <string name="textViewRetoActivo">Activo:</string>
+    <string name="textViewTipoReto">Tipo:</string>
+    <string name="textViewKm">Km:</string>
+    <string name="textViewDiasReto">Días:</string>
+    <string name="buttonEmpezarAhora">Empezar Ahora</string>
+
+    --add challenge--
+    <string name="addNombreReto">Ingrese Nombre del Reto</string>
+    <string name="addDescripcionReto">Ingrese la Descripcion del Reto</string>
+    <string name="buttonFechaInicio">Fecha Inicio</string>
+    <string name="buttonFechaFin">Fecha Fin</string>
+
+
     <!--FIN Strings Modulo 10 -->
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -114,6 +138,7 @@
     <string name="title_activity_m02_home">M02HomeActivity</string>
     <string name="title_activity_m05_track_exercise">Track</string>
     <string name="bt_start_tracking">Iniciar</string>
+    <string name="title_activity_actividad_prueba">ActividadPrueba</string>
 
 
 </resources>

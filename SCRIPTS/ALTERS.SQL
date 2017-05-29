@@ -62,6 +62,19 @@ ADD CONSTRAINT FK_PERSON FOREIGN KEY (FK_PERSON) REFERENCES PERSON(PERSONID) ON 
 
 -- FIN ALTERS MODULO 4
 
+---MODULO 8---
+ 
+alter table CHALLENGE add constraint CHECK_CHALLENGE check (CHALLENGETYPE IN ('run','walk'));
+alter table CHALLENGE add constraint CHECK_PREDEFINED check (CHALLENGEPREDEFINED IN ('s','n'));
+
+ 
+alter table DETAIL add constraint FK_CHALLENGE foreign key (FK_CHALLENGEID) references CHALLENGE (CHALLENGEID);
+alter table DETAIL add constraint FK_REGISTRYID foreign key (FK_REGISTRYID) references REGISTRY (FK_PERSONID);
+ 
+ 
+--- FIN MODULO 8---
+
+
 -- ALTER DEL MODULO 11
 
 ALTER TABLE DIET

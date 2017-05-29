@@ -76,12 +76,12 @@ public class M01HomeFragment extends Fragment {
      */
     private void manageChangeFragmentLogin() {
 
-        _btnIrIniciarSesion.setOnClickListener(new View.OnClickListener() {
+        /*_btnIrIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 _callBack.onSwap("M01LoginFragment",null);
             }
-        });
+        });*/
     }
 
     /**
