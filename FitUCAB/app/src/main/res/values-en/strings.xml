@@ -69,6 +69,27 @@
     <string name="tab_03_cercademi">Near me</string>
     <string name="sep_03_request">Friend requests</string>
     <string name="sep_03_friends">Friends</string>
+    <string name="btn_03_agregar">Add</string>
+    <string name="btn_03_declinar">Decline</string>
+    <string name="et_03_nohayusuariocercadeti">There are no users near you</string>
+    <string name="et_03_hombre">Man</string>
+    <string name="et_03_mujer">Woman</string>
+    <string name="et_03_edad">Age</string>
+    <string name="et_03_kmdeti">Km of you</string>
+    <string name="et_03_errorconexion">Connection failed</string>
+    <string name="btn_03_invitar">Invite</string>
+    <string name="et_03_menulibreta">Menu Option</string>
+    <string name="et_03_peticionenviada">Request send</string>
+    <string name="et_03_yaexisteamistad">This friendship already exists</string>
+    <string name="et_03_bloquear">Blocked</string>
+    <string name="et_03_aceptar">Acepted</string>
+    <string name="et_03_menuamigos">Menu Friends</string>
+    <string name="et_03_usuariobloqueado">User blocked</string>
+    <string name="et_03_nosepudobloquear">Could not block</string>
+    <string name="et_03_usuarioagregado">User add</string>
+    <string name="et_03_nosepudoagregar">Could not add</string>
+    <string name="et_03_usuariodeclinado">User declined</string>
+    <string name="et_03_nosepudodeclinar">Could not declined</string>
 
     <!--FIN Strings Modulo 3 -->
 
