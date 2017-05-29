@@ -3947,17 +3947,19 @@ containing a value of this type.
         public static final int menu_register_activity=0x7f0e0007;
     }
     public static final class mipmap {
-        public static final int btn_m10_calendar=0x7f030000;
-        public static final int btn_m10_clock=0x7f030001;
-        public static final int ic_launcher=0x7f030002;
-        public static final int ic_launcher_date=0x7f030003;
-        public static final int ic_launcher_round=0x7f030004;
-        public static final int ic_launcher_time=0x7f030005;
-        public static final int logofitucab=0x7f030006;
-        public static final int logofitucabnombre=0x7f030007;
-        public static final int logofitucabnombreblanco=0x7f030008;
-        public static final int logofitucabsolonombreblanco=0x7f030009;
-        public static final int pesasgirl=0x7f03000a;
+        public static final int btn_add_m10=0x7f030000;
+        public static final int btn_less_m10=0x7f030001;
+        public static final int btn_m10_calendar=0x7f030002;
+        public static final int btn_m10_clock=0x7f030003;
+        public static final int ic_launcher=0x7f030004;
+        public static final int ic_launcher_date=0x7f030005;
+        public static final int ic_launcher_round=0x7f030006;
+        public static final int ic_launcher_time=0x7f030007;
+        public static final int logofitucab=0x7f030008;
+        public static final int logofitucabnombre=0x7f030009;
+        public static final int logofitucabnombreblanco=0x7f03000a;
+        public static final int logofitucabsolonombreblanco=0x7f03000b;
+        public static final int pesasgirl=0x7f03000c;
     }
     public static final class string {
         public static final int _btn_m05_registermanual=0x7f080071;
