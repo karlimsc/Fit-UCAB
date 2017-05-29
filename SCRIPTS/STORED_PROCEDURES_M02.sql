@@ -137,3 +137,17 @@ BEGIN
 	WHERE PERSONID = id;
 END;
 $$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION M02_PERSONEXISTE(id int)
+	RETURNS INTEGER AS $$
+DECLARE
+	result integer;
+BEGIN
+	IF ((SELECT COUNT(*) FROM person WHERE personid = id) = 0) THEN
+		result := 0;
+	ELSE
+		result := 1;
+	END IF;
+	RETURN result;
+END;
+$$ LANGUAGE plpgsql;

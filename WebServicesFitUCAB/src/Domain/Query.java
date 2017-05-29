@@ -68,37 +68,34 @@ public class Query {
     public boolean updateUser( User user ){
         try {
             _sql = new Sql();
-            _sql.sql("select m02_modificarperfilr("+ user.getId() + ", "+ user.getPassword() +", " +
-                    ""+ user.getEmail() +", "+ user.getSex() +", "+ user.getPhone() +", " +
-                    ""+ user.getBirthdate() +", "+ user.getWeight() +", "+ user.getHeight() +")");
-            User same = getUser(user.getId());
-            System.out.println("Comparador: " + compareUser(user, same));
-            return compareUser( user, same );
+            ResultSet rs = _sql.sql("SELECT m02_personexiste("+user.getId()+")");
+            rs.getRow();
+            while (rs.next()) {
+                if (rs.getInt("result") == 1) {
+                    if (!user.getPassword().isEmpty()){
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +","+ user.getPassword() +")");
+                    }
+                    if (!user.getEmail().isEmpty()){
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +","+ user.getEmail() +")");
+                    }
+                    if (!user.getSex().isEmpty()){
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +","+ user.getSex() +")");
+                    }
+                    if (!user.getPhone().isEmpty()){
+                        _sql.sql("select m02_modperfilpass("+ user.getId() +","+ user.getPhone() +")");
+                    }
+                }
+                else {
+                    return false;
+                }
+            }
+            return true;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
         }
         catch (Exception e){
             e.printStackTrace();
-            return false;
-        }
-    }
-
-    /**
-     * Metodo para comparar dos usuarios
-     * @param user Usuario que se quiere comparar
-     * @param same Usuario que debe ser igual
-     * @return boolean true si los usuarios son iguales y false si son diferentes
-     * @see User
-     */
-    public boolean compareUser(User user, User same){
-        if ( user.getId() == same.getId() && /*user.getPassword() == same.getPassword() &&*/
-                user.getEmail() == same.getEmail() && user.getSex() == same.getSex() &&
-                user.getPhone() == same.getPhone() && user.getBirthdate() == same.getBirthdate() &&
-                user.getWeight() == same.getWeight() && user.getHeight() == same.getHeight() ){
-            return true;
-        }
-        else {
             return false;
         }
     }
