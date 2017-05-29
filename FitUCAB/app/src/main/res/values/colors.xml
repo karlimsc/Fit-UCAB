@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#0b3680</color>
-    <color name="colorPrimaryDark">#353535</color>
-    <color name="colorBtnDenegar">#ff0000</color>
-    <color name="colorBtnAceptar">#3f51b5</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorBtnDenegar">#fc0f3b</color>
+    <color name="colorBtnAceptar">#676cfb</color>
     <color name="colorBtnConfirmar">#6aca25</color>
     <color name="black">#000</color>
     <color name="grey">#f5f5f5</color>
@@ -15,6 +15,18 @@
     <color name="colorGreenBtn">#6aca25</color>
     <color name="colorWhiteSmoke">#f5f5f5</color>
 
+    <color name="colorpink">#ec0b3c</color>
+    <color name="gradvioletgrey">#1a0c38</color>
+    <color name="gradlightgrey">#5a595e</color>
+
+    <color name="ColorPrimary">#3F51B5</color>
+    <color name="ColorPrimaryDark">#303F9F</color>
+    <color name="ColorAccent">#E91E63</color>
+    <color name="ColorPrimary2">#F44336</color>
+    <color name="ColorPrimaryDark2">#D32F2F</color>
+    <color name="ColorAccent2">#2196F3</color>
+    <color name="btnBlue">#3f51b5</color>
+    <color name="greyLi">#20706b6b</color>
 
 </resources>
 

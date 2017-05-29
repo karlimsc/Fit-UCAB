@@ -103,6 +103,8 @@
 
     <!--FIN Strings Modulo 3 -->
 
+
+
     <!--Inicio Strings Modulo 5-->
     <string name="tab_m05_log">Log</string>
     <string name="tab_m05_track">Track</string>
@@ -128,8 +130,20 @@
     <string name="m01_errorHeightOutOfRange">The height range is between 1m and 3m</string>
     <string name="m01_errorNullFields">There are empty fields</string>
     <string name="m01_errorWeightOutOfRange">The weight range is between 30kg and 300kg</string>
+    <string name="_tv_m05_titletabmanual">MANUAL</string>
+    <string name="_tv_m05_bt_pause">PAUSE</string>
+    <string name="_btn_m05_registermanual">LOG</string>
+    <string name="_tv_m05_calories">Calories</string>
+    <string name="_tv_m05_duration">Duration</string>
+    <string name="_tv_m05_startime">Start Time</string>
+    <string name="_tv_m05_type">Type</string>
+    <string name="app_name_title">Activity</string>
+    <string name="bt_start_tracking">Start</string>
+    <string name="_tv_m05_speed">Speed</string>
+    <string name="_tv_m05_time">Time</string>
+    <string name="_btn_m05_resume">RESUME</string>
+    <string name="_btn_m05_pause">PAUSE</string>
     <!--FIN Strings Modulo 5 -->
-
 
     <!-- Inicio Strings Modulo 10 -->
     <string name="title_activity_m10_water_glass">Water</string>
