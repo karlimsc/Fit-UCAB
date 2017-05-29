@@ -1,5 +1,6 @@
 package Domain;
 
+import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
@@ -124,22 +125,31 @@ public class Query {
         }
     }
 
-    //TODO: Realizar consulta
     /**
      * Metodo que actualiza el Home
+     * @param user Usuario que brinda sus atributos
      * @return Clase Home con el total de las calorias y el total de los vasos tomados
      * @throws SQLException Si hay un error en sql
      * @throws Exception
      * @see Home
      */
-    public Home getHome() {
+    public Home getHome(User user) {
         try {
             _sql = new Sql();
-            ResultSet result = _sql.sql("select 2 totalAgua, 3 totalCalorias;");
-            while (result.next()){
-                _home.setTotalAgua( result.getInt("totalAgua") );
-                _home.setTotalCaloria( result.getFloat("totalCalorias") );
+            ResultSet rsW = _sql.sqlConn("SELECT countg FROM m10_getwaterglass("+user.getId()+"," +
+                    "'"+user.getBirthdate()+"')");
+            ResultSet rsC = _sql.sqlConn("SELECT calorias FROM m11_get_calorias_dia('"+user.getUser()+"')");
+            while (rsW.next()){
+                _home.setTotalAgua( rsW.getInt("countg") );
+                System.out.println("Agua: "+ _home.getTotalAgua());
             }
+            while (rsC.next()){
+                _home.setTotalCaloria( rsC.getInt("calorias") );
+                System.out.println("Calorias: "+ _home.getTotalCaloria());
+            }
+            _sql.closeConnection(_sql.getConn());
+            System.out.println("Calorias: "+ _home.getTotalCaloria());
+            System.out.println("Agua: "+ _home.getTotalAgua());
             return new Home( _home.getTotalCaloria(), _home.getTotalAgua() );
         } catch (SQLException e) {
             e.printStackTrace();
