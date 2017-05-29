@@ -20,12 +20,12 @@
         "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/logofitucabnombre.png"
     },
     {
-        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/logofitucab.png",
-        "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/logofitucab.png"
-    },
-    {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
         "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/logofitucab.png",
+        "source": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xhdpi/logofitucab.png"
     },
     {
         "merged": "/home/karliana/Documentos/Desarrollo/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xhdpi/pesasgirl.png",
