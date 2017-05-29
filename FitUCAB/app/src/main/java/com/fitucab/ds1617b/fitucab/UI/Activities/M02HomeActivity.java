@@ -161,6 +161,8 @@ public class M02HomeActivity extends AppCompatActivity
 
         }
         else if (id == R.id.nav_m02_challenges) {
+            //            Intent myintent = new Intent(M02HomeActivity.this, M08ManagementChallengeActivity.class);
+//            startActivity(myintent);
 
         }
         else if (id == R.id.nav_m02_friends) {
@@ -178,6 +180,9 @@ public class M02HomeActivity extends AppCompatActivity
         else if (id == R.id.nav_m02_planing_activitys) {
 
         } else if (id == R.id.nav_m02_notifications) {
+            //            Intent myintent = new Intent(M02HomeActivity.this, M04NotificationActivity.class);
+//            startActivity(myintent);
+
 
         }
 
