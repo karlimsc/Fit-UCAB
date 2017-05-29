@@ -28,6 +28,10 @@
         "source": "/Users/JoseA2R/.android/build-cache/8dfb67043918953381d460c987d0e679f2c3378e/output/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
     },
     {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_transparent.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable/md_transparent.xml"
+    },
+    {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable/abc_dialog_material_background.xml"
     },
@@ -60,6 +64,10 @@
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable/abc_ratingbar_indicator_material.xml"
     },
     {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/gray_circle.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/bee3734a41eac36a95542d3fa0ee7414eff44286/output/res/drawable/gray_circle.xml"
+    },
+    {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/user_profile_image.png",
         "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/res/drawable/user_profile_image.png"
     },
@@ -70,6 +78,10 @@
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_normal.xml",
         "source": "/Users/JoseA2R/.android/build-cache/8dfb67043918953381d460c987d0e679f2c3378e/output/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_selector.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable/md_selector.xml"
     },
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
@@ -90,6 +102,10 @@
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_ic_clear_material.xml",
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable/abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_item_selected_dark.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable/md_item_selected_dark.xml"
     },
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/side_nav_bar.xml",
@@ -220,12 +236,20 @@
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable/abc_btn_check_material.xml"
     },
     {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_btn_selector_dark.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable/md_btn_selector_dark.xml"
+    },
+    {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_vector_test.xml",
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable/abc_vector_test.xml"
     },
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_switch_thumb_material.xml",
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable/abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_btn_selected.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable/md_btn_selected.xml"
     },
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/circle_progress.xml",
@@ -248,8 +272,16 @@
         "source": "/Users/JoseA2R/.android/build-cache/8dfb67043918953381d460c987d0e679f2c3378e/output/res/drawable/common_google_signin_btn_text_light.xml"
     },
     {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_btn_selected_dark.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable/md_btn_selected_dark.xml"
+    },
+    {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml",
         "source": "/Users/JoseA2R/.android/build-cache/8dfb67043918953381d460c987d0e679f2c3378e/output/res/drawable/common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_selector_dark.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable/md_selector_dark.xml"
     },
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/design_fab_background.xml",
@@ -276,6 +308,10 @@
         "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/res/drawable/suggestion.png"
     },
     {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_item_selected.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable/md_item_selected.xml"
+    },
+    {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/ic_btn_atras.png",
         "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/src/main/res/drawable/ic_btn_atras.png"
     },
@@ -286,6 +322,10 @@
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_btn_borderless_material.xml",
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable/abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_btn_selector.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable/md_btn_selector.xml"
     },
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",

@@ -1,7 +1,15 @@
 [
     {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_selector_ripple.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable-v21/md_btn_selector_ripple.xml"
+    },
+    {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_selector_ripple_dark.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable-v21/md_btn_selector_ripple_dark.xml"
     },
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/design_bottom_navigation_item_background.xml",
@@ -14,6 +22,10 @@
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
         "source": "/Users/JoseA2R/.android/build-cache/40e237ab9dfe95058f4621dd57bb5e213f0c00e8/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/md_btn_shape.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable-v21/md_btn_shape.xml"
     },
     {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",

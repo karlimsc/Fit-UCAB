@@ -24,6 +24,10 @@
         "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_home_black.xml"
     },
     {
+        "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/md_nav_back.xml",
+        "source": "/Users/JoseA2R/.android/build-cache/af0fc8792a0cb709f012dfe55377bffb23146f2b/output/res/drawable-anydpi-v21/md_nav_back.xml"
+    },
+    {
         "merged": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_map.xml",
         "source": "/Users/JoseA2R/Documents/Fit-UCAB/FitUCAB/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_map.xml"
     },
