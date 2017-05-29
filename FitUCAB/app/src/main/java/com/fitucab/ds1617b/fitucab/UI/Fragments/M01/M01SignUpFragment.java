@@ -1,8 +1,10 @@
+
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -16,6 +18,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
@@ -35,6 +38,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.checkInsertResponse;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
@@ -102,6 +106,7 @@ public class M01SignUpFragment extends Fragment {
         instantiateComponents();
         manageBtnRegistrar();
         activateCalendar();
+        Context context=getContext();
 
         return _view;
     }
@@ -277,10 +282,15 @@ public class M01SignUpFragment extends Fragment {
 
             ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
             Call<User> call = apiService.insertRegistry(username, password, email, sex, phone, birthdate, weight, height);
+
+            final MaterialDialog dialog =getInstaceDialog(getContext());
+
             call.enqueue(new Callback<User>() {
 
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
+
+                    dialog.dismiss();
 
                     try {
 
@@ -303,8 +313,9 @@ public class M01SignUpFragment extends Fragment {
                 @Override
                 public void onFailure(Call<User> call, Throwable t) {
 
+                    dialog.dismiss();
                     String error=t.getMessage();
-                    String errorResult= validateExceptionMessage(error);
+                    String errorResult= validateExceptionMessage(error,getContext());
                     showToast(getContext(),errorResult);
                     //Toast.makeText(getContext(), errorResult, Toast.LENGTH_SHORT).show();
                 }

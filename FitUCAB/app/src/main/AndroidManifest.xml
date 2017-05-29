@@ -54,13 +54,14 @@
             android:name=".UI.Activities.M05AddExerciseActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
-
-            <!--&lt;!&ndash;<category android:name="android.intent.category.LAUNCHER" />&ndash;&gt;-->
-            <!--</intent-filter>-->
         </activity>
 
+        <activity
+            android:name=".UI.Activities.M10WaterGlassActivity"
+            android:label="@string/title_activity_m10_water_glass"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".UI.Activities.MainActivity"
             android:label="@string/title_activity_main"
@@ -124,5 +125,6 @@
         </activity>
 
     </application>
+
 
 </manifest>

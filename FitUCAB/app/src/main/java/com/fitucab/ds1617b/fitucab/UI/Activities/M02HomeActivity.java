@@ -1,24 +1,22 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.preference.PreferenceManager;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,8 +25,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.M02Exception;
+import com.fitucab.ds1617b.fitucab.Helper.M02Util;
+import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01HomeFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M02.M02AccountFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M02.M02HomeFragment;
 
@@ -40,6 +40,8 @@ public class M02HomeActivity extends AppCompatActivity
     private TextView _tv_m02_nombre;
     private TextView _tv_m02_peso;
     private String TAG= "FitUCAB";
+    private User user;
+    private SharedPreferences preferences;
     private IpStringConnection ip= new IpStringConnection();
     private FragmentManager FM = getSupportFragmentManager();
     @Override
@@ -72,12 +74,14 @@ public class M02HomeActivity extends AppCompatActivity
     }
 
     private void toAskWebService() {
-//        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());
-//        int id= preferences.getInt("idUser", user.get_idUser());
+        try {
+        preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        int id= preferences.getInt("idUser",0);
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        String webUrl= ip.getIp()+"M02Users/1";
+        String webUrl= ip.getIp()+"M02Users/"+id;
         Log.i(TAG, "toAskWebService: "+webUrl);
-        JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
+        JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl,
+                new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Log.i(TAG, "onResponse: "+response.toString());
@@ -89,7 +93,21 @@ public class M02HomeActivity extends AppCompatActivity
                 Log.i(TAG, " ERROR"+ error.toString());
             }
         });
+
         requestQueue.add(jsonrequest);
+
+            //throw new M02Exception();
+        }
+//        catch (M02Exception e){
+//           e.printStackTrace();
+//        }
+        catch (NullPointerException e){
+
+            e.printStackTrace();
+        }catch (Exception e){
+
+            e.printStackTrace();
+        }
 
     }
 
@@ -97,7 +115,6 @@ public class M02HomeActivity extends AppCompatActivity
         try {
 
             String username= response.getString("user");
-            //String height= response.getString("height");
             int weight= response.getInt("weight");
             Log.i(TAG, "setJsonView: "+ username+ " , "+weight);
             _tv_m02_nombre.setText(username);
@@ -105,10 +122,11 @@ public class M02HomeActivity extends AppCompatActivity
 
 
 
-        } catch (JSONException e) {
-
-            e.printStackTrace();
-        } catch (NullPointerException e){
+            throw new M02Exception();
+        }
+        catch (M02Exception e){
+            e.toString();
+        }catch (NullPointerException e){
 
             e.printStackTrace();
         }catch (Exception e){
@@ -143,8 +161,12 @@ public class M02HomeActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.flContent_m02_home, fragmentToSwap).commit();
             // Handle the camera action
         } else if (id == R.id.nav_m02_calories) {
+            Intent myintent = new Intent(M02HomeActivity.this, M11Food.class);
+            startActivity(myintent);
 
         } else if (id == R.id.nav_m02_training) {
+//            Intent myintent = new Intent(M02HomeActivity.this, M06TrainingActivity.class);
+//            startActivity(myintent);
 
         } else if (id == R.id.nav_m02_logout) {
             Intent myintent = new Intent(M02HomeActivity.this, M01LoginActivity.class);
@@ -159,12 +181,17 @@ public class M02HomeActivity extends AppCompatActivity
 
         }
         else if (id == R.id.nav_m02_challenges) {
+            //            Intent myintent = new Intent(M02HomeActivity.this, M08ManagementChallengeActivity.class);
+//            startActivity(myintent);
 
         }
         else if (id == R.id.nav_m02_friends) {
-
+//            Intent myintent = new Intent(M02HomeActivity.this, M03FriendsActivity.class);
+//            startActivity(myintent);
         }
         else if (id == R.id.nav_m02_gamification) {
+            //            Intent myintent = new Intent(M02HomeActivity.this, M09GamificationActivity.class);
+//            startActivity(myintent);
 
         }
         else if (id == R.id.nav_m02_hydration) {
@@ -175,6 +202,9 @@ public class M02HomeActivity extends AppCompatActivity
         else if (id == R.id.nav_m02_planing_activitys) {
 
         } else if (id == R.id.nav_m02_notifications) {
+            //            Intent myintent = new Intent(M02HomeActivity.this, M04NotificationActivity.class);
+//            startActivity(myintent);
+
 
         }
 

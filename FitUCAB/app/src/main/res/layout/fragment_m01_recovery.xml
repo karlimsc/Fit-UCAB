@@ -10,10 +10,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="103dp"
+        android:layout_width="@dimen/image_width"
+        android:layout_height="@dimen/image_height"
         android:layout_gravity="center_horizontal|center"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="@dimen/layout_margin"
         android:layout_weight="2"
         android:src="@mipmap/logofitucabnombre" />
 
@@ -22,11 +22,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="@dimen/layout_marginTop_button"
         android:fontFamily="sans-serif"
         android:text="@string/tv_m01_recuperacionContra"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_tittle_size"
         android:textStyle="bold"
         android:typeface="sans" />
 
@@ -42,14 +42,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_column="1"
-            android:layout_marginTop="50dp">
+            android:layout_marginTop="@dimen/layout_marginTop_button">
 
             <EditText
                 android:id="@+id/et_m01_correoRecovery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/layout_margin"
                 android:layout_weight="5"
                 android:ems="10"
                 android:fontFamily="sans-serif"
@@ -58,15 +58,15 @@
                 android:maxLength="50"
                 android:textColor="@color/softgrey"
                 android:textColorLink="@color/colorBtnAceptar"
-                android:textSize="18sp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/btn_m01_enviarCorreo"
-            android:layout_width="200dp"
+            android:layout_width="@dimen/button_width"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/layout_margin"
             android:layout_weight="5"
             android:background="@color/colorBtnConfirmar"
             android:fontFamily="sans-serif"
@@ -74,7 +74,7 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="@android:color/background_light"
-            android:textSize="18sp"
+            android:textSize="@dimen/text_button_size"
             android:typeface="sans" />
 
 

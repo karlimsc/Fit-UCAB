@@ -6,7 +6,8 @@
     android:layout_gravity="center"
     android:background="@color/grey"
     android:orientation="vertical"
-    android:padding="20dp"
+    android:layout_marginTop="@dimen/appbar_padding_top"
+    android:padding="@dimen/appbar_padding_top"
     android:weightSum="2">
 
     <TextView
@@ -18,7 +19,7 @@
         android:fontFamily="sans-serif"
         android:text="@string/tv_m01_acercaDeTi"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="20sp"
+        android:textSize="@dimen/text_tittle_size"
         android:textStyle="bold" />
 
     <ScrollView
@@ -28,13 +29,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/activity_vertical_margin"
             android:orientation="vertical"
-            android:padding="20dp"
+            android:padding="@dimen/appbar_padding_top"
             android:weightSum="12">
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:layout_marginRight="@dimen/appbar_padding_top"
+                android:layout_marginTop="@dimen/appbar_padding_top"
                 android:layout_column="1">
 
                 <EditText
@@ -50,46 +56,50 @@
                     android:maxLength="20"
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size"
                     android:typeface="sans" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:layout_marginRight="@dimen/appbar_padding_top"
                 android:layout_column="1"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="@dimen/appbar_padding_top">
 
                 <EditText
                     android:id="@+id/et_m01_passwordRegistry"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/appbar_padding_top"
                     android:layout_weight="2"
                     android:ems="10"
                     android:fontFamily="sans-serif"
                     android:hint="@string/et_m01_passwordRegistro"
-                    android:maxLength="8"
+                    android:maxLength="12"
                     android:inputType="textPassword"
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size"
                     android:typeface="sans" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:layout_marginRight="@dimen/appbar_padding_top"
                 android:layout_column="1"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="@dimen/appbar_padding_top">
 
                 <EditText
                     android:id="@+id/et_m01_emailRegistro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/appbar_padding_top"
                     android:layout_weight="2"
                     android:ems="10"
                     android:fontFamily="sans-serif"
@@ -98,15 +108,17 @@
                     android:maxLength="50"
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size"
                     android:typeface="sans" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:layout_marginRight="@dimen/appbar_padding_top"
                 android:layout_column="1"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="@dimen/appbar_padding_top">
 
                 <EditText
                     android:id="@+id/et_m01_phone"
@@ -119,7 +131,7 @@
                     android:inputType="phone"
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size"
                     android:maxLength="20"
                     android:typeface="sans" />
             </android.support.design.widget.TextInputLayout>
@@ -127,14 +139,16 @@
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:layout_marginRight="@dimen/appbar_padding_top"
                 android:layout_column="1"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="@dimen/appbar_padding_top">
 
                 <EditText
                     android:id="@+id/et_m01_fechanac"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/appbar_padding_top"
                     android:layout_weight="2"
                     android:cursorVisible="false"
                     android:ems="10"
@@ -145,21 +159,24 @@
                     android:inputType="date"
                     android:textColor="@color/softgrey"
                     android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size"
                     android:typeface="sans" />
             </android.support.design.widget.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/appbar_padding_top"
+                android:layout_marginRight="@dimen/appbar_padding_top"
                 android:orientation="horizontal"
                 android:weightSum="4">
 
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/appbar_padding_top"
                     android:layout_column="1"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/appbar_padding_top"
                     android:layout_weight="3">
 
                     <EditText
@@ -167,8 +184,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="@dimen/appbar_padding_top"
                         android:ems="10"
                         android:fontFamily="sans-serif"
                         android:hint="@string/et_m01_peso"
@@ -176,7 +192,7 @@
                         android:maxLength="6"
                         android:textColor="@color/softgrey"
                         android:textColorLink="@color/colorBtnAceptar"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/text_size"
                         android:typeface="sans" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -185,12 +201,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/appbar_padding_top"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif"
                     android:text="@string/et_m01_kg"
                     android:textColor="@color/common_google_signin_btn_text_light_default"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size"
                     android:typeface="sans" />
 
             </LinearLayout>
@@ -204,8 +220,10 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/appbar_padding_top"
+                    android:layout_marginRight="@dimen/appbar_padding_top"
                     android:layout_column="1"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/appbar_padding_top"
                     android:layout_weight="3">
 
                     <EditText
@@ -214,7 +232,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginRight="10dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="@dimen/appbar_padding_top"
                         android:ems="10"
                         android:fontFamily="sans-serif"
                         android:hint="@string/et_m01_estatura"
@@ -222,7 +240,7 @@
                         android:maxLength="4"
                         android:textColor="@color/softgrey"
                         android:textColorLink="@color/colorBtnAceptar"
-                        android:textSize="18sp"
+                        android:textSize="@dimen/text_size"
                         android:typeface="sans" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -231,12 +249,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/appbar_padding_top"
                     android:layout_weight="3.71"
                     android:fontFamily="sans-serif"
                     android:text="@string/et_m01_mts"
                     android:textColor="@color/common_google_signin_btn_text_light_default"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size"
                     android:typeface="sans" />
             </LinearLayout>
 
@@ -244,7 +262,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/appbar_padding_top"
                 android:orientation="horizontal"
                 android:weightSum="2">
 
@@ -253,11 +271,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:checked="true"
                     android:text="@string/rb_m01_femenino"
                     android:textColor="@color/common_google_signin_btn_text_light_default"
                     android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
-                    android:checked="true"
+                    android:layout_marginTop="@dimen/appbar_padding_top"
+                    android:textSize="@dimen/text_size"
                     android:typeface="sans" />
 
                 <RadioButton
@@ -268,17 +287,18 @@
                     android:text="@string/rb_m01_masculino"
                     android:textColor="@color/common_google_signin_btn_text_light_default"
                     android:textColorLink="@color/colorBtnAceptar"
-                    android:textSize="18sp"
+                    android:layout_marginTop="@dimen/appbar_padding_top"
+                    android:textSize="@dimen/text_size"
                     android:typeface="sans" />
             </RadioGroup>
 
             <Button
                 android:id="@+id/btn_m01_entrar"
-                android:layout_width="200dp"
+                android:layout_width="@dimen/button_width"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/layout_marginTop_button"
                 android:layout_weight="1"
                 android:background="@color/colorBtnConfirmar"
                 android:fontFamily="sans-serif"
@@ -286,7 +306,7 @@
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="@android:color/background_light"
-                android:textSize="18sp"
+                android:textSize="@dimen/text_size"
                 android:typeface="sans" />
 
         </LinearLayout>
@@ -294,3 +314,4 @@
     </ScrollView>
 
 </LinearLayout>
+
