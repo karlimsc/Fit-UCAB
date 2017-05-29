@@ -35,11 +35,19 @@
 
     <!--FIN Strings Modulo 1 -->
     <!--Inicio Strings Modulo 1 -->
+    <string name="nav_title">Settings</string>
     <string name="nav_02_inicio">Home</string>
     <string name="nav_02_calorias">Calories</string>
     <string name="nav_02_entrenamiento">Training</string>
     <string name="nav_02_cuenta">Account</string>
     <string name="nav_02_cerrarsesion">Logout</string>
+    <string name="nav_02_amigos">Friends</string>
+    <string name="nav_02_actividades">Activitys</string>
+    <string name="nav_02_planificacion">Planning Activitys</string>
+    <string name="nav_02_retos">Challenges</string>
+    <string name="nav_02_gamificacion"> Gamification</string>
+    <string name="nav_02_hidratacion">Hydration</string>
+    <string name="nav_02_notificacion">Notifications</string>
     <!--FIN Strings Modulo 1 -->
     <!--Inicio Strings Modulo 2-->
     <string name="tv_m02_perfil">Profile</string>

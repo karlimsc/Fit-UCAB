@@ -407,7 +407,7 @@ public class M01_ServicesUser {
 
             else {
                 User userFail = new User();
-                userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+                userFail.set_status(Integer.toString(RESULT_USER_FAIL));
                 return gson.toJson(userFail);
             }
 

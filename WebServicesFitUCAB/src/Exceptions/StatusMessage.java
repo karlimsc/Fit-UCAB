@@ -1,4 +1,4 @@
-package Domain;
+package Exceptions;
 
 /**
  * Clase para formular mensajes de advertencia
