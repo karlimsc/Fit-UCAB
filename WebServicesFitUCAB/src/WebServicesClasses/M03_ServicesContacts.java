@@ -23,7 +23,7 @@ import java.util.List;
 public class M03_ServicesContacts{
 
     Gson gson = new Gson();
-    Sql base = new Sql();
+
 
     @GET
     @Path("/getContacts")
@@ -45,9 +45,11 @@ public class M03_ServicesContacts{
         ArrayList<UserAuxiliar> conFitUcab = new ArrayList<UserAuxiliar>();
         ArrayList<UserAuxiliar> sinFitUcab = new ArrayList<UserAuxiliar>();
 
+        Sql baseGetContacts = new Sql();
         try {
-            ResultSet rs = base.sql(query);
+            ResultSet rs = baseGetContacts.sql(query);
 
+        if(rs!=null && rs.isBeforeFirst()) {
             while (rs.next()) {
                 UserAuxiliar resultado = new UserAuxiliar();
                 resultado.set_id(rs.getInt("personid"));
@@ -60,6 +62,7 @@ public class M03_ServicesContacts{
                 conFitUcab.add(resultado);
 
             }
+        }
 
 
 
@@ -120,26 +123,27 @@ public class M03_ServicesContacts{
 
 
 
-        base = new Sql();
+        Sql baseQueryAmistades = new Sql();
 
         ArrayList<UserAuxiliar> amigoNo4 = new ArrayList<>();
         ArrayList<UserAuxiliar> noAmiyDeclined = new ArrayList<UserAuxiliar>();
         try {
-            ResultSet rs2 = base.sql(queryAmistades);
+            ResultSet rs2 = baseQueryAmistades.sql(queryAmistades);
 
-            while (rs2.next()) {
-                UserAuxiliar resultado = new UserAuxiliar();
-                resultado.set_id(rs2.getInt("personid"));
-                resultado.set_username((rs2.getString("personusername")));
-                resultado.set_email((rs2.getString("personemail")));
-                resultado.set_sex((rs2.getString("personsex")));
-                resultado.set_phone((rs2.getString("personphone")));
+            if(rs2!=null && rs2.isBeforeFirst()) {
+                while (rs2.next()) {
+                    UserAuxiliar resultado = new UserAuxiliar();
+                    resultado.set_id(rs2.getInt("personid"));
+                    resultado.set_username((rs2.getString("personusername")));
+                    resultado.set_email((rs2.getString("personemail")));
+                    resultado.set_sex((rs2.getString("personsex")));
+                    resultado.set_phone((rs2.getString("personphone")));
 
 
-                //resultado.set_birthdate((rs2.getString("personphone")));
-                amigoNo4.add(resultado);
+                    //resultado.set_birthdate((rs2.getString("personphone")));
+                    amigoNo4.add(resultado);
+                }
             }
-
 
 
             for (int i = 0; i < conFitUcab.size(); i++) {
@@ -182,8 +186,10 @@ public class M03_ServicesContacts{
 
         if(noAmiyDeclined!=null && !noAmiyDeclined.isEmpty()) {
             salida.add(sep1);
-            for (int i = 0; i < noAmiyDeclined.size(); i++)
-                salida.add(noAmiyDeclined.get(i));
+            for (int i = 0; i < noAmiyDeclined.size(); i++) {
+                if(noAmiyDeclined.get(i).get_id() != Integer.parseInt(id))
+                    salida.add(noAmiyDeclined.get(i));
+            }
         }
 
 

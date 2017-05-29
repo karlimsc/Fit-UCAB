@@ -73,7 +73,7 @@ public class Query {
             _sql = new Sql();
 
             if (!user.getPassword().isEmpty()){
-                _sql.sqlConn("select m02_modperfilpass("+ user.getId() +", '"+ user.getPassword() +"')");
+                _sql.sql("select m02_modperfilpass("+ user.getId() +", '"+ user.getPassword() +"')");
             }
             if (!user.getEmail().isEmpty()){
                 _sql.sqlConn("select m02_modperfilmail("+ user.getId() +", '"+ user.getEmail() +"')");

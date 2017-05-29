@@ -26,5 +26,6 @@ public class HomeTest {
     public void testHomeEmpty() {
         home = new Home();
         assertTrue(home.getTotalAgua() == 0);
+
     }
 }
