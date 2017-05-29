@@ -13,7 +13,29 @@
 
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btn_m10_lessWaterMain"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="361dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="26dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/btnmenos" />
+
+    <ImageButton
+        android:id="@+id/btn_m10_addwaterMain"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="372dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/btnmas" />
+
+    <ImageButton
+        android:id="@+id/foto"
         android:layout_width="227dp"
         android:layout_height="227dp"
         android:layout_centerHorizontal="true"
@@ -25,7 +47,6 @@
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.62"
         app:srcCompat="@drawable/ic_water_glass"
         android:layout_marginBottom="142dp"
         android:layout_marginStart="8dp"
@@ -42,25 +63,26 @@
 
     <ImageButton
         android:id="@+id/btn_m10_AddWater"
-        android:layout_width="67dp"
-        android:layout_height="86dp"
-        app:srcCompat="@android:drawable/ic_input_add"
-        android:layout_marginRight="-1dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="58dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginRight="27dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="50dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:srcCompat="@drawable/btnmas" />
 
     <ImageButton
         android:id="@+id/btn_m10_lessWater"
-        android:layout_width="70dp"
-        android:layout_height="72dp"
-        app:srcCompat="@android:drawable/ic_delete"
-        android:layout_marginLeft="28dp"
-        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="48dp"
+        android:layout_marginLeft="26dp"
         android:layout_marginStart="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="50dp" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:srcCompat="@drawable/btnmenos" />
+
 
     <EditText
         android:id="@+id/Et_m10_water"
@@ -79,7 +101,7 @@
         android:text="0"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/btn_m10_AddWater"
-        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/btn_m10_lessWater"
         app:layout_constraintRight_toLeftOf="@+id/btn_m10_AddWater"
         app:layout_constraintTop_toBottomOf="@+id/imageButton4"
@@ -111,6 +133,19 @@
         android:orientation="horizontal"
         tools:layout_editor_absoluteY="20dp"
         tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/tv_m10_ml"
+        android:layout_width="145dp"
+        android:layout_height="85dp"
+        android:focusable="false"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+        android:text="200"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="148dp" />
 
 
 </android.support.constraint.ConstraintLayout>

@@ -18,9 +18,9 @@ public class Sql {
      * @return instancia de la conexion
      */
     public static Connection getConInstance(){
-        if (conInstance == null){
+
             conInstance = bdConnect();
-        }
+
         return conInstance;
     }
 

@@ -92,6 +92,7 @@
         <flag name="basic" value="4"/>
         <flag name="chains" value="8"/>
     </attr>
+<<<<<<< HEAD
     <attr format="color" name="md_background_color"/>
     <attr format="reference" name="md_btn_negative_selector"/>
     <attr format="reference" name="md_btn_neutral_selector"/>
@@ -140,13 +141,18 @@
         <enum name="end" value="2"/>
     </attr>
     <attr format="color" name="md_widget_color"/>
+=======
+>>>>>>> M10_Gestion_Hidratacion
     <attr format="string" name="title"/>
     <bool name="abc_action_bar_embed_tabs">true</bool>
     <bool name="abc_allow_stacked_button_bar">true</bool>
     <bool name="abc_config_actionMenuItemAllCaps">true</bool>
     <bool name="abc_config_closeDialogWhenTouchOutside">true</bool>
     <bool name="abc_config_showMenuShortcutsWhenKeyboardPresent">false</bool>
+<<<<<<< HEAD
     <bool name="md_is_tablet">false</bool>
+=======
+>>>>>>> M10_Gestion_Hidratacion
     <color name="abc_input_method_navigation_guard">@android:color/black</color>
     <color name="abc_search_url_text_normal">#7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
@@ -214,6 +220,7 @@
     <color name="material_grey_800">#ff424242</color>
     <color name="material_grey_850">#ff303030</color>
     <color name="material_grey_900">#ff212121</color>
+<<<<<<< HEAD
     <color name="md_btn_selected">#33969696</color>
     <color name="md_btn_selected_dark">#40CBCBCB</color>
     <color name="md_divider_black">#10000000</color>
@@ -221,6 +228,8 @@
     <color name="md_edittext_error">#DD2C00</color>
     <color name="md_material_blue_600">#2196F3</color>
     <color name="md_material_blue_800">#1565C0</color>
+=======
+>>>>>>> M10_Gestion_Hidratacion
     <color name="notification_action_color_filter">#ffffffff</color>
     <color name="notification_icon_bg_color">#ff9e9e9e</color>
     <color name="notification_material_background_media_default_color">#ff424242</color>
@@ -470,7 +479,10 @@
 <enum name="adjust_height" value="2"/>
 
 </attr><attr format="float" name="imageAspectRatio"/><attr format="boolean" name="circleCrop"/></declare-styleable>
+<<<<<<< HEAD
     <declare-styleable name="MDRootLayout"><attr format="boolean" name="md_reduce_padding_no_title_no_buttons"/></declare-styleable>
+=======
+>>>>>>> M10_Gestion_Hidratacion
     <declare-styleable name="MapAttrs"><attr name="mapType">
 <enum name="none" value="0"/>
 
@@ -483,7 +495,10 @@
 <enum name="hybrid" value="4"/>
 
 </attr><attr format="float" name="cameraBearing"/><attr format="float" name="cameraTargetLat"/><attr format="float" name="cameraTargetLng"/><attr format="float" name="cameraTilt"/><attr format="float" name="cameraZoom"/><attr format="boolean" name="liteMode"/><attr format="boolean" name="uiCompass"/><attr format="boolean" name="uiRotateGestures"/><attr format="boolean" name="uiScrollGestures"/><attr format="boolean" name="uiTiltGestures"/><attr format="boolean" name="uiZoomControls"/><attr format="boolean" name="uiZoomGestures"/><attr format="boolean" name="useViewLifecycle"/><attr format="boolean" name="zOrderOnTop"/><attr format="boolean" name="uiMapToolbar"/><attr format="boolean" name="ambientEnabled"/><attr format="float" name="cameraMinZoomPreference"/><attr format="float" name="cameraMaxZoomPreference"/><attr format="float" name="latLngBoundsSouthWestLatitude"/><attr format="float" name="latLngBoundsSouthWestLongitude"/><attr format="float" name="latLngBoundsNorthEastLatitude"/><attr format="float" name="latLngBoundsNorthEastLongitude"/></declare-styleable>
+<<<<<<< HEAD
     <declare-styleable name="MaterialProgressBar"><attr format="enum" name="mpb_progressStyle"><enum name="circular" value="0"/><enum name="horizontal" value="1"/></attr><attr format="boolean" name="mpb_setBothDrawables"/><attr format="boolean" name="mpb_useIntrinsicPadding"/><attr format="boolean" name="mpb_showTrack"/><attr name="android:tint"/><attr format="enum" name="mpb_tintMode"><enum name="src_over" value="3"/><enum name="src_in" value="5"/><enum name="src_atop" value="9"/><enum name="multiply" value="14"/><enum name="screen" value="15"/><enum name="add" value="16"/></attr></declare-styleable>
+=======
+>>>>>>> M10_Gestion_Hidratacion
     <declare-styleable name="MenuGroup"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:checkableBehavior"/><attr name="android:visible"/><attr name="android:enabled"/></declare-styleable>
     <declare-styleable name="MenuItem"><attr name="android:id"/><attr name="android:menuCategory"/><attr name="android:orderInCategory"/><attr name="android:title"/><attr name="android:titleCondensed"/><attr name="android:icon"/><attr name="android:alphabeticShortcut"/><attr name="android:numericShortcut"/><attr name="android:checkable"/><attr name="android:checked"/><attr name="android:visible"/><attr name="android:enabled"/><attr name="android:onClick"/><attr name="showAsAction">
             
@@ -501,7 +516,10 @@
     <declare-styleable name="NavigationView"><attr name="android:background"/><attr name="android:fitsSystemWindows"/><attr name="android:maxWidth"/><attr name="elevation"/><attr format="reference" name="menu"/><attr format="color" name="itemIconTint"/><attr format="color" name="itemTextColor"/><attr format="reference" name="itemBackground"/><attr format="reference" name="itemTextAppearance"/><attr format="reference" name="headerLayout"/></declare-styleable>
     <declare-styleable name="PopupWindow"><attr format="boolean" name="overlapAnchor"/><attr name="android:popupBackground"/><attr name="android:popupAnimationStyle"/></declare-styleable>
     <declare-styleable name="PopupWindowBackgroundState"><attr format="boolean" name="state_above_anchor"/></declare-styleable>
+<<<<<<< HEAD
     <declare-styleable name="Preference"><attr format="boolean" name="useStockLayout"/></declare-styleable>
+=======
+>>>>>>> M10_Gestion_Hidratacion
     <declare-styleable name="RecycleListView"><attr format="dimension" name="paddingBottomNoButtons"/><attr format="dimension" name="paddingTopNoTitle"/></declare-styleable>
     <declare-styleable name="RecyclerView"><attr format="string" name="layoutManager"/><attr name="android:orientation"/><attr name="android:descendantFocusability"/><attr format="integer" name="spanCount"/><attr format="boolean" name="reverseLayout"/><attr format="boolean" name="stackFromEnd"/></declare-styleable>
     <declare-styleable name="ScrimInsetsFrameLayout"><attr format="color|reference" name="insetForeground"/></declare-styleable>
@@ -669,9 +687,13 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
+<<<<<<< HEAD
     <dimen name="appbar_padding_top">20dp</dimen>
     <dimen name="button_width">200dp</dimen>
     <dimen name="circular_progress_border">4dp</dimen>
+=======
+    <dimen name="appbar_padding_top">8dp</dimen>
+>>>>>>> M10_Gestion_Hidratacion
     <dimen name="design_appbar_elevation">4dp</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168dp</dimen>
     <dimen name="design_bottom_navigation_active_text_size">14sp</dimen>
@@ -720,6 +742,7 @@
     <item format="float" name="hint_alpha_material_light" type="dimen">0.38</item>
     <item format="float" name="hint_pressed_alpha_material_dark" type="dimen">0.70</item>
     <item format="float" name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
+<<<<<<< HEAD
     <dimen name="image_height">103dp</dimen>
     <dimen name="image_width">100dp</dimen>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
@@ -769,6 +792,13 @@
     <dimen name="md_title_frame_margin_bottom">12dp</dimen>
     <dimen name="md_title_frame_margin_bottom_less">6dp</dimen>
     <dimen name="md_title_textsize">20sp</dimen>
+=======
+    <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
+    <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
+    <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
+    <dimen name="layout_margin">40dp</dimen>
+    <dimen name="layout_marginTop">180dp</dimen>
+>>>>>>> M10_Gestion_Hidratacion
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
@@ -786,11 +816,15 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+<<<<<<< HEAD
     <dimen name="text_button_size">20sp</dimen>
     <dimen name="text_margin">16dp</dimen>
     <dimen name="text_size">18sp</dimen>
     <dimen name="text_size_forgot">14sp</dimen>
     <dimen name="text_tittle_size">22sp</dimen>
+=======
+    <dimen name="text_margin">16dp</dimen>
+>>>>>>> M10_Gestion_Hidratacion
     <item name="ic_menu_camera" type="drawable">@android:drawable/ic_menu_camera</item>
     <item name="ic_menu_gallery" type="drawable">@android:drawable/ic_menu_gallery</item>
     <item name="ic_menu_manage" type="drawable">@android:drawable/ic_menu_manage</item>
@@ -824,6 +858,7 @@
     <integer name="hide_password_duration">320</integer>
     <integer name="show_password_duration">200</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+<<<<<<< HEAD
     <string name="M01_DUPLICATED_KEY_MESSAGE">Este username y/o email ya esta registrado</string>
     <string name="M01_ERROR_CONNECTION_FALSE">Ocurrio un error inesperdado, intente de nuevo</string>
     <string name="M01_ERROR_CONNECTION_MESSAGE">Revise su conexion a internet o la ip del servidor</string>
@@ -831,6 +866,8 @@
     <string name="M01_REGISTRY_FAIL_MESSAGE">Fallo el registro, intente de nuevo</string>
     <string name="M01_REGISTRY_OK_MESSAGE">Bienvenido a FitUCAB</string>
     <string name="M01_RESTORE_MESSAGE">El correo con sus datos fue enviado</string>
+=======
+>>>>>>> M10_Gestion_Hidratacion
     <string name="_btn_m05_registermanual">REGISTRAR</string>
     <string name="_tv_m05_calories">Calories:</string>
     <string name="_tv_m05_duration">Duracion:</string>
@@ -929,6 +966,7 @@
     <string name="m01_errorUsernameSpecialChar">El nombre de usuario no debe tener caracteres especiales</string>
     <string name="m01_errorUsernameTooShort">El nombre de usuario debe poseer al menos 4 caracteres</string>
     <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
+<<<<<<< HEAD
     <string name="md_back_label">Back</string>
     <string name="md_cancel_label">Cancel</string>
     <string name="md_choose_label">Choose</string>
@@ -937,6 +975,8 @@
     <string name="md_error_label">Error</string>
     <string name="md_presets_label">Presets</string>
     <string name="md_storage_perm_error">Your app has not been granted the READ_EXTERNAL_STORAGE permission.</string>
+=======
+>>>>>>> M10_Gestion_Hidratacion
     <string name="nav_02_actividades">Actividades</string>
     <string name="nav_02_amigos">Amigos</string>
     <string name="nav_02_calorias">Calorias</string>
@@ -952,7 +992,10 @@
     <string name="nav_title">Ocnfiguración</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
+<<<<<<< HEAD
     <string name="new_folder">New Folder</string>
+=======
+>>>>>>> M10_Gestion_Hidratacion
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
@@ -982,7 +1025,11 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="tv_m01_acercaDeTi">Acerca de ti</string>
     <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
+<<<<<<< HEAD
     <string name="tv_m01_intro">¡Bienvenido! \n \n  Inicia tu entrenamiento físico</string>
+=======
+    <string name="tv_m01_intro">¡Bienvenido! \n \n Inicia tu entrenamiento físico</string>
+>>>>>>> M10_Gestion_Hidratacion
     <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
     <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
     <string name="tv_m02_perfil">Perfil</string>
@@ -2032,6 +2079,7 @@
         <item name="tabTextAppearance">@style/TextAppearance.Design.Tab</item>
         <item name="tabSelectedTextColor">?android:textColorPrimary</item>
     </style>
+<<<<<<< HEAD
     <style name="MD_ActionButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">@dimen/md_button_height</item>
@@ -2084,6 +2132,8 @@
         <item name="android:windowEnterAnimation">@anim/popup_enter</item>
         <item name="android:windowExitAnimation">@anim/popup_exit</item>
     </style>
+=======
+>>>>>>> M10_Gestion_Hidratacion
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
 
@@ -2570,6 +2620,7 @@
         <item name="passwordToggleTint">@color/design_tint_password_toggle</item>
         <item name="passwordToggleContentDescription">@string/password_toggle_content_description</item>
     </style>
+<<<<<<< HEAD
     <style name="Widget.MaterialProgressBar.ProgressBar" parent="android:Widget.ProgressBar">
         <item name="android:indeterminateDrawable">@null</item>
         <item name="android:minWidth">48dp</item>
@@ -2620,4 +2671,6 @@
         <item name="android:minHeight">14dp</item>
         <item name="android:maxHeight">14dp</item>
     </style>
+=======
+>>>>>>> M10_Gestion_Hidratacion
 </resources>
