@@ -1,0 +1,101 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10Settings">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_m10_usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="39dp"
+            android:text="@string/tv_m10_usuario"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_m10_peso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_m10_tipo"
+            android:layout_alignStart="@+id/tv_m10_tipo"
+            android:layout_below="@+id/tv_m10_usuario"
+            android:layout_marginTop="15dp"
+            android:text="@string/tv_m10_peso"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_m10_tipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="@string/tv_m10_tipo"
+            android:textSize="18sp"
+            android:layout_below="@+id/tv_m10_peso"
+            android:layout_alignLeft="@+id/tv_m10_cantidad_diaria"
+            android:layout_alignStart="@+id/tv_m10_cantidad_diaria" />
+
+        <TextView
+            android:id="@+id/tv_m10_cantidad_diaria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="@string/tv_m10_cantidad"
+            android:textSize="18sp"
+            android:layout_below="@+id/tv_m10_tipo"
+            android:layout_alignLeft="@+id/tv_m10_usuario"
+            android:layout_alignStart="@+id/tv_m10_usuario" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_m10_usuario"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/tv_m10_usuario"
+            android:layout_marginEnd="39dp"
+            android:layout_marginRight="39dp"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_m10_peso"
+            android:layout_alignEnd="@+id/textView7"
+            android:layout_alignRight="@+id/textView7"
+            android:layout_alignTop="@+id/tv_m10_peso"
+            android:text="TextView"
+            android:textSize="18sp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tv_m10_tipo"
+            android:layout_alignRight="@+id/textView8"
+            android:layout_alignEnd="@+id/textView8" />
+
+        <EditText
+            android:id="@+id/editText5"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            android:layout_alignBottom="@+id/tv_m10_cantidad_diaria"
+            android:layout_alignLeft="@+id/spinner"
+            android:layout_alignStart="@+id/spinner" />
+    </RelativeLayout>
+
+</FrameLayout>
