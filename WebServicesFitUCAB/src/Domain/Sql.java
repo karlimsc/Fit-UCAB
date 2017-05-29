@@ -84,11 +84,13 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
-            System.err.println("NullPointerExceptionSql: " + e.getMessage());
+            System.err.println("NullPointerExceptionSql: " + e.getMessage() + " , Query: " + query);
+            return null;
         }
         catch ( Exception e ){
             System.err.println("ExceptionSql: " + e.getMessage() + " , Query: " + query);
             e.printStackTrace();
+            return null;
         }
         finally {
             _conn.close();

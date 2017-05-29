@@ -44,6 +44,7 @@ public class M02HomeActivity extends AppCompatActivity
     private SharedPreferences preferences;
     private IpStringConnection ip= new IpStringConnection();
     private FragmentManager FM = getSupportFragmentManager();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,7 +109,6 @@ public class M02HomeActivity extends AppCompatActivity
 
             e.printStackTrace();
         }
-
     }
 
     private void setJsonView(JSONObject response) {
@@ -204,10 +204,7 @@ public class M02HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_m02_notifications) {
             //            Intent myintent = new Intent(M02HomeActivity.this, M04NotificationActivity.class);
 //            startActivity(myintent);
-
-
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
