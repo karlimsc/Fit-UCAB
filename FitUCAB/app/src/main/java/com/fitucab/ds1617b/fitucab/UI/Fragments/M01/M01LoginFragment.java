@@ -2,6 +2,7 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
@@ -33,6 +34,8 @@ import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
+
+
 
 /**
  * A placeholder fragment containing a simple view.
@@ -84,6 +87,7 @@ public class  M01LoginFragment extends Fragment {
         instantiateComponents();
         manageChangeFragmentRecovery();
         manageButtonEntrar();
+        Context context=getContext();
         return _view;
     }
     /**
@@ -199,7 +203,7 @@ public class  M01LoginFragment extends Fragment {
 
                      dialog.dismiss();
                      String error=t.getMessage();
-                     String errorResult= validateExceptionMessage(error);
+                     String errorResult= validateExceptionMessage(error,getContext());
                      showToast(getContext(),errorResult);
                  }
              });

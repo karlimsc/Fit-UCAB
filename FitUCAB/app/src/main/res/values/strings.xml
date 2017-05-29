@@ -35,6 +35,17 @@
     <string name="m01_errorNullFields">Existen campos vacíos</string>
     <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
     <string name="m01_errorHeightOutOfRange">El rango de altura es entre 1m y 3m</string>
+    <string name="M01_ERROR_CONNECTION_MESSAGE">Revise su conexion a internet o la ip del servidor</string>
+    <string name="M01_ERROR_CONNECTION_FALSE">Ocurrio un error inesperdado, intente de nuevo</string>
+    <string name="M01_REGISTRY_OK_MESSAGE">Bienvenido a FitUCAB</string>
+    <string name="M01_REGISTRY_FAIL_MESSAGE">Fallo el registro, intente de nuevo</string>
+    <string name="M01_DUPLICATED_KEY_MESSAGE">Este username y/o email ya esta registrado</string>
+    <string name="M01_LOGIN_FAIL_MESSAGE">Este username y/o contrasena son incorrectos</string>
+    <string name="M01_RESTORE_MESSAGE">El correo con sus datos fue enviado</string>
+
+
+
+
     <!--FIN Strings Modulo 1 -->
 
 

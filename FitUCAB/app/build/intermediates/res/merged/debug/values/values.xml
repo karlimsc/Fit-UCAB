@@ -824,6 +824,13 @@
     <integer name="hide_password_duration">320</integer>
     <integer name="show_password_duration">200</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string name="M01_DUPLICATED_KEY_MESSAGE">Este username y/o email ya esta registrado</string>
+    <string name="M01_ERROR_CONNECTION_FALSE">Ocurrio un error inesperdado, intente de nuevo</string>
+    <string name="M01_ERROR_CONNECTION_MESSAGE">Revise su conexion a internet o la ip del servidor</string>
+    <string name="M01_LOGIN_FAIL_MESSAGE">Este username y/o contrasena son incorrectos</string>
+    <string name="M01_REGISTRY_FAIL_MESSAGE">Fallo el registro, intente de nuevo</string>
+    <string name="M01_REGISTRY_OK_MESSAGE">Bienvenido a FitUCAB</string>
+    <string name="M01_RESTORE_MESSAGE">El correo con sus datos fue enviado</string>
     <string name="_btn_m05_registermanual">REGISTRAR</string>
     <string name="_tv_m05_calories">Calories:</string>
     <string name="_tv_m05_duration">Duracion:</string>

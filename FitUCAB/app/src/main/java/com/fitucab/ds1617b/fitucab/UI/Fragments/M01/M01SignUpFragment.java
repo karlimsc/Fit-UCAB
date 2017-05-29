@@ -4,6 +4,7 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -105,6 +106,7 @@ public class M01SignUpFragment extends Fragment {
         instantiateComponents();
         manageBtnRegistrar();
         activateCalendar();
+        Context context=getContext();
 
         return _view;
     }
@@ -313,7 +315,7 @@ public class M01SignUpFragment extends Fragment {
 
                     dialog.dismiss();
                     String error=t.getMessage();
-                    String errorResult= validateExceptionMessage(error);
+                    String errorResult= validateExceptionMessage(error,getContext());
                     showToast(getContext(),errorResult);
                     //Toast.makeText(getContext(), errorResult, Toast.LENGTH_SHORT).show();
                 }

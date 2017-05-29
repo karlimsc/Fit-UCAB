@@ -29,9 +29,7 @@
     <string name="m01_errorPhoneTooShortEN">The phone number is not valid</string>
     <string name="m01_errorPasswordTooShortEN">The password is too short</string>
     <string name="m01_errorInvalidEmailEN">The email is not valid</string>
-    <string name="m01_errorNullFieldsEN">There are empty fields</string>
     <string name="m01_errorWeightOutOfRangeEN">The weight range is between 30kg and 300kg</string>
-    <string name="m01_errorHeightOutOfRangeEN">The height range is between 1m and 3m</string>
 
     <!--FIN Strings Modulo 1 -->
     <!--Inicio Strings Modulo 1 -->
@@ -89,6 +87,16 @@
     <string name="m01_errorUsernameSpecialChar">The only allowed special character are: _  and -</string>
     <string name="m01_errorUsernameTooShort">The username is too short</string>
     <string name="tv_m01_recuperacionContra">Password Recovery</string>
+    <string name="M01_DUPLICATED_KEY_MESSAGE">This username or email is already registered</string>
+    <string name="M01_ERROR_CONNECTION_FALSE">Unexpected error occurred</string>
+    <string name="M01_ERROR_CONNECTION_MESSAGE">Check your connection or server Ip</string>
+    <string name="M01_LOGIN_FAIL_MESSAGE">This username or password is incorrect</string>
+    <string name="M01_REGISTRY_OK_MESSAGE">Welcome to FitUCAB</string>
+    <string name="M01_REGISTRY_FAIL_MESSAGE">Log failed, try again</string>
+    <string name="M01_RESTORE_MESSAGE">The mail with your data was sent</string>
+    <string name="m01_errorHeightOutOfRange">The height range is between 1m and 3m</string>
+    <string name="m01_errorNullFields">There are empty fields</string>
+    <string name="m01_errorWeightOutOfRange">The weight range is between 30kg and 300kg</string>
     <!--FIN Strings Modulo 5 -->
 
 </resources>
