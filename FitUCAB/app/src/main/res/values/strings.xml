@@ -6,7 +6,7 @@
     <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_comienza">REGISTRATE</string>
     <string name="btn_m01_iniciaSesion">INICIA SESION</string>
-    <string name="tv_m01_intro">¡Bienvenido! \n \n Inicia tu entrenamiento físico</string>
+    <string name="tv_m01_intro">¡Bienvenido! \n \n  Inicia tu entrenamiento físico</string>
     <string name="btn_m01_entrar">ENTRAR</string>
     <string name="et_m01_usuarioCorreo">Nombre de Usuario</string>
     <string name="et_m01_passwordLogin">Contraseña</string>
@@ -35,6 +35,17 @@
     <string name="m01_errorNullFields">Existen campos vacíos</string>
     <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
     <string name="m01_errorHeightOutOfRange">El rango de altura es entre 1m y 3m</string>
+    <string name="M01_ERROR_CONNECTION_MESSAGE">Revise su conexion a internet o la ip del servidor</string>
+    <string name="M01_ERROR_CONNECTION_FALSE">Ocurrio un error inesperdado, intente de nuevo</string>
+    <string name="M01_REGISTRY_OK_MESSAGE">Bienvenido a FitUCAB</string>
+    <string name="M01_REGISTRY_FAIL_MESSAGE">Fallo el registro, intente de nuevo</string>
+    <string name="M01_DUPLICATED_KEY_MESSAGE">Este username y/o email ya esta registrado</string>
+    <string name="M01_LOGIN_FAIL_MESSAGE">Este username y/o contrasena son incorrectos</string>
+    <string name="M01_RESTORE_MESSAGE">El correo con sus datos fue enviado</string>
+
+
+
+
     <!--FIN Strings Modulo 1 -->
 
 
@@ -74,6 +85,27 @@
     <string name="tab_03_cercademi">Cerca De Mi</string>
     <string name="sep_03_request">Solicitudes de amistad</string>
     <string name="sep_03_friends">Amigos</string>
+    <string name="btn_03_agregar">Agregar</string>
+    <string name="btn_03_declinar">Declinar</string>
+    <string name="et_03_nohayusuariocercadeti">No hay usuarios cerca de ti</string>
+    <string name="et_03_hombre">Hombre</string>
+    <string name="et_03_mujer">Mujer</string>
+    <string name="et_03_edad">Edad</string>
+    <string name="et_03_kmdeti">Km de ti</string>
+    <string name="et_03_errorconexion">Error en la conexion</string>
+    <string name="btn_03_invitar">Invitar</string>
+    <string name="et_03_menulibreta">Menu libreta</string>
+    <string name="et_03_peticionenviada">Peticion enviada</string>
+    <string name="et_03_yaexisteamistad">Ya Existe esta amistad</string>
+    <string name="et_03_bloquear">Bloquear</string>
+    <string name="et_03_aceptar">Aceptar</string>
+    <string name="et_03_menuamigos">Menu amigos</string>
+    <string name="et_03_usuariobloqueado">Usuario bloqueado</string>
+    <string name="et_03_nosepudobloquear">No se pudo bloquear</string>
+    <string name="et_03_usuarioagregado">Usuario agregado</string>
+    <string name="et_03_nosepudoagregar">No se pudo agregar</string>
+    <string name="et_03_usuariodeclinado">Usuario declinado</string>
+    <string name="et_03_nosepudodeclinar">No se pudo declinar</string>
 
     <!--FIN Strings Modulo 3 -->
 

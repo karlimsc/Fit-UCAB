@@ -3,6 +3,7 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
@@ -26,6 +28,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.checkInsertResponse;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 
 /**
@@ -81,6 +87,7 @@ public class  M01RecoveryFragment extends Fragment {
         _view = inflater.inflate(R.layout.fragment_m01_recovery, container, false);
         instantiateComponents();
         manageButtonRecovery();
+        Context context=getContext();
        /* setupViewValues();*/
         return _view;
     }
@@ -137,39 +144,48 @@ public class  M01RecoveryFragment extends Fragment {
     public void getRetrofit(String emailRecovery){
 
         if (validateComponents(emailRecovery).equals("ok")) {
+
             ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
-            Call<User> call= apiService.restorePassword();
+            Call<User> call= apiService.restorePassword(emailRecovery);
             //Call<User> call= apiService.restorePassword(emailRecovery);
+            final MaterialDialog dialog =getInstaceDialog(getContext());
+
             call.enqueue(new Callback<User>() {
 
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
 
-                    /*try{
+                    dialog.dismiss();
+                    try {
 
                         User user = response.body();
-                        onCompleted(user);
-                        int id=getIdUser(getContext());
-                        System.out.println(id);
-                        _callBack.onSwapActivity("M02HomeActivity",null);
-                        System.out.println("Hice bien la consulta");
-                    }
-                    catch (Exception e){
+                        if (checkInsertResponse(user, getContext())) {
+
+                            Toast.makeText(getContext(),"El correo con sus datos fue enviado", Toast.LENGTH_SHORT);
+                            _callBack.onSwap("M01LoginFragment", null);
+                        }else
+                        {
+                            Toast.makeText(getContext(),"El email no se encuentra registrado", Toast.LENGTH_SHORT);
+                        }
+                    } catch (Exception e) {
                         e.printStackTrace();
                         System.out.println("Hice mal la consulta");
 
-                    }*/
-                    //Aqui habria que poner que se hace luego de que se envie el correo
+                        //Aqui habria que poner que se hace luego de que se envie el correo
+                    }
                 }
-
                 @Override
                 public void onFailure(Call<User> call, Throwable t) {
 
-                    System.out.println("FALLO TODO");
-
+                    dialog.dismiss();
+                    String error=t.getMessage();
+                    String errorResult= validateExceptionMessage(error,getContext());
+                    showToast(getContext(),errorResult);
                 }
             });
-        }else{
+
+        }
+        else{
             if (validateComponents(emailRecovery).equals(getString
                     (R.string.m01_errorInvalidEmail))) {
 
