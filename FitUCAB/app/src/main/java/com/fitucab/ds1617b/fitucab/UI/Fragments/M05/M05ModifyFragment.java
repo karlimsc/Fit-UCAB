@@ -292,7 +292,7 @@ public class M05ModifyFragment extends Fragment {
     public void makeUpdateCal()
     {
         String consult =M05UrlConsul._urlUpdateCal(_idActivity,String.valueOf( _et_Calories.getText()));
-        Log.e("URI DE LA CONSULTAAAAAAAAAAAAA*********"+ consult);
+        //Log.e("URI DE LA CONSULTAAAAAAAAAAAAA*********"+ consult);
 
         final StringRequest stringRequest = new StringRequest
                 (Request.Method.GET, consult,
