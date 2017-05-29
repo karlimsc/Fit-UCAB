@@ -2,10 +2,15 @@ package Domain;
 
 import java.sql.*;
 
+/**
+ * Clase que maneja la conexion con la base de datos
+ */
 public class Sql {
 
     private static Connection conInstance;
     private Connection conn =bdConnect();
+
+    private Connection _conn;
     private Statement _st;
     private ResultSet _rs;
     private static String BD_USER = "postgres";
@@ -23,10 +28,22 @@ public class Sql {
         }
         return conInstance;
     }
+    /**
+    * Constructor que inicializa la conexion con la BD
+     */
+
+    public Sql() {
+        _conn = bdConnect();
+    }
 
     /**
-     * Metodo que realiza la conexion contra la bd
-     * @return
+     * Metodo que realiza la conexion con la base de datos
+     * @return Conexion hecha a la base de datos
+     * @throws ClassNotFoundException Si la clase no es encontrada
+     * @throws SQLException Problemas con sql
+     * @throws Exception
+     * @see Connection
+     * @see Statement
      */
     private static Connection bdConnect()
     {
@@ -35,24 +52,49 @@ public class Sql {
         {
             Class.forName(BD_CLASS_FOR_NAME);
             conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
+
         }
-        catch (ClassNotFoundException e)
+        catch ( ClassNotFoundException e )
         {
             e.printStackTrace();
         }
-        catch (SQLException e)
-        {
+        catch ( SQLException e ){
             e.printStackTrace();
         }
-        return conn;
+        catch ( Exception e ){
+            e.printStackTrace();
+        }
+        finally {
+            return conn;
+        }
     }
 
-    public ResultSet sql (String query) throws SQLException , NullPointerException {
 
-        _st = conn.createStatement();
-        _rs  = _st.executeQuery(query);
-        conn.close();
-        return _rs;
+    /**
+     * Metodo que realiza un query a la base de datos con devolucion
+     * Realizar preferiblemente antes de bdConnect
+     * @param query
+     * @return Tabla que representa la consulta del query
+     * @throws SQLException Error en SQL
+     * @throws Exception
+     * @see ResultSet
+     */
+    public ResultSet sql ( String query ) throws SQLException {
+
+        try {
+            _st = _conn.createStatement();
+            _rs  = _st.executeQuery( query );
+        }
+        catch ( NullPointerException e ){
+            e.printStackTrace();
+        }
+        catch ( Exception e ){
+            e.printStackTrace();
+        }
+        finally {
+            _conn.close();
+            return _rs;
+        }
+
     }
-
 }

@@ -1,3 +1,4 @@
+
 package com.fitucab.ds1617b.fitucab.Helper;
 
 /**
@@ -9,7 +10,6 @@ package com.fitucab.ds1617b.fitucab.Helper;
 
 public class IpStringConnection {
     private String _ip = "http://192.168.1.4 :8888/WebServicesFitUCAB_war_exploded/";
-
 
     public IpStringConnection() {
 

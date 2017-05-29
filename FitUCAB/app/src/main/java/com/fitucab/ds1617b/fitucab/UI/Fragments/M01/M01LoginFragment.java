@@ -27,6 +27,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.checkInsertResponse;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 
 /**
@@ -167,15 +170,19 @@ public class  M01LoginFragment extends Fragment {
                      try{
 
                          User user = response.body();
+
+                         if (checkInsertResponse(user,getContext()) ){
+
                          onCompleted(user);
                          int id=getIdUser(getContext());
                          System.out.println(id);
                          _callBack.onSwapActivity("M02HomeActivity",null);
-                         System.out.println("Hice bien la consulta");
+
+                         }
                      }
                      catch (Exception e){
                          e.printStackTrace();
-                         System.out.println("Hice mal la consulta");
+                         System.out.println("No es problema de bd ni internet");
 
                      }
 
@@ -184,8 +191,9 @@ public class  M01LoginFragment extends Fragment {
                  @Override
                  public void onFailure(Call<User> call, Throwable t) {
 
-                     System.out.println("FALLO TODO");
-
+                     String error=t.getMessage();
+                     String errorResult= validateExceptionMessage(error);
+                     showToast(getContext(),errorResult);
                  }
              });
          }

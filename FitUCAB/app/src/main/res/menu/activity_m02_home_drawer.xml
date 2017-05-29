@@ -26,3 +26,89 @@
 
 
 </menu>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_m02_home"
+            android:icon="@drawable/ic_home_black"
+            android:title="@string/nav_02_inicio" />
+        <item
+            android:id="@+id/nav_m02_calories"
+            android:icon="@drawable/ic_calories"
+            android:title="@string/nav_02_calorias" />
+        <item
+            android:id="@+id/nav_m02_training"
+            android:icon="@drawable/ic_training"
+            android:title="@string/nav_02_entrenamiento" />
+        <item
+            android:id="@+id/nav_m02_account"
+            android:icon="@drawable/ic_account"
+            android:title="@string/nav_02_cuenta" />
+        <item
+            android:id="@+id/nav_m02_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/nav_02_cerrarsesion" />
+    </group>
+
+
+</menu>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_m02_home"
+            android:icon="@drawable/ic_home_black"
+            android:title="@string/nav_02_inicio" />
+        <item
+            android:id="@+id/nav_m02_calories"
+            android:icon="@drawable/ic_calories"
+            android:title="@string/nav_02_calorias" />
+        <item
+            android:id="@+id/nav_m02_training"
+            android:icon="@drawable/ic_training"
+            android:title="@string/nav_02_entrenamiento" />
+        <item
+            android:id="@+id/nav_m02_friends"
+            android:icon="@drawable/ic_friends"
+            android:title="@string/nav_02_amigos" />
+        <item
+            android:id="@+id/nav_m02_activitys"
+            android:icon="@drawable/ic_hiking"
+            android:title="@string/nav_02_actividades" />
+        <item
+            android:id="@+id/nav_m02_planing_activitys"
+            android:icon="@drawable/ic_list"
+            android:title="@string/nav_02_planificacion" />
+        <item
+            android:id="@+id/nav_m02_challenges"
+            android:icon="@drawable/ic_quality"
+            android:title="@string/nav_02_retos" />
+        <item
+            android:id="@+id/nav_m02_gamification"
+            android:icon="@drawable/ic_gamepad"
+            android:title="@string/nav_02_gamificacion" />
+        <item
+            android:id="@+id/nav_m02_hydration"
+            android:icon="@drawable/ic_water_hydration"
+            android:title="@string/nav_02_hidratacion" />
+
+    </group>
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_m02_account"
+                android:icon="@drawable/ic_account"
+                android:title="@string/nav_02_cuenta" />
+            <item
+                android:id="@+id/nav_m02_notifications"
+                android:icon="@drawable/ic_notification"
+                android:title="@string/nav_02_notificacion" />
+            <item
+                android:id="@+id/nav_m02_logout"
+                android:icon="@drawable/ic_logout"
+                android:title="@string/nav_02_cerrarsesion" />
+        </menu>
+    </item>
+
+
+
+</menu>

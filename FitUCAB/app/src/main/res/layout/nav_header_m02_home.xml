@@ -39,3 +39,60 @@
         android:text="Peso" />
 
 </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:paddingTop="1dp"
+        android:src="@mipmap/logofitucabnombre"/>
+
+    <TextView
+        android:layout_width="171dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textAlignment="center"
+        android:paddingTop="1dp"
+        android:text="Nombre de Usuario"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:paddingTop="3dp"
+        android:textAlignment="center"
+        android:text="Peso" />
+
+</LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:paddingTop="1dp"
+        android:src="@mipmap/logofitucabnombre"/>
+
+    <TextView
+        android:id="@+id/tv_m02_nombre"
+        android:layout_width="171dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textAlignment="center"
+        android:paddingTop="1dp"
+        android:text="Nombre de Usuario"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:id="@+id/tv_m02_peso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:paddingTop="3dp"
+        android:textAlignment="center"
+        android:text="Peso" />
+
+</LinearLayout>
