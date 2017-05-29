@@ -241,18 +241,20 @@ public class M05PrincipalActivityFragment extends Fragment implements
         }
     }
 
+    /**
+     * Este make request se trae todas las actividades de los usuaios 
+     */
 
     public void makeRequest()
-    {
-        String consult ="http://192.168.250.3:8080/untitled_war_exploded/M05_ServicesActivity/" +
-                "getActivity?idPer=1&fechalejana=2017-05-20&fechacercana=2017-05-20";
+    {                                     // Aqui va ManagePreferences.getIdUser()
+        String consult =M05UrlConsul._urlActivitys+"1";
 
         final StringRequest stringRequest = new StringRequest
                 (Request.Method.GET, consult,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-
+                                pos =0;
                                 ArrayList<Activit> at = new ArrayList<Activit>();
                                 ArrayList<String> tab = new ArrayList<String>();
                                 at = gson.fromJson(response,
@@ -264,7 +266,7 @@ public class M05PrincipalActivityFragment extends Fragment implements
                                 adapter.addAll(tab);
 
                                 for (int i = 0; i < at.size(); i++ ){
-                                    pos =0;
+
                                     tab.add(_sport+" "+at.get(i).get_name()+"\n"+
                                             _date+" "+at.get(i).get_date()+"\n"+
                                             _time+" "+at.get(i).get_startime()+"\n"+
@@ -274,7 +276,8 @@ public class M05PrincipalActivityFragment extends Fragment implements
 
                                 //Muestra un mensaje al usuario que no posee elemntos en la lista
                                 if (at.size()== 0){
-                                    tab.add(_empty);
+                                    Toast.makeText(getContext(), R.string._tst_m05_messagefoundactivity,
+                                            Toast.LENGTH_SHORT).show();
                                     //para que no escucheel 1er item en caso de que no tenga actiadas
                                     pos=1;
                                 }
@@ -308,11 +311,11 @@ public class M05PrincipalActivityFragment extends Fragment implements
         _listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-          if (position == 0 && pos!=0  ) {
+
               M05PrincipalActivity.set_activit(_activits.get(position));
               Log.e("EN EL STATIC", String.valueOf(M05PrincipalActivity.get_activit().get_calor()));
               _callBack.onSwap("M05ModifyFragment", null);
-          }
+
                 return true;
             }
         });

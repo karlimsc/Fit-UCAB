@@ -175,7 +175,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
                 String crar = createActivity();
                 Log.i("RESCREAR",crar);
                 //insertActivityRequest(activity);
-            otroInsert(activity);
+            insertActivityRequest(activity);
             return false;
         }
     };
@@ -194,7 +194,9 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     public void onConnected(Bundle connectionHint) {
         super.startLocationUpdates();
         super.checkLastLocation(LocationPoints);
-        activity.set_starsite(LocationPoints.get(0).toString());
+        if (LocationPoints!=null)
+            activity.set_starsite(String.valueOf(LocationPoints.get(LocationPoints.size()-1).getLatitude())+","+
+                    String.valueOf(LocationPoints.get(LocationPoints.size()-1).getLongitude()));
     }
 
 
@@ -387,9 +389,10 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
     public String createActivity(){
         try {
-            activity.set_endsite(LocationPoints.get(LocationPoints.size()-1).toString());
+            activity.set_endsite(String.valueOf(LocationPoints.get(LocationPoints.size()-1).getLatitude())+","+
+                                 String.valueOf(LocationPoints.get(LocationPoints.size()-1).getLongitude()));
             activity.set_endtime(String.valueOf(sdf.format(new Date())));
-            activity.set_date(getCurrentTime().toString());
+            activity.set_date(String.valueOf(sdfDate.format(new Date())));
             activity.set_km(distance);
             activity.set_calor(calculateCalories(mets,weight));
             activity.set_name(sport.getName());
@@ -408,66 +411,35 @@ public class M05StartTrackingActivity extends GeoLocalization implements
 
 
 
-    public void insertActivityRequest(final Activit activity){
+    public void insertActivityRequest(Activit activity){
         Log.i("TRACE", "INERT ACTIVITY REQUEST");
 
         //  M05UrlConsul m05IP = new M05UrlConsul();
 
-        final String URL = baseIp.getIp() + "M05_ServicesSport/insertActivity";
+        final String URL = baseIp.getIp() + "M05_ServicesActivity/"+M05UrlConsul._urlInsertAct(activity.get_startime(),
+                activity.get_endtime(),activity.get_starsite(),activity.get_endsite(),activity.get_date(),
+                String.valueOf(activity.get_km()),String.valueOf(activity.get_calor()), user.get_idUser(),1);
 
         Gson gson = new Gson();
 
 
-        String jsonActivity = gson.toJson(activity);
+        final StringRequest stringRequest = new StringRequest
+                (Request.Method.GET, URL,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
 
-        Log.i("START", String.valueOf(activity.get_starsite()));
-        Log.i("CALOR", String.valueOf(activity.get_calor()));
-        Log.i("DATE", String.valueOf(activity.get_date()));
-        Log.i("ENDSITE", String.valueOf(activity.get_endsite()));
-        Log.i("ENDTIME", String.valueOf(activity.get_endtime()));
-        Log.i("KM", String.valueOf(activity.get_km()));
-        Log.i("NAME", String.valueOf(activity.get_name()));
-        Log.i("STARTTIME", String.valueOf(activity.get_startime()));
+                                Log.e("RESPONSE ", response);
+                            }
+                        }, new Response.ErrorListener() {
 
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO Auto-generated method stub
+                        Log.i("no trajo nada","");
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL,
-            new Response.Listener<String>() {
-                @Override
-                public void onResponse(String response) {
-                    System.out.println(response);
-                    Toast.makeText(M05StartTrackingActivity.this,response,Toast.LENGTH_LONG).show();
-                }
-            },
-            new Response.ErrorListener() {
-                @Override
-                 public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(M05StartTrackingActivity.this,"NO INSERTÓ" + error.toString(),Toast.LENGTH_LONG).show();
-                 }
-             }){
-            @Override
-            protected Map<String,String> getParams(){
-                Map<String,String> params = new HashMap<String, String>();
-                params.put ("activitystarttime",activity.get_startime());
-                params.put ("activityendtime",activity.get_endtime());
-                params.put("activitydate", activity.get_date());
-                params.put("activitykm",String.valueOf(activity.get_km()));
-                params.put("activitycalor", String.valueOf(activity.get_calor()));
-                params.put("activitystartsite", activity.get_starsite());
-                params.put("activityendsite", activity.get_endsite());
-                params.put("fk_registry", String.valueOf(user.get_idUser()));
-                params.put("fk_sport", String.valueOf(sport.getId()));
-                params.put("fk_training", String.valueOf(1));
-                return params;
-            }
-
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String,String> params = new HashMap<String, String>();
-                params.put("Content-Type","application/json");
-                return params;
-            }
-
-        };
+                    }
+                });
 
         VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
 
@@ -519,7 +491,7 @@ public class M05StartTrackingActivity extends GeoLocalization implements
     }*/
 
     public void otroInsert(Activit activity){
-        final String URL = baseIp.getIp() + "M05_ServicesActivity/insertActivity";
+        final String URL = baseIp.getIp() + "M05_ServicesActivity/insertActivityN";
 // Post params to be sent to the server
         HashMap<String, String> params = new HashMap<String, String>();
         params.put ("horainicial",activity.get_startime());
@@ -530,9 +502,12 @@ public class M05StartTrackingActivity extends GeoLocalization implements
         params.put("lugarinicial", activity.get_starsite());
         params.put("lugarfinal", activity.get_endsite());
         params.put("idReg", String.valueOf(user.get_idUser()));
-        params.put("idSpo", String.valueOf(sport.getId()));
+        params.put("idSpo", String.valueOf(1));
 
-        JsonObjectRequest request_json = new JsonObjectRequest(Request.Method.POST,URL, new JSONObject(params),
+        Log.i("PARAM",params.get("idSpo"));
+
+        JsonObjectRequest request_json = new JsonObjectRequest(Request.Method.GET,URL,
+             new JSONObject(params),
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
@@ -550,11 +525,87 @@ public class M05StartTrackingActivity extends GeoLocalization implements
             public void onErrorResponse(VolleyError error) {
                 VolleyLog.e("Error: ", error.getMessage());
             }
-        });
+
+        })
+
+        {
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/json");
+                headers.put("TOKEN", "99KI9Gj68CgCf70deM22Ka64chef2C40Gm2lFJ2J0G9JkDaaDAcbFfd19MfacGf3FFm8CM1hG0eDiIk8");
+
+                return headers;
+            }
+
+
+            @Override
+            protected Map<String, String> getParams()
+            {
+                Activit activity = getActivity();
+                HashMap<String, String> params = new HashMap<String, String>();
+                params.put ("horainicial",activity.get_startime());
+                params.put ("horafinal",activity.get_endtime());
+                params.put("fecha", activity.get_date());
+                params.put("km",String.valueOf(activity.get_km()));
+                params.put("calorias", String.valueOf(activity.get_calor()));
+                params.put("lugarinicial", activity.get_starsite());
+                params.put("lugarfinal", activity.get_endsite());
+                params.put("idReg", String.valueOf(user.get_idUser()));
+                params.put("idSpo", String.valueOf(1));
+
+                Log.i("PARAM",params.get("idSpo"));
+                return params;
+        }
+
+        };
 
 // add the request object to the queue to be executed
         VolleySingleton.getInstance(this).addToRequestQueue(request_json);
 
+    }
+
+    public Activit getActivity(){
+        return this.activity;
+    }
+
+    public void ultimo(Activit activity){
+        JSONObject params = new JSONObject();
+        final String URL = baseIp.getIp() + "M05_ServicesActivity/insertActivityN";
+        try {
+            params.put ("horainicial",activity.get_startime());
+            params.put ("horafinal",activity.get_endtime());
+            params.put("fecha", activity.get_date());
+            params.put("km",String.valueOf(activity.get_km()));
+            params.put("calorias", String.valueOf(activity.get_calor()));
+            params.put("lugarinicial", activity.get_starsite());
+            params.put("lugarfinal", activity.get_endsite());
+            params.put("idReg", String.valueOf(user.get_idUser()));
+            params.put("idSpo", String.valueOf(1));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
+                URL, params, //Not null.
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        Log.d("RESP", response.toString());
+                        // pDialog.hide();
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d("RESP", "Error: " + error.getMessage());
+                //pDialog.hide();
+            }
+        });
+        VolleySingleton.getInstance(this).addToRequestQueue(jsonObjReq);
     }
 
 }
