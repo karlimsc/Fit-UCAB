@@ -27,6 +27,8 @@ import java.util.Properties;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+import static Domain.Sql.getConInstance;
+
 
 /**
  * Clase de Servicios Web del Modulo 01
@@ -34,15 +36,15 @@ import java.io.UnsupportedEncodingException;
 @Path("/M01_ServicesUser")
 public class M01_ServicesUser {
 
-    private Connection conn = bdConnect();
+    private Connection conn = getConInstance();
     private int RESULT_CODE_OK=200;
-    private int RESULT_CODE_FAIL=500;
+    private int RESULT_CODE_FAIL=300;
+    private int RESULT_USER_FAIL=400;
+    private int RESULT_EMAIL_OK=500;
     private static String DEFAULT_ENCODING1="UTF-8";
     Gson gson = new Gson();
 
-    public M01_ServicesUser() {
-
-    }
+    public M01_ServicesUser() {}
 
     /**
      * Funcion encargada de realizar la encriptación de un password
@@ -86,6 +88,7 @@ public class M01_ServicesUser {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             User user = null;
+
             while (rs.next()) {
                 String username = rs.getString("usuario");
                 int id = rs.getInt("id");
@@ -136,27 +139,39 @@ public class M01_ServicesUser {
         String insertUserQuery = " SELECT * FROM M01_REGISTRAR('" + username + "','" + password + "','" + email + "','" + sex + "'" +
                 ",'" + phone + "','" + birthdate + "','" + weight + "','" + height + "')";
 
+        User userFail= new User();
         try {
 
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(insertUserQuery);
             User user = null;
             Registry registry = null;
+            Boolean valida = false;
 
             int id = 0;
+
             while (rs.next()) {
 
+                valida=true;
                 id = rs.getInt("m01_registrar");
                 registry = new Registry(Float.parseFloat(weight), Float.parseFloat(height));
-                user = new User(id, username, password, email, sex, phone, registry);
 
             }
 
+            if(valida == true){
+                user = new User(id, username, password, email, sex, phone, registry);
+                user.set_status(Integer.toString(RESULT_CODE_OK));
             return gson.toJson(user);
+            }
+            else{
 
+                userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+                return gson.toJson(userFail);
+            }
         }
         catch (SQLException e) {
-            return e.getSQLState();
+            userFail.set_status(e.getSQLState());
+            return gson.toJson(userFail);
         }
         catch (Exception e) {
             return e.getMessage();
@@ -195,7 +210,6 @@ public class M01_ServicesUser {
         }
     }
 
-
     /**
      * Metodo que realiza cambios en el usuario
      * @param userparam
@@ -233,7 +247,6 @@ public class M01_ServicesUser {
         }
     }
 
-
     /***
      * Metodo que con el email recuperas tu usuario y contraseña
      * @param email
@@ -267,7 +280,6 @@ public class M01_ServicesUser {
 
     }
 
-
     /**
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
      * @param username
@@ -279,9 +291,7 @@ public class M01_ServicesUser {
     @Produces("application/json")
     public String getUser(@QueryParam("username") String username, @QueryParam("password") String password)
     {
-
         password= encryptPassword(password);
-
 
         String query="SELECT * FROM M01_INICIARSESION('"+username+"','"+password+"')";
 
@@ -290,20 +300,24 @@ public class M01_ServicesUser {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
 
-            int iniciosesion =0;
+            int idUser =0;
 
             while(rs.next()){
 
-                 iniciosesion = rs.getInt("m01_iniciarsesion");
+                 idUser = rs.getInt("m01_iniciarsesion");
 
             }
-            if (iniciosesion !=0){
+            if (idUser !=0){
 
-                return gson.toJson(iniciosesion);
+                User userResult=new User();
+                userResult.set_status(Integer.toString(RESULT_CODE_OK));
+                userResult.setId(idUser);
+                return gson.toJson(userResult);
             }
             else {
-
-                return gson.toJson(RESULT_CODE_FAIL);
+                User userFail = new User();
+                userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+                return gson.toJson(userFail);
             }
         }
         catch (NullPointerException e){
@@ -328,7 +342,6 @@ public class M01_ServicesUser {
     public String testEmail(@QueryParam("email") String email) {
 
         String query = "SELECT * FROM M01_RECUPERARPWD('" + email + "')";
-
 
         try {
             //Establecemos el usuario que es el correo que cree para hacer el recuperar
@@ -383,21 +396,23 @@ public class M01_ServicesUser {
                 //El tema del correo
                 message.setSubject("Recuperar contraseña FitUCAB");
                 //El contenido del correo
-                message.setText(" Hola FitUcabista! /n" +
-                                " tu usuario es:" + usernameResult +
-                                "/n y tu clave:" + passwordResult+ "/n" +
+                message.setText(" Hola FitUcabista! " +
+                                " tu usuario es: " + usernameResult +
+                                " y tu clave:" + passwordResult+ " " +
                                 " Ahora puedes seguir entrenando");
                 //Enviamos
                 Transport.send(message);
-                //Aqui en adelante cualquier tipo de validacion
-
-                return gson.toJson(RESULT_CODE_OK);
+                //Aqui esta la validacion
+                User userOk = new User();
+                userOk.set_status(Integer.toString(RESULT_EMAIL_OK));
+                return gson.toJson(userOk);
             }
 
             else {
-                return gson.toJson(RESULT_CODE_FAIL);
+                User userFail = new User();
+                userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+                return gson.toJson(userFail);
             }
-
 
         }
         catch (SQLException e){
@@ -410,58 +425,4 @@ public class M01_ServicesUser {
             return e.getMessage();
         }
     }
-
-    @GET
-    @Path("/helloWorld")
-    @Produces("application/json")
-    public String prueba()
-    {
-        String query="SELECT * FROM PERSON";
-
-        try{
-
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            User user= null;
-            while(rs.next()){
-                String username = rs.getString("PERSONUSERNAME");
-                int id = rs.getInt("PERSONID");
-                String password = rs.getString("PERSONPASSWORD");
-                String sexo= rs.getString("PERSONSEX");
-                String phone= rs.getString("PERSONPHONE");
-                String email= rs.getString("PERSONEMAIL");
-                Date birtdate= rs.getDate("PERSONBIRTHDATE");
-
-                user= new User(id,username,password,email,sexo,phone,birtdate);
-            }
-            return gson.toJson(user);
-        }
-        catch(Exception e) {
-            return e.getMessage();
-        }
-    }
-
-    //esto no va a aqui , se puso momentaneamente.
-    public Connection bdConnect()
-    {
-        Connection conn = null;
-        try
-        {
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/fitucabdb";
-            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
-        }
-        catch (ClassNotFoundException e)
-        {
-            e.printStackTrace();
-            System.exit(1);
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-            System.exit(2);
-        }
-        return conn;
-    }
-
 }

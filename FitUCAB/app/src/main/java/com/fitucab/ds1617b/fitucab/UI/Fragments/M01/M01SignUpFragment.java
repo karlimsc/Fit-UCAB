@@ -1,3 +1,4 @@
+
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 
@@ -34,6 +35,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.checkInsertResponse;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 
 /**
@@ -282,14 +286,16 @@ public class M01SignUpFragment extends Fragment {
                     try {
 
                         User user = response.body();
-                        onCompleted(user);
-                        int id = getIdUser(getContext());
-                        System.out.println(id);
-                        System.out.println("Hice bien  el insert");
-                        _callBack.onSwapActivity("M02HomeActivity", null);
+                        if (checkInsertResponse(user,getContext()) ){
+                            onCompleted(user);
+                            int id = getIdUser(getContext());
+                            System.out.println(id);
+                            _callBack.onSwapActivity("M02HomeActivity", null);
+                        }
+
                     } catch (Exception e) {
                         e.printStackTrace();
-                        System.out.println("Hice MAL el insert");
+                        System.out.println("No es problema de bd ni internet");
 
                     }
 
@@ -298,8 +304,10 @@ public class M01SignUpFragment extends Fragment {
                 @Override
                 public void onFailure(Call<User> call, Throwable t) {
 
-                    System.out.println("FALLO TODO en el insert");
-
+                    String error=t.getMessage();
+                    String errorResult= validateExceptionMessage(error);
+                    showToast(getContext(),errorResult);
+                    //Toast.makeText(getContext(), errorResult, Toast.LENGTH_SHORT).show();
                 }
 
             });

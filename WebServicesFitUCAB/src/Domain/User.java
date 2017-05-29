@@ -18,7 +18,12 @@ public class User {
     private String _sex;
     private String _phone;
     private Date _birthdate;
+    private String _status;
     private Registry _registry;
+
+    private int _weight; // Se usan unicamente para uso del perfil de usuario
+    private int _height; // Se usan unicamente para uso del perfil de usuario
+
 
     /**
      * Constructor vacio
@@ -143,6 +148,7 @@ public class User {
     {
         return _id;
     }
+
     public void setId(int id)
     {
         this._id = id;
@@ -152,6 +158,7 @@ public class User {
     {
         return _username;
     }
+
     public void setUser(String user)
     {
         this._username = user;
@@ -161,6 +168,7 @@ public class User {
     {
         return _password;
     }
+
     public void setPassword(String password)
     {
         this._password = password;
@@ -170,6 +178,7 @@ public class User {
     {
         return _email;
     }
+
     public void setEmail(String email)
     {
         this._email = email;
@@ -179,6 +188,7 @@ public class User {
     {
         return _sex;
     }
+
     public void setSex(String sex)
     {
         this._sex = sex;
@@ -188,13 +198,44 @@ public class User {
     {
         return _phone;
     }
+
     public void setPhone(String phone)
     {
         this._phone=phone;
     }
 
-    public Date get_birthdate() {return _birthdate;}
-    public void set_birthdate(Date _birthdate) { this._birthdate = _birthdate;}
+    public Date getBirthdate() {return _birthdate;}
+
+    public void setBirthdate(Date _birthdate) { this._birthdate = _birthdate;}
+
+    public void set_status(String _status) {
+        this._status = _status;
+    }
+
+    public Date get_birthdate() {
+        return _birthdate;
+    }
+
+    public void set_birthdate(Date _birthdate) {
+        this._birthdate = _birthdate;
+    }
+
+
+    //ESTO LO HIZO EL MODULO DE PERFIL
+    public int getWeight() {
+    return _weight;
+}
+    public void setWeight(int peso) {
+        _weight = peso;
+    }
+    public int getHeight() {
+        return _height;
+    }
+    public void setHeight(int altura) {
+        _height = altura;
+    }
+    //FIN DE ESTO LO HIZO EL MODULO DE PERFIL
+
 
 
 }

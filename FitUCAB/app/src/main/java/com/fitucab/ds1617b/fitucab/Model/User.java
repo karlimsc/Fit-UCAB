@@ -1,10 +1,12 @@
 package com.fitucab.ds1617b.fitucab.Model;
 
+import com.fitucab.ds1617b.fitucab.Model.Registry;
 import com.google.gson.annotations.SerializedName;
-
 /**
  * Created by Colmenares on 26/03/2017.
  */
+
+
 
 public class User {
 
@@ -26,10 +28,13 @@ public class User {
     private float _height;
     @SerializedName("_weight")
     private float _weight;
-    private int _point;
-
+    @SerializedName("_status")
+    private String _status;
     @SerializedName("_registry")
     private Registry _registry;
+
+    private int _point;
+
     /**
      * Constructor vacio
      */
@@ -65,7 +70,7 @@ public class User {
     }
 
     public User(int idUser, String username, String password,String email, String phone,
-                 char sex, String birthdate){
+                char sex, String birthdate){
         _idUser=idUser;
         _username=username;
         _password=password;
@@ -116,10 +121,18 @@ public class User {
 
     }
 
+    public String get_status() {
+        return _status;
+    }
+
+    public void set_status(String _status) {
+        this._status = _status;
+    }
 
     public int get_idUser() {
         return _idUser;
     }
+
 
     public void set_idUser(int _idUser) {
         this._idUser = _idUser;

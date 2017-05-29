@@ -3,49 +3,98 @@ package Domain;
 import java.sql.*;
 
 /**
- * Created by charbel on 25/05/2017.
+ * Clase que maneja la conexion con la base de datos
  */
 public class Sql {
 
+    private static Connection conInstance;
     private Connection conn =bdConnect();
+
+    private Connection _conn;
     private Statement _st;
     private ResultSet _rs;
+    private static String BD_USER = "postgres";
+    private static String BD_PASSWORD = "root";
+    private static String BD_URL = "jdbc:postgresql://localhost/FitUcabDB";
+    private static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
 
+    /**
+     * Metodo para devolver una unica instancia de la conexion
+     * @return instancia de la conexion
+     */
+    public static Connection getConInstance(){
+        if (conInstance == null){
+            conInstance = bdConnect();
+        }
+        return conInstance;
+    }
+    /**
+    * Constructor que inicializa la conexion con la BD
+     */
 
+    public Sql() {
+        _conn = bdConnect();
+    }
 
-
-    private Connection bdConnect()
+    /**
+     * Metodo que realiza la conexion con la base de datos
+     * @return Conexion hecha a la base de datos
+     * @throws ClassNotFoundException Si la clase no es encontrada
+     * @throws SQLException Problemas con sql
+     * @throws Exception
+     * @see Connection
+     * @see Statement
+     */
+    private static Connection bdConnect()
     {
-        Connection conn = null;
+        Connection _conn = null;
         try
         {
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/fitucabdb";
-            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
+            Class.forName(BD_CLASS_FOR_NAME);
+            _conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
+
         }
-        catch (ClassNotFoundException e)
+        catch ( ClassNotFoundException e )
         {
             e.printStackTrace();
-            System.exit(1);
         }
-        catch (SQLException e)
-        {
+        catch ( SQLException e ){
             e.printStackTrace();
-            System.exit(2);
         }
-        return conn;
-    }
-
-    public ResultSet sql (String query) throws SQLException , NullPointerException {
-
-
-        _st = conn.createStatement();
-        _rs  = _st.executeQuery(query);
-        conn.close();
-
-        return _rs;
+        catch ( Exception e ){
+            e.printStackTrace();
+        }
+        finally {
+            return _conn;
+        }
     }
 
 
+    /**
+     * Metodo que realiza un query a la base de datos con devolucion
+     * Realizar preferiblemente antes de bdConnect
+     * @param query
+     * @return Tabla que representa la consulta del query
+     * @throws SQLException Error en SQL
+     * @throws Exception
+     * @see ResultSet
+     */
+    public ResultSet sql ( String query ) throws SQLException {
 
+        try {
+            _st = _conn.createStatement();
+            _rs  = _st.executeQuery( query );
+        }
+        catch ( NullPointerException e ){
+            e.printStackTrace();
+        }
+        catch ( Exception e ){
+            e.printStackTrace();
+        }
+        finally {
+            _conn.close();
+            return _rs;
+        }
+
+    }
 }
