@@ -156,6 +156,7 @@ public class M10WaterGlassFragment extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                     unlockbtn();
+                        m10.unlockbtnm();
                     }
                 });
                 // Add the request to the RequestQueue.
@@ -193,12 +194,14 @@ public class M10WaterGlassFragment extends Fragment {
 
                             } catch (Exception e) {
                                 unlockbtn();
+                                m10.unlockbtnm();
                             }
                         }
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                 unlockbtn();
+                    m10.unlockbtnm();
                 }
             });
 

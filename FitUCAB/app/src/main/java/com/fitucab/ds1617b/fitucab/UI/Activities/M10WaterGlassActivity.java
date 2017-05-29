@@ -312,7 +312,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
 
     public void getValues(String fecha,int id)
     {
-        String url1 = "M10_WaterGlass/GetWater?time="+fecha+"&fkp="+idusuario;
+        String url1 = "M10_WaterGlass/GetWater?time="+fecha+"&fkp="+id;
         String aux = Url+url1;
         RequestQueue queue = Volley.newRequestQueue(contexto);
         // Request a string response from the provided URL.
@@ -334,7 +334,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                _EtnDate.setText("That didn't work!");
+               unlockbtnm();
             }
         });
 // Add the request to the RequestQueue.

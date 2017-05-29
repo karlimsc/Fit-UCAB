@@ -42,8 +42,8 @@
 
     <ImageButton
         android:id="@+id/btn_m10_AddWater"
-        android:layout_width="67dp"
-        android:layout_height="86dp"
+        android:layout_width="70dp"
+        android:layout_height="64dp"
         app:srcCompat="@android:drawable/ic_input_add"
         android:layout_marginRight="16dp"
         app:layout_constraintRight_toRightOf="parent"
@@ -54,13 +54,14 @@
     <ImageButton
         android:id="@+id/btn_m10_lessWater"
         android:layout_width="70dp"
-        android:layout_height="72dp"
+        android:layout_height="61dp"
         app:srcCompat="@android:drawable/ic_delete"
-        android:layout_marginLeft="28dp"
+        android:layout_marginLeft="26dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="26dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginBottom="36dp"
+        tools:layout_editor_absoluteY="414dp" />
 
     <EditText
         android:id="@+id/Et_m10_water"
