@@ -4,11 +4,21 @@
     tools:context="com.example.elberg.prueba2principal.M05PrincipalActivity">
 
     <item
+        android:id="@+id/itm_m05_refresh"
+        android:orderInCategory="100"
+        android:title="Reload"
+        android:icon="@mipmap/ic_refresh"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
         android:id="@+id/itm_m05_start_activity"
         android:orderInCategory="100"
         android:title="@mipmap/ic_launcher_activity"
         android:icon="@mipmap/ic_launcher_activity"
         app:showAsAction="ifRoom"
         />
+
+
 
 </menu>

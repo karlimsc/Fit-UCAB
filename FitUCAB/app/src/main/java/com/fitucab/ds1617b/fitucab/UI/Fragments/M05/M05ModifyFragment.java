@@ -183,12 +183,30 @@ public class M05ModifyFragment extends Fragment {
                 .setPositiveButton(R.string._dlg_m05_done, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         makeDelete();
-                        _callBack.onSwap("M05PrincipalActivityFragment",null);
+                        dialog();
+
                     }
                 })
                 .setNegativeButton(R.string._dlg_m05_cancel, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
+                    }
+                });
+
+        android.app.AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    /**
+     * Dialogo emergente una vez borrado la actividad
+     */
+    public void dialog() {
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(getActivity());
+        builder.setTitle(R.string._ttl_m05_information);
+        builder.setMessage(R.string._tst_m05_messageconfirmation)
+                .setPositiveButton(R.string._dlg_m05_done, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        _callBack.onSwap("M05PrincipalActivityFragment",null);
                     }
                 });
 
