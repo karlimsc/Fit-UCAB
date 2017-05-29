@@ -2,21 +2,48 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M03;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.GPSTracker;
+import com.fitucab.ds1617b.fitucab.Model.User;
+import com.fitucab.ds1617b.fitucab.Model.UserAuxiliar;
 import com.fitucab.ds1617b.fitucab.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+import static android.media.CamcorderProfile.get;
+import static java.lang.Thread.sleep;
+
 /**
 Aqui falta lo que hace la clase como tal y ya
 
 */
 public class M03FragmentNearMe extends Fragment{
 
-    TextView latitud;
-    TextView longitud;
+    TextView nombre;
+    TextView puntos;
+    TextView sexo;
+    TextView edad;
+    TextView distancia;
 
     View rootView;
 
@@ -35,21 +62,215 @@ public class M03FragmentNearMe extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        final Boolean[] usersNear = {true};
+        final ArrayList<UserAuxiliar> usuarios = new ArrayList<UserAuxiliar>();
+
         //se encarga de poner los atributos de diseño del ViewGroup padre
         rootView = inflater.inflate(R.layout.fragment_m03_near_me, container, false);
+        final Fragment fragment = this;
+        final Button accept = (Button) rootView.findViewById(R.id.btnAdd);
+        final Button decline = (Button) rootView.findViewById(R.id.btnDecline);
+        accept.setEnabled(false);
+        decline.setEnabled(false);
 
         GPSTracker gps = new GPSTracker(rootView.getContext());
-        if(gps.canGetLocation()){
+        if(gps.canGetLocation())
+        {
 
+            final Date[] bDate = new Date[1];
+            final DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
             double dlat = gps.getLatitude();
             double dlong = gps.getLongitude();
 
-            latitud = (TextView) rootView.findViewById(R.id.nearMeName);
-            longitud = (TextView) rootView.findViewById(R.id.nearMePoints);
-            latitud.setText(String.valueOf(dlat));
-            longitud.setText(String.valueOf(dlong));
-        }
+            nombre = (TextView) rootView.findViewById(R.id.nearMeName);
+            puntos = (TextView) rootView.findViewById(R.id.nearMePoints);
+            sexo = (TextView) rootView.findViewById(R.id.nearMeSex);
+            edad = (TextView) rootView.findViewById(R.id.nearMeAge);
+            distancia = (TextView) rootView.findViewById(R.id.nearMeDistance);
+
+            String urlNear = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/nearMe?id=2&longitud="+ Double.toString(dlong) +"&latitud="+ Double.toString(dlat) +"&rango=999999999999";
+            final Gson gson = new Gson();
+            // Inicializamos el RequestQueue.
+            final RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
+            // Solicitar una respuesta de cadena desde la URL proporcionada.
+            final StringRequest stringRequestDecline = new StringRequest(Request.Method.GET, urlNear,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+
+                            accept.setEnabled(true);
+                            decline.setEnabled(true);
+                            ArrayList<UserAuxiliar> ap = gson.fromJson(response,new TypeToken<List<UserAuxiliar>>(){}.getType());
+
+                            if ((ap != null) && (ap.size()==0)){
+                                usersNear[0] = false;
+                                nombre.setText("No hay usuarios cerca de ti");
+                            }else {
+
+                                for (int i = 0; i < ap.size(); i++) {
+                                    usuarios.add(new UserAuxiliar(ap.get(i).get_id(), ap.get(i).get_username(), ap.get(i).get_point(), ap.get(i).get_sex(), ap.get(i).get_birthdate(), ap.get(0).get_distancia()));
+                                }
+                            }
+
+                            if ((usuarios != null) && (usuarios.size()>0)) {
+                                nombre.setText(usuarios.get(0).get_username());
+                                puntos.setText(Integer.toString(usuarios.get(0).get_point()));
+                                if (usuarios.get(0).get_sex().equals("m") || usuarios.get(0).get_sex().equals("M"))
+                                    sexo.setText("Hombre");
+                                else
+                                    sexo.setText("Mujer");
+
+                                try {
+                                    bDate[0] = df.parse(usuarios.get(0).get_birthdate());
+                                } catch (ParseException e) {
+                                    e.printStackTrace();
+                                }
+                                    Calendar dob = Calendar.getInstance();
+                                    Calendar today = Calendar.getInstance();
+
+                                Long time= today.getTimeInMillis() / 1000 - bDate[0].getTime() / 1000;
+                                int years = Math.round(time) / 31536000;
+                                edad.setText("Edad "+Integer.toString(years));
+                                distancia.setText(usuarios.get(0).get_distancia()+" Km de ti");
+                                }
+
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
+                    builder1.setMessage("Error en la conexion");
+                    builder1.setCancelable(true);
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }
+            });
+            // Agregue la solicitud al RequestQueue.
+            queue.add(stringRequestDecline);
+
+
+
+
+            }
+            accept.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (usuarios != null && usuarios.size() > 0) {
+                        String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/request?idRequester=2&idRequested=" + usuarios.get(0).get_id();
+
+                        // Inicializamos el RequestQueue.
+                        RequestQueue queuereq = Volley.newRequestQueue(rootView.getContext());
+                        // Solicitar una respuesta de cadena desde la URL proporcionada.
+                        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url,
+                                new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+
+                                        usuarios.remove(0);
+                                    }
+                                }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
+                                builder1.setMessage("Error en la conexion");
+                                builder1.setCancelable(true);
+                                AlertDialog alert11 = builder1.create();
+                                alert11.show();
+                            }
+                        });
+
+                        // agregamos la solicitud al RequestQueue.
+                        queuereq.add(stringRequest);
+                        getFragmentManager().beginTransaction().detach(fragment).attach(fragment).commit();
+                    }else
+                        accept.setEnabled(false);
+
+                        try {
+                            sleep(250);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        getFragmentManager().beginTransaction().detach(fragment).attach(fragment).commit();
+
+                        try {
+                            sleep(250);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                }
+            });
+
+            decline.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (usuarios != null && usuarios.size() > 0) {
+                        String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/request?idRequester="+ usuarios.get(0).get_id()+"&idRequested=2";
+                        // Inicializamos el RequestQueue.
+                        RequestQueue queuedec = Volley.newRequestQueue(rootView.getContext());
+                        // Solicitar una respuesta de cadena desde la URL proporcionada.
+                        StringRequest stringRequest = new StringRequest(Request.Method.PUT, url,
+                                new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                            String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/update?idUpdater=2&idUpdated=" + usuarios.get(0).get_id() + "&Action=Decline";
+                                            // Inicializamos el RequestQueue.
+                                            RequestQueue queuereq = Volley.newRequestQueue(rootView.getContext());
+                                            // Solicitar una respuesta de cadena desde la URL proporcionada.
+
+
+                                            StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                                                    new Response.Listener<String>() {
+                                                        @Override
+                                                        public void onResponse(String response) {
+                                                            usuarios.remove(0);
+                                                        }
+                                                    }, new Response.ErrorListener() {
+                                                @Override
+                                                public void onErrorResponse(VolleyError error) {
+                                                    AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
+                                                    builder1.setMessage("Error en la conexion:"+error.toString());
+                                                    builder1.setCancelable(true);
+                                                    AlertDialog alert11 = builder1.create();
+                                                    alert11.show();
+                                                }
+                                            });
+                                            // agregamos la solicitud al RequestQueue.
+                                            queuereq.add(stringRequest);
+
+                                    }
+                                }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
+                                builder1.setMessage("Error en la conexion");
+                                builder1.setCancelable(true);
+                                AlertDialog alert11 = builder1.create();
+                                alert11.show();
+                            }
+                        });
+                        // agregamos la solicitud al RequestQueue.
+                        queuedec.add(stringRequest);
+                    }
+                    else
+                        decline.setEnabled(false);
+
+
+                        try {
+                            sleep(250);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        getFragmentManager().beginTransaction().detach(fragment).attach(fragment).commit();
+
+                        try {
+                            sleep(250);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                }
+            });
+
 
         return rootView;
     }

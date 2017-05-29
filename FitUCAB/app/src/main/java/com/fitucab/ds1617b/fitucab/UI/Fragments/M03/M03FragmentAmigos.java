@@ -34,6 +34,8 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 /**
  Aqui falta lo que hace la clase como tal y ya
 
@@ -75,96 +77,68 @@ public class M03FragmentAmigos extends Fragment {
         // Asociamos los menús contextuales a los controles
         registerForContextMenu(listView);
         //añadimos a los usuarios ¡???? me falto algo
-        usuarios.add(new UserAuxiliar(0,"", 650,5));
+
 
         String urlreq = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/getAll?id=2&Action=Requests";
        //creamos un objeto gson
         final Gson gsonreq = new Gson();
-
         //Instanciar el RequestQueue.
         RequestQueue queuereq = Volley.newRequestQueue(rootView.getContext());
-
-
         //Solicitar una respuesta de cadena desde la URL proporcionada.
         StringRequest stringRequestreq = new StringRequest(Request.Method.GET, urlreq,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         ArrayList<User> apreq = gsonreq.fromJson(response,new TypeToken<List<User>>(){}.getType());
-
-                        //ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
-                        //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-                        //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
-                        //listView.setAdapter(adapter);
-                        //ArrayList<UserAuxiliar> usuarios = new ArrayList<UserAuxiliar>();
+                        if (apreq.size()>0)
+                            usuarios.add(new UserAuxiliar(0,"", 650,5));
 
                         for(int i = 0;i<apreq.size();i++){
                             usuarios.add(new UserAuxiliar(apreq.get(i).get_idUser(),apreq.get(i).get_username(), apreq.get(i).get_point(),4));
                         }
 
-                        //adapter.addAll(usuarios);
 
-                        usuarios.add(new UserAuxiliar(0,"", 650,6));
 
                         String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/getAll?id=2&Action=Friends";
                         final Gson gson = new Gson();
-
                         // Instanciar el RequestQueue.
                         RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
-
                         // Solicitar una respuesta de cadena desde la URL proporcionada.
                         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                                 new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String response) {
                                         ArrayList<User> ap = gson.fromJson(response,new TypeToken<List<User>>(){}.getType());
-
-                                        //ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
-                                        //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-                                        //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
-                                        //listView.setAdapter(adapter);
-                                        //ArrayList<UserAuxiliar> usuarios = new ArrayList<UserAuxiliar>();
-
+                                        if (ap.size()>0)
+                                            usuarios.add(new UserAuxiliar(0,"", 650,6));
                                         for(int i = 0;i<ap.size();i++){
                                             usuarios.add(new UserAuxiliar(ap.get(i).get_idUser(),ap.get(i).get_username(), ap.get(i).get_point(),7));
                                         }
-
                                         adapter.addAll(usuarios);
-
-
                                     }
                                 }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                //ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
-                                //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-                                //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
-                                //listView.setAdapter(adapter);
-                                //ArrayList<UserAuxiliar> usuarios = new ArrayList<UserAuxiliar>();
-                                usuarios.add(new UserAuxiliar(0,error.toString(), 0,4));
-                                //adapter.addAll(usuarios);
+                                AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
+                                builder1.setMessage("Error en la conexion");
+                                builder1.setCancelable(true);
+                                AlertDialog alert11 = builder1.create();
+                                alert11.show();
                             }
                         });
                         //Agregue la solicitud al RequestQueue.
                         queue.add(stringRequest);
 
-                        //adapter.addAll(usuarios);
-
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
-                //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-                //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
-                //listView.setAdapter(adapter);
-                //ArrayList<UserAuxiliar> usuarios = new ArrayList<UserAuxiliar>();
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
+                builder1.setMessage("Error en la conexion");
+                builder1.setCancelable(true);
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
 
-
-                usuarios.add(new UserAuxiliar(0,error.toString(), 200,4));
-
-
-                //adapter.addAll(usuarios);
             }
         });
         //Agregue la solicitud al RequestQueue.
@@ -193,8 +167,7 @@ public class M03FragmentAmigos extends Fragment {
         menu.setHeaderTitle("menu amigos");
         UserAuxiliar user = (UserAuxiliar) listView.getItemAtPosition(info.position);
         if(user.get_type() == 7){
-            menu.add(1, user.get_id(), 0, "Bloquear");
-            int id = 2;
+            menu.add(99, user.get_id(), 0, "Bloquear");
         }
         else if(user.get_type() == 4){
             menu.add(2, user.get_id(), 0, "Aceptar");
@@ -216,40 +189,28 @@ public class M03FragmentAmigos extends Fragment {
     public boolean onContextItemSelected(MenuItem item) {
 
         switch (item.getGroupId()) {
-            case 1:
+            case 99:
                 //BLOQUEAR
                 String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/update?idUpdater=2&idUpdated="+Integer.toString(item.getItemId())+"&Action=Block";
                 final Gson gson = new Gson();
-
                 // inicializamos el RequestQueue.
                 RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
-
-
                 //Solicitar una respuesta de cadena desde la URL proporcionada.
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                if (response.equals("1")) {
                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
                                     builder1.setMessage("Usuario Bloqueado");
                                     builder1.setCancelable(true);
                                     AlertDialog alert11 = builder1.create();
                                     alert11.show();
-                                }
-                                else{
-                                    AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("No Bloqueado");
-                                    builder1.setCancelable(true);
-                                    AlertDialog alert11 = builder1.create();
-                                    alert11.show();
-                                }
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                        builder1.setMessage("Error en la conexion:"+error.toString());
+                        builder1.setMessage("No se pudo bloquear");
                         builder1.setCancelable(true);
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
@@ -258,7 +219,18 @@ public class M03FragmentAmigos extends Fragment {
                 // Agregue la solicitud al RequestQueue.
                 queue.add(stringRequest);
 
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 getFragmentManager().beginTransaction().detach(this).attach(this).commit();
+
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 return true;
             case 2:
@@ -275,26 +247,17 @@ public class M03FragmentAmigos extends Fragment {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                if (response.equals("1")) {
                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
                                     builder1.setMessage("Usuario Agregado");
                                     builder1.setCancelable(true);
                                     AlertDialog alert11 = builder1.create();
                                     alert11.show();
-                                }
-                                else{
-                                    AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Usuario no Agregado");
-                                    builder1.setCancelable(true);
-                                    AlertDialog alert11 = builder1.create();
-                                    alert11.show();
-                                }
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                        builder1.setMessage("Error en la conexion:"+error.toString());
+                        builder1.setMessage("No se pudo agregar");
                         builder1.setCancelable(true);
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
@@ -304,8 +267,18 @@ public class M03FragmentAmigos extends Fragment {
                 queueAccept.add(stringRequestAccept);
 
 
-
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 getFragmentManager().beginTransaction().detach(this).attach(this).commit();
+
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 return true;
             case 3:
@@ -322,26 +295,17 @@ public class M03FragmentAmigos extends Fragment {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                if (response.equals("1")) {
                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
                                     builder1.setMessage("Usuario Declinado");
                                     builder1.setCancelable(true);
                                     AlertDialog alert11 = builder1.create();
                                     alert11.show();
-                                }
-                                else{
-                                    AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Usuario no Declinado");
-                                    builder1.setCancelable(true);
-                                    AlertDialog alert11 = builder1.create();
-                                    alert11.show();
-                                }
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                        builder1.setMessage("Error en la conexion:"+error.toString());
+                        builder1.setMessage("No se pudo declinar");
                         builder1.setCancelable(true);
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
@@ -350,7 +314,18 @@ public class M03FragmentAmigos extends Fragment {
                 // Agregue la solicitud al RequestQueue.
                 queueDecline.add(stringRequestDecline);
 
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 getFragmentManager().beginTransaction().detach(this).attach(this).commit();
+
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 return true;
             default:
