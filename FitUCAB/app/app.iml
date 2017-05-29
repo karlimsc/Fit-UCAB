@@ -131,6 +131,7 @@
     <orderEntry type="library" exported="" scope="TEST" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" name="retrofit-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="converter-gson-2.1.0" level="project" />
+    <orderEntry type="library" exported="" name="circleimageview-2.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-compat-25.3.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-basement-10.2.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-25.3.0" level="project" />
