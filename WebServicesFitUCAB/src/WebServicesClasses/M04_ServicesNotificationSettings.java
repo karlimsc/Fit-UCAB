@@ -2,14 +2,12 @@ package WebServicesClasses;
 
 import Domain.Notification_Settings;
 import com.google.gson.Gson;
-import Domain.basedatosException;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
-
 
 /**
  * Clase de Servicios Web del Modulo 04
@@ -50,7 +48,7 @@ public class M04_ServicesNotificationSettings {
                              @QueryParam("preferenceUnit") String preferenceUnit,
                              @QueryParam("preferenceRadius") int preferenceRadius,
                              @QueryParam("userId") int userId
-    ) throws basedatosException
+    )
     {
 
         try{
