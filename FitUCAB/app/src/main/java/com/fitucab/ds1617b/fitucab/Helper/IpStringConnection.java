@@ -8,19 +8,20 @@ package com.fitucab.ds1617b.fitucab.Helper;
  */
 
 public class IpStringConnection {
-    private String _ip = "http://190.74.250.81:8888/WebServicesFitUCAB_war_exploded/";
+    private String _ip = "http:// 190.79.96.205:8080/WebServicesFitUCAB_war_exploded/";
 
 
     public IpStringConnection() {
 
-        this._ip = "http://190.74.250.81:8888/WebServicesFitUCAB_war_exploded/";
+        this.set_ip("http:// 190.79.96.205:8080/WebServicesFitUCAB_war_exploded/");
 
     }
 
-    public String getIp() {
-
+    public String get_ip() {
         return _ip;
-
     }
 
+    public void set_ip(String _ip) {
+        this._ip = _ip;
+    }
 }
