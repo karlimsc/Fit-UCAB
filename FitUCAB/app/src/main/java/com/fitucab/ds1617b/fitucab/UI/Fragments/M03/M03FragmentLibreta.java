@@ -29,6 +29,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.Model.UserAuxiliar;
 import com.fitucab.ds1617b.fitucab.Model.Person;
@@ -50,6 +52,10 @@ import static java.lang.Thread.sleep;
 
  */
 public class M03FragmentLibreta extends Fragment {
+
+    ManagePreferences manageId = new ManagePreferences();
+    int userId = 0;
+    IpStringConnection ipString = new IpStringConnection();
 
     private static final int PERMISSIONS_REQUEST_READ_CONTACTS = 100;
     ListView listView;
@@ -82,6 +88,7 @@ public class M03FragmentLibreta extends Fragment {
         }
         //se encarga de poner los atributos de diseño del ViewGroup padre
         rootView = inflater.inflate(R.layout.fragment_m03_contacts, container, false);
+        userId = manageId.getIdUser(rootView.getContext());
         // se instancia un arrraylist
         ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
         //nos proveera los datos del usuario
@@ -180,7 +187,7 @@ public class M03FragmentLibreta extends Fragment {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/contact/getContacts?id=2&contacts=" + contactsEncoded;
+        String url = ipString.getIp()+"contact/getContacts?id="+userId+"&contacts=" + contactsEncoded;
         final Gson gsonresp = new Gson();
         // Inicializamos el RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
@@ -263,7 +270,7 @@ public class M03FragmentLibreta extends Fragment {
 
         switch (item.getGroupId()) {
             case 0:
-                String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/request?idRequester=2&idRequested="+Integer.toString(item.getItemId());
+                String url = ipString.getIp()+"friend/request?idRequester="+userId+"&idRequested="+Integer.toString(item.getItemId());
                 final Gson gson = new Gson();
 
                 // Inicializamos el RequestQueue.
@@ -274,7 +281,7 @@ public class M03FragmentLibreta extends Fragment {
                             @Override
                             public void onResponse(String response) {
                                 if (response.equals("Ya Existe esta amistad.")){
-                                    String urlAccept = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/update?idUpdater=2&idUpdated="+Integer.toString(item.getItemId())+"&Action=Request";
+                                    String urlAccept = ipString.getIp()+"friend/update?idUpdater="+userId+"&idUpdated="+Integer.toString(item.getItemId())+"&Action=Request";
                                     final Gson gsonAccept = new Gson();
 
                                     // Inicializamos el RequestQueue.

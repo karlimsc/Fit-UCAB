@@ -16,6 +16,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.GPSTracker;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.Model.UserAuxiliar;
 import com.fitucab.ds1617b.fitucab.R;
@@ -38,6 +40,11 @@ Aqui falta lo que hace la clase como tal y ya
 
 */
 public class M03FragmentNearMe extends Fragment{
+
+    ManagePreferences manageId = new ManagePreferences();
+    int userId = 0;
+
+    IpStringConnection ipString = new IpStringConnection();
 
     TextView nombre;
     TextView puntos;
@@ -67,6 +74,7 @@ public class M03FragmentNearMe extends Fragment{
 
         //se encarga de poner los atributos de diseño del ViewGroup padre
         rootView = inflater.inflate(R.layout.fragment_m03_near_me, container, false);
+        userId = manageId.getIdUser(rootView.getContext());
         final Fragment fragment = this;
         final Button accept = (Button) rootView.findViewById(R.id.btnAdd);
         final Button decline = (Button) rootView.findViewById(R.id.btnDecline);
@@ -83,13 +91,39 @@ public class M03FragmentNearMe extends Fragment{
             double dlat = gps.getLatitude();
             double dlong = gps.getLongitude();
 
+            String url = ipString.getIp()+"nearMe/setLocation?id="+userId+"&longitud="+dlong+"&latitud="+dlat;
+
+            // Inicializamos el RequestQueue.
+            RequestQueue queuereq = Volley.newRequestQueue(rootView.getContext());
+            // Solicitar una respuesta de cadena desde la URL proporcionada.
+            StringRequest stringRequest = new StringRequest(Request.Method.PUT, url,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
+                    builder1.setMessage("Error en la conexion");
+                    builder1.setCancelable(true);
+                    AlertDialog alert11 = builder1.create();
+                    alert11.show();
+                }
+            });
+
+            // agregamos la solicitud al RequestQueue.
+            queuereq.add(stringRequest);
+
+
             nombre = (TextView) rootView.findViewById(R.id.nearMeName);
             puntos = (TextView) rootView.findViewById(R.id.nearMePoints);
             sexo = (TextView) rootView.findViewById(R.id.nearMeSex);
             edad = (TextView) rootView.findViewById(R.id.nearMeAge);
             distancia = (TextView) rootView.findViewById(R.id.nearMeDistance);
 
-            String urlNear = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/nearMe?id=2&longitud="+ Double.toString(dlong) +"&latitud="+ Double.toString(dlat) +"&rango=999999999999";
+            String urlNear = ipString.getIp()+"nearMe?id="+userId+"&longitud="+ Double.toString(dlong) +"&latitud="+ Double.toString(dlat) +"&rango=999999999999";
             final Gson gson = new Gson();
             // Inicializamos el RequestQueue.
             final RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
@@ -157,7 +191,7 @@ public class M03FragmentNearMe extends Fragment{
                 @Override
                 public void onClick(View v) {
                     if (usuarios != null && usuarios.size() > 0) {
-                        String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/request?idRequester=2&idRequested=" + usuarios.get(0).get_id();
+                        String url = ipString.getIp()+"friend/request?idRequester="+userId+"&idRequested=" + usuarios.get(0).get_id();
 
                         // Inicializamos el RequestQueue.
                         RequestQueue queuereq = Volley.newRequestQueue(rootView.getContext());
@@ -205,7 +239,7 @@ public class M03FragmentNearMe extends Fragment{
                 @Override
                 public void onClick(View v) {
                     if (usuarios != null && usuarios.size() > 0) {
-                        String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/request?idRequester="+ usuarios.get(0).get_id()+"&idRequested=2";
+                        String url = ipString.getIp()+"friend/request?idRequester="+ usuarios.get(0).get_id()+"&idRequested="+userId;
                         // Inicializamos el RequestQueue.
                         RequestQueue queuedec = Volley.newRequestQueue(rootView.getContext());
                         // Solicitar una respuesta de cadena desde la URL proporcionada.
@@ -213,7 +247,7 @@ public class M03FragmentNearMe extends Fragment{
                                 new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String response) {
-                                            String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/update?idUpdater=2&idUpdated=" + usuarios.get(0).get_id() + "&Action=Decline";
+                                            String url = ipString.getIp()+"friend/update?idUpdater="+userId+"&idUpdated=" + usuarios.get(0).get_id() + "&Action=Decline";
                                             // Inicializamos el RequestQueue.
                                             RequestQueue queuereq = Volley.newRequestQueue(rootView.getContext());
                                             // Solicitar una respuesta de cadena desde la URL proporcionada.

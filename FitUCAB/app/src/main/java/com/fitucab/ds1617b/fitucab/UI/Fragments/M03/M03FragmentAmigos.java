@@ -23,6 +23,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.UserAuxiliar;
 
 import com.fitucab.ds1617b.fitucab.Model.User;
@@ -42,6 +44,10 @@ import static java.lang.Thread.sleep;
  */
 public class M03FragmentAmigos extends Fragment {
 
+
+    ManagePreferences manageId = new ManagePreferences();
+    int userId = 0;
+    IpStringConnection ipString = new IpStringConnection();
     ListView listView;
     View rootView;
 
@@ -61,6 +67,7 @@ public class M03FragmentAmigos extends Fragment {
 
         //se encarga de poner los atributos de diseño del ViewGroup padre
         rootView = inflater.inflate(R.layout.fragment_m03_friends, container, false);
+        userId = manageId.getIdUser(rootView.getContext());
         // se instancia un arrraylist
         ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
         //nos proveera los datos del usuario
@@ -79,7 +86,7 @@ public class M03FragmentAmigos extends Fragment {
         //añadimos a los usuarios ¡???? me falto algo
 
 
-        String urlreq = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/getAll?id=2&Action=Requests";
+        String urlreq = ipString.getIp()+"friend/getAll?id="+userId+"&Action=Requests";
        //creamos un objeto gson
         final Gson gsonreq = new Gson();
         //Instanciar el RequestQueue.
@@ -99,7 +106,7 @@ public class M03FragmentAmigos extends Fragment {
 
 
 
-                        String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/getAll?id=2&Action=Friends";
+                        String url = ipString.getIp()+"friend/getAll?id="+userId+"&Action=Friends";
                         final Gson gson = new Gson();
                         // Instanciar el RequestQueue.
                         RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
@@ -191,7 +198,7 @@ public class M03FragmentAmigos extends Fragment {
         switch (item.getGroupId()) {
             case 99:
                 //BLOQUEAR
-                String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/update?idUpdater=2&idUpdated="+Integer.toString(item.getItemId())+"&Action=Block";
+                String url = ipString.getIp()+"friend/update?idUpdater="+userId+"&idUpdated="+Integer.toString(item.getItemId())+"&Action=Block";
                 final Gson gson = new Gson();
                 // inicializamos el RequestQueue.
                 RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
@@ -235,7 +242,7 @@ public class M03FragmentAmigos extends Fragment {
                 return true;
             case 2:
                 //ACEPTAR
-                String urlAccept = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/update?idUpdater=2&idUpdated="+Integer.toString(item.getItemId())+"&Action=Accept";
+                String urlAccept = ipString.getIp()+"friend/update?idUpdater="+userId+"&idUpdated="+Integer.toString(item.getItemId())+"&Action=Accept";
                 final Gson gsonAccept = new Gson();
 
                 // Inicializamos el RequestQueue.
@@ -283,7 +290,7 @@ public class M03FragmentAmigos extends Fragment {
                 return true;
             case 3:
                 //DECLINAR
-                String urlDecline = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/update?idUpdater=2&idUpdated="+Integer.toString(item.getItemId())+"&Action=Decline";
+                String urlDecline = ipString.getIp()+"friend/update?idUpdater="+userId+"&idUpdated="+Integer.toString(item.getItemId())+"&Action=Decline";
                 final Gson gsonDecline = new Gson();
 
                 // Inicializamos el RequestQueue.
