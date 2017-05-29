@@ -135,6 +135,11 @@
             android:label="@string/app_name">
         </activity>
 
+        <activity android:name=".UI.Activities.M04NotificationActivity"
+            android:label="Notificaciones">
+
+
+        </activity>
     </application>
 
 

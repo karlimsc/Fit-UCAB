@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity">
+
+    <LinearLayout
+        android:id="@+id/widget42"
+        android:layout_width="282dp"
+        android:layout_height="330dp"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:weightSum="1">
+
+
+        <Switch
+            android:id="@+id/sw_m04_amigos"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:theme="@style/AppTheme"
+            android:layout_marginTop="17dp"
+            android:checked="false"
+            android:text="@string/amigo"
+            android:textOff="@string/NO"
+            android:textOn="@string/SI"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="10dp"
+            android:layout_weight="0.12" />
+
+        <Switch
+            android:id="@+id/sw_m04_actividad"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:theme="@style/AppTheme"
+            android:text="@string/actividad"
+            android:textOff="@string/NO"
+            android:textOn="@string/SI"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="50dp" />
+
+        <Switch
+            android:id="@+id/sw_m04_entrenamiento"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:theme="@style/AppTheme"
+            android:text="@string/entrenamiento"
+            android:textOff="@string/NO"
+            android:textOn="@string/SI"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="90dp"
+            android:layout_weight="0.12" />
+
+        <Switch
+            android:id="@+id/sw_m04_retos"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:theme="@style/AppTheme"
+            android:text="@string/reto"
+            android:textOff="@string/NO"
+            android:textOn="@string/SI"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="130dp"
+            android:layout_weight="0.12" />
+
+        <Switch
+            android:id="@+id/sw_m04_hidratacion"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:theme="@style/AppTheme"
+            android:text="@string/hidratacion"
+            android:textOff="@string/NO"
+            android:textOn="@string/SI"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="170dp"
+            android:layout_weight="0.12" />
+
+        <Switch
+            android:id="@+id/sw_m04_calorias"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:theme="@style/AppTheme"
+            android:text="@string/calorias"
+            android:textOff="@string/NO"
+            android:textOn="@string/SI"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="210dp"
+            android:layout_weight="0.12" />
+
+        <Switch
+            android:id="@+id/sw_m04_gamificacion"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:theme="@style/AppTheme"
+            android:checked="false"
+            android:text="@string/gamificacion"
+            android:textOff="@string/NO"
+            android:textOn="@string/SI"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="250dp"
+            android:layout_weight="0.12" />
+
+        <TextView
+            android:id="@+id/tv_m04_idioma"
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_marginTop="10dp"
+            android:clickable="true"
+            android:onClick="showDialog"
+            android:text="@string/lang_btn"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="290dp" />
+
+        <TextView
+            android:id="@+id/tv_m04_km"
+            android:layout_width="141dp"
+            android:layout_height="33dp"
+            android:background="@color/softgrey"
+            android:clickable="false"
+            android:onClick="cambiaAKm"
+            android:text="@string/kms"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="330dp"
+            android:textColor="@color/black"
+            android:textAlignment="center"/>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/button_guardacambios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="guardar cambios"
+        android:text="@string/guardar"
+        android:layout_below="@+id/tv_m04_distancia"
+        android:layout_alignStart="@+id/tv_m04_radio2" />
+
+
+    <SeekBar
+        android:id="@+id/tv_m04_radio2"
+        android:layout_width="100pt"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_m04_radio1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/tv_m04_distancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_m04_radio2"
+        android:layout_centerHorizontal="true"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/tv_m04_radio1"
+        android:theme="@style/AppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/radio"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/widget42"
+        android:layout_alignStart="@+id/widget42" />
+
+    <TextView
+        android:id="@+id/tv_m04_mi"
+        android:layout_width="141dp"
+        android:layout_height="33dp"
+        android:clickable="true"
+        android:onClick="cambiaAMi"
+        android:text="@string/millas"
+        android:textColor="@color/black"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="330dp"
+        android:textAlignment="center"
+        android:layout_alignBottom="@+id/widget42"
+        android:layout_toEndOf="@+id/tv_m04_distancia"
+        android:background="@color/transparent"/>
+
+
+</RelativeLayout>

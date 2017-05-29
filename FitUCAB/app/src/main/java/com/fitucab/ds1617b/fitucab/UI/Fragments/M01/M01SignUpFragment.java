@@ -17,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
@@ -298,6 +299,8 @@ public class M01SignUpFragment extends Fragment {
                         if (checkInsertResponse(user,getContext()) ){
                             onCompleted(user);
                             int id = getIdUser(getContext());
+                            M04NotificationActivity settings = new M04NotificationActivity();
+                            settings.insert(true,true,true,true,true,true,true,"es", "km",5, id);
                             System.out.println(id);
                             _callBack.onSwapActivity("M02HomeActivity", null);
                         }
