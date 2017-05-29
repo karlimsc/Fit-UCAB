@@ -17,6 +17,7 @@ import Domain.*;
 
 @Path("/M05_ServicesSport")
 public class M05_ServicesSport {
+    private Connection conn = getConInstance();
 
     Gson gson = new Gson();
 
@@ -39,7 +40,7 @@ public class M05_ServicesSport {
         String query = "select * from M05_insertarDeporte('"+nombreUsu+"','"+nombreDep+"')" ;
 
         try{
-            Connection conn = conectarADb();
+  
             Statement    st = conn.createStatement();
             ResultSet    rs =  st.executeQuery(query);
 
@@ -61,13 +62,13 @@ public class M05_ServicesSport {
     /**
      * 
 	 * Extrae el nombre de los deportes en funcion del id
-     * @param idSpo
+     * @param nameSpo
      * @return
      */
 
-    public String getSport(@QueryParam("idSpo") Integer id){
-
-
+    public String getSport(@QueryParam("nameSpo") String nombre){
+ 
+        idSpo=obtenerIdSport(nombre)
         Sport resultado = null;
 
         //Declarando la sentencia de la funcion de obtenerDatosDeporte que devuelve todos los datos de los deportes
@@ -75,7 +76,6 @@ public class M05_ServicesSport {
 
         try{
 
-            Connection conn = conectarADb();
             Statement    st = conn.createStatement();
             ResultSet    rs =  st.executeQuery(query);
 
@@ -83,8 +83,8 @@ public class M05_ServicesSport {
 
                 Integer numero = rs.getInt(   "iddeporte");
                 String  nombre = rs.getString("nombredeporte");
-
-                resultado=new Sport(numero,nombre);
+		        float   mets   = rs.getFloat("metdeporte");
+                 resultado=new Sport(numero,nombre,mets);
 
 
             }
@@ -116,8 +116,6 @@ public class M05_ServicesSport {
         String query = "select * from M05_obtenermetdeporte('"+nombreDep.toUpperCase()+"')";
 
         try{
-
-            Connection conn = conectarADb();
             Statement    st = conn.createStatement();
             ResultSet    rs =  st.executeQuery(query);
 
@@ -151,19 +149,17 @@ public class M05_ServicesSport {
     public String getSportsUser(@QueryParam("idPer") Integer id ){
 
 
-        Sport resultado = new Sport();
-        ArrayList<String> listaDeportes= new ArrayList<>();
-
+        
+        
         String query = "select nombredeporte from M05_obtenerdeportesusuario('"+id+"')";
 
         try{
-
-            Connection conn = conectarADb();
+            ArrayList<Sport> listaDeportes= new ArrayList<Sport>();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
             while(rs.next()){
-
+                Sport resultado = new Sport();
                 resultado.setName(rs.getString(  "nombredeporte"));
                 listaDeportes.add(resultado.getName());
             }
@@ -198,7 +194,6 @@ public class M05_ServicesSport {
         String query = "select  M05_eliminarDeporte('"+nombreUsu+"','"+nombreDep+"')" ;
 
         try{
-            Connection conn = conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -225,7 +220,6 @@ public class M05_ServicesSport {
        Sport resultado= new Sport();
 
         try{
-            Connection conn=conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -241,27 +235,7 @@ public class M05_ServicesSport {
         }
     }
 
-    private Connection conectarADb(){
-
-        Connection conn = null;
-
-        try {
-
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/FitUcabDB";
-            conn       = DriverManager.getConnection(url, "postgres",  "postgres");
-
-        } catch (ClassNotFoundException e) {
-
-            e.printStackTrace();
-            System.exit(1);
-        } catch (SQLException e) {
-
-            e.printStackTrace();
-            System.exit(2);
-        }
-        return conn;
-    }
+   
 
 }
 
