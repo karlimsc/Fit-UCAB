@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
@@ -27,6 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.checkInsertResponse;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
@@ -161,10 +163,14 @@ public class  M01LoginFragment extends Fragment {
              ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
              Call<User> call= apiService.loginUser(usernameLogin,passwordLogin);
 
+             final MaterialDialog dialog =getInstaceDialog(getContext());
+
              call.enqueue(new Callback<User>() {
 
                  @Override
                  public void onResponse(Call<User> call, Response<User> response) {
+
+                     dialog.dismiss();
 
                      try{
 
@@ -190,6 +196,7 @@ public class  M01LoginFragment extends Fragment {
                  @Override
                  public void onFailure(Call<User> call, Throwable t) {
 
+                     dialog.dismiss();
                      String error=t.getMessage();
                      String errorResult= validateExceptionMessage(error);
                      showToast(getContext(),errorResult);
