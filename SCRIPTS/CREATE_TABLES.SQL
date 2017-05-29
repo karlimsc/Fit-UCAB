@@ -35,6 +35,42 @@ CREATE TABLE REGISTRY (
 );
 
 
+--MODULO 3--
+ 
+CREATE TABLE STATUS(
+ 
+STATUSID		serial  primary key,
+STATUSPENDING	integer,
+STATUSACCEPTED	integer,
+STATUSBLOCKED	integer,
+STATUSDECLINE	integer
+);
+ 
+CREATE TABLE FRIENDSHIP(
+FRIENDSHIPID                       serial  primary key,
+FK_PERSONONEID		integer,
+FK_PERSONTWOID	            integer,
+FK_STATUSID                       integer,
+FRIENDSHIPUSERACTIVITY	integer
+);
+
+CREATE TABLE GEO(
+GEOID		serial  primary key,
+FK_PERSONID		integer,
+GEOLONGITUD	varchar(30) not null,
+GEOLATITUD	varchar(30) not null
+);
+
+
+
+
+INSERT INTO public.status(statusid, statuspending, statusaccepted, statusblocked, statusdecline)
+VALUES (1, 1,0, 0,0),(2,0,1,0,0),(3,0,0,1,0),(4,0,0,0,1);
+--TERMINA MODULO 3--
+
+
+
+
 --MODULO 5--
 
 CREATE TABLE SPORT (
@@ -151,6 +187,30 @@ constraint PK_FRIEN_TRAINID primary key ( FRIEN_TRAINID)
 );
 
 --- TERMINA MODULO 6  ---
+	
+--- MODULO 8 ---
+	CREATE TABLE CHALLENGE (
+
+CHALLENGEID serial primary key,
+CHALLENGENAME varchar(30) not null,
+CHALLENGEDESCRIPTION varchar(500) not null,
+CHALLENGEKILOMETERS integer,
+CHALLENGESCORE integer,
+CHALLENGEDAYS integer,
+CHALLENGETYPE varchar(4) not null,
+CHALLENGEPREDEFINED varchar(1) not null
+);
+
+CREATE TABLE DETAIL (
+DETAILID serial primary key,
+DETAILDATESTART timestamp not null,
+DETAILDATEEND timestamp not null,
+DETAILACTIVE boolean not null,
+FK_USERID integer,
+FK_CHALLENGEID integer
+);
+		
+--- FIN MODULO 8 ---
 
 
 

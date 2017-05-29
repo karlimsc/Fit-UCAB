@@ -1,5 +1,6 @@
 package com.fitucab.ds1617b.fitucab.Model;
 
+import com.fitucab.ds1617b.fitucab.Model.Registry;
 import com.google.gson.annotations.SerializedName;
 /**
  * Created by Colmenares on 26/03/2017.
