@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -45,7 +46,7 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
     private OnFragmentSwap _callBack;
     private GoogleMap mMap;
     private static View _view;
-    private Sport mSport = new Sport();
+    private Sport mSport = null;
     private User mUser = new User();
     private IpStringConnection baseIp = new IpStringConnection();
     private Button _startTracking;
@@ -84,11 +85,16 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
     View.OnClickListener startTracking = new View.OnClickListener(){
         public void onClick(View v) {
 
-            Intent intent = new Intent(getContext(), M05StartTrackingActivity.class);
-            intent.putExtra("user", mUser);
-            intent.putExtra("sport", mSport);
-            startActivity(intent);
-
+            if (mSport == null){
+                Toast.makeText(getContext(), R.string._tst_m05_item,
+                        Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Intent intent = new Intent(getContext(), M05StartTrackingActivity.class);
+                intent.putExtra("user", mUser);
+                intent.putExtra("sport", mSport);
+                startActivity(intent);
+            }
         }
     };
 

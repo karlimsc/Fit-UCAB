@@ -27,18 +27,17 @@
 
     <Button
 
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lv_m05_SportsListView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp"
         android:layout_weight="1"
         android:id="@+id/bt_m05_startTracking"
         android:textColor="@color/colorwhite"
         android:text="@string/_bt_start_tracking"
         android:background="@color/colorBtnConfirmar"
 
-         />
+        android:layout_below="@+id/lv_m05_SportsListView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="51dp" />
 
 
 </RelativeLayout>
