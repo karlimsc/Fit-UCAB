@@ -13,9 +13,9 @@ public class Sql {
     private Connection _conn;
     private Statement _st;
     private ResultSet _rs;
-    private static String BD_USER = "fitucab";
-    private static String BD_PASSWORD = "fitucab";
-    private static String BD_URL = "jdbc:postgresql://localhost/fitucabdb";
+    private static String BD_USER = "postgres";
+    private static String BD_PASSWORD = "root";
+    private static String BD_URL = "jdbc:postgresql://localhost/FitUcabDB";
     private static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
 
     /**
@@ -47,11 +47,11 @@ public class Sql {
      */
     private static Connection bdConnect()
     {
-        Connection conn = null;
+        Connection _conn = null;
         try
         {
             Class.forName(BD_CLASS_FOR_NAME);
-            conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
+            _conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
 
         }
         catch ( ClassNotFoundException e )
@@ -65,7 +65,7 @@ public class Sql {
             e.printStackTrace();
         }
         finally {
-            return conn;
+            return _conn;
         }
     }
 

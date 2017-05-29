@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity">
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="228dp"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="116dp"
+            android:layout_marginBottom="0dp"
+            android:background="@color/colorwhite"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+
+            <ImageButton
+                android:id="@+id/btn_m10_lessDate"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:layout_alignTop="@+id/editText"
+                android:layout_marginEnd="27dp"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp"
+                android:layout_toLeftOf="@+id/imageButton4"
+                android:background="@color/colorwhite"
+                app:srcCompat="@drawable/ic_btn_atras"
+                tools:ignore="ContentDescription,ObsoleteLayoutParam,RtlHardcoded" />
+
+            <EditText
+                android:id="@+id/et_m10_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:cursorVisible="false"
+                android:ems="10"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:inputType="date"
+                android:textColor="@color/black"
+                android:textAlignment="center" />
+
+            <ImageButton
+                android:id="@+id/btn_m10_AddDate"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:layout_alignTop="@+id/editText"
+                android:layout_marginLeft="27dp"
+                android:layout_marginRight="27dp"
+                android:layout_marginStart="27dp"
+                android:layout_toEndOf="@+id/imageButton4"
+                android:layout_toRightOf="@+id/imageButton4"
+                android:background="@color/colorwhite"
+                android:contentDescription=""
+                app:srcCompat="@drawable/ic_btn_adelante"
+                tools:ignore="ContentDescription,ObsoleteLayoutParam" />
+
+
+        </LinearLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

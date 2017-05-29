@@ -1,10 +1,12 @@
 package com.fitucab.ds1617b.fitucab.Model;
 
+import com.fitucab.ds1617b.fitucab.Model.Registry;
 import com.google.gson.annotations.SerializedName;
-
 /**
  * Created by Colmenares on 26/03/2017.
  */
+
+
 
 public class User {
 
@@ -68,7 +70,7 @@ public class User {
     }
 
     public User(int idUser, String username, String password,String email, String phone,
-                 char sex, String birthdate){
+                char sex, String birthdate){
         _idUser=idUser;
         _username=username;
         _password=password;

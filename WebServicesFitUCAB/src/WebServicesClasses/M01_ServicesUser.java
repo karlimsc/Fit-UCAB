@@ -309,7 +309,10 @@ public class M01_ServicesUser {
             }
             if (idUser !=0){
 
-                return gson.toJson(idUser);
+                User userResult=new User();
+                userResult.set_status(Integer.toString(RESULT_CODE_OK));
+                userResult.setId(idUser);
+                return gson.toJson(userResult);
             }
             else {
                 User userFail = new User();
