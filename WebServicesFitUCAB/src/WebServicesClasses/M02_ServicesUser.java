@@ -53,7 +53,7 @@ public class M02_ServicesUser {
     @PUT
     @Path("/{userId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateUser( @PathParam("userId") int id, User user ){
+    public Response updateUser( @PathParam("userId") int id, @QueryParam("user") User user ){
         user.setId(id);
         _service = new Query();
         if ( _service.updateUser( user ) == false ){
