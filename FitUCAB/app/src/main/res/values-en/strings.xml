@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">FitUCAB</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="str_en">English</string>
+    <string name="str_es">EspaÃ±ol</string>
+
     <!--Inicio Strings Modulo 1 -->
-    <string name="app_name">Fit UCAB</string>
     <string name="btn_m01_enviarCorreo">Send Email</string>
     <string name="btn_m01_iniciaSesion">Login</string>
     <string name="et_m01_correoRegistro">Email</string>
@@ -47,6 +55,7 @@
     <string name="nav_02_hidratacion">Hydration</string>
     <string name="nav_02_notificacion">Notifications</string>
     <!--FIN Strings Modulo 1 -->
+
     <!--Inicio Strings Modulo 2-->
     <string name="tv_m02_perfil">Profile</string>
     <string name="et_m02_username">username</string>
@@ -58,7 +67,8 @@
     <string name="et_m02_location">Location</string>
     <string name="et_m02_water">Water</string>
     <string name="et_m02_Steps">Steps</string>
-        <!--FIN Strings Modulo 2 -->
+    <string name="radio">Nearby radius</string>
+    <!--FIN Strings Modulo 2 -->
 
 
     <!--Inicio Strings Modulo 3-->
@@ -93,6 +103,8 @@
 
     <!--FIN Strings Modulo 3 -->
 
+
+
     <!--Inicio Strings Modulo 5-->
     <string name="tab_m05_log">Log</string>
     <string name="tab_m05_track">Track</string>
@@ -118,6 +130,44 @@
     <string name="m01_errorHeightOutOfRange">The height range is between 1m and 3m</string>
     <string name="m01_errorNullFields">There are empty fields</string>
     <string name="m01_errorWeightOutOfRange">The weight range is between 30kg and 300kg</string>
+    <string name="_tv_m05_titletabmanual">MANUAL</string>
+    <string name="_tv_m05_bt_pause">PAUSE</string>
+    <string name="_btn_m05_registermanual">LOG</string>
+    <string name="_tv_m05_calories">Calories</string>
+    <string name="_tv_m05_duration">Duration</string>
+    <string name="_tv_m05_startime">Start Time</string>
+    <string name="_tv_m05_type">Type</string>
+    <string name="app_name_title">Activity</string>
+    <string name="bt_start_tracking">Start</string>
+    <string name="_tv_m05_speed">Speed</string>
+    <string name="_tv_m05_time">Time</string>
+    <string name="_btn_m05_resume">RESUME</string>
+    <string name="_btn_m05_pause">PAUSE</string>
     <!--FIN Strings Modulo 5 -->
+
+    <!-- Inicio Strings Modulo 10 -->
+    <string name="title_activity_m10_water_glass">Water</string>
+    <string name="tab_m10_Hidratacion">Hydratation</string>
+    <string name="tab_m10_Control">Control</string>
+
+    <!--Inicio Strings Modulo 4 -->
+    <string name="amigo">Friends</string>
+    <string name="actividad">Activity</string>
+    <string name="entrenamiento">Training</string>
+    <string name="reto">Challenges</string>
+    <string name="hidratacion">Hydration</string>
+    <string name="calorias">Calories</string>
+    <string name="lang_btn">Language: English</string>
+    <string name="gamificacion">Gamification</string>
+    <string name="SI">YES</string> <!-- -->
+    <string name="NO">NO</string> <!-- -->
+    <string name="ajustes">Settings</string>
+    <string name="enviar">Send</string><!-- Este es solo de ejemplo, no va en app final-->
+    <string name="guardar">Save</string><!-- Este es solo de ejemplo, no va en app final-->
+    <string name="kms">Kms.</string>
+    <string name="millas">Mi.</string>
+    <string name="language">EspaÃ±ol</string>
+    <!--Final Strings Modulo 4 -->
+
 
 </resources>
