@@ -556,7 +556,6 @@ LANGUAGE 'plpgsql' VOLATILE;
 
 ---Modulo 10
 
-/*
 CREATE OR REPLACE  FUNCTION M10_AddWater( tm timestamp, gt integer, fkP integer,
                                  OUT res integer)
 AS $$
@@ -579,10 +578,10 @@ $$ LANGUAGE plpgsql VOLATILE;
 INSERT INTO public.glass_historic(
             glasshistoricid, glasstime, glasstype, fk_person)
     VALUES (0, '11/11/2011', 0, 100);
-*/
+
 CREATE OR REPLACE FUNCTION M10_DeletWaterTm (tm timestamp , fkP integer  , out res integer)
 AS $$
-DECLARE 
+DECLARE  
 
 
 BEGIN
@@ -606,7 +605,7 @@ BEGIN
  
 
 	delete from glass_historic where glasshistoricid =
-	( Select max(GLASSTIME) from glass_historic where fk_person = fkp);
+	( Select max(glasshistoricid) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm);
 
 
 
@@ -642,7 +641,7 @@ RETURNS TABLE(GLASSTIME timestamp, GLASSTYPE int) AS $$
 BEGIN
   RETURN QUERY
     SELECT t.GLASSTIME,t.GLASSTYPE FROM glass_historic as t
-      WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp;
+      WHERE DATE(t.GLASSTIME) = DAte(date_stamp) and fk_person = fkp;
  end;
 $$ LANGUAGE 'plpgsql';
 
