@@ -1863,6 +1863,10 @@ int string tv_m01_intro 0x7f0900b0
 int string tv_m01_olvidoClave 0x7f0900b1
 int string tv_m01_recuperacionContra 0x7f0900b2
 int string tv_m02_perfil 0x7f0900b3
+int string tv_m10_cantidad 0x7f0900fc
+int string tv_m10_peso 0x7f0900fd
+int string tv_m10_tipo 0x7f0900fe
+int string tv_m10_usuario 0x7f0900ff
 int style AlertDialog_AppCompat 0x7f0800a6
 int style AlertDialog_AppCompat_Light 0x7f0800a7
 int style Animation_AppCompat_Dialog 0x7f0800a8

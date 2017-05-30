@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_m05_add_exercise2.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_m05_add_exercise2.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_m05_principal.xml",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_m05_principal.xml"
     },
@@ -12,24 +8,8 @@
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_m05_read_exercise.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_main.xml"
-    },
-    {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_register_activity.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_register_activity.xml"
-    },
-    {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/m02_perfil_home.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/m02_perfil_home.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\activity_m02_home_drawer.xml",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\activity_m02_home_drawer.xml"
-    },
-    {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_m10_water_glass.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\menu_m10_water_glass.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\m02_home.xml",
@@ -40,24 +20,8 @@
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\menu_m05_read_exercise.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_register_activity.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\menu_register_activity.xml"
-    },
-    {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_login.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_login.xml"
-    },
-    {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\m02_perfil_home.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\m02_perfil_home.xml"
-    },
-    {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\menu_main.xml"
-    },
-    {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_login.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\menu_login.xml"
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/activity_m02_home_drawer.xml",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/activity_m02_home_drawer.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/activity_m02_home_drawer.xml",
@@ -68,7 +32,83 @@
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/m02_home.xml"
     },
     {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_m05_add_exercise2.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_m05_add_exercise2.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_main.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/m02_perfil_home.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/m02_perfil_home.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_register_activity.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_register_activity.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_m05_principal.xml",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_m05_principal.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_m10_water_glass.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\menu_m10_water_glass.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_main.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_m10_water_glass.xml",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_m10_water_glass.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/m02_perfil_home.xml",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/m02_perfil_home.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_m05_read_exercise.xml",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_m05_read_exercise.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_register_activity.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\menu_register_activity.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_m05_add_exercise2.xml",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_m05_add_exercise2.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_login.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_login.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\m02_perfil_home.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\m02_perfil_home.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/m02_home.xml",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/m02_home.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_login.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\menu\\menu_login.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_login.xml",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_login.xml"
+    },
+    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_m10_water_glass.xml",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_m10_water_glass.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/menu/menu_register_activity.xml",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/menu/menu_register_activity.xml"
     }
 ]

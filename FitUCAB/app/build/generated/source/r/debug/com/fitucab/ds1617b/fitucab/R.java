@@ -4775,6 +4775,10 @@ containing a value of this type.
         public static final int tv_m01_olvidoClave=0x7f0900b1;
         public static final int tv_m01_recuperacionContra=0x7f0900b2;
         public static final int tv_m02_perfil=0x7f0900b3;
+        public static final int tv_m10_cantidad=0x7f0900fc;
+        public static final int tv_m10_peso=0x7f0900fd;
+        public static final int tv_m10_tipo=0x7f0900fe;
+        public static final int tv_m10_usuario=0x7f0900ff;
     }
     public static final class style {
         public static final int AlertDialog_AppCompat=0x7f0800a6;

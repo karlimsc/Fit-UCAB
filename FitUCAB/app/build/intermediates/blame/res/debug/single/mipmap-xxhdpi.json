@@ -16,6 +16,10 @@
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xxhdpi\\btn_add_m10.png"
     },
     {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher_round.png",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/btn_m10_clock.png",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xxhdpi/btn_m10_clock.png"
     },
@@ -24,8 +28,20 @@
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/btn_m10_clock.png",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xxhdpi/btn_m10_clock.png"
+    },
+    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/btn_m10_calendar.png",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xxhdpi/btn_m10_calendar.png"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/btn_m10_calendar.png",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xxhdpi/btn_m10_calendar.png"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/ic_launcher.png",
@@ -38,5 +54,9 @@
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi\\btn_m10_clock.png",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\mipmap-xxhdpi\\btn_m10_clock.png"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/mipmap-xxhdpi/btn_add_m10.png",
+        "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/mipmap-xxhdpi/btn_add_m10.png"
     }
 ]
