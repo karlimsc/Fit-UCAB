@@ -2,6 +2,7 @@ package WebServicesClasses;
 
 import Domain.Notification_Settings;
 import com.google.gson.Gson;
+import Domain.basedatosException;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -9,7 +10,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
 
-import static Domain.Sql.getConInstance;
 
 /**
  * Clase de Servicios Web del Modulo 04
@@ -17,7 +17,7 @@ import static Domain.Sql.getConInstance;
 @Path("/M04_ServicesNotificationSettings")
 public class M04_ServicesNotificationSettings {
 
-    private Connection conn = getConInstance();
+    private Connection conn =bdConnect();
     Gson gson = new Gson();
 
     /**
@@ -50,7 +50,7 @@ public class M04_ServicesNotificationSettings {
                              @QueryParam("preferenceUnit") String preferenceUnit,
                              @QueryParam("preferenceRadius") int preferenceRadius,
                              @QueryParam("userId") int userId
-    )
+    ) throws basedatosException
     {
 
         try{
@@ -169,4 +169,27 @@ public class M04_ServicesNotificationSettings {
         }
     }
 
+
+    //esto no va a aqui , se puso momentaneamente.
+    public Connection bdConnect()
+    {
+        Connection conn = null;
+        try
+        {
+            Class.forName("org.postgresql.Driver");
+            String url = "jdbc:postgresql://localhost/FitUcabDB";
+            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+            System.exit(1);
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+            System.exit(2);
+        }
+        return conn;
+    }
 }
