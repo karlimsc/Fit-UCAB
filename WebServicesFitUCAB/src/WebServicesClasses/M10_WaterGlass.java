@@ -55,21 +55,17 @@ public class M10_WaterGlass
                 hora = _sdf3.format(fecha);
         try {
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-           _rs = _sql.sql("Select res from m10_addwater('"+dia+" "+hora+"',"+glassType+","+fkp+")");
+           _rs = _sql.sql("Select res from m10_addwater('"+dia+"     "+hora+"',"+glassType+","+fkp+")");
 
             //recorro la consulta
             while( _rs.next() )
             {
                 _water = new Water();
-                _water.set_cantidad( _rs.getInt("res") );
+                _water.set_cantidad( _rs.getInt("res"));
                 _water.set_time(hora);
 
-
-
-
-
-
             }// end while que recorre la consulta
+
         } catch (SQLException e) {
             _water = new Water();
             return _gson.toJson(  _water);
@@ -144,13 +140,13 @@ public class M10_WaterGlass
 
     /**
      * Metodo que es llamado a traves del web service para consulta la
-     * cantidad de vasos tomados y cantidad de agua en  dia
+     * cantidad de vasos tomados y cantidad de agua en dia
      * @param dia
      * @param fkp
      * @return array con cantidad de agua total y cantidad de vasos
      */
     @GET
-    @Path("/GetWater")//no se toca lo usa el equipo mario
+    @Path("/GetWater")
     @Produces("application/json")
     public String GetWater( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {

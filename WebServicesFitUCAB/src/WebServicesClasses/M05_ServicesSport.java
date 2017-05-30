@@ -17,6 +17,7 @@ import Domain.*;
 
 @Path("/M05_ServicesSport")
 public class M05_ServicesSport {
+    private Connection conn = getConInstance();
 
     Gson gson = new Gson();
 
@@ -39,7 +40,7 @@ public class M05_ServicesSport {
         String query = "select * from M05_insertarDeporte('"+nombreUsu+"','"+nombreDep+"')" ;
 
         try{
-            Connection conn = conectarADb();
+  
             Statement    st = conn.createStatement();
             ResultSet    rs =  st.executeQuery(query);
 
@@ -55,48 +56,45 @@ public class M05_ServicesSport {
 
     @GET
 
-    @Path("/getSport")
+@Path("/getSport")
 
-    @Produces("application/json")
-    /**
-     * 
-	 * Extrae el nombre de los deportes en funcion del id
-     * @param idSpo
-     * @return
-     */
+@Produces("application/json")
+/**
+ *
+ * Extrae el nombre de los deportes en funcion del id
+ * @param nameSpo
+ * @return
+ */
 
-    public String getSport(@QueryParam("idSpo") Integer id){
+public String getSport(@QueryParam("nameSpo") String nombre) {
+    Sport resultado = new Sport();
 
+    //Declarando la sentencia de la funcion de obtenerDatosDeporte que devuelve todos los datos de los deportes
+    String query = "SELECT * from  M05_obtenerdatosdeporte('"+nombre+"')";
 
-        Sport resultado = null;
+    try {
 
-        //Declarando la sentencia de la funcion de obtenerDatosDeporte que devuelve todos los datos de los deportes
-        String query = "select * from M05_obtenerdatosdeporte('"+id+"')";
+        Statement st = conn.createStatement();
+        ResultSet rs = st.executeQuery(query);
 
-        try{
+        while (rs.next()) {
 
-            Connection conn = conectarADb();
-            Statement    st = conn.createStatement();
-            ResultSet    rs =  st.executeQuery(query);
+            Integer numero = rs.getInt("iddeporte");
+            String nombre1 = rs.getString("nombredeporte");
+            float mets = rs.getFloat("metdeporte");
+            resultado = new Sport(numero, nombre1, mets);
 
-            while(rs.next()){
-
-                Integer numero = rs.getInt(   "iddeporte");
-                String  nombre = rs.getString("nombredeporte");
-
-                resultado=new Sport(numero,nombre);
-
-
-            }
-
-            return gson.toJson(resultado);
-
-        } catch (Exception e) {
-
-            return e.getMessage();
 
         }
+
+        return gson.toJson(resultado);
+
+    } catch (Exception e) {
+
+        return e.getMessage();
+
     }
+}
 
     @GET
 
@@ -116,8 +114,6 @@ public class M05_ServicesSport {
         String query = "select * from M05_obtenermetdeporte('"+nombreDep.toUpperCase()+"')";
 
         try{
-
-            Connection conn = conectarADb();
             Statement    st = conn.createStatement();
             ResultSet    rs =  st.executeQuery(query);
 
@@ -151,19 +147,17 @@ public class M05_ServicesSport {
     public String getSportsUser(@QueryParam("idPer") Integer id ){
 
 
-        Sport resultado = new Sport();
-        ArrayList<String> listaDeportes= new ArrayList<>();
-
+        
+        
         String query = "select nombredeporte from M05_obtenerdeportesusuario('"+id+"')";
 
         try{
-
-            Connection conn = conectarADb();
+            ArrayList<Sport> listaDeportes= new ArrayList<Sport>();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
             while(rs.next()){
-
+                Sport resultado = new Sport();
                 resultado.setName(rs.getString(  "nombredeporte"));
                 listaDeportes.add(resultado.getName());
             }
@@ -198,7 +192,6 @@ public class M05_ServicesSport {
         String query = "select  M05_eliminarDeporte('"+nombreUsu+"','"+nombreDep+"')" ;
 
         try{
-            Connection conn = conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -225,7 +218,6 @@ public class M05_ServicesSport {
        Sport resultado= new Sport();
 
         try{
-            Connection conn=conectarADb();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -241,27 +233,7 @@ public class M05_ServicesSport {
         }
     }
 
-    private Connection conectarADb(){
-
-        Connection conn = null;
-
-        try {
-
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/FitUcabDB";
-            conn       = DriverManager.getConnection(url, "postgres",  "postgres");
-
-        } catch (ClassNotFoundException e) {
-
-            e.printStackTrace();
-            System.exit(1);
-        } catch (SQLException e) {
-
-            e.printStackTrace();
-            System.exit(2);
-        }
-        return conn;
-    }
+   
 
 }
 

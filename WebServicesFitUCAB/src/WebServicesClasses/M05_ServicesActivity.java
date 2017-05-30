@@ -17,7 +17,7 @@ import Domain.*;
 @Path("/M05_ServicesActivity")
 public class M05_ServicesActivity {
 
-
+   private Connection conn = getConInstance();
 
     Gson gson = new Gson();
 

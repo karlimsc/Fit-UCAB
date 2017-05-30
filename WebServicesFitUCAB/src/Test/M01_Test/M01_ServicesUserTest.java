@@ -26,9 +26,7 @@ public class M01_ServicesUserTest {
         String insertUserQuery ="SELECT M01_REGISTRAR('"+"danri"+"','"+"dan1234"+"','"+"dan"+"','"+'F'+"'" +
                 ",'"+"dan"+"','"+"1993-06-11"+"','"+1.0+"','"+1.0+"')";
 
-
         try {
-
 
             rs =Connn.sql(insertUserQuery);
 

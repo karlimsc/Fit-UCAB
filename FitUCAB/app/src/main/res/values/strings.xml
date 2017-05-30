@@ -4,7 +4,7 @@
     <string name="title_activity_main">MainActivity</string>
     <!-- Porfa, pedimos que comenten donde se utiliza cada string -->
     <string name="str_en">English</string>
-    <string name="str_es">EspaÃ±ol</string>
+    <string name="str_es">Español</string>
     <string-array name="languages"> <!-- declaracion de idiomas -->
         <item>@string/str_en</item>
         <item>@string/str_es</item>
@@ -135,7 +135,7 @@
     <string name="_tv_m05_sport">Deporte:</string>
     <string name="_tv_m05_day">Dia</string>
     <string name="_tv_m05_month">Mes</string>
-    <string name="_tv_m05_year">AÃ±o</string>
+    <string name="_tv_m05_year">Año</string>
     <string name="_tv_m05_distance">Distacia recorrida</string>
     <string name="_tv_m05_speed">Velocidad:</string>
     <string name="_tv_m05_starHour">Hora:</string>
@@ -144,13 +144,13 @@
     <string name="_tv_m05_starDate">Fecha:</string>
     <string name="_tv_m05_time">Tiempo</string>
     <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
-    <string name="_tv_m05_calories">CalorÃ­as quemadas</string>
-    <string name="_tv_m05_duration">DuraciÃ³n en minutos:</string>
+    <string name="_tv_m05_calories">Calorías quemadas</string>
+    <string name="_tv_m05_duration">Duración en minutos:</string>
     <string name="_tv_m05_titletabmanual">MANUAL</string>
     <string name="_btn_m05_pause">PAUSAR</string>
     <string name="_btn_m05_resume">CONTINUAR</string>
     <string name="tab_m05_log">Manual</string>
-    <string name="tab_m05_track">AutomÃ¡tica</string>
+    <string name="tab_m05_track">Automática</string>
     <string name="_ttl_m05_activity">Actividad</string>
     <string name="_ttl_m05_questiondeleteactivity">Confirmar</string>
     <string name="_ttl_m05_information">INFORME</string>
@@ -162,7 +162,7 @@
     <string name="_dlg_m05_cancel">CANCELAR</string>
     <string name="_dlg_m05_done">SI</string>
     <string name="_dlg_m05_doneUpdate">Modificaciones establecidas</string>
-    <string name="_dlg_m05_quetiondeleteactivity">Â¿Desea realmente eliminar esta actividad?</string>
+    <string name="_dlg_m05_quetiondeleteactivity">¿Desea realmente eliminar esta actividad?</string>
     <string name="_dlg_m05_dateseleted">Seleccione fecha</string>
     <string name="_dlg_m05_hourseleted">Seleccione hora</string>
     <string name="_tst_m05_messagedelete">Debe seleccionar un item de la lista para eliminar</string>
@@ -195,14 +195,14 @@
     <string name="gamificacion">Gamificacion</string> <!-- opcion de calorias al enviar correo -->
     <string name="SI">SI</string> <!--  -->
     <string name="NO">NO</string> <!-- -->
-    <string name="lang_btn">Idioma: EspaÃ±ol</string>
+    <string name="lang_btn">Idioma: Español</string>
     <string name="kms">Kms.</string>
     <string name="millas">Mi.</string>
     <string name="radio">Radio de cercania</string>
     <string name="ajustes">Ajustes</string>
     <string name="enviar">Enviar</string>
     <string name="guardar">Guardar</string>
-    <string name="language">EspaÃ±ol</string>
+    <string name="language">Español</string>
     <!--Final Strings Modulo 4 -->
 
     <!-- TODO: Remove or change this placeholder text -->

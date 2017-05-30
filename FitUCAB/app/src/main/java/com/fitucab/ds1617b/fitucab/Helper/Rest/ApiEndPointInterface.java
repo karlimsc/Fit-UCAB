@@ -1,6 +1,7 @@
 package com.fitucab.ds1617b.fitucab.Helper.Rest;
 
 import com.fitucab.ds1617b.fitucab.Model.User;
+import com.fitucab.ds1617b.fitucab.Model.Notification_Settings;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;

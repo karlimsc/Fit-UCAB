@@ -14,7 +14,8 @@ $$
 LANGUAGE 'plpgsql' VOLATILE; 
 
 --BUSCAR DATOS DE LOS DEPPORTES.
-CREATE OR REPLACE FUNCTION public.m05_obtenerdatosdeporte(nombre Varchar(200))
+
+ CREATE OR REPLACE FUNCTION public.m05_obtenerdatosdeporte(nombre Varchar(200))
   RETURNS TABLE(iddeporte numeric, nombredeporte character varying, metdeporte numeric) AS
 $BODY$ 
 DECLARE
@@ -33,8 +34,8 @@ return next;
   
 END; 
 $BODY$
-  LANGUAGE plpgsql STABLE
- 
+  LANGUAGE plpgsql STABLE;
+
 -- BUSCA EL MET DEL DEPORTE QUE EL USUARIO QUIERE AÑADIR A SU LISTA  A TRAVES DE SU NOMBRE
 -- FUE CREADO PARA OBTENER EL MET DEL DEPORTE ANTES DE INSERTAR
 
