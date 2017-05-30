@@ -169,7 +169,7 @@ public class M01SignUpFragment extends Fragment {
     Calendar cal = Calendar.getInstance(TimeZone.getDefault()); // Get current date
 
     /**
-     * Metodo encargado de instancias el calendario.
+     * Metodo encargado de instanciar el calendario.
      */
     public void instantiateCalendar(){
         // Create the DatePickerDialog instance
@@ -190,6 +190,9 @@ public class M01SignUpFragment extends Fragment {
         datePicker.show();
     }
 
+    /**
+     * Metodo para instanciar los componentes del fragmento
+     */
     private void instantiateComponents(){
 
         _etUsernameRegistry= (EditText) _view.findViewById(R.id.et_m01_userRegistry);
@@ -203,6 +206,17 @@ public class M01SignUpFragment extends Fragment {
 
     }
 
+    /**
+     * metodo con el que hago la validacion de mis componentes
+     * @param username
+     * @param email
+     * @param phone
+     * @param password
+     * @param birthdate
+     * @param weight
+     * @param height
+     * @return el error que se genero
+     */
     private String validateComponents(String username, String email, String phone,
                                        String password, String birthdate, String weight, String height ){
         String response = "ok";
@@ -276,6 +290,17 @@ public class M01SignUpFragment extends Fragment {
     };
 
 
+    /**
+     * metodo con el que hago la peticion al servicio web
+     * @param username
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @param birthdate
+     * @param weight
+     * @param height
+     */
     public void getRetrofit(String username, String password,String email,String sex,
                             String phone, String birthdate, String weight, String height){
 
@@ -385,6 +410,10 @@ public class M01SignUpFragment extends Fragment {
         }
     }
 
+    /**
+     * Metodo con el que escribo en memoria interna del telefono
+     * @param user
+     */
     public void onCompleted(User user){
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());

@@ -43,7 +43,7 @@ public class M10HistoyFragment extends Fragment {
     private static ArrayList<Water>  list = new ArrayList<>();
     private Context contexto;
     private IpStringConnection Url = new IpStringConnection();
-    int idusuario =1;
+    static int idusuario =1;
     M10WaterGlassActivity m10 = new M10WaterGlassActivity();
     static M10WaterGlassFragment m10w;
      Gson gson = new Gson();

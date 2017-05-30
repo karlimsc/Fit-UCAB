@@ -4,6 +4,7 @@
 ------------------------------------------------------STORE PROCEDURES------------------------------------------------------------ 
 -- MODULO 1
 
+
 /**************************************************INICIO DE SESION**************************************************/
 
 CREATE OR REPLACE FUNCTION M01_INICIARSESION(varchar(20), varchar(80)) RETURNS integer AS $$
@@ -248,7 +249,7 @@ return next;
   
 END; 
 $BODY$
-  LANGUAGE plpgsql STABLE
+  LANGUAGE plpgsql STABLE;
 
 -- BUSCA EL MET DEL DEPORTE QUE EL USUARIO QUIERE AÑADIR A SU LISTA  A TRAVES DE SU NOMBRE
 -- FUE CREADO PARA OBTENER EL MET DEL DEPORTE ANTES DE INSERTAR
@@ -412,7 +413,7 @@ loop
 end loop;
 END
 $BODY$
-  LANGUAGE plpgsql VOLATILE
+  LANGUAGE plpgsql VOLATILE;
 
 -- Carga actividades por id usuario
 
@@ -443,7 +444,7 @@ loop
 end loop;
 END
 $BODY$
-  LANGUAGE plpgsql VOLATILE
+  LANGUAGE plpgsql VOLATILE;
 
 -- CARGA LAS CALORIAS QUEMADAS POR ACTIVIDAD---
 
@@ -555,7 +556,7 @@ LANGUAGE 'plpgsql' VOLATILE;
 
 ---Modulo 10
 
-
+/*
 CREATE OR REPLACE  FUNCTION M10_AddWater( tm timestamp, gt integer, fkP integer,
                                  OUT res integer)
 AS $$
@@ -578,10 +579,10 @@ $$ LANGUAGE plpgsql VOLATILE;
 INSERT INTO public.glass_historic(
             glasshistoricid, glasstime, glasstype, fk_person)
     VALUES (0, '11/11/2011', 0, 100);
-
+*/
 CREATE OR REPLACE FUNCTION M10_DeletWaterTm (tm timestamp , fkP integer  , out res integer)
 AS $$
-DECLARE  
+DECLARE 
 
 
 BEGIN
@@ -605,7 +606,7 @@ BEGIN
  
 
 	delete from glass_historic where glasshistoricid =
-	( Select max(GLASSTIME) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm);
+	( Select max(GLASSTIME) from glass_historic where fk_person = fkp);
 
 
 
@@ -641,7 +642,7 @@ RETURNS TABLE(GLASSTIME timestamp, GLASSTYPE int) AS $$
 BEGIN
   RETURN QUERY
     SELECT t.GLASSTIME,t.GLASSTYPE FROM glass_historic as t
-      WHERE DATE(t.GLASSTIME) = DAte(date_stamp) and fk_person = fkp;
+      WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp;
  end;
 $$ LANGUAGE 'plpgsql';
 
