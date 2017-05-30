@@ -1,6 +1,5 @@
 
 
-
 ------------------------------------------------------STORE PROCEDURES------------------------------------------------------------ 
 -- MODULO 1
 
@@ -554,8 +553,7 @@ END
 $$
 LANGUAGE 'plpgsql' VOLATILE;
 
---Modulo 10
-
+---Modulo 10
 
 CREATE OR REPLACE  FUNCTION M10_AddWater( tm timestamp, gt integer, fkP integer,
                                  OUT res integer)
@@ -606,7 +604,7 @@ BEGIN
  
 
 	delete from glass_historic where glasshistoricid =
-	( Select max(GLASSTIME) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm);
+	( Select max(glasshistoricid) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm);
 
 
 
@@ -662,6 +660,7 @@ BEGIN
 
  end;
 $$ LANGUAGE 'plpgsql';
+
 -- Modulo 11
 
 
@@ -972,4 +971,4 @@ BEGIN
   RETURN NEXT;
    END LOOP;
 END; $$
-  LANGUAGE plpgsql;
+LANGUAGE plpgsql;
