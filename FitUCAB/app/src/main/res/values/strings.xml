@@ -177,10 +177,14 @@
     <string name="_tst_m05_seletectitemonetouch">Debe seleccionar prolongadamente el item para ver opciones</string>
 
     <!--FIN Strings Modulo 5 -->
-    <!-- Inicio Strings Modulo 10 -->
+   <!-- Inicio Strings Modulo 10 -->
     <string name="title_activity_m10_water_glass">Agua</string>
     <string name="tab_m10_Hidratacion">Hidratacion</string>
     <string name="tab_m10_Control">Control</string>
+    <string name="tv_m10_usuario">usuario</string>
+    <string name="tv_m10_peso">usuario</string>
+    <string name="tv_m10_tipo">usuario</string>
+    <string name="tv_m10_cantidad">usuario</string>
 
     <!--FIN Strings Modulo 10 -->
 
