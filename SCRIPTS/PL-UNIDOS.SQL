@@ -605,7 +605,7 @@ BEGIN
  
 
 	delete from glass_historic where glasshistoricid =
-	( Select max(GLASSTIME) from glass_historic where fk_person = fkp);
+	( Select max(GLASSTIME) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm);
 
 
 
@@ -641,7 +641,7 @@ RETURNS TABLE(GLASSTIME timestamp, GLASSTYPE int) AS $$
 BEGIN
   RETURN QUERY
     SELECT t.GLASSTIME,t.GLASSTYPE FROM glass_historic as t
-      WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp;
+      WHERE DATE(t.GLASSTIME) = DAte(date_stamp) and fk_person = fkp;
  end;
 $$ LANGUAGE 'plpgsql';
 

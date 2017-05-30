@@ -65,7 +65,7 @@ public class M02HomeActivity extends AppCompatActivity
     }
     /**
      * Void initcomponentes donde se inicializan todos los componentes
-     * @param view Vista donde se encuentran los bontones y componentes de la vista
+     * Vista donde se encuentran los bontones y componentes de la vista
      */
     private void initcomponents() {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -207,6 +207,8 @@ public class M02HomeActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.flContent_m02_home, fragmentToSwap).commit();
 
         }else if (id == R.id.nav_m02_activitys) {
+	Intent act = new Intent(M02HomeActivity.this,M05PrincipalActivity.class);
+            startActivity(act);
 
         }
         else if (id == R.id.nav_m02_challenges) {
@@ -231,8 +233,8 @@ public class M02HomeActivity extends AppCompatActivity
         else if (id == R.id.nav_m02_planing_activitys) {
 
         } else if (id == R.id.nav_m02_notifications) {
-            //            Intent myintent = new Intent(M02HomeActivity.this, M04NotificationActivity.class);
-//            startActivity(myintent);
+            Intent myintent = new Intent(M02HomeActivity.this, M04NotificationActivity.class);
+            startActivity(myintent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

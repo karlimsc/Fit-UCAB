@@ -2,6 +2,7 @@ package WebServicesClasses;
 
 
 import Domain.Moment;
+import Domain.Sql;
 import Exceptions.ParameterNullException;
 import com.google.gson.Gson;
 
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 @Path("M11_Moment")
 public class M11_ServicesMoment {
 
-    private Connection conn = bdConnect();
+    private Connection conn = Sql.getConInstance();
     private Gson gson = new Gson();
     private String response;
     private ArrayList<Moment> jsonArray;
@@ -51,7 +52,7 @@ public class M11_ServicesMoment {
         }
 
         finally {
-            bdClose();
+            Sql.bdClose(conn);
             return response;
         }
     }
