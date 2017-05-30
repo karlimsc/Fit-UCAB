@@ -48,13 +48,16 @@ public class Query {
             return _user;
         } catch (NullPointerException e) {
             e.printStackTrace();
+            System.err.println("NullPointerGetUserException : " + e.getMessage() + ", id: " + id);
             return null;
         } catch (SQLException e) {
             e.printStackTrace();
+            System.err.println("SQLGetUserException :" + e.getMessage() + ", id: " + id);
             return null;
         }
         catch (Exception e) {
             e.printStackTrace();
+            System.err.println("GetUserException : " + e.getMessage() + ", id: " + id);
             return null;
         }
     }
@@ -94,30 +97,32 @@ public class Query {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            System.err.println("SQLExceptionUpdate: " + e.getMessage());
-            System.exit(1);
+            System.err.println("SQLExceptionUpdate: " + e.getMessage() + " , User: " + user.getId());
+            return false;
+        } catch (NullPointerException e){
+            e.printStackTrace();
+            System.err.println("NullPointerExceptionUpdate: " + e.getMessage() + " , User: " + user.getPassword());
             return false;
         }
         catch (Exception e){
             e.printStackTrace();
-            System.err.println("ExceptionUpdate: " + e.getMessage());
-            System.exit(1);
+            System.err.println("ExceptionUpdate: " + e.getMessage() + " , User: " + user.getId());
             return false;
         }
     }
 
     /**
      * Metodo que actualiza el Home
-     * @param id id del usuario a buscar
+     * @param id Usuario que brinda sus atributos
      * @return Clase Home con el total de las calorias y el total de los vasos tomados
      * @throws SQLException Si hay un error en sql
      * @throws Exception
      * @see Home
      */
-    public Home getHome( int id ) {
+    public Home getHome(int id) {
         try {
             _sql = new Sql();
-            User user = getUser(id);
+            User user = new User();
             ResultSet rsW = _sql.sqlConn("SELECT countg FROM m10_getwaterglass("+user.getId()+"," +
                     "'"+user.getBirthdate()+"')");
             ResultSet rsC = _sql.sqlConn("SELECT calorias FROM m11_get_calorias_dia('"+user.getUser()+"')");

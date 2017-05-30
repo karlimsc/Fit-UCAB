@@ -19,7 +19,7 @@ public class Sql {
      */
     public static Connection getConInstance(){
 
-            conInstance = bdConnect();
+        conInstance = bdConnect();
 
         return conInstance;
     }
@@ -73,7 +73,8 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
-            System.err.println("NullPointerExceptionSql: " + e.getMessage());
+            System.err.println("NullPointerExceptionSql: " + e.getMessage() + " , Query: " + query);
+            return null;
         }
 
         finally {
@@ -100,6 +101,7 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
+            return false;
         }
         finally {
 
@@ -123,7 +125,7 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
-            System.err.println("NullPointerExceptionSql: " + e.getMessage() + ", Query: " + query);
+            System.err.println("NullPointerExceptionSql: " + e.getMessage());
         }
         catch ( Exception e ){
             System.err.println("ExceptionSql: " + e.getMessage() + " , Query: " + query);
@@ -165,4 +167,3 @@ public class Sql {
     }
 
 }
-
