@@ -32,7 +32,7 @@ public class M02_ServicesUser {
     public Response getUser( @PathParam("userId") int id ){
         _service = new Query();
         User user = _service.getUser( id );
-        if ( user.getId() <= 0 ) {
+        if ( user.getId() <= 0 || user == null ) {
             _message = new StatusMessage( 0, "Usuario no encontrado" );
             _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
             throw new WebApplicationException( _response );

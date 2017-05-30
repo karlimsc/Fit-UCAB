@@ -48,16 +48,16 @@ public class Query {
             return _user;
         } catch (NullPointerException e) {
             e.printStackTrace();
-            System.err.println("NullPointerGetUserException : " + e.getMessage() + "id: " + id);
+            System.err.println("NullPointerGetUserException : " + e.getMessage() + ", id: " + id);
             return null;
         } catch (SQLException e) {
             e.printStackTrace();
-            System.err.println("SQLGetUserException :" + e.getMessage() + "id: " + id);
+            System.err.println("SQLGetUserException :" + e.getMessage() + ", id: " + id);
             return null;
         }
         catch (Exception e) {
             e.printStackTrace();
-            System.err.println("GetUserException : " + e.getMessage() + "id: " + id);
+            System.err.println("GetUserException : " + e.getMessage() + ", id: " + id);
             return null;
         }
     }
