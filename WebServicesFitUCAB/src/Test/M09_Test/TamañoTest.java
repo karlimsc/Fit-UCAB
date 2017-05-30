@@ -1,13 +1,13 @@
+package M09_Test;
+
 import Domain.Size;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-/**
- * Created by root on 27/05/17.
- */
-public class TamañoTest {
+
+public class TamañoTest {
 
     @Test
     public void TamañoTest(){

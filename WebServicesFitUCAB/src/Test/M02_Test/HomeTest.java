@@ -1,3 +1,5 @@
+package M02_Test;
+
 import Domain.Home;
 import org.junit.After;
 import org.junit.Before;

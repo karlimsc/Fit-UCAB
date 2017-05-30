@@ -1,265 +1,281 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-153:12
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-163:12
 	package
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:3:5-42
-		INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:3:5-42
-		INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:3:5-42
+		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:3:5-42
+		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-153:12
-		INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-163:12
+		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-153:12
-		INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:2:1-163:12
+		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:10:5-79
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:10:22-76
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:10:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:11:5-81
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:11:22-78
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:11:22-78
 uses-permission#android.permission.INTERNET
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:12:5-67
-MERGED from [com.google.android.gms:play-services-maps:10.2.1] /home/elberg/.android/build-cache/8d22ec10427e62b25578c534d32783a135e54e15/output/AndroidManifest.xml:20:5-66
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:12:5-67
+MERGED from [com.google.android.gms:play-services-maps:10.2.1] /home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/AndroidManifest.xml:20:5-66
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:12:22-64
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:12:22-64
 uses-permission#android.permission.READ_CONTACTS
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:13:5-71
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:13:5-71
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:13:22-69
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:13:22-69
 application
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:15:5-150:19
-MERGED from [com.android.support:design:25.3.0] /home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:transition:25.3.0] /home/elberg/.android/build-cache/dbe79cdcb9f6b8e5a862be281a72f8391d336555/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/elberg/.android/build-cache/1bf92d2b76924630b213d936b8e8d9579a98a394/output/AndroidManifest.xml:9:5-20
-MERGED from [com.google.android.gms:play-services-maps:10.2.1] /home/elberg/.android/build-cache/8d22ec10427e62b25578c534d32783a135e54e15/output/AndroidManifest.xml:24:5-19
-MERGED from [com.google.android.gms:play-services-location:10.2.1] /home/elberg/.android/build-cache/6dc3632bafab127c47f9870576e210f974680520/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-base:10.2.1] /home/elberg/.android/build-cache/f434cf85409e8d251274cd05bc2563fe34bd3eae/output/AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-tasks:10.2.1] /home/elberg/.android/build-cache/f00a0db404e53e71883ad8dd26b3ee63dd84fe4b/output/AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:10.2.1] /home/elberg/.android/build-cache/e4eba907174136397566698cc0f3304dfa1fc48c/output/AndroidManifest.xml:19:5-21:19
-MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/elberg/.android/build-cache/dffa649cb6c6956ac5441e73ae6fce5ae03cbbf8/output/AndroidManifest.xml:9:5-20
-MERGED from [com.afollestad.material-dialogs:commons:0.9.0.2] /home/elberg/.android/build-cache/48de809bd64c37bde3455a1996d4fbcbdee264b9/output/AndroidManifest.xml:12:5-20
-MERGED from [com.afollestad.material-dialogs:core:0.9.0.2] /home/elberg/.android/build-cache/01a9bb9210b867872bca7732d605bf2225dae70b/output/AndroidManifest.xml:13:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.0] /home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:25.3.0] /home/elberg/.android/build-cache/7053a864553356cad68031b155c4850e17093651/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.0] /home/elberg/.android/build-cache/a4cd6760f86fd79a4540ad3ef0ed7ffc1db7973c/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.0] /home/elberg/.android/build-cache/23e34f67543a9182ee4587b1b3fe76b8ebd8ce8c/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.0] /home/elberg/.android/build-cache/5e906edd80379be9edb15f656221955cd9b7c839/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.0] /home/elberg/.android/build-cache/68511d56b885a527f5ef78d2c2f71b46b52aed2a/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/elberg/.android/build-cache/113afbce61ff310f46b7b8b43a74e420a9ea2e89/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/elberg/.android/build-cache/c32d5d03a00d6a166fb25936b65c6b9489fc948f/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-compat:25.3.0] /home/elberg/.android/build-cache/b485dfb92f0a08ec499d7afe9d617c36bd9890c3/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support.test:runner:0.5] /home/elberg/.android/build-cache/a4afc1bfe01cbd4c2925b42cfef8c2693beb71b6/output/AndroidManifest.xml:24:5-20
-MERGED from [com.android.support.test:exposed-instrumentation-api-publish:0.5] /home/elberg/.android/build-cache/ba8208fb91e0f29b6b3c8b9689563383a120293c/output/AndroidManifest.xml:24:5-20
-MERGED from [com.android.support.test.espresso:espresso-idling-resource:2.2.2] /home/elberg/.android/build-cache/c1c71db5b4b2305db1afaec6dfde40cb8f60c8d7/output/AndroidManifest.xml:24:5-20
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:15:5-160:19
+MERGED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:transition:25.3.0] /home/david/.android/build-cache/404615609162b068bbc473fc263e75b17973814b/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/david/.android/build-cache/85202b3cb218532aabfd2d07a0769ee820a5fb21/output/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-maps:10.2.1] /home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/AndroidManifest.xml:24:5-19
+MERGED from [com.google.android.gms:play-services-location:10.2.1] /home/david/.android/build-cache/728f7fc66c4ba5ad442de88ea103c0e2bc6ba7e9/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-base:10.2.1] /home/david/.android/build-cache/e6a22680b659e4905551d84523ca554f6edda4bc/output/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.1] /home/david/.android/build-cache/94a269bb3461b18fbc9f7891bac80c2f84a359b6/output/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.2.1] /home/david/.android/build-cache/93b0b027c1d06bb47fd929fff218a33095527540/output/AndroidManifest.xml:19:5-21:19
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/david/.android/build-cache/63b93cf89abc6899256342eb0a324e8d7312973c/output/AndroidManifest.xml:9:5-20
+MERGED from [com.afollestad.material-dialogs:commons:0.9.0.2] /home/david/.android/build-cache/0a5d7e0c9ac4e79e74f226e610eafd9031414107/output/AndroidManifest.xml:12:5-20
+MERGED from [com.afollestad.material-dialogs:core:0.9.0.2] /home/david/.android/build-cache/6aba2b412b88cb9fa309b7feeee31c58d3d283f2/output/AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.0] /home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.0] /home/david/.android/build-cache/e41f704cfc8a96f0bb1e8f56aca05b94ad996b3b/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.0] /home/david/.android/build-cache/a23ecdb04f7d271ebab1f6824eb9b58b62c650d6/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.0] /home/david/.android/build-cache/4946751f5fd2c72193e81c1e766b240dbf540543/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.0] /home/david/.android/build-cache/ae210c32697a040a9db6d43b161e668770481d40/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.0] /home/david/.android/build-cache/a6db4cf8fc18ee7acb13adb3c8168889a6f74564/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/david/.android/build-cache/401849b7ac36452710a5e9b9bd0e272125335cd8/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/david/.android/build-cache/344c8bf9827576f8da45844433334652b3328db4/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.0] /home/david/.android/build-cache/6ec399d9b6e8527384eadfe615c8ceffdd26e972/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.test:runner:0.5] /home/david/.android/build-cache/677b51bf166fd305a33087d3fc8ba63366c1b2ff/output/AndroidManifest.xml:24:5-20
+MERGED from [com.android.support.test:exposed-instrumentation-api-publish:0.5] /home/david/.android/build-cache/eb96b96c8d5f5822d218b567b22f76370b44e022/output/AndroidManifest.xml:24:5-20
+MERGED from [com.android.support.test.espresso:espresso-idling-resource:2.2.2] /home/david/.android/build-cache/9f6f1ef386619cefed77c2908a1275f40eac9d4e/output/AndroidManifest.xml:24:5-20
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:18:9-41
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:18:9-41
 	android:supportsRtl
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:20:9-35
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:20:9-35
 	android:roundIcon
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:19:9-54
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:19:9-54
 	android:allowBackup
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:16:9-35
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:16:9-35
 	android:icon
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:17:9-43
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:17:9-43
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:21:9-40
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:21:9-40
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M01LoginActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:26:9-36:20
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:26:9-36:20
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:28:13-45
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:28:13-45
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:29:13-56
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:29:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:27:13-59
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:27:13-59
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:30:13-33:29
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:30:13-33:29
 action#android.intent.action.MAIN
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:31:17-69
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:31:17-69
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:31:25-66
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:31:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:32:17-77
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:32:17-77
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:32:27-74
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:32:27-74
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M03FriendsActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:41:9-52:20
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:41:9-52:20
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:43:13-45
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:43:13-45
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:44:13-56
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:44:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:42:13-61
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:42:13-61
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05AddExerciseActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:55:9-61:20
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:55:9-61:20
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:57:13-45
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:57:13-45
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:58:13-56
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:58:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:56:13-65
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:56:13-65
+activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05PrincipalActivity
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:64:9-67:58
+	android:label
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:66:13-37
+	android:theme
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:67:13-56
+	android:name
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:65:13-63
+activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05StartTrackingActivity
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:69:9-75:20
+	android:label
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:71:13-37
+	android:theme
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:72:13-56
+	android:name
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:70:13-67
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:66:9-74:20
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:79:9-84:20
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:68:13-67
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:81:13-67
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:69:13-56
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:82:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:67:13-64
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:80:13-64
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.MainActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:75:9-78:59
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:85:9-88:59
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:77:13-56
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:87:13-56
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:78:13-56
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:88:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:76:13-55
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:86:13-55
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M09GamificationActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:79:9-83:51
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:89:9-93:51
 	android:screenOrientation
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:83:13-49
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:93:13-49
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:81:13-37
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:91:13-37
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:82:13-56
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:92:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:80:13-66
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:90:13-66
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M09LevelGraphActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:84:9-87:58
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:94:9-97:58
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:86:13-37
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:96:13-37
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:87:13-56
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:97:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:85:13-64
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:95:13-64
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05ReadExerciseActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:89:9-92:59
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:99:9-102:59
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:91:13-43
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:101:13-43
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:92:13-56
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:102:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:90:13-66
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:100:13-66
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:93:9-101:20
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:103:9-111:20
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:95:13-37
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:105:13-37
 	android:theme
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:96:13-56
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:106:13-56
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:94:13-58
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:104:13-58
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:98:13-100:94
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:108:13-110:94
 	android:value
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:100:17-91
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:110:17-91
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:99:17-63
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:109:17-63
 meta-data#com.google.android.geo.API_KEY
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:110:9-112:55
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:120:9-122:55
 	android:value
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:112:13-52
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:122:13-52
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:111:13-58
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:121:13-58
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M05TrackExerciseActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:116:9-128:21
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:126:9-138:21
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:118:13-70
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:128:13-70
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:117:13-67
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:127:13-67
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M11Food
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:140:8-143:20
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:150:8-153:20
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:142:13-45
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:152:13-45
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:141:13-50
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:151:13-50
 activity#com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity
-ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:145:9-149:20
+ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:155:9-159:20
 	android:label
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:146:13-43
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:156:13-43
 	android:name
-		ADDED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:145:19-72
+		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:155:19-72
 uses-sdk
-INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:multidex:1.0.1] /home/elberg/.android/build-cache/9b2a8d15d2e873775082fb552cfd1446dfd36790/output/AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:design:25.3.0] /home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:transition:25.3.0] /home/elberg/.android/build-cache/dbe79cdcb9f6b8e5a862be281a72f8391d336555/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/elberg/.android/build-cache/1bf92d2b76924630b213d936b8e8d9579a98a394/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.android.gms:play-services-maps:10.2.1] /home/elberg/.android/build-cache/8d22ec10427e62b25578c534d32783a135e54e15/output/AndroidManifest.xml:23:5-43
-MERGED from [com.google.android.gms:play-services-location:10.2.1] /home/elberg/.android/build-cache/6dc3632bafab127c47f9870576e210f974680520/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-base:10.2.1] /home/elberg/.android/build-cache/f434cf85409e8d251274cd05bc2563fe34bd3eae/output/AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-tasks:10.2.1] /home/elberg/.android/build-cache/f00a0db404e53e71883ad8dd26b3ee63dd84fe4b/output/AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:10.2.1] /home/elberg/.android/build-cache/e4eba907174136397566698cc0f3304dfa1fc48c/output/AndroidManifest.xml:17:5-43
-MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/elberg/.android/build-cache/dffa649cb6c6956ac5441e73ae6fce5ae03cbbf8/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.afollestad.material-dialogs:commons:0.9.0.2] /home/elberg/.android/build-cache/48de809bd64c37bde3455a1996d4fbcbdee264b9/output/AndroidManifest.xml:8:5-10:41
-MERGED from [com.afollestad.material-dialogs:core:0.9.0.2] /home/elberg/.android/build-cache/01a9bb9210b867872bca7732d605bf2225dae70b/output/AndroidManifest.xml:8:5-11:75
-MERGED from [com.android.support:recyclerview-v7:25.3.0] /home/elberg/.android/build-cache/a18f7d8c6cb90752ecc836b7704c6a8ce21a78b0/output/AndroidManifest.xml:20:5-43
-MERGED from [me.zhanghai.android.materialprogressbar:library:1.1.7] /home/elberg/.android/build-cache/135474fea72a44b113e975a04b805a704046338c/output/AndroidManifest.xml:12:5-14:41
-MERGED from [com.android.support:appcompat-v7:25.3.0] /home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:25.3.0] /home/elberg/.android/build-cache/7053a864553356cad68031b155c4850e17093651/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.0] /home/elberg/.android/build-cache/a4cd6760f86fd79a4540ad3ef0ed7ffc1db7973c/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.0] /home/elberg/.android/build-cache/23e34f67543a9182ee4587b1b3fe76b8ebd8ce8c/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.0] /home/elberg/.android/build-cache/5e906edd80379be9edb15f656221955cd9b7c839/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.0] /home/elberg/.android/build-cache/68511d56b885a527f5ef78d2c2f71b46b52aed2a/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/elberg/.android/build-cache/113afbce61ff310f46b7b8b43a74e420a9ea2e89/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/elberg/.android/build-cache/c32d5d03a00d6a166fb25936b65c6b9489fc948f/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-compat:25.3.0] /home/elberg/.android/build-cache/b485dfb92f0a08ec499d7afe9d617c36bd9890c3/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support.test.espresso:espresso-core:2.2.2] /home/elberg/.android/build-cache/d301d21ea44bcf34b389da99b349598389049f4d/output/AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.test:rules:0.5] /home/elberg/.android/build-cache/1b95f124286fb041fd7f9fc1214884399fc03e49/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.test:runner:0.5] /home/elberg/.android/build-cache/a4afc1bfe01cbd4c2925b42cfef8c2693beb71b6/output/AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.test:exposed-instrumentation-api-publish:0.5] /home/elberg/.android/build-cache/ba8208fb91e0f29b6b3c8b9689563383a120293c/output/AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.test.espresso:espresso-idling-resource:2.2.2] /home/elberg/.android/build-cache/c1c71db5b4b2305db1afaec6dfde40cb8f60c8d7/output/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:multidex:1.0.1] /home/david/.android/build-cache/d8bbbefa5a97e91fa60cc540ed54e25c902d6a32/output/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:transition:25.3.0] /home/david/.android/build-cache/404615609162b068bbc473fc263e75b17973814b/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/david/.android/build-cache/85202b3cb218532aabfd2d07a0769ee820a5fb21/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-maps:10.2.1] /home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/AndroidManifest.xml:23:5-43
+MERGED from [com.google.android.gms:play-services-location:10.2.1] /home/david/.android/build-cache/728f7fc66c4ba5ad442de88ea103c0e2bc6ba7e9/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.1] /home/david/.android/build-cache/e6a22680b659e4905551d84523ca554f6edda4bc/output/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.1] /home/david/.android/build-cache/94a269bb3461b18fbc9f7891bac80c2f84a359b6/output/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.1] /home/david/.android/build-cache/93b0b027c1d06bb47fd929fff218a33095527540/output/AndroidManifest.xml:17:5-43
+MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/david/.android/build-cache/63b93cf89abc6899256342eb0a324e8d7312973c/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.afollestad.material-dialogs:commons:0.9.0.2] /home/david/.android/build-cache/0a5d7e0c9ac4e79e74f226e610eafd9031414107/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.afollestad.material-dialogs:core:0.9.0.2] /home/david/.android/build-cache/6aba2b412b88cb9fa309b7feeee31c58d3d283f2/output/AndroidManifest.xml:8:5-11:75
+MERGED from [com.android.support:recyclerview-v7:25.3.0] /home/david/.android/build-cache/281673641d03256ac0e39f70a0e0125b896816e0/output/AndroidManifest.xml:20:5-43
+MERGED from [me.zhanghai.android.materialprogressbar:library:1.1.7] /home/david/.android/build-cache/3da182c4b5809d166de5f87c0d489c60d74b6335/output/AndroidManifest.xml:12:5-14:41
+MERGED from [com.android.support:appcompat-v7:25.3.0] /home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.0] /home/david/.android/build-cache/e41f704cfc8a96f0bb1e8f56aca05b94ad996b3b/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.0] /home/david/.android/build-cache/a23ecdb04f7d271ebab1f6824eb9b58b62c650d6/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.0] /home/david/.android/build-cache/4946751f5fd2c72193e81c1e766b240dbf540543/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.0] /home/david/.android/build-cache/ae210c32697a040a9db6d43b161e668770481d40/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.0] /home/david/.android/build-cache/a6db4cf8fc18ee7acb13adb3c8168889a6f74564/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/david/.android/build-cache/401849b7ac36452710a5e9b9bd0e272125335cd8/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/david/.android/build-cache/344c8bf9827576f8da45844433334652b3328db4/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.0] /home/david/.android/build-cache/6ec399d9b6e8527384eadfe615c8ceffdd26e972/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.test.espresso:espresso-core:2.2.2] /home/david/.android/build-cache/786c4409bba6782a03ada33b25bfe8967ccec49d/output/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.test:rules:0.5] /home/david/.android/build-cache/39a37f8a7bd9bfdaa6a2aba883580ef5ce16477a/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.test:runner:0.5] /home/david/.android/build-cache/677b51bf166fd305a33087d3fc8ba63366c1b2ff/output/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.test:exposed-instrumentation-api-publish:0.5] /home/david/.android/build-cache/eb96b96c8d5f5822d218b567b22f76370b44e022/output/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.test.espresso:espresso-idling-resource:2.2.2] /home/david/.android/build-cache/9f6f1ef386619cefed77c2908a1275f40eac9d4e/output/AndroidManifest.xml:20:5-22:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.3.0] /home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
-		INJECTED from /home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
+		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.0] /home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:transition:25.3.0] /home/elberg/.android/build-cache/dbe79cdcb9f6b8e5a862be281a72f8391d336555/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.0] /home/elberg/.android/build-cache/a18f7d8c6cb90752ecc836b7704c6a8ce21a78b0/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:appcompat-v7:25.3.0] /home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-v4:25.3.0] /home/elberg/.android/build-cache/7053a864553356cad68031b155c4850e17093651/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.0] /home/elberg/.android/build-cache/a4cd6760f86fd79a4540ad3ef0ed7ffc1db7973c/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.0] /home/elberg/.android/build-cache/23e34f67543a9182ee4587b1b3fe76b8ebd8ce8c/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.0] /home/elberg/.android/build-cache/5e906edd80379be9edb15f656221955cd9b7c839/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.0] /home/elberg/.android/build-cache/68511d56b885a527f5ef78d2c2f71b46b52aed2a/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/elberg/.android/build-cache/113afbce61ff310f46b7b8b43a74e420a9ea2e89/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/elberg/.android/build-cache/c32d5d03a00d6a166fb25936b65c6b9489fc948f/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-compat:25.3.0] /home/elberg/.android/build-cache/b485dfb92f0a08ec499d7afe9d617c36bd9890c3/output/AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:transition:25.3.0] /home/david/.android/build-cache/404615609162b068bbc473fc263e75b17973814b/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.0] /home/david/.android/build-cache/281673641d03256ac0e39f70a0e0125b896816e0/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.0] /home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.0] /home/david/.android/build-cache/e41f704cfc8a96f0bb1e8f56aca05b94ad996b3b/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.0] /home/david/.android/build-cache/a23ecdb04f7d271ebab1f6824eb9b58b62c650d6/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.0] /home/david/.android/build-cache/4946751f5fd2c72193e81c1e766b240dbf540543/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.0] /home/david/.android/build-cache/ae210c32697a040a9db6d43b161e668770481d40/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.0] /home/david/.android/build-cache/a6db4cf8fc18ee7acb13adb3c8168889a6f74564/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/david/.android/build-cache/401849b7ac36452710a5e9b9bd0e272125335cd8/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/david/.android/build-cache/344c8bf9827576f8da45844433334652b3328db4/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.0] /home/david/.android/build-cache/6ec399d9b6e8527384eadfe615c8ceffdd26e972/output/AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:design:25.3.0] /home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:design:25.3.0] /home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:26:9-47
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.android.gms:play-services-maps:10.2.1] /home/elberg/.android/build-cache/8d22ec10427e62b25578c534d32783a135e54e15/output/AndroidManifest.xml:19:5-78
+ADDED from [com.google.android.gms:play-services-maps:10.2.1] /home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /home/elberg/.android/build-cache/8d22ec10427e62b25578c534d32783a135e54e15/output/AndroidManifest.xml:19:22-76
+		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/AndroidManifest.xml:19:22-76
 uses-feature#0x00020000
-ADDED from [com.google.android.gms:play-services-maps:10.2.1] /home/elberg/.android/build-cache/8d22ec10427e62b25578c534d32783a135e54e15/output/AndroidManifest.xml:21:5-77
+ADDED from [com.google.android.gms:play-services-maps:10.2.1] /home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/AndroidManifest.xml:21:5-77
 	android:glEsVersion
-		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /home/elberg/.android/build-cache/8d22ec10427e62b25578c534d32783a135e54e15/output/AndroidManifest.xml:21:19-51
+		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/AndroidManifest.xml:21:19-51
 	android:required
-		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /home/elberg/.android/build-cache/8d22ec10427e62b25578c534d32783a135e54e15/output/AndroidManifest.xml:21:52-75
+		ADDED from [com.google.android.gms:play-services-maps:10.2.1] /home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/AndroidManifest.xml:21:52-75
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:10.2.1] /home/elberg/.android/build-cache/f434cf85409e8d251274cd05bc2563fe34bd3eae/output/AndroidManifest.xml:19:9-172
+ADDED from [com.google.android.gms:play-services-base:10.2.1] /home/david/.android/build-cache/e6a22680b659e4905551d84523ca554f6edda4bc/output/AndroidManifest.xml:19:9-172
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:10.2.1] /home/elberg/.android/build-cache/f434cf85409e8d251274cd05bc2563fe34bd3eae/output/AndroidManifest.xml:19:146-170
+		ADDED from [com.google.android.gms:play-services-base:10.2.1] /home/david/.android/build-cache/e6a22680b659e4905551d84523ca554f6edda4bc/output/AndroidManifest.xml:19:146-170
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:10.2.1] /home/elberg/.android/build-cache/f434cf85409e8d251274cd05bc2563fe34bd3eae/output/AndroidManifest.xml:19:86-145
+		ADDED from [com.google.android.gms:play-services-base:10.2.1] /home/david/.android/build-cache/e6a22680b659e4905551d84523ca554f6edda4bc/output/AndroidManifest.xml:19:86-145
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:10.2.1] /home/elberg/.android/build-cache/f434cf85409e8d251274cd05bc2563fe34bd3eae/output/AndroidManifest.xml:19:19-85
+		ADDED from [com.google.android.gms:play-services-base:10.2.1] /home/david/.android/build-cache/e6a22680b659e4905551d84523ca554f6edda4bc/output/AndroidManifest.xml:19:19-85
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:10.2.1] /home/elberg/.android/build-cache/e4eba907174136397566698cc0f3304dfa1fc48c/output/AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:10.2.1] /home/david/.android/build-cache/93b0b027c1d06bb47fd929fff218a33095527540/output/AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:10.2.1] /home/elberg/.android/build-cache/e4eba907174136397566698cc0f3304dfa1fc48c/output/AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:10.2.1] /home/david/.android/build-cache/93b0b027c1d06bb47fd929fff218a33095527540/output/AndroidManifest.xml:20:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:10.2.1] /home/elberg/.android/build-cache/e4eba907174136397566698cc0f3304dfa1fc48c/output/AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:10.2.1] /home/david/.android/build-cache/93b0b027c1d06bb47fd929fff218a33095527540/output/AndroidManifest.xml:20:20-65
