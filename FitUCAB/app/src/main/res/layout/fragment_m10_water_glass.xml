@@ -22,7 +22,7 @@
         android:src="@mipmap/btn_less_m10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:srcCompat="@drawable/btnmenos"
+  
         app:layout_constraintRight_toLeftOf="@+id/tv_m10_ml"
         app:layout_constraintHorizontal_bias="1.0"
         android:layout_alignBottom="@+id/tv_m10_ml"
@@ -55,7 +55,7 @@
         android:background="@color/colorWhiteSmoke"
         android:src="@mipmap/btn_add_m10"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/btnmas"
+       
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="419dp"
         android:layout_alignBottom="@+id/Et_m10_water"
@@ -93,7 +93,7 @@
         android:src="@mipmap/btn_add_m10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/btnmas"
+        
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="@+id/tv_m10_ml"
         android:layout_alignBottom="@+id/tv_m10_ml"
@@ -130,7 +130,7 @@
         android:src="@mipmap/btn_less_m10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:srcCompat="@drawable/btnmenos"
+       
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:layout_alignBottom="@+id/Et_m10_water"

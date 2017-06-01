@@ -360,6 +360,7 @@ public class M04NotificationActivity extends AppCompatActivity {
             public void onResponse(Call<Notification_Settings> call, Response<Notification_Settings> response) {
 
                 try{
+                    Notification_Settings settings = response.body();
                     System.out.println("Hice bien el insert");
                 }
                 catch (Exception e){

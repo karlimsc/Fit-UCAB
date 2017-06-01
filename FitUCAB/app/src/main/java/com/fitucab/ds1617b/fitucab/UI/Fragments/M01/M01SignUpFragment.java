@@ -33,7 +33,7 @@ import java.util.Date;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -43,6 +43,7 @@ import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -325,7 +326,7 @@ public class M01SignUpFragment extends Fragment {
                             onCompleted(user);
                             int id = getIdUser(getContext());
                             M04NotificationActivity settings = new M04NotificationActivity();
-                            settings.insert(true,true,true,true,true,true,true,"es", "km",5, id);
+                            settings.insert(true,true,true,true,true,true,true, "es", "km", 5, id);
                             System.out.println(id);
                             _callBack.onSwapActivity("M02HomeActivity", null);
                         }

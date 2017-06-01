@@ -34,7 +34,7 @@ public interface ApiEndPointInterface {
                             );
     @GET("M01_ServicesUser/restorePassword")
     Call<User> restorePassword(@Query("email") String email);
-
+    
     @GET("M04_ServicesNotificationSettings/insertSetting")
     Call<Notification_Settings> insertSetting(@Query("preferenceFriends") boolean preferenceFriends,
                                               @Query("preferenceActivity") boolean preferenceActivity,
@@ -46,8 +46,7 @@ public interface ApiEndPointInterface {
                                               @Query("preferenceLanguage") String preferenceLanguage,
                                               @Query("preferenceUnit") String preferenceUnit,
                                               @Query("preferenceRadius") int preferenceRadius,
-                                              @Query("userId") int userId
-    );
+                                              @Query("userId") int userId);
 
     @GET("M04_ServicesNotificationSettings/updateSetting")
     Call<Notification_Settings>  updateSetting(@Query("preferenceFriends") boolean preferenceFriends,
@@ -60,8 +59,7 @@ public interface ApiEndPointInterface {
                                                @Query("preferenceLanguage") String preferenceLanguage,
                                                @Query("preferenceUnit") String preferenceUnit,
                                                @Query("preferenceRadius") int preferenceRadius,
-                                               @Query("userId") int userId
-    );
+                                               @Query("userId") int userId);
 
     @GET("M04_ServicesNotificationSettings/getSetting")
     Call<Notification_Settings> getSetting(@Query("userId") int userId);
