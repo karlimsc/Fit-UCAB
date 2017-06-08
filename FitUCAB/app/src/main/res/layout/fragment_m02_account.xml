@@ -19,51 +19,51 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
-       >
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
 
-                   >
-        <LinearLayout
-            android:layout_gravity="center_horizontal"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-
-            android:layout_marginTop="10dp"
-            android:weightSum="12">
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
+            >
+            <LinearLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
 
-                android:layout_column="1">
+                android:layout_marginTop="10dp"
+                android:weightSum="12">
 
-                <EditText
-                    android:id="@+id/et_m02_username"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_weight="2"
-                    android:ems="10"
-                    android:drawableLeft="@drawable/ic_account"
-                    android:drawablePadding="10dp"
-                    android:textSize="12dp"
-                    android:enabled="false"
-                    android:textColor="@color/black"
-                    android:hint="@string/et_m02_username"
-                    android:textColorHint="@color/black"
-                    android:text="     Mundo"
-                    android:background="@color/transparent"
-                    android:inputType="textPersonName"
-                    android:maxLength="20" />
-            </android.support.design.widget.TextInputLayout>
+
+                    android:layout_column="1">
+
+                    <EditText
+                        android:id="@+id/et_m02_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:drawableLeft="@drawable/ic_account"
+                        android:drawablePadding="10dp"
+                        android:textSize="12dp"
+
+                        android:textColor="@color/black"
+                        android:hint="@string/et_m02_username"
+                        android:textColorHint="@color/black"
+                        android:text="     Mundo"
+                        android:background="@color/transparent"
+                        android:inputType="textPersonName"
+                        android:maxLength="20" />
+                </android.support.design.widget.TextInputLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
             <LinearLayout
                 android:layout_gravity="center_horizontal"
                 android:layout_width="300dp"
@@ -85,7 +85,7 @@
                         android:layout_weight="2"
                         android:ems="10"
                         android:textSize="12dp"
-                        android:enabled="false"
+
                         android:textColor="@color/black"
                         android:hint="@string/et_m02_email"
                         android:drawableLeft="@drawable/ic_mail"
@@ -102,40 +102,6 @@
             <LinearLayout
                 android:layout_gravity="center_horizontal"
                 android:layout_width="300dp"
-            android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:weightSum="12">
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="1">
-
-                <EditText
-                    android:id="@+id/et_m02_phone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_weight="2"
-                    android:ems="10"
-                    android:textSize="12dp"
-                    android:drawableLeft="@drawable/ic_phone"
-                    android:drawablePadding="10dp"
-                    android:enabled="false"
-                    android:textColor="@color/black"
-                    android:hint="@string/et_m02_phone"
-                    android:textColorHint="@color/black"
-                    android:text="    0212-75"
-                    android:background="@color/transparent"
-                    android:inputType="textPersonName"
-                    android:maxLength="20" />
-            </android.support.design.widget.TextInputLayout>
-
-
-        </LinearLayout>
-            <LinearLayout
-                android:layout_gravity="center_horizontal"
-                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:weightSum="12">
@@ -146,268 +112,35 @@
                     android:layout_column="1">
 
                     <EditText
-                        android:id="@+id/et_m02_datenac"
+                        android:id="@+id/et_m02_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_weight="2"
                         android:ems="10"
                         android:textSize="12dp"
-                        android:enabled="false"
-                        android:textColor="@color/black"
-                        android:drawableLeft="@drawable/ic_date"
+                        android:drawableLeft="@drawable/ic_phone"
                         android:drawablePadding="10dp"
-                        android:hint="@string/et_m02_datenac"
+                        android:textColor="@color/black"
+                        android:hint="@string/et_m02_phone"
                         android:textColorHint="@color/black"
-                        android:text="04/12/2017"
+                        android:text="    0212-75"
                         android:background="@color/transparent"
-                        android:inputType="date"
+                        android:inputType="textPersonName"
                         android:maxLength="20" />
                 </android.support.design.widget.TextInputLayout>
 
 
             </LinearLayout>
-            <LinearLayout
-                android:layout_gravity="center_horizontal"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:orientation="horizontal"
-                android:weightSum="4">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="68dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1">
-
-                    <EditText
-                        android:id="@+id/et_m02_weight"
-                        android:layout_width="127dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:ems="10"
-                        android:textSize="12dp"
-                        android:enabled="false"
-                        android:textColor="@color/black"
-                        android:hint="@string/et_m02_weight"
-                        android:drawableLeft="@drawable/ic_fitness"
-                        android:drawablePadding="10dp"
-                        android:textColorHint="@color/black"
-                        android:text="62"
-                        android:background="@color/transparent"
-                        android:inputType="number"
-                        android:maxLength="3" />
 
 
-                </android.support.design.widget.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:textSize="15sp"
-                    android:paddingTop="5dp"
-                    android:paddingLeft="10sp"
-                    android:text="Kg" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_gravity="center_horizontal"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:orientation="horizontal"
-                android:weightSum="4">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="68dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_weight="0.63">
-
-                    <EditText
-                        android:id="@+id/et_m02_height"
-                        android:layout_width="173dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:ems="10"
-                        android:textSize="12dp"
-                        android:enabled="false"
-                        android:textColor="@color/black"
-                        android:hint="@string/et_m02_height"
-                        android:drawableLeft="@drawable/ic_calories"
-                        android:drawablePadding="10dp"
-                        android:textColorHint="@color/black"
-                        android:text="62"
-                        android:background="@color/transparent"
-                        android:inputType="number"
-                        android:maxLength="3" />
 
 
-                </android.support.design.widget.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="3dp"
-                    android:textSize="15sp"
-                    android:paddingTop="5dp"
-                    android:paddingLeft="10sp"
-                    android:text="Mts" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_gravity="center_horizontal"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:weightSum="12">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1">
-
-                    <EditText
-                        android:id="@+id/et_m02_location"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:layout_weight="2"
-                        android:ems="10"
-                        android:textSize="12dp"
-                        android:editable="false"
-                        android:hint="@string/et_m02_location"
-                        android:drawableLeft="@drawable/ic_map"
-                        android:drawablePadding="10dp"
-                        android:enabled="false"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black"
-                        android:text="Venezuela"
-                        android:background="@color/transparent"
-                        android:inputType="date"
-                        android:maxLength="20" />
-                </android.support.design.widget.TextInputLayout>
 
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_gravity="center_horizontal"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:orientation="horizontal"
-                android:weightSum="4">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="68dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_weight="0.78">
-
-                    <EditText
-                        android:id="@+id/et_m02_water"
-                        android:layout_width="127dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:ems="10"
-                        android:textSize="12dp"
-                        android:drawableLeft="@drawable/ic_water"
-                        android:drawablePadding="10dp"
-
-                        android:hint="@string/et_m02_water"
-                        android:enabled="false"
-                        android:textColor="@color/black"
-                        android:textColorHint="@color/black"
-                        android:text="56"
-                        android:background="@color/transparent"
-                        android:inputType="number"
-                        android:maxLength="3" />
 
 
-                </android.support.design.widget.TextInputLayout>
 
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_gravity="center_horizontal"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:orientation="horizontal"
-                android:weightSum="4">
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="68dp"
-                    android:layout_height="wrap_content"
-                    android:layout_column="1"
-                    android:layout_weight="0.84">
-
-                    <EditText
-                        android:id="@+id/et_m02_Steps"
-                        android:layout_width="127dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="left"
-                        android:ems="10"
-                        android:textSize="12dp"
-
-                        android:editable="false"
-                        android:hint="@string/et_m02_Steps"
-                        android:drawableLeft="@drawable/ic_directions"
-                        android:drawablePadding="10dp"
-                        android:textColorHint="@color/black"
-                        android:text="10"
-                        android:background="@color/transparent"
-                        android:inputType="number"
-                        android:maxLength="3" />
-
-
-                </android.support.design.widget.TextInputLayout>
-
-
-            </LinearLayout>
-
-        <LinearLayout
-            android:layout_gravity="center_horizontal"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal"
-            android:weightSum="4">
-            <Button
-                android:id="@+id/bt_m02_modify"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="30dp"
-                android:layout_marginLeft="30dp"
-                android:text="Modificar"
-                android:textSize="15dp"
-                android:background="@color/colorBtnAceptar"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@android:color/background_light"
-                android:layout_weight="0.33" />
-
-            <Button
-                android:id="@+id/bt_m02_send"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="15dp"
-                android:layout_weight="0.33"
-                android:background="@color/colorBtnAceptar"
-                android:text="Enviar"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@android:color/background_light"
-                android:textSize="15dp"
-
-                 />
-
-        </LinearLayout>
         </LinearLayout>
 
     </ScrollView>

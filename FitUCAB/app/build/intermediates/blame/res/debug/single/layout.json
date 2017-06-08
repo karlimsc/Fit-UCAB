@@ -33,7 +33,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_bottom_sheet_dialog.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_bottom_sheet_dialog.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_bottom_sheet_dialog.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_item.xml",
@@ -45,7 +45,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/notification_template_part_chronometer.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/notification_template_part_chronometer.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/content_login.xml",
@@ -72,16 +72,16 @@
         "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/layout/activity_m05_start_tracking.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_list_check.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.9.0.2\\res\\layout\\md_dialog_list_check.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\layout\\abc_search_view.xml"
     },
     {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_list_check.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.9.0.2\\res\\layout\\md_dialog_list_check.xml"
+    },
+    {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_icon_group.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/notification_template_icon_group.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/notification_template_icon_group.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/activity_login.xml",
@@ -93,7 +93,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_action_menu_item_layout.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_action_menu_item_layout.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_dialog_list.xml",
@@ -128,12 +128,12 @@
         "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/layout/activity_main.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_m04_notification2.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\layout\\activity_m04_notification2.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_m02_home.xml",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\layout\\fragment_m02_home.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_m04_notification2.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\layout\\activity_m04_notification2.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
@@ -145,7 +145,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_popup_menu_header_item_layout.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_popup_menu_header_item_layout.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\md_stub_inputpref.xml",
@@ -160,32 +160,32 @@
         "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/layout/fragment_m10_water_glass.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/layout/activity_main.xml"
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_dialog_title_material.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/layout/abc_select_dialog_material.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_dialog_title_material.xml"
-    },
-    {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m05_track_activity.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/layout/fragment_m05_track_activity.xml"
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/layout/activity_main.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\layout\\notification_template_part_time.xml"
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m05_track_activity.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/layout/fragment_m05_track_activity.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_dialog_progress_indeterminate.xml",
         "source": "/home/elberg/.android/build-cache/01a9bb9210b867872bca7732d605bf2225dae70b/output/res/layout/md_dialog_progress_indeterminate.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\layout\\notification_template_part_time.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
@@ -241,15 +241,15 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_screen_toolbar.xml"
-    },
-    {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_action.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/notification_action.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_screen_toolbar.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_dialog_basic_check.xml",
         "source": "/home/elberg/.android/build-cache/01a9bb9210b867872bca7732d605bf2225dae70b/output/res/layout/md_dialog_basic_check.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_action.xml",
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/notification_action.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\app_bar_m04_notification.xml",
@@ -277,7 +277,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_navigation_item.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_navigation_item.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
@@ -301,7 +301,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/notification_action_tombstone.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/notification_action_tombstone.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_bottom_navigation_item.xml",
@@ -312,16 +312,16 @@
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\layout\\activity_main2.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/select_dialog_singlechoice_material.xml"
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m01_home.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/layout/fragment_m01_home.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml",
         "source": "/home/elberg/.android/build-cache/54b292a6ec5fa87978913df45b6d8347d023f7a8/output/res/layout/design_layout_snackbar.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m01_home.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/layout/fragment_m01_home.xml"
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m11_foodhome.xml",
@@ -345,7 +345,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_activity_chooser_view.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_activity_chooser_view.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/separator_without_m03.xml",
@@ -377,7 +377,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_action_bar_up_container.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_action_bar_up_container.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m03_contacts.xml",
@@ -393,7 +393,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_select_dialog_material.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_select_dialog_material.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/fragment_m05_pickdate.xml",
@@ -413,15 +413,15 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_navigation_menu.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_navigation_menu.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_navigation_menu.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_list_menu_item_icon.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_list_menu_item_icon.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar_include.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_layout_snackbar_include.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_layout_snackbar_include.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
@@ -429,7 +429,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_navigation_item_subheader.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_navigation_item_subheader.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_navigation_item_subheader.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/activity_m11_food.xml",
@@ -453,11 +453,11 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_lines_media.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/notification_template_lines_media.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/notification_template_lines_media.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_media_custom.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/notification_template_media_custom.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/notification_template_media_custom.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
@@ -481,7 +481,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
@@ -504,24 +504,24 @@
         "source": "/home/david/.android/build-cache/0a5d7e0c9ac4e79e74f226e610eafd9031414107/output/res/layout/md_simplelist_item.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_stub_titleframe_lesspadding.xml",
-        "source": "/home/elberg/.android/build-cache/01a9bb9210b867872bca7732d605bf2225dae70b/output/res/layout/md_stub_titleframe_lesspadding.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_stub_titleframe_lesspadding.xml",
+        "source": "/home/elberg/.android/build-cache/01a9bb9210b867872bca7732d605bf2225dae70b/output/res/layout/md_stub_titleframe_lesspadding.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_stub_actionbuttons.xml",
         "source": "/home/elberg/.android/build-cache/01a9bb9210b867872bca7732d605bf2225dae70b/output/res/layout/md_stub_actionbuttons.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_dialog_colorchooser.xml",
-        "source": "/home/david/.android/build-cache/0a5d7e0c9ac4e79e74f226e610eafd9031414107/output/res/layout/md_dialog_colorchooser.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_dialog_colorchooser.xml",
+        "source": "/home/david/.android/build-cache/0a5d7e0c9ac4e79e74f226e610eafd9031414107/output/res/layout/md_dialog_colorchooser.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\app_bar_m02_home.xml",
@@ -540,28 +540,28 @@
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/layout/fragment_m05_modify.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/separator_friends_m03.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/layout/separator_friends_m03.xml"
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_action.xml",
+        "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/layout/notification_action.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_dialog_basic.xml",
         "source": "/home/elberg/.android/build-cache/01a9bb9210b867872bca7732d605bf2225dae70b/output/res/layout/md_dialog_basic.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_action.xml",
-        "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/layout/notification_action.xml"
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/separator_friends_m03.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/layout/separator_friends_m03.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_login.xml",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\src\\main\\res\\layout\\content_login.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_dialog_progress_indeterminate_horizontal.xml",
-        "source": "/home/david/.android/build-cache/6aba2b412b88cb9fa309b7feeee31c58d3d283f2/output/res/layout/md_dialog_progress_indeterminate_horizontal.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_dialog_progress_indeterminate_horizontal.xml",
+        "source": "/home/david/.android/build-cache/6aba2b412b88cb9fa309b7feeee31c58d3d283f2/output/res/layout/md_dialog_progress_indeterminate_horizontal.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
@@ -588,12 +588,12 @@
         "source": "/home/elberg/.android/build-cache/48de809bd64c37bde3455a1996d4fbcbdee264b9/output/res/layout/md_simplelist_item.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/notification_template_media.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\md_stub_colorchooser_custom.xml",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\commons\\0.9.0.2\\res\\layout\\md_stub_colorchooser_custom.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/notification_template_media.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_m05_log_activity.xml",
@@ -609,15 +609,15 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_popup_menu_item_layout.xml"
-    },
-    {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_custom_big.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/notification_template_custom_big.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/activity_m05_principal_activity.xml",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/src/main/res/layout/activity_m05_principal_activity.xml"
+    },
+    {
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_custom_big.xml",
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/notification_template_custom_big.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/contacts_without_m03.xml",
@@ -633,11 +633,11 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_search_view.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_search_view.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_navigation_menu_item.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_navigation_menu_item.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_navigation_menu_item.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_input.xml",
@@ -677,7 +677,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_navigation_item_header.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_navigation_item_header.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_m01_sign_up.xml",
@@ -765,7 +765,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_expanded_menu_layout.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_expanded_menu_layout.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/friend_list_m03.xml",
@@ -841,7 +841,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_action_menu_layout.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_action_menu_layout.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
@@ -853,7 +853,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/activity_prueba.xml",
@@ -917,11 +917,11 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_layout_tab_text.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_layout_tab_text.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_layout_tab_text.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_action_bar_title_item.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_action_bar_title_item.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
@@ -945,7 +945,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_layout_snackbar.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_layout_snackbar.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_layout_snackbar.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/md_stub_inputpref.xml",
@@ -957,7 +957,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/support_simple_spinner_dropdown_item.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\separator_without_m03.xml",
@@ -973,7 +973,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/select_dialog_item_material.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/select_dialog_item_material.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_list.xml",
@@ -1045,7 +1045,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_alert_dialog_title_material.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_alert_dialog_title_material.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
@@ -1073,7 +1073,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_action_mode_close_item_material.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/activity_m09_gamification.xml",
@@ -1093,7 +1093,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_text_input_password_icon.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_text_input_password_icon.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_text_input_password_icon.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_icon_group.xml",
@@ -1233,7 +1233,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_bottom_navigation_item.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_bottom_navigation_item.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_bottom_navigation_item.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/content_m05_principal_activity.xml",
@@ -1325,11 +1325,11 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/notification_template_part_time.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/notification_template_part_time.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/select_dialog_multichoice_material.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/select_dialog_multichoice_material.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
@@ -1389,7 +1389,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/content_m02_home.xml",
@@ -1397,7 +1397,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_menu_item_action_area.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_menu_item_action_area.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_menu_item_action_area.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
@@ -1405,11 +1405,11 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_list_menu_item_radio.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_list_menu_item_radio.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_alert_dialog_material.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_alert_dialog_material.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/separator_without_m03.xml",
@@ -1441,11 +1441,11 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_screen_simple.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_screen_simple.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_action_mode_bar.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_action_mode_bar.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/content_main.xml",
@@ -1473,11 +1473,11 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_layout_tab_icon.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_layout_tab_icon.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_layout_tab_icon.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_screen_content_include.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_screen_content_include.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
@@ -1485,7 +1485,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_button_bar_material.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_alert_dialog_button_bar_material.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_alert_dialog_button_bar_material.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\md_preference_custom.xml",
@@ -1493,7 +1493,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_list_menu_item_layout.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_list_menu_item_layout.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
@@ -1533,7 +1533,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_activity_chooser_view_list_item.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/separator_request_m03.xml",
@@ -1557,7 +1557,7 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
-        "source": "/home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/res/layout/design_navigation_item_separator.xml"
+        "source": "/home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/res/layout/design_navigation_item_separator.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
@@ -1593,6 +1593,6 @@
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
-        "source": "/home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/res/layout/abc_list_menu_item_checkbox.xml"
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/layout/abc_list_menu_item_checkbox.xml"
     }
 ]

@@ -35,8 +35,8 @@ ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xm
 		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:13:22-69
 application
 ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:15:5-166:19
-MERGED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:transition:25.3.0] /home/david/.android/build-cache/404615609162b068bbc473fc263e75b17973814b/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:transition:25.3.0] /home/david/.android/build-cache/b09a7965761053eecd666b12359dd82c9a21fb71/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/david/.android/build-cache/85202b3cb218532aabfd2d07a0769ee820a5fb21/output/AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-maps:10.2.1] /home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/AndroidManifest.xml:24:5-19
 MERGED from [com.google.android.gms:play-services-location:10.2.1] /home/david/.android/build-cache/728f7fc66c4ba5ad442de88ea103c0e2bc6ba7e9/output/AndroidManifest.xml:4:5-19
@@ -46,18 +46,18 @@ MERGED from [com.google.android.gms:play-services-basement:10.2.1] /home/david/.
 MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/david/.android/build-cache/63b93cf89abc6899256342eb0a324e8d7312973c/output/AndroidManifest.xml:9:5-20
 MERGED from [com.afollestad.material-dialogs:commons:0.9.0.2] /home/david/.android/build-cache/0a5d7e0c9ac4e79e74f226e610eafd9031414107/output/AndroidManifest.xml:12:5-20
 MERGED from [com.afollestad.material-dialogs:core:0.9.0.2] /home/david/.android/build-cache/6aba2b412b88cb9fa309b7feeee31c58d3d283f2/output/AndroidManifest.xml:13:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.0] /home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-v4:25.3.0] /home/david/.android/build-cache/e41f704cfc8a96f0bb1e8f56aca05b94ad996b3b/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.0] /home/david/.android/build-cache/a23ecdb04f7d271ebab1f6824eb9b58b62c650d6/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.0] /home/david/.android/build-cache/4946751f5fd2c72193e81c1e766b240dbf540543/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.0] /home/david/.android/build-cache/ae210c32697a040a9db6d43b161e668770481d40/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.0] /home/david/.android/build-cache/a6db4cf8fc18ee7acb13adb3c8168889a6f74564/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/david/.android/build-cache/401849b7ac36452710a5e9b9bd0e272125335cd8/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/david/.android/build-cache/344c8bf9827576f8da45844433334652b3328db4/output/AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-compat:25.3.0] /home/david/.android/build-cache/6ec399d9b6e8527384eadfe615c8ceffdd26e972/output/AndroidManifest.xml:29:5-20
-MERGED from [com.android.support.test:runner:0.5] /home/david/.android/build-cache/677b51bf166fd305a33087d3fc8ba63366c1b2ff/output/AndroidManifest.xml:24:5-20
-MERGED from [com.android.support.test:exposed-instrumentation-api-publish:0.5] /home/david/.android/build-cache/eb96b96c8d5f5822d218b567b22f76370b44e022/output/AndroidManifest.xml:24:5-20
-MERGED from [com.android.support.test.espresso:espresso-idling-resource:2.2.2] /home/david/.android/build-cache/9f6f1ef386619cefed77c2908a1275f40eac9d4e/output/AndroidManifest.xml:24:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.0] /home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-v4:25.3.0] /home/david/.android/build-cache/7fc857e1579c70ce93ef1834f18ab5a0f8175094/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.0] /home/david/.android/build-cache/191133742952432b5f126221cf77ec2e4d030b0d/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.0] /home/david/.android/build-cache/54c09ec4f69c92335bd8a53843960ff0cb71522d/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.0] /home/david/.android/build-cache/264e0123293548b4b07c452ba9ccc31575406cb4/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.0] /home/david/.android/build-cache/7f35b314e378a6162b5dd4ac9f8fab6f11825fbd/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/david/.android/build-cache/fc748baa03f05c73dbee45b2d3853ff75b5f09ae/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/david/.android/build-cache/94c809c5b69679e372592b8e22c475d91b870376/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-compat:25.3.0] /home/david/.android/build-cache/d585117e15b6af750c2c94a2bea449401efdd099/output/AndroidManifest.xml:29:5-20
+MERGED from [com.android.support.test:runner:0.5] /home/david/.android/build-cache/6710d667109a3a2483b4ed2265fc89573f2403b6/output/AndroidManifest.xml:24:5-20
+MERGED from [com.android.support.test:exposed-instrumentation-api-publish:0.5] /home/david/.android/build-cache/74e13dc57e19974762a0606b873264f927b5dda8/output/AndroidManifest.xml:24:5-20
+MERGED from [com.android.support.test.espresso:espresso-idling-resource:2.2.2] /home/david/.android/build-cache/2b51b8e33f8c4c8ad0ed489d171c3fedd780a760/output/AndroidManifest.xml:24:5-20
 	android:label
 		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:18:9-41
 	android:supportsRtl
@@ -202,8 +202,9 @@ ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xm
 		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:161:19-72
 uses-sdk
 INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:transition:25.3.0] /home/david/.android/build-cache/404615609162b068bbc473fc263e75b17973814b/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:multidex:1.0.1] /home/david/.android/build-cache/67d9076af8a721190ee43c07287d1382fb6b2820/output/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:transition:25.3.0] /home/david/.android/build-cache/b09a7965761053eecd666b12359dd82c9a21fb71/output/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/david/.android/build-cache/85202b3cb218532aabfd2d07a0769ee820a5fb21/output/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-maps:10.2.1] /home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/AndroidManifest.xml:23:5-43
 MERGED from [com.google.android.gms:play-services-location:10.2.1] /home/david/.android/build-cache/728f7fc66c4ba5ad442de88ea103c0e2bc6ba7e9/output/AndroidManifest.xml:3:5-43
@@ -213,24 +214,24 @@ MERGED from [com.google.android.gms:play-services-basement:10.2.1] /home/david/.
 MERGED from [de.hdodenhof:circleimageview:2.1.0] /home/david/.android/build-cache/63b93cf89abc6899256342eb0a324e8d7312973c/output/AndroidManifest.xml:5:5-7:41
 MERGED from [com.afollestad.material-dialogs:commons:0.9.0.2] /home/david/.android/build-cache/0a5d7e0c9ac4e79e74f226e610eafd9031414107/output/AndroidManifest.xml:8:5-10:41
 MERGED from [com.afollestad.material-dialogs:core:0.9.0.2] /home/david/.android/build-cache/6aba2b412b88cb9fa309b7feeee31c58d3d283f2/output/AndroidManifest.xml:8:5-11:75
-MERGED from [com.android.support:recyclerview-v7:25.3.0] /home/david/.android/build-cache/281673641d03256ac0e39f70a0e0125b896816e0/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.0] /home/david/.android/build-cache/cc8d9da4621c3ab54fe0b79ccb802f1769c8383f/output/AndroidManifest.xml:20:5-43
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.1.7] /home/david/.android/build-cache/3da182c4b5809d166de5f87c0d489c60d74b6335/output/AndroidManifest.xml:12:5-14:41
-MERGED from [com.android.support:appcompat-v7:25.3.0] /home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:25.3.0] /home/david/.android/build-cache/e41f704cfc8a96f0bb1e8f56aca05b94ad996b3b/output/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.0] /home/david/.android/build-cache/a23ecdb04f7d271ebab1f6824eb9b58b62c650d6/output/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.0] /home/david/.android/build-cache/4946751f5fd2c72193e81c1e766b240dbf540543/output/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.0] /home/david/.android/build-cache/ae210c32697a040a9db6d43b161e668770481d40/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.0] /home/david/.android/build-cache/a6db4cf8fc18ee7acb13adb3c8168889a6f74564/output/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/david/.android/build-cache/401849b7ac36452710a5e9b9bd0e272125335cd8/output/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/david/.android/build-cache/344c8bf9827576f8da45844433334652b3328db4/output/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-compat:25.3.0] /home/david/.android/build-cache/6ec399d9b6e8527384eadfe615c8ceffdd26e972/output/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support.test.espresso:espresso-core:2.2.2] /home/david/.android/build-cache/786c4409bba6782a03ada33b25bfe8967ccec49d/output/AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.test:rules:0.5] /home/david/.android/build-cache/39a37f8a7bd9bfdaa6a2aba883580ef5ce16477a/output/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.test:runner:0.5] /home/david/.android/build-cache/677b51bf166fd305a33087d3fc8ba63366c1b2ff/output/AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.test:exposed-instrumentation-api-publish:0.5] /home/david/.android/build-cache/eb96b96c8d5f5822d218b567b22f76370b44e022/output/AndroidManifest.xml:20:5-22:41
-MERGED from [com.android.support.test.espresso:espresso-idling-resource:2.2.2] /home/david/.android/build-cache/9f6f1ef386619cefed77c2908a1275f40eac9d4e/output/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support:appcompat-v7:25.3.0] /home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-v4:25.3.0] /home/david/.android/build-cache/7fc857e1579c70ce93ef1834f18ab5a0f8175094/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.0] /home/david/.android/build-cache/191133742952432b5f126221cf77ec2e4d030b0d/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.0] /home/david/.android/build-cache/54c09ec4f69c92335bd8a53843960ff0cb71522d/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.0] /home/david/.android/build-cache/264e0123293548b4b07c452ba9ccc31575406cb4/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.0] /home/david/.android/build-cache/7f35b314e378a6162b5dd4ac9f8fab6f11825fbd/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/david/.android/build-cache/fc748baa03f05c73dbee45b2d3853ff75b5f09ae/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/david/.android/build-cache/94c809c5b69679e372592b8e22c475d91b870376/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-compat:25.3.0] /home/david/.android/build-cache/d585117e15b6af750c2c94a2bea449401efdd099/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support.test.espresso:espresso-core:2.2.2] /home/david/.android/build-cache/88611e561dfffc34e5abb31e24355d0fc72026a1/output/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.test:rules:0.5] /home/david/.android/build-cache/7fa904406c256f51e948f8190abcabe2606aa036/output/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.test:runner:0.5] /home/david/.android/build-cache/6710d667109a3a2483b4ed2265fc89573f2403b6/output/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.test:exposed-instrumentation-api-publish:0.5] /home/david/.android/build-cache/74e13dc57e19974762a0606b873264f927b5dda8/output/AndroidManifest.xml:20:5-22:41
+MERGED from [com.android.support.test.espresso:espresso-idling-resource:2.2.2] /home/david/.android/build-cache/2b51b8e33f8c4c8ad0ed489d171c3fedd780a760/output/AndroidManifest.xml:20:5-22:41
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
 		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
@@ -238,22 +239,22 @@ MERGED from [com.android.support.test.espresso:espresso-idling-resource:2.2.2] /
 		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml
 		INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/debug/AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:transition:25.3.0] /home/david/.android/build-cache/404615609162b068bbc473fc263e75b17973814b/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.0] /home/david/.android/build-cache/281673641d03256ac0e39f70a0e0125b896816e0/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:appcompat-v7:25.3.0] /home/david/.android/build-cache/fe532884de549d7ce64f2b196f4e64e5db1a7286/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-v4:25.3.0] /home/david/.android/build-cache/e41f704cfc8a96f0bb1e8f56aca05b94ad996b3b/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.0] /home/david/.android/build-cache/a23ecdb04f7d271ebab1f6824eb9b58b62c650d6/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.0] /home/david/.android/build-cache/4946751f5fd2c72193e81c1e766b240dbf540543/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.0] /home/david/.android/build-cache/ae210c32697a040a9db6d43b161e668770481d40/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.0] /home/david/.android/build-cache/a6db4cf8fc18ee7acb13adb3c8168889a6f74564/output/AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/david/.android/build-cache/401849b7ac36452710a5e9b9bd0e272125335cd8/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/david/.android/build-cache/344c8bf9827576f8da45844433334652b3328db4/output/AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-compat:25.3.0] /home/david/.android/build-cache/6ec399d9b6e8527384eadfe615c8ceffdd26e972/output/AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:transition:25.3.0] /home/david/.android/build-cache/b09a7965761053eecd666b12359dd82c9a21fb71/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.0] /home/david/.android/build-cache/cc8d9da4621c3ab54fe0b79ccb802f1769c8383f/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:appcompat-v7:25.3.0] /home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-v4:25.3.0] /home/david/.android/build-cache/7fc857e1579c70ce93ef1834f18ab5a0f8175094/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.0] /home/david/.android/build-cache/191133742952432b5f126221cf77ec2e4d030b0d/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.0] /home/david/.android/build-cache/54c09ec4f69c92335bd8a53843960ff0cb71522d/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.0] /home/david/.android/build-cache/264e0123293548b4b07c452ba9ccc31575406cb4/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.0] /home/david/.android/build-cache/7f35b314e378a6162b5dd4ac9f8fab6f11825fbd/output/AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.0] /home/david/.android/build-cache/fc748baa03f05c73dbee45b2d3853ff75b5f09ae/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.0] /home/david/.android/build-cache/94c809c5b69679e372592b8e22c475d91b870376/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-compat:25.3.0] /home/david/.android/build-cache/d585117e15b6af750c2c94a2bea449401efdd099/output/AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/77418b1afafc44869cbe9411293c7203e4491393/output/AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/AndroidManifest.xml:26:9-47
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-maps:10.2.1] /home/david/.android/build-cache/697be8cccf54e46610e816b1e63cc56efd581547/output/AndroidManifest.xml:19:5-78
 	android:name
