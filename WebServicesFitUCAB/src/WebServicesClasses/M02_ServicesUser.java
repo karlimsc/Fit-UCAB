@@ -45,7 +45,9 @@ public class M02_ServicesUser {
      * Metodo para actualizar un usuario.
      * Actualizar usuario con esa id.
      * @param id Id del usuario que se quiere modificar
-     * @param user Datos del usuario modificado
+     * @param username Nombre de usuario
+     * @param email email
+     * @param phone telefono
      * @return Clase User en formato json
      * @throws WebApplicationException
      * @see User
@@ -53,7 +55,14 @@ public class M02_ServicesUser {
     @PUT
     @Path("/{userId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateUser( @PathParam("userId") int id, @QueryParam("user") User user ){
+    public Response updateUser( @PathParam("userId") int id,
+                                @QueryParam("user") String username,
+                                @QueryParam("email") String email,
+                                @QueryParam("phone") String phone ){
+        User user =new User();
+        user.setUser(username);
+        user.setEmail(email);
+        user.setPhone(phone);
         user.setId(id);
         _service = new Query();
         if ( _service.updateUser( user ) == false ){
@@ -63,7 +72,7 @@ public class M02_ServicesUser {
         }
         _message = new StatusMessage( 1, "Usuario actualizado" );
         _response = Response.status( Response.Status.ACCEPTED ).entity( _message ).build();
-//        _response = Response.status( Response.Status.ACCEPTED ).entity( user ).build();
+        _response = Response.status( Response.Status.ACCEPTED ).entity( user ).build();
         return _response;
     }
 
