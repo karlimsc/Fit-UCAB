@@ -1,8 +1,8 @@
 
 
-
 ------------------------------------------------------STORE PROCEDURES------------------------------------------------------------ 
 -- MODULO 1
+
 
 /**************************************************INICIO DE SESION**************************************************/
 
@@ -210,6 +210,61 @@ END;
 $$ LANGUAGE plpgsql;
 
 
+/***************************************ACTUALIZACION PERSONALIZADA*************************************/
+CREATE OR REPLACE FUNCTION M02_MODPERFILPASS(id int, password varchar(8))
+  RETURNS VOID AS $$
+DECLARE
+BEGIN
+  UPDATE person
+  SET PERSONPASSWORD = password
+  WHERE PERSONID = id;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION M02_MODPERFILMAIL(id int, email varchar(30))
+  RETURNS VOID AS $$
+DECLARE
+BEGIN
+  UPDATE person
+  SET PERSONEMAIL = email
+  WHERE PERSONID = id;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION M02_MODPERFILSEX(id int, sex varchar(20))
+  RETURNS VOID AS $$
+DECLARE
+BEGIN
+  UPDATE person
+  SET PERSONSEX = sex
+  WHERE PERSONID = id;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION M02_MODPERFILPHONE(id int, phone varchar(20))
+  RETURNS VOID AS $$
+DECLARE
+BEGIN
+  UPDATE person
+  SET PERSONPHONE = phone
+  WHERE PERSONID = id;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION M02_PERSONEXISTE(id int)
+  RETURNS INTEGER AS $$
+DECLARE
+  result integer;
+BEGIN
+  IF ((SELECT COUNT(*) FROM person WHERE personid = id) = 0) THEN
+    result := 0;
+  ELSE
+    result := 1;
+  END IF;
+  RETURN result;
+END;
+$$ LANGUAGE plpgsql;
+
 ------MODULO 5
 
 
@@ -248,7 +303,7 @@ return next;
   
 END; 
 $BODY$
-  LANGUAGE plpgsql STABLE
+  LANGUAGE plpgsql STABLE;
 
 -- BUSCA EL MET DEL DEPORTE QUE EL USUARIO QUIERE AÑADIR A SU LISTA  A TRAVES DE SU NOMBRE
 -- FUE CREADO PARA OBTENER EL MET DEL DEPORTE ANTES DE INSERTAR
@@ -412,7 +467,7 @@ loop
 end loop;
 END
 $BODY$
-  LANGUAGE plpgsql VOLATILE
+  LANGUAGE plpgsql VOLATILE;
 
 -- Carga actividades por id usuario
 
@@ -443,7 +498,7 @@ loop
 end loop;
 END
 $BODY$
-  LANGUAGE plpgsql VOLATILE
+  LANGUAGE plpgsql VOLATILE;
 
 -- CARGA LAS CALORIAS QUEMADAS POR ACTIVIDAD---
 
@@ -555,7 +610,6 @@ LANGUAGE 'plpgsql' VOLATILE;
 
 ---Modulo 10
 
-
 CREATE OR REPLACE  FUNCTION M10_AddWater( tm timestamp, gt integer, fkP integer,
                                  OUT res integer)
 AS $$
@@ -605,7 +659,7 @@ BEGIN
  
 
 	delete from glass_historic where glasshistoricid =
-	( Select max(GLASSTIME) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm);
+	( Select max(glasshistoricid) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm));
 
 
 

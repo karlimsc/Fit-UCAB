@@ -253,7 +253,8 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
         try {
 
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-            String webUrl=  baseIp.getIp() +"M02Users/"+id;
+//            String webUrl=  baseIp.getIp() +"M02Users/"+id;
+            String webUrl=  baseIp.getIp() +"M02Users/1";
             Log.i("ASKUSER", "toAskWebService: "+webUrl);
             JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
                 @Override

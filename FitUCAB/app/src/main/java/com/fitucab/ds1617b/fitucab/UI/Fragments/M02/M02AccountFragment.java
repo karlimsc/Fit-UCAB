@@ -48,7 +48,6 @@ public class M02AccountFragment extends Fragment {
     private User user =new User();
     private IpStringConnection ip= new IpStringConnection();
 
-
     /**
      * Constructor para crear el fragmento
      *
@@ -75,8 +74,6 @@ public class M02AccountFragment extends Fragment {
 
     }
 
-
-
     /**
      * Void initcomponentes donde se inicializan todos los componentes
      * @param view Vista donde se encuentran los bontones y componentes de la vista
@@ -98,7 +95,7 @@ public class M02AccountFragment extends Fragment {
                 if (keyCode == KeyEvent.KEYCODE_ENTER) {
                     InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(_et_m02_email.getWindowToken(), 0);
-                   user.set_email( _et_m02_email.getText().toString());
+                    user.set_email( _et_m02_email.getText().toString());
                     toPutWebService(user);
 
                 }
@@ -143,7 +140,6 @@ public class M02AccountFragment extends Fragment {
                     imm.hideSoftInputFromWindow(_et_m02_phone.getWindowToken(), 0);
                     user.set_phone( _et_m02_phone.getText().toString());
                     toPutWebService(user);
-
                 }
                 return false;
             }
@@ -156,7 +152,8 @@ public class M02AccountFragment extends Fragment {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             int id= preferences.getInt("idUser",0);
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-            String webUrl= ip.getIp()+"M02Users/"+id+"&user="+user;
+//            String webUrl= ip.getIp()+"M02Users/"+id+"&user="+user;
+            String webUrl= ip.getIp()+"M02Users/1&user="+user;
             Log.i(TAG, "toAskWebService: "+webUrl);
             JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.PUT, webUrl, new Response.Listener<JSONObject>() {
                 @Override
@@ -170,7 +167,6 @@ public class M02AccountFragment extends Fragment {
                     Log.i(TAG, " ERROR"+ error.toString());
                 }
             });
-
             requestQueue.add(jsonrequest);
             throw new M02Exception();
         }catch (M02Exception e){
@@ -184,7 +180,6 @@ public class M02AccountFragment extends Fragment {
         }
     }
 
-
     /**
      * VOID toAskWebService que realiza las peticiones al webservice
      *
@@ -194,7 +189,8 @@ public class M02AccountFragment extends Fragment {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             int id= preferences.getInt("idUser",0);
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-            String webUrl= ip.getIp()+"M02Users/"+id;
+//            String webUrl= ip.getIp()+"M02Users/"+id;
+            String webUrl= ip.getIp()+"M02Users/1";
             Log.i(TAG, "toAskWebService: "+webUrl);
             JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
                 @Override
@@ -219,10 +215,7 @@ public class M02AccountFragment extends Fragment {
         catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
-
 
     /**
      * VOID setJsonView que setea todos los componentes de la vista con los valores
@@ -237,10 +230,9 @@ public class M02AccountFragment extends Fragment {
             _et_m02_username.setText(username);
             _et_m02_phone.setText(phone);
             _et_m02_email.setText(email);
-          user.set_username(username);
+            user.set_username(username);
             user.set_email(email);
             user.set_phone(phone);
-
             throw new M02Exception();
         }catch (M02Exception e){
             e.toString();
@@ -249,12 +241,10 @@ public class M02AccountFragment extends Fragment {
             e.printStackTrace();
         }
         catch (NullPointerException e){
-
             e.printStackTrace();
         }catch (Exception e){
-
             e.printStackTrace();
         }
-
     }
+
 }

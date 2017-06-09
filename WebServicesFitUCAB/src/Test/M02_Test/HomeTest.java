@@ -1,4 +1,4 @@
-package M02_Test;
+package Test.M02_Test;
 
 import Domain.Home;
 import org.junit.After;

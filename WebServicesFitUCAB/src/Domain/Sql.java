@@ -19,7 +19,7 @@ public class Sql {
      */
     public static Connection getConInstance(){
 
-            conInstance = bdConnect();
+        conInstance = bdConnect();
 
         return conInstance;
     }
@@ -167,4 +167,3 @@ public class Sql {
     }
 
 }
-

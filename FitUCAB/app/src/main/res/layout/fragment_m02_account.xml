@@ -19,51 +19,51 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp"
-       >
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
 
-                   >
-        <LinearLayout
-            android:layout_gravity="center_horizontal"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-
-            android:layout_marginTop="10dp"
-            android:weightSum="12">
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
+            >
+            <LinearLayout
+                android:layout_gravity="center_horizontal"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
 
-                android:layout_column="1">
+                android:layout_marginTop="10dp"
+                android:weightSum="12">
 
-                <EditText
-                    android:id="@+id/et_m02_username"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_weight="2"
-                    android:ems="10"
-                    android:drawableLeft="@drawable/ic_account"
-                    android:drawablePadding="10dp"
-                    android:textSize="12dp"
 
-                    android:textColor="@color/black"
-                    android:hint="@string/et_m02_username"
-                    android:textColorHint="@color/black"
-                    android:text="     Mundo"
-                    android:background="@color/transparent"
-                    android:inputType="textPersonName"
-                    android:maxLength="20" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_column="1">
+
+                    <EditText
+                        android:id="@+id/et_m02_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:drawableLeft="@drawable/ic_account"
+                        android:drawablePadding="10dp"
+                        android:textSize="12dp"
+
+                        android:textColor="@color/black"
+                        android:hint="@string/et_m02_username"
+                        android:textColorHint="@color/black"
+                        android:text="     Mundo"
+                        android:background="@color/transparent"
+                        android:inputType="textPersonName"
+                        android:maxLength="20" />
+                </android.support.design.widget.TextInputLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
             <LinearLayout
                 android:layout_gravity="center_horizontal"
                 android:layout_width="300dp"
@@ -102,36 +102,36 @@
             <LinearLayout
                 android:layout_gravity="center_horizontal"
                 android:layout_width="300dp"
-            android:layout_height="wrap_content"
+                android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:weightSum="12">
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="1">
-
-                <EditText
-                    android:id="@+id/et_m02_phone"
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:layout_weight="2"
-                    android:ems="10"
-                    android:textSize="12dp"
-                    android:drawableLeft="@drawable/ic_phone"
-                    android:drawablePadding="10dp"
-                    android:textColor="@color/black"
-                    android:hint="@string/et_m02_phone"
-                    android:textColorHint="@color/black"
-                    android:text="    0212-75"
-                    android:background="@color/transparent"
-                    android:inputType="textPersonName"
-                    android:maxLength="20" />
-            </android.support.design.widget.TextInputLayout>
+                    android:layout_column="1">
+
+                    <EditText
+                        android:id="@+id/et_m02_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_weight="2"
+                        android:ems="10"
+                        android:textSize="12dp"
+                        android:drawableLeft="@drawable/ic_phone"
+                        android:drawablePadding="10dp"
+                        android:textColor="@color/black"
+                        android:hint="@string/et_m02_phone"
+                        android:textColorHint="@color/black"
+                        android:text="    0212-75"
+                        android:background="@color/transparent"
+                        android:inputType="textPersonName"
+                        android:maxLength="20" />
+                </android.support.design.widget.TextInputLayout>
 
 
-        </LinearLayout>
+            </LinearLayout>
 
 
 

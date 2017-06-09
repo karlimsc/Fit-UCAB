@@ -45,7 +45,6 @@ public class M02_ServicesUser {
      * Metodo para actualizar un usuario.
      * Actualizar usuario con esa id.
      * @param id Id del usuario que se quiere modificar
-     * @param user Datos del usuario modificado
      * @return Clase User en formato json
      * @throws WebApplicationException
      * @see User
@@ -63,7 +62,7 @@ public class M02_ServicesUser {
         }
         _message = new StatusMessage( 1, "Usuario actualizado" );
         _response = Response.status( Response.Status.ACCEPTED ).entity( _message ).build();
-//        _response = Response.status( Response.Status.ACCEPTED ).entity( user ).build();
+        _response = Response.status( Response.Status.ACCEPTED ).entity( user ).build();
         return _response;
     }
 

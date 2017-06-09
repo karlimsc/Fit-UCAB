@@ -13,21 +13,21 @@
     <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_comienza">REGISTRATE</string>
     <string name="btn_m01_iniciaSesion">INICIA SESION</string>
-    <string name="tv_m01_intro">¡Bienvenido! \n \n  Inicia tu entrenamiento físico</string>
+    <string name="tv_m01_intro">Â¡Bienvenido! \n \n  Inicia tu entrenamiento fÃ­sico</string>
     <string name="btn_m01_entrar">ENTRAR</string>
     <string name="et_m01_usuarioCorreo">Nombre de Usuario</string>
-    <string name="et_m01_passwordLogin">Contraseña</string>
-    <string name="et_m01_passwordRegistro">Contraseña</string>
+    <string name="et_m01_passwordLogin">ContraseÃ±a</string>
+    <string name="et_m01_passwordRegistro">ContraseÃ±a</string>
     <string name="btn_m01_aceptarLogin">ENTRAR</string>
-    <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
-    <string name="et_m01_correoRecovery">Correo Electrónico</string>
+    <string name="tv_m01_olvidoClave">Â¿Olvidaste tu contraseÃ±a?</string>
+    <string name="et_m01_correoRecovery">Correo ElectrÃ³nico</string>
     <string name="btn_m01_enviarCorreo">ENVIAR CORREO</string>
     <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
     <string name="tv_m01_acercaDeTi">Acerca de ti</string>
-    <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
+    <string name="tv_m01_recuperacionContra">RecuperaciÃ³n de ContraseÃ±a</string>
     <string name="et_m01_usuario">Usuario</string>
-    <string name="et_m01_correoRegistro">Correo Electrónico</string>
-    <string name="et_m01_telefono">Teléfono</string>
+    <string name="et_m01_correoRegistro">Correo ElectrÃ³nico</string>
+    <string name="et_m01_telefono">TelÃ©fono</string>
     <string name="rb_m01_femenino">Femenino</string>
     <string name="rb_m01_masculino">Masculino</string>
     <string name="et_m01_peso">Peso</string>
@@ -36,10 +36,10 @@
     <string name="et_m01_mts">Mts</string>
     <string name="m01_errorUsernameSpecialChar">El nombre de usuario no debe tener caracteres especiales</string>
     <string name="m01_errorUsernameTooShort">El nombre de usuario debe poseer al menos 4 caracteres</string>
-    <string name="m01_errorPhoneTooShort">El teléfono es inválido</string>
-    <string name="m01_errorPasswordTooShort">La contraseña es muy corta </string>
-    <string name="m01_errorInvalidEmail">El email es inválido</string>
-    <string name="m01_errorNullFields">Existen campos vacíos</string>
+    <string name="m01_errorPhoneTooShort">El telÃ©fono es invÃ¡lido</string>
+    <string name="m01_errorPasswordTooShort">La contraseÃ±a es muy corta </string>
+    <string name="m01_errorInvalidEmail">El email es invÃ¡lido</string>
+    <string name="m01_errorNullFields">Existen campos vacÃ­os</string>
     <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
     <string name="m01_errorHeightOutOfRange">El rango de altura es entre 1m y 3m</string>
     <string name="M01_ERROR_CONNECTION_MESSAGE">Revise su conexion a internet o la ip del servidor</string>
@@ -57,18 +57,18 @@
 
 
     <!--Inicio Strings Modulo 2-->
-    <string name="nav_title">Ocnfiguración</string>
+    <string name="nav_title">OcnfiguraciÃ³n</string>
     <string name="nav_02_inicio">Inicio</string>
     <string name="nav_02_calorias">Calorias</string>
     <string name="nav_02_entrenamiento">Entrenamiento</string>
     <string name="nav_02_cuenta">Cuenta</string>
-    <string name="nav_02_cerrarsesion">Cerrar Sesión</string>
+    <string name="nav_02_cerrarsesion">Cerrar SesiÃ³n</string>
     <string name="nav_02_amigos">Amigos</string>
     <string name="nav_02_actividades">Actividades</string>
     <string name="nav_02_planificacion">Planificacion de Actividades</string>
     <string name="nav_02_retos">Retos</string>
-    <string name="nav_02_gamificacion"> Gamificación</string>
-    <string name="nav_02_hidratacion">Hidratación</string>
+    <string name="nav_02_gamificacion"> GamificaciÃ³n</string>
+    <string name="nav_02_hidratacion">HidrataciÃ³n</string>
     <string name="nav_02_notificacion">Notificaciones</string>
     <string name="tv_m02_perfil">Perfil</string>
     <string name="et_m02_username">Nombre de usuario</string>
@@ -77,7 +77,7 @@
     <string name="et_m02_datenac">Fecha de Nacimiento</string>
     <string name="et_m02_weight">Peso</string>
     <string name="et_m02_height">Estatura</string>
-    <string name="et_m02_location">Locación</string>
+    <string name="et_m02_location">LocaciÃ³n</string>
     <string name="et_m02_water">Vasos de Agua</string>
     <string name="et_m02_Steps">Nro de Pasos</string>
 
@@ -177,10 +177,14 @@
     <string name="_tst_m05_seletectitemonetouch">Debe seleccionar prolongadamente el item para ver opciones</string>
 
     <!--FIN Strings Modulo 5 -->
-    <!-- Inicio Strings Modulo 10 -->
+   <!-- Inicio Strings Modulo 10 -->
     <string name="title_activity_m10_water_glass">Agua</string>
     <string name="tab_m10_Hidratacion">Hidratacion</string>
     <string name="tab_m10_Control">Control</string>
+    <string name="tv_m10_usuario">usuario</string>
+    <string name="tv_m10_peso">usuario</string>
+    <string name="tv_m10_tipo">usuario</string>
+    <string name="tv_m10_cantidad">usuario</string>
 
     <!--FIN Strings Modulo 10 -->
 
