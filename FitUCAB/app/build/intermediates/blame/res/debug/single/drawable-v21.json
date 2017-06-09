@@ -4,12 +4,12 @@
         "source": "/home/david/.android/build-cache/6aba2b412b88cb9fa309b7feeee31c58d3d283f2/output/res/drawable-v21/md_btn_shape.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\drawable-v21\\notification_action_background.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.3.0\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\notification_action_background.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.3.0\\res\\drawable-v21\\notification_action_background.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable-v21/design_password_eye.xml",

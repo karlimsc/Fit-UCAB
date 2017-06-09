@@ -202,7 +202,6 @@ ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xm
 		ADDED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml:161:19-72
 uses-sdk
 INJECTED from /home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:multidex:1.0.1] /home/david/.android/build-cache/67d9076af8a721190ee43c07287d1382fb6b2820/output/AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:design:25.3.0] /home/david/.android/build-cache/5c9ae40162b9c336ee625348c86d09fcda9a1095/output/AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:transition:25.3.0] /home/david/.android/build-cache/b09a7965761053eecd666b12359dd82c9a21fb71/output/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/david/.android/build-cache/85202b3cb218532aabfd2d07a0769ee820a5fb21/output/AndroidManifest.xml:5:5-7:41

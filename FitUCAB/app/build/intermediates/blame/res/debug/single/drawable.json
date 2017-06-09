@@ -28,28 +28,28 @@
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/drawable/abc_item_background_holo_dark.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_normal.xml",
-        "source": "/home/david/.android/build-cache/e6a22680b659e4905551d84523ca554f6edda4bc/output/res/drawable/common_google_signin_btn_icon_light_normal.xml"
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
+        "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/drawable/abc_ic_ab_back_material.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_ic_voice_search_api_material.xml",
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/drawable/abc_ic_voice_search_api_material.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
-        "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/drawable/abc_ic_ab_back_material.xml"
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_normal.xml",
+        "source": "/home/david/.android/build-cache/e6a22680b659e4905551d84523ca554f6edda4bc/output/res/drawable/common_google_signin_btn_icon_light_normal.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/rectangle.xml",
         "source": "/home/david/Programs/Fit-UCAB/FitUCAB/app/src/main/res/drawable/rectangle.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\md_selector_dark.xml",
-        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.9.0.2\\res\\drawable\\md_selector_dark.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_text_cursor_material.xml",
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\md_selector_dark.xml",
+        "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.9.0.2\\res\\drawable\\md_selector_dark.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/design_snackbar_background.xml",
@@ -96,12 +96,12 @@
         "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/drawable/abc_ratingbar_material.xml"
     },
     {
-        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
-        "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/drawable/abc_seekbar_track_material.xml"
-    },
-    {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light.xml",
         "source": "/home/elberg/.android/build-cache/f434cf85409e8d251274cd05bc2563fe34bd3eae/output/res/drawable/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
+        "source": "/home/elberg/.android/build-cache/d6302d12d9365248a3ca09d091ae5e60cbb5ac3f/output/res/drawable/abc_seekbar_track_material.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_ratingbar_indicator_material.xml",
@@ -120,16 +120,16 @@
         "source": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.9.0.2\\res\\drawable\\md_btn_selected.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
-        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/drawable/notification_icon_background.xml"
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/drawable/abc_edit_text_material.xml"
     },
     {
         "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/md_selector_dark.xml",
         "source": "/home/david/.android/build-cache/6aba2b412b88cb9fa309b7feeee31c58d3d283f2/output/res/drawable/md_selector_dark.xml"
     },
     {
-        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/abc_edit_text_material.xml",
-        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/drawable/abc_edit_text_material.xml"
+        "merged": "/home/david/Programs/Fit-UCAB/FitUCAB/app/build/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
+        "source": "/home/david/.android/build-cache/ebd0995d1c52e4facab2023d53722693adf60499/output/res/drawable/notification_icon_background.xml"
     },
     {
         "merged": "/home/elberg/Escritorio/REPOSITORIO/Fit-UCAB/FitUCAB/C:\\Users\\charbel\\Desktop\\DEsarrollo\\Fit-UCAB\\FitUCAB\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_bottom_navigation_item_background.xml",

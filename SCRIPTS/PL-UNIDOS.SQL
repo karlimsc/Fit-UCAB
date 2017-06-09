@@ -210,6 +210,61 @@ END;
 $$ LANGUAGE plpgsql;
 
 
+/***************************************ACTUALIZACION PERSONALIZADA*************************************/
+CREATE OR REPLACE FUNCTION M02_MODPERFILPASS(id int, password varchar(8))
+  RETURNS VOID AS $$
+DECLARE
+BEGIN
+  UPDATE person
+  SET PERSONPASSWORD = password
+  WHERE PERSONID = id;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION M02_MODPERFILMAIL(id int, email varchar(30))
+  RETURNS VOID AS $$
+DECLARE
+BEGIN
+  UPDATE person
+  SET PERSONEMAIL = email
+  WHERE PERSONID = id;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION M02_MODPERFILSEX(id int, sex varchar(20))
+  RETURNS VOID AS $$
+DECLARE
+BEGIN
+  UPDATE person
+  SET PERSONSEX = sex
+  WHERE PERSONID = id;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION M02_MODPERFILPHONE(id int, phone varchar(20))
+  RETURNS VOID AS $$
+DECLARE
+BEGIN
+  UPDATE person
+  SET PERSONPHONE = phone
+  WHERE PERSONID = id;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION M02_PERSONEXISTE(id int)
+  RETURNS INTEGER AS $$
+DECLARE
+  result integer;
+BEGIN
+  IF ((SELECT COUNT(*) FROM person WHERE personid = id) = 0) THEN
+    result := 0;
+  ELSE
+    result := 1;
+  END IF;
+  RETURN result;
+END;
+$$ LANGUAGE plpgsql;
+
 ------MODULO 5
 
 
@@ -604,7 +659,7 @@ BEGIN
  
 
 	delete from glass_historic where glasshistoricid =
-	( Select max(glasshistoricid) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm);
+	( Select max(glasshistoricid) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm));
 
 
 
