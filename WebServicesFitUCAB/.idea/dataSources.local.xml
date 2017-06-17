@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - fitucabdb@localhost" uuid="e25cd8db-bedc-44f3-ae9b-5dbe495635f7">
+      <database-info product="PostgreSQL" version="9.4.12" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4.1212">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>fitucab</user-name>
+      <introspection-scope>fitucabdb:fitucab,pg_catalog,public</introspection-scope>
+      <resolve-scope>fitucabdb:fitucab,public</resolve-scope>
+    </data-source>
+  </component>
+</project>
