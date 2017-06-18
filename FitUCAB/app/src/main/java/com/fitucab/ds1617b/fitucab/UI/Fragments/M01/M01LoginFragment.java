@@ -2,6 +2,7 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
@@ -34,6 +35,8 @@ import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 
+
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -46,8 +49,7 @@ public class  M01LoginFragment extends Fragment {
     private EditText _etUserLogin;
     private EditText _etPasswordLogin;
 
-    public M01LoginFragment() {
-    }
+    public M01LoginFragment() {}
 
     /**
      * Una vez la activity llama a un fragment se ejecuta este metodo
@@ -84,6 +86,7 @@ public class  M01LoginFragment extends Fragment {
         instantiateComponents();
         manageChangeFragmentRecovery();
         manageButtonEntrar();
+        Context context=getContext();
         return _view;
     }
     /**
@@ -127,6 +130,12 @@ public class  M01LoginFragment extends Fragment {
 
     }
 
+    /**
+     * Metodo con el que se validan los componentes del fragmentos
+     * @param username
+     * @param password
+     * @return el mensaje de error
+     */
     private String validateComponents(String username, String password){
 
         String response = "ok";
@@ -199,7 +208,7 @@ public class  M01LoginFragment extends Fragment {
 
                      dialog.dismiss();
                      String error=t.getMessage();
-                     String errorResult= validateExceptionMessage(error);
+                     String errorResult= validateExceptionMessage(error,getContext());
                      showToast(getContext(),errorResult);
                  }
              });

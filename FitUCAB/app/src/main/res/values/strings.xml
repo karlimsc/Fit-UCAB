@@ -1,26 +1,33 @@
 <resources>
-    <string name="app_name">Fit UCAB</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">FitUCAB</string>
+    <string name="action_settings">Ajustes</string>
     <string name="title_activity_main">MainActivity</string>
+    <!-- Porfa, pedimos que comenten donde se utiliza cada string -->
+    <string name="str_en">English</string>
+    <string name="str_es">Español</string>
+    <string-array name="languages"> <!-- declaracion de idiomas -->
+        <item>@string/str_en</item>
+        <item>@string/str_es</item>
+    </string-array>
 
     <!--Inicio Strings Modulo 1 -->
     <string name="btn_m01_comienza">REGISTRATE</string>
     <string name="btn_m01_iniciaSesion">INICIA SESION</string>
-    <string name="tv_m01_intro">¡Bienvenido! \n \n  Inicia tu entrenamiento físico</string>
+    <string name="tv_m01_intro">Â¡Bienvenido! \n \n  Inicia tu entrenamiento fÃ­sico</string>
     <string name="btn_m01_entrar">ENTRAR</string>
     <string name="et_m01_usuarioCorreo">Nombre de Usuario</string>
-    <string name="et_m01_passwordLogin">Contraseña</string>
-    <string name="et_m01_passwordRegistro">Contraseña</string>
+    <string name="et_m01_passwordLogin">ContraseÃ±a</string>
+    <string name="et_m01_passwordRegistro">ContraseÃ±a</string>
     <string name="btn_m01_aceptarLogin">ENTRAR</string>
-    <string name="tv_m01_olvidoClave">¿Olvidaste tu contraseña?</string>
-    <string name="et_m01_correoRecovery">Correo Electrónico</string>
+    <string name="tv_m01_olvidoClave">Â¿Olvidaste tu contraseÃ±a?</string>
+    <string name="et_m01_correoRecovery">Correo ElectrÃ³nico</string>
     <string name="btn_m01_enviarCorreo">ENVIAR CORREO</string>
     <string name="tv_m01_fechanac">Fecha de Nacimiento</string>
     <string name="tv_m01_acercaDeTi">Acerca de ti</string>
-    <string name="tv_m01_recuperacionContra">Recuperación de Contraseña</string>
+    <string name="tv_m01_recuperacionContra">RecuperaciÃ³n de ContraseÃ±a</string>
     <string name="et_m01_usuario">Usuario</string>
-    <string name="et_m01_correoRegistro">Correo Electrónico</string>
-    <string name="et_m01_telefono">Teléfono</string>
+    <string name="et_m01_correoRegistro">Correo ElectrÃ³nico</string>
+    <string name="et_m01_telefono">TelÃ©fono</string>
     <string name="rb_m01_femenino">Femenino</string>
     <string name="rb_m01_masculino">Masculino</string>
     <string name="et_m01_peso">Peso</string>
@@ -29,28 +36,39 @@
     <string name="et_m01_mts">Mts</string>
     <string name="m01_errorUsernameSpecialChar">El nombre de usuario no debe tener caracteres especiales</string>
     <string name="m01_errorUsernameTooShort">El nombre de usuario debe poseer al menos 4 caracteres</string>
-    <string name="m01_errorPhoneTooShort">El teléfono es inválido</string>
-    <string name="m01_errorPasswordTooShort">La contraseña es muy corta </string>
-    <string name="m01_errorInvalidEmail">El email es inválido</string>
-    <string name="m01_errorNullFields">Existen campos vacíos</string>
+    <string name="m01_errorPhoneTooShort">El telÃ©fono es invÃ¡lido</string>
+    <string name="m01_errorPasswordTooShort">La contraseÃ±a es muy corta </string>
+    <string name="m01_errorInvalidEmail">El email es invÃ¡lido</string>
+    <string name="m01_errorNullFields">Existen campos vacÃ­os</string>
     <string name="m01_errorWeightOutOfRange">El rango de peso es entre 30kg y 300kg</string>
     <string name="m01_errorHeightOutOfRange">El rango de altura es entre 1m y 3m</string>
+    <string name="M01_ERROR_CONNECTION_MESSAGE">Revise su conexion a internet o la ip del servidor</string>
+    <string name="M01_ERROR_CONNECTION_FALSE">Ocurrio un error inesperdado, intente de nuevo</string>
+    <string name="M01_REGISTRY_OK_MESSAGE">Bienvenido a FitUCAB</string>
+    <string name="M01_REGISTRY_FAIL_MESSAGE">Fallo el registro, intente de nuevo</string>
+    <string name="M01_DUPLICATED_KEY_MESSAGE">Este username y/o email ya esta registrado</string>
+    <string name="M01_LOGIN_FAIL_MESSAGE">Este username y/o contrasena son incorrectos</string>
+    <string name="M01_RESTORE_MESSAGE">El correo con sus datos fue enviado</string>
+
+
+
+
     <!--FIN Strings Modulo 1 -->
 
 
     <!--Inicio Strings Modulo 2-->
-    <string name="nav_title">Ocnfiguración</string>
+    <string name="nav_title">OcnfiguraciÃ³n</string>
     <string name="nav_02_inicio">Inicio</string>
     <string name="nav_02_calorias">Calorias</string>
     <string name="nav_02_entrenamiento">Entrenamiento</string>
     <string name="nav_02_cuenta">Cuenta</string>
-    <string name="nav_02_cerrarsesion">Cerrar Sesión</string>
+    <string name="nav_02_cerrarsesion">Cerrar SesiÃ³n</string>
     <string name="nav_02_amigos">Amigos</string>
     <string name="nav_02_actividades">Actividades</string>
     <string name="nav_02_planificacion">Planificacion de Actividades</string>
     <string name="nav_02_retos">Retos</string>
-    <string name="nav_02_gamificacion"> Gamificación</string>
-    <string name="nav_02_hidratacion">Hidratación</string>
+    <string name="nav_02_gamificacion"> GamificaciÃ³n</string>
+    <string name="nav_02_hidratacion">HidrataciÃ³n</string>
     <string name="nav_02_notificacion">Notificaciones</string>
     <string name="tv_m02_perfil">Perfil</string>
     <string name="et_m02_username">Nombre de usuario</string>
@@ -59,7 +77,7 @@
     <string name="et_m02_datenac">Fecha de Nacimiento</string>
     <string name="et_m02_weight">Peso</string>
     <string name="et_m02_height">Estatura</string>
-    <string name="et_m02_location">Locación</string>
+    <string name="et_m02_location">LocaciÃ³n</string>
     <string name="et_m02_water">Vasos de Agua</string>
     <string name="et_m02_Steps">Nro de Pasos</string>
 
@@ -74,6 +92,27 @@
     <string name="tab_03_cercademi">Cerca De Mi</string>
     <string name="sep_03_request">Solicitudes de amistad</string>
     <string name="sep_03_friends">Amigos</string>
+    <string name="btn_03_agregar">Agregar</string>
+    <string name="btn_03_declinar">Declinar</string>
+    <string name="et_03_nohayusuariocercadeti">No hay usuarios cerca de ti</string>
+    <string name="et_03_hombre">Hombre</string>
+    <string name="et_03_mujer">Mujer</string>
+    <string name="et_03_edad">Edad</string>
+    <string name="et_03_kmdeti">Km de ti</string>
+    <string name="et_03_errorconexion">Error en la conexion</string>
+    <string name="btn_03_invitar">Invitar</string>
+    <string name="et_03_menulibreta">Menu libreta</string>
+    <string name="et_03_peticionenviada">Peticion enviada</string>
+    <string name="et_03_yaexisteamistad">Ya Existe esta amistad</string>
+    <string name="et_03_bloquear">Bloquear</string>
+    <string name="et_03_aceptar">Aceptar</string>
+    <string name="et_03_menuamigos">Menu amigos</string>
+    <string name="et_03_usuariobloqueado">Usuario bloqueado</string>
+    <string name="et_03_nosepudobloquear">No se pudo bloquear</string>
+    <string name="et_03_usuarioagregado">Usuario agregado</string>
+    <string name="et_03_nosepudoagregar">No se pudo agregar</string>
+    <string name="et_03_usuariodeclinado">Usuario declinado</string>
+    <string name="et_03_nosepudodeclinar">No se pudo declinar</string>
 
     <!--FIN Strings Modulo 3 -->
 
@@ -81,32 +120,97 @@
 
 
 
-    <!-- Inicio Strings Modulo 5 -->
-    <string name="app_name_title">Actividad</string>
-    <string name="_tv_m05_type">Tipo de ejercicio:</string>
-    <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
-    <string name="_tv_m05_duration">Duracion:</string>
+
+    <!-- Inicio Strings Modulo 5 (Estan en orden alfabetico)-->
+    <string name="_app_name_title_m05">Actividad</string>
     <string name="_btn_m05_registermanual">REGISTRAR</string>
-    <string name="_tv_m05_calories">Calories:</string>
+    <string name="_bt_start_tracking">INICIAR</string>
+    <string name="_btn_m05t_save">GUARDAR</string>
+    <string name="btn_m05_end">TERMINAR</string>
+    <string name="_itm_m05_delete">Eliminar</string>
+    <string name="_itm_m05_modify">Modificar</string>
+    <string name="_tab_m05_log">MANUAL</string>
+    <string name="_tab_m05_track">AUTOMATICO</string>
+    <string name="_tv_m05_type">Tipo de ejercicio realizado : </string>
+    <string name="_tv_m05_sport">Deporte:</string>
+    <string name="_tv_m05_day">Dia</string>
+    <string name="_tv_m05_month">Mes</string>
+    <string name="_tv_m05_year">Año</string>
+    <string name="_tv_m05_distance">Distacia recorrida</string>
+    <string name="_tv_m05_speed">Velocidad:</string>
+    <string name="_tv_m05_starHour">Hora:</string>
+    <string name="_tv_m05_date">Fecha de inicio</string>
+
+    <string name="_tv_m05_starDate">Fecha:</string>
+    <string name="_tv_m05_time">Tiempo</string>
+    <string name="_tv_m05_startime">Fecha y hora de Inicio:</string>
+    <string name="_tv_m05_calories">Calorías quemadas</string>
+    <string name="_tv_m05_duration">Duración en minutos:</string>
     <string name="_tv_m05_titletabmanual">MANUAL</string>
+    <string name="_btn_m05_pause">PAUSAR</string>
+    <string name="_btn_m05_resume">CONTINUAR</string>
     <string name="tab_m05_log">Manual</string>
     <string name="tab_m05_track">Automática</string>
-    <!--FIN Strings Modulo 5 -->
+    <string name="_ttl_m05_activity">Actividad</string>
+    <string name="_ttl_m05_questiondeleteactivity">Confirmar</string>
+    <string name="_ttl_m05_information">INFORME</string>
+    <string name="_tv_m05_thisweek">En esta semana</string>
+    <string name="_tv_m05_emptyList">Lista vacia</string>
 
-    <!-- Inicio Strings Modulo 10 -->
+
+    <!--     Dialogos           -->
+    <string name="_dlg_m05_cancel">CANCELAR</string>
+    <string name="_dlg_m05_done">SI</string>
+    <string name="_dlg_m05_doneUpdate">Modificaciones establecidas</string>
+    <string name="_dlg_m05_quetiondeleteactivity">¿Desea realmente eliminar esta actividad?</string>
+    <string name="_dlg_m05_dateseleted">Seleccione fecha</string>
+    <string name="_dlg_m05_hourseleted">Seleccione hora</string>
+    <string name="_tst_m05_messagedelete">Debe seleccionar un item de la lista para eliminar</string>
+    <string name="_tst_m05_messageconfirmation">La actividad a sido eliminada</string>
+    <string name="_tst_m05_messagemodify">Debe seleccionar un item de la lista para modificar</string>
+    <string name="_tst_m05_messageempty">No tiene ninguna avtividad registrada</string>
+    <string name="_tst_m05_messageupdate">Ha sido actualizada la informacion</string>
+    <string name="_tst_m05_messagefoundactivity">Usted no tiene registrado nunguna actividad</string>
+    <string name="_tst_m05_messageerrordelete">No se pudo eliminar, intentelo mas tarde</string>
+    <string name="_tst_m05_messageerrormodify">No se pudo MODIFICAR, intentelo mas tarde</string>
+    <string name="_tst_m05_messagereload">No se puede conectar al servidor, intente mas tarde o refresque la ventana</string>
+    <string name="_tst_m05_seletectitemonetouch">Debe seleccionar prolongadamente el item para ver opciones</string>
+
+    <!--FIN Strings Modulo 5 -->
+   <!-- Inicio Strings Modulo 10 -->
     <string name="title_activity_m10_water_glass">Agua</string>
     <string name="tab_m10_Hidratacion">Hidratacion</string>
     <string name="tab_m10_Control">Control</string>
-    <string name="textview_history_day">Día</string>
-    <string name="textview_history_week">Semana</string>
-    <string name="tv_m10_usuario">Usuario</string>
-    <string name="tv_m10_peso">Peso</string>
-    <string name="tv_m10_tipo">Tipo de Vaso</string>
-    <string name="tv_m10_cantidad">Cantidad Diaria</string>
+    <string name="tv_m10_usuario">usuario</string>
+    <string name="tv_m10_peso">usuario</string>
+    <string name="tv_m10_tipo">usuario</string>
+    <string name="tv_m10_cantidad">usuario</string>
 
     <!--FIN Strings Modulo 10 -->
 
+
+    <!--Inicio Strings Modulo 4 -->
+    <string name="amigo">Amigos</string> <!-- opcion de amigo al enviar correo -->
+    <string name="actividad">Actividad</string> <!-- opcion de actividad al enviar correo -->
+    <string name="entrenamiento">Entrenamiento</string> <!-- opcion de entrenamiento al enviar correo -->
+    <string name="reto">Retos</string> <!-- opcion de retos al enviar correo -->
+    <string name="hidratacion">Hidratacion</string> <!-- opcion de hidratacion al enviar correo -->
+    <string name="calorias">Calorias</string> <!-- opcion de calorias al enviar correo -->
+    <string name="gamificacion">Gamificacion</string> <!-- opcion de calorias al enviar correo -->
+    <string name="SI">SI</string> <!--  -->
+    <string name="NO">NO</string> <!-- -->
+    <string name="lang_btn">Idioma: Español</string>
+    <string name="kms">Kms.</string>
+    <string name="millas">Mi.</string>
+    <string name="radio">Radio de cercania</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="enviar">Enviar</string>
+    <string name="guardar">Guardar</string>
+    <string name="language">Español</string>
+    <!--Final Strings Modulo 4 -->
+
     <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Home</string>
     <string name="title_activity_m05_read_exercise">M05ReadExerciseActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -114,7 +218,6 @@
     <string name="title_activity_m02_home">M02HomeActivity</string>
     <string name="title_activity_m05_track_exercise">Track</string>
     <string name="bt_start_tracking">Iniciar</string>
-
 
 </resources>
 

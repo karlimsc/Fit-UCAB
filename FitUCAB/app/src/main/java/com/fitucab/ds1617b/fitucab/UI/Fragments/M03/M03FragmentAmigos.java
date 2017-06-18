@@ -23,6 +23,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.UserAuxiliar;
 
 import com.fitucab.ds1617b.fitucab.Model.User;
@@ -34,12 +36,20 @@ import com.google.gson.reflect.TypeToken;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Thread.sleep;
+
 /**
- Aqui falta lo que hace la clase como tal y ya
+ Este fragmento nos permite ver todos nuestros amigos de la aplicacion y todas las peticiones de
+ amistad enviadas, por otra parte nos permite aceptar ,declinar las peticiones .
+ y bloquear algun amigo que no deseemos.
 
  */
 public class M03FragmentAmigos extends Fragment {
 
+
+    ManagePreferences manageId = new ManagePreferences();
+    int userId;
+    IpStringConnection ipString = new IpStringConnection();
     ListView listView;
     View rootView;
 
@@ -59,6 +69,7 @@ public class M03FragmentAmigos extends Fragment {
 
         //se encarga de poner los atributos de diseño del ViewGroup padre
         rootView = inflater.inflate(R.layout.fragment_m03_friends, container, false);
+        userId = manageId.getIdUser(rootView.getContext());
         // se instancia un arrraylist
         ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
         //nos proveera los datos del usuario
@@ -75,96 +86,70 @@ public class M03FragmentAmigos extends Fragment {
         // Asociamos los menús contextuales a los controles
         registerForContextMenu(listView);
         //añadimos a los usuarios ¡???? me falto algo
-        usuarios.add(new UserAuxiliar(0,"", 650,5));
 
-        String urlreq = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/getAll?id=2&Action=Requests";
+
+        String urlreq = ipString.getIp()+"friend/getAll?id="+userId+"&Action=Requests";
        //creamos un objeto gson
         final Gson gsonreq = new Gson();
-
         //Instanciar el RequestQueue.
         RequestQueue queuereq = Volley.newRequestQueue(rootView.getContext());
-
-
         //Solicitar una respuesta de cadena desde la URL proporcionada.
         StringRequest stringRequestreq = new StringRequest(Request.Method.GET, urlreq,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         ArrayList<User> apreq = gsonreq.fromJson(response,new TypeToken<List<User>>(){}.getType());
-
-                        //ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
-                        //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-                        //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
-                        //listView.setAdapter(adapter);
-                        //ArrayList<UserAuxiliar> usuarios = new ArrayList<UserAuxiliar>();
+                        if (apreq.size()>0)
+                            usuarios.add(new UserAuxiliar(0,"", 650,5));
 
                         for(int i = 0;i<apreq.size();i++){
                             usuarios.add(new UserAuxiliar(apreq.get(i).get_idUser(),apreq.get(i).get_username(), apreq.get(i).get_point(),4));
                         }
 
-                        //adapter.addAll(usuarios);
 
-                        usuarios.add(new UserAuxiliar(0,"", 650,6));
 
-                        String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/getAll?id=2&Action=Friends";
+                        String url = ipString.getIp()+"friend/getAll?id="+userId+"&Action=Friends";
                         final Gson gson = new Gson();
-
                         // Instanciar el RequestQueue.
                         RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
-
                         // Solicitar una respuesta de cadena desde la URL proporcionada.
                         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                                 new Response.Listener<String>() {
                                     @Override
                                     public void onResponse(String response) {
                                         ArrayList<User> ap = gson.fromJson(response,new TypeToken<List<User>>(){}.getType());
-
-                                        //ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
-                                        //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-                                        //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
-                                        //listView.setAdapter(adapter);
-                                        //ArrayList<UserAuxiliar> usuarios = new ArrayList<UserAuxiliar>();
-
+                                        if (ap.size()>0)
+                                            usuarios.add(new UserAuxiliar(0,"", 650,6));
                                         for(int i = 0;i<ap.size();i++){
                                             usuarios.add(new UserAuxiliar(ap.get(i).get_idUser(),ap.get(i).get_username(), ap.get(i).get_point(),7));
                                         }
-
                                         adapter.addAll(usuarios);
-
-
                                     }
                                 }, new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                //ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
-                                //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-                                //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
-                                //listView.setAdapter(adapter);
-                                //ArrayList<UserAuxiliar> usuarios = new ArrayList<UserAuxiliar>();
-                                usuarios.add(new UserAuxiliar(0,error.toString(), 0,4));
-                                //adapter.addAll(usuarios);
+                                //dialogo de alerta de un error de conexion
+                                AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
+                                builder1.setMessage(R.string.et_03_errorconexion);
+                                builder1.setCancelable(true);
+                                AlertDialog alert11 = builder1.create();
+                                alert11.show();
                             }
                         });
                         //Agregue la solicitud al RequestQueue.
                         queue.add(stringRequest);
 
-                        //adapter.addAll(usuarios);
-
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //ArrayList<UserAuxiliar> arrayOfUsers = new ArrayList<UserAuxiliar>();
-                //UsersAdapter adapter = new UsersAdapter(rootView.getContext(), arrayOfUsers);
-                //ListView listView = (ListView) rootView.findViewById(R.id.friendsList);
-                //listView.setAdapter(adapter);
-                //ArrayList<UserAuxiliar> usuarios = new ArrayList<UserAuxiliar>();
+                //dialogo de alerta de un error de conexion
+                AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
+                builder1.setMessage(R.string.et_03_errorconexion);
+                builder1.setCancelable(true);
+                AlertDialog alert11 = builder1.create();
+                alert11.show();
 
-
-                usuarios.add(new UserAuxiliar(0,error.toString(), 200,4));
-
-
-                //adapter.addAll(usuarios);
             }
         });
         //Agregue la solicitud al RequestQueue.
@@ -190,15 +175,14 @@ public class M03FragmentAmigos extends Fragment {
 
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
 
-        menu.setHeaderTitle("menu amigos");
+        menu.setHeaderTitle(R.string.et_03_menuamigos);
         UserAuxiliar user = (UserAuxiliar) listView.getItemAtPosition(info.position);
         if(user.get_type() == 7){
-            menu.add(1, user.get_id(), 0, "Bloquear");
-            int id = 2;
+            menu.add(99, user.get_id(), 0, R.string.et_03_bloquear);
         }
         else if(user.get_type() == 4){
-            menu.add(2, user.get_id(), 0, "Aceptar");
-            menu.add(3, user.get_id(), 0, "Declinar");
+            menu.add(2, user.get_id(), 0, R.string.et_03_aceptar);
+            menu.add(3, user.get_id(), 0, R.string.btn_03_declinar);
         }
     }
 
@@ -216,40 +200,30 @@ public class M03FragmentAmigos extends Fragment {
     public boolean onContextItemSelected(MenuItem item) {
 
         switch (item.getGroupId()) {
-            case 1:
+            case 99:
                 //BLOQUEAR
-                String url = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/update?idUpdater=2&idUpdated="+Integer.toString(item.getItemId())+"&Action=Block";
+                String url = ipString.getIp()+"friend/update?idUpdater="+userId+"&idUpdated="+Integer.toString(item.getItemId())+"&Action=Block";
                 final Gson gson = new Gson();
-
                 // inicializamos el RequestQueue.
                 RequestQueue queue = Volley.newRequestQueue(rootView.getContext());
-
-
                 //Solicitar una respuesta de cadena desde la URL proporcionada.
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                if (response.equals("1")) {
+                                //dialogo de alerta de un usuario bloqueado
                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Usuario Bloqueado");
+                                    builder1.setMessage(R.string.et_03_usuariobloqueado);
                                     builder1.setCancelable(true);
                                     AlertDialog alert11 = builder1.create();
                                     alert11.show();
-                                }
-                                else{
-                                    AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("No Bloqueado");
-                                    builder1.setCancelable(true);
-                                    AlertDialog alert11 = builder1.create();
-                                    alert11.show();
-                                }
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        //dialogo de alerta de un no se pudo bloquear
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                        builder1.setMessage("Error en la conexion:"+error.toString());
+                        builder1.setMessage(R.string.et_03_nosepudobloquear);
                         builder1.setCancelable(true);
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
@@ -258,12 +232,23 @@ public class M03FragmentAmigos extends Fragment {
                 // Agregue la solicitud al RequestQueue.
                 queue.add(stringRequest);
 
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 getFragmentManager().beginTransaction().detach(this).attach(this).commit();
+
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 return true;
             case 2:
                 //ACEPTAR
-                String urlAccept = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/update?idUpdater=2&idUpdated="+Integer.toString(item.getItemId())+"&Action=Accept";
+                String urlAccept = ipString.getIp()+"friend/update?idUpdater="+userId+"&idUpdated="+Integer.toString(item.getItemId())+"&Action=Accept";
                 final Gson gsonAccept = new Gson();
 
                 // Inicializamos el RequestQueue.
@@ -275,26 +260,19 @@ public class M03FragmentAmigos extends Fragment {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                if (response.equals("1")) {
+                                //dialogo de alerta de un usuario agregado
                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Usuario Agregado");
+                                    builder1.setMessage(R.string.et_03_usuarioagregado);
                                     builder1.setCancelable(true);
                                     AlertDialog alert11 = builder1.create();
                                     alert11.show();
-                                }
-                                else{
-                                    AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Usuario no Agregado");
-                                    builder1.setCancelable(true);
-                                    AlertDialog alert11 = builder1.create();
-                                    alert11.show();
-                                }
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        //dialogo de alerta de un no se pudo agregar
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                        builder1.setMessage("Error en la conexion:"+error.toString());
+                        builder1.setMessage(R.string.et_03_nosepudoagregar);
                         builder1.setCancelable(true);
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
@@ -304,13 +282,23 @@ public class M03FragmentAmigos extends Fragment {
                 queueAccept.add(stringRequestAccept);
 
 
-
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 getFragmentManager().beginTransaction().detach(this).attach(this).commit();
+
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 return true;
             case 3:
                 //DECLINAR
-                String urlDecline = "http://192.168.1.101:8080/WebServicesFitUCAB_war_exploded/friend/update?idUpdater=2&idUpdated="+Integer.toString(item.getItemId())+"&Action=Decline";
+                String urlDecline = ipString.getIp()+"friend/update?idUpdater="+userId+"&idUpdated="+Integer.toString(item.getItemId())+"&Action=Decline";
                 final Gson gsonDecline = new Gson();
 
                 // Inicializamos el RequestQueue.
@@ -322,26 +310,19 @@ public class M03FragmentAmigos extends Fragment {
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-                                if (response.equals("1")) {
+                                //dialogo de alerta de un usuario declinado
                                     AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Usuario Declinado");
+                                    builder1.setMessage(R.string.et_03_usuariodeclinado);
                                     builder1.setCancelable(true);
                                     AlertDialog alert11 = builder1.create();
                                     alert11.show();
-                                }
-                                else{
-                                    AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                                    builder1.setMessage("Usuario no Declinado");
-                                    builder1.setCancelable(true);
-                                    AlertDialog alert11 = builder1.create();
-                                    alert11.show();
-                                }
                             }
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        //dialogo de alerta de un no se pudo declinar
                         AlertDialog.Builder builder1 = new AlertDialog.Builder(rootView.getContext());
-                        builder1.setMessage("Error en la conexion:"+error.toString());
+                        builder1.setMessage(R.string.et_03_nosepudodeclinar);
                         builder1.setCancelable(true);
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
@@ -350,7 +331,18 @@ public class M03FragmentAmigos extends Fragment {
                 // Agregue la solicitud al RequestQueue.
                 queueDecline.add(stringRequestDecline);
 
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 getFragmentManager().beginTransaction().detach(this).attach(this).commit();
+
+                try {
+                    sleep(250);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 return true;
             default:
@@ -360,8 +352,4 @@ public class M03FragmentAmigos extends Fragment {
 
 
 }
-
-
-
-
 

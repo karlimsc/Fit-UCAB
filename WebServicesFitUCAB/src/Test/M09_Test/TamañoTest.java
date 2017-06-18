@@ -1,3 +1,5 @@
+package M09_Test;
+
 import Domain.Size;
 import org.junit.Test;
 

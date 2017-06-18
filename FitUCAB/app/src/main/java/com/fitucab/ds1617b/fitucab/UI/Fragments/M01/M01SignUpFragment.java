@@ -4,6 +4,7 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -16,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
@@ -31,7 +33,7 @@ import java.util.Date;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -41,6 +43,7 @@ import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -105,6 +108,7 @@ public class M01SignUpFragment extends Fragment {
         instantiateComponents();
         manageBtnRegistrar();
         activateCalendar();
+        Context context=getContext();
 
         return _view;
     }
@@ -166,7 +170,7 @@ public class M01SignUpFragment extends Fragment {
     Calendar cal = Calendar.getInstance(TimeZone.getDefault()); // Get current date
 
     /**
-     * Metodo encargado de instancias el calendario.
+     * Metodo encargado de instanciar el calendario.
      */
     public void instantiateCalendar(){
         // Create the DatePickerDialog instance
@@ -187,6 +191,9 @@ public class M01SignUpFragment extends Fragment {
         datePicker.show();
     }
 
+    /**
+     * Metodo para instanciar los componentes del fragmento
+     */
     private void instantiateComponents(){
 
         _etUsernameRegistry= (EditText) _view.findViewById(R.id.et_m01_userRegistry);
@@ -200,6 +207,17 @@ public class M01SignUpFragment extends Fragment {
 
     }
 
+    /**
+     * metodo con el que hago la validacion de mis componentes
+     * @param username
+     * @param email
+     * @param phone
+     * @param password
+     * @param birthdate
+     * @param weight
+     * @param height
+     * @return el error que se genero
+     */
     private String validateComponents(String username, String email, String phone,
                                        String password, String birthdate, String weight, String height ){
         String response = "ok";
@@ -273,6 +291,17 @@ public class M01SignUpFragment extends Fragment {
     };
 
 
+    /**
+     * metodo con el que hago la peticion al servicio web
+     * @param username
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @param birthdate
+     * @param weight
+     * @param height
+     */
     public void getRetrofit(String username, String password,String email,String sex,
                             String phone, String birthdate, String weight, String height){
 
@@ -296,6 +325,8 @@ public class M01SignUpFragment extends Fragment {
                         if (checkInsertResponse(user,getContext()) ){
                             onCompleted(user);
                             int id = getIdUser(getContext());
+                            M04NotificationActivity settings = new M04NotificationActivity();
+                            settings.insert(true,true,true,true,true,true,true, "es", "km", 5, id);
                             System.out.println(id);
                             _callBack.onSwapActivity("M02HomeActivity", null);
                         }
@@ -313,7 +344,7 @@ public class M01SignUpFragment extends Fragment {
 
                     dialog.dismiss();
                     String error=t.getMessage();
-                    String errorResult= validateExceptionMessage(error);
+                    String errorResult= validateExceptionMessage(error,getContext());
                     showToast(getContext(),errorResult);
                     //Toast.makeText(getContext(), errorResult, Toast.LENGTH_SHORT).show();
                 }
@@ -380,6 +411,10 @@ public class M01SignUpFragment extends Fragment {
         }
     }
 
+    /**
+     * Metodo con el que escribo en memoria interna del telefono
+     * @param user
+     */
     public void onCompleted(User user){
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getActivity());

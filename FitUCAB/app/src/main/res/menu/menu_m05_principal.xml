@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.elberg.prueba2principal.M05PrincipalActivity">
+
+    <item
+        android:id="@+id/itm_m05_refresh"
+        android:orderInCategory="100"
+        android:title="Reload"
+        android:icon="@mipmap/ic_refresh"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
+        android:id="@+id/itm_m05_start_activity"
+        android:orderInCategory="100"
+        android:title="@mipmap/ic_launcher_activity"
+        android:icon="@mipmap/ic_launcher_activity"
+        app:showAsAction="ifRoom"
+        />
+
+
+
+</menu>

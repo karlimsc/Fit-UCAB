@@ -12,13 +12,16 @@ DROP TABLE IF EXISTS REGISTRY;
 DROP TABLE IF EXISTS PERSON;
 DROP TABLE IF EXISTS REGISTRY;
 DROP TABLE IF EXISTS NOTIFICATION_SETTINGS;
-Drop table  IF EXISTS GLASSHISTORICID;
+Drop table IF EXISTS GLASS_HISTORIC;
+DROP TABLE IF EXISTS FRIENDSHIP;
+DROP TABLE IF EXISTS STATUS;
+DROP TABLE IF EXISTS GEO;
 
 
 CREATE TABLE PERSON(
 	PERSONID		serial  primary key,
 	PERSONUSERNAME	varchar(20) unique not null,
-	PERSONPASSWORD	varchar(15) not null,
+	PERSONPASSWORD	varchar(80) not null,
 	PERSONEMAIL		varchar(50) unique not null,
 	PERSONSEX		varchar(1) not null,
 	PERSONPHONE		varchar(20) not null,
@@ -26,12 +29,13 @@ CREATE TABLE PERSON(
 
 );
 
+
 CREATE TABLE REGISTRY (
 	REGISTRYID 		serial primary key,
 	REGISTRYWEIGHT	real not null,
 	REGISTRYHEIGHT	real not null,
 	REGISTRYPOINT	integer,
-	FK_PERSONID		integer not null
+	FK_PERSONID		integer unique not null
 );
 
 
@@ -62,10 +66,6 @@ GEOLATITUD	varchar(30) not null
 );
 
 
-
-
-INSERT INTO public.status(statusid, statuspending, statusaccepted, statusblocked, statusdecline)
-VALUES (1, 1,0, 0,0),(2,0,1,0,0),(3,0,0,1,0),(4,0,0,0,1);
 --TERMINA MODULO 3--
 
 
@@ -221,7 +221,7 @@ FK_CHALLENGEID integer
 
 CREATE TABLE GLASS_HISTORIC(
 
-GLASSHISTORICID     INTEGER      NOT NULL,
+GLASSHISTORICID     serial      NOT NULL,
 GLASSTIME           TIMESTAMP    NOT NULL,
 GLASSTYPE			INTEGER 	 NOT NULL,
 FK_PERSON			INTEGER,
@@ -235,4 +235,3 @@ CONSTRAINT PK_HISCTORIC PRIMARY KEY (GLASSHISTORICID)
 
 
 ---TERMINA MODULO 10---
-

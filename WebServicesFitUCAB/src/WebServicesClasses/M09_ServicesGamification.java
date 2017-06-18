@@ -253,9 +253,5 @@ public class M09_ServicesGamification {
         sb.setSubirNivel(_menssage);
         sb.set_subir(_subirLevel);
         return gson.toJson(sb);
-
     }
-
-
-
 }

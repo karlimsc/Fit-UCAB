@@ -3,6 +3,7 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M01;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -86,6 +87,7 @@ public class  M01RecoveryFragment extends Fragment {
         _view = inflater.inflate(R.layout.fragment_m01_recovery, container, false);
         instantiateComponents();
         manageButtonRecovery();
+        Context context=getContext();
        /* setupViewValues();*/
         return _view;
     }
@@ -115,6 +117,11 @@ public class  M01RecoveryFragment extends Fragment {
         });
     }
 
+    /**
+     * Metodo con el que valido los componentes del fragmento
+     * @param email
+     * @return
+     */
     private String validateComponents(String email){
         String response = "ok";
         Pattern pat;
@@ -132,8 +139,6 @@ public class  M01RecoveryFragment extends Fragment {
         }
 
     }
-
-
 
     /**
      * Metodo para hacer las llamadas a los SW y hacer la recuperación de contraseña
@@ -177,7 +182,7 @@ public class  M01RecoveryFragment extends Fragment {
 
                     dialog.dismiss();
                     String error=t.getMessage();
-                    String errorResult= validateExceptionMessage(error);
+                    String errorResult= validateExceptionMessage(error,getContext());
                     showToast(getContext(),errorResult);
                 }
             });
@@ -210,7 +215,5 @@ public class  M01RecoveryFragment extends Fragment {
         _btnChangeActivity = (Button) _view.findViewById(R.id.btn_m01_change_activity);
 
     }*/
-
-
 
 }

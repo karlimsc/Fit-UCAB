@@ -14,14 +14,16 @@ $$
 LANGUAGE 'plpgsql' VOLATILE; 
 
 --BUSCAR DATOS DE LOS DEPPORTES.
-CREATE OR REPLACE FUNCTION M05_obtenerdatosdeporte (ide INTEGER) RETURNS TABLE (iddeporte NUMERIC, nombredeporte VARCHAR(200),metdeporte NUMERIC) AS 
-$$ 
+
+ CREATE OR REPLACE FUNCTION public.m05_obtenerdatosdeporte(nombre Varchar(200))
+  RETURNS TABLE(iddeporte numeric, nombredeporte character varying, metdeporte numeric) AS
+$BODY$ 
 DECLARE
 var_r record;
 BEGIN 
 for var_r in(SELECT * 
 				 FROM  SPORT
-				 WHERE SPORTID=ide)
+				 WHERE SPORTNAME=nombre)
 loop
 		iddeporte:=var_r.SPORTID;
 		nombredeporte := var_r.SPORTNAME;
@@ -31,8 +33,8 @@ return next;
 
   
 END; 
-$$
-LANGUAGE 'plpgsql' STABLE;
+$BODY$
+  LANGUAGE plpgsql STABLE;
 
 -- BUSCA EL MET DEL DEPORTE QUE EL USUARIO QUIERE AÑADIR A SU LISTA  A TRAVES DE SU NOMBRE
 -- FUE CREADO PARA OBTENER EL MET DEL DEPORTE ANTES DE INSERTAR
