@@ -25,7 +25,7 @@ public class EntityFactory
      * @param trainingCalories
      * @return
      */
-    static public Entity crearTrainingId(int id, String trainingName, int trainingPeriod, int trainingCalories){
+    static public Entity createTraining(int id, String trainingName, int trainingPeriod, int trainingCalories){
 
         return new Training(id,trainingName, trainingPeriod, trainingCalories);
     }
@@ -38,7 +38,7 @@ public class EntityFactory
      * @param trainingCalories
      * @return
      */
-    static public Entity crearTraining( String trainingName, int trainingPeriod, int trainingCalories){
+    static public Entity createTraining( String trainingName, int trainingPeriod, int trainingCalories){
 
         return new Training(trainingName, trainingPeriod, trainingCalories);
     }
@@ -47,7 +47,7 @@ public class EntityFactory
      *  Metodo que intancia la clase para crear el objeto
      * @return
      */
-    static public Entity crearTrainingvacio(){
+    static public Entity createTrainingvacio(){
 
         return new Training();
     }
