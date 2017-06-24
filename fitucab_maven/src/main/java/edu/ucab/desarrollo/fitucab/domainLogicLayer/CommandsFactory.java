@@ -7,6 +7,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;
 
 public class CommandsFactory {
 
+
     static public CreateTrainingCommand instanciateCreateTrainingCmd(Entity training, int userId){
         return new CreateTrainingCommand(training, userId);
 
@@ -20,6 +21,8 @@ public class CommandsFactory {
 
         return new CheckTrainingCommand(trainingId, userId);
     }
+
+
 
 }
 
