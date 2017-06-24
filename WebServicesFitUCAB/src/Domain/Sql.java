@@ -10,7 +10,7 @@ public class Sql {
     private ResultSet _rs;
     private static String BD_USER = "fitucab";
     private static String BD_PASSWORD = "fitucab";
-    private static String BD_URL = "jdbc:postgresql://localhost/FitUcabDB";
+    private static String BD_URL = "jdbc:postgresql://localhost/fitucabdb";
     private static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
 
     /**
@@ -73,7 +73,8 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
-            System.err.println("NullPointerExceptionSql: " + e.getMessage());
+            System.err.println("NullPointerExceptionSql: " + e.getMessage() + " , Query: " + query);
+            return null;
         }
 
         finally {
@@ -100,6 +101,7 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
+            return false;
         }
         finally {
 

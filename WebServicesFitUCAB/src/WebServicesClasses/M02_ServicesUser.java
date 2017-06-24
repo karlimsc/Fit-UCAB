@@ -32,7 +32,7 @@ public class M02_ServicesUser {
     public Response getUser( @PathParam("userId") int id ){
         _service = new Query();
         User user = _service.getUser( id );
-        if ( user.getId() <= 0 ) {
+        if ( user.getId() <= 0 || user == null ) {
             _message = new StatusMessage( 0, "Usuario no encontrado" );
             _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
             throw new WebApplicationException( _response );
@@ -53,16 +53,17 @@ public class M02_ServicesUser {
     @PUT
     @Path("/{userId}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateUser( @PathParam("userId") int id, User user ){
+    public Response updateUser( @PathParam("userId") int id, @QueryParam("user") User user ){
         user.setId(id);
         _service = new Query();
         if ( _service.updateUser( user ) == false ){
             _message = new StatusMessage( 0, "Usuario no actualizado" );
-            _response = Response.status( Response.Status.NOT_MODIFIED ).entity( _message ).build();
+            _response = Response.status( Response.Status.NOT_ACCEPTABLE ).entity( _message ).build();
             throw new WebApplicationException(_response);
         }
         _message = new StatusMessage( 1, "Usuario actualizado" );
         _response = Response.status( Response.Status.ACCEPTED ).entity( _message ).build();
+//        _response = Response.status( Response.Status.ACCEPTED ).entity( user ).build();
         return _response;
     }
 
