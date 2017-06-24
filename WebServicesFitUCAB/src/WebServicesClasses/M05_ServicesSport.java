@@ -10,6 +10,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import Domain.*;
 
+import static Domain.Sql.getConInstance;
+
 
 /**
  * Created by estefania on 14/05/2017.
@@ -152,14 +154,14 @@ public String getSport(@QueryParam("nameSpo") String nombre) {
         String query = "select nombredeporte from M05_obtenerdeportesusuario('"+id+"')";
 
         try{
-            ArrayList<Sport> listaDeportes= new ArrayList<Sport>();
+            ArrayList<String> listaDeportes= new ArrayList<>();
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
             while(rs.next()){
                 Sport resultado = new Sport();
                 resultado.setName(rs.getString(  "nombredeporte"));
-                listaDeportes.add(resultado.getName());
+                listaDeportes.add(resultado.getName()) ;
             }
 
             return gson.toJson(listaDeportes);
