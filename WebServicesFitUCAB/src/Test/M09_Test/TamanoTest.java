@@ -1,14 +1,16 @@
 package Test.M09_Test;
 
+
 import Domain.Size;
 import org.junit.Test;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-
-public class TamañoTest {
-
+/**
+ * Created by david on 6/25/17.
+ */
+public class TamanoTest {
     @Test
     public void TamañoTest(){
         Size tamaño = new Size();
@@ -53,6 +55,4 @@ public class TamañoTest {
 
         System.out.println("Prueba 5: tamaño no logrado = " + tamaño.getNoLogrado());
     }
-
-
 }
