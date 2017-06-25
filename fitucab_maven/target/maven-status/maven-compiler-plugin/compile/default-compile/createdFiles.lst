@@ -1,0 +1,7 @@
+edu/ucab/desarrollo/fitucab/domainLogicLayer/CommandFactory.class
+edu/ucab/desarrollo/fitucab/dataAccessLayer/DaoFactory.class
+edu/ucab/desarrollo/fitucab/dataAccessLayer/IDao.class
+edu/ucab/desarrollo/fitucab/common/Registry.class
+edu/ucab/desarrollo/fitucab/dataAccessLayer/Dao.class
+edu/ucab/desarrollo/fitucab/domainLogicLayer/Command.class
+edu/ucab/desarrollo/fitucab/common/entities/EntityFactory.class

@@ -47,7 +47,7 @@ public class M10WaterGlassFragment extends Fragment {
     private Context contexto;
     private  Water water;
     private View _view;
-    int idusuario =1;
+    static int idusuario =1;
     private IpStringConnection Url = new IpStringConnection();
     public  static EditText _Etml;
     private static ImageButton addwater ;

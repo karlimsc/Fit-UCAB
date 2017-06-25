@@ -14,6 +14,9 @@ import com.fitucab.ds1617b.fitucab.R;
 public class M01Util {
     private static String M01_ERROR_CONNECTION = "failed to connect to ";
 
+    /**
+     * Los codigos de error que me devuelven los servicios web
+     */
     private final static String  STATUS_OK="200";
     private final static String  STATUS_DUPLICATED_KEY="23505";
     private final static String  STATUS_FAIL="300";
@@ -85,6 +88,11 @@ public class M01Util {
          }
     }
 
+    /**
+     * Asi manejo la espera del usuario
+     * @param context
+     * @return el dialog para que el usuario tenga feedback de la espera
+     */
     public static MaterialDialog getInstaceDialog(Context context){
         MaterialDialog instance = new MaterialDialog.Builder(context).
                                     content("Espere un momento").

@@ -117,6 +117,11 @@ public class  M01RecoveryFragment extends Fragment {
         });
     }
 
+    /**
+     * Metodo con el que valido los componentes del fragmento
+     * @param email
+     * @return
+     */
     private String validateComponents(String email){
         String response = "ok";
         Pattern pat;
@@ -134,8 +139,6 @@ public class  M01RecoveryFragment extends Fragment {
         }
 
     }
-
-
 
     /**
      * Metodo para hacer las llamadas a los SW y hacer la recuperación de contraseña
@@ -212,7 +215,5 @@ public class  M01RecoveryFragment extends Fragment {
         _btnChangeActivity = (Button) _view.findViewById(R.id.btn_m01_change_activity);
 
     }*/
-
-
 
 }

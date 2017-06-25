@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -29,12 +29,12 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-
         </activity>
         <!-- FIN ACTIVITIES MODULO 1 -->
+
 
         <!-- ACTIVITIES MODULO 3 NO MODIFICAR EL CONTENIDO INTERNO -->
 
@@ -43,44 +43,34 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
 
-            <!-- <intent-filter>
+            <!--
+            <intent-filter>
                  <uses-permission android:name="android.permission.READ_CONTACTS" />
                  <uses-permission android:name="android.permission.INTERNET" />
                     <action android:name="android.intent.action.MAIN" />
                  <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <!-- FIN ACTIVITIES MODULO 3 -->
 
         <activity
             android:name=".UI.Activities.M05AddExerciseActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
-
-
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".UI.Activities.M05PrincipalActivity"
             android:label="Fit UCAB"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UI.Activities.M05StartTrackingActivity"
             android:label="Fit UCAB"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
-
-
-
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".UI.Activities.M10WaterGlassActivity"
             android:label="@string/title_activity_m10_water_glass"
             android:theme="@style/AppTheme.NoActionBar">
-
+            android:screenOrientation="portrait"
         </activity>
         <activity
             android:name=".UI.Activities.MainActivity"
@@ -89,13 +79,12 @@
         <activity
             android:name=".UI.Activities.M09GamificationActivity"
             android:label="Fit UCAB"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UI.Activities.M09LevelGraphActivity"
             android:label="Fit UCAB"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".UI.Activities.M05ReadExerciseActivity"
             android:label="Track Exercise"
@@ -104,7 +93,6 @@
             android:name=".UI.Activities.M02HomeActivity"
             android:label="Fit UCAB"
             android:theme="@style/AppTheme.NoActionBar">
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.fitucab.ds1617b.fitucab.UI.Activities.M01LoginActivity" />
@@ -121,8 +109,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-
-
         <activity
             android:name=".UI.Activities.M05TrackExerciseActivity"
             android:label="@string/title_activity_m05_track_exercise">
@@ -130,34 +116,44 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity" />
 
-            <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
 
-                <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
             <!-- </intent-filter> -->
-         </activity>
-        <!--  <activity
+        </activity>
+        <!--
+              <activity
               android:name=".UI.Activities.M11Food"
               android:label="@string/app_name">
-              <intent-filter>  -->
-                  <!-- Esto va en el modulo de karliana, el main -->
-        <!--   <action android:name="android.intent.action.MAIN" />
+              <intent-filter>
+        -->
+        <!-- Esto va en el modulo de karliana, el main -->
+        <!--
+       <action android:name="android.intent.action.MAIN" />
            <category android:name="android.intent.category.LAUNCHER" />
-       </intent-filter> -->
-       <!--<category android:name="android.intent.category.LAUNCHER" />
-       </intent-filter> -->
-        <!--  </activity> -->
-       <activity
+       </intent-filter>
+        -->
+        <!--
+       <category android:name="android.intent.category.LAUNCHER" />
+       </intent-filter>
+        -->
+        <!-- </activity> -->
+        <activity
             android:name=".UI.Activities.M11Food"
-            android:label="@string/app_name">
-        </activity>
-
-        <activity android:name=".UI.Activities.M04NotificationActivity"
-            android:label="Notificaciones">
-
-
+            android:label="@string/app_name"></activity>
+        <activity
+            android:name=".UI.Activities.M04NotificationActivity"
+            android:label="Notificaciones"></activity>
+        <activity
+            android:name=".UI.Activities.M06TrainingActivity"
+            android:label="@string/title_activity_m06_training"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         </activity>
     </application>
-
 
 </manifest>
