@@ -161,7 +161,7 @@ public String getSport(@QueryParam("nameSpo") String nombre) {
             while(rs.next()){
                 Sport resultado = new Sport();
                 resultado.setName(rs.getString(  "nombredeporte"));
-                listaDeportes.add(resultado.getName());
+                listaDeportes.add(resultado.getName()) ;
             }
 
             return gson.toJson(listaDeportes);

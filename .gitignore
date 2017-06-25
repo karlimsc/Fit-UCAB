@@ -31,3 +31,5 @@ local.properties
 /WebServicesFitUCAB/*.xml
 
 FitUCAB/\.directory
+
+fitucab_maven/classes/*
