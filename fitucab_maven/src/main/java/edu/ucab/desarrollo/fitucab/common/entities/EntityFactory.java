@@ -55,4 +55,17 @@ public class EntityFactory
 
     // FIN MODULO 6
 
+    //MODULO 9
+    /**
+     * Metodo que instancia la clase LevelUp
+     * @param levelUp Establece el nivel de usuario actual.
+     * @param up TODO: Preguntar significado de este boolean
+     * @return Clase Entity con instancia de LevelUp
+     * @see LevelUp
+     */
+    static public Entity createLevelUp(String levelUp, Boolean up){
+        return new LevelUp(levelUp, up);
+    }
+    //FIN MODULO 9
+
 }
