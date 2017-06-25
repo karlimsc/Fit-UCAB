@@ -4,9 +4,24 @@ package edu.ucab.desarrollo.fitucab.common.entities;
 public class EntityFactory
 {
 
-    //MODULO 1
+    /**
+     * Metodo que instancia la clase paara crear el objeto user
+     *   @param  int id
+     *   @param  username
+     *   @param  password
+     *   @param  email
+     *   @param  sex
+     *   @param  phone
+     *   @param  birthdate
+     *   @param  weight
+     *   @param  height
+     */
 
-    //MODULO 1
+    static public Entity createUser(int id, String username, String password, String email, String sex, String phone
+                                    String birthdate, int weight, int height){
+
+        return new User(id, username, password , email , sex , phone , birthdate , weight , height);
+    }
 
     //MODULO 3
 

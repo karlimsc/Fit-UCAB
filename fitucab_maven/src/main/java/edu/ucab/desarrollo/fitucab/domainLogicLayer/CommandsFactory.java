@@ -7,6 +7,11 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;
 
 public class CommandsFactory {
 
+    // Comandos LOGIN M01
+
+
+    // Comandos M06
+
     static public CreateTrainingCommand instanciateCreateTrainingCmd(Entity training, int userId){
         return new CreateTrainingCommand(training, userId);
 
