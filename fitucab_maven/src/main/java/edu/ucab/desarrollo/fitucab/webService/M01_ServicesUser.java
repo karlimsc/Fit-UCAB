@@ -2,6 +2,8 @@ package edu.ucab.desarrollo.fitucab.webService;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.common.entities.Registry;
+import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 
 /*
@@ -120,16 +122,10 @@ public class M01_ServicesUser {
     /**
      * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
      *
-     * @param username
-     * @param password
-     * @param email
-     * @param sex
-     * @param phone
-     * @param weight
-     * @param height
+     *
      * @return
      */
-    @GET
+  /*  @GET
     @Path("/insertRegistry")
     @Produces("application/json")
     public String insertUser(@QueryParam("username") String username,
@@ -146,7 +142,7 @@ public class M01_ServicesUser {
        /* String insertUserQuery = " SELECT * FROM M01_REGISTRAR('" + username + "','" + password + "','" + email + "','" + sex + "'" +
                 ",'" + phone + "','" + birthdate + "','" + weight + "','" + height + "')";
         */
-        Entity createUserObject = EntityFactory.createUser(username,password,email, sex,phone, birthdate,weight,height);
+     /*   Entity createUserObject = EntityFactory.createUser(username,password,email, sex,phone, birthdate,weight,height);
         CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
 
 
@@ -292,11 +288,10 @@ public class M01_ServicesUser {
 
     /**
      * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
-     * @param username
-     * @param password
+
      * @return el usuario con los datos que trae la consulta
      */
-    @GET
+  /*  @GET
     @Path("/login_user")
     @Produces("application/json")
     public String getUser(@QueryParam("username") String username, @QueryParam("password") String password)
@@ -346,7 +341,7 @@ public class M01_ServicesUser {
      * Sevicio Web para poder enviar el correo al usuario con su password
      * @return por ahora retorna un String
      */
-    @GET
+  /*  @GET
     @Path("/restorePassword")
     @Produces("application/json")
     public String testEmail(@QueryParam("email") String email) {
@@ -371,7 +366,7 @@ public class M01_ServicesUser {
              * ALGUN STRING ALEATORIO Y ENCRIPTADO
              * Y LUEGO ENVIARLE EL STRING SIN ENCRIPTAR AL USUARIO
              */
-            Statement st = conn.createStatement();
+       /*     Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             User user = null;
             Boolean validaEmail = false;
@@ -435,4 +430,5 @@ public class M01_ServicesUser {
             return e.getMessage();
         }
     }
+    */
 }

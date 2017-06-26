@@ -2,6 +2,12 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
+
+import javax.ws.rs.QueryParam;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
 /**
  * Created by karo on 24/06/17.
@@ -9,10 +15,12 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 public class CreateUserCommand extends Command {
 
     Entity _user;
+    private static String DEFAULT_ENCODING1="UTF-8";
 
     public CreateUserCommand(Entity _user) {
         this._user = _user;
     }
+
 
     public void execute() {
 
