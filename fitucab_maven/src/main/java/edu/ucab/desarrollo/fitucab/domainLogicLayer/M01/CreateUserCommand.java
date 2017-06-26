@@ -1,20 +1,23 @@
-package edu.ucab.desarrollo.fitucab.domainLogicLayer.M06;
+package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
-public class CreateTrainingCommand extends Command {
+/**
+ * Created by karo on 24/06/17.
+ */
+public class CreateUserCommand extends Command {
 
-    Entity _newTraining;
-    int _userId;
+    Entity _user;
+    private static String DEFAULT_ENCODING1="UTF-8";
 
-    public CreateTrainingCommand(Entity newTraining, int userId){
-
-        this._newTraining = newTraining;
-        this._userId = userId;
+    public CreateUserCommand(Entity _user) {
+        this._user = _user;
     }
 
+
     public void execute() {
+
         try{
             //instanciacion del dao
         }

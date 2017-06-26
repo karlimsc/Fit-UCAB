@@ -1,9 +1,5 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
-import edu.ucab.desarrollo.fitucab.common.entities.Entity;
-import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.exception.M09Exception;
 import org.slf4j.LoggerFactory;
 
