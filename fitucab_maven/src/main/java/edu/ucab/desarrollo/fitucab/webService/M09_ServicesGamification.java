@@ -21,7 +21,7 @@ public class M09_ServicesGamification {
     @Produces("application/json")
     public String getChallenges(@QueryParam("id") int _id){
         try {
-            return "getChallenges";
+            //Llamada a la fabrica de comandos.
         }
         catch (WebApplicationException e){
             M09Exception error = new M09Exception(e.getMessage());
@@ -32,7 +32,7 @@ public class M09_ServicesGamification {
             logger.log(Level.ALL, "ChallengesExceltion!",error);
         }
         finally {
-            return null;
+            return "getChallenges";
         }
     }
 
@@ -41,7 +41,7 @@ public class M09_ServicesGamification {
     @Produces("application/json")
     public String getCantidad(@QueryParam("id") int _id) {
         try {
-            return "getCantidad";
+            //Llamada a la fabrica de comandos.
         }
         catch (WebApplicationException e){
             M09Exception error = new M09Exception(e.getMessage());
@@ -52,7 +52,7 @@ public class M09_ServicesGamification {
             logger.log(Level.ALL, "CantidadExceltion!",error);
         }
         finally {
-            return null;
+            return "getCantidad";
         }
     }
 
@@ -61,7 +61,7 @@ public class M09_ServicesGamification {
     @Produces("application/json")
     public String getQuantity(@QueryParam("id") int _id) {
         try {
-            return "getQuantity";
+            //Llamada a la fabrica de comandos.
         }
         catch (WebApplicationException e){
             M09Exception error = new M09Exception(e.getMessage());
@@ -72,7 +72,7 @@ public class M09_ServicesGamification {
             logger.log(Level.ALL, "QuantityExceltion!",error);
         }
         finally {
-            return null;
+            return "getQuantity";
         }
     }
 
@@ -81,7 +81,7 @@ public class M09_ServicesGamification {
     @Produces("application/json")
     public String getLevelUp(@QueryParam("_plus") int _plus, @QueryParam("id") int _id) {
         try {
-            return "getLevelUp";
+            //Llamada a la fabrica de comandos.
         }
         catch (WebApplicationException e){
             M09Exception error = new M09Exception(e.getMessage());
@@ -92,7 +92,7 @@ public class M09_ServicesGamification {
             logger.log(Level.ALL, "LevelUpExceltion!",error);
         }
         finally {
-            return null;
+            return "getLevelUp";
         }
     }
 }
