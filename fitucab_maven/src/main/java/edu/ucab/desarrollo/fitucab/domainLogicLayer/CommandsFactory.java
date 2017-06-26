@@ -4,6 +4,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 
 public class CommandsFactory {
 
@@ -20,6 +21,12 @@ public class CommandsFactory {
 
         return new CheckTrainingCommand(trainingId, userId);
     }
+
+    //Modulo 9
+    static public AchieveChallengeCommand instanciateAchieveChallengeCmd(Entity challenge){
+        return new AchieveChallengeCommand(challenge);
+    }
+    //Fin Modulo 9
 
 }
 

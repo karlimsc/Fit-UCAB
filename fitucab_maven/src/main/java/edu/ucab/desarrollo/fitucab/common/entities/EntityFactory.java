@@ -74,7 +74,7 @@ public class EntityFactory
      * @return Objecto Challenge
      * @see Challenge
      */
-    static public Entity crateChallenge(int id, String name, String description, int score){
+    static public Entity createChallenge(int id, String name, String description, int score){
         return new Challenge(id, name, description, score);
     }
 

@@ -1,5 +1,9 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.exception.M09Exception;
 
 import javax.ws.rs.*;
@@ -21,7 +25,9 @@ public class M09_ServicesGamification {
     @Produces("application/json")
     public String getChallenges(@QueryParam("id") int _id){
         try {
-            //Llamada a la fabrica de comandos.
+//            Entity challenge = EntityFactory.createChallenge();
+//            AchieveChallengeCommand acc = CommandsFactory.instanciateAchieveChallengeCmd(challenge);
+//            acc.execute();
         }
         catch (WebApplicationException e){
             M09Exception error = new M09Exception(e.getMessage());
@@ -32,6 +38,7 @@ public class M09_ServicesGamification {
             logger.log(Level.ALL, "ChallengesExceltion!",error);
         }
         finally {
+            logger.log(Level.ALL, "ChallengesExceltion!");
             return "getChallenges";
         }
     }
