@@ -4,8 +4,10 @@ import edu.ucab.desarrollo.fitucab.common.Registry;
 
 import java.sql.*;
 
+/**
+ * Patron Data Access Object
+ */
 public abstract class Dao implements IDao
-
 {
 
     private static Connection conInstance;
