@@ -71,4 +71,29 @@ public class EntityFactory
 
     // FIN MODULO 6
 
+    //MODULO 9
+    /**
+     * Metodo que instancia la clase Challenge vacia
+     * @return Objeto Challenge
+     * @see Challenge
+     */
+    static public Entity createChallenge(){
+        return new Challenge();
+    }
+
+    /**
+     * Metodo que instancia la clase Challenge con sus atributos
+     * @param id Identificador del reto
+     * @param name Nombre del reto
+     * @param description Descripcion del reto
+     * @param score Record que se lleva del reto.
+     * @return Objecto Challenge
+     * @see Challenge
+     */
+    static public Entity createChallenge(int id, String name, String description, int score){
+        return new Challenge(id, name, description, score);
+    }
+
+    //FIN MODULO 9
+
 }
