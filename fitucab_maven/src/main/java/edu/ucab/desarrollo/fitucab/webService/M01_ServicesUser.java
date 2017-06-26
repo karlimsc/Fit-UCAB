@@ -1,10 +1,6 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
-import edu.ucab.desarrollo.fitucab.common.entities.Entity;
-import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
-import edu.ucab.desarrollo.fitucab.common.entities.Registry;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 
 /*
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
@@ -13,7 +9,6 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;*/
 
 
 import com.google.gson.Gson;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -32,7 +27,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
 import java.sql.Date;
-import java.util.*;
 //imports para hacer el encrypt y decrypt
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

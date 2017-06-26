@@ -2,12 +2,6 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
-
-import javax.ws.rs.QueryParam;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 
 /**
  * Created by karo on 24/06/17.
