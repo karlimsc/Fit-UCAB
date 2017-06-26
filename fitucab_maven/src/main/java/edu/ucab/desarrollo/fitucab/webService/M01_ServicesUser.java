@@ -18,13 +18,13 @@ import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 //imports para poder hacer el recuperar password
-import javax.mail.MessagingException;
+/*import javax.mail.MessagingException;
 import javax.mail.Message;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.mail.PasswordAuthentication;
+import javax.mail.PasswordAuthentication;*/
 //FIN de imports para poder hacer el recuperar password
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
