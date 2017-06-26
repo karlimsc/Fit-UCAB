@@ -1,7 +1,7 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
 /**
- *
+ *Patron Entidad
  */
 public class Entity {
 
