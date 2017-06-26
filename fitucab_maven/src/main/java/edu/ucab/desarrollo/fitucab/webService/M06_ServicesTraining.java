@@ -49,7 +49,6 @@ public class M06_ServicesTraining {
      */
     public String createTraining(@QueryParam("trainingName") String name,
                                  @QueryParam("trainingPeriod") int period,
-                                 @QueryParam("trainingCalories") int calories,
                                  @QueryParam("userId") int userId) {
         Entity createTrainingObject = EntityFactory.createTraining(name, period);
         CreateTrainingCommand cmd = CommandsFactory.instanciateCreateTrainingCmd(createTrainingObject, userId);
