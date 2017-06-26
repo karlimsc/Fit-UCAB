@@ -8,19 +8,29 @@
         </encoder>
     </appender>
 
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>/home/david/Downloads/logback-1.2.3/logback-examples/src/main/java/chapters/resource/myApp.log</file>
+    <!--Esto es un ejemplo modulo 09-->
+    <appender name="M09Debug" class="ch.qos.logback.core.FileAppender">
+        <file>/home/david/Programs/Fit-UCAB/fitucab_maven/src/main/java/edu/ucab/desarrollo/fitucab/resource/M09.deb</file>
         <encoder>
             <pattern>%date %level [%thread] %logger{50} [%file:%line] %msg%n</pattern>
         </encoder>
     </appender>
 
-    <root level="debug">
-        <appender-ref ref="STDOUT" />
-    </root>
-    <!--Esto es un ejemplo-->
-    <logger name="chapters.configuration" additivity="false" level="info">
-        <appender-ref ref="FILE" />
+    <appender name="M09Error" class="ch.qos.logback.core.FileAppender">
+        <file>/home/david/Programs/Fit-UCAB/fitucab_maven/src/main/java/edu/ucab/desarrollo/fitucab/resource/M09.err</file>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{50} [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="edu.ucab.desarrollo.fitucab.webService" additivity="false" level="debug">
+        <appender-ref ref="M09Debug" />
     </logger>
+
+    <logger name="edu.ucab.desarrollo.fitucab.webService" additivity="false" level="error">
+        <appender-ref ref="M09Error" />
+    </logger>
+
+    <!--Fin del ejemplo modulo 09-->
 </configuration>
 

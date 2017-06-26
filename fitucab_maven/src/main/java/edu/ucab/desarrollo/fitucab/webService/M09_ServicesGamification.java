@@ -5,10 +5,9 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.exception.M09Exception;
+import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.ws.rs.*;;
 
 /**
  * Clase M09ServicesGamification que maneja el modulo de gamificacion.
@@ -18,7 +17,7 @@ import java.util.logging.Logger;
 @Path("/M09_ServicesGamification")
 public class M09_ServicesGamification {
 
-    private static Logger logger = Logger.getLogger("M09_ServicesGamification.class");
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(M09Exception.class);
 
     @GET
     @Path("/obtenerretos")
@@ -31,14 +30,18 @@ public class M09_ServicesGamification {
         }
         catch (WebApplicationException e){
             M09Exception error = new M09Exception(e.getMessage());
-            logger.log(Level.ALL, "ChallengesWebAppExceltion!",error);
+            logger.debug("Error: ", error);
+            logger.error("Error: ", error);
         }
         catch (Exception e){
             M09Exception error = new M09Exception(e.getMessage());
-            logger.log(Level.ALL, "ChallengesExceltion!",error);
+            logger.debug("Error: ", error);
+            logger.error("Error: ", error);
         }
         finally {
-            logger.log(Level.ALL, "ChallengesExceltion!");
+            logger.debug("ChallengesExceltion!");
+            System.out.println("Aqui");
+            logger.error("ChallengesExceltion!");
             return "getChallenges";
         }
     }
@@ -52,11 +55,13 @@ public class M09_ServicesGamification {
         }
         catch (WebApplicationException e){
             M09Exception error = new M09Exception(e.getMessage());
-            logger.log(Level.ALL, "CantidadWebAppExceltion!",error);
+            logger.debug("Error: ", error);
+            logger.error("Error: ", error);
         }
         catch (Exception e){
             M09Exception error = new M09Exception(e.getMessage());
-            logger.log(Level.ALL, "CantidadExceltion!",error);
+            logger.debug("Error: ", error);
+            logger.error("Error: ", error);
         }
         finally {
             return "getCantidad";
@@ -72,11 +77,13 @@ public class M09_ServicesGamification {
         }
         catch (WebApplicationException e){
             M09Exception error = new M09Exception(e.getMessage());
-            logger.log(Level.ALL, "QuantityWebAppExceltion!",error);
+            logger.debug("Error: ", error);
+            logger.error("Error: ", error);
         }
         catch (Exception e){
             M09Exception error = new M09Exception(e.getMessage());
-            logger.log(Level.ALL, "QuantityExceltion!",error);
+            logger.debug("Error: ", error);
+            logger.error("Error: ", error);
         }
         finally {
             return "getQuantity";
@@ -92,11 +99,13 @@ public class M09_ServicesGamification {
         }
         catch (WebApplicationException e){
             M09Exception error = new M09Exception(e.getMessage());
-            logger.log(Level.ALL, "LevelUpWebAppExceltion!",error);
+            logger.debug("Error: ", error);
+            logger.error("Error: ", error);
         }
         catch (Exception e){
             M09Exception error = new M09Exception(e.getMessage());
-            logger.log(Level.ALL, "LevelUpExceltion!",error);
+            logger.debug("Error: ", error);
+            logger.error("Error: ", error);
         }
         finally {
             return "getLevelUp";
