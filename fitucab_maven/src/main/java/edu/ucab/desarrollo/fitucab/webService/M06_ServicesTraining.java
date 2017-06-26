@@ -51,7 +51,7 @@ public class M06_ServicesTraining {
                                  @QueryParam("trainingPeriod") int period,
                                  @QueryParam("trainingCalories") int calories,
                                  @QueryParam("userId") int userId) {
-        Entity createTrainingObject = EntityFactory.createTraining(name, period, calories);
+        Entity createTrainingObject = EntityFactory.createTraining(name, period);
         CreateTrainingCommand cmd = CommandsFactory.instanciateCreateTrainingCmd(createTrainingObject, userId);
         try{
             cmd.execute();
@@ -81,9 +81,8 @@ public class M06_ServicesTraining {
 
     public String updateTraining (@QueryParam("idTraining") int id,
                                   @QueryParam("trainingName") String name,
-                                  @QueryParam("trainingPeriod") int period,
-                                  @QueryParam("trainingCalories") int calories) {
-        Entity updatedTrainingObject = EntityFactory.createTraining(id, name, period, calories);
+                                  @QueryParam("trainingPeriod") int period) {
+        Entity updatedTrainingObject = EntityFactory.createTraining(id, name, period);
         UpdateTrainingCommand cmd = CommandsFactory.instanciateUpdateTrainingCmd(updatedTrainingObject);
         try{
             cmd.execute();
