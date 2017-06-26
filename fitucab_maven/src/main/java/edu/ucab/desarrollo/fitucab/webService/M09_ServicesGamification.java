@@ -17,7 +17,7 @@ import javax.ws.rs.*;;
 @Path("/M09_ServicesGamification")
 public class M09_ServicesGamification {
 
-    final static org.slf4j.Logger logger = LoggerFactory.getLogger(M09Exception.class);
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(M09_ServicesGamification.class);
 
     @GET
     @Path("/obtenerretos")
@@ -39,9 +39,6 @@ public class M09_ServicesGamification {
             logger.error("Error: ", error);
         }
         finally {
-            logger.debug("ChallengesExceltion!");
-            System.out.println("Aqui");
-            logger.error("ChallengesExceltion!");
             return "getChallenges";
         }
     }
