@@ -3,6 +3,9 @@ package edu.ucab.desarrollo.fitucab.common.entities;
 
 import java.util.LinkedList;
 
+/**
+ * Fabrica de Entidades
+ */
 public class EntityFactory
 {
 
