@@ -1,9 +1,17 @@
-package WebServicesClasses;
+package edu.ucab.desarrollo.fitucab.webService;
 
-import Domain.Sql;
-import Domain.User;
-import Domain.Registry;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
+
+/*
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;*/
+
+
 import com.google.gson.Gson;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
@@ -21,12 +29,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.*;
-import java.util.Properties;
+import java.sql.Date;
+import java.util.*;
 //imports para hacer el encrypt y decrypt
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-
-import static Domain.Sql.getConInstance;
+import static edu.ucab.desarrollo.fitucab.webService.Sql.getConInstance;
 
 
 /**
@@ -129,16 +137,19 @@ public class M01_ServicesUser {
                              @QueryParam("email") String email,
                              @QueryParam("sex") String sex,
                              @QueryParam("phone") String phone,
-                             @QueryParam("birthdate") String birthdate,
-                             @QueryParam("weight") String weight,
-                             @QueryParam("height") String height) {
+                             @QueryParam("birthdate") java.sql.Date birthdate,
+                             @QueryParam("weight") int weight,
+                             @QueryParam("height") int height) {
 
 
         password=encryptPassword(password);
-        String insertUserQuery = " SELECT * FROM M01_REGISTRAR('" + username + "','" + password + "','" + email + "','" + sex + "'" +
+       /* String insertUserQuery = " SELECT * FROM M01_REGISTRAR('" + username + "','" + password + "','" + email + "','" + sex + "'" +
                 ",'" + phone + "','" + birthdate + "','" + weight + "','" + height + "')";
+        */
+        Entity createUserObject = EntityFactory.createUser(username,password,email, sex,phone, birthdate,weight,height);
+        CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
 
-        User userFail= new User();
+
         try {
 
             Statement st = conn.createStatement();

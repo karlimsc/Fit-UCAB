@@ -1,26 +1,27 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
 
+import java.util.Date;
+
 public class EntityFactory
 {
 
     /**
      * Metodo que instancia la clase paara crear el objeto user
-     *   @param  int id
      *   @param  username
      *   @param  password
      *   @param  email
      *   @param  sex
      *   @param  phone
-     *   @param  birthdate
+     *   @param  bday
      *   @param  weight
      *   @param  height
      */
 
-    static public Entity createUser(int id, String username, String password, String email, String sex, String phone
-                                    String birthdate, int weight, int height){
+    static public Entity createUser( String username, String password, String email, String sex, String phone,
+                                    Date bday, int weight, int height){
 
-        return new User(id, username, password , email , sex , phone , birthdate , weight , height);
+        return new User( username, password , email , sex , phone , (java.sql.Date) bday, weight , height );
     }
 
     //MODULO 3
