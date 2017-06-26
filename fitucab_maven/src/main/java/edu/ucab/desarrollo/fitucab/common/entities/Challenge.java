@@ -5,7 +5,7 @@ package edu.ucab.desarrollo.fitucab.common.entities;
  * @author David Garcia, Juan Mendez, Mario Salazar
  * @version 2.0
  */
-public class Challenge {
+public class Challenge extends Entity {
     private int _id;
     private String _name;
     private String _description;
