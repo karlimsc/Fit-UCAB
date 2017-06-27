@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
 
+import java.util.Date;
 import java.util.LinkedList;
 
 /**
@@ -9,9 +10,23 @@ import java.util.LinkedList;
 public class EntityFactory
 {
 
-    //MODULO 1
+    /**
+     * Metodo que instancia la clase paara crear el objeto user
+     *   @param  username
+     *   @param  password
+     *   @param  email
+     *   @param  sex
+     *   @param  phone
+     *   @param  bday
+     *   @param  weight
+     *   @param  height
+     */
 
-    //MODULO 1
+    static public Entity createUser(String username, String password, String email, String sex, String phone,
+                                    Date bday, int weight, int height){
+
+        return new User( username, password , email , sex , phone , (java.sql.Date) bday, weight , height );
+    }
 
     //MODULO 3
 
@@ -114,5 +129,30 @@ public class EntityFactory
     //si hacen falta unos mas especificos se colocan en el objeto y aqui
 
     // FIN MODULO 6
+
+    //MODULO 9
+    /**
+     * Metodo que instancia la clase Challenge vacia
+     * @return Objeto Challenge
+     * @see Challenge
+     */
+    static public Entity createChallenge(){
+        return new Challenge();
+    }
+
+    /**
+     * Metodo que instancia la clase Challenge con sus atributos
+     * @param id Identificador del reto
+     * @param name Nombre del reto
+     * @param description Descripcion del reto
+     * @param score Record que se lleva del reto.
+     * @return Objecto Challenge
+     * @see Challenge
+     */
+    static public Entity createChallenge(int id, String name, String description, int score){
+        return new Challenge(id, name, description, score);
+    }
+
+    //FIN MODULO 9
 
 }
