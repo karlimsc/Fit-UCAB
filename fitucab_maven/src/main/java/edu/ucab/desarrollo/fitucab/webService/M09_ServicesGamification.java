@@ -30,17 +30,15 @@ public class M09_ServicesGamification {
         }
         catch (WebApplicationException e){
             M09Exception error = new M09Exception(e.getMessage());
-            logger.debug("Error: ", error);
+            logger.debug("Debug: ", error);
             logger.error("Error: ", error);
         }
         catch (Exception e){
             M09Exception error = new M09Exception(e.getMessage());
-            logger.debug("Error: ", error);
+            logger.debug("Debug: ", error);
             logger.error("Error: ", error);
         }
-        finally {
-            return "getChallenges";
-        }
+        return null;
     }
 
     @GET
@@ -60,9 +58,7 @@ public class M09_ServicesGamification {
             logger.debug("Error: ", error);
             logger.error("Error: ", error);
         }
-        finally {
-            return "getCantidad";
-        }
+        return null;
     }
 
     @GET
@@ -82,9 +78,7 @@ public class M09_ServicesGamification {
             logger.debug("Error: ", error);
             logger.error("Error: ", error);
         }
-        finally {
-            return "getQuantity";
-        }
+        return null;
     }
 
     @GET
@@ -104,8 +98,6 @@ public class M09_ServicesGamification {
             logger.debug("Error: ", error);
             logger.error("Error: ", error);
         }
-        finally {
-            return "getLevelUp";
-        }
+        return null;
     }
 }

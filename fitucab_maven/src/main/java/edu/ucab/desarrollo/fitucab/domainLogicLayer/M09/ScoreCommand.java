@@ -6,27 +6,22 @@ import edu.ucab.desarrollo.fitucab.exception.M09Exception;
 import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
 import org.slf4j.LoggerFactory;
 
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 /**
- * Comando para traer la informacion de todos los retos
+ * Comando para traer la puntuacion de todos los retos
  * @author David Garcia, Juan Mendez, Mario Salazar
  * @version 2.0
  */
-public class AchieveChallengeCommand extends Command {
+public class ScoreCommand extends Command{
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(ScoreCommand.class);
+    private Entity _score;
 
-    final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
-    private List<Entity> _challenges;
-
-    public AchieveChallengeCommand(List<Entity> challenges) {
-        _challenges = challenges;
+    public ScoreCommand(Entity score) {
+        _score = score;
     }
 
     //TODO: Falta execute
     public void execute() {
-        try {
+        try{
 
         }
         catch (Exception e){
