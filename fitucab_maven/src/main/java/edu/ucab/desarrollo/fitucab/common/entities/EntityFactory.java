@@ -1,6 +1,11 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
 
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class EntityFactory
 {
 
@@ -78,6 +83,13 @@ public class EntityFactory
         return new Challenge(id, name, description, score);
     }
 
+    static public List<Entity> getChallenges(){
+        return new ArrayList<Entity>();
+    }
+
+    static public Entity createActive(Command command){
+        return new Active(command);
+    }
     //FIN MODULO 9
 
 }

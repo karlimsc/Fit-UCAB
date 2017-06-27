@@ -7,7 +7,8 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.exception.M09Exception;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.*;;
+import javax.ws.rs.*;;import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Clase M09ServicesGamification que maneja el modulo de gamificacion.
@@ -24,9 +25,10 @@ public class M09_ServicesGamification {
     @Produces("application/json")
     public String getChallenges(@QueryParam("id") int _id){
         try {
-//            Entity challenge = EntityFactory.createChallenge();
-//            AchieveChallengeCommand acc = CommandsFactory.instanciateAchieveChallengeCmd(challenge);
-//            acc.execute();
+            List<Entity> challenges = EntityFactory.getChallenges();
+            AchieveChallengeCommand acc = CommandsFactory.instanciateAchieveChallengeCmd(challenges);
+            Entity active = EntityFactory.createActive(acc);
+//            active.exec();
         }
         catch (WebApplicationException e){
             M09Exception error = new M09Exception(e.getMessage());
