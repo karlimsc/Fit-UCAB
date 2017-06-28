@@ -7,6 +7,11 @@ import java.sql.SQLException;
  */
 public class AddException extends Exception
 {
+
+    public final int ERROR_CODE = 550;
+    public final String ERROR_MSG = "Ha ocurrido un error agregando";
+
+
     /**
      * excepcion personalizada para el agregar
      * @param e
