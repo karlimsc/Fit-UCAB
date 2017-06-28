@@ -160,9 +160,19 @@ public class EntityFactory
         return new ArrayList<Entity>();
     }
 
-    static public Entity createActive(Command command){
-        return new Active(command);
-    }
+
     //FIN MODULO 9
+
+    //Modulo 10
+    /**
+     * Metodo que instancia la clase Water vacio
+     * @return Water
+     * @see Water
+     */
+    static public Entity createWater(){
+        return new Water();
+    }
+
+    //Fin Modulo 10
 
 }
