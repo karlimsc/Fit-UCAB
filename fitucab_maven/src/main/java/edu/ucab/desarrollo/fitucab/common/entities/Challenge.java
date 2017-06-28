@@ -1,15 +1,21 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Clase que maneja la informacion de los retos
  * @author David Garcia, Juan Mendez, Mario Salazar
  * @version 2.0
  */
+@XmlRootElement
 public class Challenge extends Entity {
     private int _id;
     private String _name;
     private String _description;
     private int _score;
+    private long _achieve;
+    private long _unachieve;
+    private int _level;
 
     /**
      * Contructor vacio de challenge
@@ -18,7 +24,7 @@ public class Challenge extends Entity {
     }
 
     /**
-     * Constructor que inicializa los atributos de challenge
+     * Constructor que inicializa el id, nombre, descripcion y record de challenge
      * @param id Identificador del reto.
      * @param name Nombre del reto
      * @param description Descripcion del reto
@@ -61,5 +67,29 @@ public class Challenge extends Entity {
 
     public void setScore(int score) {
         _score = score;
+    }
+
+    public long getAchieve() {
+        return _achieve;
+    }
+
+    public void setAchieve(long achieve) {
+        _achieve = achieve;
+    }
+
+    public long getUnachieve() {
+        return _unachieve;
+    }
+
+    public void setUnachieve(long unachieve) {
+        _unachieve = unachieve;
+    }
+
+    public int getLevel() {
+        return _level;
+    }
+
+    public void setLevel(int level) {
+        _level = level;
     }
 }

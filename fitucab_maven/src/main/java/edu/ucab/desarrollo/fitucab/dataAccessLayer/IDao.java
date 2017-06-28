@@ -6,5 +6,4 @@ public interface IDao
 {
 
     abstract void Create(Entity e);
-
 }
