@@ -28,12 +28,11 @@ public class DaoTraining extends Dao implements IDaoTraining
 
     }
 
-    public Entity create( Entity entidad ) throws AddException
-    {
+    public Entity create(Entity e) throws AddException {
         return null;
     }
 
-    public Entity read( Entity e )
+    public Entity read(Entity e )
     {
         return null;
     }
@@ -56,7 +55,7 @@ public class DaoTraining extends Dao implements IDaoTraining
      *
      * @return lista de entrenamientos
      */
-    public LinkedList<Entity> listAll( Entity entidad ) throws ListAllException
+    public LinkedList<Entity> listAll( Entity entity ) throws ListAllException
     {
         return null;
     }
@@ -71,7 +70,7 @@ public class DaoTraining extends Dao implements IDaoTraining
      *
      * @throws ListByIdException
      */
-    public Entity trainingDetail( Entity entidad ) throws ListByIdException
+    public Entity trainingDetail( Entity entity ) throws ListByIdException
     {
         return null;
     }

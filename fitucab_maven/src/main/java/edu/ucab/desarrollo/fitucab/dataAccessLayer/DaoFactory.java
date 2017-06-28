@@ -14,9 +14,9 @@ public class DaoFactory
      * @param entidad
      * @return dao de entrenamiento
      */
-    public static DaoTraining instanceDaoTraining( Entity entidad )
+    public static DaoTraining instanceDaoTraining( Entity entity )
     {
-        return new DaoTraining( entidad );
+        return new DaoTraining(entity);
     }
 
 }
