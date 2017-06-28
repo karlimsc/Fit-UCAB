@@ -89,8 +89,17 @@ public class CommandsFactory {
     //Fin Modulo 9
 
     //Inicio Modulo 10
+    /**
+     * Metodo para instanciar el comando AddWater
+     * @param water
+     * @return el comando AddWater
+     */
         static public AddWaterCommand instatiateAddWaterCmd(Entity water){ return new AddWaterCommand(water); }
-
+    /**
+     * Metodo para instanciar el comando GetListDate
+     * @param water
+     * @return el comando GetListDate
+     */
         static public GetListDateCommand instatiateGetListDateCmd(Entity water){ return new GetListDateCommand(water); }
 
     //Fin Modulo 10
