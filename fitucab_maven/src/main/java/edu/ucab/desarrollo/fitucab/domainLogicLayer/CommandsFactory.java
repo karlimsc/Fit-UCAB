@@ -8,10 +8,14 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
+import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class CommandsFactory {
+
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(M09_ServicesGamification.class);
 
     static public CreateTrainingCommand instanciateCreateTrainingCmd(Entity training, int userId){
         return new CreateTrainingCommand(training, userId);
@@ -29,6 +33,7 @@ public class CommandsFactory {
 
     //Modulo 9
     static public AchieveChallengeCommand instanciateAchieveChallengeCmd(List<Entity> challenge){
+        logger.error("_challenges: ",challenge);
         return new AchieveChallengeCommand(challenge);
     }
 

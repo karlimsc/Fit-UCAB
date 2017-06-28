@@ -1,10 +1,13 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Clase que maneja la informacion de los retos
  * @author David Garcia, Juan Mendez, Mario Salazar
  * @version 2.0
  */
+@XmlRootElement
 public class Challenge extends Entity {
     private int _id;
     private String _name;
