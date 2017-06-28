@@ -1,5 +1,6 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
+import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;

@@ -58,7 +58,7 @@ public class M05_ServicesActivity {
                 "'"+idreg+"','"+idspo+"')";
 
         try{
-           
+            
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -106,7 +106,7 @@ public class M05_ServicesActivity {
                 "'"+idtra+"')";
 
         try{
-           
+       
             Statement    st = conn.createStatement();
             ResultSet    rs =  st.executeQuery(query);
 
@@ -137,7 +137,7 @@ public class M05_ServicesActivity {
 
 
         try{
-       
+            
             Statement   st  = conn.createStatement();
             ResultSet   rs  =  st.executeQuery(query);
 
@@ -187,7 +187,7 @@ public class M05_ServicesActivity {
             //Array creado para almacenar las actividades realizadas
 
             ArrayList<Activity> listaActividades = new ArrayList<Activity>();
-   
+           
             Statement   st  = conn.createStatement();
             ResultSet   rs  =  st.executeQuery(query);
 
@@ -242,7 +242,7 @@ public class M05_ServicesActivity {
 
         try{
             Activity resultado = new Activity();
-          
+           
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -285,7 +285,7 @@ public class M05_ServicesActivity {
 
         try{
             Activity resultado = new Activity();
-   
+         
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -326,7 +326,7 @@ public class M05_ServicesActivity {
 
         try{
 
-    
+     
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -361,7 +361,7 @@ public class M05_ServicesActivity {
 
 
         try{
-       
+          
             Statement    st = conn.createStatement();
             ResultSet    rs =  st.executeQuery(query);
 
@@ -387,7 +387,7 @@ public class M05_ServicesActivity {
         String query = "SELECT M05_eliminaractividad('"+idreg+"')" ;
 
         try{
-     
+           
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -415,7 +415,7 @@ public class M05_ServicesActivity {
         Activity resultado = new Activity();
 
         try{
-       
+   
             Statement    st = conn.createStatement();
             ResultSet    rs =  st.executeQuery(query);
 
@@ -431,7 +431,7 @@ public class M05_ServicesActivity {
         }
     }
 
- 
+
 
 
 

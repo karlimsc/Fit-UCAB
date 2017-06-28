@@ -50,6 +50,17 @@ public class User extends Entity {
 
     };
 
+    public User(String _username, String _password, String _email, String _sex, String _phone, Date _birthdate, int _weight, int _height) {
+        this._username = _username;
+        this._password = _password;
+        this._email = _email;
+        this._sex = _sex;
+        this._phone = _phone;
+        this._birthdate = _birthdate;
+        this._weight = _weight;
+        this._height = _height;
+    }
+
     /***
      *
      * @param id

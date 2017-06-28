@@ -1,10 +1,6 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
 import javax.ws.rs.*;
-import java.sql.*;
-import java.util.ArrayList;
-
-
 
 
 import com.google.gson.Gson;
@@ -17,12 +13,9 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;
 
 
 import javax.ws.rs.GET;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import java.sql.*;
-import java.util.ArrayList;
 
 
 //AGREGAR USUARIOS
