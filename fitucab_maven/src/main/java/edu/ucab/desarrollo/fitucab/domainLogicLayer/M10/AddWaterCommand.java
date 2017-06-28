@@ -9,9 +9,9 @@ public class AddWaterCommand extends Command {
     Entity _water;
     public String returned;
 
-    public AddWaterCommand (Entity water){ _water = water; };
+    public AddWaterCommand (Entity water){ _water = water; }
 
     public void execute() {
-        returned = "HOLA BEBE";
+        returned = "AddingWater";
     }
 }
