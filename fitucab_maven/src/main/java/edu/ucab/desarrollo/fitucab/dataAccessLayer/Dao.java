@@ -1,6 +1,9 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 
 import edu.ucab.desarrollo.fitucab.common.Registry;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.*;
 
@@ -9,9 +12,13 @@ import java.sql.*;
  */
 public abstract class Dao implements IDao
 {
+    private static Logger logger = LoggerFactory.getLogger( Dao.class );
+
+
+    private static Connection conn = null;
 
     private static Connection conInstance;
-    private Connection _conn = getBdConnect();
+    /*private Connection _conn = getBdConnect();
     private Statement _st;
     private ResultSet _rs;
 
@@ -24,23 +31,41 @@ public abstract class Dao implements IDao
      * @see Connection
      * @see Statement
      */
-    protected static Connection getBdConnect()
+    protected static Connection getBdConnect() throws BdConnectException
     {
-        Connection conn = null;
+
         try
         {
-            Class.forName(Registry.BD_CLASS_FOR_NAME);
-            conn = DriverManager.getConnection(Registry.BD_URL, Registry.BD_USER, Registry.BD_PASSWORD);
+            Class.forName( Registry.BD_CLASS_FOR_NAME );
+            conn = DriverManager.getConnection( Registry.BD_URL, Registry.BD_USER, Registry.BD_PASSWORD );
         }
-        catch (ClassNotFoundException e)
+        catch ( ClassNotFoundException e )
         {
-            e.printStackTrace();
+            logger.error( "Metodo: {} {}", "getBdConnect", e.toString() );
+            throw new BdConnectException( e );
         }
-        catch (SQLException e)
+        catch ( SQLException e )
         {
-            e.printStackTrace();
+            logger.error( "Metodo: {} {}", "getBdConnect", e.toString() );
+            throw new BdConnectException( e );
         }
         return conn;
+    }
+
+
+    /**
+     *
+     */
+    protected static void closeConnection()
+    {
+        try
+        {
+            conn.close();
+        }
+        catch ( SQLException e )
+        {
+            logger.error( "Metodo: {} {}", "getBdConnect", e.toString() );
+        }
     }
 
 }
