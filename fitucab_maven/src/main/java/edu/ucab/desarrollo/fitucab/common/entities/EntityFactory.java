@@ -24,6 +24,21 @@ public class EntityFactory
         return new User( username, password , email , sex , phone , (java.sql.Date) bday, weight , height );
     }
 
+    static public Entity createUser(){
+
+        return new User();
+    }
+
+    static public Entity createUser( String username, String password){
+
+        return new User( username, password );
+    }
+
+    static public Entity createUser(  String email){
+
+        return new User(  email );
+    }
+
     //MODULO 3
 
     //MODULO 3
