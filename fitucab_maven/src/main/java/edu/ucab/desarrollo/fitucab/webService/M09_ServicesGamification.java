@@ -1,14 +1,13 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
-import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
-import edu.ucab.desarrollo.fitucab.exception.M09Exception;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M09Exception;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.*;;import java.util.ArrayList;
+import javax.ws.rs.*;;
 import java.util.List;
 
 /**
