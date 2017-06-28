@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckPasswordEmailCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
@@ -16,6 +17,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
+/**
+ * Fabrica de comandos
+ */
 public class CommandsFactory {
 
     // Comandos LOGIN M01
@@ -45,6 +49,25 @@ public class CommandsFactory {
         return new CheckTrainingCommand(trainingId, userId);
     }
 
+    /**
+     * Metodo para instanciar el comando GetAllTraining
+     * @param training
+     * @return el comando GetAllTraining
+     */
+    public static Command instanciateGetAllTrainingCmd( Entity training )
+    {
+        return new GetAllTrainingCommand(training);
+    }
+
+    /**
+     * Metodo para instanciar el comando GetTrainingDetail
+     * @param training
+     * @return el comando GetTrainingDetail
+     */
+    public static Command instanciateGetTrainingDetailCmd (Entity training){
+        return new GetTrainingDetailCommand(training);
+    }
+
     //Modulo 9
     static public AchieveChallengeCommand instanciateAchieveChallengeCmd(List<Entity> challenge){
         return new AchieveChallengeCommand(challenge);
@@ -62,6 +85,7 @@ public class CommandsFactory {
         return new LevelUpCommand(level);
     }
     //Fin Modulo 9
+
 
 }
 

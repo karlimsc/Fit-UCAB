@@ -1,5 +1,7 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
 /**
@@ -14,7 +16,7 @@ public class Active extends Entity {
         _command = command;
     }
 
-    public void exec(){
+    public void exec() throws ListByIdException, ListAllException {
         _command.execute();
     }
 }
