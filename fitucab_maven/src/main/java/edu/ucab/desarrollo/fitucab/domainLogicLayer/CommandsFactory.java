@@ -49,7 +49,7 @@ public class CommandsFactory {
      */
     public static Command instanciateGetAllTrainingCmd( Entity training )
     {
-        return new GetAllTrainingCommand( training );
+        return new GetAllTrainingCommand(training);
     }
 
     /**

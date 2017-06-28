@@ -14,6 +14,11 @@ import java.util.List;
  */
 public class GetAllTrainingCommand extends Command
 {
+        Entity _training;
+        public GetAllTrainingCommand(Entity training){
+            this._training = training;
+
+        }
 
 
     public void execute() throws ListAllException, ListByIdException

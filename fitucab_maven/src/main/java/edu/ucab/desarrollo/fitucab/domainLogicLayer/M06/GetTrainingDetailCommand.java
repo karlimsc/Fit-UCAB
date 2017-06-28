@@ -18,6 +18,12 @@ import java.util.List;
 public class GetTrainingDetailCommand extends Command
 {
 
+    Entity _training;
+    public GetTrainingDetailCommand(Entity training)
+    {
+        this._training = training;
+
+    }
     public void execute() throws ListAllException, ListByIdException
     {
 
