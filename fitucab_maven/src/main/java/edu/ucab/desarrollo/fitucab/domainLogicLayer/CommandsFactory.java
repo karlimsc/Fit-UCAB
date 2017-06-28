@@ -12,6 +12,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.AddWaterCommand;
 import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
 import org.slf4j.LoggerFactory;
 
@@ -85,6 +86,12 @@ public class CommandsFactory {
         return new LevelUpCommand(level);
     }
     //Fin Modulo 9
+
+    //Inicio Modulo 10
+        static public AddWaterCommand instatiateAddWaterCmd(Entity water){ return new AddWaterCommand(water); }
+
+
+    //Fin Modulo 10
 
 
 }

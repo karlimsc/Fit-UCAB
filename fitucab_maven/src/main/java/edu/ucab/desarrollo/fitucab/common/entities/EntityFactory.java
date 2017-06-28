@@ -169,8 +169,8 @@ public class EntityFactory
      * @return Water
      * @see Water
      */
-    static public Entity createWater(){
-        return new Water();
+    static public Water createWater(int GlassType, int fkp,String dia){
+        return new Water(GlassType,fkp,dia);
     }
 
     //Fin Modulo 10
