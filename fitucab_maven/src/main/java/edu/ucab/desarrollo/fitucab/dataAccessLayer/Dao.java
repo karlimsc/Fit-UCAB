@@ -4,6 +4,4 @@ public abstract class Dao implements IDao
 
 {
 
-
-
 }
