@@ -173,6 +173,11 @@ public class EntityFactory
         return new Water(GlassType,fkp,dia);
     }
 
+
+
+    static public Water getWater(int fkp,String dia){
+        return new Water(fkp,dia);
+    }
     //Fin Modulo 10
 
 }

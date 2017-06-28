@@ -13,6 +13,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.AddWaterCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.GetListDateCommand;
 import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
 import org.slf4j.LoggerFactory;
 
@@ -90,6 +91,7 @@ public class CommandsFactory {
     //Inicio Modulo 10
         static public AddWaterCommand instatiateAddWaterCmd(Entity water){ return new AddWaterCommand(water); }
 
+        static public GetListDateCommand instatiateGetListDateCmd(Entity water){ return new GetListDateCommand(water); }
 
     //Fin Modulo 10
 

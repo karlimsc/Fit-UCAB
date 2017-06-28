@@ -7,6 +7,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.AddWaterCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.GetListDateCommand;
 
 
 import javax.ws.rs.GET;
@@ -59,4 +60,35 @@ public class M10_ServicesHidration {
 
 
     }
+
+    /**
+     * Metodo que es llamado a traves del web service para consulta la
+     * el historial de vasos de agua tomados
+     * @param dia
+     * @param fkp
+     * @return array con fecha, hora y tamaño del vaso de agua
+     */
+    @GET
+    @Path("/GetList")
+    @Produces("application/json")
+    public String GetListDate( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
+    {
+        Entity getWaterObject = EntityFactory.getWater(fkp,dia);
+        GetListDateCommand  cmd = CommandsFactory.instatiateGetListDateCmd(getWaterObject);
+
+        try
+        {
+            cmd.execute();
+
+            return _gson.toJson(cmd.returned);
+        }
+        catch ( Exception e )
+        {
+            return _gson.toJson(cmd.returned);
+        }
+
+
+    }
+
+
 }
