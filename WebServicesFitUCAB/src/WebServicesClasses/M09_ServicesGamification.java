@@ -37,6 +37,11 @@ public class M09_ServicesGamification {
     Gson gson = new Gson();
     private Connection conn = getConInstance();
 
+    /**
+     * Informacion de todos los retos logrados
+     * @param _id
+     * @return
+     */
     @GET
     @Path("/obtenerretos")
     @Produces("application/json")
@@ -67,7 +72,6 @@ public class M09_ServicesGamification {
                 data.setName(rs.getString("challengename"));
                 data.setDescription(rs.getString("challengedescription"));
                 data.setScore(rs.getInt("challengescore"));
-
                 logros.set_challenges(data);
             }
 
@@ -78,7 +82,11 @@ public class M09_ServicesGamification {
 
     }
 
-
+    /**
+     * Cantidad de retos logrados y no logrados (Grafica)
+     * @param _id
+     * @return
+     */
     @GET
     @Path("/obtenerlogrados")
     @Produces("application/json")
@@ -120,6 +128,11 @@ public class M09_ServicesGamification {
 
     }
 
+    /**
+     * Puntuacion de los retos logrados
+     * @param _id
+     * @return
+     */
     @GET
     @Path("/obtenernivel")
     @Produces("application/json")
@@ -170,6 +183,14 @@ public class M09_ServicesGamification {
         return gson.toJson(_Level);
     }
 
+
+    /**
+     * No se llego a implementar en android (grupo retiro)
+     * Muestra cuando aumentas de nivel
+     * @param _plus
+     * @param _id
+     * @return
+     */
     @GET
     @Path("/obtenerverificarnivel")
     @Produces("application/json")
@@ -253,9 +274,5 @@ public class M09_ServicesGamification {
         sb.setSubirNivel(_menssage);
         sb.set_subir(_subirLevel);
         return gson.toJson(sb);
-
     }
-
-
-
 }

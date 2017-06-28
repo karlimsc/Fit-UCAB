@@ -1,8 +1,6 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M06;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
-import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
-import edu.ucab.desarrollo.fitucab.common.entities.Training;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
 public class CreateTrainingCommand extends Command {

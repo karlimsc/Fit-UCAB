@@ -9,10 +9,12 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 public class CreateUserCommand extends Command {
 
     Entity _user;
+    private static String DEFAULT_ENCODING1="UTF-8";
 
     public CreateUserCommand(Entity _user) {
         this._user = _user;
     }
+
 
     public void execute() {
 
