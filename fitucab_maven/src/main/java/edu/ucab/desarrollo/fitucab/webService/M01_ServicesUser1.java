@@ -12,6 +12,8 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -31,6 +33,9 @@ import static edu.ucab.desarrollo.fitucab.webService.Sql.getConInstance;
  */
 @Path("/M01_ServicesUser1")
 public class M01_ServicesUser1 {
+
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(M01_ServicesUser1.class);
+
     Gson gson = new Gson();
 
     public M01_ServicesUser1() {}
@@ -79,7 +84,7 @@ public class M01_ServicesUser1 {
         Entity createUserObject = EntityFactory.createUser(username, password, email,
                                                  sex, phone, birthdate, weight, height);
 
-        Logger.getLogger(M01_ServicesUser1.class.getName()).info("EL USUARIO ES " + username);
+        logger.debug("Debug","EL USUARIO ES " + username);
 
 
         CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
