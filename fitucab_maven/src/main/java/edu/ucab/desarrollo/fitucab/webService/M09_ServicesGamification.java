@@ -28,8 +28,8 @@ public class M09_ServicesGamification {
         try {
             List<Entity> challenges = EntityFactory.getChallenges();
             AchieveChallengeCommand acc = CommandsFactory.instanciateAchieveChallengeCmd(challenges);
-            Entity active = EntityFactory.createActive(acc);
-            active.exec();
+            //Entity active = EntityFactory.createActive(acc);
+            //active.exec();
             return acc.getChallenges();
         }
         catch (WebApplicationException e){
