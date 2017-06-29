@@ -31,17 +31,18 @@ public class DaoWater extends Dao implements IDaoWater{
     public Entity addWater(Entity water) throws SQLException {
         Water _water = new Water();
         SimpleDateFormat _sdf3 = new SimpleDateFormat("hh:mm:ss");
+        SimpleDateFormat _sdf2 = new SimpleDateFormat("MM/dd/yyyy");
         Date fecha = new Date();
         String hora = _sdf3.format(fecha);
         ResultSet rs;
         //variables de entrada
-            String dia = fecha.toString();
-            int glassType = 0;
+            String dia = _sdf2.format(fecha);
+            int glassType = 10;
             int fkp = 50;
         //fin variables de entrada
         try {
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-             rs = queryExecute("Select res from m10_addwater('"+dia+"     "+hora+"',"+glassType+","+fkp+")");
+             rs = queryExecute("Select res from m10_addwater('"+dia+" "+hora+"',"+glassType+","+fkp+")");
             //recorro la consulta
             _water = addWaterResult(rs);
             // end while que recorre la consulta
