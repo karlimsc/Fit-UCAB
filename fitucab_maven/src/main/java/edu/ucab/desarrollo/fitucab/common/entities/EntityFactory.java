@@ -176,11 +176,6 @@ public class EntityFactory
     static public Entity createChallenge(int score){
         return new Challenge(score);
     }
-
-
-    static public List<Entity> getChallenges(){
-        return new ArrayList<Entity>();
-    }
     //FIN MODULO 9
 
 }

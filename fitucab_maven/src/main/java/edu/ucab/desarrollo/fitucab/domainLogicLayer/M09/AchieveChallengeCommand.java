@@ -4,6 +4,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class AchieveChallengeCommand extends Command {
     private List<Entity> _challenges;
 
     public AchieveChallengeCommand() {
-        _challenges = EntityFactory.getChallenges();
+        _challenges = CommandsFactory.getChallenges();
     }
 
     public List<Entity> getChallenges() {
