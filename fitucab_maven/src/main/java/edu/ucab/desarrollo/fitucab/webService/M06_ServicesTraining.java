@@ -47,6 +47,8 @@ public class M06_ServicesTraining
      * @param trainingCalories
      * @return
      */
+
+    // revisar los parametros que recibe
     public String createTraining( @QueryParam( "trainingName" ) String name,
             @QueryParam( "trainingPeriod" ) int period,
             @QueryParam( "userId" ) int userId )
@@ -58,8 +60,8 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-
-            return gson.toJson( true );
+            Entity result = cmd.getResult();//nuevo
+            return gson.toJson( result );//nuevo
         }
         catch ( Exception e )
         {

@@ -11,10 +11,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -29,6 +26,45 @@ public class DaoTraining extends Dao implements IDaoTraining
     }
 
     public Entity create(Entity e) throws AddException {
+
+
+        Training t = (Training) e;
+        String query ="";
+
+        try {
+            Connection conn = Dao.getBdConnect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            //User user = null;
+
+
+            while (rs.next()) {
+                String username = rs.getString("usuario");
+                int id = rs.getInt("id");
+                String password = rs.getString("pwd");
+                String sexo = rs.getString("sex");
+                String phone = rs.getString("phone");
+                String email = rs.getString("mail");
+                Date birtdate = rs.getDate("birthdate");
+                // e.set_Id(query);
+
+               // user = new User(id, username, password, email, sexo, phone, birtdate);
+
+            }
+
+            return e;
+
+        }
+        catch (SQLException ex) {
+
+        }
+        catch (BdConnectException ex) {
+
+        }
+        catch (Exception ex) {
+
+        }
+
         return null;
     }
 
