@@ -18,13 +18,13 @@ public class Challenge extends Entity {
     private int _level;
 
     /**
-     * Contructor vacio de challenge
+     * Contructor vacio.
      */
     public Challenge() {
     }
 
     /**
-     * Constructor que inicializa el id, nombre, descripcion y record de challenge
+     * Constructor que inicializa el id, nombre, descripcion y el record.
      * @param id Identificador del reto.
      * @param name Nombre del reto
      * @param description Descripcion del reto
@@ -34,6 +34,24 @@ public class Challenge extends Entity {
         _id = id;
         _name = name;
         _description = description;
+        _score = score;
+    }
+
+    /**
+     * Constructor que inicializa los retos logrados y no logrados.
+     * @param achieve cantidad de retos logrados
+     * @param unachieve cantidad de retos no logrados
+     */
+    public Challenge(long achieve, long unachieve) {
+        _achieve = achieve;
+        _unachieve = unachieve;
+    }
+
+    /**
+     * Constructor que inicializa las suma de los retos.
+     * @param score
+     */
+    public Challenge(int score) {
         _score = score;
     }
 

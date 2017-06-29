@@ -19,7 +19,7 @@ public abstract class Command
      * @throws ListAllException excepcion para listar todos
      * @throws ListByIdException excepcion para listar por id
      */
-    public abstract void execute() throws ListAllException, ListByIdException;
+    public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException;
 
     public List<Entity> getChallenges(){
         return null;

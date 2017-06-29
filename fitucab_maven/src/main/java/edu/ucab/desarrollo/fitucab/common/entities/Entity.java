@@ -46,6 +46,6 @@ public class Entity {
         }
 
         //Modulo 09
-        public void exec() throws ListByIdException, ListAllException {};
+        public void exec() throws ListByIdException, ListAllException, NoSuchMethodException {};
         //Fin Modulo 09
 }
