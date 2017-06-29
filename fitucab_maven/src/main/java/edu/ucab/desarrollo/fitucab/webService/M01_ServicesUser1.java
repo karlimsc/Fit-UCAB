@@ -10,20 +10,22 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import static edu.ucab.desarrollo.fitucab.webService.Sql.getConInstance;
 
 /**
  * Clase de Servicios Web del Modulo 01
  */
-@Path("/M01_ServicesUser")
+@Path("/M01_ServicesUser1")
 public class M01_ServicesUser1 {
     Gson gson = new Gson();
 
@@ -43,12 +45,20 @@ public class M01_ServicesUser1 {
         return null ;
     }
 
-/**
- * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
- *
- *
- * @return
- */
+
+    /**
+     * Metodo para registrar al usuario
+     * @param username
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @param birthdate
+     * @param weight
+     * @param height
+     * @return
+     */
+
     @GET
     @Path("/insertRegistry")
     @Produces("application/json")
@@ -62,18 +72,39 @@ public class M01_ServicesUser1 {
                              @QueryParam("height") int height) {
 
 
-        Entity _user = EntityFactory.createUser(username,password,email,sex,phone,birthdate,weight,height);
+        Entity createUserObject = EntityFactory.createUser(username, password, email,
+                                                 sex, phone, birthdate, weight, height);
+        CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
 
-        CreateUserCommand cmd  = CommandsFactory.instanciateCreateUserCmd(_user);
+        return "REGISTRO";
+    }
 
+    /***
+     * Metodo que con el email recuperas tu usuario y contraseña
+     * @param email
+     * @return
+     */
+    @GET
+    @Path("/userView")
+    @Produces("application/json")
+    public String userOnly(@QueryParam("email") String email)
+    {
+        //Duda sobre si es necesario crear el objeto recupUserPswObject
+        
+        Entity recupUserPswObject = EntityFactory.createUser(email);
+        RecoverPasswordCommand cmd = CommandsFactory.instanciateRecoverPasswordCmd(email);
 
-        try{
+        try
+        {
             cmd.execute();
-            return gson.toJson(true);
+            return gson.toJson( true );
         }
-        catch (Exception e){
-            return gson.toJson(false);
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
         }
+
+
     }
 
 }
