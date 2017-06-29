@@ -16,6 +16,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -76,8 +77,8 @@ public class CommandsFactory {
     }
 
     //Modulo 9
-    static public AchieveChallengeCommand instanciateAchieveChallengeCmd(List<Entity> challenge){
-        return new AchieveChallengeCommand(challenge);
+    static public AchieveChallengeCommand instanciateAchieveChallengeCmd(){
+        return new AchieveChallengeCommand();
     }
 
     static public ScoreCommand instanciateScoreCmd(Entity score){
@@ -91,6 +92,8 @@ public class CommandsFactory {
     static public LevelUpCommand instanciateLevelUpCmd(Entity level){
         return new LevelUpCommand(level);
     }
+
+    static  public List<Entity> getChallenges(){return new ArrayList<Entity>();}
     //Fin Modulo 9
 
 
