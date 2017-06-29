@@ -5,6 +5,10 @@ package edu.ucab.desarrollo.fitucab.webService;
  */
 
 import com.google.gson.Gson;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -17,7 +21,7 @@ import static edu.ucab.desarrollo.fitucab.webService.Sql.getConInstance;
 /**
  * Clase de Servicios Web del Modulo 01
  */
-@Path("/M01_ServicesUser")
+@Path("/M01_ServicesUser1")
 public class M01_ServicesUser1 {
     Gson gson = new Gson();
     private Connection conn = getConInstance();
@@ -37,4 +41,39 @@ public class M01_ServicesUser1 {
     {
         return null ;
     }
+
+
+    /**
+     * Metodo para registrar al usuario
+     * @param username
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @param birthdate
+     * @param weight
+     * @param height
+     * @return
+     */
+
+    @GET
+    @Path("/insertRegistry")
+    @Produces("application/json")
+    public String insertUser(@QueryParam("username") String username,
+                             @QueryParam("password") String password,
+                             @QueryParam("email") String email,
+                             @QueryParam("sex") String sex,
+                             @QueryParam("phone") String phone,
+                             @QueryParam("birthdate") java.sql.Date birthdate,
+                             @QueryParam("weight") int weight,
+                             @QueryParam("height") int height) {
+
+
+        Entity createUserObject = EntityFactory.createUser(username, password, email,
+                                                 sex, phone, birthdate, weight, height);
+        CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
+
+        return "REGISTRO";
+    }
+
 }

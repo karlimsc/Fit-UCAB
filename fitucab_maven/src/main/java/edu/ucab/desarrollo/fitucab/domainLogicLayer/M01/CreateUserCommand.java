@@ -1,6 +1,9 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
 /**
@@ -20,6 +23,9 @@ public class CreateUserCommand extends Command {
 
         try{
             //instanciacion del dao
+            DaoUser createUserDao = DaoFactory.instanciateDaoUser(_user);
+            createUserDao.Create(_user);
+
         }
         catch(Exception e){
             //lanzar exception

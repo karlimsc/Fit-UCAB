@@ -29,17 +29,18 @@ public class DaoUser  extends Dao implements IDaoUser {
     private Statement  _st;
     //Encargado de encriptar la contraseña
     private Security   _sc;
-
-
+    Entity _user;
     Gson gson = new Gson();
+
+    public DaoUser(Entity _user) {
+    this._user= _user;
+    }
 
     /**
      * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
      *
      * @return
      */
-
-
 
     public void Create(Entity e) throws Exception {
 
@@ -50,7 +51,6 @@ public class DaoUser  extends Dao implements IDaoUser {
         User _user = (User)e;
 
         String password= _sc.encryptPassword(_user.getPassword());
-
         CallableStatement cstmt;
 
         try {
