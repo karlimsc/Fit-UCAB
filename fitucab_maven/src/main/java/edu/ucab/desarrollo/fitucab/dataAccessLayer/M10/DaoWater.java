@@ -29,16 +29,15 @@ public class DaoWater extends Dao implements IDaoWater{
      * @throws SQLException
      */
     public Entity addWater(Entity water) throws SQLException {
-
-        Water _water = null;
+        Water _water = new Water();
         SimpleDateFormat _sdf3 = new SimpleDateFormat("hh:mm:ss");
         Date fecha = new Date();
         String hora = _sdf3.format(fecha);
         ResultSet rs;
         //variables de entrada
-            String dia = "";
+            String dia = fecha.toString();
             int glassType = 0;
-            int fkp = 0;
+            int fkp = 50;
         //fin variables de entrada
         try {
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta

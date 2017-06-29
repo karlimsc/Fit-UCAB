@@ -97,7 +97,7 @@ public class M10_ServicesHidration {
      * @return array con cantidad de agua total y cantidad de vasos
      */
     @GET
-    @Path("/GetWaterCommand")
+    @Path("/GetWater")
     @Produces("application/json")
     public String GetWater( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
@@ -127,7 +127,7 @@ public class M10_ServicesHidration {
      * @return
      */
     @GET
-    @Path("/GetFechaIntCommand")
+    @Path("/GetFechaInt")
     @Produces("application/json")
     public String GetFechaInt( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
