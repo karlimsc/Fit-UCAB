@@ -13,17 +13,32 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 public class DaoFactory
 {
 
+
+
+    //MODULO 1
+
+    /**
+     * Metodo para instanciar DaoUser
+     * @param user
+     * @return
+     */
+
+    static public DaoUser instanciateDaoUser(Entity user) {
+        return new DaoUser(user);
+    }
+
+    //MODULO 1
+
     /**
      * metodo para instanciar el dao de entrenamiento
      * @param entidad
      * @return dao de entrenamiento
      */
+
     public static DaoTraining instanceDaoTraining( Entity entidad )
     {
         return new DaoTraining( entidad );
     }
 
-    static public DaoUser instanciateDaoUser(Entity user) {
-        return new DaoUser(user);
-    }
+
 }

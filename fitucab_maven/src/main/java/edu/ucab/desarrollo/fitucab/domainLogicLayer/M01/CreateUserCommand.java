@@ -24,7 +24,7 @@ public class CreateUserCommand extends Command {
         try{
             //instanciacion del dao
             DaoUser createUserDao = DaoFactory.instanciateDaoUser(_user);
-            createUserDao.Create(_user);
+            createUserDao.create(_user);
 
         }
         catch(Exception e){

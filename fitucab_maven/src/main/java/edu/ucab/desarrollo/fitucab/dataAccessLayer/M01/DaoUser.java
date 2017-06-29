@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Registry;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
@@ -36,9 +37,7 @@ public class DaoUser  extends Dao implements IDaoUser {
     this._user= _user;
     }
 
-    public Entity create(Entity e) throws AddException {
-        return null;
-    }
+
 
     public Entity read(Entity e) {
         return null;
@@ -54,7 +53,7 @@ public class DaoUser  extends Dao implements IDaoUser {
      * @return
      */
 
-    public void Create(Entity e) throws Exception {
+    public Entity create(Entity e) throws Exception {
 
          _conn = new Sql();
         _bdCon = _conn.getConn();
@@ -79,57 +78,12 @@ public class DaoUser  extends Dao implements IDaoUser {
             cstmt.execute();
             System.out.printf("ENTREEEEEEEEEEE");
 
+
+
         }
         catch (SQLException ex) {
             Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
-
-       /* String insertUserQuery = " SELECT * FROM M01_REGISTRAR('" + username + "','" + password + "','" + email + "','" + sex + "'" +
-                ",'" + phone + "','" + birthdate + "','" + weight + "','" + height + "')";
-        */
-     /*   Entity createUserObject = EntityFactory.createUser(username,password,email, sex,phone, birthdate,weight,height);
-        CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
-
-
-        try {
-
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(insertUserQuery);
-            User user = null;
-            Registry registry = null;
-            Boolean valida = false;
-
-            int id = 0;
-
-            while (rs.next()) {
-
-                valida=true;
-                id = rs.getInt("m01_registrar");
-                registry = new Registry(Float.parseFloat(weight), Float.parseFloat(height));
-
-            }
-
-            if(valida == true){
-                user = new User(id, username, password, email, sex, phone, registry);
-                user.set_status(Integer.toString(RESULT_CODE_OK));
-            return gson.toJson(user);
-            }
-            else{
-
-                userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
-                return gson.toJson(userFail);
-            }
-        }
-        catch (SQLException e) {
-            userFail.set_status(e.getSQLState());
-            return gson.toJson(userFail);
-        }
-        catch (Exception e) {
-            return e.getMessage();
-        }
-    }
-*/
+        return null;  //POR LOS MOMENTOS RETORNARA NULL
     }
 }

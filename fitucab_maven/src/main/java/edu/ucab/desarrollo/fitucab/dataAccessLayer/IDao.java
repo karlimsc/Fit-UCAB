@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface IDao
 {
-    public Entity create(Entity e) throws AddException;
+    public Entity create(Entity e) throws AddException, Exception;
 
     public Entity read(Entity e);
 
