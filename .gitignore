@@ -35,3 +35,7 @@ FitUCAB/\.directory
 fitucab_maven/classes/*
 fitucab_maven/target/*
 *.log
+
+fitucab_maven/out/artifacts/fitucab_war_exploded/
+
+fitucab_maven/out/

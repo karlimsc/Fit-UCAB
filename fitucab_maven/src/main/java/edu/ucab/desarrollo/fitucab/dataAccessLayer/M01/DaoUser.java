@@ -32,6 +32,8 @@ public class DaoUser  extends Dao implements IDaoUser {
 
     Gson gson = new Gson();
 
+    public DaoUser(){}
+
     /**
      * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
      *
@@ -52,17 +54,17 @@ public class DaoUser  extends Dao implements IDaoUser {
 
         CallableStatement cstmt;
 
+
         try {
             cstmt = _bdCon.prepareCall("{ call M01_REGISTRAR(?,?,?,?,?,?,?,?)}");
             cstmt.setString(1, _user.getUser());
-            cstmt.setString(2, _user.getEmail());
-            cstmt.setString(3, password);
-            cstmt.setString(4, _user.getPhone());
-            cstmt.setString(5, _user.getSex());
-            cstmt.setInt(6, _user.getHeight());
-            cstmt.setDate(8, _user.getBirthdate());
-            cstmt.setInt(8, _user.getWeight());
-            cstmt.setDate(8, _user.getBirthdate());
+            cstmt.setString(2, password);
+            cstmt.setString(3, _user.getEmail());
+            cstmt.setString(4, _user.getSex());
+            cstmt.setString(5, _user.getPhone());
+            cstmt.setDate(6, _user.getBirthdate());
+            cstmt.setInt(7, _user.getWeight());
+            cstmt.setInt(8, _user.getHeight());
             cstmt.execute();
             System.out.printf("ENTREEEEEEEEEEE");
         } catch (SQLException ex) {
