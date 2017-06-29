@@ -7,14 +7,18 @@ package edu.ucab.desarrollo.fitucab.webService;
 import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import static edu.ucab.desarrollo.fitucab.webService.Sql.getConInstance;
 
@@ -74,6 +78,34 @@ public class M01_ServicesUser1 {
         CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
 
         return "REGISTRO";
+    }
+
+    /***
+     * Metodo que con el email recuperas tu usuario y contraseña
+     * @param email
+     * @return
+     */
+    @GET
+    @Path("/userView")
+    @Produces("application/json")
+    public String userOnly(@QueryParam("email") String email)
+    {
+        //Duda sobre si es necesario crear el objeto recupUserPswObject
+        
+        Entity recupUserPswObject = EntityFactory.createUser(email);
+        RecoverPasswordCommand cmd = CommandsFactory.instanciateRecoverPasswordCmd(email);
+
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+
+
     }
 
 }

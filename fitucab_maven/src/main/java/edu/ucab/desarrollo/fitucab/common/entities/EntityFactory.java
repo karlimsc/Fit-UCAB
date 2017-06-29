@@ -36,15 +36,28 @@ public class EntityFactory
         return new User();
     }
 
+    /**
+     * Comprueba la contraseña y el correo
+     * @param username
+     * @param password
+     * @return
+     */
     static public Entity createUser( String username, String password){
 
         return new User( username, password );
     }
 
+    /**
+     * Usado para recuperar la contraseña
+     * @param email
+     * @return
+     */
     static public Entity createUser(  String email){
 
         return new User(  email );
     }
+
+
 
     //MODULO 3
 
