@@ -1,11 +1,51 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+
 /**
- * Created by karo on 24/06/17.
+ *Patron Entidad
  */
 public class Entity {
-        public Entity() {
+        private int _id;
+        private int _errorCode;
+        private String _errorMsg;
+
+        public Entity (){}
+
+        public Entity(int _id){
+                this._id=_id;
         }
 
-        public void exec(){};
+        public int get_id() {
+                return _id;
+        }
+
+        public void set_id(int _id) {
+                this._id = _id;
+        }
+
+        public int get_errorCode()
+        {
+                return _errorCode;
+        }
+
+        public void set_errorCode( int _errorCode )
+        {
+                this._errorCode = _errorCode;
+        }
+
+        public String get_errorMsg()
+        {
+                return _errorMsg;
+        }
+
+        public void set_errorMsg( String _errorMsg )
+        {
+                this._errorMsg = _errorMsg;
+        }
+
+        //Modulo 09
+        public void exec() throws ListByIdException, ListAllException {};
+        //Fin Modulo 09
 }

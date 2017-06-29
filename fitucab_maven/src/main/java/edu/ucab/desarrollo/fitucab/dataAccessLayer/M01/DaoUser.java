@@ -36,6 +36,18 @@ public class DaoUser  extends Dao implements IDaoUser {
     this._user= _user;
     }
 
+    public Entity create(Entity e) throws AddException {
+        return null;
+    }
+
+    public Entity read(Entity e) {
+        return null;
+    }
+
+    public Entity update(Entity e) {
+        return null;
+    }
+
     /**
      * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
      *

@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.exception;
+package edu.ucab.desarrollo.fitucab.common.exceptions;
 
 import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
 

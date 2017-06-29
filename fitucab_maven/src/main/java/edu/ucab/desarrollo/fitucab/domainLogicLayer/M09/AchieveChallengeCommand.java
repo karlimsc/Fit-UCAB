@@ -3,13 +3,10 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer.M09;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
-import edu.ucab.desarrollo.fitucab.exception.M09Exception;
-import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M09Exception;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Comando para traer la informacion de todos los retos
