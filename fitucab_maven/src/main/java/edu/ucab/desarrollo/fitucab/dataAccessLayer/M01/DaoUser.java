@@ -24,10 +24,11 @@ import static edu.ucab.desarrollo.fitucab.webService.Sql.getConInstance;
  */
 public class DaoUser  extends Dao implements IDaoUser {
 
-    private Sql _conn;
+    private Sql        _conn;
     private Connection _bdCon;
-    private Statement _st;
-    private Security _sc;
+    private Statement  _st;
+    //Encargado de encriptar la contraseña
+    private Security   _sc;
 
 
     Gson gson = new Gson();
@@ -59,13 +60,15 @@ public class DaoUser  extends Dao implements IDaoUser {
             cstmt.setString(3, password);
             cstmt.setString(4, _user.getPhone());
             cstmt.setString(5, _user.getSex());
-            cstmt.setInt(6, _user.getHeight());
-            cstmt.setDate(8, _user.getBirthdate());
-            cstmt.setInt(8, _user.getWeight());
-            cstmt.setDate(8, _user.getBirthdate());
+            cstmt.setInt(   6, _user.getHeight());
+            cstmt.setDate(  8, _user.getBirthdate());
+            cstmt.setInt(   8, _user.getWeight());
+            cstmt.setDate(  8, _user.getBirthdate());
             cstmt.execute();
             System.out.printf("ENTREEEEEEEEEEE");
-        } catch (SQLException ex) {
+
+        }
+        catch (SQLException ex) {
             Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
         }
 

@@ -22,9 +22,11 @@ public class CommandsFactory {
     static public CreateUserCommand instanciateCreateUserCmd(Entity user){
         return new CreateUserCommand(user);
     }
+
     static public CheckUserCommand instanciateCheckUserCmd(String user, String password){
         return new CheckUserCommand(user, password);
     }
+
     static public CheckPasswordEmailCommand instanciateCheckPasswordEmailCmd(String email){
         return new CheckPasswordEmailCommand(email);
     }

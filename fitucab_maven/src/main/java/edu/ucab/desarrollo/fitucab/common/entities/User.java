@@ -5,15 +5,15 @@ import java.sql.Date;
 
 public class User extends Entity {
 
-    private int _id;
+    private int    _id;
     private String _username;
-    private String  _password;
+    private String _password;
     private String _email;
     private String _sex;
     private String _phone;
-    private Date _birthdate;
-    private int _weight; // Se usan unicamente para uso del perfil de usuario
-    private int _height; // Se usan unicamente para uso del perfil de usuario
+    private Date   _birthdate;
+    private int    _weight; // Se usan unicamente para uso del perfil de usuario
+    private int    _height; // Se usan unicamente para uso del perfil de usuario
 
     /**
      * Constructor vacio
@@ -50,7 +50,9 @@ public class User extends Entity {
 
     };
 
-    public User(String _username, String _password, String _email, String _sex, String _phone, Date _birthdate, int _weight, int _height) {
+    public User(String _username, String _password, String _email, String _sex, String _phone, Date _birthdate,
+                int _weight, int _height) {
+
         this._username = _username;
         this._password = _password;
         this._email = _email;
