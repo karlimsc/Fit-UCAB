@@ -26,11 +26,10 @@ public class M09_ServicesGamification {
     @Path("/obtenerretos")
     public List<Entity> getChallenges() throws NoSuchMethodException {
         try {
-            List<Entity> challenges = EntityFactory.getChallenges();
-            AchieveChallengeCommand acc = CommandsFactory.instanciateAchieveChallengeCmd(challenges);
-            Entity active = EntityFactory.createActive(acc);
-            active.exec();
-            return acc.getChallenges();
+            AchieveChallengeCommand acc = CommandsFactory.instanciateAchieveChallengeCmd();
+            acc.execute();
+            List<Entity> challenges = acc.getChallenges();
+            return challenges;
         }
         catch (WebApplicationException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),

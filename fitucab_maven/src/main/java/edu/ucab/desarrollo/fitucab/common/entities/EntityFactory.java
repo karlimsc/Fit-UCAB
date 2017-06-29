@@ -181,16 +181,6 @@ public class EntityFactory
     static public List<Entity> getChallenges(){
         return new ArrayList<Entity>();
     }
-
-    /**
-     * Metodo que instancia la clase Active con el comando a ejecutar.
-     * @param command
-     * @return Objeto Active
-     * @see Active
-     */
-    static public Entity createActive(Command command){
-        return new Active(command);
-    }
     //FIN MODULO 9
 
 }
