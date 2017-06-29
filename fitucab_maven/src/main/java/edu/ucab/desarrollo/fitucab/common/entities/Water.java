@@ -11,14 +11,19 @@ public class Water extends Entity{
 
 
     /**
-     * Constructor vacio
+     * Constructor solo para id person
+     * @param fkPerson
      */
 
-    public  Water ()
+    public  Water(Integer fkPerson)
     {
-
+        _fkPerson=fkPerson;
     }
 
+    /**
+     * Constructor vacio
+     */
+    public Water(){}
 
     /**
      * Constructor error

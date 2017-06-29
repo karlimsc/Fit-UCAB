@@ -165,14 +165,38 @@ public class EntityFactory
 
     //Modulo 10
     /**
-     * Metodo que instancia la clase Water vacio
+     * Metodo que instancia la clase Water con sus atributos
+     * @param GlassType Indentificador de vaso
+     * @param fkp   fk de usuario
+     * @param dia  fecha
      * @return Water
      * @see Water
      */
     static public Water createWater(int GlassType, int fkp,String dia){
         return new Water(GlassType,fkp,dia);
     }
+    /**
+     * Metodo que instancia la clase Water con sus atributos
+     * @param fkp   fk de usuario
+     * @param dia  fecha
+     * @return Water
+     * @see Water
+     */
 
+    static public Water getWater(int fkp,String dia){
+        return new Water(fkp,dia);
+    }
+
+    /**
+     * Metodo que instancia la clase Water con sus atributos
+     * @param fkp   fk de usuario
+     * @return Water
+     * @see Water
+     */
+
+    static public Water getFecha(int fkp){
+        return new Water(fkp);
+    }
     //Fin Modulo 10
 
 }
