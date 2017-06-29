@@ -8,9 +8,7 @@ import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Created by david on 6/25/17.
- */
+
 @ApplicationPath("/")
 public class FitUCAB extends Application {
     @Override

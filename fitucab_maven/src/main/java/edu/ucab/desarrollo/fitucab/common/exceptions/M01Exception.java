@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.exception;
+package edu.ucab.desarrollo.fitucab.common.exceptions;
 
 /**
  * Excepciones personalizadas de modulo 1
