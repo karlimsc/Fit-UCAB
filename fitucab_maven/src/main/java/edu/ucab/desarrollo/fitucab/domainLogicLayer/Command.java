@@ -5,8 +5,8 @@ import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 
 import java.util.List;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
 
 /**
  * Patron Comando

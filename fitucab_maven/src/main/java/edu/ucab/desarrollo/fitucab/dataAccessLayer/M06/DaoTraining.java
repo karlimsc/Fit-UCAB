@@ -4,10 +4,10 @@ import edu.ucab.desarrollo.fitucab.common.entities.Activity;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Training;
-import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 
 
@@ -127,5 +127,10 @@ public class DaoTraining extends Dao implements IDaoTraining
     public ArrayList<Entity> listTrainingsShared( Entity e )
     {
         return null;
+    }
+
+    @Override
+    public void Create(Entity e) {
+
     }
 }

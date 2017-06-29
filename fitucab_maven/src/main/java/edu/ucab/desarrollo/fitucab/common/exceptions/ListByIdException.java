@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.common.exceptions;
+package edu.ucab.desarrollo.fitucab.common.Exceptions;
 
 import java.sql.SQLException;
 

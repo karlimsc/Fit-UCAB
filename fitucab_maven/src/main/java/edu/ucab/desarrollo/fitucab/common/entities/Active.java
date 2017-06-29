@@ -1,7 +1,7 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
 /**

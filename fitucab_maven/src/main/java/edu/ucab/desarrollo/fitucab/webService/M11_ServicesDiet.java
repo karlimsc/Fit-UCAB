@@ -1,21 +1,16 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
+
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ParameterNullException;
-import edu.ucab.desarrollo.fitucab.common.Validations.ValidationWS;
 import edu.ucab.desarrollo.fitucab.common.entities.Diet;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 
-import java.lang.reflect.Type;
-import java.time.LocalDate;
 import javax.ws.rs.*;
 import java.sql.*;
-import java.time.temporal.TemporalAdjusters;
+
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+
 
 /**
  * Created by jaorr on 22/05/17.

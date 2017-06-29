@@ -41,6 +41,9 @@ public class M11_ServicesFood {
     @Path("/getFoodPersonalized")
     @Produces("application/json")
     public String getFood(@QueryParam("username") String username) {
+
+
+
         return"";
     }
 

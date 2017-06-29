@@ -4,7 +4,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
-import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.MessageException;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.*;

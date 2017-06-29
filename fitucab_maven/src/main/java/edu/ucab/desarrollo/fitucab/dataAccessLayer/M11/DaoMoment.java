@@ -1,5 +1,6 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer.M11;
 
+import edu.ucab.desarrollo.fitucab.common.Exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 
@@ -10,5 +11,20 @@ public class DaoMoment extends Dao {
     @Override
     public void Create(Entity e) {
 
+    }
+
+    @Override
+    public Entity create(Entity e) throws AddException {
+        return null;
+    }
+
+    @Override
+    public Entity read(Entity e) {
+        return null;
+    }
+
+    @Override
+    public Entity update(Entity e) {
+        return null;
     }
 }

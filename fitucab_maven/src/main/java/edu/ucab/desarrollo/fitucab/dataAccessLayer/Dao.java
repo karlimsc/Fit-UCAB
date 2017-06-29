@@ -1,7 +1,8 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 
 import edu.ucab.desarrollo.fitucab.common.Registry;
-import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -68,4 +69,5 @@ public abstract class Dao implements IDao
         }
     }
 
+    public abstract void Create(Entity e);
 }

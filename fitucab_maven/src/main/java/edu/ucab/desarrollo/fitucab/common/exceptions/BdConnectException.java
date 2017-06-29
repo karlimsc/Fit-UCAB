@@ -1,5 +1,4 @@
-package edu.ucab.desarrollo.fitucab.common.exceptions;
-
+package edu.ucab.desarrollo.fitucab.common.Exceptions;
 
 
 public class BdConnectException extends Exception
