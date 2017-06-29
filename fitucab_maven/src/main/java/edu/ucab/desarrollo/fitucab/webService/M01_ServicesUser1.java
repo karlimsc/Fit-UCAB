@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
@@ -19,6 +20,9 @@ import javax.ws.rs.QueryParam;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static edu.ucab.desarrollo.fitucab.webService.Sql.getConInstance;
 
@@ -74,9 +78,22 @@ public class M01_ServicesUser1 {
 
         Entity createUserObject = EntityFactory.createUser(username, password, email,
                                                  sex, phone, birthdate, weight, height);
+
+        Logger.getLogger(M01_ServicesUser1.class.getName()).info("EL USUARIO ES " + username);
+
+
         CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
 
-        return "REGISTRO";
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+
     }
 
     /***
