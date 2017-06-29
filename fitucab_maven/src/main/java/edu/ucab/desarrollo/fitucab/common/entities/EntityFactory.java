@@ -186,6 +186,17 @@ public class EntityFactory
     static public Water getWater(int fkp,String dia){
         return new Water(fkp,dia);
     }
+
+    /**
+     * Metodo que instancia la clase Water con sus atributos
+     * @param fkp   fk de usuario
+     * @return Water
+     * @see Water
+     */
+
+    static public Water getFecha(int fkp){
+        return new Water(fkp);
+    }
     //Fin Modulo 10
 
 }

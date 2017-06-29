@@ -12,8 +12,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.AddWaterCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.GetListDateCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
 import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
 import org.slf4j.LoggerFactory;
 
@@ -101,6 +100,41 @@ public class CommandsFactory {
      * @return el comando GetListDate
      */
         static public GetListDateCommand instatiateGetListDateCmd(Entity water){ return new GetListDateCommand(water); }
+
+    /**
+     * Metodo para instanciar el comando GetWater
+     * @param water
+     * @return el comando GetWater
+     */
+    static public GetWaterCommand instatiateGetWaterCmd(Entity water){ return new GetWaterCommand(water); }
+
+    /**
+     * Metodo para instanciar el comando GetFechaInt
+     * @param water
+     * @return el comando GetFechaInt
+     */
+    static public GetFechaIntCommand instatiateGetFechaIntCmd(Entity water){ return new GetFechaIntCommand(water); }
+    /**
+     * Metodo para instanciar el comando DeletLast
+     * @param water
+     * @return el comando DeletLast
+     */
+    static public DeletLastCommand instatiateDeletLastCmd(Entity water){ return new DeletLastCommand(water); }
+
+    /**
+     * Metodo para instanciar el comando DeletWaterTm
+     * @param water
+     * @return el comando DeletWaterTm
+     */
+    static public DeletWaterTmCommand instatiateDeletWaterTmCmd(Entity water){ return new DeletWaterTmCommand(water); }
+
+    /**
+     * Metodo para instanciar el comando GetFecha
+     * @param water
+     * @return el comando GetFecha
+     */
+
+    static public GetFechaCommand instatiateGetFechaCmd(Entity water){ return new GetFechaCommand(water); }
 
     //Fin Modulo 10
 

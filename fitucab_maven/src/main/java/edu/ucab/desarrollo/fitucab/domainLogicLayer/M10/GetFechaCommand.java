@@ -1,24 +1,25 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M10;
 
+
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
+
 /**
- *
+ * comando para agregar fecha
  */
-public class GetListDateCommand extends Command {
+public class GetFechaCommand extends Command {
 
     Entity _water;
     public String returned;
 
     /**
-     * constructor de getlistdate
+     * constructor de agregar fecha
      * @param water
      */
-    public GetListDateCommand (Entity water){ _water = water; };
+    public GetFechaCommand (Entity water){ _water = water; };
 
     public void execute() {
-        returned = "GETLISTDATE";
+        returned = "GETFECHA";
     }
 }
-
