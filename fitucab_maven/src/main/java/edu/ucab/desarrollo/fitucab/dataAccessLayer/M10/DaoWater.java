@@ -9,6 +9,7 @@ import edu.ucab.desarrollo.fitucab.webService.Sql;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -22,11 +23,12 @@ public class DaoWater extends Dao implements IDaoWater{
     }
 
     /**
-     * Metodo que agrega el vaso de agua y lo retorna
+     * etodo que agrega el vaso de agua y lo retorna
      * @param water
      * @return retorna el vaso de agua agregado
-    **/
-    public Water addWater(Entity water) throws SQLException {
+     * @throws SQLException
+     */
+    public Entity addWater(Entity water) throws SQLException {
 
         Water _water = null;
         SimpleDateFormat _sdf3 = new SimpleDateFormat("hh:mm:ss");
@@ -42,7 +44,7 @@ public class DaoWater extends Dao implements IDaoWater{
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
              rs = queryExecute("Select res from m10_addwater('"+dia+"     "+hora+"',"+glassType+","+fkp+")");
             //recorro la consulta
-            water = addWaterResult(rs);
+            _water = addWaterResult(rs);
             // end while que recorre la consulta
 
         } catch (Exception e) {
@@ -54,6 +56,62 @@ public class DaoWater extends Dao implements IDaoWater{
             return _water;
         }
     }
+
+    /**
+     * Metodo que devuelve el historial de vasos de agua
+     * @param water
+     * @return retorna la lista de vasos de agua
+     */
+    public ArrayList<Water> getList(Entity water) {
+        ArrayList<Water> waterList = new ArrayList<Water>();
+        ResultSet rs;
+
+        //variables de entrada
+        String dia = "";
+        int fkp = 0;
+        //fin variables de entrada
+
+        try {
+            //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
+            rs = queryExecute("Select * from M10_GetListFecha("+fkp+" ,'"+dia+"')");
+            waterList = getWaterList(rs);
+        } catch (Exception e) {
+            if (e instanceof SQLException) {
+                Water _water = new Water("Error en la conexion a base de datos");
+                waterList.add(_water);
+            }
+        } finally {
+            return waterList;
+        }
+    }
+
+    /**
+     * Metodo que devuelve un agua
+     * @param entity
+     * @return Retorna un agua
+     */
+    public Water getWater(Entity entity){
+        Water water = new Water();
+        ResultSet rs;
+
+        //variables de entrada
+        String dia = "";
+        int fkp = 0;
+        //fin variables de entrada
+
+        try {
+            //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
+            rs = queryExecute("Select * from M10_GetWaterGlass("+fkp+" ,'"+dia+"')");
+            water = getWaterItem(rs);
+        } catch (Exception e) {
+            if (e instanceof SQLException)
+                water.set_error("Error en la conexion a base de datos");
+        } finally {
+            return water;
+        }
+
+    }
+
 
 
     /**
@@ -86,6 +144,49 @@ public class DaoWater extends Dao implements IDaoWater{
         }// end while que recorre la consulta
         return water;
     }
+
+
+    /**
+     * Metodo que agrega el historico de vasos de agua a una lista
+     * @param rs
+     * @return Retorna la lista con los vasos de agua
+     * @throws SQLException
+     */
+    public ArrayList<Water> getWaterList(ResultSet rs) throws SQLException {
+        Water water = null;
+        ArrayList<Water> arrayWater = new ArrayList();
+        SimpleDateFormat _sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+        while(rs.next())
+        {
+            //se agarran los valores de la consulta y se crea un objeto tipo water
+            water = new Water(_sdf.format(rs.getTimestamp("GLASSTIME")).toString()
+                ,rs.getInt("GLASSTYPE"));
+            // se guardan los datos en un arraylist de tipo water
+            arrayWater.add(water);
+        } //end while que recorre la consulta
+        return arrayWater;
+    }
+
+    /**
+     * Metodo que retorna un agua
+     * @param rs
+     * @return Retorna un agua
+     * @throws SQLException
+     */
+    public Water getWaterItem(ResultSet rs) throws SQLException {
+        Water water = new Water();
+        while(rs.next())
+        {
+            //se agarran los valores de la consulta y se crea un objeto tipo water
+            water = new Water(rs.getInt("sumG")
+                    ,rs.getInt("countg"));
+            // se guardan los datos en un arraylist de tipo water
+        } //end while que recorre la consulta
+        return water;
+    }
+
+
+
 
     public Entity create(Entity e) throws AddException {
         return null;

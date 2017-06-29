@@ -20,6 +20,10 @@ public class Water extends Entity{
         _fkPerson=fkPerson;
     }
 
+    /**
+     * Constructor vacio
+     */
+    public Water(){}
 
     /**
      * Constructor error
