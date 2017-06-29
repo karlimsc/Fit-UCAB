@@ -1,8 +1,8 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M09;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
-import edu.ucab.desarrollo.fitucab.common.exceptions.M09Exception;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -20,11 +20,12 @@ public class FillChartCommand extends Command{
     }
 
     //TODO: Falta execute
-    public void execute() {
+    public void execute() throws NoSuchMethodException {
         try{
 
         } catch (Exception e){
-            M09Exception error = new M09Exception(e.getMessage());
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Debug: ", error);
             logger.error("Error: ", error);
         }

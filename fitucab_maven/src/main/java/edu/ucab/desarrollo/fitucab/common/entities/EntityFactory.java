@@ -172,7 +172,7 @@ public class EntityFactory
     }
 
     /**
-     * Metodo que instancia la clase Challenge con sus atributos
+     * Metodo que instancia la clase Challenge con su id, nombre, descripcion y record
      * @param id Identificador del reto
      * @param name Nombre del reto
      * @param description Descripcion del reto
@@ -184,10 +184,38 @@ public class EntityFactory
         return new Challenge(id, name, description, score);
     }
 
+    /**
+     * Metodo que instancia la clase Challenge con sus retos logrados y no logrados
+     * @param achieve cantidad de retos logrados
+     * @param unachieve cantidad de retos no logrados
+     * @return Objecto Challenge
+     * @see Challenge
+     */
+    static public Entity createChallenge(long achieve, long unachieve){
+        return new Challenge(achieve,unachieve);
+    }
+
+    /**
+     * Metodo que instancia la clase Challenge con la suma de sus records
+     * @param score Record acumulado que se lleva del reto.
+     * @return Objeto Challenge
+     * @see Challenge
+     */
+    static public Entity createChallenge(int score){
+        return new Challenge(score);
+    }
+
+
     static public List<Entity> getChallenges(){
         return new ArrayList<Entity>();
     }
 
+    /**
+     * Metodo que instancia la clase Active con el comando a ejecutar.
+     * @param command
+     * @return Objeto Active
+     * @see Active
+     */
     static public Entity createActive(Command command){
         return new Active(command);
     }

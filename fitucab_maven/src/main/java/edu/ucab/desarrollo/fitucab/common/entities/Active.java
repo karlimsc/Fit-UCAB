@@ -5,18 +5,27 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
 /**
- * Actividad que
+ * Actividad que juega el papel de invocador de los comandos.
  * @author David Garcia, Juan Mendez, Mario Salazar
  * @version 2.0
  */
 public class Active extends Entity {
     private Command _command;
 
+    /**
+     * Constructor que inicializa el comando
+     * @param command
+     */
     public Active(Command command) {
         _command = command;
     }
 
-    public void exec() throws ListByIdException, ListAllException {
+    /**
+     * Metodo que ejecutara todos los comandos.
+     * @throws ListByIdException
+     * @throws ListAllException
+     */
+    public void exec() throws ListByIdException, ListAllException, NoSuchMethodException {
         _command.execute();
     }
 }

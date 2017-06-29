@@ -4,10 +4,11 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
-import edu.ucab.desarrollo.fitucab.common.exceptions.M09Exception;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.*;;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;;
 import java.util.List;
 
 /**
@@ -16,14 +17,14 @@ import java.util.List;
  * @version 2.0
  */
 @Path("/M09_ServicesGamification")
-@Produces("application/json")
+@Produces(MediaType.APPLICATION_JSON)
 public class M09_ServicesGamification {
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M09_ServicesGamification.class);
 
     @GET
     @Path("/obtenerretos")
-    public List<Entity> getChallenges(@QueryParam("id") int _id){
+    public List<Entity> getChallenges() throws NoSuchMethodException {
         try {
             List<Entity> challenges = EntityFactory.getChallenges();
             AchieveChallengeCommand acc = CommandsFactory.instanciateAchieveChallengeCmd(challenges);
@@ -32,12 +33,14 @@ public class M09_ServicesGamification {
             return acc.getChallenges();
         }
         catch (WebApplicationException e){
-            M09Exception error = new M09Exception(e.getMessage());
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Debug: ", error);
             logger.error("Error: ", error);
         }
         catch (Exception e){
-            M09Exception error = new M09Exception(e.getMessage());
+            MessageException error = new MessageException(e, M09_ServicesGamification.class.getSimpleName(),
+                    M09_ServicesGamification.class.getMethod("getChallenges").getName().toString());
             logger.debug("Debug: ", error);
             logger.error("Error: ", error);
         }
@@ -46,17 +49,19 @@ public class M09_ServicesGamification {
 
     @GET
     @Path("/obtenerlogrados")
-    public String getCantidad(@QueryParam("id") int _id) {
+    public String getCantidad() throws NoSuchMethodException {
         try {
             //Llamada a la fabrica de comandos.
         }
         catch (WebApplicationException e){
-            M09Exception error = new M09Exception(e.getMessage());
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Error: ", error);
             logger.error("Error: ", error);
         }
         catch (Exception e){
-            M09Exception error = new M09Exception(e.getMessage());
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Error: ", error);
             logger.error("Error: ", error);
         }
@@ -65,17 +70,19 @@ public class M09_ServicesGamification {
 
     @GET
     @Path("/obtenernivel")
-    public String getQuantity(@QueryParam("id") int _id) {
+    public String getQuantity() throws NoSuchMethodException {
         try {
             //Llamada a la fabrica de comandos.
         }
         catch (WebApplicationException e){
-            M09Exception error = new M09Exception(e.getMessage());
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Error: ", error);
             logger.error("Error: ", error);
         }
         catch (Exception e){
-            M09Exception error = new M09Exception(e.getMessage());
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Error: ", error);
             logger.error("Error: ", error);
         }
@@ -84,17 +91,19 @@ public class M09_ServicesGamification {
 
     @GET
     @Path("/obtenerverificarnivel")
-    public String getLevelUp(@QueryParam("_plus") int _plus, @QueryParam("id") int _id) {
+    public String getLevelUp() throws NoSuchMethodException {
         try {
             //Llamada a la fabrica de comandos.
         }
         catch (WebApplicationException e){
-            M09Exception error = new M09Exception(e.getMessage());
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Error: ", error);
             logger.error("Error: ", error);
         }
         catch (Exception e){
-            M09Exception error = new M09Exception(e.getMessage());
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Error: ", error);
             logger.error("Error: ", error);
         }
