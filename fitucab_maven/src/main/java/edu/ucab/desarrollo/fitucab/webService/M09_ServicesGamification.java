@@ -39,8 +39,8 @@ public class M09_ServicesGamification {
             logger.error("Error: ", error);
         }
         catch (Exception e){
-            MessageException error = new MessageException(e, M09_ServicesGamification.class.getSimpleName(),
-                    M09_ServicesGamification.class.getMethod("getChallenges").getName().toString());
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Debug: ", error);
             logger.error("Error: ", error);
         }
