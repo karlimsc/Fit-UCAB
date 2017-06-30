@@ -28,6 +28,7 @@ import java.util.Date;
  */
 @Path("/M01_ServicesUser1")
 public class M01_ServicesUser1 {
+    Boolean _response;
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M01_ServicesUser1.class);
 
@@ -107,8 +108,8 @@ public class M01_ServicesUser1 {
 
         try
         {
-            cmd.execute();
-            return gson.toJson( true );
+            _response = cmd.run();
+            return gson.toJson( _response );
         }
         catch ( Exception e )
         {

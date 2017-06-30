@@ -13,11 +13,7 @@ public class Sql {
     private Connection _conn =bdConnect();
     private Statement _st;
     private ResultSet _rs;
-    /*private static String BD_USER = "postgres";
-    private static String BD_PASSWORD = "postgres";
-    private static String BD_URL = "jdbc:postgresql://localhost/fitucabdb";
-    private static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
-*/
+
     /**
      * Metodo para devolver una unica instancia de la conexion
      * @return instancia de la conexion

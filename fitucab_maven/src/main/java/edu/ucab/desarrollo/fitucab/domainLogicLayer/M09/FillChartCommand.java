@@ -39,4 +39,8 @@ public class FillChartCommand extends Command{
             logger.error("Error: ", error.toString());
         }
     }
+
+    public boolean run() throws NoSuchMethodException, Exception {
+        return false;
+    }
 }

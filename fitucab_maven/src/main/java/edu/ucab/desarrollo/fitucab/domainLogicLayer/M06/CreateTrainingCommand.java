@@ -22,4 +22,8 @@ public class CreateTrainingCommand extends Command {
             //lanzar exception
         }
     }
+
+    public boolean run() throws NoSuchMethodException, Exception {
+        return false;
+    }
 }

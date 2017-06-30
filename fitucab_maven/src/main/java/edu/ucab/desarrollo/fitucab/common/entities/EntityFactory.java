@@ -191,20 +191,20 @@ public class EntityFactory
      * @return Objecto Challenge
      * @see Challenge
      */
-    static public Entity createChallenge(long achieve, long unachieve){
+   /* static public Entity createChallenge(long achieve, long unachieve){
         return new Challenge(achieve,unachieve);
     }
-
+*/
     /**
      * Metodo que instancia la clase Challenge con la suma de sus records
      * @param score Record acumulado que se lleva del reto.
      * @return Objeto Challenge
      * @see Challenge
      */
-    static public Entity createChallenge(int score){
+    /*static public Entity createChallenge(int score){
         return new Challenge(score);
     }
-
+*/
 
     //FIN MODULO 9
 

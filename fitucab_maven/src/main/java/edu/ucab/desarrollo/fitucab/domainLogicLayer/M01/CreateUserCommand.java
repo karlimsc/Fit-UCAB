@@ -1,6 +1,8 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
@@ -14,7 +16,8 @@ import org.slf4j.LoggerFactory;
  */
 public class CreateUserCommand extends Command {
 
-    Entity _user;
+    Entity _user, _userRetorn;
+    Boolean _retorn;
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
 
@@ -27,17 +30,27 @@ public class CreateUserCommand extends Command {
     }
 
 
-    public void execute() throws Exception{
+    public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception {
+
+    }
+
+    public boolean run() throws Exception{
 
         try{
             //instanciacion del dao
             DaoUser createUserDao = DaoFactory.instanciateDaoUser(_user);
-            createUserDao.create(_user);
+            _userRetorn = createUserDao.create(_user);
+            // Si el usuario que retorna es null es que hubo un error en la insercion
+            if (!_userRetorn.equals(null)){
+                return true;
+            }
+            else return false;
 
         }
         catch(Exception e){
             //lanzar exception
             logger.error("Error", "La excepción es: " + e.getMessage());
+            return false;
         }
     }
 }

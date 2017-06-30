@@ -28,4 +28,8 @@ public class CheckTrainingCommand extends Command {
             }
 
     }
+
+    public boolean run() throws NoSuchMethodException, Exception {
+        return false;
+    }
 }
