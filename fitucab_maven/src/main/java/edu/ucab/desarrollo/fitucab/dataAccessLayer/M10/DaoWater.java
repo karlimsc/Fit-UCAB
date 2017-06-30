@@ -66,7 +66,7 @@ public class DaoWater extends Dao implements IDaoWater{
      * @param water
      * @return retorna la lista de vasos de agua
      */
-    public ArrayList<Water> getList(Entity water) {
+    public ArrayList<Water> getList(Entity water)  throws  SQLException {
 
         ArrayList<Water> waterList = new ArrayList<Water>();
         ResultSet rs;
@@ -99,10 +99,10 @@ public class DaoWater extends Dao implements IDaoWater{
     public Water getWater(Entity entity){
         Water water = new Water();
         ResultSet rs;
-
+        Water waterEntrada = (Water) water;
         //variables de entrada
-        String dia = "";
-        int fkp = 0;
+        String dia = waterEntrada.get_time();
+        int fkp = waterEntrada.get_fkPerson();
         //fin variables de entrada
 
         try {
