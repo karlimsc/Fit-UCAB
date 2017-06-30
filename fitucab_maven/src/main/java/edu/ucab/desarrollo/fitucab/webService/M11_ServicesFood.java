@@ -12,6 +12,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Food;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodPerCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodallCommand;
 
 
 import javax.ws.rs.*;
@@ -35,6 +36,7 @@ public class M11_ServicesFood {
     private Gson gson = new Gson();
     private String response;
     private ArrayList<Food> jsonArray;
+    private  String respuesta ;
 
     /**
      * Funcion que recibe el nombre del usuario, y con este extrae
@@ -54,6 +56,37 @@ public class M11_ServicesFood {
 
         try {
             cmd.execute();
+            respuesta = cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            e.printStackTrace();
+        } catch (ListByIdException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return respuesta;
+    }
+
+    /**
+     *
+     * @param username
+     * @return
+     */
+    @GET
+    @Path("/getAllFood")
+    @Produces("application/json")
+    public String getAllFood(@QueryParam("username") String username){
+
+        Entity EntityFood = EntityFactory.getUser(Integer.parseInt(username));
+        getFoodallCommand cmd = CommandsFactory.getFoodallCmd(EntityFood);
+
+        try {
+            cmd.execute();
 
         } catch (ListAllException e) {
             e.printStackTrace();
@@ -67,18 +100,6 @@ public class M11_ServicesFood {
 
 
         return cmd.Respuesta;
-    }
-
-    /**
-     *
-     * @param username
-     * @return
-     */
-    @GET
-    @Path("/getAllFood")
-    @Produces("application/json")
-    public String getAllFood(@QueryParam("username") String username){
-      return"";
     }
 
     /**

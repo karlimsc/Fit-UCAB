@@ -21,6 +21,7 @@ public class DaoFood implements IDaoFood {
     private Gson gson = new Gson();
     private String response;
     private ArrayList<Food> jsonArray;
+    String username;
 
     public DaoFood() {  }
 
@@ -52,7 +53,7 @@ public class DaoFood implements IDaoFood {
         String query = "SELECT * FROM m11_get_alimentos_person(?)";
         jsonArray = new ArrayList<>();
         Food food = (Food) e;
-        String username= String.valueOf(food.get_id());
+        username= String.valueOf(food.get_id());
 
         PreparedStatement stm = conn.prepareStatement(query);
         stm.setString(1, username);
@@ -71,4 +72,33 @@ public class DaoFood implements IDaoFood {
 
         return  gson.toJson(jsonArray);
     }
+
+    @Override
+    public String getFoodAll(Entity e) throws SQLException {
+
+        Food food = (Food) e;
+        username= String.valueOf(food.get_id());
+
+        String query = "select * from m11_get_todos_alimentos(?)";
+        jsonArray = new ArrayList<>();
+
+
+        PreparedStatement st = conn.prepareStatement(query);
+        st.setString(1, username);
+        ResultSet rs = st.executeQuery();
+
+        while(rs.next()) {
+            jsonArray.add(new Food());
+            jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
+            // revisar string
+            jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
+            jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
+            jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
+        }
+
+        response = gson.toJson(jsonArray);
+        return response;
+    }
+
+
 }

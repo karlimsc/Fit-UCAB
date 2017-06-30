@@ -14,8 +14,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodPerCommand;
-import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
-import org.slf4j.LoggerFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodallCommand;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -146,6 +145,8 @@ public class CommandsFactory {
     //Modulo11
 
     static public getFoodPerCommand getFoodPerCmd(Entity Food){ return new getFoodPerCommand(Food); }
+
+    static  public getFoodallCommand getFoodallCmd (Entity Food ) {return  new getFoodallCommand(Food);}
 
 
 }

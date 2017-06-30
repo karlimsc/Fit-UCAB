@@ -14,4 +14,5 @@ public interface IDaoFood extends IDao {
 
     public String getFoodPer(Entity e) throws SQLException;
 
+    public  String getFoodAll (Entity e) throws SQLException;
 }
