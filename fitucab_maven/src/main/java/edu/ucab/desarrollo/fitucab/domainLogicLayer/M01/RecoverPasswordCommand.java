@@ -7,6 +7,10 @@ public class RecoverPasswordCommand {
 
     String _email;
 
+    /**
+     * Constructor de la clase
+     * @param _email String
+     */
     public RecoverPasswordCommand(String _email) {
         this._email = _email;
     }

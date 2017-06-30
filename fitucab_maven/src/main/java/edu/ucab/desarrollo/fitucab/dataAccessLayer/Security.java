@@ -5,9 +5,7 @@ import sun.misc.BASE64Encoder;
 import javax.ws.rs.QueryParam;
 import java.io.UnsupportedEncodingException;
 
-/**
- * Created by karo on 28/06/17.
- */
+
 public final class Security {
 
     private static Security _singlInstance;
