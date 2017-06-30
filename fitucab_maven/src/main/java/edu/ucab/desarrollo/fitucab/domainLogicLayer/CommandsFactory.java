@@ -3,7 +3,6 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckPasswordEmailCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
@@ -13,8 +12,6 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
-import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,20 +23,36 @@ public class CommandsFactory {
 
     // Comandos LOGIN M01
 
+    /**
+     * Intancia del CreateUserCommad
+     * @param user Objeto con todos los parametros de User
+     * @return CreateUserCommad con parametro de devolucion user
+     */
+
     static public CreateUserCommand instanciateCreateUserCmd(Entity user){
         return new CreateUserCommand(user);
     }
 
+    /**
+     *  Intancia del RecoverPasswordCommand
+     * @param email String
+     * @return RecoverPasswordCommand con parametro email para la recuperacion de la cuenta
+     */
+
     static public RecoverPasswordCommand instanciateRecoverPasswordCmd(String email){
         return new RecoverPasswordCommand(email);
     }
+
+    /**
+     *  Intancia del CheckUserCommand
+     * @param user String de username
+     * @param password String contraseña
+     * @return CheckUserCommand para el login
+     */
     static public CheckUserCommand instanciateCheckUserCmd(String user, String password){
         return new CheckUserCommand(user, password);
     }
 
-    static public CheckPasswordEmailCommand instanciateCheckPasswordEmailCmd(String email){
-        return new CheckPasswordEmailCommand(email);
-    }
 
     // Comandos M06
 
