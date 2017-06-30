@@ -48,8 +48,8 @@ public class DaoUser  extends Dao implements IDaoUser {
     }
 
     /**
-     * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
-     *
+     * Metodo que es llamado a traves del web service para agregar a la base de datos
+     * los parametros recibidos
      * @return
      */
 

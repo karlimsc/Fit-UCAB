@@ -5,9 +5,16 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
  */
 public class CheckUserCommand {
 
+
     String _password;
     String _user;
-    private static String DEFAULT_ENCODING1="UTF-8";
+
+
+    /**
+     * Contrunctor de la clase
+     * @param password String
+     * @param user String
+     */
 
     public CheckUserCommand(String password, String user){
         this._password= password;

@@ -14,8 +14,11 @@ public class CreateUserCommand extends Command {
 
     Entity _user;
 
-    private static String DEFAULT_ENCODING1="UTF-8";
 
+    /**
+     * Constructor de la clase
+     * @param _user Entity
+     */
     public CreateUserCommand(Entity _user) {
         this._user = _user;
     }
