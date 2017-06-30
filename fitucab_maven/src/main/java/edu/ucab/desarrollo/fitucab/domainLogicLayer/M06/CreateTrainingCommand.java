@@ -23,7 +23,9 @@ public class CreateTrainingCommand extends Command {
         }
     }
 
-    public boolean run() throws NoSuchMethodException, Exception {
-        return false;
+    public Entity run() throws NoSuchMethodException, Exception {
+        return null;
     }
+
+
 }

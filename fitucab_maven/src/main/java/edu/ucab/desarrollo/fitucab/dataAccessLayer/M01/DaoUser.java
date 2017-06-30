@@ -32,14 +32,48 @@ public class DaoUser  extends Dao implements IDaoUser {
     private Security   _sc;
     Entity _user;
     Gson gson = new Gson();
+    String _userLogin, _password;
 
     public DaoUser(Entity _user) {
     this._user= _user;
     }
 
-    public Entity read(Entity e) {
-        return null;
+    public DaoUser(String _userLogin, String _password) {
+        this._userLogin = _userLogin;
+        this._password = _password;
     }
+
+    /**
+     * Devuelve el usuario que este registrado
+     * @param e
+     * @return
+     */
+    public Entity read(Entity e) {
+        _conn = new Sql();
+        _bdCon = _conn.getConn();
+        _sc = new Security();
+
+        User _user = (User)e;
+
+
+
+        String password= _sc.encryptPassword(_user.getPassword());
+        CallableStatement cstmt;
+        try{
+            cstmt = _bdCon.prepareCall("{ call M01_INICIARSESION(?,?)}");
+            cstmt.setString(1, _user.getUser());
+            cstmt.setString(2, password);
+            cstmt.execute();
+            return _user;
+
+        }
+        catch (Exception ex){
+
+        return null;
+
+        }
+    }
+
 
     public Entity update(Entity e) {
         return null;
@@ -53,6 +87,7 @@ public class DaoUser  extends Dao implements IDaoUser {
 
     public Entity create(Entity e) throws Exception {
 
+        //TODO: AQUI SE DEVUELVE A LA CAPA DE WEB SERVICES, ABRIA QUE VER SI REALMENTE PUEDE SER ASI
          _conn = new Sql();
         _bdCon = _conn.getConn();
         _sc = new Security();

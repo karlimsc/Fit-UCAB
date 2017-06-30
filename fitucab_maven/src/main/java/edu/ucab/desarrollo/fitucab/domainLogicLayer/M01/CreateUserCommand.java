@@ -34,23 +34,20 @@ public class CreateUserCommand extends Command {
 
     }
 
-    public boolean run() throws Exception{
+    public Entity run() throws Exception{
 
         try{
             //instanciacion del dao
             DaoUser createUserDao = DaoFactory.instanciateDaoUser(_user);
             _userRetorn = createUserDao.create(_user);
             // Si el usuario que retorna es null es que hubo un error en la insercion
-            if (!_userRetorn.equals(null)){
-                return true;
-            }
-            else return false;
+             return _userRetorn;
 
         }
         catch(Exception e){
             //lanzar exception
             logger.error("Error", "La excepción es: " + e.getMessage());
-            return false;
+            return null;
         }
     }
 }

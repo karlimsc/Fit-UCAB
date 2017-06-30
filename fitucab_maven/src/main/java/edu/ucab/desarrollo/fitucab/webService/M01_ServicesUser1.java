@@ -10,6 +10,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
@@ -28,7 +29,7 @@ import java.util.Date;
  */
 @Path("/M01_ServicesUser1")
 public class M01_ServicesUser1 {
-    Boolean _response;
+    Entity _response;
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M01_ServicesUser1.class);
 
@@ -47,7 +48,15 @@ public class M01_ServicesUser1 {
     public String getUser(@QueryParam("username") String username,
                           @QueryParam("password") String password)
     {
-        return null ;
+        Entity userObject = EntityFactory.createUser(username,password);
+        CheckUserCommand cmd = CommandsFactory.instanciateCheckUserCmd(userObject);
+        try {
+            _response = cmd.run();
+            return gson.toJson(_response);
+        }
+        catch (Exception e){
+            return null ;
+        }
     }
 
 
@@ -108,12 +117,14 @@ public class M01_ServicesUser1 {
 
         try
         {
+            //TODO: PENDIENTE - EL RETURN ES UN STRING, HABRA QUE VER EN LA APLICACION LO QUE NECESITA REALMENTE
             _response = cmd.run();
-            return gson.toJson( _response );
+            User us = (User) _response;
+            return gson.toJson( createUserObject );
         }
         catch ( Exception e )
         {
-            return gson.toJson( false );
+            return gson.toJson( null );
         }
 
     }

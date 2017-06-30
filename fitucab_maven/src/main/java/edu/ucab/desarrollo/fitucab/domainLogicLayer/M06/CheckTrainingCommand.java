@@ -1,5 +1,6 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M06;
 
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.Training;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
@@ -29,7 +30,9 @@ public class CheckTrainingCommand extends Command {
 
     }
 
-    public boolean run() throws NoSuchMethodException, Exception {
-        return false;
+    public Entity run() throws NoSuchMethodException, Exception {
+        return null;
     }
+
+
 }

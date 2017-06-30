@@ -21,7 +21,7 @@ public abstract class Command
      */
     public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception;
 
-    public abstract boolean run() throws  NoSuchMethodException, Exception;
+    public abstract Entity run() throws  NoSuchMethodException, Exception;
 
     public List<Entity> getChallenges(){
         return null;

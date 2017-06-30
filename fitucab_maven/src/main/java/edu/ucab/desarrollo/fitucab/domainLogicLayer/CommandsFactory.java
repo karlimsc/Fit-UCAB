@@ -53,6 +53,10 @@ public class CommandsFactory {
         return new CheckUserCommand(user, password);
     }
 
+    static public CheckUserCommand instanciateCheckUserCmd(Entity user){
+        return new CheckUserCommand(user);
+    }
+
 
     // Comandos M06
 
