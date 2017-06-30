@@ -37,8 +37,6 @@ public class DaoUser  extends Dao implements IDaoUser {
     this._user= _user;
     }
 
-
-
     public Entity read(Entity e) {
         return null;
     }

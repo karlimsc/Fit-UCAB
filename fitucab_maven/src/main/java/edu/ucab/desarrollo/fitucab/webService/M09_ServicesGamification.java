@@ -21,7 +21,7 @@ import java.util.List;
 public class M09_ServicesGamification {
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M09_ServicesGamification.class);
-
+/*
     @GET
     @Path("/obtenerretos")
     public List<Entity> getChallenges() throws NoSuchMethodException {
@@ -45,7 +45,7 @@ public class M09_ServicesGamification {
         }
         return null;
     }
-
+*/
     @GET
     @Path("/obtenerlogrados")
     public String getCantidad() throws NoSuchMethodException {

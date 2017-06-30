@@ -90,10 +90,10 @@ public class CommandsFactory {
     }
 
     //Modulo 9
-    static public AchieveChallengeCommand instanciateAchieveChallengeCmd(){
+  /*  static public AchieveChallengeCommand instanciateAchieveChallengeCmd(){
         return new AchieveChallengeCommand();
     }
-
+*/
     static public ScoreCommand instanciateScoreCmd(Entity score){
         return new ScoreCommand(score);
     }
