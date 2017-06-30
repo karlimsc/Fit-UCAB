@@ -13,6 +13,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodPerCommand;
 import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
 import org.slf4j.LoggerFactory;
 
@@ -137,6 +138,11 @@ public class CommandsFactory {
     static public GetFechaCommand instatiateGetFechaCmd(Entity water){ return new GetFechaCommand(water); }
 
     //Fin Modulo 10
+
+
+    //Modulo11
+
+    static public getFoodPerCommand getFoodPerCmd(Entity Food){ return new getFoodPerCommand(Food); }
 
 
 }
