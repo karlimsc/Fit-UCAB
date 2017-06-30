@@ -17,6 +17,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodPerCommand;
 import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -71,21 +72,23 @@ public class CommandsFactory {
     }
 
     //Modulo 9
-    static public AchieveChallengeCommand instanciateAchieveChallengeCmd(List<Entity> challenge){
-        return new AchieveChallengeCommand(challenge);
+    static public AchieveChallengeCommand instanciateAchieveChallengeCmd(int id){
+        return new AchieveChallengeCommand(id);
     }
 
-    static public ScoreCommand instanciateScoreCmd(Entity score){
-        return new ScoreCommand(score);
+    static public ScoreCommand instanciateScoreCmd(int id){
+        return new ScoreCommand(id);
     }
 
-    static public FillChartCommand instanciateFillChartCmd(Entity challengeAchieve){
-        return new FillChartCommand(challengeAchieve);
+    static public FillChartCommand instanciateFillChartCmd(int id){
+        return new FillChartCommand(id);
     }
 
-    static public LevelUpCommand instanciateLevelUpCmd(Entity level){
-        return new LevelUpCommand(level);
+    static public LevelUpCommand instanciateLevelUpCmd(int id){
+        return new LevelUpCommand(id);
     }
+
+    static  public List<Entity> getChallenges(){return new ArrayList<Entity>();}
     //Fin Modulo 9
 
     //Inicio Modulo 10

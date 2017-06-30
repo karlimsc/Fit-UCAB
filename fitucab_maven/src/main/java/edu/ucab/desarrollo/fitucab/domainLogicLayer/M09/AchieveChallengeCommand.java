@@ -4,8 +4,10 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,36 +18,38 @@ import java.util.List;
 public class AchieveChallengeCommand extends Command {
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
-    private List<Entity> _challenges;
 
-    public AchieveChallengeCommand(List<Entity> challenges) {
-        logger.error("_challenges1.1: ",_challenges);
-        Entity challenge1 = EntityFactory.createChallenge(3,"name3","descripcion",5);
-        _challenges = challenges;
-        _challenges.add(challenge1);
-        logger.error("_challenges1.2: ",_challenges);
+    private List<Entity> _challenges;
+    private int _id;
+
+    public AchieveChallengeCommand(int id) {
+        _challenges = CommandsFactory.getChallenges();
+        _id = id;
+    }
+
+    public List<Entity> getChallenges() {
+        return _challenges;
     }
 
     //TODO: Falta execute
     public void execute() throws NoSuchMethodException {
         try {
-            Entity challenge1 = EntityFactory.createChallenge(1,"name1","descripcion",5);
-            Entity challenge2 = EntityFactory.createChallenge(2,"name2","descripcion",2);
+            //Instancio Dao.
+            //Ejecuto el AchieveChallengeCommandDao con el id
+            Entity challenge1 = EntityFactory.createChallenge(1,"nombre1","descripcion",3);
+            Entity challenge2 = EntityFactory.createChallenge(2,"nombre1","descripcion",4);
+            Entity challenge3 = EntityFactory.createChallenge(3,"nombre1","descripcion",5);
+            Entity challenge4 = EntityFactory.createChallenge(4,"nombre1","descripcion",6);
             _challenges.add(challenge1);
             _challenges.add(challenge2);
-            logger.error("_challenges2: ",_challenges);
+            _challenges.add(challenge3);
+            _challenges.add(challenge4);
         }
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Debug: ", error);
-            logger.error("Error: ", error);
+            logger.debug("Debug: ", error.toString());
+            logger.error("Error: ", error.toString());
         }
-    }
-
-    @Override
-    public List<Entity> getChallenges() {
-        logger.error("_challenges3: ",_challenges);
-        return _challenges;
     }
 }

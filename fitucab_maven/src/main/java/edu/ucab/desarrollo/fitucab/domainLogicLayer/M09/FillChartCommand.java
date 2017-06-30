@@ -13,10 +13,18 @@ import org.slf4j.LoggerFactory;
 public class FillChartCommand extends Command{
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(FillChartCommand.class);
-    private Entity _challengeAchieve;
 
-    public FillChartCommand(Entity challenge) {
-        _challengeAchieve = challenge;
+    private Entity _challenge;
+    private int _userId;
+
+
+    public FillChartCommand(int userId) {
+        _challenge = EntityFactory.createChallenge();
+        _userId = userId;
+    }
+
+    public Entity getChallenge() {
+        return _challenge;
     }
 
     //TODO: Falta execute
@@ -26,8 +34,8 @@ public class FillChartCommand extends Command{
         } catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Debug: ", error);
-            logger.error("Error: ", error);
+            logger.debug("Debug: ", error.toString());
+            logger.error("Error: ", error.toString());
         }
     }
 }
