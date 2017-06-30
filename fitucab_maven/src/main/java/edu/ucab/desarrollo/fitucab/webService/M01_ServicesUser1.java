@@ -19,14 +19,9 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import static edu.ucab.desarrollo.fitucab.webService.Sql.getConInstance;
 
 /**
  * Clase de Servicios Web del Modulo 01
@@ -76,15 +71,36 @@ public class M01_ServicesUser1 {
                              @QueryParam("email") String email,
                              @QueryParam("sex") String sex,
                              @QueryParam("phone") String phone,
-                             @QueryParam("birthdate") java.sql.Date birthdate,
+                             @QueryParam("birthdate") String birthdate,
                              @QueryParam("weight") int weight,
                              @QueryParam("height") int height) {
 
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date;
+        java.sql.Date sqlDate = null;
+
+        try {
+            date = sdf.parse(birthdate);
+            sqlDate = new java.sql.Date(date.getTime());
+
+        }
+        catch (java.text.ParseException e){
+
+        }
+
 
         Entity createUserObject = EntityFactory.createUser(username, password, email,
-                                                 sex, phone, birthdate, weight, height);
+                                                 sex, phone, sqlDate, weight, height);
 
         logger.debug("Debug","EL USUARIO ES " + username);
+        System.out.print("Debug: "+"EL USUARIO ES " + username);
+        System.out.print("Debug: "+"EL PASS ES " + password);
+        System.out.print("Debug: "+"EL EMAIL ES " + email);
+        System.out.print("Debug: "+"EL Sex ES " + sex);
+        System.out.print("Debug: "+"EL PHONE ES " + phone);
+        System.out.print("Debug: "+"EL BIRTHDATE ES " + sqlDate);
+        System.out.print("Debug: "+"EL WHEIGHT ES " + weight);
+        System.out.print("Debug: "+"EL HEIGHT ES " + height);
 
 
         CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
