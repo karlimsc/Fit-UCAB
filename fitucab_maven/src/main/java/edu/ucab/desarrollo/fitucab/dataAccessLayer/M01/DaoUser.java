@@ -109,10 +109,8 @@ public class DaoUser  extends Dao implements IDaoUser {
             cstmt.setInt(7, _user.getWeight());
             cstmt.setInt(8, _user.getHeight());
             cstmt.execute();
-            System.out.printf("ENTREEEEEEEEEEE");
             //Retorna el user si no hubo inconveniente;
             return _user;
-
         }
         catch (SQLException ex) {
             Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
