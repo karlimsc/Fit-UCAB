@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer.M10;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Water;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
@@ -28,8 +29,11 @@ public class DaoWater extends Dao implements IDaoWater{
      * @return retorna el vaso de agua agregado
      * @throws SQLException
      */
-    public Entity addWater(Entity water) throws SQLException {
-        Water _water = new Water();
+
+    public Entity create(Entity water) throws  SQLException{
+        Water _water = (Water) EntityFactory.createWater();
+        Water waterEntrada = (Water) water;
+
         SimpleDateFormat _sdf3 = new SimpleDateFormat("hh:mm:ss");
         SimpleDateFormat _sdf2 = new SimpleDateFormat("MM/dd/yyyy");
         Date fecha = new Date();
@@ -37,8 +41,8 @@ public class DaoWater extends Dao implements IDaoWater{
         ResultSet rs;
         //variables de entrada
             String dia = _sdf2.format(fecha);
-            int glassType = 10;
-            int fkp = 50;
+            int glassType = waterEntrada.get_glasstype();
+                int fkp = waterEntrada.get_fkPerson();
         //fin variables de entrada
         try {
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
@@ -63,12 +67,14 @@ public class DaoWater extends Dao implements IDaoWater{
      * @return retorna la lista de vasos de agua
      */
     public ArrayList<Water> getList(Entity water) {
+
         ArrayList<Water> waterList = new ArrayList<Water>();
         ResultSet rs;
+        Water waterEntrada = (Water) water;
 
         //variables de entrada
-        String dia = "";
-        int fkp = 0;
+        String dia = waterEntrada.get_time();
+        int fkp = waterEntrada.get_fkPerson();
         //fin variables de entrada
 
         try {
@@ -146,6 +152,8 @@ public class DaoWater extends Dao implements IDaoWater{
     }
 
 
+
+
     /**
      * Metodo que agrega el historico de vasos de agua a una lista
      * @param rs
@@ -183,13 +191,6 @@ public class DaoWater extends Dao implements IDaoWater{
             // se guardan los datos en un arraylist de tipo water
         } //end while que recorre la consulta
         return water;
-    }
-
-
-
-
-    public Entity create(Entity e) throws AddException {
-        return null;
     }
 
     public Entity read(Entity e) {

@@ -183,7 +183,7 @@ public class EntityFactory
      * @see Water
      */
 
-    static public Water getWater(int fkp,String dia){
+    static public Water createWater(int fkp,String dia){
         return new Water(fkp,dia);
     }
 
@@ -194,8 +194,17 @@ public class EntityFactory
      * @see Water
      */
 
-    static public Water getFecha(int fkp){
+    static public Water createWater(int fkp){
         return new Water(fkp);
+    }
+
+
+    /**
+     * Metodo que instancia vacia
+     * @see Water
+     */
+    static public Water createWater(){
+        return new Water();
     }
     //Fin Modulo 10
 

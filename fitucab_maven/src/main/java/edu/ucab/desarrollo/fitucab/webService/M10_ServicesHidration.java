@@ -43,8 +43,8 @@ public class M10_ServicesHidration {
         //VALIDAR DATOS DE ENTRADA...
 
 
-        Entity createWaterObject = EntityFactory.createWater(glassType,fkp,dia);
-        AddWaterCommand cmd = CommandsFactory.instatiateAddWaterCmd(createWaterObject);
+        Entity WaterObject = EntityFactory.createWater(glassType,fkp,dia);
+        AddWaterCommand cmd = CommandsFactory.instatiateAddWaterCmd(WaterObject);
 
         try
         {
@@ -72,8 +72,8 @@ public class M10_ServicesHidration {
     @Produces("application/json")
     public String GetListDate( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
-        Entity getWaterObject = EntityFactory.getWater(fkp,dia);
-        GetListDateCommand  cmd = CommandsFactory.instatiateGetListDateCmd(getWaterObject);
+        Entity WaterObject = EntityFactory.createWater(fkp,dia);
+        GetListDateCommand  cmd = CommandsFactory.instatiateGetListDateCmd(WaterObject);
 
         try
         {
@@ -102,8 +102,8 @@ public class M10_ServicesHidration {
     public String GetWater( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
 
-        Entity getWaterObject = EntityFactory.getWater(fkp,dia);
-        GetWaterCommand cmd = CommandsFactory.instatiateGetWaterCmd(getWaterObject);
+        Entity WaterObject = EntityFactory.createWater(fkp,dia);
+        GetWaterCommand cmd = CommandsFactory.instatiateGetWaterCmd(WaterObject);
 
         try
         {
@@ -132,8 +132,8 @@ public class M10_ServicesHidration {
     public String GetFechaInt( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
 
-        Entity getWaterObject = EntityFactory.getWater(fkp,dia);
-        GetFechaIntCommand cmd = CommandsFactory.instatiateGetFechaIntCmd(getWaterObject);
+        Entity WaterObject = EntityFactory.createWater(fkp,dia);
+        GetFechaIntCommand cmd = CommandsFactory.instatiateGetFechaIntCmd(WaterObject);
 
         try
         {
@@ -162,8 +162,8 @@ public class M10_ServicesHidration {
     public String DeletLast( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
 
-        Entity getWaterObject = EntityFactory.getWater(fkp,dia);
-        DeletLastCommand cmd = CommandsFactory.instatiateDeletLastCmd(getWaterObject);
+        Entity WaterObject = EntityFactory.createWater(fkp,dia);
+        DeletLastCommand cmd = CommandsFactory.instatiateDeletLastCmd(WaterObject);
 
         try
         {
@@ -191,8 +191,8 @@ public class M10_ServicesHidration {
     public String DeletWaterTm( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
 
-        Entity getWaterObject = EntityFactory.getWater(fkp,dia);
-        DeletWaterTmCommand cmd = CommandsFactory.instatiateDeletWaterTmCmd(getWaterObject);
+        Entity WaterObject = EntityFactory.createWater(fkp,dia);
+        DeletWaterTmCommand cmd = CommandsFactory.instatiateDeletWaterTmCmd(WaterObject);
 
         try
         {
@@ -219,8 +219,8 @@ public class M10_ServicesHidration {
     @Produces({"application/json"})
     public String GetFecha(@QueryParam("fkp") int fkp) {
 
-        Entity getFechaObject = EntityFactory.getFecha(fkp);
-        GetFechaCommand cmd = CommandsFactory.instatiateGetFechaCmd(getFechaObject);
+        Entity WaterObject = EntityFactory.createWater(fkp);
+        GetFechaCommand cmd = CommandsFactory.instatiateGetFechaCmd(WaterObject);
 
         try
         {

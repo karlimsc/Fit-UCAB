@@ -3,6 +3,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ import java.util.List;
  */
 public interface IDao
 {
-    public Entity create(Entity e) throws AddException;
+    public Entity create(Entity e) throws AddException, SQLException;
 
     public Entity read(Entity e);
 
