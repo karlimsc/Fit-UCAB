@@ -102,7 +102,6 @@ public class M01_ServicesUser1 {
         Entity createUserObject = EntityFactory.createUser(username, password, email,
                                                  sex, phone, sqlDate, weight, height);
 
-        logger.debug("Debug","EL USUARIO ES " + username);
         System.out.print("Debug: "+"EL USUARIO ES " + username);
         System.out.print("Debug: "+"EL PASS ES " + password);
         System.out.print("Debug: "+"EL EMAIL ES " + email);

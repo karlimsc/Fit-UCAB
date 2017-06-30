@@ -5,12 +5,16 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Registry;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.webService.Sql;
+import jdk.management.resource.internal.inst.StaticInstrumentation;
 import jdk.nashorn.internal.runtime.regexp.JoniRegExp;
 import org.postgresql.core.SqlCommandType;
+import org.slf4j.LoggerFactory;
 import sun.security.smartcardio.SunPCSC;
 
 import javax.ws.rs.QueryParam;
@@ -33,9 +37,10 @@ public class DaoUser  extends Dao implements IDaoUser {
     Entity _user;
     Gson gson = new Gson();
     String _userLogin, _password;
+    private static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
     public DaoUser(Entity _user) {
-    this._user= _user;
+         this._user= _user;
     }
 
     public DaoUser(String _userLogin, String _password) {
@@ -87,7 +92,7 @@ public class DaoUser  extends Dao implements IDaoUser {
 
     public Entity create(Entity e) throws Exception {
 
-        //TODO: AQUI SE DEVUELVE A LA CAPA DE WEB SERVICES, ABRIA QUE VER SI REALMENTE PUEDE SER ASI
+        //TODO: AQUI SE DEVUELVE A LA CAPA DE WEB SERVICES, HABRIA QUE VER SI REALMENTE PUEDE SER ASI
          _conn = new Sql();
         _bdCon = _conn.getConn();
         _sc = new Security();
@@ -113,8 +118,19 @@ public class DaoUser  extends Dao implements IDaoUser {
             return _user;
         }
         catch (SQLException ex) {
-            Logger.getLogger(DaoUser.class.getName()).log(Level.SEVERE, null, ex);
+            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Debug: ", error.toString());
+            logger.error("Error: ", error.toString());
+
             //Retorna null por el error
+            return null;
+        }
+        catch (Exception ex){
+            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Debug: ", error.toString());
+            logger.error("Error: ", error.toString());
             return null;
         }
 
