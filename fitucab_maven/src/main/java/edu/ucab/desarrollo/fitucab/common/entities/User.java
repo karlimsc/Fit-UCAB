@@ -1,8 +1,10 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.sql.Date;
 
+@XmlRootElement
 public class User extends Entity {
 
     private int    _id;

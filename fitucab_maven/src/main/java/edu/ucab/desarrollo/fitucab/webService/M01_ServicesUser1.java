@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
@@ -83,46 +84,57 @@ public class M01_ServicesUser1 {
                              @QueryParam("phone") String phone,
                              @QueryParam("birthdate") String birthdate,
                              @QueryParam("weight") int weight,
-                             @QueryParam("height") int height) {
+                             @QueryParam("height") int height) throws NullPointerException,
+                                                                      java.text.ParseException {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date date;
         java.sql.Date sqlDate = null;
 
         try {
+
             date = sdf.parse(birthdate);
             sqlDate = new java.sql.Date(date.getTime());
 
         }
         catch (java.text.ParseException e){
-
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error);
         }
-
-
-        Entity createUserObject = EntityFactory.createUser(username, password, email,
-                                                 sex, phone, sqlDate, weight, height);
-
-        System.out.print("Debug: "+"EL USUARIO ES " + username);
-        System.out.print("Debug: "+"EL PASS ES " + password);
-        System.out.print("Debug: "+"EL EMAIL ES " + email);
-        System.out.print("Debug: "+"EL Sex ES " + sex);
-        System.out.print("Debug: "+"EL PHONE ES " + phone);
-        System.out.print("Debug: "+"EL BIRTHDATE ES " + sqlDate);
-        System.out.print("Debug: "+"EL WHEIGHT ES " + weight);
-        System.out.print("Debug: "+"EL HEIGHT ES " + height);
-
-
-        CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
 
         try
         {
+            Entity createUserObject = EntityFactory.createUser(username, password, email,
+                    sex, phone, sqlDate, weight, height);
+
+            User _returnUser = (User) createUserObject;
+
+            CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
+            cmd.execute();
+
             //TODO: PENDIENTE - EL RETURN ES UN STRING, HABRA QUE VER EN LA APLICACION LO QUE NECESITA REALMENTE
-            _response = cmd.run();
-            User us = (User) _response;
-            return gson.toJson( createUserObject );
+
+            if (cmd.get_response()) {
+                logger.debug("Debug: ","Boolean de CommandCreateUser TRUE");
+                System.out.print("Debug Boolean de CommandCreateUser TRUE");
+                System.out.print("Debug Boolean de CommandCreateUser TRUE " + _returnUser.getUser());
+                return gson.toJson(_returnUser);
+            }
+            else
+                return gson.toJson(null);
+
+        }catch (NullPointerException e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            System.out.print("NULL POINTER");
+            logger.error("Error: ", error);
+            return gson.toJson(null);
         }
         catch ( Exception e )
-        {
+        { MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error);
             return gson.toJson( null );
         }
 
