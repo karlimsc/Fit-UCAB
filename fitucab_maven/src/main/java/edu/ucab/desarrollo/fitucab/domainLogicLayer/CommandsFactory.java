@@ -28,8 +28,8 @@ public class CommandsFactory {
 
     // Comandos M06
 
-    static public CreateTrainingCommand instanciateCreateTrainingCmd(Entity training, int userId){
-        return new CreateTrainingCommand(training, userId);
+    static public CreateTrainingCommand instanciateCreateTrainingCmd(Entity training){
+        return new CreateTrainingCommand(training);
 
     }
 

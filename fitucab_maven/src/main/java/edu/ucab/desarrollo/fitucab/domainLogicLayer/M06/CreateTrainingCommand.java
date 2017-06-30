@@ -8,13 +8,13 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 public class CreateTrainingCommand extends Command {
 
     Entity _newTraining;
-    int _userId;
+
     private Entity result;
 
-    public CreateTrainingCommand(Entity newTraining, int userId){
+    public CreateTrainingCommand(Entity newTraining){
 
         this._newTraining = newTraining;
-        this._userId = userId;
+
     }
     public Entity getResult()
     {

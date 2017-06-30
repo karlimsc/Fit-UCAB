@@ -47,19 +47,7 @@ public class EntityFactory
 
     }
 
-    /**
-     * Fabrica de un entrenamiento con todos sus atributos
-     * @param id
-     * @param trainingName
-     * @param trainingPeriod
-     * @param listActivities
-     * @return un nuevo entrenamiento
-     */
-    static public Training createTraining(int id, String trainingName, int trainingPeriod,
-                                          LinkedList<Activity> listActivities){
 
-        return new Training(id,trainingName, trainingPeriod , listActivities);
-    }
 
     /**
      * Fabrica de un entrenamiento con id y nombre
@@ -98,10 +86,13 @@ public class EntityFactory
     /***
      *  Metodo que intancia la clase para crear el objeto vacio
      * @return el entrenamiento
+     * @param userId
+     * @param name
+     * @param activities
      */
-    static public Training createTraining(){
+    static public Training createTraining(int userId, String name, LinkedList activities){
 
-        return new Training();
+        return new Training(userId,name,activities);
     }
 
     /**

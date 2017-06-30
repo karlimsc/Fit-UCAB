@@ -19,17 +19,18 @@ import java.util.LinkedList;
 public class DaoTraining extends Dao implements IDaoTraining
 {
 
-
+        Entity _entidad;
     public DaoTraining( Entity entidad )
-    {
 
+    {
+            this._entidad = entidad;
     }
 
     public Entity create(Entity e) throws AddException {
 
 
         Training t = (Training) e;
-        String query ="";
+        String query ="SELECT M06_CREATETRAINING('"+t.get_userId()+"','"+t.getTrainingName()+"')";
 
         try {
             Connection conn = Dao.getBdConnect();
@@ -39,19 +40,9 @@ public class DaoTraining extends Dao implements IDaoTraining
 
 
             while (rs.next()) {
-                String username = rs.getString("usuario");
-                int id = rs.getInt("id");
-                String password = rs.getString("pwd");
-                String sexo = rs.getString("sex");
-                String phone = rs.getString("phone");
-                String email = rs.getString("mail");
-                Date birtdate = rs.getDate("birthdate");
-                // e.set_Id(query);
-
-               // user = new User(id, username, password, email, sexo, phone, birtdate);
-
+                int Id = rs.getInt("id");
+                e.set_id(Id);
             }
-
             return e;
 
         }
@@ -87,7 +78,7 @@ public class DaoTraining extends Dao implements IDaoTraining
     /**
      * Lista todos los entrenamientos
      *
-     * @param entidad
+     *
      *
      * @return lista de entrenamientos
      */
@@ -100,7 +91,7 @@ public class DaoTraining extends Dao implements IDaoTraining
     /**
      * Metodo para mostrar el entrenamiento a detalle
      *
-     * @param entidad
+     *
      *
      * @return la entidad entrenamiento
      *

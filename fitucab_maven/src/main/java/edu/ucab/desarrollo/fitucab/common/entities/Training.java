@@ -11,7 +11,8 @@ public class Training extends Entity {
 
     private String _trainingName;
     private int _trainingPeriod;
-    private ArrayList<Entity> _activitylist;
+    private LinkedList<Entity> _activitylist;
+    private int _userId;
 
     /**
      * Constructor vacio
@@ -22,13 +23,15 @@ public class Training extends Entity {
      * Constructor con id
      * @param id identificador
      * @param trainingName nombre del entrenamiento
-     * @param trainingPeriod hora(s) que puede durar la actividad que incluye en el entrenamiento
+     *
      * @param activitylist lista de actividades que tiene el entrenamiento
      */
-    public Training(int id, String trainingName, int trainingPeriod, LinkedList activitylist) {
-        set_id( id );
+    public Training(int id, String trainingName, LinkedList activitylist) {
+        //set_id( id );
+        this._activitylist = activitylist;
+        this._userId = id;
         this._trainingName = trainingName;
-        this._trainingPeriod = trainingPeriod;
+
     }
 
     /**
@@ -111,13 +114,21 @@ public class Training extends Entity {
         this._trainingPeriod = trainingPeriod;
     }
 
-    public ArrayList<Entity> get_activitylist()
+    public LinkedList<Entity> get_activitylist()
     {
         return _activitylist;
     }
 
-    public void set_activitylist(ArrayList<Entity> _activitylist)
+    public void set_activitylist(LinkedList<Entity> _activitylist)
     {
         this._activitylist = _activitylist;
+    }
+
+    public int get_userId() {
+        return _userId;
+    }
+
+    public void set_userId(int _userId) {
+        this._userId = _userId;
     }
 }
