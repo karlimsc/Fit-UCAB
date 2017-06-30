@@ -93,11 +93,11 @@ public class DaoWater extends Dao implements IDaoWater{
 
     /**
      * Metodo que devuelve un agua
-     * @param entity
+     * @param water
      * @return Retorna un agua
      */
-    public Water getWater(Entity entity){
-        Water water = new Water();
+    public Water getWater(Entity water) throws SQLException{
+        Water _water = (Water) EntityFactory.createWater();
         ResultSet rs;
         Water waterEntrada = (Water) water;
         //variables de entrada
@@ -108,12 +108,12 @@ public class DaoWater extends Dao implements IDaoWater{
         try {
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
             rs = queryExecute("Select * from M10_GetWaterGlass("+fkp+" ,'"+dia+"')");
-            water = getWaterItem(rs);
+            _water = getWaterItem(rs);
         } catch (Exception e) {
             if (e instanceof SQLException)
-                water.set_error("Error en la conexion a base de datos");
+                _water.set_error("Error en la conexion a base de datos");
         } finally {
-            return water;
+            return _water;
         }
 
     }
