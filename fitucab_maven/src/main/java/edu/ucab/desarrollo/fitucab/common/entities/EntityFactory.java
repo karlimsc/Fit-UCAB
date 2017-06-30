@@ -204,6 +204,8 @@ public class EntityFactory
     static public Entity createChallenge(int score){
         return new Challenge(score);
     }
+
+
     //FIN MODULO 9
 
 }

@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M09;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import org.slf4j.LoggerFactory;
@@ -11,11 +12,19 @@ import org.slf4j.LoggerFactory;
  * @version 2.0
  */
 public class ScoreCommand extends Command{
-    final static org.slf4j.Logger logger = LoggerFactory.getLogger(ScoreCommand.class);
-    private Entity _score;
 
-    public ScoreCommand(Entity score) {
-        _score = score;
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(ScoreCommand.class);
+
+    private Entity _score;
+    private int _userId;
+
+    public ScoreCommand(int id) {
+        _score = EntityFactory.createChallenge();
+        _userId = id;
+    }
+
+    public Entity getChallenge() {
+        return _score;
     }
 
     //TODO: Falta execute
@@ -26,8 +35,8 @@ public class ScoreCommand extends Command{
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Debug: ", error);
-            logger.error("Error: ", error);
+            logger.debug("Debug: ", error.toString());
+            logger.error("Error: ", error.toString());
         }
     }
 }

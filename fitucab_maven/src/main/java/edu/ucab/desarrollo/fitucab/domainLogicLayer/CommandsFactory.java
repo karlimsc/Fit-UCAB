@@ -90,20 +90,20 @@ public class CommandsFactory {
     }
 
     //Modulo 9
-  /*  static public AchieveChallengeCommand instanciateAchieveChallengeCmd(){
-        return new AchieveChallengeCommand();
-    }
-*/
-    static public ScoreCommand instanciateScoreCmd(Entity score){
-        return new ScoreCommand(score);
+    static public AchieveChallengeCommand instanciateAchieveChallengeCmd(int id){
+        return new AchieveChallengeCommand(id);
     }
 
-    static public FillChartCommand instanciateFillChartCmd(Entity challengeAchieve){
-        return new FillChartCommand(challengeAchieve);
+    static public ScoreCommand instanciateScoreCmd(int id){
+        return new ScoreCommand(id);
     }
 
-    static public LevelUpCommand instanciateLevelUpCmd(Entity level){
-        return new LevelUpCommand(level);
+    static public FillChartCommand instanciateFillChartCmd(int id){
+        return new FillChartCommand(id);
+    }
+
+    static public LevelUpCommand instanciateLevelUpCmd(int id){
+        return new LevelUpCommand(id);
     }
 
     static  public List<Entity> getChallenges(){return new ArrayList<Entity>();}
