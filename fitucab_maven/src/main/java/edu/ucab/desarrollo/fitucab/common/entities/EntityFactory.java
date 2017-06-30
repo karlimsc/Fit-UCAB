@@ -216,4 +216,5 @@ public class EntityFactory
     }
     //Fin Modulo 10
 
+    static  public Food getUser(int username) {return new Food (username);}
 }

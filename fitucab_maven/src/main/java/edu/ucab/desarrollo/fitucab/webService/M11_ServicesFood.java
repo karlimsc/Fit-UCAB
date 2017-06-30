@@ -2,10 +2,16 @@ package edu.ucab.desarrollo.fitucab.webService;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ParameterNullException;
 import edu.ucab.desarrollo.fitucab.common.Validations.ValidationWS;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Food;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodPerCommand;
 
 
 import javax.ws.rs.*;
@@ -43,8 +49,24 @@ public class M11_ServicesFood {
     public String getFood(@QueryParam("username") String username) {
 
 
+        Entity EntityFood = EntityFactory.getUser(Integer.parseInt(username));
+        getFoodPerCommand cmd = CommandsFactory.getFoodPerCmd(EntityFood);
 
-        return"";
+        try {
+            cmd.execute();
+
+        } catch (ListAllException e) {
+            e.printStackTrace();
+        } catch (ListByIdException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return cmd.Respuesta;
     }
 
     /**

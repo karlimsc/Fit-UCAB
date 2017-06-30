@@ -5,7 +5,6 @@ import edu.ucab.desarrollo.fitucab.common.Exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.Food;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -23,7 +22,7 @@ public class DaoFood implements IDaoFood {
     private String response;
     private ArrayList<Food> jsonArray;
 
-    public DaoFood(Entity entity) {    }
+    public DaoFood() {  }
 
     @Override
     public void Create(Entity e) {
@@ -48,7 +47,7 @@ public class DaoFood implements IDaoFood {
 
 
     @Override
-    public ArrayList<Food> getFoodPer(Entity e) throws SQLException {
+    public String getFoodPer(Entity e) throws SQLException {
 
         String query = "SELECT * FROM m11_get_alimentos_person(?)";
         jsonArray = new ArrayList<>();
@@ -70,6 +69,6 @@ public class DaoFood implements IDaoFood {
 
 
 
-        return  jsonArray;
+        return  gson.toJson(jsonArray);
     }
 }

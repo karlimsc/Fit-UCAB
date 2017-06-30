@@ -4,6 +4,7 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 
+import java.sql.SQLException;
 import java.util.List;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
@@ -19,7 +20,7 @@ public abstract class Command
      * @throws ListAllException excepcion para listar todos
      * @throws ListByIdException excepcion para listar por id
      */
-    public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException;
+    public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException;
 
     public List<Entity> getChallenges(){
         return null;

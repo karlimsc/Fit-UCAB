@@ -4,6 +4,8 @@ import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
+import java.sql.SQLException;
+
 /**
  * Actividad que juega el papel de invocador de los comandos.
  * @author David Garcia, Juan Mendez, Mario Salazar
@@ -25,7 +27,7 @@ public class Active extends Entity {
      * @throws ListByIdException
      * @throws ListAllException
      */
-    public void exec() throws ListByIdException, ListAllException, NoSuchMethodException {
+    public void exec() throws ListByIdException, ListAllException, NoSuchMethodException, SQLException {
         _command.execute();
     }
 }

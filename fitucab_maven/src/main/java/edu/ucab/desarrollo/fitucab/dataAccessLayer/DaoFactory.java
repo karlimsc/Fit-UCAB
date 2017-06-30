@@ -32,7 +32,7 @@ public class DaoFactory
 
     //Modulo11
 
-    public static DaoFood iniciarDaoFood(Entity entity){return new DaoFood(entity);}
+    public static DaoFood iniciarDaoFood(){return new DaoFood();}
 
 
     }

@@ -22,6 +22,10 @@ public class Food extends Entity{
         this._foodPersonalized = _foodPersonalized;
     }
 
+    public Food(int id) {
+        this._id = id;
+    }
+
     public int get_id() {
         return _id;
     }
