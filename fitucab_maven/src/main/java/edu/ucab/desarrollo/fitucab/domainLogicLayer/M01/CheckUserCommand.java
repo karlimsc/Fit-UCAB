@@ -29,27 +29,25 @@ public class CheckUserCommand extends Command{
         this._userS = userS;
     }
 
+    public Entity getUserLogin(){
+        return _userReturn;
+    }
+
     public CheckUserCommand(Entity user){
         this._user = user;
     }
 
     public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception {
-
-    }
-
-    public Entity run() throws NoSuchMethodException, Exception {
         try{
             //instanciacion del dao
             Dao LoginUserDao = DaoFactory.instanciateDaoUser(_user);
-            _userReturn = LoginUserDao.create(_user);
-            // Si el usuario que retorna es null es que hubo un error en la insercion
-            return _userReturn;
+            _userReturn = LoginUserDao.read(_user);
+           
 
         }
         catch(Exception e){
-            //lanzar exception
-           // logger.error("Error", "La excepción es: " + e.getMessage());
-            return null;
+
         }
     }
+
 }

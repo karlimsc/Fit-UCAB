@@ -52,7 +52,8 @@ public class M01_ServicesUser1 {
         Entity userObject = EntityFactory.createUser(username,password);
         CheckUserCommand cmd = CommandsFactory.instanciateCheckUserCmd(userObject);
         try {
-            _response = cmd.run();
+            cmd.execute();
+
             return gson.toJson(_response);
         }
         catch (Exception e){
@@ -105,13 +106,16 @@ public class M01_ServicesUser1 {
 
         try
         {
-            Entity createUserObject = EntityFactory.createUser(username, password, email,
+            Entity createUserObject = EntityFactory.createUser(0,username, password, email,
                     sex, phone, sqlDate, weight, height);
 
             User _returnUser = (User) createUserObject;
 
             CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
             cmd.execute();
+
+            //Obtiene el usuario registrado
+            User rUser = (User) cmd.getUserRegistry();
 
             //TODO: PENDIENTE - EL RETURN ES UN STRING, HABRA QUE VER EN LA APLICACION LO QUE NECESITA REALMENTE
 
@@ -120,6 +124,7 @@ public class M01_ServicesUser1 {
                 System.out.print("Debug Boolean de CommandCreateUser TRUE");
                 System.out.print("Debug Boolean de CommandCreateUser TRUE " + _returnUser.getUser());
                 return gson.toJson(_returnUser);
+                //return gson.toJson(rUser);
             }
             else
                 return gson.toJson(null);

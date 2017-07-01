@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
@@ -16,6 +17,7 @@ public class CreateUserCommand extends Command {
 
     Entity _user;
     Boolean _response;
+    static Entity _userResponse;
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
 
@@ -28,6 +30,11 @@ public class CreateUserCommand extends Command {
         this._response = false;
     }
 
+    public Entity getUserRegistry(Entity e){
+        e = _userResponse;
+        return e ;
+    }
+
 
     @Override
     public void execute()  throws NullPointerException, InstantiationException{
@@ -38,7 +45,8 @@ public class CreateUserCommand extends Command {
             DaoUser createUserDao;
             createUserDao = (DaoUser)_dao;
 
-            createUserDao.create(_user);
+            _userResponse =  createUserDao.create(_user);
+
             this._response=true;
 
             logger.debug("Debug: ", "Realizó el Try en CreateUserCommand");

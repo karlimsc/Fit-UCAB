@@ -1,8 +1,7 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer.M01;
 
 import com.google.gson.Gson;
-import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
-import edu.ucab.desarrollo.fitucab.common.entities.Registry;
+
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
@@ -12,18 +11,8 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.webService.Sql;
-import jdk.management.resource.internal.inst.StaticInstrumentation;
-import jdk.nashorn.internal.runtime.regexp.JoniRegExp;
-import org.postgresql.core.SqlCommandType;
 import org.slf4j.LoggerFactory;
-import sun.security.smartcardio.SunPCSC;
-
-import javax.ws.rs.QueryParam;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import static edu.ucab.desarrollo.fitucab.webService.Sql.getConInstance;
 
 /**
  * Created by karo on 24/06/17.
@@ -71,8 +60,10 @@ public class DaoUser  extends Dao implements IDaoUser {
             cstmt = _bdCon.prepareCall("{ call M01_INICIARSESION(?,?)}");
             cstmt.setString(1, _user.getUser());
             cstmt.setString(2, password);
-
+            cstmt.registerOutParameter(1, Types.INTEGER);
             cstmt.execute();
+            final ResultSet rs = cstmt.getResultSet();
+            _user.setId(cstmt.getInt(1));
             return _user;
 
         }
@@ -104,7 +95,7 @@ public class DaoUser  extends Dao implements IDaoUser {
         User _user = (User)e;
 
         String password= _sc.encryptPassword(_user.getPassword());
-        CallableStatement cstmt;
+        CallableStatement cstmt,cs;
 
 
         try {
@@ -118,7 +109,15 @@ public class DaoUser  extends Dao implements IDaoUser {
             cstmt.setInt(7, _user.getWeight());
             cstmt.setInt(8, _user.getHeight());
             cstmt.execute();
-            //Retorna el user si no hubo inconveniente;
+
+            //Metodo que busca el ultimo usuario registrado y toma la id de este
+            cs = _bdCon.prepareCall("{ call M01_LASTUSER(?,?,?,?,?,?,?,?)}");
+            //Metodo para asignar nombre al resultado, ojo tiene que ser en orden
+            cs.registerOutParameter("id", Types.INTEGER);;
+            cs.execute();
+
+            int id = cs.getInt("id");
+            _user.setId(id);
             return _user;
         }
         catch (SQLException ex) {

@@ -61,9 +61,9 @@ public class User extends Entity {
 
     };
 
-    public User(String _username, String _password, String _email, String _sex, String _phone, Date _birthdate,
+    public User(int id,String _username, String _password, String _email, String _sex, String _phone, Date _birthdate,
                 int _weight, int _height) {
-
+        super.set_id(id);
         this._username = _username;
         this._password = _password;
         this._email = _email;

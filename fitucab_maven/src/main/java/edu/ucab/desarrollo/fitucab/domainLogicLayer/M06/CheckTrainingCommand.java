@@ -30,9 +30,6 @@ public class CheckTrainingCommand extends Command {
 
     }
 
-    public Entity run() throws NoSuchMethodException, Exception {
-        return null;
-    }
 
 
 }

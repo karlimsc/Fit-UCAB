@@ -25,10 +25,10 @@ public class EntityFactory
      *   @param  height
      */
 
-    static public Entity createUser(String username, String password, String email, String sex, String phone,
+    static public Entity createUser(int id, String username, String password, String email, String sex, String phone,
                                     Date bday, int weight, int height){
 
-        return new User( username, password , email , sex , phone , (java.sql.Date) bday, weight , height );
+        return new User( id,username, password , email , sex , phone , (java.sql.Date) bday, weight , height );
     }
 
     static public Entity createUser(){
@@ -206,6 +206,7 @@ public class EntityFactory
     }
 */
 
+    static  public List<Entity> getChallenges(){return new ArrayList<Entity>();}
     //FIN MODULO 9
 
 }
