@@ -54,7 +54,6 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
 
     }
 
-
     @Override
     public void onSwap(String fragmentName, Bundle bundle) {
         Fragment fragmentToSwap = null;
