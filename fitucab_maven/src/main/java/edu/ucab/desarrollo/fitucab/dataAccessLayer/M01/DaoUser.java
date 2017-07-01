@@ -41,9 +41,10 @@ public class DaoUser  extends Dao implements IDaoUser {
     //String de conexion funciones
     String _sqlInicioSesion="{?=call M01_INICIARSESION(?,?)}";
     String _sqlLastUser="{?=call M01_LASTUSER()}";
+    String _sqlRegistrarUsuario="{?=call M01_REGISTRAR(?,?,?,?,?,?,?,?)}";
 
     //String de conexion procedimientos
-    String _sqlRegistrarUsuario="{ call M01_REGISTRAR(?,?,?,?,?,?,?,?)}";
+    String _sqlRegistrarUsuario1="{ call M01_REGISTRAR(?,?,?,?,?,?,?,?)}";
 
     Entity _user;
     Gson gson = new Gson();
@@ -142,23 +143,23 @@ public class DaoUser  extends Dao implements IDaoUser {
 
         try {
             cstmt = _bdCon.prepareCall(_sqlRegistrarUsuario.toString());
-            cstmt.setString(1, _user.getUser());
-            cstmt.setString(2, password);
-            cstmt.setString(3, _user.getEmail());
-            cstmt.setString(4, _user.getSex());
-            cstmt.setString(5, _user.getPhone());
-            cstmt.setDate(6, _user.getBirthdate());
-            cstmt.setInt(7, _user.getWeight());
-            cstmt.setInt(8, _user.getHeight());
+            //Parametro de salida
+            cstmt.registerOutParameter(1, Types.INTEGER);
+
+            //Parametros de entrada
+            cstmt.setString(2, _user.getUser());
+            cstmt.setString(3, password);
+            cstmt.setString(4, _user.getEmail());
+            cstmt.setString(5, _user.getSex());
+            cstmt.setString(6, _user.getPhone());
+            cstmt.setDate(7, _user.getBirthdate());
+            cstmt.setInt(8, _user.getWeight());
+            cstmt.setInt(9, _user.getHeight());
             cstmt.execute();
 
-            //Metodo que busca el ultimo usuario registrado y toma la id de este
-            cs = _bdCon.prepareCall(_sqlLastUser.toString());
-            cs.registerOutParameter(1, Types.INTEGER);
-            cs.execute();
+            int id = cstmt.getInt(1);
 
-            int id = cs.getInt(1);
-            System.out.printf(String.valueOf(id));
+
             _user.setId(id);
 
             return _user;
