@@ -78,7 +78,7 @@ public class DaoGaming extends Dao{
             ResultSet rs = st.executeQuery("select * from m09_getachieveanduanchievechallengebyid("+id+")");
             Entity achieve = EntityFactory.createChallenge();
             while (rs.next()){
-                achieve = EntityFactory.createChallenge(rs.getLong("achieve"), rs.getLong("unachieve"));
+      //          achieve = EntityFactory.createChallenge(rs.getLong("achieve"), rs.getLong("unachieve"));
             }
             return achieve;
         } catch (SQLException e) {
@@ -99,7 +99,7 @@ public class DaoGaming extends Dao{
             ResultSet rs = st.executeQuery("select m09_getscorechallengebyid("+id+")");
             Entity level = EntityFactory.createChallenge();
             while (rs.next()){
-                level = EntityFactory.createChallenge(rs.getInt("m09_getscorechallengebyid"));
+             //   level = EntityFactory.createChallenge(rs.getInt("m09_getscorechallengebyid"));
             }
             return level;
         } catch (SQLException e) {
@@ -120,7 +120,7 @@ public class DaoGaming extends Dao{
             ResultSet rs = st.executeQuery("select m09_getscorechallengebyid("+id+")");
             Entity level = EntityFactory.createChallenge();
             while (rs.next()){
-                level = EntityFactory.createChallenge(rs.getInt("m09_getscorechallengebyid"));
+             //   level = EntityFactory.createChallenge(rs.getInt("m09_getscorechallengebyid"));
             }
             return level;
         } catch (SQLException e) {
