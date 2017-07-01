@@ -1,41 +1,50 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
  * Created by jaorr on 22/05/17.
  */
 public class Food extends Entity{
-    private int _id;
+
+    private int _iD;
+
     private String _foodName;
+
     private String _foodWeight;
+
     private String _foodCalorie;
+
     private Boolean _foodPersonalized;
 
     public Food() {
     }
 
+
+
     public Food(int id, String foodName, String foodWeight, String foodCalorie, Boolean _foodPersonalized) {
-        this._id = id;
+        this._iD = id;
         this._foodName = foodName;
         this._foodWeight = foodWeight;
         this._foodCalorie = foodCalorie;
         this._foodPersonalized = _foodPersonalized;
     }
 
-    public Food(int id) {
-        this._id = id;
+    public Food(String idname) {
+        _foodName = idname;
     }
 
-    public Food (int id , String foodCalorie){
-        _id =id ; _foodCalorie=foodCalorie;
+    public Food (String id , String foodCalorie){
+        _foodName =id ; _foodCalorie=foodCalorie;
     }
 
     public int get_id() {
-        return _id;
+        return _iD;
     }
 
     public void set_id(int id) {
-        this._id = id;
+        this._iD = id;
     }
 
     public String get_foodName() {

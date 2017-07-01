@@ -11,6 +11,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Food;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodAutoCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodPerCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodallCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getSuggestionCommand;
@@ -52,7 +53,7 @@ public class M11_ServicesFood {
     public String getFood(@QueryParam("username") String username) {
 
 
-        Entity EntityFood = EntityFactory.getUser(Integer.parseInt(username));
+        Entity EntityFood = EntityFactory.getUser(username);
         getFoodPerCommand cmd = CommandsFactory.getFoodPerCmd(EntityFood);
 
         try {
@@ -83,7 +84,7 @@ public class M11_ServicesFood {
     @Produces("application/json")
     public String getAllFood(@QueryParam("username") String username){
 
-        Entity EntityFood = EntityFactory.getUser(Integer.parseInt(username));
+        Entity EntityFood = EntityFactory.getUser(username);
         getFoodallCommand cmd = CommandsFactory.getFoodallCmd(EntityFood);
 
         try {
@@ -118,7 +119,7 @@ public class M11_ServicesFood {
     public String getSuggestion(@QueryParam("username") String username,
                                 @QueryParam("calorie") int calorie) {
 
-        Entity EntityFood = EntityFactory.getUserCal(Integer.parseInt(username), String.valueOf(calorie));
+        Entity EntityFood = EntityFactory.getUserCal(username, String.valueOf(calorie));
         getSuggestionCommand cmd = CommandsFactory.getSuggestionCmd(EntityFood);
 
         try {
@@ -149,7 +150,26 @@ public class M11_ServicesFood {
     @Path("/getFoodAuto")
     @Produces("application/json")
     public String getFoodAuto(@QueryParam("username") String username){
-      return"";
+
+        Entity EntityFood = EntityFactory.getUser(username);
+        getFoodAutoCommand cmd = CommandsFactory.getFoodAutoCmd(EntityFood);
+
+        try {
+            cmd.execute();
+            respuesta = cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta=e.getMessage();
+        } catch (ListByIdException e) {
+            respuesta=e.getMessage();
+        } catch (NoSuchMethodException e) {
+            respuesta=e.getMessage();
+        } catch (SQLException e) {
+            respuesta=e.getMessage();
+        }
+
+
+        return respuesta;
     }
 
     /**

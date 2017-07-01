@@ -131,4 +131,45 @@ public class DaoFood implements IDaoFood {
     }
 
 
+
+    @Override
+    public String getFoodAuto(Entity e) throws SQLException {
+
+        Food food = (Food) e;
+        String query = "select * from m11_get_todos_alimentos_autocompletar(?)";
+        jsonArray = new ArrayList<>();
+        username  = String.valueOf(food.get_id());
+
+        PreparedStatement st = conn.prepareStatement(query);
+        st.setString(1, username);
+        ResultSet rs = st.executeQuery();
+
+        while(rs.next()) {
+  /*
+            Food aux = EntityFactory.CreateFood();
+            aux.set_id(rs.getInt("id_alimento"));
+            aux.set_foodName(rs.getString("nombre_comida"));
+            aux.set_foodCalorie(rs.getString("calorias_comida"));
+            aux.set_foodWeight(rs.getString("peso_comida"));
+            jsonArray.add(aux);
+            */
+
+            jsonArray.add(new Food());
+
+            jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
+            jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
+            // revisar string
+            jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
+            jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
+
+
+        }
+            response = gson.toJson(jsonArray);
+
+
+
+        return response;
+    }
+
+
 }
