@@ -47,7 +47,9 @@ public class DaoUser  extends Dao implements IDaoUser {
     String _sqlRegistrarUsuario1="{ call M01_REGISTRAR(?,?,?,?,?,?,?,?)}";
 
     Entity _user;
+
     Gson gson = new Gson();
+
     private static org.slf4j.Logger logger = LoggerFactory
                                              .getLogger(DaoUser.class);
 
@@ -198,11 +200,15 @@ public class DaoUser  extends Dao implements IDaoUser {
          * @return por ahora retorna un String
          */
         @Override
-        public String testEmail (String email){
+        public String testEmail (String email) throws SQLException {
+            User user = null;
+            Boolean validaEmail = false;
+            String usernameResult = "";
+            String passwordResult = "";
 
            // String query = "SELECT * FROM M01_RECUPERARPWD('" + email + "')";
 
-            try {
+            try { //TODO: RECUERDA COLOCAR EN REGISTRY
                 //Establecemos el usuario que es el correo que cree para hacer el recuperar
                 final String username = "fitucabprueba2@gmail.com";
                 //la clave
@@ -224,24 +230,13 @@ public class DaoUser  extends Dao implements IDaoUser {
                 CallableStatement cstmt;
                 cstmt = _bdCon.prepareCall("{ call M01_RECUPERARPWD(?)}");
                 cstmt.setString(1,email);
-                cstmt.registerOutParameter("usuario", Types.VARCHAR);
-                cstmt.registerOutParameter("password", Types.VARCHAR);
-                ResultSet rs = cstmt.executeQuery();
-
-               // ResultSet rs = st.executeQuery(query);
-
-                User user = null;
-                Boolean validaEmail = false;
-                String usernameResult = "";
-                String passwordResult = "";
-
-                while (rs.next()) {
-                    validaEmail = true;
-                    usernameResult = rs.getString("usuario");
-                    passwordResult = rs.getString("password");
-                }
+                cstmt.registerOutParameter(1, Types.VARCHAR);
+                cstmt.registerOutParameter(2, Types.VARCHAR);
+                validaEmail = cstmt.execute();
 
                 if (validaEmail == true) {
+                    usernameResult = cstmt.getString(1);
+                    passwordResult = cstmt.getString(2);
                     passwordResult= _sc.decryptPassword(passwordResult);
 
                     //Se crea la sesion para autenticar
@@ -288,6 +283,8 @@ public class DaoUser  extends Dao implements IDaoUser {
                         Thread.currentThread().getStackTrace()[1].getMethodName());
                 logger.error("Error: ", error.toString());
                 return e.getMessage();
+            }finally {
+                _bdCon.close();
             }
         }
 

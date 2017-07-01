@@ -191,6 +191,7 @@ public class M01_ServicesUser1 extends Dao {
         {
             Command _command = CommandsFactory.instanciateRecoverPasswordCmd(email);
             RecoverPasswordCommand cmd = (RecoverPasswordCommand) _command;
+            System.out.print("Debug: email " + email);
             cmd.execute();
             String _response = cmd.get_response();
             return gson.toJson(_response);
