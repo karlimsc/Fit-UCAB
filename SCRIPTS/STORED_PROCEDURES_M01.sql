@@ -1,3 +1,17 @@
+/***********************ESCOGE EL ULTIMO USUARIO REGISTRADO************************NUEVO*/
+CREATE OR REPLACE FUNCTION M01_LASTUSER() RETURNS integer AS $$
+DECLARE
+ result integer;
+
+BEGIN
+	SELECT PERSONID INTO result FROM PERSON
+	ORDER BY PERSONID DESC LIMIT 1;
+	
+ 	RETURN result;
+END;
+$$ LANGUAGE plpgsql;
+
+
 /**************************************************INICIO DE SESION**************************************************/
 
 CREATE OR REPLACE FUNCTION M01_INICIARSESION(varchar(20), varchar(80)) RETURNS integer AS $$
