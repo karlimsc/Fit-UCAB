@@ -28,4 +28,7 @@ public class GetTrainingDetailCommand extends Command
     {
 
     }
+
+
+
 }
