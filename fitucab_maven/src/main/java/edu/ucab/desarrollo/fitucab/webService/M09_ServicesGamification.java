@@ -3,6 +3,7 @@ package edu.ucab.desarrollo.fitucab.webService;
 import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
@@ -31,7 +32,7 @@ public class M09_ServicesGamification {
     @Path("/getChallenges/{userId}")
     public List<Challenge> getChallenges(@PathParam("userId") int id) throws NoSuchMethodException {
         try {
-            AchieveChallengeCommand cmd = CommandsFactory.instanciateAchieveChallengeCmd(id);
+            Command cmd = CommandsFactory.instanciateAchieveChallengeCmd(id);
             cmd.execute();
             List<Challenge> challenges = (List<Challenge>)(List<?>) cmd.getChallenges();
             return challenges;
@@ -55,7 +56,7 @@ public class M09_ServicesGamification {
     @Path("/getAchievements/{userId}")
     public Challenge getAchievements(@PathParam("userId") int id) throws NoSuchMethodException {
         try {
-            FillChartCommand cmd = CommandsFactory.instanciateFillChartCmd(id);
+            Command cmd = CommandsFactory.instanciateFillChartCmd(id);
             cmd.execute();
             return (Challenge) cmd.getChallenge();
         }
@@ -78,7 +79,7 @@ public class M09_ServicesGamification {
     @Path("/getScores/{userId}")
     public Challenge getScores(@PathParam("userId") int id) throws NoSuchMethodException {
         try {
-            ScoreCommand cmd = CommandsFactory.instanciateScoreCmd(id);
+            Command cmd = CommandsFactory.instanciateScoreCmd(id);
             cmd.execute();
             return (Challenge) cmd.getChallenge();
         }
@@ -101,7 +102,7 @@ public class M09_ServicesGamification {
     @Path("/checkLevels/{userId}")
     public Challenge getLevelUp(@PathParam("userId") int id) throws NoSuchMethodException {
         try {
-            LevelUpCommand cmd = CommandsFactory.instanciateLevelUpCmd(id);
+            Command cmd = CommandsFactory.instanciateLevelUpCmd(id);
             cmd.execute();
             return (Challenge) cmd.getChallenge();
         }

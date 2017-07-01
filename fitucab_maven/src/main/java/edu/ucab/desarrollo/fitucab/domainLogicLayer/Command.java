@@ -28,5 +28,4 @@ public abstract class Command
     public Entity getChallenge(){
         return null;
     }
-
 }

@@ -70,19 +70,19 @@ public class CommandsFactory {
     }
 
     //Modulo 9
-    static public AchieveChallengeCommand instanciateAchieveChallengeCmd(int id){
+    static public Command instanciateAchieveChallengeCmd(int id){
         return new AchieveChallengeCommand(id);
     }
 
-    static public ScoreCommand instanciateScoreCmd(int id){
+    static public Command instanciateScoreCmd(int id){
         return new ScoreCommand(id);
     }
 
-    static public FillChartCommand instanciateFillChartCmd(int id){
+    static public Command instanciateFillChartCmd(int id){
         return new FillChartCommand(id);
     }
 
-    static public LevelUpCommand instanciateLevelUpCmd(int id){
+    static public Command instanciateLevelUpCmd(int id){
         return new LevelUpCommand(id);
     }
 
