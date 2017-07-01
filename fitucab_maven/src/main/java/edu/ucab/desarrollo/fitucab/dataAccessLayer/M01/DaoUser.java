@@ -3,6 +3,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M01;
 import com.google.gson.Gson;
 
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
@@ -29,6 +30,17 @@ public class DaoUser  extends Dao implements IDaoUser {
 
     public DaoUser(Entity _user) {
          this._user= _user;
+        try {
+            _bdCon = Dao.getBdConnect();
+        } catch (BdConnectException e) {
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
+        } catch (Exception e) {
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
+        }
     }
 
     public DaoUser(String _userLogin, String _password) {
@@ -84,8 +96,7 @@ public class DaoUser  extends Dao implements IDaoUser {
     public Entity create(Entity e) throws Exception {
 
         //TODO: AQUI SE DEVUELVE A LA CAPA DE WEB SERVICES, HABRIA QUE VER SI REALMENTE PUEDE SER ASI
-         _conn = new Sql();
-        _bdCon = _conn.getConn();
+
         _sc = new Security();
 
         User _user = (User)e;
