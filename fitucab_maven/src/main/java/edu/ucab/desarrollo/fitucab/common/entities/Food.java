@@ -26,6 +26,10 @@ public class Food extends Entity{
         this._id = id;
     }
 
+    public Food (int id , String foodCalorie){
+        _id =id ; _foodCalorie=foodCalorie;
+    }
+
     public int get_id() {
         return _id;
     }

@@ -15,6 +15,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodPerCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodallCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getSuggestionCommand;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -148,6 +149,7 @@ public class CommandsFactory {
 
     static  public getFoodallCommand getFoodallCmd (Entity Food ) {return  new getFoodallCommand(Food);}
 
+    static public getSuggestionCommand getSuggestionCmd (Entity Food) {return new getSuggestionCommand(Food);}
 
 }
 

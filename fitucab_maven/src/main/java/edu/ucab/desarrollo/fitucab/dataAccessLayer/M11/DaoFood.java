@@ -22,6 +22,7 @@ public class DaoFood implements IDaoFood {
     private String response;
     private ArrayList<Food> jsonArray;
     String username;
+    String calorie;
 
     public DaoFood() {  }
 
@@ -97,6 +98,35 @@ public class DaoFood implements IDaoFood {
         }
 
         response = gson.toJson(jsonArray);
+        return response;
+    }
+
+    @Override
+    public String getSugge(Entity e) throws SQLException {
+
+        Food food = (Food) e;
+        String query = "select * from m11_get_alimentos_sugerencia(?, ?)";
+        jsonArray = new ArrayList<>();
+        username = String.valueOf(food.get_id());
+        calorie = food.get_foodCalorie();
+        PreparedStatement st = conn.prepareStatement(query);
+        st.setString(1, username);
+        st.setInt(2, Integer.parseInt(calorie));
+        ResultSet rs = st.executeQuery();
+
+        while(rs.next()) {
+            jsonArray.add(new Food());
+            jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
+            // revisar string
+            jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
+            jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
+            jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
+        }
+
+        response = gson.toJson(jsonArray);
+
+
+
         return response;
     }
 

@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer.M11;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.IDao;
 
 import java.sql.SQLException;
@@ -15,4 +16,6 @@ public interface IDaoFood extends IDao {
     public String getFoodPer(Entity e) throws SQLException;
 
     public  String getFoodAll (Entity e) throws SQLException;
+
+    public String getSugge (Entity e ) throws SQLException;
 }

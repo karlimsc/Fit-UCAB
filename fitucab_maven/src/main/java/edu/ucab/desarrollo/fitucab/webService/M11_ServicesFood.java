@@ -13,6 +13,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodPerCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodallCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getSuggestionCommand;
 
 
 import javax.ws.rs.*;
@@ -47,7 +48,7 @@ public class M11_ServicesFood {
      */
     @GET
     @Path("/getFoodPersonalized")
-    @Produces("application/json")
+    @Produces("application/json")//arreglar return
     public String getFood(@QueryParam("username") String username) {
 
 
@@ -59,13 +60,13 @@ public class M11_ServicesFood {
             respuesta = cmd.Respuesta;
 
         } catch (ListAllException e) {
-            e.printStackTrace();
+            respuesta=e.getMessage();
         } catch (ListByIdException e) {
-            e.printStackTrace();
+            respuesta=e.getMessage();
         } catch (NoSuchMethodException e) {
-            e.printStackTrace();
+            respuesta=e.getMessage();
         } catch (SQLException e) {
-            e.printStackTrace();
+            respuesta=e.getMessage();
         }
 
 
@@ -87,19 +88,19 @@ public class M11_ServicesFood {
 
         try {
             cmd.execute();
-
+            respuesta=cmd.Respuesta;
         } catch (ListAllException e) {
-            e.printStackTrace();
+            respuesta=e.getMessage();
         } catch (ListByIdException e) {
-            e.printStackTrace();
+            respuesta=e.getMessage();
         } catch (NoSuchMethodException e) {
-            e.printStackTrace();
+            respuesta=e.getMessage();
         } catch (SQLException e) {
-            e.printStackTrace();
+            respuesta=e.getMessage();
         }
 
 
-        return cmd.Respuesta;
+        return respuesta;
     }
 
     /**
@@ -117,7 +118,25 @@ public class M11_ServicesFood {
     public String getSuggestion(@QueryParam("username") String username,
                                 @QueryParam("calorie") int calorie) {
 
-      return"";
+        Entity EntityFood = EntityFactory.getUserCal(Integer.parseInt(username), String.valueOf(calorie));
+        getSuggestionCommand cmd = CommandsFactory.getSuggestionCmd(EntityFood);
+
+        try {
+            cmd.execute();
+            respuesta = cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta=e.getMessage();
+        } catch (ListByIdException e) {
+            respuesta=e.getMessage();
+        } catch (NoSuchMethodException e) {
+            respuesta=e.getMessage();
+        } catch (SQLException e) {
+            respuesta=e.getMessage();
+        }
+
+
+        return respuesta;
     }
 
 
