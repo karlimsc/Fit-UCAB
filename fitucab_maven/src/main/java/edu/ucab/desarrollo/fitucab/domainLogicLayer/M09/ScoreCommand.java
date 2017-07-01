@@ -40,9 +40,5 @@ public class ScoreCommand extends Command{
         }
     }
 
-    public Entity run() throws NoSuchMethodException, Exception {
-        return null;
-    }
-
 
 }

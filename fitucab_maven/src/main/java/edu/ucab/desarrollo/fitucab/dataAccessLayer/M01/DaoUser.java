@@ -56,7 +56,10 @@ public class DaoUser  extends Dao implements IDaoUser {
             cstmt = _bdCon.prepareCall("{ call M01_INICIARSESION(?,?)}");
             cstmt.setString(1, _user.getUser());
             cstmt.setString(2, password);
+            cstmt.registerOutParameter(1, Types.INTEGER);
             cstmt.execute();
+            final ResultSet rs = cstmt.getResultSet();
+            _user.setId(cstmt.getInt(1));
             return _user;
 
         }

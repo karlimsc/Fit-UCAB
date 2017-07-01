@@ -28,8 +28,6 @@ public class RecoverPasswordCommand extends Command {
 
     }
 
-    public Entity run() throws NoSuchMethodException, Exception {
-        return null;
-    }
+
 
 }

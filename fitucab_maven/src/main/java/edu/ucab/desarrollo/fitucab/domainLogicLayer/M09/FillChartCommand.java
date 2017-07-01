@@ -40,9 +40,6 @@ public class FillChartCommand extends Command{
         }
     }
 
-    public Entity run() throws NoSuchMethodException, Exception {
-        return null;
-    }
 
 
 }
