@@ -25,7 +25,7 @@ public class User extends Entity {
     private int    _weight; // Se usan unicamente para uso del perfil de usuario
     @SerializedName("_height")
     private int    _height; // Se usan unicamente para uso del perfil de usuario
-    @SerializedName("status")
+    @SerializedName("_status")
     private String _status;
 
     /**
