@@ -12,10 +12,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.DeleteTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 
 import javax.ws.rs.*;
 import java.security.InvalidParameterException;
@@ -45,10 +42,10 @@ public class M06_ServicesTraining
     @Produces( "application/json" )
 
     /**
-     * Metodo utilizado a traves de web service para agregar los parametros a la base de datos
+     * Metodo utilizado a traves de web service para agregar un entrenamiento
      * @param trainingName
-     * @param trainingPeriod
-     * @param trainingCalories
+     * @param trainingActivities
+     * @param userId
      * @return
      */
 
@@ -71,8 +68,6 @@ public class M06_ServicesTraining
         {
             return gson.toJson( false );
         }
-
-
     }
 
 
@@ -113,7 +108,7 @@ public class M06_ServicesTraining
     @Produces( "application/json" )
     /**
      * Metodo utilizado a traves de web service para visualizar los entrenamientos que posee el usuario
-     * @param userId
+     * @param trainingId
      * @return
      */
 
@@ -142,7 +137,8 @@ public class M06_ServicesTraining
     @Produces( "application/json" )
     /**
      * Metodo utilizado a traves de web service para eliminar un entrenamiento
-     * @param userId
+     * @param trainingId
+     * @param trainingName
      * @return
      */
 
@@ -155,6 +151,36 @@ public class M06_ServicesTraining
         DeleteTrainingCommand cmd = CommandsFactory.instanciateDeleteTrainingCmd(deleteTrainingObject);
 
 
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+
+    }
+
+    @GET
+    @Path( "/shareTraining" )
+    @Produces( "application/json" )
+    /**
+     * Metodo utilizado a traves de web service para compartir un entrenamiento
+     * @param trainingName
+     * @param trainingActivities
+     * @param userId
+     * @return
+     */
+    public String shareTraining(@QueryParam( "trainingName" ) String name,
+                                 @QueryParam( "trainingActivities" )  final LinkedList<String> activities,
+                                 @QueryParam( "userId" ) int userId )
+    {
+        LinkedList<Entity> activitiesList = activityList(activities);
+        Entity shareTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
+        ShareTrainingCommand cmd =
+                CommandsFactory.instanciateShareTrainingCmd(shareTrainingObject);
         try
         {
             cmd.execute();
