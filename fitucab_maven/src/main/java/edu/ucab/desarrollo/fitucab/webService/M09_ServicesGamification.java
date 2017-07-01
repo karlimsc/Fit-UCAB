@@ -30,6 +30,16 @@ public class M09_ServicesGamification {
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M09_ServicesGamification.class);
 
+    /**
+     * Metodo que retorna los retos logrados por un usuario
+     * @param id Id del usuario
+     * @return Lista con todos los retos logrados
+     * @throws NoSuchMethodException
+     * @throws WebApplicationException
+     * @throws Exception
+     * @see Challenge
+     * @see List
+     */
     @GET
     @Path("/getChallenges/{userId}")
     public List<Challenge> getChallenges(@PathParam("userId") int id) throws NoSuchMethodException {
@@ -43,18 +53,25 @@ public class M09_ServicesGamification {
         catch (WebApplicationException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Debug: ", error.toString());
             logger.error("Error: ", error.toString());
         }
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Debug: ", error.toString());
             logger.error("Error: ", error.toString());
         }
         return null;
     }
 
+    /**
+     * Metodo que retorna la cantidad de retos logrados y no logrados para llenar la grafica en android
+     * @param id Id del usuario.
+     * @return Clase challenge con los retos logrados y no logrados.
+     * @throws NoSuchMethodException
+     * @throws WebApplicationException
+     * @throws Exception
+     * @see Challenge
+     */
     @GET
     @Path("/getAchievements/{userId}")
     public Challenge getAchievements(@PathParam("userId") int id) throws NoSuchMethodException {
@@ -67,18 +84,25 @@ public class M09_ServicesGamification {
         catch (WebApplicationException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
             logger.error("Error: ", error.toString());
         }
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
             logger.error("Error: ", error.toString());
         }
         return null;
     }
 
+    /**
+     * Metodo que pone tu record en un nivel.
+     * @param id Id del usuario.
+     * @return Clase challenge con el nivel alcanzado.
+     * @throws NoSuchMethodException
+     * @throws WebApplicationException
+     * @throws Exception
+     * @see Challenge
+     */
     @GET
     @Path("/getScores/{userId}")
     public Challenge getScores(@PathParam("userId") int id) throws NoSuchMethodException {
@@ -91,13 +115,11 @@ public class M09_ServicesGamification {
         catch (WebApplicationException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
             logger.error("Error: ", error.toString());
         }
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
             logger.error("Error: ", error.toString());
         }
         return null;
@@ -115,13 +137,11 @@ public class M09_ServicesGamification {
         catch (WebApplicationException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
             logger.error("Error: ", error.toString());
         }
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
             logger.error("Error: ", error.toString());
         }
         return null;
