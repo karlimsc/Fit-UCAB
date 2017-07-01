@@ -58,6 +58,7 @@ public class CommandsFactory {
     }
 
 
+
     // Comandos M06
 
     static public CreateTrainingCommand instanciateCreateTrainingCmd(Entity training, int userId){

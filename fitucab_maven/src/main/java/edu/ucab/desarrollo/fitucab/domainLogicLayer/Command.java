@@ -25,6 +25,10 @@ public abstract class Command
         return null;
     }
 
+    public Entity getUserRegistry(){
+        return null;
+    }
+
     public Entity getChallenge(){
         return null;
     }
