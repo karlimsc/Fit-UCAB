@@ -29,6 +29,7 @@ public class Activit {
         this._name = _name;
     }
 
+
     public int get_id() {
         return _id;
     }
@@ -101,4 +102,8 @@ public class Activit {
         this._name = _name;
     }
 
+    public Activit(int _id, String _name) {
+        this._id = _id;
+        this._name = _name;
+    }
 }

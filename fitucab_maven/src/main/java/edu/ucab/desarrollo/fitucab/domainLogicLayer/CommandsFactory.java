@@ -5,15 +5,12 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckPasswordEmailCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
-import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
-import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,21 +35,21 @@ public class CommandsFactory {
 
     static public CreateTrainingCommand instanciateCreateTrainingCmd(Entity training){
         return new CreateTrainingCommand(training);
-
     }
 
     static public UpdateTrainingCommand instanciateUpdateTrainingCmd(Entity training){
         return new UpdateTrainingCommand(training);
-
     }
 
     static public DeleteTrainingCommand instanciateDeleteTrainingCmd(Entity training){
         return new DeleteTrainingCommand(training);
+    }
 
+    static public ShareTrainingCommand instanciateShareTrainingCmd(Entity training) {
+        return new ShareTrainingCommand(training);
     }
 
     static public CheckTrainingCommand instanciateCheckTrainingCmd(int trainingId, int userId) {
-
         return new CheckTrainingCommand(trainingId, userId);
     }
 

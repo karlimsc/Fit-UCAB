@@ -35,7 +35,9 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_m06_home_training);
+        setContentView(R.layout.activity_training);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -46,19 +48,18 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         arrayList= new ArrayList<>(Arrays.asList(items));
         adapter = new ArrayAdapter<String>(this, R.layout.fragment_m06_listview_item,R.id.tv_m06_training,arrayList);
         listView.setAdapter(adapter); */
-
-
-       // metodo que rse reciclara para agregar entrenamiento, modificar entrenamiento mostrar entrenamientom lo que se tiene que cambiar es la variable activities
-
-       ListView listViewAdd = (ListView) findViewById(R.id.listofactivities);
+/*
+        ListView listViewAdd = (ListView) findViewById(R.id.listofactivities);
         String [] activities = {"Caminar", "Trotar", "Bicicleta", "Natacion", "Yoga", "Estiramientos", "Eliptica", "Escaleras", "Bailar", "Aerobic", "Remo", "Basketball", "Futbol", "Tenis", "Voleibol"};
         arrayListAdd = new ArrayList<>(Arrays.asList(activities));
         adapterAdd =  new ArrayAdapter<String>(this, R.layout.fragment_m06_listview_item_add,R.id.tv_m06_trainingAdd,arrayListAdd);
         listViewAdd.setAdapter(adapterAdd);
 
+        FloatingActionButton prueba = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+*/
+        onSwap("M06HomeTrainingFragment",null);
+
     }
-
-
 
     @Override
     public void onSwap(String fragmentName, Bundle bundle) {
