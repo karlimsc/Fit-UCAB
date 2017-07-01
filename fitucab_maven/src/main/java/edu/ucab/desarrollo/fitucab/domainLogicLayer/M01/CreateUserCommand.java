@@ -15,9 +15,9 @@ import org.slf4j.LoggerFactory;
  */
 public class CreateUserCommand extends Command {
 
-    Entity _user;
-    Boolean _response;
-    static Entity _userResponse;
+    private Entity _user;
+    private Boolean _response;
+    private static Entity _userResponse;
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
 

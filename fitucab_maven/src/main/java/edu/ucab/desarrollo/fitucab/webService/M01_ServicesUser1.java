@@ -10,6 +10,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
@@ -21,6 +22,9 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -50,7 +54,9 @@ public class M01_ServicesUser1 {
                           @QueryParam("password") String password)
     {
         Entity userObject = EntityFactory.createUser(username,password);
-        CheckUserCommand cmd = CommandsFactory.instanciateCheckUserCmd(userObject);
+        Command _command = CommandsFactory.instanciateCheckUserCmd(userObject);
+        CheckUserCommand cmd = (CheckUserCommand) _command;
+
         try {
             cmd.execute();
 
@@ -111,7 +117,8 @@ public class M01_ServicesUser1 {
 
             User _returnUser = (User) createUserObject;
 
-            CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
+            Command _command = CommandsFactory.instanciateCreateUserCmd(createUserObject);
+            CreateUserCommand cmd = (CreateUserCommand) _command;
             cmd.execute();
 
             //Obtiene el usuario registrado
@@ -156,9 +163,9 @@ public class M01_ServicesUser1 {
     public String userOnly(@QueryParam("email") String email)
     {
         //Duda sobre si es necesario crear el objeto recupUserPswObject
-        
-        Entity recupUserPswObject = EntityFactory.createUser(email);
-        RecoverPasswordCommand cmd = CommandsFactory.instanciateRecoverPasswordCmd(email);
+
+        Command _command = CommandsFactory.instanciateRecoverPasswordCmd(email);
+        RecoverPasswordCommand cmd = (RecoverPasswordCommand) _command;
 
         try
         {
@@ -168,6 +175,34 @@ public class M01_ServicesUser1 {
         catch ( Exception e )
         {
             return gson.toJson( false );
+        }
+    }
+
+    @GET
+    @Path("/restorePassword")
+    @Produces("application/json")
+    public String testEmail (@QueryParam("email") String email){
+
+        try
+        {
+            Command _command = CommandsFactory.instanciateRecoverPasswordCmd(email);
+            RecoverPasswordCommand cmd = (RecoverPasswordCommand) _command;
+            cmd.execute();
+            String _response = cmd.get_response();
+            return gson.toJson(_response);
+
+        }catch (NullPointerException e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            System.out.print("NULL POINTER");
+            logger.error("Error: ", error);
+            return gson.toJson(null);
+        }
+        catch ( Exception e )
+        { MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error);
+            return gson.toJson( null );
         }
 
 

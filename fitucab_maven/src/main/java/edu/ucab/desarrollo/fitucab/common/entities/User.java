@@ -25,6 +25,8 @@ public class User extends Entity {
     private int    _weight; // Se usan unicamente para uso del perfil de usuario
     @SerializedName("height")
     private int    _height; // Se usan unicamente para uso del perfil de usuario
+    @SerializedName("status")
+    private String _status;
 
     /**
      * Constructor vacio
@@ -219,4 +221,11 @@ public class User extends Entity {
         _height = altura;
     }
 
+    public String get_status() {
+        return _status;
+    }
+
+    public void set_status(String _status) {
+        this._status = _status;
+    }
 }

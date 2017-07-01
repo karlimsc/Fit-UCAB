@@ -29,8 +29,7 @@ public class CommandsFactory {
      * @param user Objeto con todos los parametros de User
      * @return CreateUserCommad con parametro de devolucion user
      */
-
-    static public CreateUserCommand instanciateCreateUserCmd(Entity user){
+    static public Command instanciateCreateUserCmd(Entity user){
         return new CreateUserCommand(user);
     }
 
@@ -39,8 +38,7 @@ public class CommandsFactory {
      * @param email String
      * @return RecoverPasswordCommand con parametro email para la recuperacion de la cuenta
      */
-
-    static public RecoverPasswordCommand instanciateRecoverPasswordCmd(String email){
+    static public Command instanciateRecoverPasswordCmd(String email){
         return new RecoverPasswordCommand(email);
     }
 
@@ -50,11 +48,16 @@ public class CommandsFactory {
      * @param password String contraseña
      * @return CheckUserCommand para vericar el registro del usuario
      */
-    static public CheckUserCommand instanciateCheckUserCmd(String user, String password){
+    static public Command instanciateCheckUserCmd(String user, String password){
         return new CheckUserCommand(user, password);
     }
 
-    static public CheckUserCommand instanciateCheckUserCmd(Entity user){
+    /**
+     *  Intancia del CheckUserCommand
+     * @param user El usuario a Instanciar
+     * @return CheckUserCommand para vericar el registro del usuario
+     */
+    static public Command instanciateCheckUserCmd(Entity user){
         return new CheckUserCommand(user);
     }
 

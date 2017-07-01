@@ -2,31 +2,44 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M01;
 
 import com.google.gson.Gson;
 
+import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
-import edu.ucab.desarrollo.fitucab.webService.Sql;
 import org.slf4j.LoggerFactory;
+
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import javax.mail.Authenticator;
+import java.lang.reflect.Type;
 import java.sql.*;
+import java.util.Properties;
+
 
 /**
  * Created by karo on 24/06/17.
  */
 public class DaoUser  extends Dao implements IDaoUser {
 
-    private Sql        _conn;
+    private int RESULT_CODE_OK=200;
+    private int RESULT_CODE_FAIL=300;
+    private int RESULT_USER_FAIL=400;
+    private int RESULT_EMAIL_OK=500;
+
     private Connection _bdCon;
-    private Statement  _st;
     //Encargado de encriptar la contraseña
     private Security   _sc;
     Entity _user;
     Gson gson = new Gson();
     String _userLogin, _password;
-    private static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
+    private static org.slf4j.Logger logger = LoggerFactory
+                                             .getLogger(DaoUser.class);
 
     public DaoUser(Entity _user) {
          this._user= _user;
@@ -51,17 +64,14 @@ public class DaoUser  extends Dao implements IDaoUser {
     }
 
     /**
-     * Devuelve el usuario que este registrado
+     * Devuelve el usuario que esté registrado
      * @param e
      * @return
      */
     public Entity read(Entity e) {
-        _conn = new Sql();
-        _bdCon = _conn.getConn();
         _sc = new Security();
 
         User _user = (User)e;
-
 
 
         String password= _sc.encryptPassword(_user.getPassword());
@@ -102,10 +112,11 @@ public class DaoUser  extends Dao implements IDaoUser {
 
         _sc = new Security();
 
-        User _user = (User)e;
+        User _user = (User) e;
 
-        String password= _sc.encryptPassword(_user.getPassword());
-        CallableStatement cstmt,cs;
+        String password = _sc.encryptPassword(_user.getPassword());
+
+        CallableStatement cstmt, cs;
 
 
         try {
@@ -123,14 +134,16 @@ public class DaoUser  extends Dao implements IDaoUser {
             //Metodo que busca el ultimo usuario registrado y toma la id de este
             cs = _bdCon.prepareCall("{ call M01_LASTUSER(?,?,?,?,?,?,?,?)}");
             //Metodo para asignar nombre al resultado, ojo tiene que ser en orden
-            cs.registerOutParameter("id", Types.INTEGER);;
+            cs.registerOutParameter("id", Types.INTEGER);
+
             cs.execute();
 
             int id = cs.getInt("id");
             _user.setId(id);
+
             return _user;
-        }
-        catch (SQLException ex) {
+
+        } catch (SQLException ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Debug: ", error.toString());
@@ -138,18 +151,112 @@ public class DaoUser  extends Dao implements IDaoUser {
 
             //Retorna null por el error
             return null;
-        }
-        catch (Exception ex){
+        } catch (Exception ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Debug: ", error.toString());
             logger.error("Error: ", error.toString());
             return null;
-        }
-        finally {
+        } finally {
             _bdCon.close();
         }
-
     }
 
+        /**
+         * Sevicio Web para poder enviar el correo al usuario con su password
+         * @return por ahora retorna un String
+         */
+        @Override
+        public String testEmail (String email){
+
+           // String query = "SELECT * FROM M01_RECUPERARPWD('" + email + "')";
+
+            try {
+                //Establecemos el usuario que es el correo que cree para hacer el recuperar
+                final String username = "fitucabprueba2@gmail.com";
+                //la clave
+                final String password = "fitucab2017";
+                //Estas son las propiedades de seguridad de gmail
+                Properties props = new Properties();
+                props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+                props.put("mail.smtp.auth", "true");
+                props.put("mail.smtp.starttls.enable", "true");
+                props.put("mail.smtp.host", "smtp.gmail.com");
+                props.put("mail.smtp.port", "587");
+
+            /*
+             * EN ALGUNA PARTE DE AQUI ES DONDE DEBERIA HACER EL CAMBIO DE CLAVE POR
+             * ALGUN STRING ALEATORIO Y ENCRIPTADO
+             * Y LUEGO ENVIARLE EL STRING SIN ENCRIPTAR AL USUARIO
+             *
+             */
+                CallableStatement cstmt;
+                cstmt = _bdCon.prepareCall("{ call M01_RECUPERARPWD(?)}");
+                cstmt.setString(1,email);
+                cstmt.registerOutParameter("usuario", Types.VARCHAR);
+                cstmt.registerOutParameter("password", Types.VARCHAR);
+                ResultSet rs = cstmt.executeQuery();
+
+               // ResultSet rs = st.executeQuery(query);
+
+                User user = null;
+                Boolean validaEmail = false;
+                String usernameResult = "";
+                String passwordResult = "";
+
+                while (rs.next()) {
+                    validaEmail = true;
+                    usernameResult = rs.getString("usuario");
+                    passwordResult = rs.getString("password");
+                }
+
+                if (validaEmail == true) {
+                    passwordResult= _sc.decryptPassword(passwordResult);
+
+                    //Se crea la sesion para autenticar
+                    Session session = Session.getInstance(props,
+                            new javax.mail.Authenticator() {
+                                protected PasswordAuthentication getPasswordAuthentication() {
+                                    return new PasswordAuthentication(username, password);
+                                }
+                            });
+
+                    //creamos un objeto MIME
+                    javax.mail.Message message = new MimeMessage(session);
+                    //ponemos el remitente
+                    message.setFrom(new InternetAddress("fitucabprueba2@gmail.com"));
+                    message.setRecipients( javax.mail.Message.RecipientType.TO,
+                            //aqui va el destinatario
+                            InternetAddress.parse(email));
+                    //El tema del correo
+                    message.setSubject("Recuperar contraseña FitUCAB");
+                    //El contenido del correo
+                    message.setText(" Hola FitUcabista! " +
+                            " tu usuario es: " + usernameResult +
+                            " y tu clave:" + passwordResult + " " +
+                            " Ahora puedes seguir entrenando");
+                    //Enviamos
+                    Transport.send(message);
+                    //Aqui esta la validacion
+                    User userOk = new User();
+                    userOk.set_status(Integer.toString(RESULT_EMAIL_OK));
+                    return gson.toJson(userOk);
+                } else {
+                    User userFail = new User();
+                    userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+                    return gson.toJson(userFail);
+                }
+
+            } catch (SQLException e) {
+                MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                        Thread.currentThread().getStackTrace()[1].getMethodName());
+                logger.error("Error: ", error.toString());
+                return e.getSQLState();
+            } catch (Exception e) {
+                MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                        Thread.currentThread().getStackTrace()[1].getMethodName());
+                logger.error("Error: ", error.toString());
+                return e.getMessage();
+            }
+        }
 }
