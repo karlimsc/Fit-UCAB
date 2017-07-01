@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M01;
 
 import com.google.gson.Gson;
 
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
@@ -26,6 +27,8 @@ import java.util.Properties;
  * Created by karo on 24/06/17.
  */
 public class DaoUser  extends Dao implements IDaoUser {
+    //Conexion con la base de datos
+    private Connection _bdCon;
 
     private int RESULT_CODE_OK=200;
     private int RESULT_CODE_FAIL=300;
@@ -35,13 +38,22 @@ public class DaoUser  extends Dao implements IDaoUser {
     private Connection _bdCon;
     //Encargado de encriptar la contraseña
     private Security   _sc;
+
+    //String de conexion funciones
+    String _sqlInicioSesion="{?=call M01_INICIARSESION(?,?)}";
+    String _sqlLastUser="{?=call M01_LASTUSER()}";
+
+    //String de conexion procedimientos
+    String _sqlRegistrarUsuario="{ call M01_REGISTRAR(?,?,?,?,?,?,?,?)}";
+
     Entity _user;
     Gson gson = new Gson();
-    String _userLogin, _password;
     private static org.slf4j.Logger logger = LoggerFactory
                                              .getLogger(DaoUser.class);
 
-    public DaoUser(Entity _user) {
+
+
+    public DaoUser(Entity _user)  {
          this._user= _user;
         try {
             _bdCon = Dao.getBdConnect();
@@ -56,36 +68,53 @@ public class DaoUser  extends Dao implements IDaoUser {
         }
     }
 
-    public DaoUser(){}
-
-    public DaoUser(String _userLogin, String _password) {
-        this._userLogin = _userLogin;
-        this._password = _password;
+    public DaoUser()  {
+        try {
+            _bdCon = Dao.getBdConnect();
+        } catch (BdConnectException e) {
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
+        } catch (Exception e) {
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
+        }
     }
+
 
     /**
      * Devuelve el usuario que esté registrado
      * @param e
      * @return
      */
+
     public Entity read(Entity e) {
         _sc = new Security();
 
-        User _user = (User)e;
-
-
-        String password= _sc.encryptPassword(_user.getPassword());
         CallableStatement cstmt;
-        try{
-            cstmt = _bdCon.prepareCall("{ call M01_INICIARSESION(?,?)}");
-            cstmt.setString(1, _user.getUser());
-            cstmt.setString(2, password);
-            cstmt.registerOutParameter(1, Types.INTEGER);
-            cstmt.execute();
-            final ResultSet rs = cstmt.getResultSet();
-            _user.setId(cstmt.getInt(1));
-            return _user;
 
+        User _user = (User) e;
+
+        String password =_sc.encryptPassword(_user.getPassword());
+
+        try{
+            cstmt = _bdCon.prepareCall(_sqlInicioSesion.toString());
+
+            //1er signo de interrogacion el parametro de salida
+            cstmt.registerOutParameter(1, Types.INTEGER);
+
+            //2do y 3er signo de interrogacion parametros de entrada
+            cstmt.setString(2, _user.getUser());
+            cstmt.setString(3, password);
+
+            cstmt.execute();
+
+            int id = cstmt.getInt(1);
+            System.out.printf(String.valueOf(id));
+
+            _user.setId(id);
+            return _user;
         }
         catch (Exception ex){
 
@@ -95,10 +124,6 @@ public class DaoUser  extends Dao implements IDaoUser {
     }
 
 
-    public Entity update(Entity e) {
-        return null;
-    }
-
     /**
      * Metodo que es llamado a traves del web service para agregar a la base de datos
      * los parametros recibidos
@@ -107,8 +132,6 @@ public class DaoUser  extends Dao implements IDaoUser {
 
     @Override
     public Entity create(Entity e) throws Exception {
-
-        //TODO: AQUI SE DEVUELVE A LA CAPA DE WEB SERVICES, HABRIA QUE VER SI REALMENTE PUEDE SER ASI
 
         _sc = new Security();
 
@@ -120,7 +143,7 @@ public class DaoUser  extends Dao implements IDaoUser {
 
 
         try {
-            cstmt = _bdCon.prepareCall("{ call M01_REGISTRAR(?,?,?,?,?,?,?,?)}");
+            cstmt = _bdCon.prepareCall(_sqlRegistrarUsuario.toString());
             cstmt.setString(1, _user.getUser());
             cstmt.setString(2, password);
             cstmt.setString(3, _user.getEmail());
@@ -132,13 +155,12 @@ public class DaoUser  extends Dao implements IDaoUser {
             cstmt.execute();
 
             //Metodo que busca el ultimo usuario registrado y toma la id de este
-            cs = _bdCon.prepareCall("{ call M01_LASTUSER(?,?,?,?,?,?,?,?)}");
-            //Metodo para asignar nombre al resultado, ojo tiene que ser en orden
-            cs.registerOutParameter("id", Types.INTEGER);
-
+            cs = _bdCon.prepareCall(_sqlLastUser.toString());
+            cs.registerOutParameter(1, Types.INTEGER);
             cs.execute();
 
-            int id = cs.getInt("id");
+            int id = cs.getInt(1);
+            System.out.printf(String.valueOf(id));
             _user.setId(id);
 
             return _user;
@@ -259,4 +281,11 @@ public class DaoUser  extends Dao implements IDaoUser {
                 return e.getMessage();
             }
         }
+
+    public Entity update(Entity e) {
+        return null;
+    }
+
+
+
 }

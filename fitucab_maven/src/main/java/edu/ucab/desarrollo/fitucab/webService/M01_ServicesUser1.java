@@ -8,9 +8,13 @@ import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
@@ -33,7 +37,7 @@ import java.util.Date;
  * Clase de Servicios Web del Modulo 01
  */
 @Path("/M01_ServicesUser1")
-public class M01_ServicesUser1 {
+public class M01_ServicesUser1 extends Dao {
     Entity _response;
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M01_ServicesUser1.class);
@@ -58,13 +62,16 @@ public class M01_ServicesUser1 {
         CheckUserCommand cmd = (CheckUserCommand) _command;
 
         try {
+            Entity userObject = EntityFactory.createUser(username,password);
+            CheckUserCommand cmd = CommandsFactory.instanciateCheckUserCmd(userObject);
             cmd.execute();
-
-            return gson.toJson(_response);
+            //User result = (User) CheckUserCommand.getUserLogin();
+            return gson.toJson(CheckUserCommand.getUserLogin());
         }
         catch (Exception e){
             return null ;
         }
+
     }
 
 
@@ -208,4 +215,18 @@ public class M01_ServicesUser1 {
 
     }
 
+    @Override
+    public Entity create(Entity e) throws AddException, Exception {
+        return null;
+    }
+
+    @Override
+    public Entity read(Entity e) {
+        return null;
+    }
+
+    @Override
+    public Entity update(Entity e) {
+        return null;
+    }
 }
