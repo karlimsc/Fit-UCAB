@@ -1,11 +1,13 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 
 import edu.ucab.desarrollo.fitucab.common.Registry;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
+import java.util.List;
 
 /**
  * Patron Data Access Object
@@ -67,5 +69,10 @@ public abstract class Dao implements IDao
             logger.error( "Metodo: {} {}", "getBdConnect", e.toString() );
         }
     }
+
+    public List<Entity> achieveChallenge(int id, List<Entity> challenges){return null;};
+    public Entity fillChart(int id){return null;};
+    public Entity score(int id){return null;};
+    public Entity levelUp(int id){return null;};
 
 }

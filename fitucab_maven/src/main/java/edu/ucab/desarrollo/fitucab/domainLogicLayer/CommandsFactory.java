@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckPasswordEmailCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
@@ -70,23 +71,21 @@ public class CommandsFactory {
     }
 
     //Modulo 9
-    static public Command instanciateAchieveChallengeCmd(int id){
-        return new AchieveChallengeCommand(id);
+    static public Command instanciateAchieveChallengeCmd(int id, Dao dao){
+        return new AchieveChallengeCommand(id, dao);
     }
 
     static public Command instanciateScoreCmd(int id){
         return new ScoreCommand(id);
     }
 
-    static public Command instanciateFillChartCmd(int id){
-        return new FillChartCommand(id);
+    static public Command instanciateFillChartCmd(int id, Dao dao){
+        return new FillChartCommand(id, dao);
     }
 
     static public Command instanciateLevelUpCmd(int id){
         return new LevelUpCommand(id);
     }
-
-    static  public List<Entity> getChallenges(){return new ArrayList<Entity>();}
     //Fin Modulo 9
 
 

@@ -20,7 +20,7 @@ import java.util.List;
  * @author David Garcia, Juan Mendez, Mario Salazar
  * @version 2.0
  */
-public class DaoGaming extends Dao implements IDaoGaming{
+public class DaoGaming extends Dao{
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(DaoGaming.class);
 
@@ -79,6 +79,19 @@ public class DaoGaming extends Dao implements IDaoGaming{
     }
 
     public Entity fillChart(int id) {
+        try {
+            Statement st = _conn.createStatement();
+            ResultSet rs = st.executeQuery("m09_getachieveanduanchievechallengebyid("+id+")");
+            Entity challege = null;
+            while (rs.next()){
+                challege = EntityFactory.createChallenge(rs.getInt("achieve"), rs.getInt("unachieve"));
+            }
+            return challege;
+        } catch (SQLException e) {
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
+        }
         return null;
     }
 

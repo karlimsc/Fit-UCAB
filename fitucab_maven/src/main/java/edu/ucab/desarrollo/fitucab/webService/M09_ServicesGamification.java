@@ -3,6 +3,8 @@ package edu.ucab.desarrollo.fitucab.webService;
 import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
@@ -32,7 +34,8 @@ public class M09_ServicesGamification {
     @Path("/getChallenges/{userId}")
     public List<Challenge> getChallenges(@PathParam("userId") int id) throws NoSuchMethodException {
         try {
-            Command cmd = CommandsFactory.instanciateAchieveChallengeCmd(id);
+            Dao dao = DaoFactory.instanceDaoGaming();
+            Command cmd = CommandsFactory.instanciateAchieveChallengeCmd(id, dao);
             cmd.execute();
             List<Challenge> challenges = (List<Challenge>)(List<?>) cmd.getChallenges();
             return challenges;
@@ -56,7 +59,8 @@ public class M09_ServicesGamification {
     @Path("/getAchievements/{userId}")
     public Challenge getAchievements(@PathParam("userId") int id) throws NoSuchMethodException {
         try {
-            Command cmd = CommandsFactory.instanciateFillChartCmd(id);
+            Dao dao = DaoFactory.instanceDaoGaming();
+            Command cmd = CommandsFactory.instanciateFillChartCmd(id, dao);
             cmd.execute();
             return (Challenge) cmd.getChallenge();
         }
