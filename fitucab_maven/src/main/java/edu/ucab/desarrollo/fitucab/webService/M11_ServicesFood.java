@@ -11,10 +11,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Food;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodAutoCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodPerCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodallCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getSuggestionCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
 
 
 import javax.ws.rs.*;
@@ -53,7 +50,7 @@ public class M11_ServicesFood {
     public String getFood(@QueryParam("username") String username) {
 
 
-        Entity EntityFood = EntityFactory.getUser(username);
+        Entity EntityFood = EntityFactory.getUsername(username);
         getFoodPerCommand cmd = CommandsFactory.getFoodPerCmd(EntityFood);
 
         try {
@@ -84,7 +81,7 @@ public class M11_ServicesFood {
     @Produces("application/json")
     public String getAllFood(@QueryParam("username") String username){
 
-        Entity EntityFood = EntityFactory.getUser(username);
+        Entity EntityFood = EntityFactory.getUsername(username);
         getFoodallCommand cmd = CommandsFactory.getFoodallCmd(EntityFood);
 
         try {
@@ -151,7 +148,7 @@ public class M11_ServicesFood {
     @Produces("application/json")
     public String getFoodAuto(@QueryParam("username") String username){
 
-        Entity EntityFood = EntityFactory.getUser(username);
+        Entity EntityFood = EntityFactory.getUsername(username);
         getFoodAutoCommand cmd = CommandsFactory.getFoodAutoCmd(EntityFood);
 
         try {
@@ -178,14 +175,40 @@ public class M11_ServicesFood {
      * @return Devuelve un json con elemento llamado data, el cual contiene el mensaje de la peticion
      */
 
+
+
+
     @DELETE
     @Path("/deletePersonalizedFood")
     @Produces("application/json")
     public String deletePersonalizedFood(@QueryParam("foodName") String foodName,
                                          @QueryParam("IdUser")  int idUser){
 
-       return"";
+        Entity EntityFood = EntityFactory.getFoodIDuser(foodName,idUser);
+        deletePersonalizedFoodCommand cmd = CommandsFactory.deletPersFoodCmd(EntityFood);
+
+        try {
+            cmd.execute();
+            respuesta = cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta=e.getMessage();
+        } catch (ListByIdException e) {
+            respuesta=e.getMessage();
+        } catch (NoSuchMethodException e) {
+            respuesta=e.getMessage();
+        } catch (SQLException e) {
+            respuesta=e.getMessage();
+        }
+
+
+        return respuesta;
     }
+
+
+
+
+
 
     /**
      * Funcion que actualiza los datos de un alimento personalizado por el usuario

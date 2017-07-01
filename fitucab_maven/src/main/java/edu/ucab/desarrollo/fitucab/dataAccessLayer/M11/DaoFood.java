@@ -3,14 +3,18 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M11;
 import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Food;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by charbel on 24/06/2017.
@@ -145,23 +149,23 @@ public class DaoFood implements IDaoFood {
         ResultSet rs = st.executeQuery();
 
         while(rs.next()) {
-  /*
-            Food aux = EntityFactory.CreateFood();
+
+            Food aux = (Food) EntityFactory.CreateFood();
             aux.set_id(rs.getInt("id_alimento"));
             aux.set_foodName(rs.getString("nombre_comida"));
             aux.set_foodCalorie(rs.getString("calorias_comida"));
             aux.set_foodWeight(rs.getString("peso_comida"));
             jsonArray.add(aux);
-            */
 
-            jsonArray.add(new Food());
+ /*
+            jsonArray.add((Food) EntityFactory.CreateFood());
 
             jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
             jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
             // revisar string
             jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
             jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
-
+  */
 
         }
             response = gson.toJson(jsonArray);
@@ -169,6 +173,26 @@ public class DaoFood implements IDaoFood {
 
 
         return response;
+    }
+
+
+
+
+    @Override
+    public String DeletPerFood(Entity e) throws SQLException {
+        Map<String, String> response = new HashMap<String, String>();
+        String query = "select * from m11_elimina_alimento_person(?, ?)";
+        Food food = (Food) e;
+
+
+
+        PreparedStatement st = conn.prepareStatement(query);
+        st.setString(1, food.get_foodName());
+        st.setInt(2, food.get_id());
+        st.executeQuery();
+        response.put("data", "Se elimino el alimento de forma exitosa");
+
+        return gson.toJson(response);
     }
 
 

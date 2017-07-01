@@ -216,9 +216,12 @@ public class EntityFactory
     }
     //Fin Modulo 10
 
-    static  public Food getUser(String username) {return new Food (username);}
+    static  public Entity getUsername(String username) {return new Food (username);}
 
-    static public Food getUserCal (String username, String calor){return new Food (username,calor);}
+    static public Entity getUserCal (String username, String calor){return new Food (username,calor);}
 
-    static public Food CreateFood (){return new Food ();}
+    static public Entity CreateFood (){return new Food ();}
+
+    static public Entity getFoodIDuser (String name , int id){return  new Food(name,id);}
+
 }

@@ -13,10 +13,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodAutoCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodPerCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getFoodallCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.getSuggestionCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -154,5 +151,7 @@ public class CommandsFactory {
 
     static public getFoodAutoCommand getFoodAutoCmd (Entity Food) {return new getFoodAutoCommand(Food);}
 
+    static public deletePersonalizedFoodCommand deletPersFoodCmd (Entity Food)
+    {return new deletePersonalizedFoodCommand(Food); }
 }
 

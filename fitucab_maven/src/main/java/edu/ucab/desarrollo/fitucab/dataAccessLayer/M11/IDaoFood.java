@@ -22,4 +22,6 @@ public interface IDaoFood extends IDao {
     public String getSugge (Entity e ) throws SQLException;
 
     public String getFoodAuto (Entity e ) throws SQLException;
+
+    public String DeletPerFood (Entity e ) throws SQLException;
 }
