@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.webService;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ParameterNullException;
@@ -65,6 +66,8 @@ public class M11_ServicesFood {
             respuesta=e.getMessage();
         } catch (SQLException e) {
             respuesta=e.getMessage();
+        } catch (BdConnectException e) {
+            e.printStackTrace();
         }
 
 
@@ -95,6 +98,8 @@ public class M11_ServicesFood {
             respuesta=e.getMessage();
         } catch (SQLException e) {
             respuesta=e.getMessage();
+        } catch (BdConnectException e) {
+            e.printStackTrace();
         }
 
 
@@ -131,6 +136,8 @@ public class M11_ServicesFood {
             respuesta=e.getMessage();
         } catch (SQLException e) {
             respuesta=e.getMessage();
+        } catch (BdConnectException e) {
+            respuesta=e.getMessage();
         }
 
 
@@ -162,6 +169,8 @@ public class M11_ServicesFood {
         } catch (NoSuchMethodException e) {
             respuesta=e.getMessage();
         } catch (SQLException e) {
+            respuesta=e.getMessage();
+        } catch (BdConnectException e) {
             respuesta=e.getMessage();
         }
 
@@ -199,6 +208,8 @@ public class M11_ServicesFood {
             respuesta=e.getMessage();
         } catch (SQLException e) {
             respuesta=e.getMessage();
+        } catch (BdConnectException e) {
+            respuesta=e.getMessage();
         }
 
 
@@ -227,7 +238,27 @@ public class M11_ServicesFood {
                                      @QueryParam("calorie") String calorie,
                                      @QueryParam("idUser") int idUser){
 
-      return"";
+        Entity EntityFood = EntityFactory.getFoodIDuser(foodName,idUser);
+        updatePersoCommand cmd = CommandsFactory.updatepersonCmd(EntityFood);
+
+        try {
+            cmd.execute();
+            respuesta = cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta=e.getMessage();
+        } catch (ListByIdException e) {
+            respuesta=e.getMessage();
+        } catch (NoSuchMethodException e) {
+            respuesta=e.getMessage();
+        } catch (SQLException e) {
+            respuesta=e.getMessage();
+        } catch (BdConnectException e) {
+            respuesta=e.getMessage();
+        }
+
+
+        return respuesta;
     }
 
     /**
@@ -239,6 +270,11 @@ public class M11_ServicesFood {
      * @param idUser Reprensenta el id del usuario que esta ingresando el alimento.
      * @return Devuelve un mapa dentro de un json con la respuesta.
      */
+
+
+
+
+
     @GET
     @Path("/insertOnePersonalizedFood")
     @Produces("application/json")
@@ -248,7 +284,29 @@ public class M11_ServicesFood {
                                     @QueryParam("foodDinner") String foodDinner,
                                     @QueryParam("idUser") int idUser){
 
-       return"";
+        Entity EntityFood = EntityFactory.getFoodall
+                (foodName,foodCalorie,foodWeight, Boolean.valueOf(foodDinner),idUser);
+
+        insertUnAlimentoCommand cmd = CommandsFactory.insertarAlimentoCmd(EntityFood);
+
+        try {
+            cmd.execute();
+            respuesta = cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta=e.getMessage();
+        } catch (ListByIdException e) {
+            respuesta=e.getMessage();
+        } catch (NoSuchMethodException e) {
+            respuesta=e.getMessage();
+        } catch (SQLException e) {
+            respuesta=e.getMessage();
+        } catch (BdConnectException e) {
+            respuesta=e.getMessage();
+        }
+
+
+        return respuesta;
     }
 
     /**

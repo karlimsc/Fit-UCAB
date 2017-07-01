@@ -224,4 +224,14 @@ public class EntityFactory
 
     static public Entity getFoodIDuser (String name , int id){return  new Food(name,id);}
 
+    static public Entity getFoodWeigthCaloriId (String foodname, String foodWeight , String foodCalorie, int id)
+    {
+        return new Food(foodname,foodWeight,foodCalorie,id);
+    }
+
+    static  public  Entity getFoodall ( String foodName,  String foodCalorie,String foodWeight,
+                                        Boolean _foodPersonalized,int id)
+    {
+        return  new Food(foodName,foodCalorie,foodWeight,_foodPersonalized ,id);
+    }
 }

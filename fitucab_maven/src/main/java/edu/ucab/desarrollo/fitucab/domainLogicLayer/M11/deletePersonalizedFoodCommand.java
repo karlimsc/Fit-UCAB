@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M11;
 
 import com.sun.org.apache.regexp.internal.RE;
+import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
@@ -19,7 +20,7 @@ public class deletePersonalizedFoodCommand extends Command {
     public String Respuesta ;
     public deletePersonalizedFoodCommand(Entity food){_food = food;}
     @Override
-    public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException {
+    public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException, BdConnectException {
 
         IDaoFood Daofood = DaoFactory.iniciarDaoFood();
         Respuesta = Daofood.DeletPerFood(_food);

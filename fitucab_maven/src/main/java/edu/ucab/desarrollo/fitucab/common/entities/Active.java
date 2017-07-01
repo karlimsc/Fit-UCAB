@@ -1,5 +1,6 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
+import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
@@ -27,7 +28,7 @@ public class Active extends Entity {
      * @throws ListByIdException
      * @throws ListAllException
      */
-    public void exec() throws ListByIdException, ListAllException, NoSuchMethodException, SQLException {
+    public void exec() throws ListByIdException, ListAllException, NoSuchMethodException, SQLException, BdConnectException {
         _command.execute();
     }
 }

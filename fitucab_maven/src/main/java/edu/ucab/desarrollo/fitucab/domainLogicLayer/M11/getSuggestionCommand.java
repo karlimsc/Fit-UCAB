@@ -1,5 +1,6 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M11;
 
+import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
@@ -21,7 +22,7 @@ public class getSuggestionCommand extends Command{
     }
 
     @Override
-    public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException {
+    public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException, BdConnectException {
 
         IDaoFood Daofood = DaoFactory.iniciarDaoFood();
         Respuesta = Daofood.getSugge(_food);

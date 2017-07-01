@@ -20,6 +20,7 @@ public class Food extends Entity{
 
     private String _idname ;
 
+
     public Food() {
     }
 
@@ -28,13 +29,18 @@ public class Food extends Entity{
     {
         _foodName=foodname ; _iD = id;
     }
-    public Food(int id, String foodName, String foodWeight, String foodCalorie, Boolean _foodPersonalized) {
+    public Food( String foodName,  String foodCalorie,String foodWeight, Boolean _foodPersonalized,int id) {
         this._iD = id;
         this._foodName = foodName;
         this._foodWeight = foodWeight;
         this._foodCalorie = foodCalorie;
         this._foodPersonalized = _foodPersonalized;
     }
+
+
+
+
+
 
     public Food(String idname) {
         _idname = idname;
@@ -44,8 +50,13 @@ public class Food extends Entity{
         _foodName =id ; _foodCalorie=foodCalorie;
     }
 
-
-
+    public Food (String foodname, String foodWeight , String foodCalorie, int id)
+    {
+     _foodName=foodname;
+     _foodWeight=foodWeight;
+     _foodCalorie = foodCalorie;
+     _iD = id;
+    }
 
 
 

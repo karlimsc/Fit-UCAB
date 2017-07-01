@@ -153,5 +153,9 @@ public class CommandsFactory {
 
     static public deletePersonalizedFoodCommand deletPersFoodCmd (Entity Food)
     {return new deletePersonalizedFoodCommand(Food); }
+
+    static public updatePersoCommand updatepersonCmd (Entity Food){return new updatePersoCommand(Food);}
+
+    static  public insertUnAlimentoCommand insertarAlimentoCmd (Entity Food) {return new insertUnAlimentoCommand(Food);}
 }
 

@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 
 
+import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 
@@ -20,7 +21,7 @@ public abstract class Command
      * @throws ListAllException excepcion para listar todos
      * @throws ListByIdException excepcion para listar por id
      */
-    public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException;
+    public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException, BdConnectException;
 
     public List<Entity> getChallenges(){
         return null;
