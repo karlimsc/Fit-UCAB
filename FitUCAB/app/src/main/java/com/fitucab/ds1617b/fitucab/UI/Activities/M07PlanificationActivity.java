@@ -11,14 +11,9 @@ import android.widget.Button;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07ActivityFragment;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07HomeFragment;
 
-public class M07PlanificationActivity extends AppCompatActivity {
-
-    private static Button _btn_crear;
-    private OnFragmentSwap _callBack;
-
-
-
+public class M07PlanificationActivity extends AppCompatActivity implements OnFragmentSwap{
 
     private FragmentManager FM = getSupportFragmentManager();
 
@@ -26,11 +21,11 @@ public class M07PlanificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m07_planification);
-        onSwap("M07Planification", null);
+        onSwap("M07HomeFragment", null);
 
     }
-
-    private void onSwap(String fragmentName, Bundle bundle) {
+    @Override
+    public void onSwap(String fragmentName, Bundle bundle) {
 
         Fragment fragmentToSwap = null;
         FragmentTransaction fragmentTransaction = FM.beginTransaction();
@@ -43,9 +38,14 @@ public class M07PlanificationActivity extends AppCompatActivity {
                     fragmentToSwap.setArguments(bundle);
                     fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
                     break;
+                case "M07HomeFragment":
+                    fragmentToSwap = new M07HomeFragment();
+                    fragmentToSwap.setArguments(bundle);
+                    fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
+                    break;
             }
             fragmentTransaction.commit();
-            probando();
+           // probando();
         }
 
         catch(Exception e){
@@ -53,7 +53,11 @@ public class M07PlanificationActivity extends AppCompatActivity {
         }
 
     }
+    @Override
+    public void onSwapActivity(String activityName, Bundle bundle) {
 
+    }
+/**
     private void probando() {
 
         _btn_crear.setOnClickListener(new View.OnClickListener() {
@@ -62,5 +66,5 @@ public class M07PlanificationActivity extends AppCompatActivity {
                 _callBack.onSwap("M07ActivityFragment",null);
             }
         });
-    }
+    }*/
 }

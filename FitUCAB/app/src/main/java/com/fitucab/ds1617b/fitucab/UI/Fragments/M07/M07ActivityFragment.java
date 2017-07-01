@@ -1,8 +1,9 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M07;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
-import android.icu.util.Calendar;
+import java.util.Calendar;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TimePicker;
 
 import com.fitucab.ds1617b.fitucab.R;
 
@@ -51,12 +53,6 @@ public class M07ActivityFragment extends Fragment {
     }
 
 
-    public static M07ActivityFragment newInstance(String param1, String param2) {
-
-        return null;
-
-    }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -81,44 +77,98 @@ public class M07ActivityFragment extends Fragment {
         _cb_m07_checksabado = (CheckBox)_view.findViewById(R.id.cb_m07_checksabado);
         _cb_m07_checkdomingo = (CheckBox)_view.findViewById(R.id.cb_m07_checkdomingo);
 
-        _btn_m07_fechaInicio.setOnClickListener((View.OnClickListener) this);
-        _btn_m07_fechaInicio.setOnClickListener((View.OnClickListener) this);
-        _btn_m07_horaInicio.setOnClickListener((View.OnClickListener) this);
-        _btn_m07_horaFin.setOnClickListener((View.OnClickListener) this);
+        //_btn_m07_horaInicio.setOnClickListener((View.OnClickListener) _view);
+        //_btn_m07_horaFin.setOnClickListener((View.OnClickListener) _view);
+        agregarFechaInicio();
+        agregarFechaFin();
+        agregarHoraInicio();
+        agregarHoraFin();
 
 
         return _view;
     }
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    /**@Override**/
-    public void onClick(View v) {
-        if (v == _btn_m07_fechaInicio){
 
-            final Calendar c = Calendar.getInstance();
-            dia = c.get(Calendar.DAY_OF_MONTH);
-            mes = c.get(Calendar.MONTH);
-            ano = c.get(Calendar.YEAR);
+    public void agregarFechaInicio(){
+        //_btn_m07_fechaInicio = ( ImageButton ) _view.findViewById( R.id.btn_m07_fechaInicio );
+        _btn_m07_fechaInicio.setOnClickListener(new View.OnClickListener(){
 
-            DatePickerDialog datePickerDialog;
-            datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener(){
-                @Override
-                public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                    _tv_m07_fechaInicio.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
+            @Override
+            public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+                dia = c.get(Calendar.DAY_OF_MONTH);
+                mes = c.get(Calendar.MONTH);
+                ano = c.get(Calendar.YEAR);
+
+                DatePickerDialog datePickerDialog;
+                datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener(){
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        _tv_m07_fechaInicio.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
+                    }
                 }
+                        ,dia,mes,ano);
+                datePickerDialog.show();
             }
-                    ,dia,mes,ano);
-            datePickerDialog.show();
+        });
+    }
+    public void agregarFechaFin(){
+        _btn_m07_fechaFin.setOnClickListener(new View.OnClickListener(){
 
-        }
+            @Override
+            public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+                dia = c.get(Calendar.DAY_OF_MONTH);
+                mes = c.get(Calendar.MONTH);
+                ano = c.get(Calendar.YEAR);
 
-        if (v == _btn_m07_fechaFin) {
+                DatePickerDialog datePickerDialog;
+                datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener(){
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        _tv_m07_fechaFin.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
+                    }
+                }
+                        ,dia,mes,ano);
+                datePickerDialog.show();
+            }
+        });
+    }
+    public void agregarHoraInicio(){
+        _btn_m07_horaInicio.setOnClickListener( new View.OnClickListener(){
 
-        }
-        if (v == _btn_m07_horaInicio) {
+            @Override
+            public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+                hora = c.get(Calendar.HOUR_OF_DAY);
+                min = c.get(Calendar.MINUTE);
+                TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(),
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                _tv_m07_horaInicio.setText(hourOfDay + ":" + minute);
+                            }
+                        }, hora, min, false);
+                timePickerDialog.show();
+            }
+        });
+    }
+    public void agregarHoraFin(){
+        _btn_m07_horaFin.setOnClickListener( new View.OnClickListener(){
 
-        }
-        if (v == _btn_m07_horaFin) {
-
-        }
+            @Override
+            public void onClick(View v) {
+                final Calendar c = Calendar.getInstance();
+                hora = c.get(Calendar.HOUR_OF_DAY);
+                min = c.get(Calendar.MINUTE);
+                TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(),
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                _tv_m07_horaFin.setText(hourOfDay + ":" + minute);
+                            }
+                        }, hora, min, false);
+                timePickerDialog.show();
+            }
+        });
     }
 }
