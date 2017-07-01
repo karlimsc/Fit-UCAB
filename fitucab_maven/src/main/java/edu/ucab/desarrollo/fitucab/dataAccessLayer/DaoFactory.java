@@ -27,6 +27,9 @@ public class DaoFactory
         return new DaoUser(user);
     }
 
+    static public Dao instanciateDaoUser() {
+        return new DaoUser();
+    }
     //MODULO 1
 
     /**

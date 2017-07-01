@@ -5,6 +5,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Registry;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
@@ -43,6 +44,8 @@ public class DaoUser  extends Dao implements IDaoUser {
          this._user= _user;
     }
 
+    public DaoUser(){}
+
     public DaoUser(String _userLogin, String _password) {
         this._userLogin = _userLogin;
         this._password = _password;
@@ -68,6 +71,7 @@ public class DaoUser  extends Dao implements IDaoUser {
             cstmt = _bdCon.prepareCall("{ call M01_INICIARSESION(?,?)}");
             cstmt.setString(1, _user.getUser());
             cstmt.setString(2, password);
+
             cstmt.execute();
             return _user;
 
@@ -90,10 +94,10 @@ public class DaoUser  extends Dao implements IDaoUser {
      * @return
      */
 
+    @Override
     public Entity create(Entity e) throws Exception {
 
         //TODO: AQUI SE DEVUELVE A LA CAPA DE WEB SERVICES, HABRIA QUE VER SI REALMENTE PUEDE SER ASI
-         _conn = new Sql();
         _bdCon = _conn.getConn();
         _sc = new Security();
 
@@ -133,6 +137,10 @@ public class DaoUser  extends Dao implements IDaoUser {
             logger.error("Error: ", error.toString());
             return null;
         }
+        finally {
+            _bdCon.close();
+        }
 
     }
+
 }
