@@ -3,6 +3,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
