@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M01;
 
 import com.google.gson.Gson;
 
+import edu.ucab.desarrollo.fitucab.common.Registry;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
@@ -208,27 +209,15 @@ public class DaoUser  extends Dao implements IDaoUser {
 
            // String query = "SELECT * FROM M01_RECUPERARPWD('" + email + "')";
 
-            try { //TODO: RECUERDA COLOCAR EN REGISTRY
-                //Establecemos el usuario que es el correo que cree para hacer el recuperar
-                final String username = "fitucabprueba2@gmail.com";
-                //la clave
-                final String password = "ucab2017";
-                //Estas son las propiedades de seguridad de gmail
+            try {
+
                 Properties props = new Properties();
                 props.put("mail.smtp.auth", "true");
                 props.put("mail.smtp.starttls.enable", "true");
                 props.put("mail.smtp.host", "smtp.gmail.com");
                 props.put("mail.smtp.port", "587");
 
-
-                System.out.print("Debug: email " + email);
-
-            /*
-             * EN ALGUNA PARTE DE AQUI ES DONDE DEBERIA HACER EL CAMBIO DE CLAVE POR
-             * ALGUN STRING ALEATORIO Y ENCRIPTADO
-             * Y LUEGO ENVIARLE EL STRING SIN ENCRIPTAR AL USUARIO
-             *
-             */
+                //Se traen los datos del usuario de la base de datos.
                 CallableStatement cstmt;
                 cstmt = _bdCon.prepareCall("{ call M01_RECUPERARPWD(?,?,?)}");
                 cstmt.registerOutParameter(1, Types.VARCHAR);
@@ -248,7 +237,8 @@ public class DaoUser  extends Dao implements IDaoUser {
                     Session session = Session.getInstance(props,
                             new javax.mail.Authenticator() {
                                 protected PasswordAuthentication getPasswordAuthentication() {
-                                    return new PasswordAuthentication(username, password);
+                                    return new PasswordAuthentication(Registry.RECOVERY_EMAIL_USERNAME,
+                                                                      Registry.RECOVERY_EMAIL_PASS);
                                 }
                             });
 
