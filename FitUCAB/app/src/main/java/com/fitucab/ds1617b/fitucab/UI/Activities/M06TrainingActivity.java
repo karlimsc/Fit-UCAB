@@ -33,7 +33,8 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_m06_add_training);
+        setContentView(R.layout.activity_training);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -43,7 +44,7 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         arrayList= new ArrayList<>(Arrays.asList(items));
         adapter = new ArrayAdapter<String>(this, R.layout.fragment_m06_listview_item,R.id.tv_m06_training,arrayList);
         listView.setAdapter(adapter); */
-
+/*
         ListView listViewAdd = (ListView) findViewById(R.id.listofactivities);
         String [] activities = {"Caminar", "Trotar", "Bicicleta", "Natacion", "Yoga", "Estiramientos", "Eliptica", "Escaleras", "Bailar", "Aerobic", "Remo", "Basketball", "Futbol", "Tenis", "Voleibol"};
         arrayListAdd = new ArrayList<>(Arrays.asList(activities));
@@ -51,6 +52,8 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         listViewAdd.setAdapter(adapterAdd);
 
         FloatingActionButton prueba = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+*/
+        onSwap("M06HomeTrainingFragment",null);
 
     }
 
