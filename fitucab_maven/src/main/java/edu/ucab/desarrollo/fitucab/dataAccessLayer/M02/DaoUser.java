@@ -2,6 +2,8 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M02;
 
 import edu.ucab.desarrollo.fitucab.common.entities.*;
 import edu.ucab.desarrollo.fitucab.common.exceptions.*;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.*;
 
 import java.sql.*;
@@ -21,7 +23,7 @@ public class DaoUser extends Dao implements IDaoUser {
     }
 
     @Override
-    public Entity read(int id){
+    public Entity read(int id) throws GetUserException{
         try {
             Connection conn = getBdConnect();
             ResultSet result = sql("select * from m02_consultarperfilid("+ id +")");
@@ -38,15 +40,12 @@ public class DaoUser extends Dao implements IDaoUser {
             }
             return _user;
         } catch (NullPointerException e) {
-            e.printStackTrace();
-            return null;
+            throw new GetUserException(e, DaoUser.class.getSimpleName(),BdConnectException.class.toString());
         } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
+            throw new GetUserException(e, DaoUser.class.getSimpleName(),BdConnectException.class.toString());
         }
         catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            throw new GetUserException(e, DaoUser.class.getSimpleName(),BdConnectException.class.toString());
         }
     }
 

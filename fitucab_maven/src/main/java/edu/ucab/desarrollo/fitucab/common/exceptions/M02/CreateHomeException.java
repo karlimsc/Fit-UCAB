@@ -12,10 +12,10 @@ public class CreateHomeException extends Exception{
     private String _method;
     private String _specificException;
 
-    public CreateHomeException(Exception error, String _class, String _method, String _specificException) {
+    public CreateHomeException(Exception error, String _class, String _specificException) {
         super(error);
         _class = _class;
-        _method =_method;
+
         _specificException=_specificException;
     }
 

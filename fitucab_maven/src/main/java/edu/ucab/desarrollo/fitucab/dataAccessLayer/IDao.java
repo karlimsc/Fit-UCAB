@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public interface IDao
 {
     public Entity create(Entity e) throws AddException;
 
-    public Entity read(Entity e);
+    public Entity read(Entity e) throws CreateHomeException;
 
     public Entity update(Entity e);
 }
