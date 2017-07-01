@@ -69,6 +69,7 @@ public class Training extends Entity {
         this._trainingName = _trainingName;
         this._trainingPeriod = _trainingPeriod;
     }
+
     /**
      * constructor para instanciar solo con el parametro id
      * @param userId el identificador de base de datos

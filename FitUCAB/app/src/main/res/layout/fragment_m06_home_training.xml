@@ -1,13 +1,89 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grey"
     tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06HomeTrainingFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
+        android:id="@+id/btn_m06_addtraining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/text_margin"
+        android:layout_marginRight="@dimen/text_margin"
+        android:layout_marginTop="@dimen/text_margin"
+        android:text="@string/btn_m06_trainings"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/text_button_size"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="74dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/grey"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:clickable="true"
+            app:backgroundTint="@color/colorBtnConfirmar"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/signomas" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floatingActionButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:clickable="true"
+            app:backgroundTint="@color/colorBtnDenegar"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/ic_remove_black"
+            tools:ignore="VectorDrawableCompat" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floatingActionButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:clickable="true"
+            app:backgroundTint="@color/colorBtnAceptar"
+            app:fabSize="mini"
+            app:srcCompat="@drawable/editar" />
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/listoftrainings"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="@dimen/text_size"
+        android:textSize="@dimen/text_size"
+        android:layout_marginLeft="@dimen/text_size"
+        android:layout_marginRight="@dimen/text_size"
+        />
 
-</FrameLayout>
+</LinearLayout>

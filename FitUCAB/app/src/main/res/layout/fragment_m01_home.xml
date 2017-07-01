@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="@dimen/layout_marginTop"
+            android:layout_weight="1.42"
             android:fontFamily="sans-serif"
             android:gravity="center_vertical|center_horizontal"
             android:text="@string/tv_m01_intro"
@@ -41,8 +42,7 @@
             android:textColor="@color/common_google_signin_btn_text_dark_default"
             android:textSize="@dimen/text_tittle_size"
             android:textStyle="bold"
-            android:typeface="sans"
-            android:layout_weight="1.42" />
+            android:typeface="sans" />
 
         <Button
             android:id="@+id/btn_m01_comienza"

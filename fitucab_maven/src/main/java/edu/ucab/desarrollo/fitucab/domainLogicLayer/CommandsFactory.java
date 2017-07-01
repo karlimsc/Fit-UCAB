@@ -9,6 +9,14 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
+import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
+import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Fabrica de comandos
@@ -68,9 +76,23 @@ public class CommandsFactory {
     }
 
     //Modulo 9
-    static public AchieveChallengeCommand instanciateAchieveChallengeCmd(Entity challenge){
-        return new AchieveChallengeCommand(challenge);
+    static public AchieveChallengeCommand instanciateAchieveChallengeCmd(int id){
+        return new AchieveChallengeCommand(id);
     }
+
+    static public ScoreCommand instanciateScoreCmd(int id){
+        return new ScoreCommand(id);
+    }
+
+    static public FillChartCommand instanciateFillChartCmd(int id){
+        return new FillChartCommand(id);
+    }
+
+    static public LevelUpCommand instanciateLevelUpCmd(int id){
+        return new LevelUpCommand(id);
+    }
+
+    static  public List<Entity> getChallenges(){return new ArrayList<Entity>();}
     //Fin Modulo 9
 
 
