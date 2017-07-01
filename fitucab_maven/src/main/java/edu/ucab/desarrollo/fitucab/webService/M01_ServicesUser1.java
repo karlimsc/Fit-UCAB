@@ -52,7 +52,8 @@ public class M01_ServicesUser1 {
         Entity userObject = EntityFactory.createUser(username,password);
         CheckUserCommand cmd = CommandsFactory.instanciateCheckUserCmd(userObject);
         try {
-            _response = cmd.run();
+            cmd.execute();
+
             return gson.toJson(_response);
         }
         catch (Exception e){
