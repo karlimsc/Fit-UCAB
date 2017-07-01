@@ -3,8 +3,8 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
 /**
@@ -15,7 +15,7 @@ public class CheckUserCommand extends Command{
 
     String _password;
     String _userS;
-    Entity _user, _userRetorn;
+    Entity _user, _userReturn;
 
 
     /**
@@ -40,10 +40,10 @@ public class CheckUserCommand extends Command{
     public Entity run() throws NoSuchMethodException, Exception {
         try{
             //instanciacion del dao
-            DaoUser LoginUserDao = DaoFactory.instanciateDaoUser(_user);
-            _userRetorn = LoginUserDao.create(_user);
+            Dao LoginUserDao = DaoFactory.instanciateDaoUser(_user);
+            _userReturn = LoginUserDao.create(_user);
             // Si el usuario que retorna es null es que hubo un error en la insercion
-            return _userRetorn;
+            return _userReturn;
 
         }
         catch(Exception e){

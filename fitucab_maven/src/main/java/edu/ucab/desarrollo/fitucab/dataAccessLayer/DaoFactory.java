@@ -23,7 +23,7 @@ public class DaoFactory
      * @return
      */
 
-    static public DaoUser instanciateDaoUser(Entity user) {
+    static public Dao instanciateDaoUser(Entity user) {
         return new DaoUser(user);
     }
 

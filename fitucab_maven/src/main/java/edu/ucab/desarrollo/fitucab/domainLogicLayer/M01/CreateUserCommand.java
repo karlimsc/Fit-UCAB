@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
@@ -33,7 +34,10 @@ public class CreateUserCommand extends Command {
 
         try{
 
-            DaoUser createUserDao = DaoFactory.instanciateDaoUser(_user);
+            Dao  _dao = DaoFactory.instanciateDaoUser(_user);
+            DaoUser createUserDao;
+            createUserDao = (DaoUser)_dao;
+
             createUserDao.create(_user);
             this._response=true;
 
