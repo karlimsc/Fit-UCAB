@@ -9,21 +9,21 @@ import java.sql.Date;
 @XmlRootElement
 public class User extends Entity {
 
-    @SerializedName("username")
+    @SerializedName("_username")
     private String _username;
-    @SerializedName("password")
+    @SerializedName("_password")
     private String _password;
-    @SerializedName("email")
+    @SerializedName("_email")
     private String _email;
-    @SerializedName("sex")
+    @SerializedName("_sex")
     private String _sex;
-    @SerializedName("phone")
+    @SerializedName("_phone")
     private String _phone;
-    @SerializedName("birthdate")
+    @SerializedName("_birthdate")
     private Date   _birthdate;
-    @SerializedName("weight")
+    @SerializedName("_weight")
     private int    _weight; // Se usan unicamente para uso del perfil de usuario
-    @SerializedName("height")
+    @SerializedName("_height")
     private int    _height; // Se usan unicamente para uso del perfil de usuario
 
     /**

@@ -8,8 +8,12 @@ import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
@@ -21,6 +25,9 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -29,7 +36,7 @@ import java.util.Date;
  * Clase de Servicios Web del Modulo 01
  */
 @Path("/M01_ServicesUser1")
-public class M01_ServicesUser1 {
+public class M01_ServicesUser1 extends Dao {
     Entity _response;
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M01_ServicesUser1.class);
@@ -47,18 +54,18 @@ public class M01_ServicesUser1 {
     @Path("/login_user")
     @Produces("application/json")
     public String getUser(@QueryParam("username") String username,
-                          @QueryParam("password") String password)
-    {
-        Entity userObject = EntityFactory.createUser(username,password);
-        CheckUserCommand cmd = CommandsFactory.instanciateCheckUserCmd(userObject);
+                          @QueryParam("password") String password) throws BdConnectException {
         try {
+            Entity userObject = EntityFactory.createUser(username,password);
+            CheckUserCommand cmd = CommandsFactory.instanciateCheckUserCmd(userObject);
             cmd.execute();
-
-            return gson.toJson(_response);
+            //User result = (User) CheckUserCommand.getUserLogin();
+            return gson.toJson(CheckUserCommand.getUserLogin());
         }
         catch (Exception e){
             return null ;
         }
+
     }
 
 
@@ -173,4 +180,18 @@ public class M01_ServicesUser1 {
 
     }
 
+    @Override
+    public Entity create(Entity e) throws AddException, Exception {
+        return null;
+    }
+
+    @Override
+    public Entity read(Entity e) {
+        return null;
+    }
+
+    @Override
+    public Entity update(Entity e) {
+        return null;
+    }
 }

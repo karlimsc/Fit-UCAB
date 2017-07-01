@@ -44,15 +44,6 @@ public class CommandsFactory {
         return new RecoverPasswordCommand(email);
     }
 
-    /**
-     *  Intancia del CheckUserCommand
-     * @param user String de username
-     * @param password String contraseña
-     * @return CheckUserCommand para vericar el registro del usuario
-     */
-    static public CheckUserCommand instanciateCheckUserCmd(String user, String password){
-        return new CheckUserCommand(user, password);
-    }
 
     static public CheckUserCommand instanciateCheckUserCmd(Entity user){
         return new CheckUserCommand(user);
