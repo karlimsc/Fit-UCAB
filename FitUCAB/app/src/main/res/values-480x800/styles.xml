@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TabHost_m05" parent="Theme.AppCompat">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorwhite</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:typeface">sans</item>
+
+    </style>
+</resources>

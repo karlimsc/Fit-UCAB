@@ -49,8 +49,7 @@ public class  M01LoginFragment extends Fragment {
     private EditText _etUserLogin;
     private EditText _etPasswordLogin;
 
-    public M01LoginFragment() {
-    }
+    public M01LoginFragment() {}
 
     /**
      * Una vez la activity llama a un fragment se ejecuta este metodo
@@ -131,6 +130,12 @@ public class  M01LoginFragment extends Fragment {
 
     }
 
+    /**
+     * Metodo con el que se validan los componentes del fragmentos
+     * @param username
+     * @param password
+     * @return el mensaje de error
+     */
     private String validateComponents(String username, String password){
 
         String response = "ok";

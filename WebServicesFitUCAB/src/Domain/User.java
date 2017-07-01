@@ -212,14 +212,6 @@ public class User {
         this._status = _status;
     }
 
-    public Date get_birthdate() {
-        return _birthdate;
-    }
-
-    public void set_birthdate(Date _birthdate) {
-        this._birthdate = _birthdate;
-    }
-
 
     //ESTO LO HIZO EL MODULO DE PERFIL
     public int getWeight() {

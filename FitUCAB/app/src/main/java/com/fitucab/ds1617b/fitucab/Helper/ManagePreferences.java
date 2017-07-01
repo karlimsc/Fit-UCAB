@@ -20,8 +20,21 @@ public class ManagePreferences {
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         int storedPreference = preferences.getInt("idUser", 0);
-        return 2;
-        //return storedPreference;
+        return storedPreference;
+
+    }
+
+
+    /**
+     * Metodo por el que cual puedes saber el username del usuario que esta logueado
+     * @param context
+     * @return el username del usuario
+     */
+    public static String getUsername(Context context){
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        String storedPreference = preferences.getString("username", null);
+        return storedPreference;
 
     }
 }

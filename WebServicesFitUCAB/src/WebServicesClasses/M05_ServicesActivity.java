@@ -10,6 +10,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import Domain.*;
 
+import static Domain.Sql.getConInstance;
+
 /**
  * Created by estefania on 14/05/2017.
  */
@@ -17,7 +19,7 @@ import Domain.*;
 @Path("/M05_ServicesActivity")
 public class M05_ServicesActivity {
 
-
+   private Connection conn = getConInstance();
 
     Gson gson = new Gson();
 
@@ -56,7 +58,7 @@ public class M05_ServicesActivity {
                 "'"+idreg+"','"+idspo+"')";
 
         try{
-            Connection conn = conectarADb();
+            
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -104,7 +106,7 @@ public class M05_ServicesActivity {
                 "'"+idtra+"')";
 
         try{
-            Connection conn = conectarADb();
+       
             Statement    st = conn.createStatement();
             ResultSet    rs =  st.executeQuery(query);
 
@@ -135,7 +137,7 @@ public class M05_ServicesActivity {
 
 
         try{
-            Connection conn = conectarADb();
+            
             Statement   st  = conn.createStatement();
             ResultSet   rs  =  st.executeQuery(query);
 
@@ -185,7 +187,7 @@ public class M05_ServicesActivity {
             //Array creado para almacenar las actividades realizadas
 
             ArrayList<Activity> listaActividades = new ArrayList<Activity>();
-            Connection conn = conectarADb();
+           
             Statement   st  = conn.createStatement();
             ResultSet   rs  =  st.executeQuery(query);
 
@@ -240,7 +242,7 @@ public class M05_ServicesActivity {
 
         try{
             Activity resultado = new Activity();
-            Connection conn=conectarADb();
+           
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -283,7 +285,7 @@ public class M05_ServicesActivity {
 
         try{
             Activity resultado = new Activity();
-            Connection conn=conectarADb();
+         
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -324,7 +326,7 @@ public class M05_ServicesActivity {
 
         try{
 
-            Connection conn=conectarADb();
+     
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -359,7 +361,7 @@ public class M05_ServicesActivity {
 
 
         try{
-            Connection conn = conectarADb();
+          
             Statement    st = conn.createStatement();
             ResultSet    rs =  st.executeQuery(query);
 
@@ -385,7 +387,7 @@ public class M05_ServicesActivity {
         String query = "SELECT M05_eliminaractividad('"+idreg+"')" ;
 
         try{
-            Connection conn = conectarADb();
+           
             Statement st = conn.createStatement();
             ResultSet rs =  st.executeQuery(query);
 
@@ -413,7 +415,7 @@ public class M05_ServicesActivity {
         Activity resultado = new Activity();
 
         try{
-            Connection conn = conectarADb();
+   
             Statement    st = conn.createStatement();
             ResultSet    rs =  st.executeQuery(query);
 
@@ -429,27 +431,7 @@ public class M05_ServicesActivity {
         }
     }
 
-    private Connection conectarADb(){
 
-        Connection conn = null;
-
-        try {
-
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/FitUcabDB";
-            conn       = DriverManager.getConnection(url, "postgres",  "postgres");
-
-        } catch (ClassNotFoundException e) {
-
-            e.printStackTrace();
-            System.exit(1);
-        } catch (SQLException e) {
-
-            e.printStackTrace();
-            System.exit(2);
-        }
-        return conn;
-    }
 
 
 

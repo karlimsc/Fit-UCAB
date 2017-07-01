@@ -18,9 +18,9 @@ public class Sql {
      * @return instancia de la conexion
      */
     public static Connection getConInstance(){
-        if (conInstance == null){
+
             conInstance = bdConnect();
-        }
+
         return conInstance;
     }
 
@@ -73,7 +73,8 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
-            System.err.println("NullPointerExceptionSql: " + e.getMessage());
+            System.err.println("NullPointerExceptionSql: " + e.getMessage() + " , Query: " + query);
+            return null;
         }
 
         finally {
@@ -100,6 +101,7 @@ public class Sql {
         }
         catch ( NullPointerException e ){
             e.printStackTrace();
+            return false;
         }
         finally {
 
@@ -148,4 +150,21 @@ public class Sql {
         return _conn;
     }
 
+
+    /**
+     * metodo estatico para cerrar
+     * la conexion a la base de datos
+     * @param conn
+     */
+
+    public static void bdClose(Connection conn) {
+        try{
+            conn.close();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
 }
+

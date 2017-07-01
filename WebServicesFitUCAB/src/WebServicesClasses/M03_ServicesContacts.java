@@ -186,8 +186,10 @@ public class M03_ServicesContacts{
 
         if(noAmiyDeclined!=null && !noAmiyDeclined.isEmpty()) {
             salida.add(sep1);
-            for (int i = 0; i < noAmiyDeclined.size(); i++)
-                salida.add(noAmiyDeclined.get(i));
+            for (int i = 0; i < noAmiyDeclined.size(); i++) {
+                if(noAmiyDeclined.get(i).get_id() != Integer.parseInt(id))
+                    salida.add(noAmiyDeclined.get(i));
+            }
         }
 
 

@@ -1,8 +1,8 @@
 
 
-
 ------------------------------------------------------STORE PROCEDURES------------------------------------------------------------ 
 -- MODULO 1
+
 
 /**************************************************INICIO DE SESION**************************************************/
 
@@ -229,14 +229,15 @@ $$
 LANGUAGE 'plpgsql' VOLATILE; 
 
 --BUSCAR DATOS DE LOS DEPPORTES.
-CREATE OR REPLACE FUNCTION M05_obtenerdatosdeporte (ide INTEGER) RETURNS TABLE (iddeporte NUMERIC, nombredeporte VARCHAR(200),metdeporte NUMERIC) AS 
-$$ 
+CREATE OR REPLACE FUNCTION public.m05_obtenerdatosdeporte(nombre Varchar(200))
+  RETURNS TABLE(iddeporte numeric, nombredeporte character varying, metdeporte numeric) AS
+$BODY$ 
 DECLARE
 var_r record;
 BEGIN 
 for var_r in(SELECT * 
 				 FROM  SPORT
-				 WHERE SPORTID=ide)
+				 WHERE SPORTNAME=nombre)
 loop
 		iddeporte:=var_r.SPORTID;
 		nombredeporte := var_r.SPORTNAME;
@@ -246,8 +247,8 @@ return next;
 
   
 END; 
-$$
-LANGUAGE 'plpgsql' STABLE;
+$BODY$
+  LANGUAGE plpgsql STABLE;
 
 -- BUSCA EL MET DEL DEPORTE QUE EL USUARIO QUIERE AÑADIR A SU LISTA  A TRAVES DE SU NOMBRE
 -- FUE CREADO PARA OBTENER EL MET DEL DEPORTE ANTES DE INSERTAR
@@ -411,7 +412,7 @@ loop
 end loop;
 END
 $BODY$
-  LANGUAGE plpgsql VOLATILE
+  LANGUAGE plpgsql VOLATILE;
 
 -- Carga actividades por id usuario
 
@@ -442,7 +443,7 @@ loop
 end loop;
 END
 $BODY$
-  LANGUAGE plpgsql VOLATILE
+  LANGUAGE plpgsql VOLATILE;
 
 -- CARGA LAS CALORIAS QUEMADAS POR ACTIVIDAD---
 
@@ -554,7 +555,6 @@ LANGUAGE 'plpgsql' VOLATILE;
 
 ---Modulo 10
 
-
 CREATE OR REPLACE  FUNCTION M10_AddWater( tm timestamp, gt integer, fkP integer,
                                  OUT res integer)
 AS $$
@@ -604,7 +604,7 @@ BEGIN
  
 
 	delete from glass_historic where glasshistoricid =
-	( Select max(GLASSTIME) from glass_historic where fk_person = fkp);
+	( Select max(glasshistoricid) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm);
 
 
 
@@ -640,7 +640,7 @@ RETURNS TABLE(GLASSTIME timestamp, GLASSTYPE int) AS $$
 BEGIN
   RETURN QUERY
     SELECT t.GLASSTIME,t.GLASSTYPE FROM glass_historic as t
-      WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp;
+      WHERE DATE(t.GLASSTIME) = DAte(date_stamp) and fk_person = fkp;
  end;
 $$ LANGUAGE 'plpgsql';
 
@@ -972,3 +972,57 @@ BEGIN
    END LOOP;
 END; $$
   LANGUAGE plpgsql;
+
+
+-----------------------------MODULO 09-----------------------------------------------------
+CREATE OR REPLACE FUNCTION M09_GetAchieveChallengeById(code int)
+	RETURNS TABLE (id int,
+								 name varchar(20),
+								 description varchar(30),
+								 score int)
+AS $$
+BEGIN
+	RETURN QUERY
+	SELECT C.challengeid,
+		C.challengename,
+		C.challengedescription,
+		C.challengescore
+	FROM CHALLENGE C, DETAIL D
+	WHERE D.FK_CHALLENGEID = C.CHALLENGEID
+				AND D.FK_USERID = code
+				AND D.DETAILACTIVE = TRUE;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION M09_GetAchieveAndUanchieveChallengeById(code int)
+	RETURNS TABLE (achieve bigint,
+								 unachieve bigint)
+AS $$
+BEGIN
+	RETURN QUERY
+	SELECT COUNT(D.*) achieve,
+				 (select COUNT(*)
+					FROM  DETAIL D
+					WHERE D.FK_USERID = code) unachieve
+	FROM CHALLENGE C, DETAIL D
+	WHERE D.FK_CHALLENGEID = C.CHALLENGEID
+				AND D.FK_USERID = code
+				AND D.DETAILACTIVE = TRUE;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE FUNCTION M09_GetScoreChallengeById(code int)
+	RETURNS bigint
+AS $$
+DECLARE
+	sum bigint;
+BEGIN
+	SELECT SUM(C.CHALLENGESCORE)
+	INTO sum
+	FROM CHALLENGE C, DETAIL D
+	WHERE D.FK_CHALLENGEID = C.CHALLENGEID
+				AND D.FK_USERID = code
+				AND D.DETAILACTIVE = TRUE;
+	RETURN sum;
+END;
+$$ LANGUAGE plpgsql;
