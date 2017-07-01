@@ -206,6 +206,7 @@ public class EntityFactory
     }
 */
 
+    static  public List<Entity> getChallenges(){return new ArrayList<Entity>();}
     //FIN MODULO 9
 
 }
