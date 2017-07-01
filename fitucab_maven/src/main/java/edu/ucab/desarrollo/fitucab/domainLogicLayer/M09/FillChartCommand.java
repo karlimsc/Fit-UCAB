@@ -34,7 +34,7 @@ public class FillChartCommand extends Command{
     //TODO: Falta execute
     public void execute() throws NoSuchMethodException {
         try{
-            _dao.fillChart(_userId);
+            _challenge = _dao.fillChart(_userId);
         } catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());

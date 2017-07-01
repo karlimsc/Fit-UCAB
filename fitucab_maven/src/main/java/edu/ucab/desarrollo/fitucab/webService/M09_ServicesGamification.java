@@ -83,7 +83,8 @@ public class M09_ServicesGamification {
     @Path("/getScores/{userId}")
     public Challenge getScores(@PathParam("userId") int id) throws NoSuchMethodException {
         try {
-            Command cmd = CommandsFactory.instanciateScoreCmd(id);
+            Dao dao = DaoFactory.instanceDaoGaming();
+            Command cmd = CommandsFactory.instanciateScoreCmd(id, dao);
             cmd.execute();
             return (Challenge) cmd.getChallenge();
         }
@@ -106,7 +107,8 @@ public class M09_ServicesGamification {
     @Path("/checkLevels/{userId}")
     public Challenge getLevelUp(@PathParam("userId") int id) throws NoSuchMethodException {
         try {
-            Command cmd = CommandsFactory.instanciateLevelUpCmd(id);
+            Dao dao = DaoFactory.instanceDaoGaming();
+            Command cmd = CommandsFactory.instanciateLevelUpCmd(id, dao);
             cmd.execute();
             return (Challenge) cmd.getChallenge();
         }

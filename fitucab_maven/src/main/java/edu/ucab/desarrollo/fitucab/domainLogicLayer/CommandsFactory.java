@@ -75,16 +75,16 @@ public class CommandsFactory {
         return new AchieveChallengeCommand(id, dao);
     }
 
-    static public Command instanciateScoreCmd(int id){
-        return new ScoreCommand(id);
+    static public Command instanciateScoreCmd(int id, Dao dao){
+        return new ScoreCommand(id, dao);
     }
 
     static public Command instanciateFillChartCmd(int id, Dao dao){
         return new FillChartCommand(id, dao);
     }
 
-    static public Command instanciateLevelUpCmd(int id){
-        return new LevelUpCommand(id);
+    static public Command instanciateLevelUpCmd(int id, Dao dao){
+        return new LevelUpCommand(id, dao);
     }
     //Fin Modulo 9
 
