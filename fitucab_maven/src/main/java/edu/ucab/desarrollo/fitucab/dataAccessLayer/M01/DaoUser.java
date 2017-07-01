@@ -19,27 +19,19 @@ import java.sql.*;
 
 public class DaoUser  extends Dao implements IDaoUser {
     //Conexion con la base de datos
-    private Sql        _conn;
     private Connection _bdCon;
-    private Statement  _st;
 
     //Encargado de encriptar la contraseña
     private Security   _sc;
 
     //String de conexion funciones
     String _sqlInicioSesion="{?=call M01_INICIARSESION(?,?)}";
-    String _sqlLastUser="{?=call M01_LASTUSER(?,?,?,?,?,?,?,?)}";
+    String _sqlLastUser="{?=call M01_LASTUSER()}";
 
     //String de conexion procedimientos
     String _sqlRegistrarUsuario="{ call M01_REGISTRAR(?,?,?,?,?,?,?,?)}";
 
-
-
     Entity _user;
-
-    Gson gson = new Gson();
-
-    String _userLogin, _password;
 
     private static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
