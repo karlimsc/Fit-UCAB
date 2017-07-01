@@ -221,7 +221,9 @@
     <string name="btn_m06_minus"></string>
     <string name="lv_m06_listofactivities"></string>
     <string name="Agregaractividades">Nuevo Entrenamiento</string>
+    <string name="ModificarActividad">Modificar Entrenamiento</string>
     <string name="ListarActividades">Actividad</string>
+    <string name="Entrenamiento">Entrenamiento:</string>
 
     <!--FIN Strings Modulo 6 -->
 
