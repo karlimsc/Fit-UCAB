@@ -149,7 +149,37 @@ public class DaoTraining extends Dao implements IDaoTraining
 
     public Boolean shareTraining( Entity e )
     {
-        return null;
+        Training t = (Training) e;
+        String query ="SELECT M06_CREATETRAINING('"+t.get_userId()+"','"+t.getTrainingName()+"')";
+
+        try {
+            Connection conn = Dao.getBdConnect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            //User user = null;
+
+            for (Entity activity : t.get_activitylist()) {
+                Activity a = (Activity) activity;
+                String _query =
+                        "SELECT M06_ADDTRAINING_ACTIVITY('" + a.get_duration() + "', '" + e.get_id() + "', '" + a.get_id() + ")";
+                conn = Dao.getBdConnect();
+                st = conn.createStatement();
+                rs = st.executeQuery(query);
+                //User user = null;
+            }
+
+        }
+        catch (SQLException ex) {
+
+        }
+        catch (BdConnectException ex) {
+
+        }
+        catch (Exception ex) {
+
+        }
+
+        return true;
     }
 
     /**
