@@ -278,5 +278,30 @@ public class DaoFood extends Dao implements IDaoFood {
         return gson.toJson(response);
     }
 
+    @Override
+    public String getPersonalizedLis(Entity e) throws BdConnectException, SQLException {
+
+        Food food = (Food) e;
+
+        Connection conn = Dao.getBdConnect();
+        String query = "select * from m11_get_alimentos_person_lista(?)";
+        PreparedStatement st = conn.prepareStatement(query);
+        st.setString(1, food.get_idname());
+        ResultSet rs = st.executeQuery();
+        jsonArray = new ArrayList<>();
+        while(rs.next()){
+            jsonArray.add(new Food());
+            jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
+            jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
+            jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
+            jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
+
+        }
+
+        response = gson.toJson(jsonArray);
+
+        return response;
+    }
+
 
 }

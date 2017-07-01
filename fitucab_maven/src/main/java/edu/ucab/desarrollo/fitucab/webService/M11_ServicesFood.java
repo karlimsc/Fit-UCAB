@@ -358,9 +358,26 @@ public class M11_ServicesFood {
     public String getPersonalizedList(@QueryParam("username") String username) {
 
         Entity EntityFood = EntityFactory.getUsername(username);
+        getPersonalizedListCommand cmd = CommandsFactory.getPersoFoodCmd(EntityFood);
 
-       return"";
+        try {
+            cmd.execute();
+            respuesta = cmd.Respuesta;
 
+        } catch (ListAllException e) {
+            respuesta=e.getMessage();
+        } catch (ListByIdException e) {
+            respuesta=e.getMessage();
+        } catch (NoSuchMethodException e) {
+            respuesta=e.getMessage();
+        } catch (SQLException e) {
+            respuesta=e.getMessage();
+        } catch (BdConnectException e) {
+            respuesta=e.getMessage();
+        }
+
+
+        return respuesta;
 
     }
 
