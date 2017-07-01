@@ -4,8 +4,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.User;
 
 /*
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;*/
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;*/
 
 
 import com.google.gson.Gson;

@@ -72,25 +72,89 @@ public class M06_ServicesTraining
 
 
     @POST
-    @Path( "/updateTraining" )
+    @Path( "/changeTrainingName" )
     @Produces( "application/json" )
 
     /**
-     * Metodo utilizado a traves de webservice para cambiar los parametros de un entrenamiento existente en
+     * Metodo utilizado a traves de webservice para cambiar el nombre de un entranamiento
      * la base de datos
      * @param idTraining
      * @param trainingName
-     * @param traningPeriod
-     * @param trainingCalories
      * @return
      */
 
-    public String updateTraining( @QueryParam( "idTraining" ) int id,
-            @QueryParam( "trainingName" ) String name,
-            @QueryParam( "trainingPeriod" ) int period )
+    public String renameTraining( @QueryParam( "idTraining" ) int id,
+                                  @QueryParam( "trainingName" ) String name)
     {
-        Entity updatedTrainingObject = EntityFactory.createTraining( id, name, period );
-        UpdateTrainingCommand cmd = CommandsFactory.instanciateUpdateTrainingCmd( updatedTrainingObject );
+        Entity updatedTrainingObject = EntityFactory.createTraining( id, name);
+        ChangeTrainingNameCommand cmd = CommandsFactory.instanciateChangeTrainingNameCmd(updatedTrainingObject);
+
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+
+    }
+
+
+    @POST
+    @Path( "/addActivitiesToTraining" )
+    @Produces( "application/json" )
+
+    /**
+     * Metodo utilizado a traves de webservice para agregar actividades a un entranamiento
+     * la base de datos
+     * @param idTraining
+     * @param trainingName
+     * @return
+     */
+
+    public String addActivitiesToTraining( @QueryParam( "idTraining" ) int id,
+                                           @QueryParam( "trainingName" ) String name,
+                                           @QueryParam( "trainingActivities" )  LinkedList<String> activities)
+    {
+        LinkedList<Entity> activitiesList = activityList(activities);
+        Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
+        AddActivitiesToTrainingCommand cmd = CommandsFactory.instanciateAddActivitiesToTrainingCmd(updatedTrainingObject);
+
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+
+    }
+
+
+    @POST
+    @Path( "/removeActivitiesToTraining" )
+    @Produces( "application/json" )
+
+    /**
+     * Metodo utilizado a traves de webservice para agregar actividades a un entranamiento
+     * la base de datos
+     * @param idTraining
+     * @param trainingName
+     * @return
+     */
+
+    public String removeActivitiesToTraining( @QueryParam( "idTraining" ) int id,
+                                              @QueryParam( "trainingName" ) String name,
+                                              @QueryParam( "trainingActivities" )  LinkedList<String> activities)
+    {
+        LinkedList<Entity> activitiesList = activityList(activities);
+        Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
+        RemoveActivitiesFromTrainingCommand cmd = CommandsFactory.instanciateRemoveActivitiesFromTrainingCmd(updatedTrainingObject);
+
         try
         {
             cmd.execute();
