@@ -2,8 +2,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M01;
 
 import com.google.gson.Gson;
 
-import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
+import edu.ucab.desarrollo.fitucab.common.Registry;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
@@ -12,12 +11,13 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
 import org.slf4j.LoggerFactory;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.mail.Authenticator;
 import java.lang.reflect.Type;
 import java.sql.*;
 import java.util.Properties;
@@ -206,44 +206,39 @@ public class DaoUser  extends Dao implements IDaoUser {
             String usernameResult = "";
             String passwordResult = "";
 
+
            // String query = "SELECT * FROM M01_RECUPERARPWD('" + email + "')";
 
-            try { //TODO: RECUERDA COLOCAR EN REGISTRY
-                //Establecemos el usuario que es el correo que cree para hacer el recuperar
-                final String username = "fitucabprueba2@gmail.com";
-                //la clave
-                final String password = "fitucab2017";
-                //Estas son las propiedades de seguridad de gmail
+            try {
+
                 Properties props = new Properties();
-                props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
                 props.put("mail.smtp.auth", "true");
                 props.put("mail.smtp.starttls.enable", "true");
                 props.put("mail.smtp.host", "smtp.gmail.com");
                 props.put("mail.smtp.port", "587");
 
-            /*
-             * EN ALGUNA PARTE DE AQUI ES DONDE DEBERIA HACER EL CAMBIO DE CLAVE POR
-             * ALGUN STRING ALEATORIO Y ENCRIPTADO
-             * Y LUEGO ENVIARLE EL STRING SIN ENCRIPTAR AL USUARIO
-             *
-             */
+                //Se traen los datos del usuario de la base de datos.
                 CallableStatement cstmt;
-                cstmt = _bdCon.prepareCall("{ call M01_RECUPERARPWD(?)}");
-                cstmt.setString(1,email);
+                cstmt = _bdCon.prepareCall("{ call M01_RECUPERARPWD(?,?,?)}");
                 cstmt.registerOutParameter(1, Types.VARCHAR);
                 cstmt.registerOutParameter(2, Types.VARCHAR);
-                validaEmail = cstmt.execute();
+                cstmt.setString(3, email);
 
+                cstmt.execute();
+
+                validaEmail = true;
                 if (validaEmail == true) {
                     usernameResult = cstmt.getString(1);
                     passwordResult = cstmt.getString(2);
                     passwordResult= _sc.decryptPassword(passwordResult);
-
+                    System.out.print("Debug: user " + usernameResult);
                     //Se crea la sesion para autenticar
+
                     Session session = Session.getInstance(props,
                             new javax.mail.Authenticator() {
                                 protected PasswordAuthentication getPasswordAuthentication() {
-                                    return new PasswordAuthentication(username, password);
+                                    return new PasswordAuthentication(Registry.RECOVERY_EMAIL_USERNAME,
+                                                                      Registry.RECOVERY_EMAIL_PASS);
                                 }
                             });
 
@@ -268,6 +263,7 @@ public class DaoUser  extends Dao implements IDaoUser {
                     userOk.set_status(Integer.toString(RESULT_EMAIL_OK));
                     return gson.toJson(userOk);
                 } else {
+                    System.out.print("Debug: user " + usernameResult);
                     User userFail = new User();
                     userFail.set_status(Integer.toString(RESULT_USER_FAIL));
                     return gson.toJson(userFail);
@@ -277,11 +273,13 @@ public class DaoUser  extends Dao implements IDaoUser {
                 MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                         Thread.currentThread().getStackTrace()[1].getMethodName());
                 logger.error("Error: ", error.toString());
+                System.out.print("Error: " + error.toString());
                 return e.getSQLState();
             } catch (Exception e) {
                 MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                         Thread.currentThread().getStackTrace()[1].getMethodName());
                 logger.error("Error: ", error.toString());
+                System.out.print("Error: " + error.toString());
                 return e.getMessage();
             }finally {
                 _bdCon.close();
