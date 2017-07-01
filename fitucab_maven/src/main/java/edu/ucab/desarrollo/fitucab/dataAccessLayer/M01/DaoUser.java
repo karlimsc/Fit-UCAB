@@ -114,11 +114,23 @@ public class DaoUser  extends Dao implements IDaoUser {
 
             _user.setId(id);
             return _user;
+
+        }
+        catch (SQLException ex) {
+            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Debug: ", error.toString());
+            logger.error("Error: ", error.toString());
+
+            //Retorna null por el error
+            return null;
         }
         catch (Exception ex){
-
-        return null;
-
+            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Debug: ", error.toString());
+            logger.error("Error: ", error.toString());
+            return null;
         }
     }
 
@@ -158,8 +170,6 @@ public class DaoUser  extends Dao implements IDaoUser {
             cstmt.execute();
 
             int id = cstmt.getInt(1);
-
-
             _user.setId(id);
 
             return _user;

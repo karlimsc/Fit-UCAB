@@ -30,9 +30,8 @@ public class CreateUserCommand extends Command {
         this._response = false;
     }
 
-    public Entity getUserRegistry(Entity e){
-        e = _userResponse;
-        return e ;
+    public static Entity getUserRegistry(){
+        return  _userResponse;
     }
 
 

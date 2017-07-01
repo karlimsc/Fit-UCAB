@@ -129,15 +129,13 @@ public class M01_ServicesUser1 extends Dao {
 
             //Obtiene el usuario registrado
             User rUser = (User) cmd.getUserRegistry();
-
-            //TODO: PENDIENTE - EL RETURN ES UN STRING, HABRA QUE VER EN LA APLICACION LO QUE NECESITA REALMENTE
-
+            _returnUser.setId(rUser.getId());
             if (cmd.get_response()) {
                 logger.debug("Debug: ","Boolean de CommandCreateUser TRUE");
                 System.out.print("Debug Boolean de CommandCreateUser TRUE");
                 System.out.print("Debug Boolean de CommandCreateUser TRUE " + _returnUser.getUser());
-                return gson.toJson(_returnUser);
-                //return gson.toJson(rUser);
+                //return gson.toJson(_returnUser);
+                return gson.toJson(rUser);
             }
             else
                 return gson.toJson(null);
