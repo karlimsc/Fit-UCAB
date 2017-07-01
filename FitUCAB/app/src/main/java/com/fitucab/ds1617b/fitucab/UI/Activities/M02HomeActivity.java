@@ -230,6 +230,11 @@ public class M02HomeActivity extends AppCompatActivity
             startActivity(myintent);
 
         }
+        else if (id == R.id.nav_m02_training) {
+            Intent myintent = new Intent(M02HomeActivity.this, M01LoginActivity.class);
+            startActivity(myintent);
+
+        }
         else if (id == R.id.nav_m02_planing_activitys) {
 
         } else if (id == R.id.nav_m02_notifications) {
