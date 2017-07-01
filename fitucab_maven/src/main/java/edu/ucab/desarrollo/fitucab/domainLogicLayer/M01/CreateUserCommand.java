@@ -42,8 +42,6 @@ public class CreateUserCommand extends Command {
             this._response=true;
 
             logger.debug("Debug: ", "Realizó el Try en CreateUserCommand");
-
-
         }
         catch (NullPointerException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),

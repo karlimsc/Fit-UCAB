@@ -1,20 +1,29 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
 
+import com.google.gson.annotations.SerializedName;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import java.sql.Date;
 
 @XmlRootElement
 public class User extends Entity {
 
-    private int    _id;
+    @SerializedName("username")
     private String _username;
+    @SerializedName("password")
     private String _password;
+    @SerializedName("email")
     private String _email;
+    @SerializedName("sex")
     private String _sex;
+    @SerializedName("phone")
     private String _phone;
+    @SerializedName("birthdate")
     private Date   _birthdate;
+    @SerializedName("weight")
     private int    _weight; // Se usan unicamente para uso del perfil de usuario
+    @SerializedName("height")
     private int    _height; // Se usan unicamente para uso del perfil de usuario
 
     /**
@@ -27,7 +36,7 @@ public class User extends Entity {
      * @param id userId
      */
     public User(int id){
-        _id=id;
+        super.set_id(id);
     }
 
     /**
@@ -42,7 +51,7 @@ public class User extends Entity {
      */
     public User(int id,String user,String password, String email,String sex,String phone, Date birthdate)
     {
-        _id = id;
+        super.set_id(id);
         _username = user;
         _password = password;
         _email = email;
@@ -73,7 +82,7 @@ public class User extends Entity {
      */
     public User(int id,String user,String password)
     {
-        _id = id;
+        super.set_errorCode(id);
         _username = user;
         _password = password;
 
@@ -139,11 +148,11 @@ public class User extends Entity {
 
     public int getId()
     {
-        return _id;
+        return super.get_id();
     }
     public void setId(int id)
     {
-        this._id = id;
+        super.set_id(id);
     }
 
     public String getUser()
