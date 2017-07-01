@@ -3,6 +3,8 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 import edu.ucab.desarrollo.fitucab.common.Registry;
 import edu.ucab.desarrollo.fitucab.common.entities.*;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -52,21 +54,24 @@ public abstract class Dao implements IDao
         return conn;
     }
 
+
+
+
     /**
      * Metodo que lee un int
      * @param id
      * @return
      */
-    public Entity read(int id) {
+    public Entity read(int id) throws GetUserException{
+
         return null;
     }
-
     /**
      * Metodo que lee una entidad
      * @param user
      * @return
      */
-    public Entity read(Entity user) {
+    public Entity read(Entity user) throws CreateHomeException {
         return null;
     }
 

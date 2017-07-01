@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M02;
 
 import edu.ucab.desarrollo.fitucab.common.entities.*;
 import edu.ucab.desarrollo.fitucab.common.exceptions.*;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.*;
 
 import java.sql.*;
@@ -29,11 +30,11 @@ public class DaoHome extends Dao implements IDaoHome {
      * @return
      */
     @Override
-    public Entity read(Entity user){
+    public Entity read(Entity user) throws CreateHomeException  {
 
 
         try {
-            Connection conn = getBdConnect();
+            getBdConnect();
             ResultSet rsW = sql("SELECT countg FROM m10_getwaterglass("+_usuario.get_id()+"," +
                     "'"+((User)_usuario).getBirthdate()+"')");
             while (rsW.next()){
@@ -43,28 +44,36 @@ public class DaoHome extends Dao implements IDaoHome {
             _home = EntityFactory.createHome(totalAgua, totalCalorias);
             return _home;
         } catch (BdConnectException e) {
-            e.printStackTrace();
-            return null;
+            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
         } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
+            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+        } catch (Exception e){
+            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
         }
     }
+
 
     /**
      * Metodo que busca las calorias por un query con un storeprocedures
      * @param usuario
      */
-    public void buscarCalorias(String usuario){
+    public void buscarCalorias(String usuario) throws CreateHomeException {
+
 
         ResultSet rsC = null;
         try {
+
+            getBdConnect();
             rsC = sql("SELECT calorias FROM m11_get_calorias_dia('"+usuario+"')");
             while (rsC.next()){
                 totalCalorias = rsC.getInt("calorias");
             }
+        } catch (BdConnectException e) {
+            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+        }catch (Exception e){
+            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
         }
     }
 

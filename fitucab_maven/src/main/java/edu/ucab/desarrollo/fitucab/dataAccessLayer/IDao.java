@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 
 import java.util.List;
 
@@ -24,7 +25,8 @@ public interface IDao
      * @param e
      * @return
      */
-    public Entity read(Entity e);
+    public Entity read(Entity e) throws CreateHomeException;
+
 
     /**
      * Metodo implementado por Dao que actualiza una entidad
