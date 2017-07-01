@@ -357,6 +357,8 @@ public class M11_ServicesFood {
     @Produces("application/json")
     public String getPersonalizedList(@QueryParam("username") String username) {
 
+        Entity EntityFood = EntityFactory.getUsername(username);
+
        return"";
 
 
