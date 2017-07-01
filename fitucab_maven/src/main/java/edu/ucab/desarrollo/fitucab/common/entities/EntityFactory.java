@@ -1,6 +1,9 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -41,9 +44,19 @@ public class EntityFactory
      * @param name
      * @return
      */
-    static public Activity createActivity( int id, String name ){
+    static public Activity createActivity( int id, String name, int duration ){
 
-        return new Activity(id,name);
+        return new Activity(id, name, duration);
+
+    }
+
+    /**
+     * Fabrica para una actividad vacia
+     * @return
+     */
+    static public Activity createActivity(){
+
+        return new Activity();
 
     }
 
@@ -132,7 +145,7 @@ public class EntityFactory
     }
 
     /**
-     * Metodo que instancia la clase Challenge con sus atributos
+     * Metodo que instancia la clase Challenge con su id, nombre, descripcion y record
      * @param id Identificador del reto
      * @param name Nombre del reto
      * @param description Descripcion del reto
@@ -143,6 +156,28 @@ public class EntityFactory
     static public Entity createChallenge(int id, String name, String description, int score){
         return new Challenge(id, name, description, score);
     }
+
+    /**
+     * Metodo que instancia la clase Challenge con sus retos logrados y no logrados
+     * @param achieve cantidad de retos logrados
+     * @param unachieve cantidad de retos no logrados
+     * @return Objecto Challenge
+     * @see Challenge
+     */
+    static public Entity createChallenge(long achieve, long unachieve){
+        return new Challenge(achieve,unachieve);
+    }
+
+    /**
+     * Metodo que instancia la clase Challenge con la suma de sus records
+     * @param score Record acumulado que se lleva del reto.
+     * @return Objeto Challenge
+     * @see Challenge
+     */
+    static public Entity createChallenge(int score){
+        return new Challenge(score);
+    }
+
 
     //FIN MODULO 9
 

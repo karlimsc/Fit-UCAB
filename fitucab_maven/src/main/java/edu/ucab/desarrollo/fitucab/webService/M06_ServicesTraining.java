@@ -14,6 +14,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.DeleteTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;
 
 import javax.ws.rs.*;
@@ -56,8 +57,8 @@ public class M06_ServicesTraining
                                  @QueryParam( "trainingActivities" )  final LinkedList<String> activities,
                                  @QueryParam( "userId" ) int userId )
     {
-
-        Entity createTrainingObject = EntityFactory.createTraining(userId, name, activities);
+        LinkedList<Entity> activitiesList = activityList(activities);
+        Entity createTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
         CreateTrainingCommand cmd =
                 CommandsFactory.instanciateCreateTrainingCmd( createTrainingObject);
         try
@@ -136,5 +137,88 @@ public class M06_ServicesTraining
         }
     }
 
+    @GET
+    @Path( "/deleteTraining" )
+    @Produces( "application/json" )
+    /**
+     * Metodo utilizado a traves de web service para eliminar un entrenamiento
+     * @param userId
+     * @return
+     */
+
+    public String deleteTraining( @QueryParam( "trainingId" ) int trainingId,
+                                  @QueryParam( "trainingName" ) String trainingName )
+    {
+
+        Entity deleteTrainingObject = EntityFactory.createTraining(trainingId, trainingName);
+
+        DeleteTrainingCommand cmd = CommandsFactory.instanciateDeleteTrainingCmd(deleteTrainingObject);
+
+
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+    }
+
+
+    private LinkedList<Entity> activityList (LinkedList<String> activities){
+        LinkedList<Entity> activitiesList = new LinkedList<Entity>();
+        for(int i = 0; i <= activities.size() - 1; i++){
+            Entity act = EntityFactory.createActivity();
+            if (activities.get(i).equals("Caminar")){
+                act = EntityFactory.createActivity(1, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Trotar")){
+                act = EntityFactory.createActivity(2, activities.get(i), 1);
+            }
+            else if (activities.get(i).equals("Bicicleta")){
+                act = EntityFactory.createActivity(3, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Natacion")){
+                act = EntityFactory.createActivity(4, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Yoga")){
+                act = EntityFactory.createActivity(5, activities.get(i), 3);
+            }
+            else if (activities.get(i).equals("Estiramientos")){
+                act = EntityFactory.createActivity(6, activities.get(i), 1);
+            }
+            else if (activities.get(i).equals("Eliptica")){
+                act = EntityFactory.createActivity(7, activities.get(i), 1);
+            }
+            else if (activities.get(i).equals("Escaleras")){
+                act = EntityFactory.createActivity(8, activities.get(i), 1);
+            }
+            else if (activities.get(i).equals("Bailar")){
+                act = EntityFactory.createActivity(9, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Aerobic")){
+                act = EntityFactory.createActivity(10, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Remo")){
+                act = EntityFactory.createActivity(11, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Basketball")){
+                act = EntityFactory.createActivity(12, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Futbol")){
+                act = EntityFactory.createActivity(13, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Tenis")){
+                act = EntityFactory.createActivity(14, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Voleibol")){
+                act = EntityFactory.createActivity(15, activities.get(i), 2);
+            }
+            activitiesList.add(act);
+        }
+        return activitiesList;
+    }
 }
 

@@ -19,5 +19,4 @@ public interface IDao
     public Entity read(Entity e);
 
     public Entity update(Entity e);
-
 }

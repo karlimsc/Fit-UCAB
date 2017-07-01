@@ -1,14 +1,21 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+
 /**
  *Patron Entidad
  */
 public class Entity {
-
         private int _id;
         private int _errorCode;
         private String _errorMsg;
 
+        public Entity (){}
+
+        public Entity(int _id){
+                this._id=_id;
+        }
 
         public int get_id() {
                 return _id;
@@ -36,11 +43,5 @@ public class Entity {
         public void set_errorMsg( String _errorMsg )
         {
                 this._errorMsg = _errorMsg;
-        }
-
-        public Entity (){}
-
-        public Entity(int _id){
-                this._id=_id;
         }
 }

@@ -19,7 +19,7 @@ import java.util.LinkedList;
 public class DaoTraining extends Dao implements IDaoTraining
 {
 
-        Entity _entidad;
+    Entity _entidad;
     public DaoTraining( Entity entidad )
 
     {
@@ -43,7 +43,6 @@ public class DaoTraining extends Dao implements IDaoTraining
                 int Id = rs.getInt("id");
                 e.set_id(Id);
             }
-            return e;
 
         }
         catch (SQLException ex) {
@@ -56,7 +55,30 @@ public class DaoTraining extends Dao implements IDaoTraining
 
         }
 
-        return null;
+        for (Entity activity : t.get_activitylist()) {
+            Activity a = (Activity) activity;
+            String _query =
+                    "SELECT M06_ADDTRAINING_ACTIVITY('" + a.get_duration() + "', '" + e.get_id() + "', '" + a.get_id() + ")";
+            try {
+
+                Connection conn = Dao.getBdConnect();
+                Statement st = conn.createStatement();
+                ResultSet rs = st.executeQuery(query);
+                //User user = null;
+
+            }
+            catch (SQLException ex) {
+                //throw new ExceptionPropia esto se hace en cada Exception
+            }
+            catch (BdConnectException ex) {
+
+            }
+            catch (Exception ex) {
+
+            }
+        }
+
+        return e;
     }
 
     public Entity read(Entity e )
@@ -72,6 +94,23 @@ public class DaoTraining extends Dao implements IDaoTraining
 
     public Boolean delete(Entity e)
     {
+        Training t = (Training) e;
+        String query ="SELECT M06_DELETETRAINING('"+t.get_id()+"')";
+
+        try {
+            Connection conn = Dao.getBdConnect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+        }
+        catch (SQLException ex) {
+
+        }
+        catch (BdConnectException ex) {
+
+        }
+        catch (Exception ex) {
+
+        }
         return true;
     }
 
@@ -135,15 +174,15 @@ public class DaoTraining extends Dao implements IDaoTraining
         String name4 = "Lagartijas";
         int id5 = 5;
         String name5 = "Nadar";
-        entity = EntityFactory.createActivity( id1, name1 );
+        entity = EntityFactory.createActivity( id1, name1, 1 );
         resultList.add( entity );
-        entity = EntityFactory.createActivity( id2, name2 );
+        entity = EntityFactory.createActivity( id2, name2, 1 );
         resultList.add( entity );
-        entity = EntityFactory.createActivity( id3, name3 );
+        entity = EntityFactory.createActivity( id3, name3, 1 );
         resultList.add( entity );
-        entity = EntityFactory.createActivity( id4, name4 );
+        entity = EntityFactory.createActivity( id4, name4, 1 );
         resultList.add( entity );
-        entity = EntityFactory.createActivity( id5, name5 );
+        entity = EntityFactory.createActivity( id5, name5, 1 );
         resultList.add( entity );
 
 

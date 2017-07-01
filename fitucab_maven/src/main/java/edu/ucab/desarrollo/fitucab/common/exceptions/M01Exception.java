@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.exception;
+package edu.ucab.desarrollo.fitucab.common.exceptions;
 
 /**
  * Excepciones personalizadas de modulo 1
@@ -6,5 +6,7 @@ package edu.ucab.desarrollo.fitucab.exception;
  */
 public class M01Exception extends Exception {
 
-
+    public M01Exception(String msg){
+        super(msg);
+    }
 }
