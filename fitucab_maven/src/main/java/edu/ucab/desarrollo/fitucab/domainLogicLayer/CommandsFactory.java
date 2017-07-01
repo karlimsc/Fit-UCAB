@@ -33,11 +33,22 @@ public class CommandsFactory {
     static public CheckPasswordEmailCommand instanciateCheckPasswordEmailCmd(String email){
         return new CheckPasswordEmailCommand(email);
     }
+    //MODULO 2
 
+    /**
+     * Metodo que instancia el UserCommand con un id
+     * @param id
+     * @return
+     */
     static public UserCommand instanciateUserCmd(int id){
         return new UserCommand(id);
     }
 
+    /**
+     * Metodo que instancia el HomeCommand con un id
+     * @param id
+     * @return
+     */
     static public HomeCommand instanciateHomeCmd(int id){
         return new HomeCommand(id);
     }

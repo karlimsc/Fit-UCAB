@@ -28,18 +28,34 @@ public class Home extends Entity {
         _totalAgua = totalAgua;
     }
 
+    /**
+     * Metodo que devuelte el valor de calorias float
+     * @return
+     */
     public float getTotalCaloria() {
         return _totalCaloria;
     }
 
+    /**
+     * Metodo que asigna el valor de calorias float
+     * @param totalCaloria
+     */
     public void setTotalCaloria(float totalCaloria) {
         _totalCaloria = totalCaloria;
     }
 
+    /**
+     * Metodo que devuelve el valor de agua int
+     * @return
+     */
     public int getTotalAgua() {
         return _totalAgua;
     }
 
+    /**
+     * Metodo que asigna un valor agua int
+     * @param totalAgua
+     */
     public void setTotalAgua(int totalAgua) {
         _totalAgua = totalAgua;
     }

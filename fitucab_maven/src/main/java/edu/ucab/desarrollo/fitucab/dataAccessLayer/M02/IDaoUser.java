@@ -10,7 +10,18 @@ import java.util.*;
  */
 public interface IDaoUser extends IDao {
 
+    /**
+     * Metodo que implementa el DaoUser que recibe un id
+     * @param id
+     * @return
+     */
     public Entity read(int id);
+
+    /**
+     * Metodo que implementa el DaoUser que recibe un id
+     * @param id
+     * @return
+     */
     public Date Fecha(int id) ;
 
 }

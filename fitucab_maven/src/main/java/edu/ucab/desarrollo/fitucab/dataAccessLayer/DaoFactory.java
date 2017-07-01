@@ -20,9 +20,22 @@ public class DaoFactory
         return new DaoTraining( entidad );
     }
 
+    //MODULO 2
+
+    /**
+     * Metodo que instancia el DaoHome con una entity
+     * @param entity
+     * @return
+     */
     public static DaoHome instanceDaoHome(Entity entity) {
         return new DaoHome(entity);
     }
+
+    /**
+     * Metodo que instancia el DaoUser con un id
+     * @param id
+     * @return
+     */
     public static DaoUser instanceDaoUser(int id) {
 
         return new DaoUser(id);

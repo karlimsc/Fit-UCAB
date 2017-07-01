@@ -14,11 +14,20 @@ public class DaoHome extends Dao implements IDaoHome {
     Entity _usuario;
     int totalAgua, totalCalorias;
 
+    /**
+     * Metodo constructor de clase DaoHome
+     * @param usuario
+     */
     public DaoHome(Entity usuario){
         this._usuario = usuario;
     }
 
-
+    /**
+     * Metodo sobrecargado que lee una endidad y devuelve otra.
+     * Metodo que realiza un query a un storeprocedure de busque de vasos
+     * @param user
+     * @return
+     */
     @Override
     public Entity read(Entity user){
 
@@ -42,6 +51,10 @@ public class DaoHome extends Dao implements IDaoHome {
         }
     }
 
+    /**
+     * Metodo que busca las calorias por un query con un storeprocedures
+     * @param usuario
+     */
     public void buscarCalorias(String usuario){
 
         ResultSet rsC = null;
@@ -55,13 +68,22 @@ public class DaoHome extends Dao implements IDaoHome {
         }
     }
 
-
+    /**
+     * Metodo que crea una entidad
+     * @param e
+     * @return
+     * @throws AddException
+     */
     public Entity create(Entity e) throws AddException {
         return null;
     }
 
 
-
+    /**
+     * Metodo que actualiza una entidad
+     * @param e
+     * @return
+     */
     public Entity update(Entity e) {
         return null;
     }

@@ -16,10 +16,19 @@ public class DaoUser extends Dao implements IDaoUser {
     Entity _user;
     Date birthdate;
 
+    /**
+     * Metodo constructor que recibe un id
+     * @param id
+     */
     public DaoUser(int id) {
         this.id = id;
     }
 
+    /**
+     * Metodo que consulta el perfil por un query de un storeprocedures
+     * @param id
+     * @return
+     */
     @Override
     public Entity read(int id){
         try {
@@ -50,6 +59,11 @@ public class DaoUser extends Dao implements IDaoUser {
         }
     }
 
+    /**
+     * Metodo que devuelve un dato de cumpleaños a traves de un query que devuelve una fecha
+     * @param id
+     * @return
+     */
     public Date Fecha(int id) {
 
         try {
@@ -68,15 +82,30 @@ public class DaoUser extends Dao implements IDaoUser {
         return birthdate;
     }
 
-
+    /**
+     * Metodo que crea una entidad
+     * @param e
+     * @return
+     * @throws AddException
+     */
     public Entity create(Entity e) throws AddException {
         return null;
     }
 
+    /**
+     * Metodo que crea una entidad
+     * @param e
+     * @return
+     */
     public Entity read(Entity e) {
         return null;
     }
 
+    /**
+     * Metodo que actualiza una entidad
+     * @param e
+     * @return
+     */
     public Entity update(Entity e) {
         return null;
     }

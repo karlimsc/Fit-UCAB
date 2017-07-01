@@ -20,9 +20,7 @@ public abstract class Dao implements IDao
     private static Statement _st;
     private static ResultSet _rs;
     private static Connection conInstance;
-    /*private Connection _conn = getBdConnect();
-    private Statement _st;
-    private ResultSet _rs;
+
 
     /**
      * Metodo que realiza la conexion con la base de datos
@@ -54,14 +52,31 @@ public abstract class Dao implements IDao
         return conn;
     }
 
+    /**
+     * Metodo que lee un int
+     * @param id
+     * @return
+     */
     public Entity read(int id) {
         return null;
     }
 
+    /**
+     * Metodo que lee una entidad
+     * @param user
+     * @return
+     */
     public Entity read(Entity user) {
         return null;
     }
 
+    /**
+     * Metodo que realiza las consultas de query
+     * @param query
+     * @return
+     * @throws SQLException
+     * @throws NullPointerException
+     */
     protected static ResultSet sql (String query) throws SQLException , NullPointerException {
 
         try {
@@ -82,7 +97,7 @@ public abstract class Dao implements IDao
 
 
     /**
-     *
+     * Metodo que cierra la conexion a la base de datos
      */
     protected static void closeConnection()
     {
