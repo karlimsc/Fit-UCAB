@@ -2,6 +2,7 @@ package com.fitucab.ds1617b.fitucab.UI.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -26,19 +27,31 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
 
     private ArrayList <String> arrayList;
     private ArrayAdapter<String> adapter;
+    private ArrayList <String> arrayListAdd;
+    private ArrayAdapter <String> adapterAdd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_m06_home_training);
+        setContentView(R.layout.fragment_m06_add_training);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ListView listView=(ListView) findViewById(R.id.listoftrainings);
+      /*  ListView listView=(ListView) findViewById(R.id.listoftrainings);
         String [] items = {"Apple", "Banana", "Grape"};
         arrayList= new ArrayList<>(Arrays.asList(items));
         adapter = new ArrayAdapter<String>(this, R.layout.fragment_m06_listview_item,R.id.tv_m06_training,arrayList);
-        listView.setAdapter(adapter);
+        listView.setAdapter(adapter); */
+
+        ListView listViewAdd = (ListView) findViewById(R.id.listofactivities);
+        String [] activities = {"Caminar", "Trotar", "Bicicleta", "Natacion", "Yoga", "Estiramientos", "Eliptica", "Escaleras", "Bailar", "Aerobic", "Remo", "Basketball", "Futbol", "Tenis", "Voleibol"};
+        arrayListAdd = new ArrayList<>(Arrays.asList(activities));
+        adapterAdd =  new ArrayAdapter<String>(this, R.layout.fragment_m06_listview_item_add,R.id.tv_m06_trainingAdd,arrayListAdd);
+        listViewAdd.setAdapter(adapterAdd);
+
+        FloatingActionButton prueba = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+
     }
 
 
