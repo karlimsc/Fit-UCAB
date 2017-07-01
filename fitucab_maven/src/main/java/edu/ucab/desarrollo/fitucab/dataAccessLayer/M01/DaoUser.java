@@ -26,10 +26,13 @@ public class DaoUser  extends Dao implements IDaoUser {
     //Encargado de encriptar la contraseña
     private Security   _sc;
 
-    //String de conexion
-    String _sqlInicioSesion="{ call M01_INICIARSESION(?,?)}";
+    //String de conexion funciones
+    String _sqlInicioSesion="{?=call M01_INICIARSESION(?,?)}";
+    String _sqlLastUser="{?=call M01_LASTUSER(?,?,?,?,?,?,?,?)}";
+
+    //String de conexion procedimientos
     String _sqlRegistrarUsuario="{ call M01_REGISTRAR(?,?,?,?,?,?,?,?)}";
-    String _sqlLastUser="{ call M01_LASTUSER(?,?,?,?,?,?,?,?)}";
+
 
 
     Entity _user;
@@ -87,16 +90,20 @@ public class DaoUser  extends Dao implements IDaoUser {
         User _user = (User) e;
 
         String password =_sc.encryptPassword(_user.getPassword());
+
         try{
             cstmt = _bdCon.prepareCall(_sqlInicioSesion.toString());
-            cstmt.setString(1, _user.getUser());
-            cstmt.setString(2, password);
 
-            cstmt.registerOutParameter("id", Types.INTEGER);
+            //1er signo de interrogacion el parametro de salida
+            cstmt.registerOutParameter(1, Types.INTEGER);
+
+            //2do y 3er signo de interrogacion parametros de entrada
+            cstmt.setString(2, _user.getUser());
+            cstmt.setString(3, password);
 
             cstmt.execute();
 
-            int id = cstmt.getInt("id");
+            int id = cstmt.getInt(1);
             System.out.printf(String.valueOf(id));
 
             _user.setId(id);
@@ -141,10 +148,10 @@ public class DaoUser  extends Dao implements IDaoUser {
 
             //Metodo que busca el ultimo usuario registrado y toma la id de este
             cs = _bdCon.prepareCall(_sqlLastUser.toString());
-            cs.registerOutParameter("id", Types.INTEGER);
+            cs.registerOutParameter(1, Types.INTEGER);
             cs.execute();
 
-            int id = cs.getInt("id");
+            int id = cs.getInt(1);
             System.out.printf(String.valueOf(id));
             _user.setId(id);
 
