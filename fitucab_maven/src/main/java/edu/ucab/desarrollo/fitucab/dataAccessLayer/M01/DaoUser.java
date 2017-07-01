@@ -2,8 +2,6 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M01;
 
 import com.google.gson.Gson;
 
-import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.MessagingException;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
@@ -12,12 +10,13 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
 import org.slf4j.LoggerFactory;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import javax.mail.Authenticator;
 import java.lang.reflect.Type;
 import java.sql.*;
 import java.util.Properties;
@@ -216,11 +215,11 @@ public class DaoUser  extends Dao implements IDaoUser {
                 final String password = "ucab2017";
                 //Estas son las propiedades de seguridad de gmail
                 Properties props = new Properties();
-                props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
                 props.put("mail.smtp.auth", "true");
                 props.put("mail.smtp.starttls.enable", "true");
                 props.put("mail.smtp.host", "smtp.gmail.com");
                 props.put("mail.smtp.port", "587");
+
 
                 System.out.print("Debug: email " + email);
 
@@ -233,11 +232,8 @@ public class DaoUser  extends Dao implements IDaoUser {
                 CallableStatement cstmt;
                 cstmt = _bdCon.prepareCall("{ call M01_RECUPERARPWD(?,?,?)}");
                 cstmt.registerOutParameter(1, Types.VARCHAR);
-                System.out.print("Debug: 1 ");
                 cstmt.registerOutParameter(2, Types.VARCHAR);
-                System.out.print("Debug: 2 ");
                 cstmt.setString(3, email);
-                System.out.print("Debug: 3 ");
 
                 cstmt.execute();
 
@@ -248,6 +244,7 @@ public class DaoUser  extends Dao implements IDaoUser {
                     passwordResult= _sc.decryptPassword(passwordResult);
                     System.out.print("Debug: user " + usernameResult);
                     //Se crea la sesion para autenticar
+
                     Session session = Session.getInstance(props,
                             new javax.mail.Authenticator() {
                                 protected PasswordAuthentication getPasswordAuthentication() {
