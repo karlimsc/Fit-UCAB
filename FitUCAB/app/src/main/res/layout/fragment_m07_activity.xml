@@ -5,30 +5,96 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07ActivityFragment">
 
+    <TextView
+        android:id="@+id/tv_m07_titulo"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:text="Frecuencia:"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="23dp"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="7"
+        android:rowCount="2"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="410dp">
+
+        <TextView
+            android:id="@+id/tv_m07_checklunes"
+            android:text="L"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+
+        <TextView
+            android:id="@+id/tv_m07_checkmartes"
+            android:text="M"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/tv_m07_checkmiercoles"
+            android:text="M"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/tv_m07_checkjueves"
+            android:text="J"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/tv_m07_checkviernes"
+            android:text="V"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/tv_m07_checksabado"
+            android:text="S"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/tv_m07_checkdomingo"
+            android:text="D"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+
+        <CheckBox
+            android:id="@+id/cb_m07_checklunes"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checkmartes"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checkmiercoles"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checkjueves"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checkviernes"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checksabado"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checkdomingo"/>
+
+    </GridLayout>
+
     <!-- TODO: Update blank fragment layout -->
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:columnCount="2"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="120dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="100dp">
-
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="Frecuencia"
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="Frecuencia"
-            android:textColor="@color/black"/>
-
-
+        android:layout_marginBottom="120dp">
 
 
         <ImageButton

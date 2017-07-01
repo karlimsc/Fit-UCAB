@@ -11,6 +11,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -29,6 +30,14 @@ public class M07ActivityFragment extends Fragment {
     private EditText _tv_m07_horaInicio;
     private ImageButton _btn_m07_horaFin;
     private EditText _tv_m07_horaFin;
+    private CheckBox _cb_m07_checklunes;
+    private CheckBox _cb_m07_checkmartes;
+    private CheckBox _cb_m07_checkmiercoles;
+    private CheckBox _cb_m07_checkjueves;
+    private CheckBox _cb_m07_checkviernes;
+    private CheckBox _cb_m07_checksabado;
+    private CheckBox _cb_m07_checkdomingo;
+
     private View _view;
     private int dia;
     private int mes;
@@ -64,6 +73,13 @@ public class M07ActivityFragment extends Fragment {
         _tv_m07_horaInicio = (EditText)_view.findViewById(R.id.tv_m07_horaInicio);
         _btn_m07_horaFin = (ImageButton)_view.findViewById(R.id.btn_m07_horaFin);
         _tv_m07_horaFin = (EditText)_view.findViewById(R.id.tv_m07_horaFin);
+        _cb_m07_checklunes = (CheckBox)_view.findViewById(R.id.cb_m07_checklunes);
+        _cb_m07_checkmartes = (CheckBox)_view.findViewById(R.id.cb_m07_checkmartes);
+        _cb_m07_checkmiercoles = (CheckBox)_view.findViewById(R.id.cb_m07_checkmiercoles);
+        _cb_m07_checkjueves = (CheckBox)_view.findViewById(R.id.cb_m07_checkjueves);
+        _cb_m07_checkviernes = (CheckBox)_view.findViewById(R.id.cb_m07_checkviernes);
+        _cb_m07_checksabado = (CheckBox)_view.findViewById(R.id.cb_m07_checksabado);
+        _cb_m07_checkdomingo = (CheckBox)_view.findViewById(R.id.cb_m07_checkdomingo);
 
         _btn_m07_fechaInicio.setOnClickListener((View.OnClickListener) this);
         _btn_m07_fechaInicio.setOnClickListener((View.OnClickListener) this);
