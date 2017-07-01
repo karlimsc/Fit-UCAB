@@ -1,102 +1,128 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
+import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
-import edu.ucab.desarrollo.fitucab.common.exceptions.M09Exception;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.*;;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;;
 import java.util.List;
+import java.util.logging.Level;
 
 /**
  * Clase M09ServicesGamification que maneja el modulo de gamificacion.
  * @author David Garcia, Juan Mendez, Mario Salazar
  * @version 2.0
  */
-@Path("/M09_ServicesGamification")
-@Produces("application/json")
+@Path("/M09_ServicesGamifications")
+@Produces(MediaType.APPLICATION_JSON)
 public class M09_ServicesGamification {
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M09_ServicesGamification.class);
-
+/*
     @GET
-    @Path("/obtenerretos")
-    public List<Entity> getChallenges(@QueryParam("id") int _id){
+    @Path("/getChallenges/{userId}")
+    public List<Challenge> getChallenges(@PathParam("userId") int id) throws NoSuchMethodException {
         try {
-            List<Entity> challenges = EntityFactory.getChallenges();
-            AchieveChallengeCommand acc = CommandsFactory.instanciateAchieveChallengeCmd(challenges);
-            //Entity active = EntityFactory.createActive(acc);
-            //active.exec();
-            return acc.getChallenges();
+            Dao dao = DaoFactory.instanceDaoGaming();
+            Command cmd = CommandsFactory.instanciateAchieveChallengeCmd(id, dao);
+            cmd.execute();
+            List<Challenge> challenges = (List<Challenge>)(List<?>) cmd.getChallenges();
+            return challenges;
         }
         catch (WebApplicationException e){
-            M09Exception error = new M09Exception(e.getMessage());
-            logger.debug("Debug: ", error);
-            logger.error("Error: ", error);
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Debug: ", error.toString());
+            logger.error("Error: ", error.toString());
         }
         catch (Exception e){
-            M09Exception error = new M09Exception(e.getMessage());
-            logger.debug("Debug: ", error);
-            logger.error("Error: ", error);
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Debug: ", error.toString());
+            logger.error("Error: ", error.toString());
+        }
+        return null;
+    }
+*/
+    @GET
+    @Path("/getAchievements/{userId}")
+    public Challenge getAchievements(@PathParam("userId") int id) throws NoSuchMethodException {
+        try {
+            Dao dao = DaoFactory.instanceDaoGaming();
+            Command cmd = CommandsFactory.instanciateFillChartCmd(id, dao);
+            cmd.execute();
+            return (Challenge) cmd.getChallenge();
+        }
+        catch (WebApplicationException e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Error: ", error.toString());
+            logger.error("Error: ", error.toString());
+        }
+        catch (Exception e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Error: ", error.toString());
+            logger.error("Error: ", error.toString());
         }
         return null;
     }
 
     @GET
-    @Path("/obtenerlogrados")
-    public String getCantidad(@QueryParam("id") int _id) {
+    @Path("/getScores/{userId}")
+    public Challenge getScores(@PathParam("userId") int id) throws NoSuchMethodException {
         try {
-            //Llamada a la fabrica de comandos.
+            Dao dao = DaoFactory.instanceDaoGaming();
+            Command cmd = CommandsFactory.instanciateScoreCmd(id, dao);
+            cmd.execute();
+            return (Challenge) cmd.getChallenge();
         }
         catch (WebApplicationException e){
-            M09Exception error = new M09Exception(e.getMessage());
-            logger.debug("Error: ", error);
-            logger.error("Error: ", error);
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Error: ", error.toString());
+            logger.error("Error: ", error.toString());
         }
         catch (Exception e){
-            M09Exception error = new M09Exception(e.getMessage());
-            logger.debug("Error: ", error);
-            logger.error("Error: ", error);
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Error: ", error.toString());
+            logger.error("Error: ", error.toString());
         }
         return null;
     }
 
     @GET
-    @Path("/obtenernivel")
-    public String getQuantity(@QueryParam("id") int _id) {
+    @Path("/checkLevels/{userId}")
+    public Challenge getLevelUp(@PathParam("userId") int id) throws NoSuchMethodException {
         try {
-            //Llamada a la fabrica de comandos.
+            Dao dao = DaoFactory.instanceDaoGaming();
+            Command cmd = CommandsFactory.instanciateLevelUpCmd(id, dao);
+            cmd.execute();
+            return (Challenge) cmd.getChallenge();
         }
         catch (WebApplicationException e){
-            M09Exception error = new M09Exception(e.getMessage());
-            logger.debug("Error: ", error);
-            logger.error("Error: ", error);
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Error: ", error.toString());
+            logger.error("Error: ", error.toString());
         }
         catch (Exception e){
-            M09Exception error = new M09Exception(e.getMessage());
-            logger.debug("Error: ", error);
-            logger.error("Error: ", error);
-        }
-        return null;
-    }
-
-    @GET
-    @Path("/obtenerverificarnivel")
-    public String getLevelUp(@QueryParam("_plus") int _plus, @QueryParam("id") int _id) {
-        try {
-            //Llamada a la fabrica de comandos.
-        }
-        catch (WebApplicationException e){
-            M09Exception error = new M09Exception(e.getMessage());
-            logger.debug("Error: ", error);
-            logger.error("Error: ", error);
-        }
-        catch (Exception e){
-            M09Exception error = new M09Exception(e.getMessage());
-            logger.debug("Error: ", error);
-            logger.error("Error: ", error);
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Error: ", error.toString());
+            logger.error("Error: ", error.toString());
         }
         return null;
     }

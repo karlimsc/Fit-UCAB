@@ -44,8 +44,4 @@ public class Entity {
         {
                 this._errorMsg = _errorMsg;
         }
-
-        //Modulo 09
-        public void exec() throws ListByIdException, ListAllException {};
-        //Fin Modulo 09
 }

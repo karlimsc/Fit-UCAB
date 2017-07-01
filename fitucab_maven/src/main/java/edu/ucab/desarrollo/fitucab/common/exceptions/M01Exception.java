@@ -6,5 +6,7 @@ package edu.ucab.desarrollo.fitucab.common.exceptions;
  */
 public class M01Exception extends Exception {
 
-
+    public M01Exception(String msg){
+        super(msg);
+    }
 }

@@ -25,11 +25,39 @@ public class EntityFactory
      *   @param  height
      */
 
-    static public Entity createUser(String username, String password, String email, String sex, String phone,
+    static public Entity createUser(int id, String username, String password, String email, String sex, String phone,
                                     Date bday, int weight, int height){
 
-        return new User( username, password , email , sex , phone , (java.sql.Date) bday, weight , height );
+        return new User( id,username, password , email , sex , phone , (java.sql.Date) bday, weight , height );
     }
+
+    static public Entity createUser(){
+
+        return new User();
+    }
+
+    /**
+     * Comprueba la contraseña y el correo
+     * @param username
+     * @param password
+     * @return
+     */
+    static public Entity createUser( String username, String password){
+
+        return new User( username, password );
+    }
+
+    /**
+     * Usado para recuperar la contraseña
+     * @param email
+     * @return
+     */
+    static public Entity createUser(  String email){
+
+        return new User(  email );
+    }
+
+
 
     //MODULO 3
 
@@ -144,7 +172,7 @@ public class EntityFactory
     }
 
     /**
-     * Metodo que instancia la clase Challenge con sus atributos
+     * Metodo que instancia la clase Challenge con su id, nombre, descripcion y record
      * @param id Identificador del reto
      * @param name Nombre del reto
      * @param description Descripcion del reto
@@ -156,11 +184,29 @@ public class EntityFactory
         return new Challenge(id, name, description, score);
     }
 
-    static public List<Entity> getChallenges(){
-        return new ArrayList<Entity>();
+    /**
+     * Metodo que instancia la clase Challenge con sus retos logrados y no logrados
+     * @param achieve cantidad de retos logrados
+     * @param unachieve cantidad de retos no logrados
+     * @return Objecto Challenge
+     * @see Challenge
+     */
+   /* static public Entity createChallenge(long achieve, long unachieve){
+        return new Challenge(achieve,unachieve);
     }
+*/
+    /**
+     * Metodo que instancia la clase Challenge con la suma de sus records
+     * @param score Record acumulado que se lleva del reto.
+     * @return Objeto Challenge
+     * @see Challenge
+     */
+    /*static public Entity createChallenge(int score){
+        return new Challenge(score);
+    }
+*/
 
-
+    static  public List<Entity> getChallenges(){return new ArrayList<Entity>();}
     //FIN MODULO 9
 
     //Modulo 10

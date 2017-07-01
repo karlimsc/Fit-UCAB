@@ -1,13 +1,23 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
+import com.google.gson.annotations.SerializedName;
+
+import javax.xml.bind.annotation.XmlRootElement;
+
 /**
  * Clase del Modulo 1 para registrar al usuario
  */
+
+@XmlRootElement
 public class Registry {
 
+    @SerializedName("_idRegistry")
     private int _idRegistry;
+    @SerializedName("_weight")
     private float _weight;
+    @SerializedName("_height")
     private float _height;
+    @SerializedName("_registryPoint")
     private int _registryPoint;
 
     /**
