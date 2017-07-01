@@ -34,7 +34,7 @@ public class CommandsFactory {
     }
 
     /**
-     *  Intancia del RecoverPasswordCommand
+     * Intancia del RecoverPasswordCommand
      * @param email String
      * @return RecoverPasswordCommand con parametro email para la recuperacion de la cuenta
      */
@@ -43,24 +43,13 @@ public class CommandsFactory {
     }
 
     /**
-     *  Intancia del CheckUserCommand
-     * @param user String de username
-     * @param password String contraseña
-     * @return CheckUserCommand para vericar el registro del usuario
-     */
-    static public Command instanciateCheckUserCmd(String user, String password){
-        return new CheckUserCommand(user, password);
-    }
-
-    /**
-     *  Intancia del CheckUserCommand
+     * Intancia del CheckUserCommand
      * @param user El usuario a Instanciar
      * @return CheckUserCommand para vericar el registro del usuario
      */
     static public Command instanciateCheckUserCmd(Entity user){
         return new CheckUserCommand(user);
     }
-
 
 
     // Comandos M06

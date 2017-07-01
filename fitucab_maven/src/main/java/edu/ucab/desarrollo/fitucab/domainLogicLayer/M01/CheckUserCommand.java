@@ -15,8 +15,9 @@ import org.slf4j.LoggerFactory;
 public class CheckUserCommand extends Command{
 
 
-    static Entity _userReturn;
-    Entity _user;
+    private static Entity _userReturn;
+    private Entity _user;
+
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
 
@@ -36,6 +37,7 @@ public class CheckUserCommand extends Command{
     public CheckUserCommand(Entity user){
         this._user = user;
     }
+
 
     /**
      * Metodo abtracto sobreescrito para este caso particula de verificacion de usuario

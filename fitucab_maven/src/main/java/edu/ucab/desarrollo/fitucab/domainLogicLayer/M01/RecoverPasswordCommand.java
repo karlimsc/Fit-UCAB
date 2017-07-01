@@ -16,7 +16,6 @@ import org.slf4j.LoggerFactory;
 public class RecoverPasswordCommand extends Command {
 
     private String _email;
-    private Entity _user;
     private String _response;
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
@@ -31,7 +30,8 @@ public class RecoverPasswordCommand extends Command {
 
     public void execute(){
         try{
-            Dao _dao = DaoFactory.instanciateDaoUser(_user);
+
+            Dao _dao = DaoFactory.instanciateDaoUser();
             DaoUser testMailDao;
             testMailDao = (DaoUser)_dao;
 

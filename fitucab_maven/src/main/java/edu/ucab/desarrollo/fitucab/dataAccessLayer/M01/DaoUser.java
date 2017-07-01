@@ -28,7 +28,6 @@ import java.util.Properties;
  */
 public class DaoUser  extends Dao implements IDaoUser {
     //Conexion con la base de datos
-    private Connection _bdCon;
 
     private int RESULT_CODE_OK=200;
     private int RESULT_CODE_FAIL=300;
@@ -50,7 +49,6 @@ public class DaoUser  extends Dao implements IDaoUser {
     Gson gson = new Gson();
     private static org.slf4j.Logger logger = LoggerFactory
                                              .getLogger(DaoUser.class);
-
 
 
     public DaoUser(Entity _user)  {

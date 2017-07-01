@@ -57,13 +57,12 @@ public class M01_ServicesUser1 extends Dao {
     public String getUser(@QueryParam("username") String username,
                           @QueryParam("password") String password)
     {
-        Entity userObject = EntityFactory.createUser(username,password);
-        Command _command = CommandsFactory.instanciateCheckUserCmd(userObject);
-        CheckUserCommand cmd = (CheckUserCommand) _command;
+
 
         try {
             Entity userObject = EntityFactory.createUser(username,password);
-            CheckUserCommand cmd = CommandsFactory.instanciateCheckUserCmd(userObject);
+            Command _command = CommandsFactory.instanciateCheckUserCmd(userObject);
+            CheckUserCommand cmd = (CheckUserCommand) _command;
             cmd.execute();
             //User result = (User) CheckUserCommand.getUserLogin();
             return gson.toJson(CheckUserCommand.getUserLogin());
