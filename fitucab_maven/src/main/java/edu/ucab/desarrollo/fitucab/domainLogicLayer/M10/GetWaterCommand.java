@@ -26,7 +26,7 @@ public class GetWaterCommand extends Command {
 
             Water water = (Water) daoWater.getWater(_water);
 
-            returned = water.get_suma()+","+water.get_cantidad();
+            returned = water.get_time()+","+water.get_suma()+","+water.get_cantidad();
 
         } catch (SQLException e) {
 
