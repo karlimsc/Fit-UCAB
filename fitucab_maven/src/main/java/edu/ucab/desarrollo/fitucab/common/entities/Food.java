@@ -20,6 +20,8 @@ public class Food extends Entity{
 
     private String _idname ;
 
+    private String _json;
+
 
     public Food() {
     }
@@ -59,6 +61,8 @@ public class Food extends Entity{
     }
 
 
+    public void setjson (String json) {_json = json;}
+    public String getJson () {return  _json;}
 
     public String get_idname(){return _idname;}
     public int get_id() {

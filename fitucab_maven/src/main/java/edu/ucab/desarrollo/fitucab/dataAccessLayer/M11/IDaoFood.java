@@ -29,4 +29,8 @@ public interface IDaoFood extends IDao {
     public String updatePerso (Entity e ) throws SQLException, BdConnectException;
 
     public  String InsertarAlimen (Entity e)  throws SQLException, BdConnectException;
+
+    public String insertarPersoFood (Entity e)  throws SQLException, BdConnectException;
+
+
 }

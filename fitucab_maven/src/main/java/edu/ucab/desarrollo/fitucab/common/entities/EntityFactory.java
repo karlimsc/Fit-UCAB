@@ -234,4 +234,6 @@ public class EntityFactory
     {
         return  new Food(foodName,foodCalorie,foodWeight,_foodPersonalized ,id);
     }
+
+    static  public Entity putJson (String json){Food food  =(Food) CreateFood(); food.setjson(json); return food; }
 }

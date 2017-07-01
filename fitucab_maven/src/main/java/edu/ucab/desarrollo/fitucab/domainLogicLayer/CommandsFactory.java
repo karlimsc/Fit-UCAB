@@ -157,5 +157,7 @@ public class CommandsFactory {
     static public updatePersoCommand updatepersonCmd (Entity Food){return new updatePersoCommand(Food);}
 
     static  public insertUnAlimentoCommand insertarAlimentoCmd (Entity Food) {return new insertUnAlimentoCommand(Food);}
+
+    static public insertPersoFoodCommand insertarPersoFoodCmd (Entity Food) {return  new insertPersoFoodCommand(Food);}
 }
 

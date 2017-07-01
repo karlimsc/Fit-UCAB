@@ -321,7 +321,30 @@ public class M11_ServicesFood {
     @Produces("application/json")
     public String insertPersonalizedFood(@QueryParam("jsonFood") String jsonFood){
 
-      return"";
+        Entity EntityFood  = EntityFactory.putJson(jsonFood);
+        insertUnAlimentoCommand cmd = CommandsFactory.insertarAlimentoCmd(EntityFood);
+
+        try {
+            cmd.execute();
+            respuesta = cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta=e.getMessage();
+        } catch (ListByIdException e) {
+            respuesta=e.getMessage();
+        } catch (NoSuchMethodException e) {
+            respuesta=e.getMessage();
+        } catch (SQLException e) {
+            respuesta=e.getMessage();
+        } catch (BdConnectException e) {
+            respuesta=e.getMessage();
+        }
+
+
+        return respuesta;
+
+
+
     }
 
     /**

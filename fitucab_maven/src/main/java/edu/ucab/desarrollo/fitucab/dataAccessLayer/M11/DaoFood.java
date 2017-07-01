@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer.M11;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
@@ -10,6 +11,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 
+import java.lang.reflect.Type;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -242,6 +244,36 @@ public class DaoFood extends Dao implements IDaoFood {
 
         st.executeQuery();
         response.put("data", "Se insertaron los alimentos de forma exitosa");
+
+        return gson.toJson(response);
+    }
+
+    @Override
+    public String insertarPersoFood(Entity e) throws SQLException, BdConnectException {
+        Map<String, String> response = new HashMap<String, String>();
+        Food food = (Food) e;
+
+        String query = "select * from m11_inserta_alim_person(? , ?, ?)";
+        Type type = new TypeToken<Food[]>(){}.getType();
+            /*
+            Food[] a = new Food[3];
+            a[0] = new Food(1, "cachapa", "20", "52", true);
+            a[2] = new Food(2, "cachap2", "21", "53", true);
+            a[1] = new Food(3, "cachap3", "22", "54", true);
+            jsonAlimentos = gson.toJson(a);
+            */
+        Food[] alimentos = gson.fromJson(food.getJson(), type);
+        Connection conn = Dao.getBdConnect();
+        PreparedStatement st = conn.prepareStatement(query);
+        for (int i = 0; i < alimentos.length; i++) {
+            st.setString(1, alimentos[i].get_foodName());
+            st.setInt(2, Integer.parseInt(alimentos[i].get_foodWeight()));
+            st.setInt(3, Integer.parseInt(alimentos[i].get_foodCalorie()));
+            st.executeQuery();
+        }
+
+        response.put("data", "Se insertaron los alimentos de forma exitosa");
+
 
         return gson.toJson(response);
     }
