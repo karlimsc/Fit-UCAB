@@ -146,6 +146,11 @@ public class DaoWater extends Dao implements IDaoWater{
 
     }
 
+    /**
+     * Metodo que elimina la ultima agua
+     * @param water
+     * @return Retorna un agua
+     */
     public Entity deleteLast(Entity water) throws SQLException{
         Water _water = (Water) EntityFactory.createWater();
         ResultSet rs;
@@ -168,6 +173,11 @@ public class DaoWater extends Dao implements IDaoWater{
 
     }
 
+    /**
+     * Metodo que elimina el agua de un dia
+     * @param water
+     * @return Retorna un agua
+     */
     public Entity deleteWaterTm(Entity water) throws SQLException{
         Water _water = (Water) EntityFactory.createWater();
         ResultSet rs;
