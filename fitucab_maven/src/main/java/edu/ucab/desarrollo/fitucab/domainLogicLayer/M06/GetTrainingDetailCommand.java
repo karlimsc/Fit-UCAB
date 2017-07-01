@@ -28,4 +28,8 @@ public class GetTrainingDetailCommand extends Command
     {
 
     }
+
+    public Entity Return() {
+        return null;
+    }
 }

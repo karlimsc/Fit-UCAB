@@ -19,4 +19,8 @@ public class UpdateTrainingCommand extends Command{
             //atajo si existe algun error
         }
     }
+
+    public Entity Return() {
+        return null;
+    }
 }

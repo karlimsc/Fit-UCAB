@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 
 import edu.ucab.desarrollo.fitucab.common.Registry;
+import edu.ucab.desarrollo.fitucab.common.entities.*;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +17,8 @@ public abstract class Dao implements IDao
 
 
     private static Connection conn = null;
-
+    private static Statement _st;
+    private static ResultSet _rs;
     private static Connection conInstance;
     /*private Connection _conn = getBdConnect();
     private Statement _st;
@@ -50,6 +52,32 @@ public abstract class Dao implements IDao
             throw new BdConnectException( e );
         }
         return conn;
+    }
+
+    public Entity read(int id) {
+        return null;
+    }
+
+    public Entity read(Entity user) {
+        return null;
+    }
+
+    protected static ResultSet sql (String query) throws SQLException , NullPointerException {
+
+        try {
+            _st = conn.createStatement();
+            _rs  = _st.executeQuery( query );
+
+        }
+        catch ( NullPointerException e ){
+            e.printStackTrace();
+            System.err.println("NullPointerExceptionSql: " + e.getMessage());
+        }
+
+        finally {
+            closeConnection();
+            return _rs;
+        }
     }
 
 

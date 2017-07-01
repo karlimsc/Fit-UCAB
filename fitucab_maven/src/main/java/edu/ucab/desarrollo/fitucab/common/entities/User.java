@@ -5,7 +5,7 @@ import java.sql.Date;
 
 public class User extends Entity {
 
-    private int _id;
+
     private String _username;
     private String  _password;
     private String _email;
@@ -25,7 +25,7 @@ public class User extends Entity {
      * @param id userId
      */
     public User(int id){
-        _id=id;
+        super(id);
     }
 
     /**
@@ -40,7 +40,7 @@ public class User extends Entity {
      */
     public User(int id,String user,String password, String email,String sex,String phone, Date birthdate)
     {
-        _id = id;
+        super(id);
         _username = user;
         _password = password;
         _email = email;
@@ -61,6 +61,17 @@ public class User extends Entity {
         this._height = _height;
     }
 
+    public User(int id, String _username,  String _email, String _sex, String _phone, Date _birthdate, int _weight, int _height) {
+        super(id);
+        this._username = _username;
+        this._email = _email;
+        this._sex = _sex;
+        this._phone = _phone;
+        this._birthdate = _birthdate;
+        this._weight = _weight;
+        this._height = _height;
+    }
+
     /***
      *
      * @param id
@@ -69,7 +80,7 @@ public class User extends Entity {
      */
     public User(int id,String user,String password)
     {
-        _id = id;
+        super(id);
         _username = user;
         _password = password;
 
@@ -132,15 +143,6 @@ public class User extends Entity {
         _email= email;
     }
 
-
-    public int getId()
-    {
-        return _id;
-    }
-    public void setId(int id)
-    {
-        this._id = id;
-    }
 
     public String getUser()
     {

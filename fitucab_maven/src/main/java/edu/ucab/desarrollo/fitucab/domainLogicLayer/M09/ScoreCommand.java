@@ -30,4 +30,8 @@ public class ScoreCommand extends Command{
             logger.error("Error: ", error);
         }
     }
+
+    public Entity Return() {
+        return null;
+    }
 }

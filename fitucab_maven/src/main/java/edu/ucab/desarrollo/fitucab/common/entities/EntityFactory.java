@@ -31,6 +31,31 @@ public class EntityFactory
         return new User( username, password , email , sex , phone , (java.sql.Date) bday, weight , height );
     }
 
+    /**
+     * Metodo que instancia la clase paara crear el objeto user
+     *   @param  username
+     *   @param  email
+     *   @param  sex
+     *   @param  phone
+     *   @param  bday
+     *   @param  weight
+     *   @param  height
+     */
+    static public User createUser(int id, String username, String email, String sex, String phone,
+                                  Date bday, int weight, int height){
+
+        return new User(id, username, email , sex , phone , (java.sql.Date) bday, weight , height );
+    }
+
+
+
+    //MODULO2
+
+    static public Home createHome(float totalCaloria, int totalAgua){
+
+        return new Home( totalCaloria, totalAgua );
+    }
+
     //MODULO 3
 
     //MODULO 3

@@ -30,4 +30,8 @@ public class FillChartCommand extends Command{
             logger.error("Error: ", error);
         }
     }
+
+    public Entity Return() {
+        return null;
+    }
 }

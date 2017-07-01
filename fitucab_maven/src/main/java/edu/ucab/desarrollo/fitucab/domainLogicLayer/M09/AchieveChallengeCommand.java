@@ -48,4 +48,8 @@ public class AchieveChallengeCommand extends Command {
         logger.error("_challenges3: ",_challenges);
         return _challenges;
     }
+
+    public Entity Return() {
+        return null;
+    }
 }

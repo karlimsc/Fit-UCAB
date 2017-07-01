@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckPasswordEmailCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
@@ -31,6 +32,14 @@ public class CommandsFactory {
     }
     static public CheckPasswordEmailCommand instanciateCheckPasswordEmailCmd(String email){
         return new CheckPasswordEmailCommand(email);
+    }
+
+    static public UserCommand instanciateUserCmd(int id){
+        return new UserCommand(id);
+    }
+
+    static public HomeCommand instanciateHomeCmd(int id){
+        return new HomeCommand(id);
     }
 
     // Comandos M06

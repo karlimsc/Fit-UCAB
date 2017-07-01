@@ -25,4 +25,8 @@ public class CreateUserCommand extends Command {
             //lanzar exception
         }
     }
+
+    public Entity Return() {
+        return null;
+    }
 }

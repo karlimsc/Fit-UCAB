@@ -22,4 +22,8 @@ public class CreateTrainingCommand extends Command {
             //lanzar exception
         }
     }
+
+    public Entity Return() {
+        return null;
+    }
 }

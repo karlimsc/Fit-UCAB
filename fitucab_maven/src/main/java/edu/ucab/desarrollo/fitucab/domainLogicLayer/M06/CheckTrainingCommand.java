@@ -1,6 +1,6 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M06;
 
-import edu.ucab.desarrollo.fitucab.common.entities.Training;
+import edu.ucab.desarrollo.fitucab.common.entities.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
 
@@ -27,5 +27,9 @@ public class CheckTrainingCommand extends Command {
                 //lanzar exception
             }
 
+    }
+
+    public Entity Return() {
+        return null;
     }
 }

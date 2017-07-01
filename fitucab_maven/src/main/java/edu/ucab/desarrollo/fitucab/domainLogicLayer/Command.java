@@ -25,4 +25,7 @@ public abstract class Command
         return null;
     }
 
+    public abstract Entity Return();
+
+
 }
