@@ -220,5 +220,33 @@ public class M06_ServicesTraining
         }
         return activitiesList;
     }
-}
 
+    /**
+     * Servicio Web que retorna el entrenamiento a detalle
+     * @param userId usuario login
+     * @param trainingId entrenamiento elegido
+     * @return entrenamiento
+     */
+    @POST
+    @Path( "/getTrainingDetail" )
+    @Produces( "application/json" )
+    public String getTrainingDetail( @QueryParam( "userId" ) int userId,
+                                     @QueryParam( "trainingId" ) int trainingId )
+    {
+        return null;
+    }
+
+    /**
+     * Servicio Web que retorna la lista de entrenamientos del usuario
+     * @param userId usuario login
+     * @return entrenamiento
+     */
+    @POST
+    @Path( "/getAllTraining" )
+    @Produces( "application/json" )
+    public String getAllTraining( @QueryParam( "userId" ) int userId )
+    {
+        return null;
+    }
+
+}
