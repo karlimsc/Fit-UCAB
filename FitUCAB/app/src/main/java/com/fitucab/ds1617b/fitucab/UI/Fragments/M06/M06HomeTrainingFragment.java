@@ -62,7 +62,7 @@ public class M06HomeTrainingFragment extends Fragment {
 
         }
     }
-    private void instantiateComponents(){
+ 
 
 
     @Override
