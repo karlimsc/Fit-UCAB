@@ -14,9 +14,9 @@ import edu.ucab.desarrollo.fitucab.webService.Sql;
 import org.slf4j.LoggerFactory;
 import java.sql.*;
 
-/**
- * Created by karo on 24/06/17.
- */
+
+
+
 public class DaoUser  extends Dao implements IDaoUser {
     //Conexion con la base de datos
     private Sql        _conn;
@@ -72,27 +72,12 @@ public class DaoUser  extends Dao implements IDaoUser {
     }
 
 
-    public DaoUser(String _userLogin, String _password)  {
-        this._userLogin = _userLogin;
-        this._password = _password;
-        try {
-            _bdCon = Dao.getBdConnect();
-        } catch (BdConnectException e) {
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error.toString());
-        } catch (Exception e) {
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error.toString());
-        }
-    }
-
     /**
      * Devuelve el usuario que este registrado
      * @param e
      * @return
      */
+
     public Entity read(Entity e) {
 
         _sc = new Security();
@@ -106,10 +91,14 @@ public class DaoUser  extends Dao implements IDaoUser {
             cstmt = _bdCon.prepareCall(_sqlInicioSesion.toString());
             cstmt.setString(1, _user.getUser());
             cstmt.setString(2, password);
+
             cstmt.registerOutParameter("id", Types.INTEGER);
+
             cstmt.execute();
+
             int id = cstmt.getInt("id");
             System.out.printf(String.valueOf(id));
+
             _user.setId(id);
             return _user;
         }
@@ -121,10 +110,6 @@ public class DaoUser  extends Dao implements IDaoUser {
     }
 
 
-    public Entity update(Entity e) {
-        return null;
-    }
-
     /**
      * Metodo que es llamado a traves del web service para agregar a la base de datos
      * los parametros recibidos
@@ -133,8 +118,6 @@ public class DaoUser  extends Dao implements IDaoUser {
 
     @Override
     public Entity create(Entity e) throws Exception {
-
-        //TODO: AQUI SE DEVUELVE A LA CAPA DE WEB SERVICES, HABRIA QUE VER SI REALMENTE PUEDE SER ASI
 
         _sc = new Security();
 
@@ -158,13 +141,13 @@ public class DaoUser  extends Dao implements IDaoUser {
 
             //Metodo que busca el ultimo usuario registrado y toma la id de este
             cs = _bdCon.prepareCall(_sqlLastUser.toString());
-            //Metodo para asignar nombre al resultado, ojo tiene que ser en orden
             cs.registerOutParameter("id", Types.INTEGER);
             cs.execute();
 
             int id = cs.getInt("id");
             System.out.printf(String.valueOf(id));
             _user.setId(id);
+
             return _user;
         }
         catch (SQLException ex) {
@@ -188,5 +171,12 @@ public class DaoUser  extends Dao implements IDaoUser {
         }
 
     }
+
+
+    public Entity update(Entity e) {
+        return null;
+    }
+
+
 
 }

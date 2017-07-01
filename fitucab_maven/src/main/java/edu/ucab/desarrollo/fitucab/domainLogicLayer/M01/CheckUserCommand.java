@@ -16,8 +16,6 @@ public class CheckUserCommand extends Command{
 
 
     static Entity _userReturn;
-    String _password;
-    String _userS;
     Entity _user;
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 

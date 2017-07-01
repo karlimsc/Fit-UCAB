@@ -1,13 +1,15 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
-/**
- * Created by estefania on 25/06/2017.
- */
+
+
+
 import edu.ucab.desarrollo.fitucab.common.Registry;
 
 import java.sql.*;
 
 public class Sql {
+
+    //TODO: ESTA CLASE NO SE DEBE USAR.. PENDIENTE
 
     private static Connection conInstance;
     private Connection _conn =bdConnect();
