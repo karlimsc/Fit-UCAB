@@ -41,9 +41,19 @@ public class EntityFactory
      * @param name
      * @return
      */
-    static public Activity createActivity( int id, String name ){
+    static public Activity createActivity( int id, String name, int duration ){
 
-        return new Activity(id,name);
+        return new Activity(id, name, duration);
+
+    }
+
+    /**
+     * Fabrica para una actividad vacia
+     * @return
+     */
+    static public Activity createActivity(){
+
+        return new Activity();
 
     }
 

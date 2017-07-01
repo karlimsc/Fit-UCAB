@@ -37,6 +37,12 @@ public class CommandsFactory {
         return new UpdateTrainingCommand(training);
 
     }
+
+    static public DeleteTrainingCommand instanciateDeleteTrainingCmd(Entity training){
+        return new DeleteTrainingCommand(training);
+
+    }
+
     static public CheckTrainingCommand instanciateCheckTrainingCmd(int trainingId, int userId) {
 
         return new CheckTrainingCommand(trainingId, userId);
