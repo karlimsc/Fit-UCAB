@@ -42,4 +42,7 @@ public class FillChartCommand extends Command{
             logger.error("Error: ", error.toString());
         }
     }
+
+
+
 }

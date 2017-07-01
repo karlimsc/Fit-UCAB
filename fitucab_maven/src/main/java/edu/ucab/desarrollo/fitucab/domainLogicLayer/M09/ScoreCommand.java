@@ -42,4 +42,6 @@ public class ScoreCommand extends Command{
             logger.error("Error: ", error.toString());
         }
     }
+
+
 }

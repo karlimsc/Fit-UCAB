@@ -1,20 +1,20 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
-/**
- * Created by estefania on 25/06/2017.
- */
+
+
+
+import edu.ucab.desarrollo.fitucab.common.Registry;
+
 import java.sql.*;
 
 public class Sql {
+
+    //TODO: ESTA CLASE NO SE DEBE USAR.. PENDIENTE
 
     private static Connection conInstance;
     private Connection _conn =bdConnect();
     private Statement _st;
     private ResultSet _rs;
-    private static String BD_USER = "fitucab";
-    private static String BD_PASSWORD = "fitucab";
-    private static String BD_URL = "jdbc:postgresql://localhost/fitucabdb";
-    private static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
 
     /**
      * Metodo para devolver una unica instancia de la conexion
@@ -43,8 +43,8 @@ public class Sql {
         Connection conn = null;
         try
         {
-            Class.forName(BD_CLASS_FOR_NAME);
-            conn = DriverManager.getConnection(BD_URL,BD_USER, BD_PASSWORD);
+            Class.forName(Registry.BD_CLASS_FOR_NAME);
+            conn = DriverManager.getConnection(Registry.BD_URL,Registry.BD_USER, Registry.BD_PASSWORD);
         }
         catch (ClassNotFoundException e)
         {

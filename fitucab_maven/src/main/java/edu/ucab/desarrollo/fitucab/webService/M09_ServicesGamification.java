@@ -29,7 +29,7 @@ import java.util.logging.Level;
 public class M09_ServicesGamification {
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M09_ServicesGamification.class);
-
+/*
     @GET
     @Path("/getChallenges/{userId}")
     public List<Challenge> getChallenges(@PathParam("userId") int id) throws NoSuchMethodException {
@@ -54,7 +54,7 @@ public class M09_ServicesGamification {
         }
         return null;
     }
-
+*/
     @GET
     @Path("/getAchievements/{userId}")
     public Challenge getAchievements(@PathParam("userId") int id) throws NoSuchMethodException {
