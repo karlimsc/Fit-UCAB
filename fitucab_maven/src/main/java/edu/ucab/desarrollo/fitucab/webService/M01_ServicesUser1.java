@@ -37,7 +37,7 @@ import java.util.Date;
  * Clase de Servicios Web del Modulo 01
  */
 @Path("/M01_ServicesUser1")
-public class M01_ServicesUser1 extends Dao {
+public class M01_ServicesUser1 {
     Entity _response;
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M01_ServicesUser1.class);
@@ -213,18 +213,4 @@ public class M01_ServicesUser1 extends Dao {
 
     }
 
-    @Override
-    public Entity create(Entity e) throws AddException, Exception {
-        return null;
-    }
-
-    @Override
-    public Entity read(Entity e) {
-        return null;
-    }
-
-    @Override
-    public Entity update(Entity e) {
-        return null;
-    }
 }
