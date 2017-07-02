@@ -372,7 +372,6 @@ public class M06_ServicesTraining
 
     }
 
-
     /**
      * Servicio Web para mostrar todos los entrenamientos
      * @param userId
@@ -383,7 +382,7 @@ public class M06_ServicesTraining
     @Produces( "application/json" )
     public String getAllTraining( @QueryParam( "userId" ) int userId )
     {
-        Entity training;
+        Entity training, cmdResult= null;
         List<Entity> commandResult = null;
         Command command;
         String response = null;
@@ -403,21 +402,24 @@ public class M06_ServicesTraining
             command.execute();
 
             commandResult =  ( ( GetAllTrainingCommand ) command ).get_output();
-           // commandResult.set_errorCode( Registry.RESULT_CODE_OK );
+            //cmdResult.set_errorCode( Registry.RESULT_CODE_OK );
             response = gson.toJson( commandResult );
         }
         catch ( ListAllException e )
         {
-            //commandResult.set_errorCode( e.ERROR_CODE );
-            //commandResult.set_errorMsg( e.ERROR_MSG );
+            cmdResult.set_errorCode( e.ERROR_CODE );
+            cmdResult.set_errorMsg( e.ERROR_MSG );
+            commandResult.add(cmdResult);
+
             response = gson.toJson( commandResult );
 
             logger.error( "Metodo: {} {}", "getAllTraining", e.toString() );
         }
         catch ( Exception e )
         {
-            //commandResult.set_errorCode( Registry.RESULT_CODE_FAIL );
-            //commandResult.set_errorMsg( Registry.RESULT_CODE_FAIL_MSG );
+            cmdResult.set_errorCode( Registry.RESULT_CODE_FAIL );
+            cmdResult.set_errorMsg( Registry.RESULT_CODE_FAIL_MSG );
+            commandResult.add(cmdResult);
             response = gson.toJson( commandResult );
 
             logger.error( "Metodo: {} {}", "getAllTraining", e.toString() );
