@@ -42,6 +42,8 @@ public class LevelUpCommand extends Command {
         }
     }
 
-
+    public Entity Return(){
+        return null;
+    }
 
 }

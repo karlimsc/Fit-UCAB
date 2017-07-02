@@ -5,7 +5,9 @@ local.properties
 /.idea/*
 /.idea/workspace.xml
 /.idea/libraries/
-.DS_Store
+*.DS_Store
+.AppleDouble
+.LSOverride
 /build
 /captures
 .externalNativeBuild

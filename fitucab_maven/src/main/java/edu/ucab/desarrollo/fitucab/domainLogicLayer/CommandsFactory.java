@@ -2,23 +2,18 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.HomeCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.UserCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
-import edu.ucab.desarrollo.fitucab.webService.M09_ServicesGamification;
-import org.slf4j.LoggerFactory;
-
-import java.util.ArrayList;
-import java.util.List;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
 
 /**
  * Fabrica de comandos
@@ -54,6 +49,28 @@ public class CommandsFactory {
         return new CheckUserCommand(user);
     }
 
+
+    //MODULO 2
+
+    /**
+     * Metodo que instancia el UserCommand con un id
+     * @param id
+     * @return
+     */
+    static public UserCommand instanciateUserCmd(int id){
+        return new UserCommand(id);
+    }
+
+    /**
+     * Metodo que instancia el HomeCommand con un id
+     * @param id
+     * @return
+     */
+    static public HomeCommand instanciateHomeCmd(int id){
+        return new HomeCommand(id);
+    }
+
+    //FIN MODULO 2
 
     // Comandos M06
 
@@ -129,12 +146,7 @@ public class CommandsFactory {
      */
     static public GetWaterCommand instatiateGetWaterCmd(Entity water){ return new GetWaterCommand(water); }
 
-    /**
-     * Metodo para instanciar el comando GetFechaInt
-     * @param water
-     * @return el comando GetFechaInt
-     */
-    static public GetFechaIntCommand instatiateGetFechaIntCmd(Entity water){ return new GetFechaIntCommand(water); }
+
     /**
      * Metodo para instanciar el comando DeletLast
      * @param water
@@ -142,12 +154,6 @@ public class CommandsFactory {
      */
     static public DeletLastCommand instatiateDeletLastCmd(Entity water){ return new DeletLastCommand(water); }
 
-    /**
-     * Metodo para instanciar el comando DeletWaterTm
-     * @param water
-     * @return el comando DeletWaterTm
-     */
-    static public DeletWaterTmCommand instatiateDeletWaterTmCmd(Entity water){ return new DeletWaterTmCommand(water); }
 
     /**
      * Metodo para instanciar el comando GetFecha
@@ -159,6 +165,28 @@ public class CommandsFactory {
 
     //Fin Modulo 10
 
+    //Modulo11
 
+    static public getFoodPerCommand getFoodPerCmd(Entity Food){ return new getFoodPerCommand(Food); }
+
+    static  public getFoodallCommand getFoodallCmd (Entity Food ) {return  new getFoodallCommand(Food);}
+
+    static public getSuggestionCommand getSuggestionCmd (Entity Food) {return new getSuggestionCommand(Food);}
+
+    static public getFoodAutoCommand getFoodAutoCmd (Entity Food) {return new getFoodAutoCommand(Food);}
+
+    static public deletePersonalizedFoodCommand deletPersFoodCmd (Entity Food)
+    {return new deletePersonalizedFoodCommand(Food); }
+
+    static public updatePersoCommand updatepersonCmd (Entity Food){return new updatePersoCommand(Food);}
+
+    static  public insertUnAlimentoCommand insertarAlimentoCmd (Entity Food) {return new insertUnAlimentoCommand(Food);}
+
+    static public insertPersoFoodCommand insertarPersoFoodCmd (Entity Food) {return  new insertPersoFoodCommand(Food);}
+
+    static public getPersonalizedListCommand getPersoFoodCmd (Entity Food) {return new getPersonalizedListCommand(Food);}
+
+    static public MomentCommand getMoment (Entity Moment) {return  new MomentCommand(Moment);}
 }
+
 

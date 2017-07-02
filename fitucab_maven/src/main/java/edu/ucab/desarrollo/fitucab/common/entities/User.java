@@ -84,13 +84,36 @@ public class User extends Entity {
      */
     public User(int id,String user,String password)
     {
-        super.set_id(id);
+        super.set_errorCode(id);
         _username = user;
         _password = password;
 
 
 
     };
+
+    /**
+     * Constructor
+     *
+     * @param id
+     * @param _username
+     * @param _email
+     * @param _sex
+     * @param _phone
+     * @param _birthdate
+     * @param _weight
+     * @param _height
+     */
+    public User(int id, String _username, String _email, String _sex, String _phone, Date _birthdate, int _weight, int _height) {
+        super(id);
+        this._username = _username;
+        this._email = _email;
+        this._sex = _sex;
+        this._phone = _phone;
+        this._birthdate = _birthdate;
+        this._weight = _weight;
+        this._height = _height;
+    }
 
     /**
      * Constructor sin el id del usuario
