@@ -14,6 +14,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Clase DAO Home para el manejo del comando DAO de la entidad Home
@@ -28,6 +30,8 @@ public class DaoHome extends Dao implements IDaoHome {
     private Connection _conn;
     private CreateHomeException _error;
     private static org.slf4j.Logger _logger = LoggerFactory.getLogger(DaoUser.class);
+    Date _date = new Date();
+    String _modifiedDate = new SimpleDateFormat("yyyy/MM/dd").format(_date);
 
     /**
      * Metodo constructor de clase DaoHome
@@ -50,8 +54,8 @@ public class DaoHome extends Dao implements IDaoHome {
         try {
             _conn = Dao.getBdConnect();
             Statement st = _conn.createStatement();
-            ResultSet _result = st.executeQuery("SELECT countg FROM m10_getwaterglass("+_usuario.get_id()+"," +
-                    "'"+((User)_usuario).getBirthdate()+"')");
+            ResultSet _result = st.executeQuery("SELECT countg FROM m10_getwaterglass("+_usuario.get_id()+
+                    ",'"+_modifiedDate+"')");
             while (_result.next()){
                 _totalAgua = _result.getInt("countg");
             }

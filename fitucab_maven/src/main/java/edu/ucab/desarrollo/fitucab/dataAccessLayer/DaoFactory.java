@@ -3,6 +3,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoHome;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoUpdatePerfil;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M06.DaoTraining;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.DaoWater;
@@ -83,6 +84,17 @@ public class DaoFactory
 
     public static DaoMoment iniciarDaoMoment(){return  new DaoMoment();}
 
+    /**
+     * Metodo que instancia el DaoUpdateUser
+     * @param id
+     * @param username
+     * @param phone
+     * @param email
+     * @return DaoUpdatePerfil
+     */
+    public static DaoUpdatePerfil instanceDaoUpdateUser(int id, String username, String phone, String email){
+        return new DaoUpdatePerfil(id,username,phone,email);
+    }
 
 }
 
