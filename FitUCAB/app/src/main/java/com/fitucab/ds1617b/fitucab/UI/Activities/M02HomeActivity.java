@@ -96,10 +96,10 @@ public class M02HomeActivity extends AppCompatActivity
 
     private void toAskWebService() {
         try {
-        preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        int id= preferences.getInt("idUser",0);
+        //preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+       // int id= preferences.getInt("idUser",0);
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        String webUrl= ip.getIp()+"M02Users/"+id;
+        String webUrl= ip.getIp()+"M02Users/"+1;
         Log.i(TAG, "toAskWebService: "+webUrl);
         JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl,
                 new Response.Listener<JSONObject>() {
