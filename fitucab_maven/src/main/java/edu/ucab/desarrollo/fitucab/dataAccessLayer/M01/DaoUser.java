@@ -264,7 +264,9 @@ public class DaoUser extends Dao implements IDaoUser {
                 //Aqui esta la validacion
                 User userOk = new User();
                 userOk.set_status(Integer.toString(RESULT_EMAIL_OK));
-                return gson.toJson(userOk);
+
+                //TODO:HAY QUE VER LO QUE RECIBE LA APP
+                return gson.toJson(userOk.get_status());
             } else {
                 System.out.print("Debug: user " + usernameResult);
                 User userFail = new User();
