@@ -117,8 +117,8 @@ public class DaoTraining extends Dao implements IDaoTraining
 
 
     /**
-     * Lista todos los entrenamientos     *
-     * @param entidad     *
+     * Lista todos los entrenamientos
+     * @param entidad
      * @return lista de entrenamientos
      */
     public LinkedList<Entity> listAll( Entity entidad ) throws ListAllException
@@ -147,6 +147,7 @@ public class DaoTraining extends Dao implements IDaoTraining
                 String name = resultSet.getString( "training_name" );
 
                 entity = EntityFactory.createTraining( id, name );
+                entity.set_activitiesList( listActivities() );
                 resultList.add( entity );
             }
 
@@ -280,9 +281,8 @@ public class DaoTraining extends Dao implements IDaoTraining
         return true;
     }
 
-
     /**
-     * Metodo para listar las actividades     *
+     * Metodo de Karli para listar las actividades     *
      * @return lista de actividades
      */
     private ArrayList<Entity> listActivities()
