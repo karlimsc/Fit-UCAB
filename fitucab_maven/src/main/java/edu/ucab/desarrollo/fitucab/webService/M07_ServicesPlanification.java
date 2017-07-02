@@ -226,8 +226,7 @@ public class M07_ServicesPlanification {
             GetPlanificationByIdCommand cmd = CommandsFactory.instanciateGetPlanificationByIdCmd(planificationEntity);
             cmd.execute();
 
-            jsonArray.add((Planification) planificationEntity);
-            return gson.toJson(jsonArray);
+            return gson.toJson(cmd.get_listPlanification());
         } catch (Exception e) {
             e.printStackTrace();
             return "ERROR: " + e.toString();

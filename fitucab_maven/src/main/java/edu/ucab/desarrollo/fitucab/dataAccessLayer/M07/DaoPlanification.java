@@ -5,8 +5,10 @@ import edu.ucab.desarrollo.fitucab.common.entities.Planification;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import javafx.print.PageLayout;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -56,6 +58,7 @@ public class DaoPlanification extends Dao implements IDaoPlanification {
         }
     }
 
+
     public Entity create(Entity planificationEntity) throws AddException {
 
         final String query = "SELECT * FROM m7_inserta_actividad(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -96,39 +99,42 @@ public class DaoPlanification extends Dao implements IDaoPlanification {
 
     }
 
-    public Entity read(Entity planificationEntity) {
+    @Override
+    public Entity read(Entity e) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Planification> getPlanificationByUser(Entity planificationEntity) {
 
         final String query = "SELECT * FROM m7_get_actividad(?)";
         Planification planification = (Planification) planificationEntity;
-        ArrayList<Entity> planificationList;
+        ArrayList<Planification> respuesta = new ArrayList<>();
+
         try {
             _conn = Dao.getBdConnect();
             PreparedStatement stm = _conn.prepareStatement(query);
             stm.setInt(1, planification.get_user());
-            boolean[] days = new boolean[7];
             ResultSet rs = stm.executeQuery();
-            planificationList = new ArrayList<Entity>();
-            while (rs.next()) {
-                Planification aux = new Planification();
-                //armar respuesta
-
-
-            }
+            respuesta = armarRespuesta(rs, planification.get_user());
+            // ver como devolver q fue exitoso
             planificationEntity.set_errorCode(QUERY_OK);
         } catch (BdConnectException e) {
             e.printStackTrace();
             planificationEntity.set_errorCode(e.ERROR_CODE);
             planificationEntity.set_errorMsg(e.toString());
+            respuesta.add((Planification)planificationEntity);
             flag = true;
         } catch (SQLException e) {
             e.printStackTrace();
             planificationEntity.set_errorCode(500);
             planificationEntity.set_errorMsg(e.toString());
+            respuesta.add((Planification)planificationEntity);
         }
         finally {
             if (!flag)
                 Dao.closeConnection();
-            return planificationEntity;
+            return respuesta;
         }
     }
 
@@ -170,5 +176,33 @@ public class DaoPlanification extends Dao implements IDaoPlanification {
                 Dao.closeConnection();
             return planificationEntity;
         }
+    }
+
+    private ArrayList<Planification> armarRespuesta(ResultSet rs, int userId) throws SQLException{
+        ArrayList<Planification> planificationList;
+        Planification aux;
+        boolean[] days = new boolean[7];
+        planificationList = new ArrayList<Planification>();
+        while(rs.next()){
+            aux  = new Planification();
+            aux.set_id(rs.getInt("id_planificacion"));
+            aux.set_startDate(rs.getDate("fecha_inicio").toLocalDate());
+            aux.set_endDate(rs.getDate("fecha_fin").toLocalDate());
+            aux.set_startTime(rs.getTime("hora_inicio").toLocalTime());
+            aux.set_duration(rs.getTime("duracion").toLocalTime());
+            days[MONDAY] = rs.getBoolean("lunes");
+            days[TUESDAY] = rs.getBoolean("martes");
+            days[WEDNESDAY] = rs.getBoolean("miercoles");
+            days[THURSDAY] = rs.getBoolean("jueves");
+            days[FRIDAY] = rs.getBoolean("viernes");
+            days[SATURDAY] = rs.getBoolean("sabado");
+            days[SUNDAY] = rs.getBoolean("domingo");
+            aux.set_days(days);
+            aux.set_sport(rs.getInt("deporte"));
+            aux.set_user(userId);
+            planificationList.add(aux);
+        }
+
+        return planificationList;
     }
 }
