@@ -5,12 +5,14 @@ import edu.ucab.desarrollo.fitucab.common.codec.Codec;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Planification;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.CreatePlanificationCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.DeletePlanificationCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.GetPlanificationByIdCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.UpdatePlanificationCommand;
 import edu.ucab.desarrollo.fitucab.validation.ValidationWs;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
@@ -51,12 +53,14 @@ public class M07_ServicesPlanification {
      * @return REGRESA UN JSON CON UNA ESTRUCTURA A DEFINIR
      */
 
-    @GET
+    @POST
     @Produces("application/json")
     public String createPlanification(@QueryParam("startDay") String startDay,
                                       @QueryParam("endDay") String endDay,
                                       @QueryParam("startTim") String startTime,
                                       @QueryParam("duration") String duration,
+                                      @DefaultValue("-1") @QueryParam("userId") int userId,
+                                      @DefaultValue("-1") @QueryParam("sportId") int sportId,
                                       @QueryParam("monday") boolean monday,
                                       @QueryParam("tuesday") boolean tuesday,
                                       @QueryParam("wednesday") boolean wednesday,
@@ -70,6 +74,9 @@ public class M07_ServicesPlanification {
                 put("endDay", endDay);
                 put("startTime", startTime);
                 put("duration", duration);
+                put("userId", userId);
+                put("sportId", sportId);
+
             }};
             jsonArray = new ArrayList<>();
             ValidationWs.validarParametrosNotNull(params);
@@ -90,17 +97,144 @@ public class M07_ServicesPlanification {
             saturday = Boolean.parseBoolean(params.get("saturday").toString());
             sunday = Boolean.parseBoolean(params.get("sunday").toString());
 
-            Entity crear = EntityFactory.createPlanification(startDay, endDay,
-                                                             startTime, duration, 1, 1,
-                                                             monday, tuesday, wednesday, thursday, friday, saturday, sunday);
-            jsonArray.add((Planification) crear);
+            Entity planificationEntity = EntityFactory.createPlanification(params.get("startDay").toString(),
+                    params.get("endDay").toString(), params.get("startTime").toString(), params.get("duration").toString(),
+                    Integer.parseInt(params.get("userId").toString()), Integer.parseInt(params.get("sportId").toString()),
+                    monday, tuesday, wednesday, thursday, friday, saturday, sunday);
+
+            CreatePlanificationCommand cmd = CommandsFactory.instanciateCreatePlanificationCmd(planificationEntity);
+            cmd.execute();
+
+            jsonArray.add((Planification) planificationEntity);
             return gson.toJson(jsonArray);
         } catch (Exception e) {
             e.printStackTrace();
-            return "hola";
+            return "ERROR: " + e.toString();
         }
 
 
     }
+
+
+    @PUT
+    @Produces("application/json")
+    public String updatePlanification(@DefaultValue("-1") @QueryParam("planificationId") int planificationId,
+                                      @QueryParam("startDay") String startDay,
+                                      @QueryParam("endDay") String endDay,
+                                      @QueryParam("startTim") String startTime,
+                                      @QueryParam("duration") String duration,
+                                      @DefaultValue("-1") @QueryParam("userId") int userId,
+                                      @DefaultValue("-1") @QueryParam("sportId") int sportId,
+                                      @QueryParam("monday") boolean monday,
+                                      @QueryParam("tuesday") boolean tuesday,
+                                      @QueryParam("wednesday") boolean wednesday,
+                                      @QueryParam("thursday") boolean thursday,
+                                      @QueryParam("friday") boolean friday,
+                                      @QueryParam("saturday") boolean saturday,
+                                      @QueryParam("sunday") boolean sunday) {
+        try {
+            HashMap<String, Object> params = new HashMap<String, Object>(){ {
+                put("planificationId", planificationId);
+                put("startDay", startDay);
+                put("endDay", endDay);
+                put("startTime", startTime);
+                put("duration", duration);
+                put("userId", userId);
+                put("sportId", sportId);
+
+            }};
+            jsonArray = new ArrayList<>();
+            ValidationWs.validarParametrosNotNull(params);
+            params.put("monday", monday);
+            params.put("tuesday", tuesday);
+            params.put("wednesday", wednesday);
+            params.put("thursday", thursday);
+            params.put("friday", friday);
+            params.put("saturday", saturday);
+            params.put("sunday", sunday);
+            params = Codec.decode(params);
+
+            monday = Boolean.parseBoolean(params.get("monday").toString());
+            tuesday = Boolean.parseBoolean(params.get("tuesday").toString());
+            wednesday = Boolean.parseBoolean(params.get("wednesday").toString());
+            thursday = Boolean.parseBoolean(params.get("thursday").toString());
+            friday = Boolean.parseBoolean(params.get("friday").toString());
+            saturday = Boolean.parseBoolean(params.get("saturday").toString());
+            sunday = Boolean.parseBoolean(params.get("sunday").toString());
+
+            Entity planificationEntity = EntityFactory.createPlanification(Integer.parseInt(params.get("planificationId").toString()),
+                    params.get("startDay").toString(), params.get("endDay").toString(), params.get("startTime").toString(),
+                    params.get("duration").toString(), Integer.parseInt(params.get("userId").toString()),
+                    Integer.parseInt(params.get("sportId").toString()), monday, tuesday, wednesday, thursday, friday,
+                    saturday, sunday);
+
+            UpdatePlanificationCommand cmd = CommandsFactory.instanciateUpdatePlanificationCmd(planificationEntity);
+            cmd.execute();
+
+            jsonArray.add((Planification) planificationEntity);
+            return gson.toJson(jsonArray);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "ERROR: " + e.toString();
+        }
+
+
+    }
+
+    @DELETE
+    @Produces("application/json")
+    public String updatePlanification(@DefaultValue("-1") @QueryParam("planificationId") int planificationId,
+                                      @DefaultValue("-1") @QueryParam("userId") int userId) {
+        try {
+            HashMap<String, Object> params = new HashMap<String, Object>(){ {
+                put("planificationId", planificationId);
+                put("userId", userId);
+            }};
+            jsonArray = new ArrayList<>();
+            ValidationWs.validarParametrosNotNull(params);
+            params = Codec.decode(params);
+
+            Entity planificationEntity = EntityFactory.createPlanification(Integer.parseInt(params.get("planificationId").toString()),
+                    Integer.parseInt(params.get("userId").toString()));
+
+            DeletePlanificationCommand cmd = CommandsFactory.instanciateDeletePlanificationCmd(planificationEntity);
+            cmd.execute();
+
+            jsonArray.add((Planification) planificationEntity);
+            return gson.toJson(jsonArray);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "ERROR: " + e.toString();
+        }
+
+
+    }
+
+    @GET
+    @Produces("application/json")
+    public String getPlanification(@DefaultValue("-1") @QueryParam("userId") int userId) {
+        try {
+            HashMap<String, Object> params = new HashMap<String, Object>(){ {
+                put("userId", userId);
+            }};
+            jsonArray = new ArrayList<>();
+            ValidationWs.validarParametrosNotNull(params);
+            params = Codec.decode(params);
+
+            Entity planificationEntity = EntityFactory.createPlanification(Integer.parseInt(params.get("userId").toString()));
+
+            GetPlanificationByIdCommand cmd = CommandsFactory.instanciateGetPlanificationByIdCmd(planificationEntity);
+            cmd.execute();
+
+            jsonArray.add((Planification) planificationEntity);
+            return gson.toJson(jsonArray);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "ERROR: " + e.toString();
+        }
+
+
+    }
+
 
 }

@@ -167,19 +167,19 @@ public class CommandsFactory {
     //Modulo 7
 
     public static CreatePlanificationCommand instanciateCreatePlanificationCmd(Entity create) {
-        return new CreatePlanificationCommand();
+        return new CreatePlanificationCommand(create);
     }
 
-    public static DeletePlanificationCommand instanciateDeletePlanificationCmd(Entity entity) {
-        return new DeletePlanificationCommand();
+    public static DeletePlanificationCommand instanciateDeletePlanificationCmd(Entity delete) {
+        return new DeletePlanificationCommand(delete);
     }
 
-    public static GetPlanificationByIdCommand instanciateGetPlanificationByIdCmd(Entity entity) {
-        return new GetPlanificationByIdCommand();
+    public static GetPlanificationByIdCommand instanciateGetPlanificationByIdCmd(Entity get) {
+        return new GetPlanificationByIdCommand(get);
     }
 
-    public static UpdatePlanificationCommand instanciateUpdatePlanificationCmd(Entity entity) {
-        return new UpdatePlanificationCommand();
+    public static UpdatePlanificationCommand instanciateUpdatePlanificationCmd(Entity update) {
+        return new UpdatePlanificationCommand(update);
     }
 
     //fin modulo 7

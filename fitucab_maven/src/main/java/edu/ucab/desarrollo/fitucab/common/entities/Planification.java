@@ -44,11 +44,23 @@ public class Planification extends Entity {
         this._sport = sport;
     }
 
-    public int get_id() {
+    public Planification(int _id, int user) {
+        super(_id);
+        this._user = user;
+    }
+
+    public Planification(int user) {
+        this._user = user;
+    }
+
+    public Planification() {
+    }
+
+    public int get_planificationId() {
         return _planificationId;
     }
 
-    public void set_id(int id) {
+    public void set_planificationId(int id) {
         this._planificationId = id;
     }
 
