@@ -203,6 +203,17 @@
     <string name="language">Español</string>
     <!--Final Strings Modulo 4 -->
 
+
+
+    <!--Inicio Strings Modulo 11 -->
+
+    <string-array name="niveles">
+        <item>Facil</item>
+        <item>Medio</item>
+        <item>Dificil</item>
+    </string-array>
+    <!--FIN Strings Modulo 11 -->
+
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="hello_blank_fragment">Home</string>

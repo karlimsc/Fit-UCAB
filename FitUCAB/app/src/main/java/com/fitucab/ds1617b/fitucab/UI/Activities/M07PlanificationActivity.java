@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
@@ -12,6 +13,7 @@ import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07ActivityFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07HomeFragment;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07TrainingFragment;
 
 public class M07PlanificationActivity extends AppCompatActivity implements OnFragmentSwap{
 
@@ -21,6 +23,9 @@ public class M07PlanificationActivity extends AppCompatActivity implements OnFra
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m07_planification);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         onSwap("M07HomeFragment", null);
 
     }
@@ -33,6 +38,11 @@ public class M07PlanificationActivity extends AppCompatActivity implements OnFra
         try {
 
             switch (fragmentName) {
+                case "M07TrainingFragment":
+                    fragmentToSwap = new M07TrainingFragment();
+                    fragmentToSwap.setArguments(bundle);
+                    fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
+                    break;
                 case "M07ActivityFragment":
                     fragmentToSwap = new M07ActivityFragment();
                     fragmentToSwap.setArguments(bundle);

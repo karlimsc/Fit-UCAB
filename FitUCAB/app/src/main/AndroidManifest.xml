@@ -27,11 +27,6 @@
             android:name=".UI.Activities.M01LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!-- FIN ACTIVITIES MODULO 1 -->
 
@@ -154,13 +149,16 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity android:name=".UI.Activities.M07PlanificationActivity">
+
+        <activity android:name=".UI.Activities.M07PlanificationActivity"
+            android:label="FitUCAB"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
+        </activity>
     </application>
 
 </manifest>
