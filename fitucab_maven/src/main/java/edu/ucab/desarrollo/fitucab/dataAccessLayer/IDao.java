@@ -14,7 +14,7 @@ public interface IDao
 {
     public Entity create(Entity e) throws Exception;
 
-    public Entity read(Entity e);
+    public Entity read(Entity e) throws SQLException;
 
     public Entity update(Entity e);
     

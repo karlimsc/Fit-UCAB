@@ -51,7 +51,7 @@ public class CheckUserCommand extends Command{
             //instanciacion del dao
 
             DaoUser LoginUserDao = (DaoUser) DaoFactory.instanciateDaoUser(_user);
-            _userReturn = LoginUserDao.read(_user);
+            _userReturn = LoginUserDao.login(_user);
 
         }
         catch(Exception e){
