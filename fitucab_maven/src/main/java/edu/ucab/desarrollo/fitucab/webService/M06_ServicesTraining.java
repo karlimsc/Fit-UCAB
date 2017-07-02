@@ -17,6 +17,7 @@ import javax.ws.rs.*;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -50,9 +51,11 @@ public class M06_ServicesTraining
 
     // ArrayList<String> activities revisar esto OJO
     public String createTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  ArrayList<String> activities,
+                                 @QueryParam( "trainingActivities" )  String _activities,
                                  @QueryParam( "userId" ) int userId )
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity createTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
         CreateTrainingCommand cmd =
@@ -124,8 +127,10 @@ public class M06_ServicesTraining
 
     public String addActivitiesToTraining( @QueryParam( "idTraining" ) int id,
                                            @QueryParam( "trainingName" ) String name,
-                                           @QueryParam( "trainingActivities" )  ArrayList<String> activities)
+                                           @QueryParam( "trainingActivities" )  String _activities)
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
         AddActivitiesToTrainingCommand cmd = CommandsFactory.instanciateAddActivitiesToTrainingCmd(updatedTrainingObject);
@@ -163,8 +168,10 @@ public class M06_ServicesTraining
 
     public String removeActivitiesToTraining( @QueryParam( "idTraining" ) int id,
                                               @QueryParam( "trainingName" ) String name,
-                                              @QueryParam( "trainingActivities" )  ArrayList<String> activities)
+                                              @QueryParam( "trainingActivities" )  String _activities)
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
         RemoveActivitiesFromTrainingCommand cmd = CommandsFactory.instanciateRemoveActivitiesFromTrainingCmd(updatedTrainingObject);
@@ -264,9 +271,11 @@ public class M06_ServicesTraining
      * @return
      */
     public String shareTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" ) ArrayList<String> activities,
+                                 @QueryParam( "trainingActivities" ) String _activities,
                                  @QueryParam( "userId" ) int userId )
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity shareTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
         ShareTrainingCommand cmd =
