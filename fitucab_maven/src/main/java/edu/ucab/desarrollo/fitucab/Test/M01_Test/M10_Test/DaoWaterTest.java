@@ -3,6 +3,7 @@ package edu.ucab.desarrollo.fitucab.Test.M01_Test.M10_Test;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Water;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.DaoWater;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.IDaoWater;
 import edu.ucab.desarrollo.fitucab.webService.Sql;
 import org.junit.After;
@@ -10,6 +11,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import javax.xml.transform.Result;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -25,6 +27,7 @@ import static org.junit.Assert.*;
 public class DaoWaterTest {
 
     SimpleDateFormat _sdf2 = new SimpleDateFormat("MM/dd/yyyy");
+    SimpleDateFormat _sdf3 = new SimpleDateFormat("hh:mm:ss");
     Date fecha = new Date();
 
     @Before
@@ -39,6 +42,10 @@ public class DaoWaterTest {
         String insertWaterList1 = "INSERT INTO public.glass_historic(glasshistoricid, glasstime, glasstype, " +
                 "fk_person) VALUES(201,'02/10/3000', 250, 1),(202,'02/10/3000', 300, 1),(203,'02/10/3000', 350, 1);";
         _sql2.sql(insertWaterList1);
+        Sql _sql3 = new Sql();
+        String insertWaterList2 = "INSERT INTO public.glass_historic(glasshistoricid, glasstime, glasstype, " +
+                "fk_person) VALUES(301,'02/10/4000', 250, 1),(302,'02/10/4000', 300, 1),(303,'02/10/4000', 350, 1);";
+
 
     }
 
@@ -92,29 +99,48 @@ public class DaoWaterTest {
     }
 
     @Test
-    public void getFechaInt() throws Exception {
-
-    }
-
-    @Test
     public void deleteLast() throws Exception {
-
-    }
-
-    @Test
-    public void deleteWaterTm() throws Exception {
+        Water _water = EntityFactory.createWater();
+        Water waterResult = EntityFactory.createWater();
+        _water.set_fkPerson(1);
+        _water.set_time("02/10/3000");
+        IDaoWater daoWater = DaoFactory.instanceDaoWater(_water);
+        waterResult = (Water) daoWater.deleteLast(_water);
+        assertTrue(waterResult.get_cantidad().equals(2));
     }
 
     @Test
     public void queryExecute() throws Exception {
+        Water _water = EntityFactory.createWater();
+        ResultSet rs;
+        DaoWater daoWater = new DaoWater(_water);
+        rs = daoWater.queryExecute("Select personsex from person where personid = 1");
+        String sexo = "";
+        while (rs.next()) {
+            sexo = rs.getString("personsex");
+        }
+        assertTrue(sexo.equals("f"));
     }
 
     @Test
     public void addWaterResult() throws Exception {
+        Water _water = EntityFactory.createWater();
+        Water waterComparacion = EntityFactory.createWater();
+        DaoWater daoWater = new DaoWater(_water);
+        String dia = ("02/10/5000");
+        String hora = ("10:10:10");
+        String glassType = "200";
+        String fkp = "1";
+        ResultSet rs;
+        Sql sql = new Sql();
+        rs = sql.sql("Select res from m10_addwater('"+dia+" "+hora+"',"+glassType+","+fkp+")");
+        _water = daoWater.addWaterResult(rs);
+        assertEquals((int) _water.get_cantidad(),1);
     }
 
     @Test
     public void getWaterList() throws Exception {
+        
     }
 
     @Test
@@ -127,18 +153,6 @@ public class DaoWaterTest {
 
     @Test
     public void deletLastItem() throws Exception {
-    }
-
-    @Test
-    public void deletWaterTmItem() throws Exception {
-    }
-
-    @Test
-    public void read() throws Exception {
-    }
-
-    @Test
-    public void update() throws Exception {
     }
 
 }
