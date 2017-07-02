@@ -50,7 +50,7 @@ public class M06_ServicesTraining
 
     // ArrayList<String> activities revisar esto OJO
     public String createTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  final ArrayList<String> activities,
+                                 @QueryParam( "trainingActivities" )  ArrayList<String> activities,
                                  @QueryParam( "userId" ) int userId )
     {
         ArrayList<Entity> activitiesList = activityList(activities);
@@ -264,7 +264,7 @@ public class M06_ServicesTraining
      * @return
      */
     public String shareTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  final ArrayList<String> activities,
+                                 @QueryParam( "trainingActivities" ) ArrayList<String> activities,
                                  @QueryParam( "userId" ) int userId )
     {
         ArrayList<Entity> activitiesList = activityList(activities);
