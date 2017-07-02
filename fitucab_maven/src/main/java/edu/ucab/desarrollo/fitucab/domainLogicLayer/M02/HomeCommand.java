@@ -11,22 +11,30 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by root on 29/06/17.
+ * Clase HomeCommand para el manejo del Patron Comando para el manejo de la Entidad Home
+ * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+ * @version 1.0
  */
 public class HomeCommand extends Command {
-    Entity _home, _usuario;
-    int id;
-  final static org.slf4j.Logger _logger = LoggerFactory.getLogger(HomeCommand.class);
 
-    public HomeCommand(int id) {
-        this.id = id;
+    Entity _home, _usuario;
+    private int id;
+
+    final static org.slf4j.Logger _logger = LoggerFactory.getLogger(HomeCommand.class);
+
+    /**
+     * Constructor de la clase HomeCommand
+     * @param _id
+     */
+    public HomeCommand(int _id) {
+        this.id = _id;
     }
 
     @Override
     public void execute() {
         try {
-            IDaoUser usuario = DaoFactory.instanceDaoUser(id);
-            _usuario = usuario.read(id);
+            IDaoUser _user = DaoFactory.instanceDaoUser(id);
+            _usuario = _user.read(id);
             IDaoHome home = DaoFactory.instanceDaoHome(_usuario);
             _home = home.read(_usuario);
         } catch (CreateHomeException e) {
