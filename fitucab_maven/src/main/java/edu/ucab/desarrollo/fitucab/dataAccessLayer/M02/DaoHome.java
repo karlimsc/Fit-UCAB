@@ -113,4 +113,9 @@ public class DaoHome extends Dao implements IDaoHome {
     public Entity update(Entity e) {
         return null;
     }
+
+    @Override
+    public void Create(Entity e) {
+
+    }
 }

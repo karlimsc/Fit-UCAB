@@ -1,76 +1,81 @@
-package com.fitucab.ds1617b.fitucab.Model;
+package edu.ucab.desarrollo.fitucab.common.entities;
+import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by zedin on 25/05/17.
- */
 import java.io.Serializable;
 
-public class Food implements Serializable{
-    private int _id;
+/**
+ * Created by jaorr on 22/05/17.
+ */
+public class Food extends Entity{
+
+    private int _iD;
+
     private String _foodName;
+
     private String _foodWeight;
+
     private String _foodCalorie;
+
     private Boolean _foodPersonalized;
-    private Boolean _foodDinner;
 
     public Food() {
     }
 
-    public Food(int id, String foodName, String foodWeight, String foodCalorie
-            , Boolean foodPersonalized, Boolean foodDinner) {
-        this._id = id;
+
+
+    public Food(int id, String foodName, String foodWeight, String foodCalorie, Boolean _foodPersonalized) {
+        this._iD = id;
         this._foodName = foodName;
         this._foodWeight = foodWeight;
         this._foodCalorie = foodCalorie;
-        this._foodPersonalized = foodPersonalized;
-        this._foodDinner = foodDinner;
+        this._foodPersonalized = _foodPersonalized;
     }
 
-    public int get_Id() {
-        return _id;
+    public Food(String idname) {
+        _foodName = idname;
     }
 
-    public void set_Id(int id) {
-        this._id = id;
+    public Food (String id , String foodCalorie){
+        _foodName =id ; _foodCalorie=foodCalorie;
     }
 
-    public String get_FoodName() {
+    public int get_id() {
+        return _iD;
+    }
+
+    public void set_id(int id) {
+        this._iD = id;
+    }
+
+    public String get_foodName() {
         return _foodName;
     }
 
-    public void set_FoodName(String foodName) {
+    public void set_foodName(String foodName) {
         this._foodName = foodName;
     }
 
-    public String get_FoodWeight() {
+    public String get_foodWeight() {
         return _foodWeight;
     }
 
-    public void set_FoodWeight(String foodWeight) {
+    public void set_foodWeight(String foodWeight) {
         this._foodWeight = foodWeight;
     }
 
-    public String get_FoodCalorie() {
+    public String get_foodCalorie() {
         return _foodCalorie;
     }
 
-    public void set_FoodCalorie(String foodCalorie) {
+    public void set_foodCalorie(String foodCalorie) {
         this._foodCalorie = foodCalorie;
     }
 
-    public Boolean get_FoodPersonalized() {
+    public Boolean get_foodPersonalized() {
         return _foodPersonalized;
     }
 
-    public void set_FoodPersonalized(Boolean foodPersonalized) {
+    public void set_foodPersonalized(Boolean foodPersonalized) {
         this._foodPersonalized = foodPersonalized;
-    }
-
-    public Boolean get_FoodDinner() {
-        return _foodDinner;
-    }
-
-    public void set_FoodDinner(Boolean foodDinner) {
-        this._foodDinner = foodDinner;
     }
 }

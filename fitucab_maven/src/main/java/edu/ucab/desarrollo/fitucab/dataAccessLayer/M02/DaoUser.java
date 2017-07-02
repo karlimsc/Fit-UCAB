@@ -124,4 +124,8 @@ public class DaoUser extends Dao implements IDaoUser {
         return null;
     }
 
+    @Override
+    public void Create(Entity e) {
+
+    }
 }
