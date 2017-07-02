@@ -2,7 +2,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M10;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.Water;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.webService.Sql;
 

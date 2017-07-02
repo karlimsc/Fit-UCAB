@@ -1,10 +1,7 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 
-import edu.ucab.desarrollo.fitucab.common.Exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
-
-
-import java.util.List;
 
 /**
  * Interface que implementa el DAO

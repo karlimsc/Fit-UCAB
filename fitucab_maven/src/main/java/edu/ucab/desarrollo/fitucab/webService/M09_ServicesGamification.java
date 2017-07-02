@@ -1,20 +1,17 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
-import edu.ucab.desarrollo.fitucab.common.entities.Entity;
-import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.MessageException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;;
 import java.util.List;
-import java.util.logging.Level;
 
 /**
  * Clase M09ServicesGamification que maneja el modulo de gamificacion.

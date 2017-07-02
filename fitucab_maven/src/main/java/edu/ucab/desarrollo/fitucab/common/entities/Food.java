@@ -1,7 +1,7 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
-import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by jaorr on 22/05/17.
@@ -22,10 +22,17 @@ public class Food extends Entity{
 
     private String _json;
 
+    private Map<String, String> _response;
+
+    public ArrayList<Food> jsonArray;
+
 
     public Food() {
     }
 
+    public void setResponse (Map<String, String> response){_response=response;}
+
+    public Map<String, String>  getResponse (){return _response;}
 
     public Food (String foodname , int id )
     {

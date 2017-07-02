@@ -1,7 +1,7 @@
 package edu.ucab.desarrollo.fitucab.common.Validations;
 
 
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ParameterNullException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ParameterNullException;
 
 import java.util.Map;
 

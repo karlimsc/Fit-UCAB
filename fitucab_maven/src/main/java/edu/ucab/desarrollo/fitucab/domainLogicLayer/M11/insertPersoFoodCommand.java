@@ -1,8 +1,8 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M11;
 
-import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.IDaoFood;
@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class insertPersoFoodCommand extends Command {
 
     Entity _food;
-    String Respuesta;
+    Entity Respuesta;
     public insertPersoFoodCommand(Entity food) {
         _food = food;
     }

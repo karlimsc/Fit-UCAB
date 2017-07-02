@@ -2,14 +2,12 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M11;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.AddException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Food;
-import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 
 import java.lang.reflect.Type;
 import java.sql.Connection;
@@ -57,7 +55,7 @@ public class DaoFood extends Dao implements IDaoFood {
 
 
     @Override
-    public String getFoodPer(Entity e) throws SQLException, BdConnectException {
+    public Entity getFoodPer(Entity e) throws SQLException, BdConnectException {
 
         String query = "SELECT * FROM m11_get_alimentos_person(?)";
         jsonArray = new ArrayList<>();
@@ -77,14 +75,15 @@ public class DaoFood extends Dao implements IDaoFood {
             jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
         }
 
+        Food aux = (Food) EntityFactory.CreateFood();
+        aux.jsonArray=jsonArray;
 
 
-
-        return  gson.toJson(jsonArray);
+        return aux;
     }
 
     @Override
-    public String getFoodAll(Entity e) throws SQLException, BdConnectException {
+    public Entity getFoodAll(Entity e) throws SQLException, BdConnectException {
 
         Food food = (Food) e;
         username= String.valueOf(food.get_id());
@@ -106,17 +105,20 @@ public class DaoFood extends Dao implements IDaoFood {
             jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
         }
 
-        response = gson.toJson(jsonArray);
-        return response;
+        Food aux = (Food) EntityFactory.CreateFood();
+        aux.jsonArray=jsonArray;
+
+
+        return aux;
     }
 
     @Override
-    public String getSugge(Entity e) throws SQLException, BdConnectException {
+    public Entity getSugge(Entity e) throws SQLException, BdConnectException {
 
         Food food = (Food) e;
         String query = "select * from m11_get_alimentos_sugerencia(?, ?)";
         jsonArray = new ArrayList<>();
-        username = String.valueOf(food.get_id());
+        username = String.valueOf(food.get_id());//Revisar aqui
         calorie = food.get_foodCalorie();
         Connection conn = Dao.getBdConnect();
         PreparedStatement st = conn.prepareStatement(query);
@@ -133,17 +135,17 @@ public class DaoFood extends Dao implements IDaoFood {
             jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
         }
 
-        response = gson.toJson(jsonArray);
+        Food aux = (Food) EntityFactory.CreateFood();
+        aux.jsonArray=jsonArray;
 
 
-
-        return response;
+        return aux;
     }
 
 
 
     @Override
-    public String getFoodAuto(Entity e) throws SQLException, BdConnectException {
+    public Entity getFoodAuto(Entity e) throws SQLException, BdConnectException {
 
         Food food = (Food) e;
         String query = "select * from m11_get_todos_alimentos_autocompletar(?)";
@@ -174,18 +176,18 @@ public class DaoFood extends Dao implements IDaoFood {
   */
 
         }
-            response = gson.toJson(jsonArray);
+        Food aux = (Food) EntityFactory.CreateFood();
+        aux.jsonArray=jsonArray;
 
 
-
-        return response;
+        return aux;
     }
 
 
 
 
     @Override
-    public String DeletPerFood(Entity e) throws SQLException, BdConnectException {
+    public Entity DeletPerFood(Entity e) throws SQLException, BdConnectException {
         Map<String, String> response = new HashMap<String, String>();
         String query = "select * from m11_elimina_alimento_person(?, ?)";
         Food food = (Food) e;
@@ -198,14 +200,17 @@ public class DaoFood extends Dao implements IDaoFood {
         st.executeQuery();
         response.put("data", "Se elimino el alimento de forma exitosa");
 
-        return gson.toJson(response);
+        Food aux = (Food) EntityFactory.CreateFood();
+        aux.setResponse(response);
+
+        return aux;
     }
 
 
 
 
     @Override
-    public String updatePerso(Entity e) throws SQLException, BdConnectException {
+    public Entity updatePerso(Entity e) throws SQLException, BdConnectException {
         Map<String, String> response = new HashMap<String, String>();
         Food food = (Food) e;
         String query = "select * from m11_act_alimento_person(?, ?, ?, ?)";
@@ -220,14 +225,16 @@ public class DaoFood extends Dao implements IDaoFood {
         st.executeQuery();
         response.put("data", "Se actualizo el alimento de forma exitosa");
 
+        Food aux = (Food) EntityFactory.CreateFood();
+        aux.setResponse(response);
 
-        return gson.toJson(response);
+        return aux;
     }
 
 
 
     @Override
-    public String InsertarAlimen(Entity e) throws SQLException, BdConnectException {
+    public Entity InsertarAlimen(Entity e) throws SQLException, BdConnectException {
         Map<String, String> response = new HashMap<String, String>();
 
         Food food = (Food) e;
@@ -242,27 +249,37 @@ public class DaoFood extends Dao implements IDaoFood {
         st.setBoolean(4 , food.get_foodPersonalized());
         st.setInt(5, food.get_id());
 
+
+
+
         st.executeQuery();
         response.put("data", "Se insertaron los alimentos de forma exitosa");
 
-        return gson.toJson(response);
+        Food aux = (Food) EntityFactory.CreateFood();
+        aux.setResponse(response);
+
+        return aux;
     }
 
     @Override
-    public String insertarPersoFood(Entity e) throws SQLException, BdConnectException {
+    public Entity insertarPersoFood(Entity e) throws SQLException, BdConnectException {
         Map<String, String> response = new HashMap<String, String>();
         Food food = (Food) e;
 
         String query = "select * from m11_inserta_alim_person(? , ?, ?)";
         Type type = new TypeToken<Food[]>(){}.getType();
-            /*
+
+/*
             Food[] a = new Food[3];
-            a[0] = new Food(1, "cachapa", "20", "52", true);
-            a[2] = new Food(2, "cachap2", "21", "53", true);
-            a[1] = new Food(3, "cachap3", "22", "54", true);
-            jsonAlimentos = gson.toJson(a);
-            */
+
+        a[0] = new Food( "cachapa",  "52","20", true,1);
+        a[1] = new Food( "cachapa2",  "52","20", true,1);
+        a[2] = new Food( "cachapa3",  "52","20", true,1);
+        String jsonAlimentos = gson.toJson(a);
+          Food[] alimentos = gson.fromJson(jsonAlimentos, type);
+*/
         Food[] alimentos = gson.fromJson(food.getJson(), type);
+
         Connection conn = Dao.getBdConnect();
         PreparedStatement st = conn.prepareStatement(query);
         for (int i = 0; i < alimentos.length; i++) {
@@ -274,12 +291,14 @@ public class DaoFood extends Dao implements IDaoFood {
 
         response.put("data", "Se insertaron los alimentos de forma exitosa");
 
+        Food aux = (Food) EntityFactory.CreateFood();
+        aux.setResponse(response);
 
-        return gson.toJson(response);
+        return aux;
     }
 
     @Override
-    public String getPersonalizedLis(Entity e) throws BdConnectException, SQLException {
+    public Entity getPersonalizedLis(Entity e) throws BdConnectException, SQLException {
 
         Food food = (Food) e;
 
@@ -297,10 +316,11 @@ public class DaoFood extends Dao implements IDaoFood {
             jsonArray.get(jsonArray.size() - 1).set_id(rs.getInt("id_alimento"));
 
         }
+        Food aux = (Food) EntityFactory.CreateFood();
+        aux.jsonArray=jsonArray;
 
-        response = gson.toJson(jsonArray);
 
-        return response;
+        return aux;
     }
 
 

@@ -1,12 +1,9 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ParameterNullException;
-import edu.ucab.desarrollo.fitucab.common.Validations.ValidationWS;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Food;
@@ -14,14 +11,10 @@ import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
 
-
 import javax.ws.rs.*;
-import java.lang.reflect.Type;
-import java.sql.*;
-
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 
 
@@ -34,9 +27,9 @@ public class M11_ServicesFood {
     private Connection conn = Sql.getConInstance();
     //Atributo que se utiliza para transformar a formado JSON las consultas.
     private Gson gson = new Gson();
-    private String response;
+    private Entity response;
     private ArrayList<Food> jsonArray;
-    private  String respuesta ;
+    private  Entity respuesta ;
 
     /**
      * Funcion que recibe el nombre del usuario, y con este extrae
@@ -56,22 +49,22 @@ public class M11_ServicesFood {
 
         try {
             cmd.execute();
-            respuesta = cmd.Respuesta;
+            respuesta = (Food) cmd.Respuesta;
 
         } catch (ListAllException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (ListByIdException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (NoSuchMethodException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (SQLException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (BdConnectException e) {
-            e.printStackTrace();
+            respuesta .set_errorMsg(e.getMessage());
         }
 
 
-        return respuesta;
+        return gson.toJson(respuesta);
     }
 
     /**
@@ -89,21 +82,22 @@ public class M11_ServicesFood {
 
         try {
             cmd.execute();
-            respuesta=cmd.Respuesta;
+            respuesta = (Food) cmd.Respuesta;
+
         } catch (ListAllException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (ListByIdException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (NoSuchMethodException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (SQLException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (BdConnectException e) {
-            e.printStackTrace();
+            respuesta .set_errorMsg(e.getMessage());
         }
 
 
-        return respuesta;
+        return gson.toJson(respuesta);
     }
 
     /**
@@ -126,22 +120,22 @@ public class M11_ServicesFood {
 
         try {
             cmd.execute();
-            respuesta = cmd.Respuesta;
+            respuesta = (Food) cmd.Respuesta;
 
         } catch (ListAllException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (ListByIdException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (NoSuchMethodException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (SQLException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (BdConnectException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         }
 
 
-        return respuesta;
+        return gson.toJson(respuesta);
     }
 
 
@@ -160,22 +154,22 @@ public class M11_ServicesFood {
 
         try {
             cmd.execute();
-            respuesta = cmd.Respuesta;
+            respuesta = (Food) cmd.Respuesta;
 
         } catch (ListAllException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (ListByIdException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (NoSuchMethodException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (SQLException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (BdConnectException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         }
 
 
-        return respuesta;
+        return gson.toJson(respuesta);
     }
 
     /**
@@ -198,22 +192,22 @@ public class M11_ServicesFood {
 
         try {
             cmd.execute();
-            respuesta = cmd.Respuesta;
+            respuesta = (Food) cmd.Respuesta;
 
         } catch (ListAllException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (ListByIdException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (NoSuchMethodException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (SQLException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (BdConnectException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         }
 
 
-        return respuesta;
+        return gson.toJson(respuesta);
     }
 
 
@@ -243,22 +237,22 @@ public class M11_ServicesFood {
 
         try {
             cmd.execute();
-            respuesta = cmd.Respuesta;
+            respuesta = (Food) cmd.Respuesta;
 
         } catch (ListAllException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (ListByIdException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (NoSuchMethodException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (SQLException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (BdConnectException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         }
 
 
-        return respuesta;
+        return gson.toJson(respuesta);
     }
 
     /**
@@ -291,22 +285,22 @@ public class M11_ServicesFood {
 
         try {
             cmd.execute();
-            respuesta = cmd.Respuesta;
+            respuesta = (Food) cmd.Respuesta;
 
         } catch (ListAllException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (ListByIdException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (NoSuchMethodException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (SQLException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (BdConnectException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         }
 
 
-        return respuesta;
+        return gson.toJson(respuesta);
     }
 
     /**
@@ -324,24 +318,25 @@ public class M11_ServicesFood {
         Entity EntityFood  = EntityFactory.putJson(jsonFood);
         insertUnAlimentoCommand cmd = CommandsFactory.insertarAlimentoCmd(EntityFood);
 
+
         try {
             cmd.execute();
-            respuesta = cmd.Respuesta;
+            respuesta = (Food) cmd.Respuesta;
 
         } catch (ListAllException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (ListByIdException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (NoSuchMethodException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (SQLException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (BdConnectException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         }
 
 
-        return respuesta;
+        return gson.toJson(respuesta);
 
 
 
@@ -360,24 +355,25 @@ public class M11_ServicesFood {
         Entity EntityFood = EntityFactory.getUsername(username);
         getPersonalizedListCommand cmd = CommandsFactory.getPersoFoodCmd(EntityFood);
 
+
         try {
             cmd.execute();
-            respuesta = cmd.Respuesta;
+            respuesta = (Food) cmd.Respuesta;
 
         } catch (ListAllException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (ListByIdException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (NoSuchMethodException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (SQLException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         } catch (BdConnectException e) {
-            respuesta=e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
         }
 
 
-        return respuesta;
+        return gson.toJson(respuesta);
 
     }
 

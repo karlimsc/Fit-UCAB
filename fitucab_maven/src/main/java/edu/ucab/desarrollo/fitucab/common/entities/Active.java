@@ -1,8 +1,8 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
-import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
 import java.sql.SQLException;

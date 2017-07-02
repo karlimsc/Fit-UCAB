@@ -1,10 +1,8 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer.M06;
 
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.IDao;
 
 import java.util.ArrayList;

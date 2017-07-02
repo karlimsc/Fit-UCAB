@@ -1,9 +1,8 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M11;
 
-import com.sun.org.apache.regexp.internal.RE;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.BdConnectException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.IDaoFood;
@@ -16,7 +15,7 @@ import java.sql.SQLException;
  */
 public class insertUnAlimentoCommand extends Command {
     Entity _food;
-    public String Respuesta;
+    public Entity Respuesta;
 
     public  insertUnAlimentoCommand (Entity food)
     {

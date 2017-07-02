@@ -3,7 +3,7 @@ package edu.ucab.desarrollo.fitucab.webService;
 
 
 import com.google.gson.Gson;
-import edu.ucab.desarrollo.fitucab.common.Exceptions.ParameterNullException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ParameterNullException;
 import edu.ucab.desarrollo.fitucab.common.entities.Moment;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 

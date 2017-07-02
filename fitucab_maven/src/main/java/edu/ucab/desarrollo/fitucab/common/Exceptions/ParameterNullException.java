@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.common.Exceptions;
+package edu.ucab.desarrollo.fitucab.common.exceptions;
 
 
 public class ParameterNullException extends NullPointerException {

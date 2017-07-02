@@ -1,6 +1,6 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer.M01;
 
-import edu.ucab.desarrollo.fitucab.common.Exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 
