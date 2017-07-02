@@ -2,7 +2,6 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M02;
 
 import edu.ucab.desarrollo.fitucab.common.entities.*;
 import edu.ucab.desarrollo.fitucab.common.exceptions.*;
-import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.*;
 
@@ -10,42 +9,45 @@ import java.sql.*;
 import java.util.Date;
 
 /**
- * Created by root on 29/06/17.
+ * Clase DAO para el manejo de la Entidad User.
+ * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+ * @version 1.0
  */
 public class DaoUser extends Dao implements IDaoUser {
 
-    int id;
+    int _id;
     Entity _user;
     Date birthdate;
 
     /**
-     * Metodo constructor que recibe un id
-     * @param id
+     * Metodo constructor que recibe un _id
+     * @param _id
      */
-    public DaoUser(int id) {
-        this.id = id;
+    public DaoUser(int _id) {
+        this._id = _id;
     }
 
     /**
-     * Metodo que consulta el perfil por un query de un storeprocedures
-     * @param id
-     * @return
+     * Metodo que consulta el perfil de usuario por un query de un Stored Procedure
+     * @param _id _id que identifica al Usuario a buscar en la BD
+     * @throws GetUserException Exepcion personalizada del M02
+     * @return _user entidad User
      */
     @Override
-    public Entity read(int id) throws GetUserException{
+    public Entity read(int _id) throws GetUserException{
         try {
-            Connection conn = getBdConnect();
-            ResultSet result = sql("select * from m02_consultarperfilid("+ id +")");
+            getBdConnect();
+            ResultSet _result = sql("select * from m02_consultarperfilid("+ _id +")");
 
-            while(result.next()){
-                String usuario = result.getString( "usuario" );
-                String email = result.getString( "email" );
-                String sex = result.getString( "sex" );
-                String phone = result.getString( "phone" );
-                Date birthdate = result.getDate( "birthdate" );
-                int  height = result.getInt( "height" );
-                int weight = result.getInt("weight");
-                _user = EntityFactory.createUser( id ,usuario, email, sex, phone, birthdate, height, weight);
+            while(_result.next()){
+                String _usuario = _result.getString( "usuario" );
+                String _email = _result.getString( "email" );
+                String _sex = _result.getString( "sex" );
+                String _phone = _result.getString( "phone" );
+                Date _birthdate = _result.getDate( "birthdate" );
+                int  _height = _result.getInt( "height" );
+                int _weight = _result.getInt("weight");
+                _user = EntityFactory.createUser( _id ,_usuario, _email, _sex, _phone, _birthdate, _height, _weight);
             }
             return _user;
         } catch (NullPointerException e) {
@@ -60,14 +62,14 @@ public class DaoUser extends Dao implements IDaoUser {
 
     /**
      * Metodo que devuelve un dato de cumpleaños a traves de un query que devuelve una fecha
-     * @param id
-     * @return
+     * @param _id _id que identifica al Usuario a buscar en la BD
+     * @return birthdate
      */
-    public Date Fecha(int id) {
+    public Date Fecha(int _id) {
 
         try {
-            Connection conn = getBdConnect();
-            ResultSet result = sql("select * from m02_consultarperfilid(" + id + ")");
+            getBdConnect();
+            ResultSet result = sql("select * from m02_consultarperfilid(" + _id + ")");
             while (result.next()) {
                 birthdate = result.getDate("birthdate");
             }
@@ -84,7 +86,7 @@ public class DaoUser extends Dao implements IDaoUser {
     /**
      * Metodo que crea una entidad
      * @param e
-     * @return
+     * @return null
      * @throws AddException
      */
     public Entity create(Entity e) throws AddException {
@@ -94,7 +96,7 @@ public class DaoUser extends Dao implements IDaoUser {
     /**
      * Metodo que crea una entidad
      * @param e
-     * @return
+     * @return null
      */
     public Entity read(Entity e) {
         return null;
@@ -103,7 +105,7 @@ public class DaoUser extends Dao implements IDaoUser {
     /**
      * Metodo que actualiza una entidad
      * @param e
-     * @return
+     * @return null
      */
     public Entity update(Entity e) {
         return null;

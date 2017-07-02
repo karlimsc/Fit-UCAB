@@ -7,23 +7,22 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.*;
 import java.util.*;
 
 /**
- * Created by root on 29/06/17.
+ * Interfaz de la clase DAO para el manejo de la Entidad User.
+ * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+ * @version 1.0
  */
 public interface IDaoUser extends IDao {
 
-
+    /**
+     * Metodo que implementa el DaoUser que recibe un _id
+     * @param _id
+     */
+    public Entity read(int _id) throws GetUserException;
 
     /**
-     * Metodo que implementa el DaoUser que recibe un id
-     * @param id
-     * @return
+     * Metodo que implementa el DaoUser que recibe un _id
+     * @param _id
      */
-    public Entity read(int id) throws GetUserException;
-    /**
-     * Metodo que implementa el DaoUser que recibe un id
-     * @param id
-     * @return
-     */
-    public Date Fecha(int id) ;
+    public Date Fecha(int _id) ;
 
 }

@@ -9,7 +9,9 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 
 /**
- * Clase que realiza las consultas
+ * Clase del servicio web del M02 que maneja la Entidad User
+ * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+ * @version 5.0
  */
 @Path("/M02Users")
 @Produces(MediaType.APPLICATION_JSON)
@@ -17,7 +19,7 @@ public class M02_ServicesUser {
 
     private StatusMessage _message;
     private Response _response;
-    private Entity user;
+    private Entity _user;
 
 
     /**
@@ -31,10 +33,10 @@ public class M02_ServicesUser {
     @GET
     @Path("/{userId}")
     public Response getUser( @PathParam("userId") int id ){
-        Command comm = CommandsFactory.instanciateUserCmd(id);
+        Command _comm = CommandsFactory.instanciateUserCmd(id);
         try {
-            comm.execute();
-            user = comm.Return();
+            _comm.execute();
+            _user = _comm.Return();
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (ListByIdException e) {
@@ -43,12 +45,12 @@ public class M02_ServicesUser {
             e.printStackTrace();
         }
 
-        if ( user.get_id() <= 0 ) {
+        if ( _user.get_id() <= 0 ) {
             _message = new StatusMessage( 0, "Usuario no encontrado" );
             _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
             throw new WebApplicationException( _response );
         }
-        _response = Response.status( Response.Status.ACCEPTED ).entity( user ).build();
+        _response = Response.status( Response.Status.ACCEPTED ).entity( _user ).build();
         return _response;
     }
 
