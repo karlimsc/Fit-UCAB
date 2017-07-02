@@ -17,7 +17,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import javax.ws.rs.*;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -49,12 +49,12 @@ public class M06_ServicesTraining
      * @return
      */
 
-    // LinkedList<String> activities revisar esto OJO
+    // ArrayList<String> activities revisar esto OJO
     public String createTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  final LinkedList<String> activities,
+                                 @QueryParam( "trainingActivities" )  final ArrayList<String> activities,
                                  @QueryParam( "userId" ) int userId )
     {
-        LinkedList<Entity> activitiesList = activityList(activities);
+        ArrayList<Entity> activitiesList = activityList(activities);
         Entity createTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
         CreateTrainingCommand cmd =
                 CommandsFactory.instanciateCreateTrainingCmd( createTrainingObject);
@@ -116,9 +116,9 @@ public class M06_ServicesTraining
 
     public String addActivitiesToTraining( @QueryParam( "idTraining" ) int id,
                                            @QueryParam( "trainingName" ) String name,
-                                           @QueryParam( "trainingActivities" )  LinkedList<String> activities)
+                                           @QueryParam( "trainingActivities" )  ArrayList<String> activities)
     {
-        LinkedList<Entity> activitiesList = activityList(activities);
+        ArrayList<Entity> activitiesList = activityList(activities);
         Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
         AddActivitiesToTrainingCommand cmd = CommandsFactory.instanciateAddActivitiesToTrainingCmd(updatedTrainingObject);
 
@@ -149,9 +149,9 @@ public class M06_ServicesTraining
 
     public String removeActivitiesToTraining( @QueryParam( "idTraining" ) int id,
                                               @QueryParam( "trainingName" ) String name,
-                                              @QueryParam( "trainingActivities" )  LinkedList<String> activities)
+                                              @QueryParam( "trainingActivities" )  ArrayList<String> activities)
     {
-        LinkedList<Entity> activitiesList = activityList(activities);
+        ArrayList<Entity> activitiesList = activityList(activities);
         Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
         RemoveActivitiesFromTrainingCommand cmd = CommandsFactory.instanciateRemoveActivitiesFromTrainingCmd(updatedTrainingObject);
 
@@ -238,10 +238,10 @@ public class M06_ServicesTraining
      * @return
      */
     public String shareTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  final LinkedList<String> activities,
+                                 @QueryParam( "trainingActivities" )  final ArrayList<String> activities,
                                  @QueryParam( "userId" ) int userId )
     {
-        LinkedList<Entity> activitiesList = activityList(activities);
+        ArrayList<Entity> activitiesList = activityList(activities);
         Entity shareTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
         ShareTrainingCommand cmd =
                 CommandsFactory.instanciateShareTrainingCmd(shareTrainingObject);
@@ -257,8 +257,8 @@ public class M06_ServicesTraining
     }
 
 
-    private LinkedList<Entity> activityList (LinkedList<String> activities){
-        LinkedList<Entity> activitiesList = new LinkedList<Entity>();
+    private ArrayList<Entity> activityList (ArrayList<String> activities){
+        ArrayList<Entity> activitiesList = new ArrayList<Entity>();
         for(int i = 0; i <= activities.size() - 1; i++){
             Entity act = EntityFactory.createActivity();
             if (activities.get(i).equals("Caminar")){

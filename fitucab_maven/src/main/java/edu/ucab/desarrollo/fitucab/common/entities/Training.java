@@ -2,7 +2,7 @@ package edu.ucab.desarrollo.fitucab.common.entities;
 
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.ArrayList;
 
 /**
  * Clase Entrenamiento M06
@@ -11,7 +11,7 @@ public class Training extends Entity {
 
     private String _trainingName;
     private int _trainingPeriod;
-    private LinkedList<Entity> _activitylist;
+    private ArrayList<Entity> _activitylist;
     private int _userId;
 
     /**
@@ -26,7 +26,7 @@ public class Training extends Entity {
      *
      * @param activitylist lista de actividades que tiene el entrenamiento
      */
-    public Training(int id, String trainingName, LinkedList activitylist) {
+    public Training(int id, String trainingName, ArrayList activitylist) {
         //set_id( id );
         this._activitylist = activitylist;
         this._userId = id;
@@ -40,7 +40,7 @@ public class Training extends Entity {
      * @param trainingPeriod hora(s) que puede durar la actividad que incluye en el entrenamiento
      * @param activitylist lista de actividades que tiene el entrenamiento
      */
-    public Training(String trainingName, int trainingPeriod, LinkedList activitylist) {
+    public Training(String trainingName, int trainingPeriod, ArrayList activitylist) {
         this._trainingName = trainingName;
         this._trainingPeriod = trainingPeriod;
     }
@@ -76,7 +76,7 @@ public class Training extends Entity {
      * @param activitylist
      * @param _trainingName
      */
-    public Training(int _id, LinkedList activitylist, String _trainingName)
+    public Training(int _id, ArrayList activitylist, String _trainingName)
     {
         super(_id);
         this._trainingName = _trainingName;
@@ -128,12 +128,12 @@ public class Training extends Entity {
         this._trainingPeriod = trainingPeriod;
     }
 
-    public LinkedList<Entity> get_activitylist()
+    public ArrayList<Entity> get_activitylist()
     {
         return _activitylist;
     }
 
-    public void set_activitylist(LinkedList<Entity> _activitylist)
+    public void set_activitylist(ArrayList<Entity> _activitylist)
     {
         this._activitylist = _activitylist;
     }

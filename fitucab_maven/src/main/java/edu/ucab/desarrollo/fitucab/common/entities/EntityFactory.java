@@ -92,7 +92,7 @@ public class EntityFactory
      * @return retorna el entrenamiento
      */
     static public Training createTraining( String trainingName, int trainingPeriod ,
-                                           LinkedList<Activity> listActivities){
+                                           ArrayList<Activity> listActivities){
 
         return new Training(trainingName, trainingPeriod, listActivities);
     }
@@ -103,7 +103,7 @@ public class EntityFactory
      * @param name
      * @param activities
      */
-    static public Training createTraining(int userId, String name, LinkedList activities){
+    static public Training createTraining(int userId, String name, ArrayList activities){
 
         return new Training(userId,name,activities);
     }
@@ -115,7 +115,7 @@ public class EntityFactory
      * @param name
      * @param activities
      */
-    static public Training createTraining(int Id, LinkedList activities, String name){
+    static public Training createTraining(int Id, ArrayList activities, String name){
 
         return new Training(Id, activities, name);
     }
