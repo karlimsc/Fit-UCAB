@@ -28,4 +28,13 @@
         android:layout_marginBottom="400dp"
         android:layout_alignParentTop="true" />
 
+    <ListView
+        android:id="@+id/lv_m07_planification"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/btnCrear"
+        android:layout_alignLeft="@+id/btnCrear"
+        android:layout_alignStart="@+id/btnCrear"
+        android:layout_marginTop="89dp" />
+
 </RelativeLayout>
