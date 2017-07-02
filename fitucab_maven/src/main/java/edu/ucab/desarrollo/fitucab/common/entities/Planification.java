@@ -8,7 +8,6 @@ import java.time.LocalDate;
  */
 public class Planification extends Entity {
 
-    private int _planificationId;
     private LocalDate _startDate;
     private LocalDate _endDate;
     private LocalTime _startTime;
@@ -22,7 +21,6 @@ public class Planification extends Entity {
                          LocalTime duration, boolean[] days, int user, int sport) {
 
         super(id);
-        this._planificationId = id;
         this._startDate = startDate;
         this._endDate = endDate;
         this._startTime = startTime;
@@ -56,13 +54,6 @@ public class Planification extends Entity {
     public Planification() {
     }
 
-    public int get_planificationId() {
-        return _planificationId;
-    }
-
-    public void set_planificationId(int id) {
-        this._planificationId = id;
-    }
 
     public LocalDate get_startDate() {
         return _startDate;
@@ -85,7 +76,7 @@ public class Planification extends Entity {
     }
 
     public void set_startTime(LocalTime startTime) {
-        this._startTime = _startTime;
+        this._startTime = startTime;
     }
 
     public LocalTime get_duration() {
@@ -93,7 +84,7 @@ public class Planification extends Entity {
     }
 
     public void set_duration(LocalTime duration) {
-        this._duration = _duration;
+        this._duration = duration;
     }
 
     public boolean[] get_days() {
@@ -101,7 +92,7 @@ public class Planification extends Entity {
     }
 
     public void set_days(boolean[] days) {
-        this._days = _days;
+        this._days = days;
     }
 
     public int get_user() {
@@ -109,7 +100,7 @@ public class Planification extends Entity {
     }
 
     public void set_user(int user) {
-        this._user = _user;
+        this._user = user;
     }
 
     public int get_sport() {
@@ -117,6 +108,6 @@ public class Planification extends Entity {
     }
 
     public void set_sport(int sport) {
-        this._sport = _sport;
+        this._sport = sport;
     }
 }
