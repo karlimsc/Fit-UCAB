@@ -1,9 +1,6 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer.M06;
 
-import edu.ucab.desarrollo.fitucab.common.entities.Activity;
-import edu.ucab.desarrollo.fitucab.common.entities.Entity;
-import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
-import edu.ucab.desarrollo.fitucab.common.entities.Training;
+import edu.ucab.desarrollo.fitucab.common.entities.*;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
@@ -186,10 +183,11 @@ public class DaoTraining extends Dao implements IDaoTraining
      * @return la entidad entrenamiento     *
      * @throws ListByIdException
      */
-    public Entity trainingDetail( Entity entidad ) throws ListByIdException
+    public Entity trainingDetail( Entity entidad) throws ListByIdException
     {
 
         Training entity = null;
+        User userId = null;
         PreparedStatement preStatement = null;
         ResultSet resultSet = null;
         EntityMapTraining etMap;
@@ -202,11 +200,13 @@ public class DaoTraining extends Dao implements IDaoTraining
             if( entity == null )
             {
                 // Aqui se invoca el SP
-                preStatement = getBdConnect().prepareStatement( "{call M06_GET_TRAINING_DETAILS(?)}" );
+                CallableStatement test = getBdConnect().prepareCall( "{ call M06_GET_TRAINING_DETAILS(?) }" );
                 // Aqui meto los parametros
-                preStatement.setInt( 1, entidad.get_id() );
+                entity = (Training) entidad;
+                //preStatement.setInt( 1, entidad.get_id() );
+                test.setInt(1, entidad.get_id());
                 //Aqui ejecuto el SP
-                resultSet = preStatement.executeQuery();
+                resultSet = test.executeQuery();
 
                 int id = resultSet.getInt( "training_id" );
                 String name = resultSet.getString( "training_name" );
