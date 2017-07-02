@@ -143,7 +143,7 @@ public class DaoTraining extends Dao implements IDaoTraining
 
             while ( resultSet.next() )
             {
-                int id = resultSet.getInt( "training_id" );
+                int id = resultSet.getInt( "id" );
                 String name = resultSet.getString( "training_name" );
 
                 entity = EntityFactory.createTraining( id, name );
@@ -209,11 +209,12 @@ public class DaoTraining extends Dao implements IDaoTraining
                 //Aqui ejecuto el SP
                 resultSet = preStatement.executeQuery();
 
-                int id = resultSet.getInt( "training_id" );
-                String name = resultSet.getString( "training_name" );
+                int id = resultSet.getInt( "id" );
+                int duracion = resultSet.getInt( "activityhours" );
+                String name = resultSet.getString( "activityname" );
 
-                entity = EntityFactory.createTraining( id, name);
-                entity.set_activitiesList( listActivities() );
+                entity = EntityFactory.createTraining( id, name, duracion);
+                //entity.set_activitiesList( listActivities() );
             }
 
         }
