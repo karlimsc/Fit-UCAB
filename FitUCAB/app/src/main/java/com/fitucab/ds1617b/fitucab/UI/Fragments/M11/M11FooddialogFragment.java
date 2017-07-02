@@ -24,7 +24,6 @@ import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -184,9 +183,10 @@ public class M11FooddialogFragment extends DialogFragment {
                     public void onResponse(String response) {
 
                         Gson gson = new Gson();
+                        Food auu3=gson.fromJson( response,Food.class);
                         Map<String, String> respuesta = new HashMap<>();
-                        respuesta = gson.fromJson( response,
-                                new TypeToken<Map<String, String>>(){}.getType() );
+                        respuesta = auu3.getResponse();
+
                         Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },
@@ -233,8 +233,9 @@ public class M11FooddialogFragment extends DialogFragment {
                     public void onResponse(String response) {
                         Gson gson = new Gson();
                         Map<String, String> respuesta = new HashMap<>();
-                        respuesta = gson.fromJson( response,
-                                new TypeToken<Map<String, String>>(){}.getType() );
+                        Food l = gson.fromJson( response,Food.class);
+                        respuesta = l.getResponse();
+
                         Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },

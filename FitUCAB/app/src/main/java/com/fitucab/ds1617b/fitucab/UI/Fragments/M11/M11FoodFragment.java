@@ -28,7 +28,6 @@ import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 
@@ -234,9 +233,14 @@ public class M11FoodFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
+                        Food aux = gson.fromJson( response , Food.class);
                         ArrayList<String> respuesta = new ArrayList<>();
-                        respuesta = gson.fromJson( response ,
-                                new TypeToken<ArrayList<String>>(){}.getType() );
+                        try {
+                            respuesta = (ArrayList<String>) aux.getResponse();
+                        }catch (Exception e )
+                        {
+                            e.printStackTrace();
+                        }
 
                     }
                 },
