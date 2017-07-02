@@ -57,4 +57,7 @@ public class RecoverPasswordCommand extends Command {
         return _response;
     }
 
+    public Entity Return(){
+        return null;
+    }
 }

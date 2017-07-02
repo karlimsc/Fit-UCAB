@@ -72,4 +72,8 @@ public class CreateUserCommand extends Command {
     public Boolean get_response() {
         return _response;
     }
+
+    public Entity Return(){
+        return null;
+    }
 }

@@ -48,7 +48,9 @@ public class AchieveChallengeCommand extends Command {
         }
     }
 
-
+    public Entity Return(){
+        return null;
+    }
 
 
 }

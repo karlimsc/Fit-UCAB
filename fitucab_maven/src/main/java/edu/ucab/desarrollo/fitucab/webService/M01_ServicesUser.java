@@ -1,5 +1,6 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
+import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 
 /*
@@ -8,7 +9,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;*/
 
 
-import com.google.gson.Gson;
+
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 

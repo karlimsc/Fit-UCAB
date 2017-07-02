@@ -1,7 +1,6 @@
 package com.fitucab.ds1617b.fitucab.Model;
 
 
-
 /**
  *Patron Entidad
  */
