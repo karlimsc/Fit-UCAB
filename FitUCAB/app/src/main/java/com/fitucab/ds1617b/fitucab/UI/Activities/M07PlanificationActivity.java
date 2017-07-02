@@ -13,6 +13,7 @@ import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07ActivityFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07HomeFragment;
+import com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07PlanificationFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07TrainingFragment;
 
 public class M07PlanificationActivity extends AppCompatActivity implements OnFragmentSwap{

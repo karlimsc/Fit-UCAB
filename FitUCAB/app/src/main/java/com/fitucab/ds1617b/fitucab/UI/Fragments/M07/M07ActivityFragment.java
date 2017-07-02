@@ -1,5 +1,6 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M07;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
@@ -18,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TimePicker;
 
+import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.R;
 
 /**
@@ -40,6 +42,7 @@ public class M07ActivityFragment extends Fragment {
     private CheckBox _cb_m07_checksabado;
     private CheckBox _cb_m07_checkdomingo;
 
+    private OnFragmentSwap _callBack;
     private View _view;
     private int dia;
     private int mes;
@@ -86,6 +89,25 @@ public class M07ActivityFragment extends Fragment {
 
 
         return _view;
+    }
+
+    /**
+     * Metodo que se llama automaticamente cuando la la actividad anfitriona usa el fragmento.
+     * @param activity Recibe la actividad anfitriona en la que va a mostrarse.
+     */
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try {
+            _callBack = (OnFragmentSwap) activity;
+        } catch (ClassCastException e) {
+
+
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnHeadlineSelectedListener");
+
+        }
     }
 
     public void agregarFechaInicio(){
