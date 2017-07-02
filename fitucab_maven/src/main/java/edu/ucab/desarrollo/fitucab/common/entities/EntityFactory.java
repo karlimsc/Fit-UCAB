@@ -545,6 +545,45 @@ public class EntityFactory
 
     //Fin Modulo 10
 
+    //Modulo 3
+
+    /**
+
+     * Metodo que instancia la clase Water con sus atributos
+
+     * @param id Identificador
+
+     * @param userOne   id del usuario 1
+
+     * @param userTwo id del usuario 2
+
+     * @return Friendship
+
+     * @see Friendship
+
+     */
+    static public Friendship createFriendship(int id, int userOne, int userTwo){
+
+        return new Friendship(id, userOne, userTwo);
+
+    }
+
+    /**
+
+     * Metodo que instancia vacia
+
+     * @see Friendship
+
+     */
+
+    static public Friendship createFriendship(){
+        return new Friendship();
+    }
+
+    static  public List<Entity> getFriendship(){return new ArrayList<Entity>();}
+
+    //Fin Modulo 3
+
 
 
     static  public Entity getUsername(String username){
