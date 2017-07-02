@@ -1,25 +1,24 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer.M01;
 
 import com.google.gson.Gson;
-
 import edu.ucab.desarrollo.fitucab.common.Registry;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
-import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
 import org.slf4j.LoggerFactory;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.lang.reflect.Type;
-import java.sql.*;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Types;
 import java.util.Properties;
 
 
@@ -291,5 +290,8 @@ public class DaoUser  extends Dao implements IDaoUser {
     }
 
 
+    @Override
+    public void Create(Entity e) {
 
+    }
 }

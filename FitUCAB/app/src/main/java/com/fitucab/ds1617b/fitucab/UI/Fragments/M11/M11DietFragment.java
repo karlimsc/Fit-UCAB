@@ -5,14 +5,13 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,10 +19,10 @@ import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
@@ -35,24 +34,14 @@ import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.Model.Moment;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import android.widget.ArrayAdapter;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import static android.R.attr.label;
-import static android.R.attr.x;
-import static com.android.volley.Response.*;
-import static com.fitucab.ds1617b.fitucab.R.drawable.diet;
-import static com.fitucab.ds1617b.fitucab.R.id.parent;
+import static com.android.volley.Response.ErrorListener;
+import static com.android.volley.Response.Listener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -240,12 +229,18 @@ public class M11DietFragment extends Fragment {
                 new Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Gson gson = new Gson();
-                        ArrayList<Diet> _caloriashoy = new ArrayList<>();
-                        _caloriashoy = gson.fromJson(response, new TypeToken<ArrayList<Diet>>() {
-                        }.getType());
-                        LlenaCaloriaHoy(_caloriashoy);
+                        try {
+                            Gson gson = new Gson();
+                            Diet aux = gson.fromJson(response, Diet.class);
+                            ArrayList<Diet> _caloriashoy = new ArrayList<>();
+                            _caloriashoy = aux.jsonArray;
 
+                            LlenaCaloriaHoy(_caloriashoy);
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
                     }
                 },
                 new ErrorListener() {
@@ -342,9 +337,9 @@ public class M11DietFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
+                        Moment aux = gson.fromJson(response, Moment.class);
                         ArrayList<Moment> _momento = new ArrayList<>();
-                        _momento = gson.fromJson(response, new TypeToken<ArrayList<Moment>>() {
-                        }.getType());
+                        _momento =  aux.jsonArray;
                         LlenarSpinner(_momento);
 
 
@@ -378,7 +373,7 @@ public class M11DietFragment extends Fragment {
 
     public void ingresarDieta(){
         String alimento = "Tomate";
-        int idUser = 0;
+        int idUser = 1;
         idUser = ManagePreferences.getIdUser(getContext());
         insertarAlimentoPersonalizado(alimento, "120", "128",idUser, getContext() );
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
@@ -392,9 +387,11 @@ public class M11DietFragment extends Fragment {
                     public void onResponse(String response) {
 
                         Gson gson = new Gson();
+
                         Map<String, String> respuesta = new HashMap<>();
-                        respuesta = gson.fromJson( response,
-                                new TypeToken<Map<String, String>>(){}.getType() );
+                        Diet aux1 = gson.fromJson( response, Diet.class);
+                        respuesta = aux1.getResponse();
+
                         Toast.makeText( getContext() , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },
@@ -413,15 +410,15 @@ public class M11DietFragment extends Fragment {
         RequestQueue requestQueue = Volley.newRequestQueue( inflater );
         IpStringConnection jsonURL = new IpStringConnection();
         ArrayList<Food> foodJson = new ArrayList<>();
-        foodJson.add ( new Food() );
+        foodJson.add(new Food());
         foodJson.get(0).set_FoodCalorie( caloria );
         foodJson.get(0).set_FoodName( nombreAlimento );
         foodJson.get(0).set_FoodWeight( peso );
         foodJson.get(0).set_Id(1); //idUser
-        foodJson.get(0).set_FoodDinner(true);
+        foodJson.get(0).set_foodPersonalized(true);
         jsonURL.set_ip( jsonURL.getIp() + "M11_Food/insertOnePersonalizedFood?nombre="+
-                foodJson.get(0).get_FoodName() + "&caloria=" + foodJson.get(0).get_FoodCalorie()
-                + "&foodWeight=" + foodJson.get(0).get_FoodWeight() + "&foodDinner=" + foodJson.get(0).get_FoodDinner() +
+                foodJson.get(0).get_foodName() + "&caloria=" + foodJson.get(0).get_foodCalorie()
+                + "&foodWeight=" + foodJson.get(0).get_foodCalorie() + "&foodDinner=" + foodJson.get(0).get_foodPersonalized() +
                 "&idUser=" + usuarioID );
         StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
                 new Listener<String>() {
@@ -429,8 +426,8 @@ public class M11DietFragment extends Fragment {
                     public void onResponse(String response) {
                         Gson gson = new Gson();
                         Map<String, String> respuesta = new HashMap<>();
-                        respuesta = gson.fromJson( response,
-                                new TypeToken<Map<String, String>>(){}.getType() );
+                        Food aux = gson.fromJson( response,Food.class);
+                        respuesta = aux.getResponse();
                         Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },

@@ -6,6 +6,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -24,6 +25,8 @@ public class DaoUser extends Dao implements IDaoUser {
     Entity _user;
     Date birthdate;
     private Connection _conn;
+    private GetUserException _error;
+    private static org.slf4j.Logger _logger = LoggerFactory.getLogger(DaoUser.class);
 
     /**
      * Metodo constructor que recibe un _id
@@ -58,12 +61,23 @@ public class DaoUser extends Dao implements IDaoUser {
             }
             return _user;
         } catch (NullPointerException e) {
-            throw new GetUserException(e, DaoUser.class.getSimpleName(),BdConnectException.class.toString());
+            _error = new GetUserException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _error.toString());
+            _logger.error("Error: ", _error.toString());
+            throw _error;
         } catch (SQLException e) {
-            throw new GetUserException(e, DaoUser.class.getSimpleName(),BdConnectException.class.toString());
+            _error = new GetUserException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _error.toString());
+            _logger.error("Error: ", _error.toString());
+            throw _error;
         }
         catch (Exception e) {
-            throw new GetUserException(e, DaoUser.class.getSimpleName(),BdConnectException.class.toString());
+            _error = new GetUserException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _error.toString());
+            _logger.error("Error: ", _error.toString());
+            throw _error;
+        }finally {
+            Dao.closeConnection();
         }
     }
 
@@ -87,7 +101,10 @@ public class DaoUser extends Dao implements IDaoUser {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            Dao.closeConnection();
         }
+
         return birthdate;
     }
 
@@ -119,4 +136,8 @@ public class DaoUser extends Dao implements IDaoUser {
         return null;
     }
 
+    @Override
+    public void Create(Entity e) {
+
+    }
 }

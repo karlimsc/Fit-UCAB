@@ -1,7 +1,6 @@
 package edu.ucab.desarrollo.fitucab.common.exceptions;
 
 
-
 public class BdConnectException extends Exception
 {
     public final int ERROR_CODE = 551;
