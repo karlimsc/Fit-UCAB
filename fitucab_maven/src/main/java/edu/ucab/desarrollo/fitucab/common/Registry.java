@@ -29,4 +29,6 @@ public class Registry
     public static final int _level9 = 16200;
     public static final int _level10 = 19000;
 
+    public static String RECOVERY_EMAIL_USERNAME = "fitucabprueba2@gmail.com";
+    public static String RECOVERY_EMAIL_PASS = "ucab2017";
 }

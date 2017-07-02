@@ -1,19 +1,32 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
 
+import com.google.gson.annotations.SerializedName;
+
+import javax.xml.bind.annotation.XmlRootElement;
 import java.sql.Date;
 
+@XmlRootElement
 public class User extends Entity {
 
-    private int _id;
+    @SerializedName("_username")
     private String _username;
-    private String  _password;
+    @SerializedName("_password")
+    private String _password;
+    @SerializedName("_email")
     private String _email;
+    @SerializedName("_sex")
     private String _sex;
+    @SerializedName("_phone")
     private String _phone;
-    private Date _birthdate;
-    private int _weight; // Se usan unicamente para uso del perfil de usuario
-    private int _height; // Se usan unicamente para uso del perfil de usuario
+    @SerializedName("_birthdate")
+    private Date   _birthdate;
+    @SerializedName("_weight")
+    private int    _weight; // Se usan unicamente para uso del perfil de usuario
+    @SerializedName("_height")
+    private int    _height; // Se usan unicamente para uso del perfil de usuario
+    @SerializedName("_status")
+    private String _status;
 
     /**
      * Constructor vacio
@@ -25,7 +38,7 @@ public class User extends Entity {
      * @param id userId
      */
     public User(int id){
-        _id=id;
+        super.set_id(id);
     }
 
     /**
@@ -40,7 +53,7 @@ public class User extends Entity {
      */
     public User(int id,String user,String password, String email,String sex,String phone, Date birthdate)
     {
-        _id = id;
+        super.set_id(id);
         _username = user;
         _password = password;
         _email = email;
@@ -50,7 +63,9 @@ public class User extends Entity {
 
     };
 
-    public User(String _username, String _password, String _email, String _sex, String _phone, Date _birthdate, int _weight, int _height) {
+    public User(int id,String _username, String _password, String _email, String _sex, String _phone, Date _birthdate,
+                int _weight, int _height) {
+        super.set_id(id);
         this._username = _username;
         this._password = _password;
         this._email = _email;
@@ -69,13 +84,36 @@ public class User extends Entity {
      */
     public User(int id,String user,String password)
     {
-        _id = id;
+        super.set_errorCode(id);
         _username = user;
         _password = password;
 
 
 
     };
+
+    /**
+     * Constructor
+     *
+     * @param id
+     * @param _username
+     * @param _email
+     * @param _sex
+     * @param _phone
+     * @param _birthdate
+     * @param _weight
+     * @param _height
+     */
+    public User(int id, String _username, String _email, String _sex, String _phone, Date _birthdate, int _weight, int _height) {
+        super(id);
+        this._username = _username;
+        this._email = _email;
+        this._sex = _sex;
+        this._phone = _phone;
+        this._birthdate = _birthdate;
+        this._weight = _weight;
+        this._height = _height;
+    }
 
     /**
      * Constructor sin el id del usuario
@@ -135,11 +173,11 @@ public class User extends Entity {
 
     public int getId()
     {
-        return _id;
+        return super.get_id();
     }
     public void setId(int id)
     {
-        this._id = id;
+        super.set_id(id);
     }
 
     public String getUser()
@@ -206,4 +244,11 @@ public class User extends Entity {
         _height = altura;
     }
 
+    public String get_status() {
+        return _status;
+    }
+
+    public void set_status(String _status) {
+        this._status = _status;
+    }
 }

@@ -2,17 +2,13 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M11;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -27,10 +23,10 @@ import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Model.Diet;
 import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -94,7 +90,8 @@ public class M11SuggestionFragment extends Fragment {
                     public void onResponse(String response) {
                         Gson gson = new Gson();
                         ArrayList<Food> foods = new ArrayList<>();
-                        foods = gson.fromJson(response, new TypeToken<ArrayList<Food>>(){}.getType());
+                        Food aux1 = gson.fromJson(response,Food.class);
+                        foods = aux1.jsonArray;
                         LlenaTablaAlimentos(foods);
                     }
                 },
@@ -116,14 +113,14 @@ public class M11SuggestionFragment extends Fragment {
     {
         for (int i = 0 ; i < alimentos.size() ; i++ ){
             final TableRow fila = new TableRow(getContext());
-            fila.setId(alimentos.get(i).get_Id());
+            fila.setId(alimentos.get(i).get_id());
             _gl_m11_listaSugerencia.addView(fila);
             TableLayout.LayoutParams params = new TableLayout.LayoutParams(
                     TableLayout.LayoutParams.WRAP_CONTENT , TableLayout.LayoutParams.WRAP_CONTENT);
-            AgregaColumna( alimentos.get(i).get_FoodName(), fila , params);
-            AgregaColumna( String.valueOf(alimentos.get(i).get_FoodCalorie()), fila , params);
-            final String alimento = alimentos.get(i).get_FoodName();
-            final int caloriaAlimento = Integer.valueOf(alimentos.get(i).get_FoodCalorie());
+            AgregaColumna( alimentos.get(i).get_foodName(), fila , params);
+            AgregaColumna( String.valueOf(alimentos.get(i).get_foodCalorie()), fila , params);
+            final String alimento = alimentos.get(i).get_foodName();
+            final int caloriaAlimento = Integer.valueOf(alimentos.get(i).get_foodCalorie());
             fila.setOnClickListener(new View.OnClickListener(){
 
                 @Override
@@ -185,9 +182,10 @@ public class M11SuggestionFragment extends Fragment {
                     public void onResponse(String response) {
 
                         Gson gson = new Gson();
+                        Diet aux = gson.fromJson( response,Diet.class);
                         Map<String, String> respuesta = new HashMap<>();
-                        respuesta = gson.fromJson( response,
-                                new TypeToken<Map<String, String>>(){}.getType() );
+                        respuesta = aux.getResponse();
+
                         Toast.makeText( getContext() , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },

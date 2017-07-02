@@ -79,4 +79,8 @@ public class ScoreCommand extends Command{
             logger.error("Error: ", error.toString());
         }
     }
+
+    public Entity Return(){
+        return null;
+    }
 }
