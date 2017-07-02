@@ -6,9 +6,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Diet;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 
 import javax.ws.rs.*;
-import java.sql.*;
-
-
+import java.sql.Connection;
 import java.util.ArrayList;
 
 
@@ -37,7 +35,9 @@ public class M11_ServicesDiet {
     @Produces("application/json")
     public String getCalorieByDate(@QueryParam("date") String date ,
                                    @QueryParam("username") String username) {
-    return"";
+
+        Diet a = new Diet();
+    return gson.toJson(a);
     }
 
     /**

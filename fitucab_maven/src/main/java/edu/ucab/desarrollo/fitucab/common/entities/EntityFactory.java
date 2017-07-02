@@ -593,6 +593,7 @@ public class EntityFactory
     static public Entity getMoment(String moment, LocalDate Date, String username){
         return new Diet(moment,Date,username);
     }
+    static public Entity getMoments(){return new Moment(); }
 
     static public Entity getCaloriesdate(String username){
         return new Diet(username);
