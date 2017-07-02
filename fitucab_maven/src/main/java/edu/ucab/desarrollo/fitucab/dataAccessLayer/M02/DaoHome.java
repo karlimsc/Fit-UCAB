@@ -40,11 +40,11 @@ public class DaoHome extends Dao implements IDaoHome {
     /**
      * Metodo sobrecargado que lee una endidad y devuelve otra.
      * Metodo que realiza un query a un storeprocedure de busque de vasos
-     * @param _user
+     * @param _usuario
      * @return _home entidad con datos de agua y calorias
      */
     @Override
-    public Entity read(Entity _user) throws CreateHomeException {
+    public Entity read(Entity _usuario) throws CreateHomeException {
 
 
         try {
@@ -56,7 +56,7 @@ public class DaoHome extends Dao implements IDaoHome {
                 _totalAgua = _result.getInt("countg");
             }
             buscarCalorias(((User)_usuario).getUser());
-            _home = EntityFactory.createHome(_totalAgua, _totalCalorias);
+            _home = EntityFactory.createHome(_totalCalorias, _totalAgua);
             return _home;
         } catch (BdConnectException e) {
             _error = new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
