@@ -139,6 +139,7 @@ public class M06_ServicesTraining
     }
 
 
+
     @POST
     @Path( "/removeActivitiesToTraining" )
     @Produces( "application/json" )
@@ -170,6 +171,7 @@ public class M06_ServicesTraining
         }
 
     }
+
 
 
     @GET
