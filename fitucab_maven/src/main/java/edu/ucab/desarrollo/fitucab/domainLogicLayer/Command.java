@@ -1,9 +1,10 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 
 
-import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 
+import java.sql.SQLException;
 import java.util.List;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
