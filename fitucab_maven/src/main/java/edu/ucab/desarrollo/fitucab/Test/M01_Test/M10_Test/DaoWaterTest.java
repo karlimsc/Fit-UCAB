@@ -36,8 +36,8 @@ public class DaoWaterTest {
                 " 'f', '244-(874)954-1391', '1997-7-7');";
         _sql.sql(insertPerson);
         Sql _sql2 = new Sql();
-        String insertWaterList1 = "INSERT INTO public.glass_historic(glasshistoricid, glasstime, glasstype, fk_person) VALUES " +
-                "(201,'02/10/3000', 250, 1),(202,'02/10/3000', 300, 1),(202,'02/10/3000', 350, 1);";
+        String insertWaterList1 = "INSERT INTO public.glass_historic(glasshistoricid, glasstime, glasstype, " +
+                "fk_person) VALUES(201,'02/10/3000', 250, 1),(202,'02/10/3000', 300, 1),(203,'02/10/3000', 350, 1);";
         _sql2.sql(insertWaterList1);
 
     }
@@ -81,14 +81,24 @@ public class DaoWaterTest {
 
     @Test
     public void getWater() throws Exception {
+        Water _water = EntityFactory.createWater();
+        _water.set_fkPerson(1);
+        _water.set_time("02/10/3000");
+        Water water = EntityFactory.createWater();
+        Water waterCount = EntityFactory.createWater(900,3);
+        IDaoWater daoWater = DaoFactory.instanceDaoWater(_water);
+        water = (Water) daoWater.getWater(_water);
+        assertTrue(waterCount.get_cantidad() == water.get_cantidad() && waterCount.get_time() == water.get_time());
     }
 
     @Test
     public void getFechaInt() throws Exception {
+
     }
 
     @Test
     public void deleteLast() throws Exception {
+
     }
 
     @Test

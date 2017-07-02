@@ -252,6 +252,17 @@ public class EntityFactory
     static public Water createWater(){
         return new Water();
     }
+
+    static public Water createWater(int suma, int cantidad){
+
+        return new Water(suma, cantidad);
+    }
+
+    static public Water createWater(String time, int fkp){
+
+        return new Water(time, fkp);
+    }
+
     //Fin Modulo 10
 
 }
