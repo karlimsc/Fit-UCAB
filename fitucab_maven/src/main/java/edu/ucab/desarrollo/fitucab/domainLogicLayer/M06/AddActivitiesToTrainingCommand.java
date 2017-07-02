@@ -12,12 +12,18 @@ import java.util.LinkedList;
 
 public class AddActivitiesToTrainingCommand extends Command {
     private Entity training;
+    private boolean result;
 
     public AddActivitiesToTrainingCommand(Entity training){
         this.training = training;
     }
+
+    public boolean getResult()
+    {
+        return this.result;
+    }
     public void execute()  {
         DaoTraining dao = DaoFactory.instanceDaoTraining(training);
-        dao.addActivities(training);
+       this.result= dao.addActivities(training);
     }
 }

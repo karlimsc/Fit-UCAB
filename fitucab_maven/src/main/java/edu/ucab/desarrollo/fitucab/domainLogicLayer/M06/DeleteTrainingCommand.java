@@ -9,14 +9,19 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
 public class DeleteTrainingCommand extends Command {
     private Entity deleteTrainingObject;
+    private boolean result;
 
     public DeleteTrainingCommand(Entity _training){
         this.deleteTrainingObject = _training;
     }
+    public boolean getResult()
+    {
+        return this.result;
+    }
     public void execute() {
         try{
             DaoTraining dao = DaoFactory.instanceDaoTraining(deleteTrainingObject);
-            dao.delete(deleteTrainingObject);
+            this.result = dao.delete(deleteTrainingObject);
         }
         catch(Exception e){
             //lanzar exception

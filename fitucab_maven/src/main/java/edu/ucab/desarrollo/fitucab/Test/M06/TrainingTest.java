@@ -1,5 +1,6 @@
 package M06;
 
+import edu.ucab.desarrollo.fitucab.common.entities.Activity;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Training;
@@ -7,6 +8,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -57,11 +59,27 @@ class TrainingTest {
 
     @Test
     void get_activitylist() {
+        Activity a = new Activity();
+        a.set_name("prueba");
+        Training prueba = new Training();
+        ArrayList<Entity> activitiesList = new ArrayList<Entity>();
+        activitiesList.add(a);
+        prueba.set_activitylist(activitiesList);
+        Activity resultado = (Activity) prueba.get_activitylist().get(0);
+        assertEquals(resultado.get_name(),"prueba");
 
     }
 
     @Test
     void set_activitylist() {
+        Activity a = new Activity();
+        a.set_name("prueba");
+        Training prueba = new Training();
+        ArrayList<Entity> activitiesList = new ArrayList<Entity>();
+        activitiesList.add(a);
+        prueba.set_activitylist(activitiesList);
+        Activity resultado = (Activity) prueba.get_activitylist().get(0);
+        assertEquals(resultado.get_name(),"prueba");
     }
 
     @Test
