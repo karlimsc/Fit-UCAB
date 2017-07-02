@@ -10,6 +10,7 @@ public class Diet extends Entity{
     private int _id;
     private int _calorie;
     private LocalDate _dateTime;
+    private String _date;
     private String _food;
     private String _moment;
     private String _username;
@@ -17,17 +18,35 @@ public class Diet extends Entity{
 
     public Diet() {}
 
+    public Diet(String moment, LocalDate dateTime, String username){
+
+        this._moment = moment;
+        this._dateTime = dateTime;
+        this._username = username;
+
+    }
+
     public Diet(int id, int calorie, LocalDate dateTime, String food) {
         this._id = id;
         this._calorie = calorie;
         this._dateTime = dateTime;
         this._food = food;
     }
+    public Diet(String date, String username){
+
+        this._date = date;
+        this._username = username;
+
+    }
 
     public Diet(int calorie, String food, String moment, String username) {
         this._calorie = calorie;
         this._food = food;
         this._moment = moment;
+        this._username = username;
+    }
+
+    public Diet(String username){
         this._username = username;
     }
 
