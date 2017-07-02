@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.common.entities;
 
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
@@ -216,13 +217,21 @@ public class EntityFactory
     }
     //Fin Modulo 10
 
-    static  public Entity getUsername(String username) {return new Food (username);}
+    static  public Entity getUsername(String username){
+        return new Food (username);
+    }
 
-    static public Entity getUserCal (String username, String calor){return new Food (username,calor);}
+    static public Entity getUserCal (String username, String calor){
+        return new Food (username,calor);
+    }
 
-    static public Entity CreateFood (){return new Food ();}
+    static public Entity CreateFood (){
+        return new Food ();
+    }
 
-    static public Entity getFoodIDuser (String name , int id){return  new Food(name,id);}
+    static public Entity getFoodIDuser (String name , int id){
+        return  new Food(name,id);
+    }
 
     static public Entity getFoodWeigthCaloriId (String foodname, String foodWeight , String foodCalorie, int id)
     {
@@ -235,5 +244,31 @@ public class EntityFactory
         return  new Food(foodName,foodCalorie,foodWeight,_foodPersonalized ,id);
     }
 
-    static  public Entity putJson (String json){Food food  =(Food) CreateFood(); food.setjson(json); return food; }
+    static  public Entity putJson (String json){
+        Food food  =(Food) CreateFood();
+        food.setjson(json);
+
+        return food;
+    }
+
+
+    static public Entity getCaloriesDate(String Date, String username){
+        return new Diet(Date,username);
+    }
+
+    static public Entity deleteDiet(String moment, String username){
+        return new Diet(moment,username);
+    }
+
+    static public Entity getMoment(String moment,LocalDate Date, String username){
+        return new Diet(moment,Date,username);
+    }
+
+    static public Entity getCaloriesdate(String username){
+        return new Diet(username);
+    }
+
+    static public Entity insertDiet(int id, String cal, String foodName, String moment){
+        return new Diet(id, cal, foodName, moment);
+    }
 }
