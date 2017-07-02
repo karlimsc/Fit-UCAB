@@ -21,10 +21,6 @@ public class DaoMoment extends Dao implements iDaoMoment {
     ArrayList<Moment> jsonArray;
     Gson gson = new Gson();
 
-    @Override
-    public void Create(Entity e) {
-
-    }
 
     @Override
     public Entity create(Entity e) throws AddException {
