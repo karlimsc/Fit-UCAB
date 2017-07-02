@@ -189,6 +189,7 @@ public class DaoTraining extends Dao implements IDaoTraining
 
         Training entity = null;
         User userId = null;
+        LinkedList<Entity> resultList = null;
         CallableStatement preStatement = null;
         ResultSet resultSet = null;
         EntityMapTraining etMap;
@@ -209,12 +210,18 @@ public class DaoTraining extends Dao implements IDaoTraining
                 //Aqui ejecuto el SP
                 resultSet = preStatement.executeQuery();
 
-                int id = resultSet.getInt( "id" );
-                int duracion = resultSet.getInt( "activityhours" );
-                String name = resultSet.getString( "activityname" );
+                while ( resultSet.next() )
+                {
+                    int id = resultSet.getInt( "id" );
+                    String name = resultSet.getString( "name" );
 
-                entity = EntityFactory.createTraining( id, name, duracion);
-                //entity.set_activitiesList( listActivities() );
+                    entity = EntityFactory.createTraining( id, name );
+                    entity.set_activitiesList( listActivities() );
+
+                }
+
+                resultSet.close();
+
             }
 
         }
