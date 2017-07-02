@@ -13,12 +13,18 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 public class ChangeTrainingNameCommand extends Command {
 
     private Entity modifyTrainingObject;
+    private boolean result;
 
     public ChangeTrainingNameCommand(Entity training){
         this.modifyTrainingObject = training;
     }
+
+    public boolean getResult()
+    {
+        return this.result;
+    }
     public void execute() {
         DaoTraining dao = DaoFactory.instanceDaoTraining(modifyTrainingObject);
-        dao.modifyName(modifyTrainingObject);
+        result=dao.modifyName(modifyTrainingObject);
     }
 }

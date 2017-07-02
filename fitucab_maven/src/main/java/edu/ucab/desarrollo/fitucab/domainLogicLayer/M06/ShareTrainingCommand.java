@@ -9,12 +9,17 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
 public class ShareTrainingCommand extends Command {
     private Entity shareTrainingObject;
+    private boolean result;
 
     public ShareTrainingCommand(Entity e){
         this.shareTrainingObject = e;
     }
+    public boolean getResult()
+    {
+        return this.result;
+    }
     public void execute() {
         DaoTraining dao = DaoFactory.instanceDaoTraining(shareTrainingObject);
-        dao.shareTraining(shareTrainingObject);
+        result = dao.shareTraining(shareTrainingObject);
     }
 }
