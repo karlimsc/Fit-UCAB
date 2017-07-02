@@ -46,6 +46,8 @@ public class CheckUserCommand extends Command{
      * @throws NoSuchMethodException
      * @throws Exception
      */
+
+
     public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception {
         try{
             //instanciacion del dao

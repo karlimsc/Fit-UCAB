@@ -1,8 +1,8 @@
-package edu.ucab.desarrollo.fitucab.Test.M01_ServicesUserTest;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
@@ -13,6 +13,7 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -34,6 +35,18 @@ public class DaoUserTest {
 
     @Test
     public void login() throws Exception {
+        conn = _dao.getConInstance();
+        _user = EntityFactory.createUser(60,"naomi","123",
+                "@gmail","f","00000",
+                Date.valueOf("2010-12-12"),
+                12,12);
+
+        DaoUser LoginUserDao = (DaoUser) DaoFactory.instanciateDaoUser(_user);
+        Entity _userReturn = LoginUserDao.login(_user);
+
+
+
+        conn.close();
     }
 
     @Test
@@ -81,6 +94,7 @@ public class DaoUserTest {
     }
 
     @Test
+    @Ignore
     public void testEmail() throws Exception {
     }
 

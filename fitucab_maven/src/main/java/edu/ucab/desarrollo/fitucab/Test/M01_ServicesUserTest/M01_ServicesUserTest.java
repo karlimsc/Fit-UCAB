@@ -1,4 +1,3 @@
-package edu.ucab.desarrollo.fitucab.Test.M01_ServicesUserTest;
 
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
@@ -18,12 +17,12 @@ import static org.junit.Assert.*;
 
 
 public class M01_ServicesUserTest {
-/*
-    Dao _dao;
+
+   /* Dao _dao;
     ResultSet rs;
  //   CreateUserCommand
 
-   // @Before
+    @Before
     public void setUp() throws Exception {
 
         Connection conn = _dao.getConInstance();
@@ -214,8 +213,8 @@ public class M01_ServicesUserTest {
     public void testEmailTest() throws Exception {
     }
 
-
-
 */
+
+
 
 }
