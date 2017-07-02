@@ -68,7 +68,7 @@ public class DaoFood extends Dao implements IDaoFood {
         ResultSet rs = stm.executeQuery();
 
         while(rs.next()){
-            jsonArray.add(new Food());
+            jsonArray.add((Food)EntityFactory.CreateFood());
             jsonArray.get(jsonArray.size()).set_foodName(rs.getString("nombre_comida"));
             jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
             jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
@@ -97,7 +97,7 @@ public class DaoFood extends Dao implements IDaoFood {
         ResultSet rs = st.executeQuery();
 
         while(rs.next()) {
-            jsonArray.add(new Food());
+            jsonArray.add((Food)EntityFactory.CreateFood());
             jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
             // revisar string
             jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
@@ -127,7 +127,7 @@ public class DaoFood extends Dao implements IDaoFood {
         ResultSet rs = st.executeQuery();
 
         while(rs.next()) {
-            jsonArray.add(new Food());
+            jsonArray.add((Food)EntityFactory.CreateFood());
             jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
             // revisar string
             jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
@@ -309,7 +309,7 @@ public class DaoFood extends Dao implements IDaoFood {
         ResultSet rs = st.executeQuery();
         jsonArray = new ArrayList<>();
         while(rs.next()){
-            jsonArray.add(new Food());
+            jsonArray.add((Food)EntityFactory.CreateFood());
             jsonArray.get(jsonArray.size() - 1).set_foodName(rs.getString("nombre_comida"));
             jsonArray.get(jsonArray.size() - 1).set_foodWeight(rs.getString("peso_comida"));
             jsonArray.get(jsonArray.size() - 1).set_foodCalorie(rs.getString("calorias_comida"));
