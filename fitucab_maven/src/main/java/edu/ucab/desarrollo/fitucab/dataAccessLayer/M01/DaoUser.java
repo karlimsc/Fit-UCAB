@@ -5,6 +5,7 @@ import edu.ucab.desarrollo.fitucab.common.Registry;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
@@ -25,7 +26,7 @@ import java.util.Properties;
 /**
  * Created by karo on 24/06/17.
  */
-public class DaoUser  extends Dao implements IDaoUser {
+public class DaoUser extends Dao implements IDaoUser {
     //Conexion con la base de datos
 
     private int RESULT_CODE_OK = 200;
@@ -91,7 +92,7 @@ public class DaoUser  extends Dao implements IDaoUser {
      * @return
      */
 
-    public Entity read(Entity e) {
+    public Entity login(Entity e) throws SQLException {
         _sc = new Security();
 
         CallableStatement cstmt;
@@ -198,6 +199,7 @@ public class DaoUser  extends Dao implements IDaoUser {
     }
 
 
+
     /**
      * Sevicio Web para poder enviar el correo al usuario con su password
      *
@@ -288,6 +290,11 @@ public class DaoUser  extends Dao implements IDaoUser {
     }
 
     public Entity update(Entity e) {
+        return null;
+    }
+
+    @Override
+    public Entity read(Entity e) throws CreateHomeException, SQLException, BdConnectException {
         return null;
     }
 
