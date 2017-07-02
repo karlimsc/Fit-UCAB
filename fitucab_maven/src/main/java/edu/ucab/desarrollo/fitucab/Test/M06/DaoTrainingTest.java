@@ -12,8 +12,6 @@ class DaoTrainingTest {
     @Test
     void create() {
 
-
-
     }
 
     @Test
