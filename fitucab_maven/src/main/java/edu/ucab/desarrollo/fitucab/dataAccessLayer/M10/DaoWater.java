@@ -4,8 +4,10 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Water;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.webService.Sql;
+import org.slf4j.LoggerFactory;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,10 +15,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- * Created by Raul A on 6/28/2017.
- */
+
 public class DaoWater extends Dao implements IDaoWater{
+
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(DaoWater.class);
 
     public DaoWater( Entity entidad )
     {
@@ -24,7 +26,7 @@ public class DaoWater extends Dao implements IDaoWater{
     }
 
     /**
-     * etodo que agrega el vaso de agua y lo retorna
+     * metodo que agrega el vaso de agua y lo retorna
      * @param water
      * @return retorna el vaso de agua agregado
      * @throws SQLException
@@ -52,10 +54,15 @@ public class DaoWater extends Dao implements IDaoWater{
             // end while que recorre la consulta
 
         } catch (Exception e) {
+
             if (e instanceof NullPointerException)
                 _water.set_error("Error de apuntador nulo");
             else if (e instanceof SQLException)
                 _water.set_error("Error en la conexion a base de datos");
+
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
         } finally {
             return _water;
         }
@@ -86,6 +93,9 @@ public class DaoWater extends Dao implements IDaoWater{
                 Water _water = new Water("Error en la conexion a base de datos");
                 waterList.add(_water);
             }
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
         } finally {
             return waterList;
         }
@@ -112,6 +122,10 @@ public class DaoWater extends Dao implements IDaoWater{
         } catch (Exception e) {
             if (e instanceof SQLException)
                 _water.set_error("Error en la conexion a base de datos");
+
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
         } finally {
             return _water;
         }
@@ -140,6 +154,10 @@ public class DaoWater extends Dao implements IDaoWater{
         } catch (Exception e) {
             if (e instanceof SQLException)
                 _water.set_error("Error en la conexion a base de datos");
+
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
         } finally {
             return _water;
         }
@@ -167,6 +185,9 @@ public class DaoWater extends Dao implements IDaoWater{
         } catch (Exception e) {
             if (e instanceof SQLException)
                 _water.set_error("Error en la conexion a base de datos");
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
         } finally {
             return _water;
         }
@@ -194,6 +215,9 @@ public class DaoWater extends Dao implements IDaoWater{
         } catch (Exception e) {
             if (e instanceof SQLException)
                 _water.set_error("Error en la conexion a base de datos");
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
         } finally {
             return _water;
         }
