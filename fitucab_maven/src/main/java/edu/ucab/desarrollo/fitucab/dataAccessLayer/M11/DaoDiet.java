@@ -10,7 +10,6 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 public class DaoDiet extends Dao {
 
 
-    @Override
     public void Create(Entity e) {
 
     }

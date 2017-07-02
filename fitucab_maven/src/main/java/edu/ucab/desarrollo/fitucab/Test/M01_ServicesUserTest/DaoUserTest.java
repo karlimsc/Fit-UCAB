@@ -1,48 +1,38 @@
-//package edu.ucab.desarrollo.fitucab.Test.M01_Test;
+package edu.ucab.desarrollo.fitucab.Test.M01_ServicesUserTest;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
-import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
-import io.restassured.http.ContentType;
-import org.apache.http.HttpStatus;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.junit.*;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.net.URI;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Types;
 
-import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 
 /**
  * Created by elberg on 02/07/17.
  */
 
-public class DaoUsersTest {
+public class DaoUserTest {
     static Connection conn;
     static Dao _dao;
     static Entity _user;
 
-
-
-
     @Test
-    @Ignore
     public void login() throws Exception {
     }
 
@@ -60,7 +50,7 @@ public class DaoUsersTest {
 
 
         //Se trae el ultimo usuario registrado
-       CallableStatement cstmt =conn.prepareCall("{?=call M01_LASTUSER()}");
+        CallableStatement cstmt =conn.prepareCall("{?=call M01_LASTUSER()}");
         cstmt.registerOutParameter(1, Types.INTEGER);
         cstmt.execute();
 
@@ -91,8 +81,8 @@ public class DaoUsersTest {
     }
 
     @Test
-    @Ignore
     public void testEmail() throws Exception {
     }
+
 
 }
