@@ -135,8 +135,5 @@ public class DaoHome extends Dao implements IDaoHome {
         return null;
     }
 
-    @Override
-    public void Create(Entity e) {
 
-    }
 }

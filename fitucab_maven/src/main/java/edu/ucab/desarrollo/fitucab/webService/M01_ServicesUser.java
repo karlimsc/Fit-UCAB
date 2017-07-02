@@ -1,37 +1,36 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
+/**
+ * Created by elberg on 28/06/17.
+ */
+
 import com.google.gson.Gson;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
+import org.slf4j.LoggerFactory;
 
-/*
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;*/
-
-
-
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
-
-//imports para poder hacer el recuperar password
-/*import javax.mail.MessagingException;
-import javax.mail.Message;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import javax.mail.PasswordAuthentication;*/
-//FIN de imports para poder hacer el recuperar password
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import java.sql.*;
-import java.sql.Date;
-//imports para hacer el encrypt y decrypt
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import static edu.ucab.desarrollo.fitucab.webService.Sql.getConInstance;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -39,88 +38,56 @@ import static edu.ucab.desarrollo.fitucab.webService.Sql.getConInstance;
  */
 @Path("/M01_ServicesUser")
 public class M01_ServicesUser {
+    Entity _response;
 
-    private Connection conn = getConInstance();
-    private int RESULT_CODE_OK=200;
-    private int RESULT_CODE_FAIL=300;
-    private int RESULT_USER_FAIL=400;
-    private int RESULT_EMAIL_OK=500;
-    private static String DEFAULT_ENCODING1="UTF-8";
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(M01_ServicesUser.class);
+
     Gson gson = new Gson();
 
     public M01_ServicesUser() {}
 
     /**
-     * Funcion encargada de realizar la encriptación de un password
-     * @param password El password a ser encriptado
-     * @return String encriptado con BASE64
+     * Metodo que es llamado a traves del web service para consultar un usuario
+     * existente en la base de datos
+     * @return el usuario con los datos que trae la consulta
      */
-    private static String encryptPassword(@QueryParam("password") String password) {
-        //Instanciamos un encriptador BASE64
-        BASE64Encoder enc = new BASE64Encoder();
-        try {
-            //Utilizando la codificacion por defecto (UTF-8) encriptamos el string
-            return enc.encode(password.getBytes(DEFAULT_ENCODING1));
-        } catch (UnsupportedEncodingException e) {
-            return null;
-        }
-    }
-
-    /**
-     * Funcion encargada de realizar la desencriptacion de un password
-     * @param password El password a desencriptar
-     * @return String con el contenido original antes de ser encriptado
-     */
-    private static String decryptPassword(String password) {
-        //Instanciamos un decodificador de BASE64
-        BASE64Decoder dec = new BASE64Decoder();
-        try {
-            //Realizamos la decodificacion mediante el proceso inverso de la encriptacion
-            return new String(dec.decodeBuffer(password), DEFAULT_ENCODING1);
-        } catch (IOException e) {
-            return null;
-        }
-    }
-
     @GET
-    @Path("/informationUser")
+    @Path("/login_user")
     @Produces("application/json")
-    public String informationUser(@QueryParam("username") String userparam) {
-        String query = "SELECT * FROM M01_INFORMACIONUSER('" + userparam + "')";
+    public String getUser(@QueryParam("username") String username,
+                          @QueryParam("password") String password)
+    {
+
+
         try {
-
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            User user = null;
-
-            while (rs.next()) {
-                String username = rs.getString("usuario");
-                int id = rs.getInt("id");
-                String password = rs.getString("pwd");
-                String sexo = rs.getString("sex");
-                String phone = rs.getString("phone");
-                String email = rs.getString("mail");
-                Date birtdate = rs.getDate("birthdate");
-
-                user = new User(id, username, password, email, sexo, phone, birtdate);
-
-            }
-
-            return gson.toJson(user);
-
-        } catch (Exception e) {
-            return e.getMessage();
+            Entity userObject = EntityFactory.createUser(username,password);
+            Command _command = CommandsFactory.instanciateCheckUserCmd(userObject);
+            CheckUserCommand cmd = (CheckUserCommand) _command;
+            cmd.execute();
+            //User result = (User) CheckUserCommand.getUserLogin();
+            return gson.toJson(CheckUserCommand.getUserLogin());
+        }
+        catch (Exception e){
+            return null ;
         }
 
     }
 
+
     /**
-     * Metodo que es llamado a traves del web service para agregar a la base de datos los parametros recibidos
-     *
-     *
+     * Metodo para registrar al usuario
+     * @param username
+     * @param password
+     * @param email
+     * @param sex
+     * @param phone
+     * @param birthdate
+     * @param weight
+     * @param height
      * @return
      */
-  /*  @GET
+
+    @GET
     @Path("/insertRegistry")
     @Produces("application/json")
     public String insertUser(@QueryParam("username") String username,
@@ -128,124 +95,65 @@ public class M01_ServicesUser {
                              @QueryParam("email") String email,
                              @QueryParam("sex") String sex,
                              @QueryParam("phone") String phone,
-                             @QueryParam("birthdate") java.sql.Date birthdate,
+                             @QueryParam("birthdate") String birthdate,
                              @QueryParam("weight") int weight,
-                             @QueryParam("height") int height) {
+                             @QueryParam("height") int height) throws NullPointerException,
+                                                                      java.text.ParseException {
 
-
-        password=encryptPassword(password);
-       /* String insertUserQuery = " SELECT * FROM M01_REGISTRAR('" + username + "','" + password + "','" + email + "','" + sex + "'" +
-                ",'" + phone + "','" + birthdate + "','" + weight + "','" + height + "')";
-        */
-     /*   Entity createUserObject = EntityFactory.createUser(username,password,email, sex,phone, birthdate,weight,height);
-        CreateUserCommand cmd = CommandsFactory.instanciateCreateUserCmd(createUserObject);
-
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date;
+        java.sql.Date sqlDate = null;
 
         try {
 
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(insertUserQuery);
-            User user = null;
-            Registry registry = null;
-            Boolean valida = false;
+            date = sdf.parse(birthdate);
+            sqlDate = new java.sql.Date(date.getTime());
 
-            int id = 0;
+        }
+        catch (java.text.ParseException e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error);
+        }
 
-            while (rs.next()) {
+        try
+        {
+            Entity createUserObject = EntityFactory.createUser(0,username, password, email,
+                    sex, phone, sqlDate, weight, height);
 
-                valida=true;
-                id = rs.getInt("m01_registrar");
-                registry = new Registry(Float.parseFloat(weight), Float.parseFloat(height));
+            User _returnUser = (User) createUserObject;
 
+            Command _command = CommandsFactory.instanciateCreateUserCmd(createUserObject);
+            CreateUserCommand cmd = (CreateUserCommand) _command;
+            cmd.execute();
+
+            //Obtiene el usuario registrado
+            User rUser = (User) cmd.getUserRegistry();
+            _returnUser.setId(rUser.getId());
+            if (cmd.get_response()) {
+                logger.debug("Debug: ","Boolean de CommandCreateUser TRUE");
+                System.out.print("Debug Boolean de CommandCreateUser TRUE");
+                System.out.print("Debug Boolean de CommandCreateUser TRUE " + _returnUser.getUser());
+                //return gson.toJson(_returnUser);
+                return gson.toJson(rUser);
             }
+            else
+                return gson.toJson(null);
 
-            if(valida == true){
-                user = new User(id, username, password, email, sex, phone, registry);
-                user.set_status(Integer.toString(RESULT_CODE_OK));
-            return gson.toJson(user);
-            }
-            else{
-
-                userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
-                return gson.toJson(userFail);
-            }
+        }catch (NullPointerException e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            System.out.print("NULL POINTER");
+            logger.error("Error: ", error);
+            return gson.toJson(null);
         }
-        catch (SQLException e) {
-            userFail.set_status(e.getSQLState());
-            return gson.toJson(userFail);
+        catch ( Exception e )
+        { MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error);
+            return gson.toJson( null );
         }
-        catch (Exception e) {
-            return e.getMessage();
-        }
-    }
 
-    /***
-     * Metodo que elimina a un usuario
-     * @param userparam
-     * @return
-     */
-    @GET
-    @Path("/deteleUser")
-    @Produces("application/json")
-    public String deleteUser(@QueryParam("username") String userparam){
-
-        String query="SELECT M01_ELIMINARUSER('"+ userparam +"')";
-
-
-        try{
-
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-
-            int delete =0;
-
-            while(rs.next()){
-
-                delete = rs.getRow();
-
-            }
-            return gson.toJson(delete);
-        }
-        catch(Exception e) {
-            return e.getMessage();
-        }
-    }
-
-    /**
-     * Metodo que realiza cambios en el usuario
-     * @param userparam
-     * @param password
-     * @param email
-     * @param sex
-     * @param phone
-     * @return
-     */
-    @GET
-    @Path("/updateUser")
-    @Produces("application/json")
-    public String updateUser(@QueryParam("username") String userparam,@QueryParam("password") String password,@QueryParam("email") String email,
-    @QueryParam("sex") String sex ,@QueryParam("phone") String phone){
-
-        String query="SELECT M01_MODIFICARUSER('"+userparam+"','"+password+"','"+email+"','"+sex+"'" +
-                ",'"+phone+"')";
-
-        try{
-
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-
-            int update =0;
-
-            while(rs.next()){
-
-                update = rs.getRow();
-
-            }
-            return gson.toJson(update);
-        }
-        catch(Exception e) {
-            return e.getMessage();
-        }
     }
 
     /***
@@ -258,172 +166,51 @@ public class M01_ServicesUser {
     @Produces("application/json")
     public String userOnly(@QueryParam("email") String email)
     {
-        String insertUserQuery ="SELECT M01_RECUPERARPWD('" + email + "')";
-        try {
+        //Duda sobre si es necesario crear el objeto recupUserPswObject
 
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(insertUserQuery);
-            User user = null;
-            while(rs.next()){
+        Command _command = CommandsFactory.instanciateRecoverPasswordCmd(email);
+        RecoverPasswordCommand cmd = (RecoverPasswordCommand) _command;
 
-                String username1 = rs.getString("usuario");
-                String password =rs.getString("pwd");
-                int id =rs.getInt("id");
-
-                user= new User(id,username1,password);
-
-            }
-            return gson.toJson(user);
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
         }
-        catch(Exception e) {
-            return e.getMessage();
-        }
-
-    }
-
-    /**
-     * Metodo que es llamado a traves del web service para consultar un usuario existente en la base de datos
-
-     * @return el usuario con los datos que trae la consulta
-     */
-  /*  @GET
-    @Path("/login_user")
-    @Produces("application/json")
-    public String getUser(@QueryParam("username") String username, @QueryParam("password") String password)
-    {
-        password= encryptPassword(password);
-
-        String query="SELECT * FROM M01_INICIARSESION('"+username+"','"+password+"')";
-
-        try{
-
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-
-            int idUser =0;
-
-            while(rs.next()){
-
-                 idUser = rs.getInt("m01_iniciarsesion");
-
-            }
-            if (idUser !=0){
-
-                User userResult=new User();
-                userResult.set_status(Integer.toString(RESULT_CODE_OK));
-                userResult.setId(idUser);
-                return gson.toJson(userResult);
-            }
-            else {
-                User userFail = new User();
-                userFail.set_status(Integer.toString(RESULT_USER_FAIL));
-                return gson.toJson(userFail);
-            }
-        }
-        catch (NullPointerException e){
-            return e.getMessage();
-        }
-        catch (SQLException e){
-            String error= e.getSQLState();
-            return e.getSQLState();
-        }
-        catch(Exception e) {
-            return e.getMessage();
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
         }
     }
 
-    /**
-     * Sevicio Web para poder enviar el correo al usuario con su password
-     * @return por ahora retorna un String
-     */
-  /*  @GET
+    @GET
     @Path("/restorePassword")
     @Produces("application/json")
-    public String testEmail(@QueryParam("email") String email) {
+    public String testEmail (@QueryParam("email") String email){
 
-        String query = "SELECT * FROM M01_RECUPERARPWD('" + email + "')";
+        try
+        {
+            Command _command = CommandsFactory.instanciateRecoverPasswordCmd(email);
+            RecoverPasswordCommand cmd = (RecoverPasswordCommand) _command;
+            System.out.print("Debug: email " + email);
+            cmd.execute();
+            String _response = cmd.get_response();
+            return gson.toJson(_response);
 
-        try {
-            //Establecemos el usuario que es el correo que cree para hacer el recuperar
-            final String username = "ds1617b@gmail.com";
-            //la clave
-            final String password = "fitucab2017";
-            //Estas son las propiedades de seguridad de gmail
-            Properties props = new Properties();
-            props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-            props.put("mail.smtp.auth", "true");
-            props.put("mail.smtp.starttls.enable", "true");
-            props.put("mail.smtp.host", "smtp.gmail.com");
-            props.put("mail.smtp.port", "587");
-
-            /*
-             * EN ALGUNA PARTE DE AQUI ES DONDE DEBERIA HACER EL CAMBIO DE CLAVE POR
-             * ALGUN STRING ALEATORIO Y ENCRIPTADO
-             * Y LUEGO ENVIARLE EL STRING SIN ENCRIPTAR AL USUARIO
-             */
-       /*     Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            User user = null;
-            Boolean validaEmail = false;
-            String usernameResult="";
-            String passwordResult="";
-
-            while (rs.next()) {
-                validaEmail = true;
-                usernameResult=rs.getString("usuario");
-                passwordResult=rs.getString("password");
-            }
-
-            if(validaEmail==true) {
-
-                passwordResult=decryptPassword(passwordResult);
-
-                //Se crea la sesion para autenticar
-                Session session = Session.getInstance(props,
-                        new javax.mail.Authenticator() {
-                            protected PasswordAuthentication getPasswordAuthentication() {
-                                return new PasswordAuthentication(username, password);
-                            }
-                        });
-
-                //creamos un objeto MIME
-                Message message = new MimeMessage(session);
-                //ponemos el remitente
-                message.setFrom(new InternetAddress("ds1617b@gmail.com"));
-                message.setRecipients(Message.RecipientType.TO,
-                        //aqui va el destinatario
-                        InternetAddress.parse(email));
-                //El tema del correo
-                message.setSubject("Recuperar contraseña FitUCAB");
-                //El contenido del correo
-                message.setText(" Hola FitUcabista! " +
-                                " tu usuario es: " + usernameResult +
-                                " y tu clave:" + passwordResult+ " " +
-                                " Ahora puedes seguir entrenando");
-                //Enviamos
-                Transport.send(message);
-                //Aqui esta la validacion
-                User userOk = new User();
-                userOk.set_status(Integer.toString(RESULT_EMAIL_OK));
-                return gson.toJson(userOk);
-            }
-
-            else {
-                User userFail = new User();
-                userFail.set_status(Integer.toString(RESULT_USER_FAIL));
-                return gson.toJson(userFail);
-            }
-
+        }catch (NullPointerException e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            System.out.print("NULL POINTER");
+            logger.error("Error: ", error);
+            return gson.toJson(null);
         }
-        catch (SQLException e){
-            return e.getSQLState();
+        catch ( Exception e )
+        { MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error);
+            return gson.toJson( null );
         }
-        catch (MessagingException e) {
-            return e.getMessage();
-        }
-        catch (Exception e) {
-            return e.getMessage();
-        }
+
+
     }
-    */
+
 }

@@ -146,12 +146,7 @@ public class CommandsFactory {
      */
     static public GetWaterCommand instatiateGetWaterCmd(Entity water){ return new GetWaterCommand(water); }
 
-    /**
-     * Metodo para instanciar el comando GetFechaInt
-     * @param water
-     * @return el comando GetFechaInt
-     */
-    static public GetFechaIntCommand instatiateGetFechaIntCmd(Entity water){ return new GetFechaIntCommand(water); }
+
     /**
      * Metodo para instanciar el comando DeletLast
      * @param water
@@ -159,12 +154,6 @@ public class CommandsFactory {
      */
     static public DeletLastCommand instatiateDeletLastCmd(Entity water){ return new DeletLastCommand(water); }
 
-    /**
-     * Metodo para instanciar el comando DeletWaterTm
-     * @param water
-     * @return el comando DeletWaterTm
-     */
-    static public DeletWaterTmCommand instatiateDeletWaterTmCmd(Entity water){ return new DeletWaterTmCommand(water); }
 
     /**
      * Metodo para instanciar el comando GetFecha
@@ -199,7 +188,5 @@ public class CommandsFactory {
 
     static public MomentCommand getMoment (Entity Moment) {return  new MomentCommand(Moment);}
 }
-
-
 
 
