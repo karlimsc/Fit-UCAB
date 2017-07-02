@@ -14,15 +14,31 @@ import java.util.List;
  */
 public class GetAllTrainingCommand extends Command
 {
-        Entity _training;
-        public GetAllTrainingCommand(Entity training){
-            this._training = training;
-
-        }
+    private Entity       _input;
+    private List<Entity> _output;
 
 
-    public void execute() throws ListAllException, ListByIdException
+    public GetAllTrainingCommand( Entity training )
     {
+        super();
+
+        _input = training;
+    }
+
+
+    public List<Entity> get_output()
+    {
+        return _output;
+    }
+
+
+    public void execute() throws ListAllException
+    {
+
+        IDaoTraining dao;
+
+        dao = DaoFactory.instanceDaoTraining( _input );
+        _output = dao.listAll( _input );
 
     }
 }

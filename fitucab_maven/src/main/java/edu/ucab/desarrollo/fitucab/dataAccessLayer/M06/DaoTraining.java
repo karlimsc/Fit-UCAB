@@ -9,6 +9,8 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 import java.sql.*;
@@ -20,6 +22,8 @@ public class DaoTraining extends Dao implements IDaoTraining
 {
 
     Entity _entidad;
+    private static Logger logger = LoggerFactory.getLogger( DaoTraining.class );
+
     public DaoTraining( Entity entidad )
 
     {
@@ -114,31 +118,125 @@ public class DaoTraining extends Dao implements IDaoTraining
         return true;
     }
 
+
     /**
-     * Lista todos los entrenamientos
-     *
-     *
-     *
+     * Lista todos los entrenamientos     *
+     * @param entidad     *
      * @return lista de entrenamientos
      */
-    public LinkedList<Entity> listAll( Entity entity ) throws ListAllException
+    public LinkedList<Entity> listAll( Entity entidad ) throws ListAllException
     {
-        return null;
+        LinkedList<Entity> resultList = null;
+        Training entity;
+        PreparedStatement preStatement = null;
+        ResultSet resultSet = null;
+        Connection conn;
+
+        try
+        {
+            resultList = new LinkedList<Entity>();
+            conn = getBdConnect();
+
+            //Aqui se invoca el SP
+            preStatement = conn.prepareStatement( "{call M06_GET_TRAININGS(?)}" );
+            //Aqui meto los parametros
+            preStatement.setInt( 1, entidad.get_id() );
+            //Aqui ejecuto el SP
+            resultSet = preStatement.executeQuery();
+
+            while ( resultSet.next() )
+            {
+                int id = resultSet.getInt( "training_id" );
+                String name = resultSet.getString( "training_name" );
+
+                entity = EntityFactory.createTraining( id, name );
+                resultList.add( entity );
+            }
+
+            resultSet.close();
+
+        }
+        catch ( SQLException e )
+        {
+
+            logger.error( "Metodo: {} {}", "listAll", e.toString() );
+            throw new ListAllException( e );
+        }
+        catch( BdConnectException e )
+        {
+            logger.error( "Metodo: {} {}", "listAll", e.toString() );
+            throw new ListAllException( e );
+        }
+        catch ( Exception e )
+        {
+            logger.error( "Metodo: {} {}", "listAll", e.toString() );
+            throw new ListAllException( e );
+        }
+        finally
+        {
+            closeConnection();
+        }
+
+        return resultList;
     }
 
-
     /**
-     * Metodo para mostrar el entrenamiento a detalle
-     *
-     *
-     *
-     * @return la entidad entrenamiento
-     *
+     * Metodo para mostrar el entrenamiento a detalle     *
+     * @param entidad     *
+     * @return la entidad entrenamiento     *
      * @throws ListByIdException
      */
-    public Entity trainingDetail( Entity entity ) throws ListByIdException
+    public Entity trainingDetail( Entity entidad ) throws ListByIdException
     {
-        return null;
+
+        Training entity = null;
+        PreparedStatement preStatement = null;
+        ResultSet resultSet = null;
+        EntityMapTraining etMap;
+
+        try
+        {
+            etMap = EntityMapTraining.getInstance();
+            entity = etMap.get( entidad.get_id() );
+
+            if( entity == null )
+            {
+                // Aqui se invoca el SP
+                preStatement = getBdConnect().prepareStatement( "{call M06_GET_TRAINING_DETAILS(?)}" );
+                // Aqui meto los parametros
+                preStatement.setInt( 1, entidad.get_id() );
+                //Aqui ejecuto el SP
+                resultSet = preStatement.executeQuery();
+
+                int id = resultSet.getInt( "training_id" );
+                String name = resultSet.getString( "training_name" );
+
+                entity = EntityFactory.createTraining( id, name);
+                entity.set_activitiesList( listActivities() );
+            }
+
+        }
+        catch ( SQLException e )
+        {
+            logger.error( "Metodo: {} {}", "trainingDetail", e.toString() );
+            throw new ListByIdException( e );
+        }
+        catch( BdConnectException e )
+        {
+            logger.error( "Metodo: {} {}", "trainingDetail", e.toString() );
+            throw new ListByIdException( e );
+        }
+        catch ( Exception e )
+        {
+            logger.error( "Metodo: {} {}", "trainingDetail", e.toString() );
+            throw new ListByIdException( e );
+        }
+        finally
+        {
+            closeConnection();
+        }
+
+        return entity;
     }
 
 
@@ -182,9 +280,9 @@ public class DaoTraining extends Dao implements IDaoTraining
         return true;
     }
 
+
     /**
-     * Metodo para listar las actividades
-     *
+     * Metodo para listar las actividades     *
      * @return lista de actividades
      */
     private ArrayList<Entity> listActivities()
@@ -194,25 +292,15 @@ public class DaoTraining extends Dao implements IDaoTraining
 
         resultList = new ArrayList<Entity>( 5 );
 
-        int id1 = 1;
-        String name1 = "Caminar";
-        int id2 = 2;
-        String name2 = "Trotar";
-        int id3 = 3;
-        String name3 = "Correr";
-        int id4 = 4;
-        String name4 = "Lagartijas";
-        int id5 = 5;
-        String name5 = "Nadar";
-        entity = EntityFactory.createActivity( id1, name1, 1 );
+        entity = EntityFactory.createActivity( 1, "Caminar",2 );
         resultList.add( entity );
-        entity = EntityFactory.createActivity( id2, name2, 1 );
+        entity = EntityFactory.createActivity( 2, "Trotar",3 );
         resultList.add( entity );
-        entity = EntityFactory.createActivity( id3, name3, 1 );
+        entity = EntityFactory.createActivity( 3, "Correr",2 );
         resultList.add( entity );
-        entity = EntityFactory.createActivity( id4, name4, 1 );
+        entity = EntityFactory.createActivity( 4, "Lagartijas",1 );
         resultList.add( entity );
-        entity = EntityFactory.createActivity( id5, name5, 1 );
+        entity = EntityFactory.createActivity( 5,"Nadar",2 );
         resultList.add( entity );
 
 
