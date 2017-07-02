@@ -1,52 +1,48 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<FrameLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/grey"
-    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06HomeTrainingFragment">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-    <TextView
-        android:id="@+id/btn_m06_addtraining"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="@dimen/text_margin"
-        android:layout_marginRight="@dimen/text_margin"
-        android:layout_marginTop="@dimen/text_margin"
-        android:text="@string/btn_m06_trainings"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="@dimen/text_button_size"
-        android:textStyle="bold"
-        android:typeface="sans" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="160dp"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="40dp"
+        android:src="@mipmap/logofitucabnombre" />
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/m06_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:layout_marginTop="15dp"/>
+
+        </LinearLayout>
+
+
+
+    <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/btn_m06_addtraining"
+            android:tint="@color/colorBtnConfirmar"
+            android:src="@drawable/add_training"
+            android:layout_gravity="bottom|right"
+            />
+
+</FrameLayout>
 
 
 
 
-
-    <ListView
-        android:id="@+id/listoftrainings"
-        android:layout_width="match_parent"
-        android:layout_height="269dp"
-        android:layout_marginTop="@dimen/text_size"
-        android:textSize="@dimen/text_size"
-        android:layout_marginLeft="@dimen/text_size"
-        android:layout_marginRight="@dimen/text_size"
-        />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/btnAddTraining"
-        android:layout_width="53dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="2dp"
-        android:layout_weight="0.01"
-        android:clickable="true"
-        app:backgroundTint="@color/colorBtnConfirmar"
-        app:fabSize="mini"
-        app:srcCompat="@drawable/signomas" />
-
-</LinearLayout>
