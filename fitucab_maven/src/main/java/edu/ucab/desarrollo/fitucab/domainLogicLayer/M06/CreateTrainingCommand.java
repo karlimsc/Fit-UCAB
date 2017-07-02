@@ -22,4 +22,7 @@ public class CreateTrainingCommand extends Command {
             //lanzar exception
         }
     }
+
+
+
 }

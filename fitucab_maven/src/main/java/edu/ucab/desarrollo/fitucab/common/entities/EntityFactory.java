@@ -2,7 +2,6 @@ package edu.ucab.desarrollo.fitucab.common.entities;
 
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
-import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -28,11 +27,39 @@ public class EntityFactory
      *   @param  height
      */
 
-    static public Entity createUser(String username, String password, String email, String sex, String phone,
+    static public Entity createUser(int id, String username, String password, String email, String sex, String phone,
                                     Date bday, int weight, int height){
 
-        return new User( username, password , email , sex , phone , (java.sql.Date) bday, weight , height );
+        return new User( id,username, password , email , sex , phone , (java.sql.Date) bday, weight , height );
     }
+
+    static public Entity createUser(){
+
+        return new User();
+    }
+
+    /**
+     * Comprueba la contraseña y el correo
+     * @param username
+     * @param password
+     * @return
+     */
+    static public Entity createUser( String username, String password){
+
+        return new User( username, password );
+    }
+
+    /**
+     * Usado para recuperar la contraseña
+     * @param email
+     * @return
+     */
+    static public Entity createUser(  String email){
+
+        return new User(  email );
+    }
+
+
 
     //MODULO 3
 
@@ -166,43 +193,75 @@ public class EntityFactory
      * @return Objecto Challenge
      * @see Challenge
      */
-    static public Entity createChallenge(long achieve, long unachieve){
+   /* static public Entity createChallenge(long achieve, long unachieve){
         return new Challenge(achieve,unachieve);
     }
-
+*/
     /**
      * Metodo que instancia la clase Challenge con la suma de sus records
      * @param score Record acumulado que se lleva del reto.
      * @return Objeto Challenge
      * @see Challenge
      */
-    static public Entity createChallenge(int score){
+    /*static public Entity createChallenge(int score){
         return new Challenge(score);
     }
+*/
 
+    static  public List<Entity> getChallenges(){return new ArrayList<Entity>();}
+    //FIN MODULO 9
 
-    static public List<Entity> getChallenges(){
-        return new ArrayList<Entity>();
+    //Modulo 10
+    /**
+     * Metodo que instancia la clase Water con sus atributos
+     * @param GlassType Indentificador de vaso
+     * @param fkp   fk de usuario
+     * @param dia  fecha
+     * @return Water
+     * @see Water
+     */
+    static public Water createWater(int GlassType, int fkp,String dia){
+        return new Water(GlassType,fkp,dia);
+    }
+    /**
+     * Metodo que instancia la clase Water con sus atributos
+     * @param fkp   fk de usuario
+     * @param dia  fecha
+     * @return Water
+     * @see Water
+     */
+
+    static public Water createWater(int fkp,String dia){
+        return new Water(fkp,dia);
     }
 
     /**
-     * Metodo que instancia la clase Active con el comando a ejecutar.
-     * @param command
-     * @return Objeto Active
-     * @see Active
+     * Metodo que instancia la clase Water con sus atributos
+     * @param fkp   fk de usuario
+     * @return Water
+     * @see Water
      */
-    static public Entity createActive(Command command){
-        return new Active(command);
+
+    static public Water createWater(int fkp){
+        return new Water(fkp);
     }
-    //FIN MODULO 9
+
+
+    /**
+     * Metodo que instancia vacia
+     * @see Water
+     */
+    static public Water createWater(){
+        return new Water();
+    }
+    //Fin Modulo 10
 
     public static Entity createPlanification(String startDate, String endDate,
                                              String startTime, String duration,
                                              int userId, int sportId,
                                              boolean ... days){
 
-        return new Planification(LocalDate.parse(startDate),
-                                 LocalDate.parse(endDate),
+        return new Planification(LocalDate.parse(startDate), LocalDate.parse(endDate),
                 LocalTime.parse(startTime), LocalTime.parse(duration), days, userId, sportId);
     }
 

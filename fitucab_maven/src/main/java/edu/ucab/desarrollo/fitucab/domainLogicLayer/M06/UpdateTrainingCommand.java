@@ -19,4 +19,7 @@ public class UpdateTrainingCommand extends Command{
             //atajo si existe algun error
         }
     }
+
+
+
 }
