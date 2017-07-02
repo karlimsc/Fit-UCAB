@@ -8,6 +8,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -25,6 +26,8 @@ public class DaoHome extends Dao implements IDaoHome {
     Entity _usuario;
     int _totalAgua, _totalCalorias;
     private Connection _conn;
+    private CreateHomeException _error;
+    private static org.slf4j.Logger _logger = LoggerFactory.getLogger(DaoUser.class);
 
     /**
      * Metodo constructor de clase DaoHome
@@ -56,11 +59,20 @@ public class DaoHome extends Dao implements IDaoHome {
             _home = EntityFactory.createHome(_totalAgua, _totalCalorias);
             return _home;
         } catch (BdConnectException e) {
-            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _error = new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _error.toString());
+            _logger.error("Error: ", _error.toString());
+            throw _error;
         } catch (SQLException e) {
-            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _error = new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _error.toString());
+            _logger.error("Error: ", _error.toString());
+            throw _error;
         } catch (Exception e){
-            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _error = new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _error.toString());
+            _logger.error("Error: ", _error.toString());
+            throw _error;
         }finally {
             Dao.closeConnection();
         }
@@ -84,11 +96,20 @@ public class DaoHome extends Dao implements IDaoHome {
                 _totalCalorias = _result.getInt("calorias");
             }
         } catch (BdConnectException e) {
-            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _error = new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _error.toString());
+            _logger.error("Error: ", _error.toString());
+            throw _error;
         } catch (SQLException e) {
-            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _error = new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _error.toString());
+            _logger.error("Error: ", _error.toString());
+            throw _error;
         }catch (Exception e){
-            throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _error = new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _error.toString());
+            _logger.error("Error: ", _error.toString());
+            throw _error;
         }finally {
             Dao.closeConnection();
         }
