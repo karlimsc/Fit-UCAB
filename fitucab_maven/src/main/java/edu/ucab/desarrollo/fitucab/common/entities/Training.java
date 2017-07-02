@@ -72,6 +72,19 @@ public class Training extends Entity {
     }
 
     /**
+     * Contructor sin la lista de actividades
+     * @param _id
+     * @param activitylist
+     * @param _trainingName
+     */
+    public Training(int _id, LinkedList activitylist, String _trainingName)
+    {
+        super(_id);
+        this._trainingName = _trainingName;
+        this._activitylist = activitylist;
+    }
+
+    /**
      * constructor para instanciar solo con el parametro id
      * @param userId el identificador de base de datos
      *

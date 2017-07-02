@@ -108,6 +108,18 @@ public class EntityFactory
         return new Training(userId,name,activities);
     }
 
+    /***
+     *  Metodo que intancia la clase para crear el objeto vacio
+     * @return el entrenamiento
+     * @param Id
+     * @param name
+     * @param activities
+     */
+    static public Training createTraining(int Id, LinkedList activities, String name){
+
+        return new Training(Id, activities, name);
+    }
+
     /**
      * Fabrica para crear un entrenamiento por usuario
      * @param userId

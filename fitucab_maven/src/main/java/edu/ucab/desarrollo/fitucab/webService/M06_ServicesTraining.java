@@ -38,6 +38,229 @@ public class M06_ServicesTraining
     Gson gson = new Gson();
 
 
+    //el tipo de instruccion HTTP
+    @POST
+    //el path de la funcion
+    @Path( "/createTraining" )
+    //formato de retorno
+    @Produces( "application/json" )
+
+    /**
+     * Metodo utilizado a traves de web service para agregar un entrenamiento
+     * @param trainingName
+     * @param trainingActivities
+     * @param userId
+     * @return
+     */
+
+    // LinkedList<String> activities revisar esto OJO
+    public String createTraining(@QueryParam( "trainingName" ) String name,
+                                 @QueryParam( "trainingActivities" )  final LinkedList<String> activities,
+                                 @QueryParam( "userId" ) int userId )
+    {
+        LinkedList<Entity> activitiesList = activityList(activities);
+        Entity createTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
+        CreateTrainingCommand cmd =
+                CommandsFactory.instanciateCreateTrainingCmd( createTrainingObject);
+        try
+        {
+            cmd.execute();
+            Entity result = cmd.getResult();//nuevo
+            return gson.toJson( result );//nuevo
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+    }
+
+
+    @POST
+    @Path( "/changeTrainingName" )
+    @Produces( "application/json" )
+
+    /**
+     * Metodo utilizado a traves de webservice para cambiar el nombre de un entranamiento
+     * la base de datos
+     * @param idTraining
+     * @param trainingName
+     * @return
+     */
+
+    public String renameTraining( @QueryParam( "idTraining" ) int id,
+                                  @QueryParam( "trainingName" ) String name)
+    {
+        Entity updatedTrainingObject = EntityFactory.createTraining( id, name);
+        ChangeTrainingNameCommand cmd = CommandsFactory.instanciateChangeTrainingNameCmd(updatedTrainingObject);
+
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+
+    }
+
+
+    @POST
+    @Path( "/addActivitiesToTraining" )
+    @Produces( "application/json" )
+
+    /**
+     * Metodo utilizado a traves de webservice para agregar actividades a un entranamiento
+     * la base de datos
+     * @param idTraining
+     * @param trainingName
+     * @return
+     */
+
+    public String addActivitiesToTraining( @QueryParam( "idTraining" ) int id,
+                                           @QueryParam( "trainingName" ) String name,
+                                           @QueryParam( "trainingActivities" )  LinkedList<String> activities)
+    {
+        LinkedList<Entity> activitiesList = activityList(activities);
+        Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
+        AddActivitiesToTrainingCommand cmd = CommandsFactory.instanciateAddActivitiesToTrainingCmd(updatedTrainingObject);
+
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+
+    }
+
+
+    @POST
+    @Path( "/removeActivitiesToTraining" )
+    @Produces( "application/json" )
+
+    /**
+     * Metodo utilizado a traves de webservice para agregar actividades a un entranamiento
+     * la base de datos
+     * @param idTraining
+     * @param trainingName
+     * @return
+     */
+
+    public String removeActivitiesToTraining( @QueryParam( "idTraining" ) int id,
+                                              @QueryParam( "trainingName" ) String name,
+                                              @QueryParam( "trainingActivities" )  LinkedList<String> activities)
+    {
+        LinkedList<Entity> activitiesList = activityList(activities);
+        Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
+        RemoveActivitiesFromTrainingCommand cmd = CommandsFactory.instanciateRemoveActivitiesFromTrainingCmd(updatedTrainingObject);
+
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+
+    }
+
+    @GET
+    @Path( "/displayTraining" )
+    @Produces( "application/json" )
+    /**
+     * Metodo utilizado a traves de web service para visualizar los entrenamientos que posee el usuario
+     * @param trainingId
+     * @return
+     */
+
+    public String getTraining( @QueryParam( "userId" ) int userId,
+            @QueryParam( "trainingId" ) int trainingId )
+    {
+
+        //    String query = "SELECT * from M06_obtenerEntrenamientos("+ userId +")";
+        CheckTrainingCommand cmd = CommandsFactory.instanciateCheckTrainingCmd( trainingId, userId );
+
+
+        try
+        {
+            cmd.execute();
+            Entity returnedTraining = cmd.returnedTraining;
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+    }
+
+    @GET
+    @Path( "/deleteTraining" )
+    @Produces( "application/json" )
+    /**
+     * Metodo utilizado a traves de web service para eliminar un entrenamiento
+     * @param trainingId
+     * @param trainingName
+     * @return
+     */
+
+    public String deleteTraining( @QueryParam( "trainingId" ) int trainingId,
+                                  @QueryParam( "trainingName" ) String trainingName )
+    {
+
+        Entity deleteTrainingObject = EntityFactory.createTraining(trainingId, trainingName);
+
+        DeleteTrainingCommand cmd = CommandsFactory.instanciateDeleteTrainingCmd(deleteTrainingObject);
+
+
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+
+    }
+
+    @GET
+    @Path( "/shareTraining" )
+    @Produces( "application/json" )
+    /**
+     * Metodo utilizado a traves de web service para compartir un entrenamiento
+     * @param trainingName
+     * @param trainingActivities
+     * @param userId
+     * @return
+     */
+    public String shareTraining(@QueryParam( "trainingName" ) String name,
+                                 @QueryParam( "trainingActivities" )  final LinkedList<String> activities,
+                                 @QueryParam( "userId" ) int userId )
+    {
+        LinkedList<Entity> activitiesList = activityList(activities);
+        Entity shareTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
+        ShareTrainingCommand cmd =
+                CommandsFactory.instanciateShareTrainingCmd(shareTrainingObject);
+        try
+        {
+            cmd.execute();
+            return gson.toJson( true );
+        }
+        catch ( Exception e )
+        {
+            return gson.toJson( false );
+        }
+    }
+
+
     private LinkedList<Entity> activityList (LinkedList<String> activities){
         LinkedList<Entity> activitiesList = new LinkedList<Entity>();
         for(int i = 0; i <= activities.size() - 1; i++){

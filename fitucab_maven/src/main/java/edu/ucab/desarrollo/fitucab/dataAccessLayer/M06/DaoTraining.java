@@ -67,7 +67,7 @@ public class DaoTraining extends Dao implements IDaoTraining
 
                 Connection conn = Dao.getBdConnect();
                 Statement st = conn.createStatement();
-                ResultSet rs = st.executeQuery(query);
+                ResultSet rs = st.executeQuery(_query);
                 //User user = null;
 
             }
@@ -310,5 +310,93 @@ public class DaoTraining extends Dao implements IDaoTraining
     public ArrayList<Entity> listTrainingsShared( Entity e )
     {
         return null;
+    }
+
+    public Boolean modifyName(Entity e) {
+        Training t = (Training) e;
+        String query ="SELECT M06_MODIFYNAMETRAINING('"+t.get_id()+"','"+t.getTrainingName()+"')";
+
+        try {
+
+            Connection conn = Dao.getBdConnect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            //User user = null;
+
+        }
+        catch (SQLException ex) {
+
+        }
+        catch (BdConnectException ex) {
+
+        }
+        catch (Exception ex) {
+
+        }
+
+        return true;
+    }
+
+    public Boolean addActivities(Entity e) {
+
+        try {
+            Training t = (Training) e;
+            Connection conn = Dao.getBdConnect();
+            Statement st = conn.createStatement();
+            //User user = null;
+
+            for (Entity activity : t.get_activitylist()) {
+                Activity a = (Activity) activity;
+                String _query =
+                        "SELECT M06_ADDTRAINING_ACTIVITY('" + a.get_duration() + "', '" + e.get_id() + "', '" + a.get_id() + ")";
+                conn = Dao.getBdConnect();
+                st = conn.createStatement();
+                ResultSet rs = st.executeQuery(_query);
+                //User user = null;
+            }
+
+        }
+        catch (SQLException ex) {
+
+        }
+        catch (BdConnectException ex) {
+
+        }
+        catch (Exception ex) {
+
+        }
+
+        return true;
+    }
+
+    public Boolean removeActivities(Entity e) {
+        try {
+            Training t = (Training) e;
+            Connection conn = Dao.getBdConnect();
+            Statement st = conn.createStatement();
+            //User user = null;
+
+            for (Entity activity : t.get_activitylist()) {
+                Activity a = (Activity) activity;
+                String _query =
+                        "SELECT M06_DELETE_ACTIVITY(" + e.get_id() + "', '" + a.get_id() + ")";
+                conn = Dao.getBdConnect();
+                st = conn.createStatement();
+                ResultSet rs = st.executeQuery(_query);
+                //User user = null;
+            }
+
+        }
+        catch (SQLException ex) {
+
+        }
+        catch (BdConnectException ex) {
+
+        }
+        catch (Exception ex) {
+
+        }
+
+        return true;
     }
 }
