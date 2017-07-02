@@ -1,7 +1,9 @@
-package edu.ucab.desarrollo.fitucab.Test.M01_Test;
+//package edu.ucab.desarrollo.fitucab.Test.M01_Test;
 
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import io.restassured.http.ContentType;
 import org.apache.http.HttpStatus;
@@ -25,48 +27,27 @@ import static org.junit.Assert.*;
 /**
  * Created by elberg on 02/07/17.
  */
-@RunWith(Arquillian.class)
+
 public class DaoUsersTest {
     static Connection conn;
     static Dao _dao;
-    static User _user;
+    static Entity _user;
 
 
 
 
-    @Before
-    public void setUp() throws Exception {
-        _user = new User(60,"naomi","123",
-                "@gmail","f","00000",
-                Date.valueOf("12-12-12"),
-                12,12);
+    public void limpiar() throws Exception {
+        try{
 
-    }
-
-    @BeforeClass
-    private static void testOnLine(){
-        try {
-            conn = _dao.getConInstance();
-        }
-        catch (Exception e){
-
-        }
-    }
-
-
-    @AfterClass
-    private static void testOffLine(){
-        try {
+            CallableStatement cs = conn.prepareCall("{=call M01_ELIMINARUSER(?)}");
+            cs.setString(1, "naomi");
+            cs.execute();
             conn.close();
+
         }
         catch (Exception e){
 
         }
-    }
-
-    @After
-    @Ignore
-    public void tearDown() throws Exception {
     }
 
     @Test
@@ -76,45 +57,39 @@ public class DaoUsersTest {
 
     @Test
     public void create() throws Exception {
+        conn = _dao.getConInstance();
+        _user = new User(60,"naomi","123",
+                "@gmail","f","00000",
+                Date.valueOf("2010-12-12"),
+                12,12);
 
-        CallableStatement cstmt =conn.prepareCall("{?=call M01_REGISTRAR(?,?,?,?,?,?,?,?)}");
-        //Parametro de salida
+        DaoUser login = (DaoUser) DaoFactory.instanciateDaoUser(_user);
+        login.login(_user);
+
+        //Se trae el ultimo usuario registrado
+        CallableStatement cstmt =conn.prepareCall("{?=call M01_LASTUSER()}");
         cstmt.registerOutParameter(1, Types.INTEGER);
-
-        //Parametros de entrada
-        cstmt.setString(2, _user.getUser());
-        cstmt.setString(3, _user.getUser());
-        cstmt.setString(4, _user.getEmail());
-        cstmt.setString(5, _user.getSex());
-        cstmt.setString(6, _user.getPhone());
-        cstmt.setDate(7, _user.getBirthdate());
-        cstmt.setInt(8, _user.getWeight());
-        cstmt.setInt(9, _user.getHeight());
         cstmt.execute();
 
-        CallableStatement cs = conn.prepareCall("{?=call M01_INICIARSESION(?,?)}");
+        int id_insert = cstmt.getInt(1);
+        System.out.printf("ID registro = "+id_insert);
 
+        //Busca el usuario que fue registrado
+        CallableStatement cs = conn.prepareCall("{?=call M01_INICIARSESION(?,?)}");
         cs.registerOutParameter(1, Types.INTEGER);
         cs.setString(2, "naomi");
         cs.setString(3, "123");
         cs.execute();
 
-        int id = cs.getInt(1);
-
-        assertEquals(60,id);
+        int id_login = cs.getInt(1);
+        System.out.printf("ID Login = "+id_login);
+        limpiar();
+        assertEquals(id_insert,id_login);
     }
 
     @Test
     @Ignore
     public void testEmail() throws Exception {
-    }
-
-    @Deployment
-    @Ignore
-    public static JavaArchive createDeployment() {
-        return ShrinkWrap.create(JavaArchive.class)
-                .addClass(DaoUser.class)
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
     }
 
 }
