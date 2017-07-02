@@ -46,4 +46,7 @@ public class GetFechaCommand extends Command {
         returned = gson.toJson(_water);
 
     }
+    public Entity Return(){
+        return null;
+    }
 }

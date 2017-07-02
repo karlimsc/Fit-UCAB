@@ -30,6 +30,8 @@ public class CheckTrainingCommand extends Command {
 
     }
 
-
+    public Entity Return(){
+        return null;
+    }
 
 }

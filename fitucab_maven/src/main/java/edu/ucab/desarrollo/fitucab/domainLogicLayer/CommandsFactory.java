@@ -3,6 +3,8 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.HomeCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.UserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
@@ -54,6 +56,28 @@ public class CommandsFactory {
         return new CheckUserCommand(user);
     }
 
+
+    //MODULO 2
+
+    /**
+     * Metodo que instancia el UserCommand con un id
+     * @param id
+     * @return
+     */
+    static public UserCommand instanciateUserCmd(int id){
+        return new UserCommand(id);
+    }
+
+    /**
+     * Metodo que instancia el HomeCommand con un id
+     * @param id
+     * @return
+     */
+    static public HomeCommand instanciateHomeCmd(int id){
+        return new HomeCommand(id);
+    }
+
+    //FIN MODULO 2
 
     // Comandos M06
 

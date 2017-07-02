@@ -34,4 +34,7 @@ public class GetFechaIntCommand extends Command {
 
 
     }
+    public Entity Return(){
+        return null;
+    }
 }

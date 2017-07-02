@@ -34,4 +34,7 @@ public class DeletWaterTmCommand extends Command {
         }
 
     }
+    public Entity Return(){
+        return null;
+    }
 }

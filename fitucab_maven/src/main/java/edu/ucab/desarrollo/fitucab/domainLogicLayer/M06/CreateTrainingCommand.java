@@ -23,6 +23,8 @@ public class CreateTrainingCommand extends Command {
         }
     }
 
-
+    public Entity Return(){
+        return null;
+    }
 
 }

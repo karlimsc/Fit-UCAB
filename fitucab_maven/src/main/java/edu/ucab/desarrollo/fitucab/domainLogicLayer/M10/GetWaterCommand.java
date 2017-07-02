@@ -38,4 +38,7 @@ public class GetWaterCommand extends Command {
 
 
     }
+    public Entity Return(){
+        return null;
+    }
 }

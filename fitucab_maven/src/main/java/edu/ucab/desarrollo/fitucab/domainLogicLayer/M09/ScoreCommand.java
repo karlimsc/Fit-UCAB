@@ -43,5 +43,7 @@ public class ScoreCommand extends Command{
         }
     }
 
-
+    public Entity Return(){
+        return null;
+    }
 }

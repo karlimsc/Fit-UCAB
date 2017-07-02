@@ -59,4 +59,8 @@ public class CheckUserCommand extends Command{
         }
     }
 
+    public Entity Return(){
+        return null;
+    }
+
 }

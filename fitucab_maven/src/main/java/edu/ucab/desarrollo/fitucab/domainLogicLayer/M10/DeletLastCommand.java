@@ -40,5 +40,8 @@ public class DeletLastCommand extends Command {
         }
 
     }
+    public Entity Return(){
+        return null;
+    }
 }
 

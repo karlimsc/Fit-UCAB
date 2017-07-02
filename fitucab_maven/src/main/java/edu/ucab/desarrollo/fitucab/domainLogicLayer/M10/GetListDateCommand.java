@@ -45,5 +45,8 @@ public class GetListDateCommand extends Command {
 
 
     }
+    public Entity Return(){
+        return null;
+    }
 }
 
