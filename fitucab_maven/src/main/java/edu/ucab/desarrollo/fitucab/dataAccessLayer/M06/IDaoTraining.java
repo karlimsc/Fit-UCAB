@@ -19,5 +19,8 @@ public interface IDaoTraining extends IDao {
     public Boolean activateTraining(Entity e);
     public Boolean shareTraining(Entity e);
     public ArrayList<Entity> listTrainingsShared(Entity e);
+    public Boolean modifyName (Entity e);
+    public Boolean addActivities (Entity e);
+    public Boolean removeActivities (Entity e);
 
 }
