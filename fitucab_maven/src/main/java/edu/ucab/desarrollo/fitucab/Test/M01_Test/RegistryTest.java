@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.Test.M01_Test;
+//package edu.ucab.desarrollo.fitucab.Test.M01_Test;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Registry;
 import org.junit.After;

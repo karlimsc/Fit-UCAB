@@ -15,16 +15,17 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Types;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
+import java.lang.reflect.Type;
+import java.sql.*;
 import java.util.Properties;
 
 
-/**
- * Created by karo on 24/06/17.
- */
+
+
 public class DaoUser  extends Dao implements IDaoUser {
     //Conexion con la base de datos
 
@@ -43,6 +44,7 @@ public class DaoUser  extends Dao implements IDaoUser {
     String _sqlRegistrarUsuario="{?=call M01_REGISTRAR(?,?,?,?,?,?,?,?)}";
 
     //String de conexion procedimientos
+    String _sqlRecoveryPassword ="{ call M01_RECUPERARPWD(?,?,?)}";
     String _sqlRegistrarUsuario1="{ call M01_REGISTRAR(?,?,?,?,?,?,?,?)}";
 
     Entity _user;
@@ -89,7 +91,7 @@ public class DaoUser  extends Dao implements IDaoUser {
      * @return
      */
 
-    public Entity read(Entity e) {
+    public Entity login(Entity e) throws SQLException {
         _sc = new Security();
 
         CallableStatement cstmt;
@@ -133,6 +135,9 @@ public class DaoUser  extends Dao implements IDaoUser {
             logger.error("Error: ", error.toString());
             return null;
         }
+        finally {
+            _bdCon.close();
+        }
     }
 
 
@@ -151,7 +156,7 @@ public class DaoUser  extends Dao implements IDaoUser {
 
         String password = _sc.encryptPassword(_user.getPassword());
 
-        CallableStatement cstmt, cs;
+        CallableStatement cstmt;
 
 
         try {
@@ -194,7 +199,8 @@ public class DaoUser  extends Dao implements IDaoUser {
         }
     }
 
-        /**
+
+    /**
          * Sevicio Web para poder enviar el correo al usuario con su password
          * @return por ahora retorna un String
          */
@@ -204,9 +210,6 @@ public class DaoUser  extends Dao implements IDaoUser {
             Boolean validaEmail = false;
             String usernameResult = "";
             String passwordResult = "";
-
-
-           // String query = "SELECT * FROM M01_RECUPERARPWD('" + email + "')";
 
             try {
 
@@ -218,7 +221,7 @@ public class DaoUser  extends Dao implements IDaoUser {
 
                 //Se traen los datos del usuario de la base de datos.
                 CallableStatement cstmt;
-                cstmt = _bdCon.prepareCall("{ call M01_RECUPERARPWD(?,?,?)}");
+                cstmt = _bdCon.prepareCall(_sqlRecoveryPassword);
                 cstmt.registerOutParameter(1, Types.VARCHAR);
                 cstmt.registerOutParameter(2, Types.VARCHAR);
                 cstmt.setString(3, email);
@@ -285,13 +288,18 @@ public class DaoUser  extends Dao implements IDaoUser {
             }
         }
 
+
     public Entity update(Entity e) {
         return null;
     }
 
+    @Override
+    public Entity read(Entity e) throws SQLException {
+        return null;
+    }
 
     @Override
     public void Create(Entity e) {
 
-    }
+
 }
