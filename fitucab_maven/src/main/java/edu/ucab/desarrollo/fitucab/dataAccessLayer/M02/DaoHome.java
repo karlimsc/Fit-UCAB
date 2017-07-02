@@ -15,30 +15,33 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Created by root on 29/06/17.
+ * Clase DAO Home para el manejo del comando DAO de la entidad Home
+ * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+ * @version 3.0
  */
 public class DaoHome extends Dao implements IDaoHome {
+
     private Home _home;
     Entity _usuario;
-    int totalAgua, totalCalorias;
+    int _totalAgua, _totalCalorias;
     private Connection _conn;
 
     /**
      * Metodo constructor de clase DaoHome
-     * @param usuario
+     * @param _usuario
      */
-    public DaoHome(Entity usuario){
-        this._usuario = usuario;
+    public DaoHome(Entity _usuario){
+        this._usuario = _usuario;
     }
 
     /**
      * Metodo sobrecargado que lee una endidad y devuelve otra.
      * Metodo que realiza un query a un storeprocedure de busque de vasos
-     * @param user
-     * @return
+     * @param _user
+     * @return _home entidad con datos de agua y calorias
      */
     @Override
-    public Entity read(Entity user) throws CreateHomeException {
+    public Entity read(Entity _user) throws CreateHomeException {
 
 
         try {
@@ -47,10 +50,10 @@ public class DaoHome extends Dao implements IDaoHome {
             ResultSet _result = st.executeQuery("SELECT countg FROM m10_getwaterglass("+_usuario.get_id()+"," +
                     "'"+((User)_usuario).getBirthdate()+"')");
             while (_result.next()){
-                totalAgua = _result.getInt("countg");
+                _totalAgua = _result.getInt("countg");
             }
             buscarCalorias(((User)_usuario).getUser());
-            _home = EntityFactory.createHome(totalAgua, totalCalorias);
+            _home = EntityFactory.createHome(_totalAgua, _totalCalorias);
             return _home;
         } catch (BdConnectException e) {
             throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
@@ -58,24 +61,27 @@ public class DaoHome extends Dao implements IDaoHome {
             throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
         } catch (Exception e){
             throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+        }finally {
+            Dao.closeConnection();
         }
+
     }
 
 
     /**
      * Metodo que busca las calorias por un query con un storeprocedures
-     * @param usuario
+     * @param _usuario
      */
-    public void buscarCalorias(String usuario) throws CreateHomeException {
+    public void buscarCalorias(String _usuario) throws CreateHomeException {
 
 
         try {
 
             _conn = Dao.getBdConnect();
             Statement st = _conn.createStatement();
-            ResultSet _result = st.executeQuery("SELECT calorias FROM m11_get_calorias_dia('"+usuario+"')");
+            ResultSet _result = st.executeQuery("SELECT calorias FROM m11_get_calorias_dia('"+_usuario+"')");
             while (_result.next()){
-                totalCalorias = _result.getInt("calorias");
+                _totalCalorias = _result.getInt("calorias");
             }
         } catch (BdConnectException e) {
             throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
@@ -83,6 +89,8 @@ public class DaoHome extends Dao implements IDaoHome {
             throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
         }catch (Exception e){
             throw new CreateHomeException(e, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+        }finally {
+            Dao.closeConnection();
         }
     }
 

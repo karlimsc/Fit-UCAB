@@ -64,6 +64,8 @@ public class DaoUser extends Dao implements IDaoUser {
         }
         catch (Exception e) {
             throw new GetUserException(e, DaoUser.class.getSimpleName(),BdConnectException.class.toString());
+        }finally {
+            Dao.closeConnection();
         }
     }
 
@@ -87,7 +89,10 @@ public class DaoUser extends Dao implements IDaoUser {
             e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            Dao.closeConnection();
         }
+
         return birthdate;
     }
 
