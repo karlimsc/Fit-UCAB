@@ -15,6 +15,7 @@ public class Activit {
     private String _starsite;
     private String _endsite;
     private String _name;
+    private int _hour;
 
 
 
@@ -23,8 +24,13 @@ public class Activit {
     public Activit() {
     }
 
+    public Activit(int _id, String _name, int _hour) {
+        this._id = _id;
+        this._name = _name;
+        this._hour = _hour;
+    }
 
-    public Activit(String _date,  String _name) {
+    public Activit(String _date, String _name) {
         this._date = _date;
         this._name = _name;
     }
@@ -105,5 +111,13 @@ public class Activit {
     public Activit(int _id, String _name) {
         this._id = _id;
         this._name = _name;
+    }
+
+    public int get_hour() {
+        return _hour;
+    }
+
+    public void set_hour(int _hour) {
+        this._hour = _hour;
     }
 }

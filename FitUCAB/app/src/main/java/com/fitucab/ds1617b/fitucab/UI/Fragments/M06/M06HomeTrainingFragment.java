@@ -6,12 +6,16 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -21,6 +25,8 @@ import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
 import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.R;
 
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,14 +35,17 @@ import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
+import static com.fitucab.ds1617b.fitucab.Model.MockM06.getMockTraining;
 
 
 public class M06HomeTrainingFragment extends Fragment {
 
     private View _view;
     private OnFragmentSwap _callBack;
-    private Button _btnAddTraining;
-
+    private ImageView _btnAddTraining;
+    ArrayList<Training> mTrainings;
+    private RecyclerView recyclerView;
+    private TrainingAdapter mAdapter;
     public M06HomeTrainingFragment() {
 
     }
@@ -62,7 +71,7 @@ public class M06HomeTrainingFragment extends Fragment {
 
         }
     }
- 
+
 
 
     @Override
@@ -70,17 +79,15 @@ public class M06HomeTrainingFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         _view =  inflater.inflate(R.layout.fragment_m06_home_training, container, false);
+        getActivity().setTitle("Listado de entrenamientos.");
+
+        mTrainings= getMockTraining();
+        manageRecyclerView();
+        setupViewValues();
+        manageChangeFragmentTraining();
         return _view;
     }
 
-    //TODO manageChangeFragmentTrainingDetail cuando toque un item de la lista
-
-    /**
-     * Metodo para instanciar los componentes de la vista
-     */
-    private void instantiateComponents(){
-        _btnAddTraining= (Button) _view.findViewById(R.id.btnAddTraining);
-    }
 
     /**
      * metodo de listener del boton agregar, para realizar el cambio al otro fragmento.
@@ -100,7 +107,7 @@ public class M06HomeTrainingFragment extends Fragment {
      */
     private void setupViewValues() {
 
-        _btnAddTraining = (Button) _view.findViewById(R.id.btnAddTraining);
+        _btnAddTraining = (ImageView) _view.findViewById(R.id.btn_m06_addtraining);
 
     }
 
@@ -142,5 +149,21 @@ public class M06HomeTrainingFragment extends Fragment {
             });
 
         }
+
+
+
+    private void manageRecyclerView(){
+
+        mAdapter = new TrainingAdapter(mTrainings,_callBack);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView = (RecyclerView) _view.findViewById(R.id.m06_recycler_view) ;
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
     }
+
+
+
+
+}
 

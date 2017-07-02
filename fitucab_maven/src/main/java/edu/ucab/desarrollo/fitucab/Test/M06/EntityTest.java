@@ -14,7 +14,6 @@ public class EntityTest {
     @Test
     public void prueba (){
 
-
         int pruebanumero = 1;
 
         edu.ucab.desarrollo.fitucab.common.entities.Entity prueba = EntityFactory.createTraining(pruebanumero);

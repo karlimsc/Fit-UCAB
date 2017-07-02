@@ -7,6 +7,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
  *Patron Entidad
  */
 public class Entity {
+
         private int _id;
         private int _errorCode;
         private String _errorMsg;
