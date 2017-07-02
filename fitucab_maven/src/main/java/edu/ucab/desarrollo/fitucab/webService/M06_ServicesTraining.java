@@ -1,26 +1,26 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
 import javax.ws.rs.*;
-
-
 import com.google.gson.Gson;
-import edu.ucab.desarrollo.fitucab.common.Registry;
-import edu.ucab.desarrollo.fitucab.common.entities.Activity;
+
+import edu.ucab.desarrollo.fitucab.common.*;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.*;
 import java.security.InvalidParameterException;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Arrays;
+
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -55,9 +55,11 @@ public class M06_ServicesTraining
 
     // ArrayList<String> activities revisar esto OJO
     public String createTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  final ArrayList<String> activities,
+                                 @QueryParam( "trainingActivities" )  String _activities,
                                  @QueryParam( "userId" ) int userId )
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity createTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
         CreateTrainingCommand cmd =
@@ -68,9 +70,12 @@ public class M06_ServicesTraining
             Entity result = cmd.getResult();//nuevo
             return gson.toJson( result );//nuevo
         }
-        catch ( Exception e )
+        catch ( AddException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
     }
 
@@ -96,11 +101,17 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( UpdateException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
@@ -120,8 +131,10 @@ public class M06_ServicesTraining
 
     public String addActivitiesToTraining( @QueryParam( "idTraining" ) int id,
                                            @QueryParam( "trainingName" ) String name,
-                                           @QueryParam( "trainingActivities" )  ArrayList<String> activities)
+                                           @QueryParam( "trainingActivities" )  String _activities)
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
         AddActivitiesToTrainingCommand cmd = CommandsFactory.instanciateAddActivitiesToTrainingCmd(updatedTrainingObject);
@@ -129,11 +142,17 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( AddException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
@@ -154,8 +173,10 @@ public class M06_ServicesTraining
 
     public String removeActivitiesToTraining( @QueryParam( "idTraining" ) int id,
                                               @QueryParam( "trainingName" ) String name,
-                                              @QueryParam( "trainingActivities" )  ArrayList<String> activities)
+                                              @QueryParam( "trainingActivities" )  String _activities)
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
         RemoveActivitiesFromTrainingCommand cmd = CommandsFactory.instanciateRemoveActivitiesFromTrainingCmd(updatedTrainingObject);
@@ -163,11 +184,17 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( DeleteException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
@@ -225,11 +252,17 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( DeleteException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
@@ -246,9 +279,11 @@ public class M06_ServicesTraining
      * @return
      */
     public String shareTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  final ArrayList<String> activities,
+                                 @QueryParam( "trainingActivities" ) String _activities,
                                  @QueryParam( "userId" ) int userId )
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity shareTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
         ShareTrainingCommand cmd =
@@ -256,11 +291,17 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( ShareException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
     }
 

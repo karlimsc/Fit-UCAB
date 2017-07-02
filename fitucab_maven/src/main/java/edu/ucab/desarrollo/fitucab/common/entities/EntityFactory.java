@@ -14,6 +14,16 @@ public class EntityFactory
 {
 
     /**
+     * Fabrica para una entidad vacia
+     * @return
+     */
+    static public Entity createEntity(){
+
+        return new Entity();
+
+    }
+
+    /**
      * Metodo que instancia la clase paara crear el objeto user
      *   @param  username
      *   @param  password
