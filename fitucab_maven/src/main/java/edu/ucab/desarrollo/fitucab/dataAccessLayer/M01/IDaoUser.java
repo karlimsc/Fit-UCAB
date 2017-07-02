@@ -14,7 +14,7 @@ import java.sql.SQLException;
 public interface IDaoUser extends IDao {
     String testEmail (String email) throws SQLException;
     Entity login(Entity e) throws SQLException;
-    public boolean update() throws CreateHomeException;
+    public boolean Update() throws CreateHomeException;
     public void UpdateName(String name) throws BdConnectException, SQLException;
     public void UpdateEmail(String email);
     public void UpdatePhone(String phone);

@@ -32,7 +32,7 @@ public class UpdateUserCommand extends Command {
 
         IDaoUser update = DaoFactory.instanceDaoUpdateUser(_id,_username,_phone,_email);
         try {
-            _update = update.update();
+            _update = update.Update();
         } catch (Exception e) {
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
