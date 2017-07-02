@@ -22,7 +22,7 @@ public class DaoTraining extends Dao implements IDaoTraining
     {
             this._entidad = entidad;
     }
-
+    
     public Entity create(Entity e) throws AddException {
 
 
