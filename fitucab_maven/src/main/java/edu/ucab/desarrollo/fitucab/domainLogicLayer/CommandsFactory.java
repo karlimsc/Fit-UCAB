@@ -8,6 +8,10 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.CreatePlanificationCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.DeletePlanificationCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.GetPlanificationByIdCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.UpdatePlanificationCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
@@ -86,6 +90,24 @@ public class CommandsFactory {
     }
     //Fin Modulo 9
 
+    //Modulo 7
 
+    public static CreatePlanificationCommand instanciateCreatePlanificationCmd(Entity create) {
+        return new CreatePlanificationCommand();
+    }
+
+    public static DeletePlanificationCommand instanciateDeletePlanificationCmd(Entity entity) {
+        return new DeletePlanificationCommand();
+    }
+
+    public static GetPlanificationByIdCommand instanciateGetPlanificationByIdCmd(Entity entity) {
+        return new GetPlanificationByIdCommand();
+    }
+
+    public static UpdatePlanificationCommand instanciateUpdatePlanificationCmd(Entity entity) {
+        return new UpdatePlanificationCommand();
+    }
+
+    //fin modulo 7
 }
 

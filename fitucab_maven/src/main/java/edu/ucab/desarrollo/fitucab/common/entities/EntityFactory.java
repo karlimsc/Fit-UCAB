@@ -2,6 +2,9 @@ package edu.ucab.desarrollo.fitucab.common.entities;
 
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
@@ -192,5 +195,15 @@ public class EntityFactory
         return new Active(command);
     }
     //FIN MODULO 9
+
+    public static Entity createPlanification(String startDate, String endDate,
+                                             String startTime, String duration,
+                                             int userId, int sportId,
+                                             boolean ... days){
+
+        return new Planification(LocalDate.parse(startDate),
+                                 LocalDate.parse(endDate),
+                LocalTime.parse(startTime), LocalTime.parse(duration), days, userId, sportId);
+    }
 
 }
