@@ -27,4 +27,9 @@ public class insertPersoFoodCommand extends Command {
         IDaoFood Daofood = DaoFactory.iniciarDaoFood();
         Respuesta = Daofood.insertarPersoFood(_food);
     }
+
+    @Override
+    public Entity Return() {
+        return null;
+    }
 }

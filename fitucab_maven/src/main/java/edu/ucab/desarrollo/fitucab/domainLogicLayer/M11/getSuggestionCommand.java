@@ -28,4 +28,9 @@ public class getSuggestionCommand extends Command{
         Respuesta = Daofood.getSugge(_food);
 
     }
+
+    @Override
+    public Entity Return() {
+        return null;
+    }
 }

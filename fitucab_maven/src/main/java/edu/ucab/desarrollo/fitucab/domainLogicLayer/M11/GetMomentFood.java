@@ -20,4 +20,9 @@ public class GetMomentFood extends Command {
     public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException, BdConnectException {
 
     }
+
+    @Override
+    public Entity Return() {
+        return null;
+    }
 }

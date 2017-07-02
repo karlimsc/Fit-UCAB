@@ -20,4 +20,9 @@ public class InsertOneDiet extends Command {
     public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException, BdConnectException {
         /*Instancias DAO*/
     }
+
+    @Override
+    public Entity Return() {
+        return null;
+    }
 }

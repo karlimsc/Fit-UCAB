@@ -24,4 +24,9 @@ public class getFoodPerCommand extends Command {
         Respuesta = Daofood.getFoodPer(_food);
 
     }
+
+    @Override
+    public Entity Return() {
+        return null;
+    }
 }
