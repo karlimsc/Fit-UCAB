@@ -90,7 +90,8 @@ public class DaoWater extends Dao implements IDaoWater{
             waterList = getWaterList(rs);
         } catch (Exception e) {
             if (e instanceof SQLException) {
-                Water _water = new Water("Error en la conexion a base de datos");
+                Water _water = EntityFactory.createWater();
+                _water.set_error("Error en la conexion a base de datos");
                 waterList.add(_water);
             }
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
@@ -107,7 +108,7 @@ public class DaoWater extends Dao implements IDaoWater{
      * @return Retorna un agua
      */
     public Entity getWater(Entity water) throws SQLException{
-        Water _water = (Water) EntityFactory.createWater();
+        Water _water = EntityFactory.createWater();
         ResultSet rs;
         Water waterEntrada = (Water) water;
         //variables de entrada
@@ -140,7 +141,7 @@ public class DaoWater extends Dao implements IDaoWater{
      * @return Retorna un agua
      */
     public Entity deleteLast(Entity water) throws SQLException{
-        Water _water = (Water) EntityFactory.createWater();
+        Water _water = EntityFactory.createWater();
         ResultSet rs;
         Water waterEntrada = (Water) water;
         //variables de entrada
@@ -185,11 +186,11 @@ public class DaoWater extends Dao implements IDaoWater{
      * @throws SQLException
      */
     public Water addWaterResult(ResultSet rs) throws NullPointerException, SQLException {
-        Water water = null;
+        Water water = EntityFactory.createWater();
         SimpleDateFormat sdf3 = new SimpleDateFormat("hh:mm:ss");
         String hora = sdf3.format(new Date());
         while (rs.next()) {
-            water = new Water();
+
             water.set_cantidad(rs.getInt("res"));
             water.set_time(hora);
         }// end while que recorre la consulta
@@ -212,7 +213,7 @@ public class DaoWater extends Dao implements IDaoWater{
         while(rs.next())
         {
             //se agarran los valores de la consulta y se crea un objeto tipo water
-            water = new Water(_sdf.format(rs.getTimestamp("GLASSTIME")).toString()
+            water = EntityFactory.createWater(_sdf.format(rs.getTimestamp("GLASSTIME")).toString()
                 ,rs.getInt("GLASSTYPE"));
             // se guardan los datos en un arraylist de tipo water
             arrayWater.add(water);
@@ -227,11 +228,11 @@ public class DaoWater extends Dao implements IDaoWater{
      * @throws SQLException
      */
     public Water getWaterItem(ResultSet rs) throws SQLException {
-        Water water = new Water();
+        Water water = EntityFactory.createWater();
         while(rs.next())
         {
             //se agarran los valores de la consulta y se crea un objeto tipo water
-            water = new Water(rs.getInt("sumG")
+            water = EntityFactory.createWater(rs.getInt("sumG")
                     ,rs.getInt("countg"));
             // se guardan los datos en un arraylist de tipo water
         } //end while que recorre la consulta
@@ -240,7 +241,7 @@ public class DaoWater extends Dao implements IDaoWater{
 
 
     public Water deletLastItem(ResultSet rs) throws SQLException {
-        Water water = new Water();
+        Water water = EntityFactory.createWater();
         while(rs.next())
         {
             //se agarran los valores de la consulta y se crea un objeto tipo water
