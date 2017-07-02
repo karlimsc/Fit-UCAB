@@ -2,6 +2,9 @@ package com.fitucab.ds1617b.fitucab.Model;
 
 import com.fitucab.ds1617b.fitucab.Helper.LocalDate;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 /**
  * Created by marvian on 27/05/17.
  */
@@ -17,10 +20,20 @@ import com.fitucab.ds1617b.fitucab.Helper.LocalDate;
         private String _food;
         private String _moment;
         private String _username;
+        public ArrayList<Diet> jsonArray;
+    private Map<String, String> _response;
 
 
         public Diet() {
         }
+
+    public void setResponse(Map<String, String> response) {
+        _response = response;
+    }
+
+    public Map<String, String> getResponse() {
+        return _response;
+    }
 
         public Diet(String moment, LocalDate dateTime, String username) {
 

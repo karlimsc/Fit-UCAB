@@ -23,6 +23,7 @@ public class M11_ServicesMoment {
     private Gson gson = new Gson();
     private String response;
     private ArrayList<Moment> jsonArray;
+    private ArrayList<Moment> jsonArray1;
 
 
     /**
@@ -43,12 +44,17 @@ public class M11_ServicesMoment {
                 jsonArray.get(rs.getRow() - 1).set_description(rs.getString("momento"));
                 jsonArray.get(rs.getRow() - 1).set_id(rs.getInt("momento_id"));
             }
+           jsonArray1= jsonArray;
             response = gson.toJson(jsonArray);
 
         } catch (SQLException e) {
             response =  e.getMessage();
         }
         catch (ParameterNullException e){
+            response = e.getMessage();
+        }
+        catch (Exception e)
+        {
             response = e.getMessage();
         }
 

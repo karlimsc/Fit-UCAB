@@ -34,7 +34,6 @@ import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.Model.Moment;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -230,12 +229,18 @@ public class M11DietFragment extends Fragment {
                 new Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Gson gson = new Gson();
-                        ArrayList<Diet> _caloriashoy = new ArrayList<>();
-                        _caloriashoy = gson.fromJson(response, new TypeToken<ArrayList<Diet>>() {
-                        }.getType());
-                        LlenaCaloriaHoy(_caloriashoy);
+                        try {
+                            Gson gson = new Gson();
+                            Diet aux = gson.fromJson(response, Diet.class);
+                            ArrayList<Diet> _caloriashoy = new ArrayList<>();
+                            _caloriashoy = aux.jsonArray;
 
+                            LlenaCaloriaHoy(_caloriashoy);
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
                     }
                 },
                 new ErrorListener() {
@@ -332,9 +337,9 @@ public class M11DietFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
+                        Moment aux = gson.fromJson(response, Moment.class);
                         ArrayList<Moment> _momento = new ArrayList<>();
-                        _momento = gson.fromJson(response, new TypeToken<ArrayList<Moment>>() {
-                        }.getType());
+                        _momento =  aux.jsonArray;
                         LlenarSpinner(_momento);
 
 
@@ -382,9 +387,11 @@ public class M11DietFragment extends Fragment {
                     public void onResponse(String response) {
 
                         Gson gson = new Gson();
+
                         Map<String, String> respuesta = new HashMap<>();
-                        respuesta = gson.fromJson( response,
-                                new TypeToken<Map<String, String>>(){}.getType() );
+                        Diet aux1 = gson.fromJson( response, Diet.class);
+                        respuesta = aux1.getResponse();
+
                         Toast.makeText( getContext() , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },

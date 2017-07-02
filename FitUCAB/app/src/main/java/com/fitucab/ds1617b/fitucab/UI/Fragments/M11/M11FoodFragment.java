@@ -98,8 +98,9 @@ public class M11FoodFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
+                        Food aux = gson.fromJson(response,Food.class);
                         ArrayList<Food> foods = new ArrayList<>();
-                        foods = gson.fromJson(response, new TypeToken<ArrayList<Food>>(){}.getType());
+                        foods = aux.jsonArray;
                         LlenaTablaAlimentos(foods);
                     }
                 },

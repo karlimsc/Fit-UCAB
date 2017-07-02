@@ -2,6 +2,8 @@ package edu.ucab.desarrollo.fitucab.common.entities;
 
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by jaorr on 22/05/17.
@@ -14,7 +16,17 @@ public class Diet extends Entity{
     private String _food;
     private String _moment;
     private String _username;
+    public ArrayList<Diet> jsonArray;
+    private Map<String, String> _response;
 
+
+    public void setResponse(Map<String, String> response) {
+        _response = response;
+    }
+
+    public Map<String, String> getResponse() {
+        return _response;
+    }
 
     public Diet() {}
 
