@@ -5,8 +5,10 @@ package edu.ucab.desarrollo.fitucab.webService;
 import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
+import org.slf4j.LoggerFactory;
 
 
 import javax.ws.rs.GET;
@@ -23,8 +25,8 @@ import javax.ws.rs.QueryParam;
 @Path("/M10_WaterGlass")
 public class M10_ServicesHidration {
 
-    private Gson _gson = new Gson();
 
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(M10_ServicesHidration.class);
 
     /**
      * Metodo que es llamado a traves del web service para agregar un vaso a la base de dato
@@ -50,11 +52,15 @@ public class M10_ServicesHidration {
         {
             cmd.execute();
 
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {
-            return _gson.toJson(cmd.returned);
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Error: ", error.toString());
+            logger.error("Error: ", error.toString());
+            return cmd.returned;
         }
 
 
@@ -79,11 +85,15 @@ public class M10_ServicesHidration {
         {
             cmd.execute();
 
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {
-            return _gson.toJson(cmd.returned);
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Error: ", error.toString());
+            logger.error("Error: ", error.toString());
+            return cmd.returned;
         }
 
 
@@ -109,46 +119,21 @@ public class M10_ServicesHidration {
         {
             cmd.execute();
 
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {
-            return _gson.toJson(cmd.returned);
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Error: ", error.toString());
+            logger.error("Error: ", error.toString());
+            return cmd.returned;
         }
 
 
 
     }
 
-    /**
-     * falta document
-     * @param dia
-     * @param fkp
-     * @return
-     */
-    @GET
-    @Path("/GetFechaInt")
-    @Produces("application/json")
-    public String GetFechaInt( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
-    {
-
-        Entity WaterObject = EntityFactory.createWater(fkp,dia);
-        GetFechaIntCommand cmd = CommandsFactory.instatiateGetFechaIntCmd(WaterObject);
-
-        try
-        {
-            cmd.execute();
-
-            return _gson.toJson(cmd.returned);
-        }
-        catch ( Exception e )
-        {
-            return _gson.toJson(cmd.returned);
-        }
-
-
-
-    }
 
     /**
      * falta document
@@ -169,44 +154,20 @@ public class M10_ServicesHidration {
         {
             cmd.execute();
 
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {
-            return _gson.toJson(cmd.returned);
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Error: ", error.toString());
+            logger.error("Error: ", error.toString());
+            return cmd.returned;
         }
 
 
     }
 
-    /**
-     * falta documt
-     * @param dia
-     * @param fkp
-     * @return
-     */
-    @GET
-    @Path("/DeletWaterTm")
-    @Produces("application/json")
-    public String DeletWaterTm( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
-    {
-
-        Entity WaterObject = EntityFactory.createWater(fkp,dia);
-        DeletWaterTmCommand cmd = CommandsFactory.instatiateDeletWaterTmCmd(WaterObject);
-
-        try
-        {
-            cmd.execute();
-
-            return _gson.toJson(cmd.returned);
-        }
-        catch ( Exception e )
-        {
-            return _gson.toJson(cmd.returned);
-        }
-
-
-    }
 
     /**
      * falta document
@@ -226,11 +187,15 @@ public class M10_ServicesHidration {
         {
             cmd.execute();
 
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {
-            return _gson.toJson(cmd.returned);
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug("Error: ", error.toString());
+            logger.error("Error: ", error.toString());
+            return cmd.returned;
         }
 
 

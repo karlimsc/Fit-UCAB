@@ -135,8 +135,5 @@ public class DaoGaming extends Dao{
         return null;
     }
 
-    @Override
-    public void Create(Entity e) {
 
-    }
 }

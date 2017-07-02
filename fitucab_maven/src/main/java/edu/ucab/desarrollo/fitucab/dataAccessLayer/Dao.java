@@ -95,6 +95,6 @@ public abstract class Dao implements IDao
     public Entity score(int id){return null;};
     public Entity levelUp(int id){return null;};
 
-    public abstract void Create(Entity e);
+
 
 }

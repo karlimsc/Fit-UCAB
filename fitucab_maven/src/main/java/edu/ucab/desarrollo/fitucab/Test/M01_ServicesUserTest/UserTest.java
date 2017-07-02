@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.Test.M01_Test;
+package edu.ucab.desarrollo.fitucab.Test.M01_ServicesUserTest;
 
 
 import edu.ucab.desarrollo.fitucab.common.entities.User;

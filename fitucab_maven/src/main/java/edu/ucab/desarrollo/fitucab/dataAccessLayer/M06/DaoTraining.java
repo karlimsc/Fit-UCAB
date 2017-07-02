@@ -123,8 +123,5 @@ public class DaoTraining extends Dao implements IDaoTraining
         return null;
     }
 
-    @Override
-    public void Create(Entity e) {
 
-    }
 }

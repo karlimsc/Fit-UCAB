@@ -8,6 +8,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
@@ -139,8 +140,5 @@ public class DaoHome extends Dao implements IDaoHome {
         return null;
     }
 
-    @Override
-    public void Create(Entity e) {
 
-    }
 }

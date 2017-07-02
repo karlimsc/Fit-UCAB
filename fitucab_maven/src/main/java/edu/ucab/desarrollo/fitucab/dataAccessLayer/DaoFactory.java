@@ -3,7 +3,6 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoHome;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoUpdatePerfil;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M06.DaoTraining;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.DaoWater;
@@ -65,9 +64,9 @@ public class DaoFactory
      * @param id
      * @return
      */
-    public static edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoUser instanceDaoUser(int id) {
+    public static DaoUser instanceDaoUser(int id) {
 
-        return new edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoUser(id);
+        return new DaoUser(id);
     }
 
     //MODULO 10
@@ -92,8 +91,8 @@ public class DaoFactory
      * @param email
      * @return DaoUpdatePerfil
      */
-    public static DaoUpdatePerfil instanceDaoUpdateUser(int id, String username, String phone, String email){
-        return new DaoUpdatePerfil(id,username,phone,email);
+    public static DaoUser instanceDaoUpdateUser(int id, String username, String phone, String email){
+        return new DaoUser (id,username,phone,email);
     }
 
 }
