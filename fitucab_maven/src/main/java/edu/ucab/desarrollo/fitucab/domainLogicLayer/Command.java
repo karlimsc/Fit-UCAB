@@ -32,4 +32,8 @@ public abstract class Command
     }
 
     public abstract Entity Return() throws SQLException, CreateHomeException, BdConnectException;
+
+    public Boolean ReturnUpdate() {
+        return null;
+    }
 }

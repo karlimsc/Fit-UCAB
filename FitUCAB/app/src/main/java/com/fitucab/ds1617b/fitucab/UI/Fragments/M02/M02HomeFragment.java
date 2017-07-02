@@ -113,9 +113,11 @@ public class M02HomeFragment extends Fragment {
         });
 
         toAskWebService();
+        toAskWebServiceHome();
 
 
     }
+
     /**
      * VOID toAskWebService que realiza las peticiones al webservice
      *
@@ -125,7 +127,7 @@ public class M02HomeFragment extends Fragment {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             int id= preferences.getInt("idUser",0);
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-            String webUrl= ip.getIp()+"M02Users/"+id;
+            String webUrl= ip.getIp()+"M02Users/"+1;
             Log.i(TAG, "toAskWebService: "+webUrl);
             JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
                 @Override
@@ -160,6 +162,71 @@ public class M02HomeFragment extends Fragment {
             int weight= response.getInt("weight");
             Log.i(TAG, "setJsonView: "+weight);
             _tv_m02_home_peso.setText(weight+" Kg");
+
+
+        }catch (JSONException e){
+            e.printStackTrace();
+        }
+        catch (NullPointerException e){
+
+            e.printStackTrace();
+        }catch (Exception e){
+
+            e.printStackTrace();
+        }
+
+    }
+
+
+    /**
+     * VOID toAskWebServiceHome que realiza las peticiones al webservice
+     *
+     */
+    private void toAskWebServiceHome() {
+        try {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+            int id= preferences.getInt("idUser",0);
+            RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
+            String webUrl= ip.getIp()+"M02Homes/"+1;
+            Log.i(TAG, "toAskWebServiceHome: "+webUrl);
+            JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    Log.i(TAG, "onResponse: "+response.toString());
+                    setJsonViewHome(response);
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.i(TAG, " ERROR"+ error.toString());
+                }
+            });
+            requestQueue.add(jsonrequest);
+        }catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+
+    /**
+     * VOID setJsonViewHome que setea todos los componentes de la vista con los valores
+     * @param response Objeto Json que viene del webservice
+     */
+    private void setJsonViewHome(JSONObject response) {
+        try {
+
+
+
+            int caloria= response.getInt("totalCaloria");
+            int agua = response.getInt("totalAgua");
+            _tv_m02_home_calorias.setText(caloria+"");
+            _tv_m02_home_water.setText(agua+" Vaso(s)");
 
 
         }catch (JSONException e){
