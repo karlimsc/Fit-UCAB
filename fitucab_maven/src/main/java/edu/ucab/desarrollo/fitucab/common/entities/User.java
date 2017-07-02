@@ -84,7 +84,7 @@ public class User extends Entity {
      */
     public User(int id,String user,String password)
     {
-        super.set_errorCode(id);
+        super.set_id(id);
         _username = user;
         _password = password;
 

@@ -5,7 +5,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Water;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
-import edu.ucab.desarrollo.fitucab.webService.Sql;
+//import edu.ucab.desarrollo.fitucab.webService.Sql;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -212,9 +212,10 @@ public class DaoWater extends Dao implements IDaoWater{
      * @throws SQLException
      */
     public ResultSet queryExecute(String query) throws SQLException {
-        Sql _sql = new Sql();
+        /*Sql _sql = new Sql();
         //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-        return _sql.sql(query);
+        return _sql.sql(query);*/
+        return null;
     }
 
     /**

@@ -27,9 +27,8 @@ import java.sql.*;
 import java.util.Properties;
 
 
-/**
- * Created by karo on 24/06/17.
- */
+
+
 public class DaoUser  extends Dao implements IDaoUser {
     //Conexion con la base de datos
 
