@@ -25,7 +25,7 @@ public class CreateTrainingCommand extends Command {
     public void execute() throws AddException {
         try{
             DaoTraining dao = DaoFactory.instanceDaoTraining( _newTraining);
-            this.result = dao.createTraining(_newTraining);//nuevo
+            this.result = dao.create(_newTraining);//nuevo
         }
         catch (AddException ex){
             throw ex;

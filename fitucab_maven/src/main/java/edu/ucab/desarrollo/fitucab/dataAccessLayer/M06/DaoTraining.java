@@ -23,9 +23,7 @@ public class DaoTraining extends Dao implements IDaoTraining
             this._entidad = entidad;
     }
 
-    public Entity create(Entity e) throws AddException { return null; }
-
-    public Entity createTraining(Entity e) throws AddException {
+    public Entity create(Entity e) throws AddException {
 
 
         Training t = (Training) e;

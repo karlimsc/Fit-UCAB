@@ -13,7 +13,6 @@ import java.util.LinkedList;
  */
 public interface IDaoTraining extends IDao {
 
-    public Entity createTraining(Entity e) throws AddException, BdConnectException, SQLException;
     public Boolean delete(Entity e) throws DeleteException;
     public LinkedList<Entity> listAll(Entity e) throws ListAllException;
     public Entity trainingDetail(Entity e) throws ListByIdException;
