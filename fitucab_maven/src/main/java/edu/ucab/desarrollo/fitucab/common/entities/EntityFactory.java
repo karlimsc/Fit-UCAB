@@ -60,6 +60,16 @@ public class EntityFactory
 
     }
 
+    /**
+     * Fabrica para un entranamiento vacio
+     * @return
+     */
+    static public Training createTraining(){
+
+        return new Training();
+
+    }
+
 
 
     /**
