@@ -8,8 +8,7 @@ import edu.ucab.desarrollo.fitucab.common.Registry;
 import edu.ucab.desarrollo.fitucab.common.entities.Activity;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
@@ -64,9 +63,12 @@ public class M06_ServicesTraining
             Entity result = cmd.getResult();//nuevo
             return gson.toJson( result );//nuevo
         }
-        catch ( Exception e )
+        catch ( AddException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
     }
 
@@ -92,11 +94,17 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( UpdateException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
@@ -125,11 +133,17 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( AddException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
@@ -158,11 +172,17 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( DeleteException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
@@ -218,11 +238,17 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( DeleteException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
@@ -248,11 +274,17 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( ShareException e )
         {
-            return gson.toJson( false );
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
     }
 

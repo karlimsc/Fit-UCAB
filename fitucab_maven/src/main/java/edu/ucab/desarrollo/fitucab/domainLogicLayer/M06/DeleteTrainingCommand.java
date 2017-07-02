@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M06;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.exceptions.DeleteException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
@@ -18,13 +19,13 @@ public class DeleteTrainingCommand extends Command {
     {
         return this.result;
     }
-    public void execute() {
+    public void execute() throws DeleteException {
         try{
             DaoTraining dao = DaoFactory.instanceDaoTraining(deleteTrainingObject);
             this.result = dao.delete(deleteTrainingObject);
         }
-        catch(Exception e){
-            //lanzar exception
+        catch (DeleteException ex){
+            throw ex;
         }
     }
 }

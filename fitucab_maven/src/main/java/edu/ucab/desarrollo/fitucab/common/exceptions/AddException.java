@@ -16,7 +16,7 @@ public class AddException extends Exception
      * excepcion personalizada para el agregar
      * @param e
      */
-    public AddException(SQLException e)
+    public AddException(Exception e)
     {
         super( e );
     }

@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M06;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M06.DaoTraining;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
@@ -21,13 +22,13 @@ public class CreateTrainingCommand extends Command {
         return this.result;
     }
 
-    public void execute() {
+    public void execute() throws AddException {
         try{
             DaoTraining dao = DaoFactory.instanceDaoTraining( _newTraining);
             this.result = dao.create(_newTraining);//nuevo
         }
-        catch(Exception e){
-            //lanzar exception
+        catch (AddException ex){
+            throw ex;
         }
     }
 }

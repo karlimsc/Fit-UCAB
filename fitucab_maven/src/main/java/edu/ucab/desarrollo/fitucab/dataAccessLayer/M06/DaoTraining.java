@@ -4,10 +4,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Activity;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Training;
-import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.*;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 
 
@@ -46,13 +43,13 @@ public class DaoTraining extends Dao implements IDaoTraining
 
         }
         catch (SQLException ex) {
-
+            throw new AddException(ex);
         }
         catch (BdConnectException ex) {
-
+            throw new AddException(ex);
         }
         catch (Exception ex) {
-
+            throw new AddException(ex);
         }
 
         for (Entity activity : t.get_activitylist()) {
@@ -68,13 +65,13 @@ public class DaoTraining extends Dao implements IDaoTraining
 
             }
             catch (SQLException ex) {
-                //throw new ExceptionPropia esto se hace en cada Exception
+                throw new AddException(ex);
             }
             catch (BdConnectException ex) {
-
+                throw new AddException(ex);
             }
             catch (Exception ex) {
-
+                throw new AddException(ex);
             }
         }
 
@@ -92,7 +89,7 @@ public class DaoTraining extends Dao implements IDaoTraining
     }
 
 
-    public Boolean delete(Entity e)
+    public Boolean delete(Entity e) throws DeleteException
     {
         Training t = (Training) e;
         String query ="SELECT M06_DELETETRAINING('"+t.get_id()+"')";
@@ -103,13 +100,13 @@ public class DaoTraining extends Dao implements IDaoTraining
             ResultSet rs = st.executeQuery(query);
         }
         catch (SQLException ex) {
-
+            throw new DeleteException(ex);
         }
         catch (BdConnectException ex) {
-
+            throw new DeleteException(ex);
         }
         catch (Exception ex) {
-
+            throw new DeleteException(ex);
         }
         return true;
     }
@@ -147,7 +144,7 @@ public class DaoTraining extends Dao implements IDaoTraining
         return null;
     }
 
-    public Boolean shareTraining( Entity e )
+    public Boolean shareTraining( Entity e ) throws ShareException
     {
         Training t = (Training) e;
         String query ="SELECT M06_CREATETRAINING('"+t.get_userId()+"','"+t.getTrainingName()+"')";
@@ -170,13 +167,13 @@ public class DaoTraining extends Dao implements IDaoTraining
 
         }
         catch (SQLException ex) {
-
+            throw new ShareException(ex);
         }
         catch (BdConnectException ex) {
-
+            throw new ShareException(ex);
         }
         catch (Exception ex) {
-
+            throw new ShareException(ex);
         }
 
         return true;
@@ -224,7 +221,7 @@ public class DaoTraining extends Dao implements IDaoTraining
         return null;
     }
 
-    public Boolean modifyName(Entity e) {
+    public Boolean modifyName(Entity e)  throws UpdateException{
         Training t = (Training) e;
         String query ="SELECT M06_MODIFYNAMETRAINING('"+t.get_id()+"','"+t.getTrainingName()+"')";
 
@@ -237,19 +234,19 @@ public class DaoTraining extends Dao implements IDaoTraining
 
         }
         catch (SQLException ex) {
-
+            throw new UpdateException(ex);
         }
         catch (BdConnectException ex) {
-
+            throw new UpdateException(ex);
         }
         catch (Exception ex) {
-
+            throw new UpdateException(ex);
         }
 
         return true;
     }
 
-    public Boolean addActivities(Entity e) {
+    public Boolean addActivities(Entity e) throws AddException {
 
         try {
             Training t = (Training) e;
@@ -269,19 +266,19 @@ public class DaoTraining extends Dao implements IDaoTraining
 
         }
         catch (SQLException ex) {
-
+            throw new AddException(ex);
         }
         catch (BdConnectException ex) {
-
+            throw new AddException(ex);
         }
         catch (Exception ex) {
-
+            throw new AddException(ex);
         }
 
         return true;
     }
 
-    public Boolean removeActivities(Entity e) {
+    public Boolean removeActivities(Entity e) throws DeleteException{
         try {
             Training t = (Training) e;
             Connection conn = Dao.getBdConnect();
@@ -300,13 +297,13 @@ public class DaoTraining extends Dao implements IDaoTraining
 
         }
         catch (SQLException ex) {
-
+            throw new DeleteException(ex);
         }
         catch (BdConnectException ex) {
-
+            throw new DeleteException(ex);
         }
         catch (Exception ex) {
-
+            throw new DeleteException(ex);
         }
 
         return true;
