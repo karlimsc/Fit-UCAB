@@ -38,42 +38,6 @@ public class M06_ServicesTraining
     Gson gson = new Gson();
 
 
-    //el tipo de instruccion HTTP
-    @POST
-    //el path de la funcion
-    @Path( "/createTraining" )
-    //formato de retorno
-    @Produces( "application/json" )
-
-    /**
-     * Metodo utilizado a traves de web service para agregar un entrenamiento
-     * @param trainingName
-     * @param trainingActivities
-     * @param userId
-     * @return
-     */
-
-    // LinkedList<String> activities revisar esto OJO
-    public String createTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  final LinkedList<String> activities,
-                                 @QueryParam( "userId" ) int userId )
-    {
-        LinkedList<Entity> activitiesList = activityList(activities);
-        Entity createTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
-        CreateTrainingCommand cmd =
-                CommandsFactory.instanciateCreateTrainingCmd( createTrainingObject);
-        try
-        {
-            cmd.execute();
-            Entity result = cmd.getResult();//nuevo
-            return gson.toJson( result );//nuevo
-        }
-        catch ( Exception e )
-        {
-            return gson.toJson( false );
-        }
-    }
-
 
     @POST
     @Path( "/changeTrainingName" )
@@ -106,70 +70,6 @@ public class M06_ServicesTraining
     }
 
 
-    @POST
-    @Path( "/addActivitiesToTraining" )
-    @Produces( "application/json" )
-
-    /**
-     * Metodo utilizado a traves de webservice para agregar actividades a un entranamiento
-     * la base de datos
-     * @param idTraining
-     * @param trainingName
-     * @return
-     */
-
-    public String addActivitiesToTraining( @QueryParam( "idTraining" ) int id,
-                                           @QueryParam( "trainingName" ) String name,
-                                           @QueryParam( "trainingActivities" )  LinkedList<String> activities)
-    {
-        LinkedList<Entity> activitiesList = activityList(activities);
-        Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
-        AddActivitiesToTrainingCommand cmd = CommandsFactory.instanciateAddActivitiesToTrainingCmd(updatedTrainingObject);
-
-        try
-        {
-            cmd.execute();
-            return gson.toJson( true );
-        }
-        catch ( Exception e )
-        {
-            return gson.toJson( false );
-        }
-
-    }
-
-
-    @POST
-    @Path( "/removeActivitiesToTraining" )
-    @Produces( "application/json" )
-
-    /**
-     * Metodo utilizado a traves de webservice para agregar actividades a un entranamiento
-     * la base de datos
-     * @param idTraining
-     * @param trainingName
-     * @return
-     */
-
-    public String removeActivitiesToTraining( @QueryParam( "idTraining" ) int id,
-                                              @QueryParam( "trainingName" ) String name,
-                                              @QueryParam( "trainingActivities" )  LinkedList<String> activities)
-    {
-        LinkedList<Entity> activitiesList = activityList(activities);
-        Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
-        RemoveActivitiesFromTrainingCommand cmd = CommandsFactory.instanciateRemoveActivitiesFromTrainingCmd(updatedTrainingObject);
-
-        try
-        {
-            cmd.execute();
-            return gson.toJson( true );
-        }
-        catch ( Exception e )
-        {
-            return gson.toJson( false );
-        }
-
-    }
 
     @GET
     @Path( "/displayTraining" )
@@ -231,34 +131,6 @@ public class M06_ServicesTraining
 
     }
 
-    @GET
-    @Path( "/shareTraining" )
-    @Produces( "application/json" )
-    /**
-     * Metodo utilizado a traves de web service para compartir un entrenamiento
-     * @param trainingName
-     * @param trainingActivities
-     * @param userId
-     * @return
-     */
-    public String shareTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  final LinkedList<String> activities,
-                                 @QueryParam( "userId" ) int userId )
-    {
-        LinkedList<Entity> activitiesList = activityList(activities);
-        Entity shareTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
-        ShareTrainingCommand cmd =
-                CommandsFactory.instanciateShareTrainingCmd(shareTrainingObject);
-        try
-        {
-            cmd.execute();
-            return gson.toJson( true );
-        }
-        catch ( Exception e )
-        {
-            return gson.toJson( false );
-        }
-    }
 
 
     private LinkedList<Entity> activityList (LinkedList<String> activities){
@@ -317,15 +189,13 @@ public class M06_ServicesTraining
 
     /**
      * Servicio Web que retorna el entrenamiento a detalle
-     * @param userId usuario login
      * @param trainingId entrenamiento elegido
      * @return entrenamiento
      */
     @POST
     @Path( "/getTrainingDetail" )
     @Produces( "application/json" )
-    public String getTrainingDetail( @QueryParam( "userId" ) int userId,
-                                     @QueryParam( "trainingId" ) int trainingId )
+    public String getTrainingDetail(@QueryParam( "trainingId" ) int trainingId )
     {
 
         Entity training = null, commandResult = null;
@@ -334,9 +204,9 @@ public class M06_ServicesTraining
 
         try
         {
-            if ( userId > 0 )
+            if ( trainingId > 0 )
             {
-                training = EntityFactory.createTraining( userId );
+                training = EntityFactory.createTraining( trainingId );
             }
             else
             {
