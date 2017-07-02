@@ -4,6 +4,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.*;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.IDao;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
