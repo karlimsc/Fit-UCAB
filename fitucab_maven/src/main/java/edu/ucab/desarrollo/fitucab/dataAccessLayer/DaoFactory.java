@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M06.DaoTraining;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M07.DaoPlanification;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.DaoWater;
 
@@ -55,4 +56,12 @@ public class DaoFactory
     }
 
     //FIN MODULO 10
+
+    //MODULO 07
+
+    public static DaoPlanification instanciateDaoPlanification() {
+        return new DaoPlanification();
+    }
+
+    //FIN MODULO 07
 }

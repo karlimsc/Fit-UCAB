@@ -256,6 +256,7 @@ public class EntityFactory
     }
     //Fin Modulo 10
 
+    //MODULO 07
     public static Entity createPlanification(String startDate, String endDate,
                                              String startTime, String duration,
                                              int userId, int sportId,
@@ -264,5 +265,26 @@ public class EntityFactory
         return new Planification(LocalDate.parse(startDate), LocalDate.parse(endDate),
                 LocalTime.parse(startTime), LocalTime.parse(duration), days, userId, sportId);
     }
+
+    public static Entity createPlanification(int id, String startDate, String endDate,
+                                             String startTime, String duration,
+                                             int userId, int sportId,
+                                             boolean ... days){
+
+        return new Planification(id, LocalDate.parse(startDate), LocalDate.parse(endDate),
+                LocalTime.parse(startTime), LocalTime.parse(duration), days, userId, sportId);
+    }
+
+    public static Entity createPlanification(int id, int userId){
+
+        return new Planification(id, userId);
+    }
+
+    public static Entity createPlanification(int userId){
+
+        return new Planification(userId);
+    }
+
+    //MODULO 07
 
 }
