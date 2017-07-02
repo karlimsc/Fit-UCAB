@@ -21,9 +21,7 @@ import java.sql.Types;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by elberg on 02/07/17.
- */
+
 
 public class DaoUserTest {
     static Connection conn;

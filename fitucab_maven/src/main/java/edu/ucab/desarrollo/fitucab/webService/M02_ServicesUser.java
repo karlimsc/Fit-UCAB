@@ -25,6 +25,7 @@ public class M02_ServicesUser {
     private StatusMessage _message;
     private Response _response;
     private Entity _user;
+    private Boolean _update;
 
 
     /**
@@ -70,13 +71,38 @@ public class M02_ServicesUser {
      * @throws WebApplicationException
      * @see User
      */
-    @PUT
-    @Path("/{userId}")
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateUser( @PathParam("userId") int id, User user ){
-        /*
-        user.setId(id);
-        if ( _service.updateUser( user ) == false ){
+    /**
+     * Metodo que actualiza al usuario
+     * @param id
+     * @param username
+     * @param phone
+     * @param email
+     * @return
+     */
+    @GET
+    @Path("/userId")
+    public Response updateUser(@QueryParam("id") String id,
+                               @QueryParam("username") String username,
+                               @QueryParam("email") String email,
+                               @QueryParam("phone") String phone) throws ListByIdException, NoSuchMethodException, ListAllException {
+        int _id = Integer.parseInt(id);
+        Command comm = CommandsFactory.instanciateUpdateUserCmd(_id,username,phone,email);
+        try {
+            comm.execute();
+            _update =comm.ReturnUpdate();
+
+
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (ListByIdException e) {
+            e.printStackTrace();
+        } catch (ListAllException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (_update == false ){
             _message = new StatusMessage( 0, "Usuario no actualizado" );
             _response = Response.status( Response.Status.NOT_MODIFIED ).entity( _message ).build();
             throw new WebApplicationException(_response);
@@ -84,8 +110,6 @@ public class M02_ServicesUser {
         _message = new StatusMessage( 1, "Usuario actualizado" );
         _response = Response.status( Response.Status.ACCEPTED ).entity( _message ).build();
         return _response;
-        */
-        return null;
     }
 
 
