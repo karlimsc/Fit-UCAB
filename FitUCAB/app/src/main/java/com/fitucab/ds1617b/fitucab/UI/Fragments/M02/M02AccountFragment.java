@@ -47,7 +47,7 @@ public class M02AccountFragment extends Fragment {
     private String TAG= "FitUCAB";
     private User user =new User();
     private IpStringConnection ip= new IpStringConnection();
-
+    private String identi, email, name, phone;
 
     /**
      * Constructor para crear el fragmento
@@ -88,7 +88,6 @@ public class M02AccountFragment extends Fragment {
         _et_m02_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                user.set_email("odasodkasod");
                 toPutWebService(user);
             }
         });
@@ -153,12 +152,21 @@ public class M02AccountFragment extends Fragment {
 
     private void toPutWebService(User user) {
         try {
+            identi = String.valueOf(user.get_idUser());
+
+            if (user.get_email() != null)
+                email =  user.get_email();
+            if (user.get_username() != null)
+                name = user.get_username();
+            if (user.get_phone() != null)
+                phone = user.get_phone();
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             int id= preferences.getInt("idUser",0);
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-            String webUrl= ip.getIp()+"M02Users/"+id+"&user="+user;
+            String webUrl= ip.getIp()+"M02Users/userId?id="+1+"&username="+name
+                    +"&email="+email+"&phone="+phone;
             Log.i(TAG, "toAskWebService: "+webUrl);
-            JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.PUT, webUrl, new Response.Listener<JSONObject>() {
+            JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
                     Log.i(TAG, "onResponse: "+response.toString());
@@ -194,7 +202,7 @@ public class M02AccountFragment extends Fragment {
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             int id= preferences.getInt("idUser",0);
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-            String webUrl= ip.getIp()+"M02Users/"+id;
+            String webUrl= ip.getIp()+"M02Users/"+1;
             Log.i(TAG, "toAskWebService: "+webUrl);
             JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
                 @Override

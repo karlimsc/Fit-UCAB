@@ -29,6 +29,8 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+
         //Declaracion del Toolbar. si alguien necesita acceder al toolbar en un Fragment
         //debe declarar este atributo como privado y hacerle un Getter.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
