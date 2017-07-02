@@ -1,13 +1,13 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckPasswordEmailCommand;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.UpdateTrainingCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.HomeCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.UserCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
@@ -15,24 +15,62 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Fabrica de comandos
  */
 public class CommandsFactory {
 
     // Comandos LOGIN M01
-    static public CreateUserCommand instanciateCreateUserCmd(Entity user){
+
+    /**
+     * Intancia del CreateUserCommad
+     * @param user Objeto con todos los parametros de User
+     * @return CreateUserCommad con parametro de devolucion user
+     */
+    static public Command instanciateCreateUserCmd(Entity user){
         return new CreateUserCommand(user);
     }
-    static public CheckUserCommand instanciateCheckUserCmd(String user, String password){
-        return new CheckUserCommand(user, password);
+
+    /**
+     * Intancia del RecoverPasswordCommand
+     * @param email String
+     * @return RecoverPasswordCommand con parametro email para la recuperacion de la cuenta
+     */
+    static public Command instanciateRecoverPasswordCmd(String email){
+        return new RecoverPasswordCommand(email);
     }
-    static public CheckPasswordEmailCommand instanciateCheckPasswordEmailCmd(String email){
-        return new CheckPasswordEmailCommand(email);
+
+    /**
+     * Intancia del CheckUserCommand
+     * @param user El usuario a Instanciar
+     * @return CheckUserCommand para vericar el registro del usuario
+     */
+    static public Command instanciateCheckUserCmd(Entity user){
+        return new CheckUserCommand(user);
     }
+
+
+    //MODULO 2
+
+    /**
+     * Metodo que instancia el UserCommand con un id
+     * @param id
+     * @return
+     */
+    static public UserCommand instanciateUserCmd(int id){
+        return new UserCommand(id);
+    }
+
+    /**
+     * Metodo que instancia el HomeCommand con un id
+     * @param id
+     * @return
+     */
+    static public HomeCommand instanciateHomeCmd(int id){
+        return new HomeCommand(id);
+    }
+
+    //FIN MODULO 2
 
     // Comandos M06
 
@@ -70,23 +108,21 @@ public class CommandsFactory {
     }
 
     //Modulo 9
-    static public AchieveChallengeCommand instanciateAchieveChallengeCmd(int id){
-        return new AchieveChallengeCommand(id);
+    static public Command instanciateAchieveChallengeCmd(int id, Dao dao){
+        return new AchieveChallengeCommand(id, dao);
     }
 
-    static public ScoreCommand instanciateScoreCmd(int id){
-        return new ScoreCommand(id);
+    static public Command instanciateScoreCmd(int id, Dao dao){
+        return new ScoreCommand(id, dao);
     }
 
-    static public FillChartCommand instanciateFillChartCmd(int id){
-        return new FillChartCommand(id);
+    static public Command instanciateFillChartCmd(int id, Dao dao){
+        return new FillChartCommand(id, dao);
     }
 
-    static public LevelUpCommand instanciateLevelUpCmd(int id){
-        return new LevelUpCommand(id);
+    static public Command instanciateLevelUpCmd(int id, Dao dao){
+        return new LevelUpCommand(id, dao);
     }
-
-    static  public List<Entity> getChallenges(){return new ArrayList<Entity>();}
     //Fin Modulo 9
 
     //Inicio Modulo 10
@@ -140,7 +176,6 @@ public class CommandsFactory {
 
     //Fin Modulo 10
 
-
     //Modulo11
 
     static public getFoodPerCommand getFoodPerCmd(Entity Food){ return new getFoodPerCommand(Food); }
@@ -162,5 +197,9 @@ public class CommandsFactory {
 
     static public getPersonalizedListCommand getPersoFoodCmd (Entity Food) {return new getPersonalizedListCommand(Food);}
 
+
 }
+
+
+
 

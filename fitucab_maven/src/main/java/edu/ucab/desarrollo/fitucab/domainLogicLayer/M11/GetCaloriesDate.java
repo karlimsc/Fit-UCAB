@@ -21,4 +21,9 @@ public class GetCaloriesDate extends Command
     public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException, BdConnectException {
         /*Instanciación de DAO*/
     }
+
+    @Override
+    public Entity Return() {
+        return null;
+    }
 }

@@ -12,8 +12,12 @@ import java.util.ArrayList;
  */
 public interface IDaoWater extends IDao{
 
-    public Entity addWater(Entity e) throws SQLException;
-    public ArrayList<Water> getList (Entity e);
-    public Entity getWater(Entity e);
+
+    public Entity create(Entity e) throws SQLException;
+    public ArrayList<Water> getList (Entity e)  throws  SQLException;
+    public Entity getWater(Entity e)  throws  SQLException;
+    public Entity getFechaInt(Entity e)  throws  SQLException;
+    public Entity deleteLast(Entity e)  throws  SQLException;
+    public Entity deleteWaterTm(Entity e)  throws  SQLException;
 
 }

@@ -31,4 +31,9 @@ public class updatePersoCommand extends Command {
 
 
     }
+
+    @Override
+    public Entity Return() {
+        return null;
+    }
 }

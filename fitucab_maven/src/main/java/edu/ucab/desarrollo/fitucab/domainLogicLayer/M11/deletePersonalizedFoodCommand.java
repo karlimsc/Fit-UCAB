@@ -28,4 +28,9 @@ public class deletePersonalizedFoodCommand extends Command {
 
 
     }
+
+    @Override
+    public Entity Return() {
+        return null;
+    }
 }

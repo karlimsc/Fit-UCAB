@@ -20,7 +20,7 @@ public abstract class Command
      * @throws ListAllException excepcion para listar todos
      * @throws ListByIdException excepcion para listar por id
      */
-    public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException, BdConnectException;
+    public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception;
 
     public List<Entity> getChallenges(){
         return null;
@@ -30,4 +30,5 @@ public abstract class Command
         return null;
     }
 
+    public abstract Entity Return();
 }

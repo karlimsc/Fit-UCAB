@@ -27,4 +27,9 @@ public class insertUnAlimentoCommand extends Command {
         IDaoFood Daofood = DaoFactory.iniciarDaoFood();
         Respuesta = Daofood.InsertarAlimen(_food);
     }
+
+    @Override
+    public Entity Return() {
+        return null;
+    }
 }

@@ -30,4 +30,9 @@ public class getPersonalizedListCommand extends Command {
         IDaoFood Daofood = DaoFactory.iniciarDaoFood();
         Respuesta = Daofood.getPersonalizedLis(_food);
     }
+
+    @Override
+    public Entity Return() {
+        return null;
+    }
 }

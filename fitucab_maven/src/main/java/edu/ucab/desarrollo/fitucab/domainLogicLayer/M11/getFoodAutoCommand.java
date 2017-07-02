@@ -30,4 +30,9 @@ public class getFoodAutoCommand extends Command {
 
 
     }
+
+    @Override
+    public Entity Return() {
+        return null;
+    }
 }
