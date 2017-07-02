@@ -25,7 +25,7 @@ import javax.ws.rs.QueryParam;
 @Path("/M10_WaterGlass")
 public class M10_ServicesHidration {
 
-    private Gson _gson = new Gson();
+
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M10_ServicesHidration.class);
 
     /**
@@ -52,7 +52,7 @@ public class M10_ServicesHidration {
         {
             cmd.execute();
 
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {
@@ -60,7 +60,7 @@ public class M10_ServicesHidration {
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Error: ", error.toString());
             logger.error("Error: ", error.toString());
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
 
 
@@ -85,7 +85,7 @@ public class M10_ServicesHidration {
         {
             cmd.execute();
 
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {
@@ -93,7 +93,7 @@ public class M10_ServicesHidration {
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Error: ", error.toString());
             logger.error("Error: ", error.toString());
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
 
 
@@ -119,7 +119,7 @@ public class M10_ServicesHidration {
         {
             cmd.execute();
 
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {
@@ -127,46 +127,13 @@ public class M10_ServicesHidration {
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Error: ", error.toString());
             logger.error("Error: ", error.toString());
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
 
 
 
     }
 
-    /**
-     * falta document
-     * @param dia
-     * @param fkp
-     * @return
-     */
-    @GET
-    @Path("/GetFechaInt")
-    @Produces("application/json")
-    public String GetFechaInt( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
-    {
-
-        Entity WaterObject = EntityFactory.createWater(fkp,dia);
-        GetFechaIntCommand cmd = CommandsFactory.instatiateGetFechaIntCmd(WaterObject);
-
-        try
-        {
-            cmd.execute();
-
-            return _gson.toJson(cmd.returned);
-        }
-        catch ( Exception e )
-        {
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
-            logger.error("Error: ", error.toString());
-            return _gson.toJson(cmd.returned);
-        }
-
-
-
-    }
 
     /**
      * falta document
@@ -187,7 +154,7 @@ public class M10_ServicesHidration {
         {
             cmd.execute();
 
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {
@@ -195,44 +162,12 @@ public class M10_ServicesHidration {
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Error: ", error.toString());
             logger.error("Error: ", error.toString());
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
 
 
     }
 
-    /**
-     * falta documt
-     * @param dia
-     * @param fkp
-     * @return
-     */
-    @GET
-    @Path("/DeletWaterTm")
-    @Produces("application/json")
-    public String DeletWaterTm( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
-    {
-
-        Entity WaterObject = EntityFactory.createWater(fkp,dia);
-        DeletWaterTmCommand cmd = CommandsFactory.instatiateDeletWaterTmCmd(WaterObject);
-
-        try
-        {
-            cmd.execute();
-
-            return _gson.toJson(cmd.returned);
-        }
-        catch ( Exception e )
-        {
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
-            logger.error("Error: ", error.toString());
-            return _gson.toJson(cmd.returned);
-        }
-
-
-    }
 
     /**
      * falta document
@@ -252,7 +187,7 @@ public class M10_ServicesHidration {
         {
             cmd.execute();
 
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {
@@ -260,7 +195,7 @@ public class M10_ServicesHidration {
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug("Error: ", error.toString());
             logger.error("Error: ", error.toString());
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
 
 

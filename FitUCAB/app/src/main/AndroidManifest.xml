@@ -27,11 +27,11 @@
             android:name=".UI.Activities.M01LoginActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <!-- FIN ACTIVITIES MODULO 1 -->
 
@@ -70,6 +70,11 @@
             android:name=".UI.Activities.M10WaterGlassActivity"
             android:label="@string/title_activity_m10_water_glass"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             android:screenOrientation="portrait"
         </activity>
         <activity

@@ -133,36 +133,6 @@ public class DaoWater extends Dao implements IDaoWater{
     }
 
 
-    /**
-     * Metodo que devuelve la fecha en formato int
-     * @param water
-     * @return Retorna un agua
-     */
-    public Entity getFechaInt(Entity water) throws SQLException{
-        Water _water = (Water) EntityFactory.createWater();
-        ResultSet rs;
-        Water waterEntrada = (Water) water;
-        //variables de entrada
-        String dia = waterEntrada.get_time();
-        int fkp = waterEntrada.get_fkPerson();
-        //fin variables de entrada
-
-        try {
-            //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-            rs = queryExecute("Select * from M10_Fechainter ("+fkp+" ,'"+dia+"')");
-            _water = getFechaIntItem(rs);
-        } catch (Exception e) {
-            if (e instanceof SQLException)
-                _water.set_error("Error en la conexion a base de datos");
-
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error.toString());
-        } finally {
-            return _water;
-        }
-
-    }
 
     /**
      * Metodo que elimina la ultima agua
@@ -193,40 +163,6 @@ public class DaoWater extends Dao implements IDaoWater{
         }
 
     }
-
-    /**
-     * Metodo que elimina el agua de un dia
-     * @param water
-     * @return Retorna un agua
-     */
-    public Entity deleteWaterTm(Entity water) throws SQLException{
-        Water _water = (Water) EntityFactory.createWater();
-        ResultSet rs;
-        Water waterEntrada = (Water) water;
-        //variables de entrada
-        String dia = waterEntrada.get_time();
-        int fkp = waterEntrada.get_fkPerson();
-        //fin variables de entrada
-
-        try {
-            //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
-            rs = queryExecute("Select * from M10_DeletWaterTm('"+dia+"' ,"+fkp+")");
-            _water = deletWaterTmItem(rs);
-        } catch (Exception e) {
-            if (e instanceof SQLException)
-                _water.set_error("Error en la conexion a base de datos");
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error.toString());
-        } finally {
-            return _water;
-        }
-
-    }
-
-
-
-
 
 
     /**
@@ -302,31 +238,6 @@ public class DaoWater extends Dao implements IDaoWater{
         return water;
     }
 
-    /**
-     * Metodo que retorna un fechaInt
-     * @param rs
-     * @return Retorna un agua
-     * @throws SQLException
-     */
-    public Water getFechaIntItem(ResultSet rs) throws SQLException {
-        SimpleDateFormat _sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
-        ArrayList<Water> _array = new ArrayList();
-        Water water = new Water();
-
-        while(rs.next())
-        {
-            //se agarran los valores de la consulta y se crea un objeto tipo water
-
-
-            water = new Water (_sdf.format(rs.getDate("GLASSTIME")).toString(),
-                    rs.getInt("sumg"),rs.getInt("count"));
-
-            // se guardan los datos en un arraylist de tipo water
-            _array.add(water);
-
-        } //end while que recorre la consulta
-        return water;
-    }
 
     public Water deletLastItem(ResultSet rs) throws SQLException {
         Water water = new Water();
@@ -339,16 +250,6 @@ public class DaoWater extends Dao implements IDaoWater{
         return water;
     }
 
-    public Water deletWaterTmItem(ResultSet rs) throws SQLException {
-        Water water = new Water();
-        while(rs.next())
-        {
-            //se agarran los valores de la consulta y se crea un objeto tipo water
-            water.set_cantidad(rs.getInt("res"));
-
-        }
-        return water;
-    }
 
     public Entity read(Entity e) {
         return null;

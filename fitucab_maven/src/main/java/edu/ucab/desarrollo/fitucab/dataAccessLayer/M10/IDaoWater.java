@@ -14,8 +14,7 @@ public interface IDaoWater extends IDao{
     public Entity create(Entity e) throws SQLException;
     public ArrayList<Water> getList (Entity e)  throws  SQLException;
     public Entity getWater(Entity e)  throws  SQLException;
-    public Entity getFechaInt(Entity e)  throws  SQLException;
     public Entity deleteLast(Entity e)  throws  SQLException;
-    public Entity deleteWaterTm(Entity e)  throws  SQLException;
+
 
 }
