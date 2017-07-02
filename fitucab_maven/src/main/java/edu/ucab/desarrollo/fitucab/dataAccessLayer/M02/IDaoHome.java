@@ -4,7 +4,9 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 
 /**
- * Created by root on 29/06/17.
+ * Interfaz de la clase DAO Home para el manejo de la Entidad Home.
+ * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+ * @version 1.0
  */
 public interface IDaoHome {
 

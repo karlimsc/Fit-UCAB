@@ -7,7 +7,7 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.IDao;
 import java.util.Date;
 
 /**
- * Interfaz de la clase DAO para el manejo de la Entidad User.
+ * Interfaz de la clase DAO User para el manejo de la Entidad User.
  * @author Juan Macedo, Cesar Boza, Bryan Teixeira
  * @version 1.0
  */
