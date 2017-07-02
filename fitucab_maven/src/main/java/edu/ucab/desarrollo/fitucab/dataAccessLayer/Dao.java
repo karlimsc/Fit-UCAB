@@ -1,11 +1,14 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 
 import edu.ucab.desarrollo.fitucab.common.Registry;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
+import java.util.List;
 
 /**
  * Patron Data Access Object
@@ -23,6 +26,25 @@ public abstract class Dao implements IDao
     private ResultSet _rs;
 
     /**
+     * Metodo para devolver una unica instancia de la conexion
+     * @return instancia de la conexion
+     */
+    public static Connection getConInstance() {
+
+        try {
+            conInstance = getBdConnect();
+        }catch (BdConnectException e){
+            MessageException error = new MessageException(e, Dao.class.getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error.toString());
+        }
+
+        return conInstance;
+    }
+
+
+
+    /**
      * Metodo que realiza la conexion con la base de datos
      * @return Conexion hecha a la base de datos
      * @throws ClassNotFoundException Si la clase no es encontrada
@@ -31,7 +53,7 @@ public abstract class Dao implements IDao
      * @see Connection
      * @see Statement
      */
-    protected static Connection getBdConnect() throws BdConnectException
+    public static Connection getBdConnect() throws BdConnectException
     {
 
         try
@@ -67,5 +89,10 @@ public abstract class Dao implements IDao
             logger.error( "Metodo: {} {}", "getBdConnect", e.toString() );
         }
     }
+
+    public void achieveChallenge(int id, List<Entity> challenges){};
+    public Entity fillChart(int id){return null;};
+    public Entity score(int id){return null;};
+    public Entity levelUp(int id){return null;};
 
 }
