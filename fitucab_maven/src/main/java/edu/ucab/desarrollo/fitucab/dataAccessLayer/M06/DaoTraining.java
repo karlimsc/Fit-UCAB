@@ -125,7 +125,7 @@ public class DaoTraining extends Dao implements IDaoTraining
     {
         LinkedList<Entity> resultList = null;
         Training entity;
-        PreparedStatement preStatement = null;
+        CallableStatement preStatement = null;
         ResultSet resultSet = null;
         Connection conn;
 
@@ -135,7 +135,7 @@ public class DaoTraining extends Dao implements IDaoTraining
             conn = getBdConnect();
 
             //Aqui se invoca el SP
-            preStatement = conn.prepareStatement( "{call M06_GET_TRAININGS(?)}" );
+            preStatement = conn.prepareCall( "{call M06_GET_TRAININGS(?)}" );
             //Aqui meto los parametros
             preStatement.setInt( 1, entidad.get_id() );
             //Aqui ejecuto el SP
@@ -189,7 +189,7 @@ public class DaoTraining extends Dao implements IDaoTraining
 
         Training entity = null;
         User userId = null;
-        PreparedStatement preStatement = null;
+        CallableStatement preStatement = null;
         ResultSet resultSet = null;
         EntityMapTraining etMap;
 
@@ -201,13 +201,13 @@ public class DaoTraining extends Dao implements IDaoTraining
             if( entity == null )
             {
                 // Aqui se invoca el SP
-                CallableStatement test = getBdConnect().prepareCall( "{ call M06_GET_TRAINING_DETAILS(?) }" );
+                preStatement = getBdConnect().prepareCall( "{ call M06_GET_TRAINING_DETAILS(?) }" );
                 // Aqui meto los parametros
                 entity = (Training) entidad;
                 //preStatement.setInt( 1, entidad.get_id() );
-                test.setInt(1, entidad.get_id());
+                preStatement.setInt(1, entidad.get_id());
                 //Aqui ejecuto el SP
-                resultSet = test.executeQuery();
+                resultSet = preStatement.executeQuery();
 
                 int id = resultSet.getInt( "training_id" );
                 String name = resultSet.getString( "training_name" );
