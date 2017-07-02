@@ -11,7 +11,7 @@ public class DaoFactory
 
     /**
      * metodo para instanciar el dao de entrenamiento
-     * @param entidad
+     * @param
      * @return dao de entrenamiento
      */
     public static DaoTraining instanceDaoTraining( Entity entity )
