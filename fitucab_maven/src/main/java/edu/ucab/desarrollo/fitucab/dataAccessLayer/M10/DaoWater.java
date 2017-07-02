@@ -33,7 +33,7 @@ public class DaoWater extends Dao implements IDaoWater{
      */
 
     public Entity create(Entity water) throws  SQLException{
-        Water _water = (Water) EntityFactory.createWater();
+        Water _water = EntityFactory.createWater();
         Water waterEntrada = (Water) water;
 
         SimpleDateFormat _sdf3 = new SimpleDateFormat("hh:mm:ss");
@@ -42,9 +42,9 @@ public class DaoWater extends Dao implements IDaoWater{
         String hora = _sdf3.format(fecha);
         ResultSet rs;
         //variables de entrada
-            String dia = _sdf2.format(fecha);
-            int glassType = waterEntrada.get_glasstype();
-                int fkp = waterEntrada.get_fkPerson();
+        String dia = _sdf2.format(fecha);
+        int glassType = waterEntrada.get_glasstype();
+        int fkp = waterEntrada.get_fkPerson();
         //fin variables de entrada
         try {
             //llamo a la funcion sql para que se conecte a la base de dato y traiga la consulta
@@ -270,7 +270,7 @@ public class DaoWater extends Dao implements IDaoWater{
      * @throws SQLException
      */
     public ArrayList<Water> getWaterList(ResultSet rs) throws SQLException {
-        Water water = null;
+        Water water;
         ArrayList<Water> arrayWater = new ArrayList();
         SimpleDateFormat _sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
         while(rs.next())

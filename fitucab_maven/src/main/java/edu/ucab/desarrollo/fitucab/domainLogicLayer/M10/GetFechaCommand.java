@@ -31,20 +31,18 @@ public class GetFechaCommand extends Command {
     public void execute() {
         Gson gson = new Gson();
 
-        GetWaterCommand cmd = CommandsFactory.instatiateGetWaterCmd(_water);
-
-        Water _water = (Water) EntityFactory.createWater();
+        Water watergGetWater = (Water) _water;
 
 
+        SimpleDateFormat _sdf2 = new SimpleDateFormat("MM/dd/yyyy");
+        Date fecha = new Date();
+        watergGetWater.set_time(_sdf2.format(fecha));
+        GetWaterCommand cmd = CommandsFactory.instatiateGetWaterCmd(watergGetWater);
 
         cmd.execute();
 
         _water = gson.fromJson(cmd.returned,Water.class);
-
-        SimpleDateFormat _sdf2 = new SimpleDateFormat("MM/dd/yyyy");
-        Date fecha = new Date();
-        _water.set_time(_sdf2.format(fecha));
-
+        ((Water) _water).set_time(_sdf2.format(fecha));
         returned = gson.toJson(_water);
 
     }

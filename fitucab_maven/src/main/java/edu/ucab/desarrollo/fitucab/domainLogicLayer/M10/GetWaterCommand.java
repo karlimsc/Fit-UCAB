@@ -1,5 +1,6 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M10;
 
+import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.Water;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
@@ -29,8 +30,8 @@ public class GetWaterCommand extends Command {
         try {
 
             Water water = (Water) daoWater.getWater(_water);
-
-            returned = water.get_time()+","+water.get_suma()+","+water.get_cantidad();
+            Gson gson = new Gson();
+            returned = gson.toJson(water);
 
         } catch (SQLException e) {
 

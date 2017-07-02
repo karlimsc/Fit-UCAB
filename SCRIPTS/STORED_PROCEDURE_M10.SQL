@@ -49,7 +49,7 @@ BEGIN
  
 
     delete from glass_historic where glasshistoricid =
-    ( Select max(glasshistoricid) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm);
+    ( Select max(glasshistoricid) from glass_historic where fk_person = fkp and Date(GLASSTIME) = Date (tm));
 
 
 
