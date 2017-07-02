@@ -13,8 +13,6 @@ public class IpStringConnection {
     public IpStringConnection() {
 
         this._ip = "http://192.168.1.9:8080/fitucab/";
-
-
     }
 
     public String getIp() {

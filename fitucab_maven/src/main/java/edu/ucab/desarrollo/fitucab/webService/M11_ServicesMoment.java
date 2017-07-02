@@ -1,14 +1,22 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
 
-
 import com.google.gson.Gson;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ParameterNullException;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Moment;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.MomentCommand;
 
-import javax.ws.rs.*;
-import java.sql.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 
@@ -23,6 +31,8 @@ public class M11_ServicesMoment {
     private Gson gson = new Gson();
     private String response;
     private ArrayList<Moment> jsonArray;
+    private ArrayList<Moment> jsonArray1;
+    private  Entity respuesta ;
 
 
     /**
@@ -33,65 +43,31 @@ public class M11_ServicesMoment {
     @Produces("application/json")
     public String obtenerMomentos() {
 
-        String query = "Select * from m11_get_momentos()";
-        jsonArray = new ArrayList<>();
+
+        Entity EntityMoment = EntityFactory.getMoments();
+        MomentCommand cmd = CommandsFactory.getMoment(EntityMoment);
+
         try {
-            PreparedStatement st = conn.prepareStatement(query);
-            ResultSet rs = st.executeQuery();
-            while(rs.next()) {
-                jsonArray.add(new Moment());
-                jsonArray.get(rs.getRow() - 1).set_description(rs.getString("momento"));
-                jsonArray.get(rs.getRow() - 1).set_id(rs.getInt("momento_id"));
-            }
-            response = gson.toJson(jsonArray);
+            cmd.execute();
+            respuesta = (Moment) cmd.Respuesta;
 
+        } catch (ListAllException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (ListByIdException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (NoSuchMethodException e) {
+            respuesta .set_errorMsg(e.getMessage());
         } catch (SQLException e) {
-            response =  e.getMessage();
-        }
-        catch (ParameterNullException e){
-            response = e.getMessage();
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (BdConnectException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (Exception e) {
+            respuesta .set_errorMsg(e.getMessage());
         }
 
-        finally {
-            Sql.bdClose(conn);
-            return response;
-        }
+
+        return gson.toJson(respuesta);
     }
 
-    //esto no va a aqui , se puso momentaneamente.
-    public Connection bdConnect()
-    {
-        Connection conn = null;
-        try
-        {
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost/FitUcabDB";
-            conn = DriverManager.getConnection(url,"fitucab", "fitucab");
-        }
-        catch (ClassNotFoundException e)
-        {
-            e.printStackTrace();
-            bdClose();
-            System.exit(1);
-        }
-        catch (SQLException e)
-        {
-            e.printStackTrace();
-            bdClose();
-            System.exit(2);
-        }
-        return conn;
-    }
 
-    public int bdClose(){
-        try{
-            conn.close();
-        }
-
-        catch (SQLException e) {
-            System.out.println("fallo cerrar");
-            System.exit( 0);
-        }
-        return 1;
-    }
 }

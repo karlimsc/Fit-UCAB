@@ -3,28 +3,20 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M11;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.DialogFragment;
-import android.app.FragmentManager;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
@@ -32,10 +24,6 @@ import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -195,9 +183,10 @@ public class M11FooddialogFragment extends DialogFragment {
                     public void onResponse(String response) {
 
                         Gson gson = new Gson();
+                        Food auu3=gson.fromJson( response,Food.class);
                         Map<String, String> respuesta = new HashMap<>();
-                        respuesta = gson.fromJson( response,
-                                new TypeToken<Map<String, String>>(){}.getType() );
+                        respuesta = auu3.getResponse();
+
                         Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },
@@ -232,11 +221,11 @@ public class M11FooddialogFragment extends DialogFragment {
         int idUser = 0;
         idUser = ManagePreferences.getIdUser(inflater);
         if (_chbx_m11_cena.isChecked())
-            foodJson.get(0).set_FoodDinner(true);
-        else foodJson.get(0).set_FoodDinner(false);
+            foodJson.get(0).set_foodPersonalized(true);
+        else foodJson.get(0).set_foodPersonalized(false);
         jsonURL.set_ip( jsonURL.getIp() + "M11_Food/insertOnePersonalizedFood?foodName="+
                 get_nombreAlimento() + "&foodCalorie=" + get_caloriasAlimento() + "&foodWeight=" +
-                get_pesoAlimento() + "&foodDinner=" + foodJson.get(0).get_FoodDinner() +
+                get_pesoAlimento() + "&foodDinner=" + foodJson.get(0).get_foodPersonalized() +
                 "&idUser=" + idUser );
         StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
                 new Response.Listener<String>() {
@@ -244,8 +233,9 @@ public class M11FooddialogFragment extends DialogFragment {
                     public void onResponse(String response) {
                         Gson gson = new Gson();
                         Map<String, String> respuesta = new HashMap<>();
-                        respuesta = gson.fromJson( response,
-                                new TypeToken<Map<String, String>>(){}.getType() );
+                        Food l = gson.fromJson( response,Food.class);
+                        respuesta = l.getResponse();
+
                         Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },

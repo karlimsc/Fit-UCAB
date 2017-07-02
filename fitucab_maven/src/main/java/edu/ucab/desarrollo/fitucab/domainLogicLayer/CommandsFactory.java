@@ -197,7 +197,7 @@ public class CommandsFactory {
 
     static public getPersonalizedListCommand getPersoFoodCmd (Entity Food) {return new getPersonalizedListCommand(Food);}
 
-
+    static public MomentCommand getMoment (Entity Moment) {return  new MomentCommand(Moment);}
 }
 
 

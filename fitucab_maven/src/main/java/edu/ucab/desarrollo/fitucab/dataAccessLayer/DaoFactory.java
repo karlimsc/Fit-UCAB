@@ -7,6 +7,7 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.M06.DaoTraining;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.DaoWater;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoFood;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoMoment;
 
 /**
  * Fabrica para instanciar los DAO
@@ -79,6 +80,8 @@ public class DaoFactory
     //Modulo11
 
     public static DaoFood iniciarDaoFood(){return new DaoFood();}
+
+    public static DaoMoment iniciarDaoMoment(){return  new DaoMoment();}
 
 
 }
