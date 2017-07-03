@@ -39,7 +39,7 @@ public class M06_ServicesTraining
     Gson gson = new Gson();
 
     //el tipo de instruccion HTTP
-    @POST
+    @GET
     //el path de la funcion
     @Path( "/createTraining" )
     //formato de retorno

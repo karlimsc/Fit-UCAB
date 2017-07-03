@@ -31,7 +31,7 @@ public class DaoTraining extends Dao implements IDaoTraining
 
 
         Training t = (Training) e;
-        String query ="SELECT M06_CREATETRAINING('"+t.get_userId()+"','"+t.getTrainingName()+"')";
+        String query ="SELECT * FROM M06_CREATETRAINING('"+t.getTrainingName()+"','"+t.get_userId()+"')";
 
         try {
             Connection conn = Dao.getBdConnect();
@@ -41,7 +41,7 @@ public class DaoTraining extends Dao implements IDaoTraining
 
 
             while (rs.next()) {
-                int Id = rs.getInt("id");
+                int Id = rs.getInt("M06_CREATETRAINING");
                 e.set_id(Id);
             }
 
@@ -71,7 +71,7 @@ public class DaoTraining extends Dao implements IDaoTraining
         for (Entity activity : t.get_activitylist()) {
             Activity a = (Activity) activity;
             String _query =
-                    "SELECT M06_ADDTRAINING_ACTIVITY('" + a.get_duration() + "', '" + e.get_id() + "', '" + a.get_id() + ")";
+                    "SELECT M06_ADDTRAINING_ACTIVITY('" + a.get_duration() + "', '" + e.get_id() + "', '" + a.get_id() + "')";
             try {
 
                 Connection conn = Dao.getBdConnect();
