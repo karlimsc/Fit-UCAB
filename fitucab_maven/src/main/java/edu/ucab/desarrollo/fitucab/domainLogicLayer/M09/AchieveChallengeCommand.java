@@ -35,7 +35,6 @@ public class AchieveChallengeCommand extends Command {
         return _challenges;
     }
 
-    //TODO: Falta execute
     public void execute() throws NoSuchMethodException {
         try {
             ((DaoGaming) _dao).achieveChallenge(_userId, _challenges);

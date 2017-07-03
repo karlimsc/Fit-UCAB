@@ -31,7 +31,6 @@ public class LevelUpCommand extends Command {
         return _level;
     }
 
-    //TODO: Falta execute
     public void execute() throws NoSuchMethodException {
         try{
             _level = ((DaoGaming) _dao).levelUp(_userId);
