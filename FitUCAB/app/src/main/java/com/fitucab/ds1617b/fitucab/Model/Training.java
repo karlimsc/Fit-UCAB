@@ -38,6 +38,24 @@ public class Training implements Parcelable {
         this._trainingName = _trainingName;
     }
 
+    protected Training(Parcel in) {
+        _trainingId = in.readInt();
+        _trainingName = in.readString();
+        _trainingOrderInView = in.readInt();
+    }
+
+    public static final Creator<Training> CREATOR = new Creator<Training>() {
+        @Override
+        public Training createFromParcel(Parcel in) {
+            return new Training(in);
+        }
+
+        @Override
+        public Training[] newArray(int size) {
+            return new Training[size];
+        }
+    };
+
     public int get_trainingId() {
         return _trainingId;
     }
