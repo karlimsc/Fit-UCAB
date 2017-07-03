@@ -11,14 +11,13 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.Types;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 
 
