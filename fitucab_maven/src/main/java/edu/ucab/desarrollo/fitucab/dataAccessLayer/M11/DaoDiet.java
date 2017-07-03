@@ -2,17 +2,17 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M11;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import edu.ucab.desarrollo.fitucab.common.Validations.ValidationWS;
 import edu.ucab.desarrollo.fitucab.common.entities.Diet;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
-import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ParameterNullException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 
 import java.lang.reflect.Type;
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
@@ -57,12 +57,18 @@ public class DaoDiet extends Dao implements IDaoDiet {
         jsonArray = new ArrayList<>();
         Diet diet = (Diet) e;
         date = String.valueOf(diet.get_date());
-        username = String.valueOf(diet.get_id());
+        username = diet.get_username();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-dd-mm");
+        java.util.Date today = new java.util.Date();
+        Date date1 = new Date(today.getTime());
+
+       // String a = dateFormat.format(cal.getTime());
 
         Connection conn = Dao.getBdConnect();
-        PreparedStatement stm = conn.prepareStatement(query);
+        CallableStatement stm = conn.prepareCall("{? = Call m11_get_calorias_fecha(?) }");
 
-        stm.setDate(1, Date.valueOf(date));
+
+        stm.setDate(1, date1);
         stm.setString(2, username);
         ResultSet rs = stm.executeQuery();
         //La variable donde se almacena el resultado de la consulta.
@@ -83,15 +89,16 @@ public class DaoDiet extends Dao implements IDaoDiet {
 
     public Entity deleteDiet(Entity e) throws SQLException, BdConnectException {
 
-
+        Diet diet = (Diet) e;
         Map<String, String> response = new HashMap<String, String>();
 
         String query = "SELECT m11_elimina_alimento_dieta(?, ?)";
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
-        Diet diet = (Diet) e;
-        st.setString(1, diet.get_moment());
-        st.setString(2, String.valueOf(diet.get_id()));
+       PreparedStatement st = conn.prepareStatement(query);
+
+
+        st.setString(1, diet.get_date());
+        st.setString(2, diet.get_username());
         ResultSet rs = st.executeQuery();
         response.put("data", "Se elimino exitosamente");
 
@@ -105,14 +112,18 @@ public class DaoDiet extends Dao implements IDaoDiet {
 
     public Entity getMomentFood(Entity e) throws SQLException, BdConnectException {
 
-
+        Diet diet = (Diet) e;
         String query = "select * from m11_get_comida_momento(?, ?, ?)";
         jsonArray = new ArrayList<>();
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
-        Diet diet = (Diet) e;
+       // PreparedStatement st = conn.prepareStatement(query);
+        CallableStatement st = conn.prepareCall("{? = Call m11_get_comida_momento(?, ?) }");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-dd-mm");
+        java.util.Date today = new java.util.Date();
+        Date date1 = new Date(today.getTime());
+
         st.setString(1, diet.get_moment());
-        st.setDate(2, Date.valueOf(date));
+        st.setDate(2, date1);
         st.setString(3, String.valueOf(diet.get_id()));
         ResultSet rs = st.executeQuery();
 
@@ -143,8 +154,10 @@ public class DaoDiet extends Dao implements IDaoDiet {
         username = String.valueOf(diet.get_username());
         Date day;
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
-        rs = st.executeQuery();
+
+        CallableStatement st = conn.prepareCall("{? = Call m11_get_calorias_mes(?, ?) }");
+        //PreparedStatement st = conn.prepareStatement(query);
+
 
         st.setString(1, username);
 
@@ -152,9 +165,10 @@ public class DaoDiet extends Dao implements IDaoDiet {
             day = Date.valueOf(fecha);
             st.setDate(2, day);
             st.setDate(3, day);
-
+            rs = st.executeQuery();
             jsonArray.add((Diet) EntityFactory.createDiet());
             jsonArray.get(jsonArray.size() - 1).set_dateTime(fecha);
+
             if (rs.wasNull()) {
                 jsonArray.get(jsonArray.size() - 1).set_calorie(0);
             }
@@ -186,7 +200,8 @@ public class DaoDiet extends Dao implements IDaoDiet {
         username = String.valueOf(diet.get_username());
         Date day;
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
+        CallableStatement st = conn.prepareCall("{? = Call m11_get_calorias_mes(?, ?) }");
+       // PreparedStatement st = conn.prepareStatement(query);
         st.setString(1, username);
 
         for (int i = 0; i <= 3; i++) {
@@ -227,7 +242,8 @@ public class DaoDiet extends Dao implements IDaoDiet {
         Date fechaInicio = Date.valueOf(fecha);
         Date fechafin = Date.valueOf(fecha.with(TemporalAdjusters.lastDayOfMonth()));
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
+        //PreparedStatement st = conn.prepareStatement(query);
+        CallableStatement st = conn.prepareCall("{? = Call m11_get_calorias_mes(?, ?) }");
         st.setString(1, username);
         st.setDate(2, fechaInicio);
         st.setDate(3, fechafin);
@@ -262,9 +278,39 @@ public class DaoDiet extends Dao implements IDaoDiet {
     }
 
     public Entity insertDiet(Entity e) throws SQLException, BdConnectException {
-        return e;
+
+        Map<String, String> response = new HashMap<String, String>();
+        String query = "select * from m11_inserta_dieta(?, ?, ?, ?)";
+        Connection conn = Dao.getBdConnect();
+        //PreparedStatement st = conn.prepareStatement(query);
+        CallableStatement st = conn.prepareCall("{? = Call m11_inserta_dieta(?, ?, ?) }");
+        Type type = new TypeToken<Diet[]>(){}.getType();
+        Diet diet = (Diet) e;
+            /*
+            Diet[] a = new Diet[3];
+            a[0] = new Diet(20, "cachapa", "desayuno", "Jesus");
+            a[2] = new Diet(2, "cachap2", "almuerzo", "Jesus");
+            a[1] = new Diet(3, "cachap3", "cena", "Jesus");
+            jsonDieta = gson.toJson(a);
+            */
+        Diet[] dieta = gson.fromJson(gson.toJson(diet.jsonArray), type);
+
+        for (int i = 0; i < dieta.length; i++) {
+            st.setInt(1, dieta[i].get_calorie());
+            st.setString(2, dieta[i].get_food());
+            st.setString(3, dieta[i].get_moment());
+            st.setString(4, dieta[i].get_username());
+            st.executeQuery();
+        }
+
+        response.put("data", "Se inserto la dieta de forma exitosa");
+        Diet aux = (Diet) EntityFactory.createDiet();
+        aux.setResponse(response);
+        return aux;
     }
 
+
+    //revisa esta mierda
     public Entity insertOneDiet(Entity e) throws SQLException, BdConnectException {
 
         Map<String, String> response = new HashMap<String, String>();
@@ -272,7 +318,8 @@ public class DaoDiet extends Dao implements IDaoDiet {
 
         String query = "select * from m11_inserta_dieta(?, ?, ?, ?)";
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
+        CallableStatement st = conn.prepareCall("{? = Call m11_inserta_dieta(?, ?, ?) }");
+        //PreparedStatement st = conn.prepareStatement(query);
         Diet diet = (Diet) e;
         Type type = new TypeToken<Diet[]>() {
         }.getType();
@@ -280,7 +327,7 @@ public class DaoDiet extends Dao implements IDaoDiet {
         st.setInt(1, diet.get_calorie());
         st.setString(2, diet.get_food());
         st.setString(3, diet.get_moment());
-        st.setInt(4, diet.get_id());
+        st.setString(4, diet.get_username());
         st.executeQuery();
 
         response.put("data", "Se inserto la dieta de forma exitosa");
