@@ -127,9 +127,11 @@ public class M02HomeFragment extends Fragment {
      */
     private void toAskWebService() {
         try {
-            //int id = manageId.getIdUser(rootView.getContext());
+
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+            int id= preferences.getInt("idUser",0);
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-            String webUrl= ip.getIp()+"M02Users/"+1;
+            String webUrl= ip.getIp()+"M02Users/"+id;
             Log.i(TAG, "toAskWebService: "+webUrl);
             JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
                 @Override
@@ -186,9 +188,11 @@ public class M02HomeFragment extends Fragment {
      */
     private void toAskWebServiceHome() {
         try {
-//            int id = manageId.getIdUser(rootView.getContext());
+
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+            int id= preferences.getInt("idUser",0);
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-            String webUrl= ip.getIp()+"M02Homes/"+1;
+            String webUrl= ip.getIp()+"M02Homes/"+id;
             Log.i(TAG, "toAskWebServiceHome: "+webUrl);
             JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
                 @Override
