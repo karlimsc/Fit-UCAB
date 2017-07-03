@@ -14,7 +14,7 @@ public class CreateUserException extends M01_UserException {
     private String _class;
     private String _specificException;
     private static org.slf4j.Logger _logger = LoggerFactory
-            .getLogger(DaoUser.class);
+            .getLogger(CreateUserException.class);
 
     /**
      * Metodo contructor para lanzar excepcion al crear usuario
@@ -23,12 +23,14 @@ public class CreateUserException extends M01_UserException {
      */
     public CreateUserException(String _class, String _specificException, User userFail) {
         super(userFail);
-        _class = _class;
-        _specificException=_specificException;
+        this._class = _class;
+        this._specificException = _specificException;
 
-        MessageException error = new MessageException(this, this.getClass().getSimpleName(),
+        MessageException error = new MessageException(this, _class,
                 _specificException);
-        _logger.error("Error: ", error);
+        _logger.error("Error: ", error.toString());
+        System.out.print("EL USER STATUS ES " + userFail.get_status());
+        _logger.debug("EL USER STATUS ES " + userFail.get_status());
     }
 
     /**
