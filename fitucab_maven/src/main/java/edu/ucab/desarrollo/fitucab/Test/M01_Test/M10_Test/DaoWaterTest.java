@@ -52,8 +52,10 @@ public class DaoWaterTest {
         Sql _sql = new Sql();
         String deletePerson = "delete from person where personid = 1;";
         _sql.sql(deletePerson);
+
+        Sql _sql3 = new Sql();
         String deleteWater = "TRUNCATE glass_historic RESTART IDENTITY;";
-        _sql.sql(deleteWater);
+        _sql3.sql(deleteWater);
     }
 
     @Test

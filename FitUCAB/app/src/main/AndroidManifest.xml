@@ -32,7 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
 
 
-            </intent-filter>
+            </intent-filter>-->
 
         </activity>
         <!-- FIN ACTIVITIES MODULO 1 -->

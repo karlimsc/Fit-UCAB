@@ -38,7 +38,7 @@ public class GetFechaCommand extends Command {
         Water watergGetWater = (Water) _water;
 
 
-        SimpleDateFormat _sdf2 = new SimpleDateFormat("MM/dd/yyyy");
+        SimpleDateFormat _sdf2 = new SimpleDateFormat("dd/MM/yyyy");
         Date fecha = new Date();
         watergGetWater.set_time(_sdf2.format(fecha));
         GetWaterCommand cmd = CommandsFactory.instatiateGetWaterCmd(watergGetWater);

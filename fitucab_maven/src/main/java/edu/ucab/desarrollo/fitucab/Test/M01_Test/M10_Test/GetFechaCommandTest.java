@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
 public class GetFechaCommandTest {
 
 
-    SimpleDateFormat _sdf2 = new SimpleDateFormat("MM/dd/yyyy");
+    SimpleDateFormat _sdf2 = new SimpleDateFormat("dd/MM/yyyy");
     Date fecha = new Date();
     String dia =_sdf2.format(fecha);
 

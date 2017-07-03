@@ -62,8 +62,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     private static ImageButton _btnAdd;
     private static ImageButton _btnLess;
     public static EditText _EtnDate;
-    public static TextView _glassesML;
-    public static ProgressBar _glassesProgress;
+
     ManagePreferences user = new ManagePreferences();
 
     private Calendar _cal ;
@@ -226,11 +225,6 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         _btnLess = (ImageButton) findViewById(R.id.btn_m10_lessDate);
         _btnAdd = (ImageButton) findViewById(R.id.btn_m10_AddDate);
         _EtnDate= (EditText) findViewById(R.id.et_m10_date);
-        _glassesML = (TextView) findViewById(R.id.cantidadAgua);
-        _glassesProgress = (ProgressBar) findViewById(R.id.progressBarAgua);
-        _glassesProgress.setMax(2000);
-
-
         giveDate();
         activarCalendario();
         addDate();
@@ -395,10 +389,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                             _EtnDate.setText(water.get_time());
                             m10w.setCant(water.get_cantidad().toString());
                            // Thread.sleep(10);
-                            _glassesML.setText("Has consumido en " + water.get_cantidad() +
-                                " vasos de agua, un total de " + water.get_suma() + " Ml de los " +
-                                    "2000Ml recomendados");
-                            _glassesProgress.setProgress(water.get_suma());
+
                             m10h.set_list(contexto);
 
                         }
