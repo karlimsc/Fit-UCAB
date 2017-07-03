@@ -3,6 +3,9 @@ package edu.ucab.desarrollo.fitucab.Test.M09;
 import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -64,6 +67,16 @@ public class EntityFactoryM09Test {
         assertNull(entidad);
     }
 
-    
+    @Test
+    public void InstanceDaoGamingTestPUE() {
+        Dao dao = DaoFactory.instanceDaoGaming();
+        assertNotNull(dao);
+    }
+
+    @Test(expected = AssertionError.class)
+    public void InstanceDaoGamingTestPUFE() {
+        Dao dao = DaoFactory.instanceDaoGaming();
+        assertNull(dao);
+    }
 
 }
