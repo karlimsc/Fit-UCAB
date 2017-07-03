@@ -76,6 +76,14 @@ public class CommandsFactory {
         return new HomeCommand(id);
     }
 
+    /**
+     * Metodo de actualizar usuario
+     * @param id
+     * @param username
+     * @param phone
+     * @param email
+     * @return
+     */
     static public UpdateUserCommand instanciateUpdateUserCmd(int id,String username,String phone,String email){
         return new UpdateUserCommand(id,username,phone,email);
     }

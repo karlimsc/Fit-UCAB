@@ -30,6 +30,10 @@ public class UpdateUserCommandTest {
 
     }
 
+    /**
+     * Prueba de UpdateUser de exito de la actualizacion de usuario
+     * @throws Exception
+     */
     @Test
     public void UpdateUserCommandExecuteTest() throws Exception {
       Boolean test = true;

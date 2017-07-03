@@ -3,7 +3,9 @@ package edu.ucab.desarrollo.fitucab.Test.M02;
 import edu.ucab.desarrollo.fitucab.common.entities.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.*;
+import org.junit.*;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 
 import java.text.*;
 import java.util.*;
@@ -17,6 +19,9 @@ import static junit.framework.TestCase.assertTrue;
  */
 public class UserCommandTest {
 
+    /**
+     * Prueba del UserCommand comparando que el id sea el mismo
+     */
     @Test
     public void UserCommandTestConstructor(){
         Command c = CommandsFactory.instanciateUserCmd(1);
@@ -26,6 +31,10 @@ public class UserCommandTest {
         assertEquals(((HomeCommand)c).getId(),1);
     }
 
+    /**
+     * Prueba del UserCommand para crear un usuario y comprueba que el usuario sea el mismo que se creo
+     */
+    @Ignore
     @Test
     public void UserCommandTestExecute(){
         Command uc = CommandsFactory.instanciateUserCmd(1);
