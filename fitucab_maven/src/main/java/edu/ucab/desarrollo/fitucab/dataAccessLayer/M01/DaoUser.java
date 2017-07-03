@@ -122,7 +122,7 @@ public class DaoUser extends Dao implements IDaoUser {
                 Date _birthdate = _result.getDate( "birthdate" );
                 int  _height = _result.getInt( "height" );
                 int _weight = _result.getInt("weight");
-                _user = EntityFactory.createUser( _id ,_usuario, _email, _sex, _phone, _birthdate, _height, _weight);
+                _user = EntityFactory.createUser( _id ,_usuario, _email, _sex, _phone, _birthdate, _weight, _height);
             }
             return _user;
         } catch (NullPointerException e) {

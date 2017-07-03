@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -48,6 +50,8 @@ public class M10HistoyFragment extends Fragment {
     static M10WaterGlassFragment m10w;
      Gson gson = new Gson();
     Water water = new Water();
+    public static TextView _glassesML;
+    public static ProgressBar _glassesProgress;
 
 
     public M10HistoyFragment() {
@@ -74,6 +78,8 @@ public class M10HistoyFragment extends Fragment {
         _waterlist.setAdapter(adapter);
         m10w =new M10WaterGlassFragment();
 
+        _glassesML = (TextView) rootView.findViewById(R.id.cantidadAgua);
+        _glassesProgress = (ProgressBar) rootView.findViewById(R.id.progressBarAgua);
 
 
 
@@ -124,7 +130,6 @@ public class M10HistoyFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-
     public void set_list(Context contexto)
     {
         String url1 = "M10_WaterGlass/GetList?time="+m10._EtnDate.getText()+"&fkp="+idusuario;
@@ -142,7 +147,16 @@ public class M10HistoyFragment extends Fragment {
 
                                 ViewList();
 
-
+                                int suma = 0;
+                                int cantidad = list.size();
+                                for (int i = 0;i<list.size();i++){
+                                    suma = suma+list.get(i).get_glasstype();
+                                }
+                                
+                                _glassesML.setText("Has consumido en " + Integer.toString(cantidad)
+                                        +" vasos de agua, un total de " + Integer.toString(suma) + " Ml de los " +
+                                        "2000Ml recomendados");
+                                _glassesProgress.setProgress(suma);
 
                             } catch (Exception e) {
                                 e.printStackTrace();
