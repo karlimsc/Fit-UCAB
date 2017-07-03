@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.fitucab.ds1617b.fitucab.Model.Activit;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 public class ActivitiesAdapter extends RecyclerView.Adapter<ActivitiesAdapter.ViewHolder> {
 
     private ArrayList<Activit> _activitiesList;
-
+    private CheckBox _checkbox;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView activitieName, activitieHour;
@@ -23,6 +24,7 @@ public class ActivitiesAdapter extends RecyclerView.Adapter<ActivitiesAdapter.Vi
             super(view);
             activitieName = (TextView) view.findViewById(R.id.tv_m06_activities_name);
             activitieHour = (TextView) view.findViewById(R.id.tv_m06_activities_hours);
+            _checkbox = (CheckBox) view.findViewById(R.id.checkbox);
         }
     }
 

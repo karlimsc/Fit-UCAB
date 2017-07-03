@@ -13,10 +13,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
@@ -24,6 +27,9 @@ import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
 import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.R;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,6 +47,18 @@ public class M06AddTrainingFragment extends Fragment {
     private EditText _edittext;
     private View _view;
     ListView _listView;
+    private ArrayList <String> arrayList;
+    private ArrayAdapter<String> adapter;
+    private ArrayList <String> arrayListAdd;
+    Context context;
+    CheckBox _checkbox;
+    TextView _textview;
+
+
+
+    private ArrayAdapter <String> adapterAdd;
+
+
 
 
     @Override
@@ -75,6 +93,10 @@ public class M06AddTrainingFragment extends Fragment {
         manageListView();
         manageChangeFragmentTraining();
 
+
+
+
+
         return _view;
     }
 
@@ -83,16 +105,22 @@ public class M06AddTrainingFragment extends Fragment {
      */
     private void manageChangeFragmentTraining() {
 
+
         _btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                
+                if (_checkbox.isChecked())
+                {
+                   String s = _textview.getText().toString();
+                }
                 String trainingNmae = _edittext.getText().toString();
                 System.out.print(trainingNmae);
                 _callBack.onSwap("M06HomeTrainingFragment",null);
             }
         });
 
- 
+
     }
     /**
      * Prepara el componente de la vista
@@ -143,8 +171,21 @@ public class M06AddTrainingFragment extends Fragment {
     }
 
     private void manageListView(){
+        _checkbox = (CheckBox) _view.findViewById(R.id.checkbox);
+        _textview = (TextView) _view.findViewById(R.id.tv_m06_trainingAdd);
 
-        _listView = (ListView) _view.findViewById(R.id.listofactivities);
+
+        context = getContext ();
+        // _listView = (ListView) _view.findViewById(R.id.listofactivities);
+        _listView = (ListView)_view. findViewById(R.id.listofactivities);
+        String [] activities = {"Caminar", "Trotar", "Bicicleta", "Natacion", "Yoga", "Estiramientos",
+                "Eliptica", "Escaleras", "Bailar", "Aerobic", "Remo", "Basketball", "Futbol", "Tenis", "Voleibol"};
+        arrayListAdd = new ArrayList<>(Arrays.asList(activities));
+        adapterAdd =  new ArrayAdapter<String>(context, R.layout.fragment_m06_listview_item_add, R.id.tv_m06_trainingAdd,arrayListAdd);
+        _listView.setAdapter(adapterAdd);
+
+
+
 
 
     }
