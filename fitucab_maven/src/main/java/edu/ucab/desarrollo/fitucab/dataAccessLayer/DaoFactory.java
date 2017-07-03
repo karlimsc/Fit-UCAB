@@ -65,9 +65,9 @@ public class DaoFactory
      * @param id
      * @return
      */
-    public static edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoUser instanceDaoUser(int id) {
+    public static DaoUser instanceDaoUser(int id) {
 
-        return new edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoUser(id);
+        return new DaoUser(id);
     }
 
     //MODULO 10
@@ -84,6 +84,17 @@ public class DaoFactory
 
     public static DaoMoment iniciarDaoMoment(){return  new DaoMoment();}
 
+    /**
+     * Metodo que instancia el DaoUpdateUser
+     * @param id
+     * @param username
+     * @param phone
+     * @param email
+     * @return DaoUpdatePerfil
+     */
+    public static DaoUser instanceDaoUpdateUser(int id, String username, String phone, String email){
+        return new DaoUser (id,username,phone,email);
+    }
     //modulo 3
 
     public static Dao instanceDaoFriendship() { return  new DaoFriendship(); }

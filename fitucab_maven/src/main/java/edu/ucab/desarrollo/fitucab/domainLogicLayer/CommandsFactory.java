@@ -7,6 +7,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.HomeCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.UpdateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.UserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
@@ -71,6 +72,10 @@ public class CommandsFactory {
      */
     static public HomeCommand instanciateHomeCmd(int id){
         return new HomeCommand(id);
+    }
+
+    static public UpdateUserCommand instanciateUpdateUserCmd(int id,String username,String phone,String email){
+        return new UpdateUserCommand(id,username,phone,email);
     }
 
     //FIN MODULO 2
@@ -149,12 +154,7 @@ public class CommandsFactory {
      */
     static public GetWaterCommand instatiateGetWaterCmd(Entity water){ return new GetWaterCommand(water); }
 
-    /**
-     * Metodo para instanciar el comando GetFechaInt
-     * @param water
-     * @return el comando GetFechaInt
-     */
-    static public GetFechaIntCommand instatiateGetFechaIntCmd(Entity water){ return new GetFechaIntCommand(water); }
+
     /**
      * Metodo para instanciar el comando DeletLast
      * @param water
@@ -162,12 +162,6 @@ public class CommandsFactory {
      */
     static public DeletLastCommand instatiateDeletLastCmd(Entity water){ return new DeletLastCommand(water); }
 
-    /**
-     * Metodo para instanciar el comando DeletWaterTm
-     * @param water
-     * @return el comando DeletWaterTm
-     */
-    static public DeletWaterTmCommand instatiateDeletWaterTmCmd(Entity water){ return new DeletWaterTmCommand(water); }
 
     /**
      * Metodo para instanciar el comando GetFecha
@@ -237,7 +231,5 @@ public class CommandsFactory {
 
 
 }
-
-
 
 

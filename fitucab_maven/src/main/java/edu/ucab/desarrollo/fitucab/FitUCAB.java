@@ -14,7 +14,6 @@ public class FitUCAB extends Application {
     public Set<Class<?>> getClasses() {
         HashSet h= new HashSet<Class<?>>();
         h.add(M01_ServicesUser.class);
-        h.add(M01_ServicesUser1.class);
         h.add(M06_ServicesTraining.class);
         h.add(M09_ServicesGamification.class);
         h.add(M11_ServicesMoment.class);
