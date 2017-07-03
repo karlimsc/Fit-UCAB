@@ -467,7 +467,4 @@ public class DaoUser extends Dao implements IDaoUser {
     public Entity read(Entity e) throws CreateHomeException, SQLException, BdConnectException {
         return null;
     }
-
-
-
-    }
+}
