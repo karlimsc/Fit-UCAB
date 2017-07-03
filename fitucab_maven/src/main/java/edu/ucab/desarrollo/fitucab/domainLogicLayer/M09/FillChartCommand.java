@@ -21,17 +21,33 @@ public class FillChartCommand extends Command{
     private static Entity _challenge;
     private int _userId;
 
-
+    /**
+     * Constructor que inicializa el dao, el id de un usario y la entidad challenge.
+     * @param userId Id del usuario.
+     * @param dao Clase DaoGaming.
+     * @see DaoGaming
+     * @see edu.ucab.desarrollo.fitucab.common.entities.Challenge
+     */
     public FillChartCommand(int userId, Dao dao) {
         _dao = dao;
         _challenge = EntityFactory.createChallenge();
         _userId = userId;
     }
 
+    /**
+     * Metodo estatico que retorna la clase Challenge con los retos logrados y no logrados.
+     * @return
+     */
     public static Entity getChallenge() {
         return _challenge;
     }
 
+    /**
+     * Metodo ejecutar heredado de commad.
+     * @throws NoSuchMethodException
+     * @throws Exception
+     * @see DaoGaming
+     */
     public void execute() throws NoSuchMethodException {
         try{
             _challenge = ((DaoGaming) _dao).fillChart(_userId);
