@@ -117,66 +117,7 @@ public class M01_ServicesUserTest {
 
         }
     }
-    @Test
-    public void deleteUserTest() throws URISyntaxException {
-        try {
-            URI prueba = new URI("http://localhost:8888/" +
-                    "WebServicesFitUCAB_war_exploded/M01_ServicesUser/" +
-                    "insertRegistry?" +
-                    "username=dan12rive" +
-                    "&password=dan12rive" +
-                    "&email=dan12" +
-                    "&sex=F" +
-                    "&phone=12a3456" +
-                    "&birthdate=12/06/1993" +
-                    "&weight=1" +
-                    "&height=1");
-            given().accept(ContentType.JSON).when().get(prueba).then()
-                    .assertThat().statusCode(HttpStatus.SC_OK);
-            URI prueba2 = new URI("http://localhost:8888/" +
-                    "WebServicesFitUCAB_war_exploded/" +
-                    "M01_ServicesUser/" +
-                    "deteleUser?username=dan12rive");
-            given().accept(ContentType.JSON).when().get(prueba2).then()
-                    .assertThat().statusCode(HttpStatus.SC_OK);
-
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-
-        }catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-
-        catch (Exception e) {
-
-        }
-    }
-    @Test
-    public void updateUserTest() throws Exception {
-        try {
-            URI prueba = new URI("http://localhost:8888/WebServicesFitUCAB_war_exploded/M01_ServicesUser/" +
-                    "updateUser?username=danri&password=dan1234&email=dan&sex=M&phone=dann&birthdate=1993-06-11");
-            Response response = given().accept(ContentType.JSON).when().get(prueba);
-            System.out.println(response.asString() );
-
-
-            String json = given().accept(ContentType.JSON).when()
-                    .get(prueba).thenReturn().body().asString();
-            int jsonNumero = Integer.parseInt(json);
-            assertEquals(1,jsonNumero);
-
-
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
-        catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-        catch (Exception e){
-
-        }
-    }
-
+    
 
     @Test
     public void getUserTest() throws Exception {
