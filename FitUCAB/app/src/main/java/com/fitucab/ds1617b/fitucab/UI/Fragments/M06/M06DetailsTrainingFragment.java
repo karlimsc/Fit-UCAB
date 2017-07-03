@@ -21,10 +21,6 @@ import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 
-import org.junit.runner.Describable;
-
-import java.util.ArrayList;
-
 public class M06DetailsTrainingFragment extends Fragment {
 
     private RecyclerView recyclerView;
