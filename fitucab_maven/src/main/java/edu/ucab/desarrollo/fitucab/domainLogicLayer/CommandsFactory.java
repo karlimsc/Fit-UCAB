@@ -2,7 +2,6 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.M03.DaoFriendship;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
@@ -17,7 +16,6 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M03.*;
-import sun.misc.Request;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.CreatePlanificationCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.DeletePlanificationCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.GetPlanificationByIdCommand;
@@ -189,14 +187,24 @@ public class CommandsFactory {
     static public Command instanciateRequestFriendshipCmd(Dao friendship, String userOne, String userTwo){ return new RequestFriendshipCommand(friendship, userOne, userTwo); }
 
     /**
-     * Metodo para instanciar el comando NearMe
+     * Metodo para instanciar el comando UpdateFriendship con todos sus atributos
+
+     * @param updater
+     * @param updated
+     * @return el comando RequestFriendship
+     */
+    static public Command instanciateUpdateFriendshipCmd(Dao friendship, String updater, String updated, String action){ return new UpdateFriendshipCommand(friendship, updater, updated, action); }
+
+
+    /**
+     * Metodo para instanciar el comando Location
      * @param id es el id del usuario
      * @param nearMe es la instancia del Dao
      * @longitud longitud de la ubicacion
      * @latitud latitud de la ubicacion
      * @return el comando GetFriends
      */
-    static public Command instanciateNearMeCmd(Dao nearMe, String id, String longitud, String latitud){ return new NearMeCommand(nearMe, id, longitud, latitud); }
+    static public Command instanciateLocationCmd(Dao nearMe, String id, String longitud, String latitud){ return new LocationCommand(nearMe, id, longitud, latitud); }
 
     /**
      * Metodo para instanciar el comando GetFriends
@@ -208,6 +216,8 @@ public class CommandsFactory {
     public static GetFriendsCommand instatiateGetFriendsCmd(String id, String action){ return new GetFriendsCommand(id, action); }
 
     public static GetContactsCommand instatiateGetContactsCmd(String id, String contacts) { return new GetContactsCommand(id, contacts);}
+
+    public static NearMeCommand instatiateNearMeCmd(String id, String longitud, String latitud, String rango){ return new NearMeCommand(id, longitud, latitud, rango);}
 
     //fin modulo 3
 
