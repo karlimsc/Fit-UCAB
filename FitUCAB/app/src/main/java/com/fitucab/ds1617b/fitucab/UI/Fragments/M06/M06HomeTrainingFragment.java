@@ -87,6 +87,7 @@ public class M06HomeTrainingFragment extends Fragment {
         manageRecyclerView();
         setupViewValues();
         manageChangeFragmentTraining();
+
         return _view;
     }
 

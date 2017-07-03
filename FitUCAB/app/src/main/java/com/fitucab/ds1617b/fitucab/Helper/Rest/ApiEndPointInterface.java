@@ -74,16 +74,16 @@ public interface ApiEndPointInterface {
     Call<Training> getAllTraining(@Query("userId") int userId,
                                   @Query("trainingId") int trainingId);
 ///////////////////////////////////////////////////////////////////////
-    @POST("M06_ServicesTraining)/createTraining")
+    @GET("M06_ServicesTraining)/createTraining")
     Call<Training> addTraining(@Query("trainingName") String trainingName,
                                @Query("trainingActivities") String trainingActivities,
                                 @Query("userId") int userId);
 
-    @POST("M06_ServicesTraining)/deleteTraining")
+    @GET("M06_ServicesTraining)/deleteTraining")
     Call<Training> editTraining(@Query( "trainingId" ) int trainingId,
                                 @Query( "trainingName" ) String trainingName );
 
-    @POST("M06_ServicesTraining)/changeTrainingName")
+    @GET("M06_ServicesTraining)/changeTrainingName")
     Call<Training> deleteTraining(@Query( "idTraining" ) int id,
                                   @Query( "trainingName" ) String name);
 
