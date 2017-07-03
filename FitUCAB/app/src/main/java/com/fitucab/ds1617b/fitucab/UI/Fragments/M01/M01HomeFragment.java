@@ -22,6 +22,7 @@ public class M01HomeFragment extends Fragment {
     private Button _btnIrRegistro;
     private View _view;
     private OnFragmentSwap _callBack;
+    private Button _btnVeaM06;
 
     /**
      * Constructor vacio
@@ -107,7 +108,13 @@ public class M01HomeFragment extends Fragment {
 
         _btnIrIniciarSesion = (Button) _view.findViewById(R.id.btn_m01_iniciarSesion);
         _btnIrRegistro = (Button) _view.findViewById(R.id.btn_m01_comienza);
-
+        _btnVeaM06 = (Button) _view.findViewById(R.id.btn_m06_cable);
+        _btnVeaM06.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _callBack.onSwapActivity("M06TrainingActivity",null);
+            }
+        });
     }
 
 }
