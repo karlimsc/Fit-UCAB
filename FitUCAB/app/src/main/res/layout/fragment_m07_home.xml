@@ -22,8 +22,8 @@
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         android:typeface="sans"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="200dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="400dp"
         android:layout_alignParentTop="true" />
@@ -32,9 +32,9 @@
         android:id="@+id/lv_m07_planification"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignTop="@+id/btnCrear"
-        android:layout_alignLeft="@+id/btnCrear"
-        android:layout_alignStart="@+id/btnCrear"
-        android:layout_marginTop="89dp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="100dp"/>
 
 </RelativeLayout>

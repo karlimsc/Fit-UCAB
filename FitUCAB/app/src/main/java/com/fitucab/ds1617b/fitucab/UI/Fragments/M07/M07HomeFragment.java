@@ -128,15 +128,25 @@ public class M07HomeFragment extends Fragment {
                 .setNegativeButton( "Editar" , new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //Hay que hacer un if para redirigir si es actividad o entrenamiento....
-                        _callBack.onSwap("M07ActivityFragment", null);
+                        if (planificacion.get_days()== null) {
+
+                            _callBack.onSwapData("M07trainingFragment", null,planificacion);
+                        }
+
+                        else if (planificacion.get_days() != null){
+                            _callBack.onSwapData("M07ActivityFragment", null, planificacion);
+                        }
                     }
                 })
         .setNeutralButton( "Ver" , new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                //abre un fragmento con la data de la planificacion
+                /**abre un fragmento con la data de la planificacion
                 FragmentManager fm = getFragmentManager();
                 M07PlanificationFragment planificationFragment = new M07PlanificationFragment( planificacion );
                 planificationFragment.show( getActivity().getFragmentManager() , "titulo" );
+                **/
+
+
             }
         });
         AlertDialog alert = builder.create();
@@ -161,7 +171,7 @@ public class M07HomeFragment extends Fragment {
         IpStringConnection jsonURL = new IpStringConnection();
         RequestQueue requestQueue = Volley.newRequestQueue( getContext() );
         //Revisar la URL cuando Jesus la haga....
-        jsonURL.set_ip( jsonURL.getIp() + "M07_ServicesPlanification/getPlanification?userID=" +
+        jsonURL.set_ip( jsonURL.getIp() + "M07_ServicesPlanification/getPlanification?userId=" +
         idUsuario );
         StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
                 new Response.Listener<String>() {

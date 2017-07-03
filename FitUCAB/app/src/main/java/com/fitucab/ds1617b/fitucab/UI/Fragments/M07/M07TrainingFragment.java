@@ -10,12 +10,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TimePicker;
 
+import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Model.Planification;
 import com.fitucab.ds1617b.fitucab.R;
 
 import java.text.StringCharacterIterator;
@@ -34,18 +37,25 @@ public class M07TrainingFragment extends Fragment {
     private EditText _tv_m07_horaInicio;
     private ImageButton _btn_m07_horaFin;
     private EditText _tv_m07_horaFin;
+    private Button _btn_m07_declinar;
 
 
     private View _view;
+    private OnFragmentSwap _callBack;
 
     private int dia;
     private int mes;
     private int ano;
     private int hora;
     private int min;
+    private Planification planification;
 
     public M07TrainingFragment() {
         // Required empty public constructor
+    }
+
+    public M07TrainingFragment(Planification planification) {
+        this.planification = planification;
     }
 
 
@@ -65,7 +75,14 @@ public class M07TrainingFragment extends Fragment {
         _tv_m07_horaInicio = (EditText)_view.findViewById(R.id.tv_m07_horaInicio);
         _btn_m07_horaFin = (ImageButton)_view.findViewById(R.id.btn_m07_horaFin);
         _tv_m07_horaFin = (EditText)_view.findViewById(R.id.tv_m07_horaFin);
+        _btn_m07_declinar = (Button)_view.findViewById(R.id.btn_m07_Decline);
 
+        agregarFechaInicio();
+        agregarFechaFin();
+        agregarHoraInicio();
+        agregarHoraFin();
+        buttonDeclinar();
+        cargarEvento(planification);
 
         return _view;
     }
@@ -154,6 +171,25 @@ public class M07TrainingFragment extends Fragment {
         });
     }
 
+    private void  buttonDeclinar(){
 
+        _btn_m07_declinar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _callBack.onSwap("M07HomeFragment", null);
+            }
+
+        });
+
+    }
+
+    private void  cargarEvento(Planification planification) {
+
+        _tv_m07_fechaInicio.setText(String.valueOf(planification.get_startDate()));
+        _tv_m07_fechaFin.setText(String.valueOf(planification.get_endDate()));
+        _tv_m07_fechaInicio.setText(String.valueOf(planification.get_startTime()));
+        _tv_m07_horaFin.setText(String.valueOf(planification.get_duration()));
+
+    }
 
 }
