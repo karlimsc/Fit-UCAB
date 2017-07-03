@@ -16,6 +16,5 @@ public class ValidationWS {
                 throw new ParametersNullException(entry.getKey());
             }
         }
-
     }
 }

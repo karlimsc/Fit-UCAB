@@ -277,6 +277,25 @@ public class CommandsFactory {
 
     static public MomentCommand getMoment (Entity Moment) {return  new MomentCommand(Moment);}
 
+    static public DeleteDietCommand deleteDietCmd (Entity Diet) {return new DeleteDietCommand(Diet);}
+
+    static public GetCaloriesConsumedDayCommand getCaloriesDayCmd (Entity Diet)
+    {return new GetCaloriesConsumedDayCommand(Diet);}
+
+    static public GetCaloriesConsumedWeekCommand getCaloriesWeekCmd (Entity Diet)
+    {return new GetCaloriesConsumedWeekCommand(Diet);}
+
+    static public GetCaloriesConsumedMonthCommand getCaloriesMonthCmd (Entity Diet)
+    {return new GetCaloriesConsumedMonthCommand(Diet);}
+
+    static public GetCaloriesDateCommand getCaloriesDateCmd (Entity Diet) {return new GetCaloriesDateCommand(Diet);}
+
+    static public GetMomentFoodCommand getMomentFoodCmd (Entity Diet) {return new GetMomentFoodCommand(Diet);}
+
+    static public InsertOneDietCommand insertOneDietCmd (Entity Diet) {return new InsertOneDietCommand(Diet);}
+
+ //fin modulo 11
+
     //Modulo 7
 
     public static CreatePlanificationCommand instanciateCreatePlanificationCmd(Entity create) {

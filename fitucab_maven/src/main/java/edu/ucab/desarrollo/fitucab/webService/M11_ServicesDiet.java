@@ -3,10 +3,18 @@ package edu.ucab.desarrollo.fitucab.webService;
 
 import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Diet;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
 
 import javax.ws.rs.*;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 
@@ -19,7 +27,7 @@ public class M11_ServicesDiet {
 
     private Connection conn = Sql.getConInstance();
     private Gson gson = new Gson();
-    private String response;
+    private Diet respuesta;
     private ArrayList<Diet> jsonArray;
 
     /**
@@ -36,9 +44,30 @@ public class M11_ServicesDiet {
     public String getCalorieByDate(@QueryParam("date") String date ,
                                    @QueryParam("username") String username) {
 
-        Diet a = new Diet();
-    return gson.toJson(a);
+        Entity EntityDiet = EntityFactory.getCaloriesDate(date,username);
+        GetCaloriesDateCommand cmd = CommandsFactory.getCaloriesDateCmd(EntityDiet);
+
+        try {
+            cmd.execute();
+            respuesta = (Diet) cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (ListByIdException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (NoSuchMethodException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (SQLException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (BdConnectException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        }
+
+
+        return gson.toJson(respuesta);
+
     }
+
 
     /**
      * Metodo que recibe como parametros el momento (momento del dia en que se alimenta)
@@ -54,7 +83,27 @@ public class M11_ServicesDiet {
     public String deleteDiet(@QueryParam("moment") String moment,
                              @QueryParam("username") String username) {
 
-       return"";
+        Entity EntityDiet = EntityFactory.deleteDiet(moment,username);
+        DeleteDietCommand cmd = CommandsFactory.deleteDietCmd(EntityDiet);
+
+        try {
+            cmd.execute();
+            respuesta = (Diet) cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (ListByIdException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (NoSuchMethodException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (SQLException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (BdConnectException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        }
+
+
+        return gson.toJson(respuesta);
     }
 
     /**
@@ -72,7 +121,27 @@ public class M11_ServicesDiet {
                                            @QueryParam("date") String date,
                                            @QueryParam("username") String username) {
 
-       return"";
+        Entity EntityDiet = EntityFactory.getMoment(moment,date,username);
+        GetMomentFoodCommand cmd = CommandsFactory.getMomentFoodCmd(EntityDiet);
+
+       try {
+            cmd.execute();
+            respuesta = (Diet) cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (ListByIdException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (NoSuchMethodException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (SQLException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (BdConnectException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        }
+
+
+        return gson.toJson(respuesta);
 
     }
 
@@ -87,7 +156,27 @@ public class M11_ServicesDiet {
     @Produces("application/json")
     public String getConsumedCalorieByDay(@QueryParam("username") String username){
 
-        return username;
+        Entity EntityDiet = EntityFactory.getCaloriesdate(username);
+        GetCaloriesConsumedDayCommand cmd = CommandsFactory.getCaloriesDayCmd(EntityDiet);
+
+        try {
+            cmd.execute();
+            respuesta = (Diet) cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (ListByIdException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (NoSuchMethodException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (SQLException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (BdConnectException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        }
+
+
+        return gson.toJson(respuesta);
     }
 
     /**
@@ -100,7 +189,28 @@ public class M11_ServicesDiet {
     @Path("/getConsumedCalorieByWeek")
     @Produces("application/json")
     public String getConsumedCalorieByWeek(@QueryParam("username") String username){
-       return"";
+
+        Entity EntityDiet = EntityFactory.getCaloriesdate(username);
+        GetCaloriesConsumedWeekCommand cmd = CommandsFactory.getCaloriesWeekCmd(EntityDiet);
+
+        try {
+            cmd.execute();
+            respuesta = (Diet) cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (ListByIdException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (NoSuchMethodException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (SQLException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (BdConnectException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        }
+
+
+        return gson.toJson(respuesta);
     }
 
     /**
@@ -113,7 +223,27 @@ public class M11_ServicesDiet {
     @Produces("application/json")
     public String getConsumedCalorieByMonth(@QueryParam("username") String username){
 
-       return"";
+        Entity EntityDiet = EntityFactory.getCaloriesdate(username);
+        GetCaloriesConsumedMonthCommand cmd = CommandsFactory.getCaloriesMonthCmd(EntityDiet);
+
+        try {
+            cmd.execute();
+            respuesta = (Diet) cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (ListByIdException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (NoSuchMethodException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (SQLException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (BdConnectException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        }
+
+
+        return gson.toJson(respuesta);
     }
 
     /**
@@ -126,7 +256,10 @@ public class M11_ServicesDiet {
     @Path("/insertDiet")
     @Produces("application/json")
     public String insertDiet(@QueryParam("diet") String jsonDiet){
-    return "";
+
+        return "";
+
+
     }
 
 
@@ -144,7 +277,28 @@ public class M11_ServicesDiet {
     public String insertDiet(@QueryParam("idUser") int idUser , @QueryParam("dietCalorie") String dietCalorie ,
                              @QueryParam("foodName") String foodName , @QueryParam("moment") String moment) {
 
-        return "";
+        Entity EntityDiet = EntityFactory.insertDiet(idUser,dietCalorie,foodName,moment);
+        InsertOneDietCommand cmd = CommandsFactory.insertOneDietCmd(EntityDiet);
+
+        try {
+            cmd.execute();
+            respuesta = (Diet) cmd.Respuesta;
+
+        } catch (ListAllException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (ListByIdException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (NoSuchMethodException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (SQLException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        } catch (BdConnectException e) {
+            respuesta .set_errorMsg(e.getMessage());
+        }
+
+
+        return gson.toJson(respuesta);
+
     }
 
 }
