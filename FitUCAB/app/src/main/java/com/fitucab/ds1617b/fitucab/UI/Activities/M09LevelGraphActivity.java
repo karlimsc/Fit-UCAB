@@ -38,14 +38,14 @@ public class M09LevelGraphActivity extends AppCompatActivity {
 
     //Declaracion de atributos de la clase
     public IpStringConnection _ip = new IpStringConnection();
-    private String _graphsURL = _ip.getIp()+"M09_ServicesGamification/obtenerlogrados";
+    private String _graphsURL = _ip.getIp()+"M09_ServicesGamifications/getAchievements";
     PieChart _pieChart;
     private int[] _yValues = {0, 0};
     private String[] _xValues = {"Not Completed", "Completed"};
     private int _accomplished;
     private int _notAccomplished;
     private String _error;
-    private String _paramVolley = "?id=";
+    private String _paramVolley = "/";
 
     /**
      * VOID onCreate que genera la actividad M09LevelGraphActivity
@@ -131,7 +131,7 @@ public class M09LevelGraphActivity extends AppCompatActivity {
         //SharedPreferences _preferences = PreferenceManager.getDefaultSharedPreferences(_context);
         //int _userID = _preferences.getInt("idUser", _user.get_idUser());
         //cableado mientras SharedPreferences no funciona
-        int _userID = 1;
+        int _userID = 2;
         //Colocamos la direccion correctamente para realizar la peticion con parametros
         _graphsURL= _graphsURL+_paramVolley+""+_userID;
         StringRequest _stringRequest = new StringRequest(_graphsURL,
@@ -161,8 +161,8 @@ public class M09LevelGraphActivity extends AppCompatActivity {
         JSONObject _jsonObject = null;
         try {
             _jsonObject = new JSONObject(_json);
-            _accomplished = Integer.parseInt(_jsonObject.getString("_Logrado"));
-            _notAccomplished = Integer.parseInt(_jsonObject.getString("_NoLogrado"));
+            _accomplished = Integer.parseInt(_jsonObject.getString("achieve"));
+            _notAccomplished = Integer.parseInt(_jsonObject.getString("unachieve"));
             _yValues[0] = _notAccomplished;
             _yValues[1] = _accomplished;
         } catch (JSONException e) {

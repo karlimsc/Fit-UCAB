@@ -255,4 +255,3 @@ public class CommandsFactory {
     //fin modulo 7
 
 }
-

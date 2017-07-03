@@ -90,14 +90,7 @@ public abstract class Dao implements IDao
         }
     }
 
-    public void achieveChallenge(int id, List<Entity> challenges){};
     public void requestFriendship(String userOne, String userTwo){};
     public void setLocation(String id, String latitud, String longitud){};
     public void updateFriendship(String updater, String updated, String action){};
-    public Entity fillChart(int id){return null;};
-    public Entity score(int id){return null;};
-    public Entity levelUp(int id){return null;};
-
-
-
 }
