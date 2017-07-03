@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -72,6 +73,7 @@ public class M06AddTrainingFragment extends Fragment {
         _view =  inflater.inflate(R.layout.fragment_m06_add_training, container, false);
         setupViewValues();
         manageListView();
+        manageChangeFragmentTraining();
 
         return _view;
     }
@@ -80,14 +82,17 @@ public class M06AddTrainingFragment extends Fragment {
      * metodo de listener del boton agregar, para realizar el cambio al otro fragmento.
      */
     private void manageChangeFragmentTraining() {
+
         _btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String trainingNmae = _edittext.getText().toString();
+                System.out.print(trainingNmae);
                 _callBack.onSwap("M06HomeTrainingFragment",null);
             }
         });
 
-
+ 
     }
     /**
      * Prepara el componente de la vista
@@ -99,11 +104,11 @@ public class M06AddTrainingFragment extends Fragment {
 
     }
 
-    public void getRetrofit() {
+    public void getRetrofit(String trainingname) {
 
 
         ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
-        Call<Training> call = apiService.getAllTraining(1);
+        Call<Training> call = apiService.addTraining(trainingname,1,1);
 
         final MaterialDialog dialog = getInstaceDialog(getContext());
 
