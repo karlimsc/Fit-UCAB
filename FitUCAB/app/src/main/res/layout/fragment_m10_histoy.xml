@@ -8,6 +8,23 @@
     android:weightSum="1">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/cantidadAgua"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.07"
+        android:text="TextView" />
+
+    <ProgressBar
+        android:id="@+id/progressBarAgua"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.07" />
+
     <ListView
         android:id="@+id/list_water"
         android:layout_width="match_parent"

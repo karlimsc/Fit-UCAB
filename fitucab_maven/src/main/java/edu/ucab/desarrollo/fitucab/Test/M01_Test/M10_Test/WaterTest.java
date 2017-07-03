@@ -59,7 +59,7 @@ public class WaterTest {
  }
  @Test
  public void get_error() throws Exception {
-        assertEquals(water2.get_error(),"error");
+        assertEquals(water3.get_error(),"error");
  }
  @Test
  public void set_error() throws Exception {
