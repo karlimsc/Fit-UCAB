@@ -6,6 +6,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.CreateUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M01.LoginUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
@@ -39,7 +40,6 @@ public class DaoUser extends Dao implements IDaoUser {
     String _phone;
     String _email;
     Entity _user;
-    Date birthdate;
     private GetUserException _error;
     private Connection _bdCon;
     //Encargado de encriptar la contraseña
@@ -160,16 +160,17 @@ public class DaoUser extends Dao implements IDaoUser {
 
         User _user = (User) e;
 
-        User userFail = new User();
-
-        userFail.set_status(Integer.toString(RESULT_USER_FAIL));
-
-
         String password = _sc.encryptPassword(_user.getPassword());
 
-        int idUser = 0;
+        User userFail = new User();
 
         try {
+
+
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+
+            int idUser = 0;
+
             cstmt = _bdCon.prepareCall(_sqlInicioSesion.toString());
 
             //1er signo de interrogacion el parametro de salida
@@ -182,7 +183,8 @@ public class DaoUser extends Dao implements IDaoUser {
             cstmt.execute();
 
             idUser = cstmt.getInt(1);
-            System.out.printf(String.valueOf(idUser));
+
+            _logger.debug("ID del User Encontrado "+String.valueOf(idUser));
 
             if (idUser!= 0) {
                 _user.setId(idUser);
@@ -191,19 +193,29 @@ public class DaoUser extends Dao implements IDaoUser {
             }
             else {
                 userFail.set_status(Integer.toString(RESULT_USER_FAIL));
-                return userFail;
+                //return userFail;
+                _logger.debug("Debug: ", "MENSAJE");
+                _logger.debug("No encontró el usuario. Login Exception");
+                _logger.debug("String del USERFAIL " + gson.toJson(userFail));
+                throw new LoginUserException(DaoUser.class.getSimpleName(),"Error al Insertar el Usuario", userFail);
             }
 
         } catch (SQLException ex) {
-            _errorLog = new LoginUserException(ex, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
-            _logger.debug("Debug: ", _errorLog.toString());
-            _logger.error("Error: ", _errorLog.toString());
-            return userFail;
-        } catch (Exception ex) {
+
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.debug("Debug: ", error.toString());
-            _logger.error("Error: ", error.toString());
+
+            _logger.error("Error SQL Exception: ", error.toString());
+
+            return userFail;
+
+        } catch (Exception ex) {
+
+            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+
+            _logger.error("Error Exception: ", error.toString());
+
             return userFail;
         } finally {
             _bdCon.close();
@@ -219,7 +231,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * @return El usuario con el estatus de inserción.
      */
     @Override
-    public Entity create(Entity e) throws Exception {
+    public Entity create(Entity e) throws CreateUserException, SQLException {
 
         _sc = new Security();
 
@@ -230,6 +242,8 @@ public class DaoUser extends Dao implements IDaoUser {
         String password = _sc.encryptPassword(_user.getPassword());
 
         CallableStatement cstmt;
+
+        int id =0;
 
 
         try {
@@ -248,26 +262,46 @@ public class DaoUser extends Dao implements IDaoUser {
             cstmt.setInt(9, _user.getHeight());
             cstmt.execute();
 
-            int id = cstmt.getInt(1);
-            _user.setId(id);
-            _user.set_status(Integer.toString(RESULT_CODE_OK));
+            id = cstmt.getInt(1);
 
-            return _user;
+            if (id!=0) {
+
+                _user.setId(id);
+                _user.set_status(Integer.toString(RESULT_CODE_OK));
+                return _user;
+            }
+            else {
+
+                _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+                System.out.print("EN DAOUSER TRHOWS EL USER STATUS ES " + _userFail.get_status()) ;
+                throw new CreateUserException(DaoUser.class.getSimpleName(),"Error al hacer login",_userFail);
+            }
+
 
         } catch (SQLException ex) {
+
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.debug("Debug: ", error.toString());
+
+            _logger.error("Error: ", error.toString());
+            System.out.print("EN DAOUSER SQL EXC EL USER STATUS ES " + _userFail.get_status()) ;
+
+            _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+
+            return _userFail;
+
+        } catch (Exception ex) {
+            System.out.print("EN DAOUSER EXCEPTION EL USER STATUS ES " + _userFail.get_status()) ;
+
+            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+
             _logger.error("Error: ", error.toString());
 
             _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+
             return _userFail;
-        } catch (Exception ex) {
-            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.error("Error: ", error.toString());
-            _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
-            return _userFail;
+
         } finally {
             _bdCon.close();
         }

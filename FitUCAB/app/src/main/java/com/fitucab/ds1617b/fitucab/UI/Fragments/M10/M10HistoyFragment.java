@@ -21,6 +21,7 @@ import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Model.AdapterM10ListView;
 import com.fitucab.ds1617b.fitucab.Model.Water;
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
 import com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -45,7 +46,7 @@ public class M10HistoyFragment extends Fragment {
     private static ArrayList<Water>  list = new ArrayList<>();
     private Context contexto;
     private IpStringConnection Url = new IpStringConnection();
-    int idusuario =1;
+    int idusuario =2;
     M10WaterGlassActivity m10 = new M10WaterGlassActivity();
     static M10WaterGlassFragment m10w;
      Gson gson = new Gson();
@@ -154,9 +155,20 @@ public class M10HistoyFragment extends Fragment {
                                 }
                                 
                                 _glassesML.setText("Has consumido en " + Integer.toString(cantidad)
-                                        +" vasos de agua, un total de " + Integer.toString(suma) + " Ml de los " +
-                                        "2000Ml recomendados");
+                                        +" vasos de agua, un total de " + Integer.toString(suma)
+                                        + " Ml de los " +
+                                        "2000 Ml recomendados");
                                 _glassesProgress.setProgress(suma);
+
+                                if(suma==0){
+
+                                    M04NotificationActivity actividad = new M04NotificationActivity();
+                                    actividad.sendMail("andresfra92@gmail.com",
+                                            "Notificacion de Hidratacion",
+                                            "No has consumido agua el dia de hoy, le recordamos que " +
+                                            "debe consumir al menos 2 litros de agua diariamente.",10);
+
+                                }
 
                             } catch (Exception e) {
                                 e.printStackTrace();
