@@ -130,7 +130,7 @@ public class M06DetailsTrainingFragment extends Fragment {
             case R.id.m06_delete_training:
                 // do stuff
                 ///TODO GO TO DELETE TRAINING
-                //getRetrofit(_Training.get_trainingId(), _Training.get_trainingName());
+                getRetrofit(_Training.get_trainingId(), _Training.get_trainingName());
                 //_callBack.onSwap();
                 return true;
 
@@ -156,7 +156,7 @@ public class M06DetailsTrainingFragment extends Fragment {
 
     }
 
-   /* public void getRetrofit(int id, String trainingname) {
+    public void getRetrofit(int id, String trainingname) {
 
 
         ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
@@ -192,7 +192,7 @@ public class M06DetailsTrainingFragment extends Fragment {
             }
         });
 
-    }*/
+    }
 
     private void manageRecyclerView(){
 
