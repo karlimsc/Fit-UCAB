@@ -29,6 +29,8 @@ public class DeletLastCommand extends Command {
 
     public void execute() {
 
+        logger.debug("Debug: Eliminando agua->Comando");
+
         IDaoWater daoWater = DaoFactory.instanceDaoWater(_water);
 
         try {
@@ -43,7 +45,7 @@ public class DeletLastCommand extends Command {
             e.printStackTrace();
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Debug: ", error.toString());
+
             logger.error("Error: ", error.toString());
 
         }
