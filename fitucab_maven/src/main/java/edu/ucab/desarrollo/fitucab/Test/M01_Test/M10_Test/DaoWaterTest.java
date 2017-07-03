@@ -5,13 +5,11 @@ import edu.ucab.desarrollo.fitucab.common.entities.Water;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.DaoWater;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.IDaoWater;
-import edu.ucab.desarrollo.fitucab.webService.Sql;
+import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import javax.xml.transform.Result;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -45,7 +43,7 @@ public class DaoWaterTest {
         Sql _sql3 = new Sql();
         String insertWaterList2 = "INSERT INTO public.glass_historic(glasshistoricid, glasstime, glasstype, " +
                 "fk_person) VALUES(301,'02/10/4000', 250, 1),(302,'02/10/4000', 300, 1),(303,'02/10/4000', 350, 1);";
-
+        _sql3.sql(insertWaterList2);
 
     }
 
@@ -66,9 +64,8 @@ public class DaoWaterTest {
         IDaoWater daoWater = DaoFactory.instanceDaoWater(_water);
         _water.set_glasstype(200);
         _water.set_fkPerson(1);
-        for (int i=0;i < 2;i++){
             water = (Water) daoWater.create(_water);
-        }
+            water = (Water) daoWater.create(_water);
         assertEquals ((long) water.get_cantidad(),2);
     }
 
@@ -95,7 +92,7 @@ public class DaoWaterTest {
         Water waterCount = EntityFactory.createWater(900,3);
         IDaoWater daoWater = DaoFactory.instanceDaoWater(_water);
         water = (Water) daoWater.getWater(_water);
-        assertTrue(waterCount.get_cantidad() == water.get_cantidad() && waterCount.get_time() == water.get_time());
+        assertTrue(waterCount.equals(water));
     }
 
     @Test
@@ -103,7 +100,7 @@ public class DaoWaterTest {
         Water _water = EntityFactory.createWater();
         Water waterResult = EntityFactory.createWater();
         _water.set_fkPerson(1);
-        _water.set_time("02/10/4000");
+        _water.set_time("02/10/3000");
         IDaoWater daoWater = DaoFactory.instanceDaoWater(_water);
         waterResult = (Water) daoWater.deleteLast(_water);
         assertTrue(waterResult.get_cantidad().equals(2));
@@ -156,20 +153,24 @@ public class DaoWaterTest {
     @Test
     public void getWaterItem() throws Exception {
         Water _water = EntityFactory.createWater();
+        Water water = EntityFactory.createWater();
+        water.set_cantidad(3);
+        water.set_suma(900);
         ResultSet rs;
         DaoWater daoWater = new DaoWater(_water);
-        rs = daoWater.queryExecute("Select * from M10_GetWaterGlass(1 ,'02/10/300')");
+        rs = daoWater.queryExecute("Select * from M10_GetWaterGlass(1 ,'02/10/3000')");
         _water = daoWater.getWaterItem(rs);
-        assertEquals(900,(int) _water.get_cantidad());
-        assertEquals(3,(int) _water.get_suma());
-    }
-
-    @Test
-    public void getFechaIntItem() throws Exception {
+        assertTrue(_water.equals(water));
     }
 
     @Test
     public void deletLastItem() throws Exception {
+        Water _water = EntityFactory.createWater();
+        ResultSet rs;
+        DaoWater daoWater = new DaoWater(_water);
+        rs = daoWater.queryExecute("Select * from M10_DeletWaterLast('02/10/4000',1)");
+        _water = daoWater.deletLastItem(rs);
+        assertEquals((int)_water.get_cantidad(),2);
     }
 
 }
