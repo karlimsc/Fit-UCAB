@@ -106,7 +106,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * @return _user entidad User
      */
     @Override
-    public Entity read(int _id) throws GetUserException {
+    public Entity read(int _id) throws GetUserException, SQLException {
         try {
             _bdCon = Dao.getBdConnect();
             Statement st = _bdCon.createStatement();
@@ -140,7 +140,7 @@ public class DaoUser extends Dao implements IDaoUser {
             _logger.error("Error: ", _error.toString());
             throw _error;
         }finally {
-            Dao.closeConnection();
+            _bdCon.close();
         }
     }
 
@@ -257,7 +257,7 @@ public class DaoUser extends Dao implements IDaoUser {
         }
     }
 
-    public boolean update() {
+    public boolean update() throws SQLException {
         try {
             if (!_username.equals("")) {
                 UpdateName(_username);
@@ -272,6 +272,9 @@ public class DaoUser extends Dao implements IDaoUser {
             e.printStackTrace();
         } catch (BdConnectException e) {
             e.printStackTrace();
+        }
+        finally {
+            _bdCon.close();
         }
         return true;
     }
@@ -288,10 +291,13 @@ public class DaoUser extends Dao implements IDaoUser {
         } catch (BdConnectException e) {
             e.printStackTrace();
         }
+        finally {
+            _bdCon.close();
+        }
 
     }
 
-    public void UpdateEmail(String email) {
+    public void UpdateEmail(String email) throws SQLException {
         String updatemail = email;
         try {
             _bdCon = Dao.getBdConnect();
@@ -303,9 +309,12 @@ public class DaoUser extends Dao implements IDaoUser {
         } catch (BdConnectException e1) {
             e1.printStackTrace();
         }
+        finally {
+            _bdCon.close();
+        }
     }
 
-    public void UpdatePhone(String phone) {
+    public void UpdatePhone(String phone) throws SQLException {
         String updatephone = phone;
         try {
             _bdCon = Dao.getBdConnect();
@@ -316,6 +325,9 @@ public class DaoUser extends Dao implements IDaoUser {
             e1.printStackTrace();
         } catch (BdConnectException e1) {
             e1.printStackTrace();
+        }
+        finally {
+            _bdCon.close();
         }
     }
 

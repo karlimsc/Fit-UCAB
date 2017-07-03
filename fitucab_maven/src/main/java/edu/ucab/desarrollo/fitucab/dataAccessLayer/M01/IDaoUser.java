@@ -14,14 +14,14 @@ import java.sql.SQLException;
 public interface IDaoUser extends IDao {
     String testEmail (String email) throws SQLException;
     Entity login(Entity e) throws SQLException;
-    public boolean update() throws CreateHomeException;
+    public boolean update() throws CreateHomeException, SQLException;
     public void UpdateName(String name) throws BdConnectException, SQLException;
-    public void UpdateEmail(String email);
-    public void UpdatePhone(String phone);
+    public void UpdateEmail(String email) throws SQLException;
+    public void UpdatePhone(String phone) throws SQLException;
     /**
      * Metodo que implementa el DaoUser que recibe un _id
      * @param _id
      */
-    public Entity read(int _id) throws GetUserException;
+    public Entity read(int _id) throws GetUserException, SQLException;
 
 }
