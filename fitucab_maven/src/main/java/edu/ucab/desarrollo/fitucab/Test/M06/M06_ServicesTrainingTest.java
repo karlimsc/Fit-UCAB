@@ -1,5 +1,6 @@
 package edu.ucab.desarrollo.fitucab.Test.M06;
-/*import static io.restassured.RestAssured.given;
+/*
+import static io.restassured.RestAssured.given;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
@@ -10,6 +11,8 @@ import org.apache.http.impl.conn.BasicClientConnectionManager;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+
+import static io.restassured.RestAssured.useRelaxedHTTPSValidation;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.*;
 */
@@ -18,8 +21,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * Created by Barbara Fernadez on 7/2/2017.
  */
 class M06_ServicesTrainingTest {
-
 /*
+
     @BeforeEach
     void setUp() {
     }
@@ -39,8 +42,8 @@ class M06_ServicesTrainingTest {
                     "trainingName=daniel" +
                     "&trainingActivities=trotar" +
                     "&userId=1");
-            given().accept(ContentType.JSON).when().get(prueba).then()
-                    .assertThat().statusCode(HttpStatus.SC_OK);
+            given().accept(ContentType.JSON).when().get(prueba).then().assertThat().statusCode(HttpStatus.SC_OK);
+
             String json = given().accept(ContentType.JSON).when()
                     .get(prueba).thenReturn().body().asString();
             assertNotNull(json);
@@ -173,6 +176,5 @@ class M06_ServicesTrainingTest {
     @Test
     void getAllTraining() {
     }
-
 */
 }

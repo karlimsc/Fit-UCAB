@@ -21,11 +21,9 @@ public abstract class Command
      * @throws ListAllException excepcion para listar todos
      * @throws ListByIdException excepcion para listar por id
      */
-<<<<<<< HEAD
-    public abstract void execute() throws Exception;
-=======
+
     public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception;
->>>>>>> Develop
+
 
     public List<Entity> getFriendships(){
         return null;

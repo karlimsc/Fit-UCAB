@@ -1,17 +1,8 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
-<<<<<<< HEAD
-import edu.ucab.desarrollo.fitucab.common.entities.User;
-
-/*
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CheckTrainingCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;*/
-
-=======
 /**
  * Created by elberg on 28/06/17.
  */
->>>>>>> Develop
 
 import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
