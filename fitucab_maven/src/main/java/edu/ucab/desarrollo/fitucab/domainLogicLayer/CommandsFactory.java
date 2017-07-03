@@ -194,4 +194,3 @@ public class CommandsFactory {
     static public MomentCommand getMoment (Entity Moment) {return  new MomentCommand(Moment);}
 }
 
-
