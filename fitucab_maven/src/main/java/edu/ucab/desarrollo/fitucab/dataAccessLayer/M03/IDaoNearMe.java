@@ -14,4 +14,5 @@ public interface IDaoNearMe extends IDao {
     public Entity create(Entity e) throws SQLException;
     public ArrayList<UserAuxiliar> getNearMe(String id, String longitud, String latitud, String rango)  throws  SQLException;
     public void setLocation(String id, String longitud, String latitud);
+
 }
