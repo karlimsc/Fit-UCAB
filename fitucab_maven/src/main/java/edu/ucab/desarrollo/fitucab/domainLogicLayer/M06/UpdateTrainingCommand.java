@@ -20,6 +20,8 @@ public class UpdateTrainingCommand extends Command{
         }
     }
 
-
+    public Entity Return(){
+        return null;
+    }
 
 }

@@ -2,13 +2,16 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer.M07;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.Planification;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M07.DaoPlanification;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -35,5 +38,10 @@ public class GetPlanificationByIdCommand extends Command {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public Entity Return() throws SQLException, CreateHomeException, BdConnectException {
+        return null;
     }
 }

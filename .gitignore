@@ -3,12 +3,14 @@
 local.properties
 /.idea/workspace.xml
 /.idea/libraries
-.DS_Store
 /build
 /captures
 .externalNativeBuild
 .idea
 /app/build
+*.DS_Store
+.AppleDouble
+.LSOverride
 
 /FitUCAB/.gradle
 /FitUCAB/*.iml

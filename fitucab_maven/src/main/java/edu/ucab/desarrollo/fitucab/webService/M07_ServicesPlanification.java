@@ -7,7 +7,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Planification;
 import edu.ucab.desarrollo.fitucab.common.entities.Response;
 import edu.ucab.desarrollo.fitucab.common.exceptions.EncodingExeption;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ParameterNullException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ParametersNullException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.CreatePlanificationCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.DeletePlanificationCommand;
@@ -107,7 +107,7 @@ public class M07_ServicesPlanification {
 
             response.setStatus(planificationEntity.get_errorCode());
             response.setMessage(planificationEntity.get_errorMsg());
-        } catch (ParameterNullException e) {
+        } catch (ParametersNullException e) {
             response.setStatus(e.getStatus());
             response.setMessage(e.getMessage());
         }
@@ -185,7 +185,7 @@ public class M07_ServicesPlanification {
 
             response.setStatus(planificationEntity.get_errorCode());
             response.setMessage(planificationEntity.get_errorMsg());
-        } catch (ParameterNullException e) {
+        } catch (ParametersNullException e) {
             response.setStatus(e.getStatus());
             response.setMessage(e.getMessage());
         }
@@ -227,7 +227,7 @@ public class M07_ServicesPlanification {
             cmd.execute();
             response.setStatus(planificationEntity.get_errorCode());
             response.setMessage(planificationEntity.get_errorMsg());
-        } catch (ParameterNullException e) {
+        } catch (ParametersNullException e) {
             response.setStatus(e.getStatus());
             response.setMessage(e.getMessage());
         }
@@ -266,7 +266,7 @@ public class M07_ServicesPlanification {
             response.setStatus(planificationEntity.get_errorCode());
             response.setMessage(planificationEntity.get_errorMsg());
             response.setData(cmd.get_listPlanification());
-        } catch (ParameterNullException e) {
+        } catch (ParametersNullException e) {
             response.setStatus(e.getStatus());
             response.setMessage(e.getMessage());
         }
