@@ -17,23 +17,31 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
-import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.android.volley.Request;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
+import java.util.List;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -139,6 +147,7 @@ public class M01SignUpFragment extends Fragment {
                 }
 
                 getRetrofit(username,password,email,sex,phone,birthdate,weight,height);
+               // makeInsertUser(username,password,email,sex,phone,birthdate,weight,height);
 
             }
         });
@@ -433,5 +442,56 @@ public class M01SignUpFragment extends Fragment {
         editor.commit();
 
     }
+
+    public void makeInsertUser(String username,String password,String email,String sex,
+                               String phone,String birthdate,String weight,
+                               String height)
+    {                                     // Aqui va ManagePreferences.getIdUser()
+
+        IpStringConnection IP= new IpStringConnection();
+        final Gson gson = new Gson();
+        
+        String consult = IP.getIp()+"M01_ServicesUser/insertRegistry?username="+username+"&" +
+                "password="+password+"&email="+email+"&sex="+sex+"&phone="+phone+"&birthdate="+birthdate+"&" +
+                "weight="+weight+"&height="+height;
+
+        final StringRequest stringRequest = new StringRequest
+                (Request.Method.GET, consult,
+                        new com.android.volley.Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                int id_us = 0;
+
+                                ArrayList<User> at = new ArrayList<User>();
+
+                                ArrayList<String> tab = new ArrayList<String>();
+
+                                at = gson.fromJson(response,
+                                        new TypeToken<List<User>>(){}.getType());
+                                ArrayList<User> _User = at;
+                                
+                                for (int i = 0; i < at.size(); i++ ){
+                                    id_us = Integer.valueOf(at.get(i).get_idUser());
+                                }
+
+                                Toast.makeText(getContext(), String.valueOf(id_us),
+                                        Toast.LENGTH_SHORT).show();
+
+                            }
+                        }, new com.android.volley.Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO Auto-generated method stub
+                        Toast.makeText(getContext(), R.string._tst_m05_messagereload,
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+        VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
+
+    }
+
+
 }
 
