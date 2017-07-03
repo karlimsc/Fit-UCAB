@@ -122,7 +122,7 @@ public class DaoUser extends Dao implements IDaoUser {
                 Date _birthdate = _result.getDate( "birthdate" );
                 int  _height = _result.getInt( "height" );
                 int _weight = _result.getInt("weight");
-                _user = EntityFactory.createUser( _id ,_usuario, _email, _sex, _phone, _birthdate, _height, _weight);
+                _user = EntityFactory.createUser( _id ,_usuario, _email, _sex, _phone, _birthdate, _weight, _height);
             }
             return _user;
         } catch (NullPointerException e) {
@@ -160,7 +160,14 @@ public class DaoUser extends Dao implements IDaoUser {
 
         User _user = (User) e;
 
+        User userFail = new User();
+
+        userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+
+
         String password = _sc.encryptPassword(_user.getPassword());
+
+        int idUser = 0;
 
         try {
             cstmt = _bdCon.prepareCall(_sqlInicioSesion.toString());
@@ -174,37 +181,30 @@ public class DaoUser extends Dao implements IDaoUser {
 
             cstmt.execute();
 
-            int id = cstmt.getInt(1);
-            System.out.printf(String.valueOf(id));
+            idUser = cstmt.getInt(1);
+            System.out.printf(String.valueOf(idUser));
 
-            _user.setId(id);
-            return _user;
+            if (idUser!= 0) {
+                _user.setId(idUser);
+                _user.set_status(Integer.toString(RESULT_CODE_OK));
+                return _user;
+            }
+            else {
+                userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+                return userFail;
+            }
 
         } catch (SQLException ex) {
             _errorLog = new LoginUserException(ex, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
             _logger.debug("Debug: ", _errorLog.toString());
             _logger.error("Error: ", _errorLog.toString());
-            throw _errorLog;
-            //Anterior
-            /*MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.debug("Debug: ", error.toString());
-            _logger.error("Error: ", error.toString());
-
-            //Retorna null por el error
-            return null;*/
+            return userFail;
         } catch (Exception ex) {
-            _errorLog = new LoginUserException(ex, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
-            _logger.debug("Debug: ", _errorLog.toString());
-            _logger.error("Error: ", _errorLog.toString());
-            throw _errorLog;
-           //Anterior
-            /*
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.debug("Debug: ", error.toString());
             _logger.error("Error: ", error.toString());
-            return null;*/
+            return userFail;
         } finally {
             _bdCon.close();
         }
@@ -216,9 +216,8 @@ public class DaoUser extends Dao implements IDaoUser {
      * Metodo que es llamado a traves del web service para agregar a la base de datos
      * los parametros recibidos
      *
-     * @return
+     * @return El usuario con el estatus de inserción.
      */
-
     @Override
     public Entity create(Entity e) throws Exception {
 
@@ -468,7 +467,4 @@ public class DaoUser extends Dao implements IDaoUser {
     public Entity read(Entity e) throws CreateHomeException, SQLException, BdConnectException {
         return null;
     }
-
-
-
-    }
+}
