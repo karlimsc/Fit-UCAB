@@ -116,7 +116,7 @@ public class M06DetailsTrainingFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        _Training.set_trainingId(505); //PRUEBA
+        //_Training.set_trainingId(505); //PRUEBA
         switch (id) {
             case R.id.m06_edit_training:
                 // do stuff

@@ -201,7 +201,7 @@ public class DaoTraining extends Dao implements IDaoTraining
                         "SELECT M06_ADDTRAINING_ACTIVITY('" + a.get_duration() + "', '" + e.get_id() + "', '" + a.get_id() + ")";
                 conn = Dao.getBdConnect();
                 st = conn.createStatement();
-                rs = st.executeQuery(query);
+                rs = st.executeQuery(_query);
                 //User user = null;
             }
 
