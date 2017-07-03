@@ -8,6 +8,8 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M06.IDaoTraining;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
+import org.slf4j.LoggerFactory;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -17,6 +19,7 @@ import java.util.List;
  */
 public class GetTrainingDetailCommand extends Command
 {
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
     Entity _training;
     public GetTrainingDetailCommand(Entity training)
