@@ -5,7 +5,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Planification;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
-import javafx.print.PageLayout;
+//import javafx.print.PageLayout;
 
 import java.sql.*;
 import java.time.LocalDate;

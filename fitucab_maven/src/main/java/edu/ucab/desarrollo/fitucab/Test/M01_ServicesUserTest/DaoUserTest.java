@@ -1,9 +1,11 @@
+package edu.ucab.desarrollo.fitucab.Test.M01_ServicesUserTest;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M02.*;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.*;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
@@ -12,13 +14,10 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.Types;
+import java.sql.*;
 
 import static org.junit.Assert.assertEquals;
-
+import static org.junit.Assert.assertNotNull;
 
 
 public class DaoUserTest {
