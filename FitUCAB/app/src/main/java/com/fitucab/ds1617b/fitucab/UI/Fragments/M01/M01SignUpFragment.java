@@ -178,7 +178,7 @@ public class M01SignUpFragment extends Fragment {
         datePickerListener,cal.get(Calendar.YEAR), cal.get(Calendar.DAY_OF_MONTH),
         cal.get(Calendar.MONTH));
         cal.add(Calendar.YEAR,0);
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         int year = Calendar.getInstance().get(Calendar.YEAR);
         Calendar calmax = Calendar.getInstance();
         calmax.set(year-15, 11, 31);
@@ -343,9 +343,12 @@ public class M01SignUpFragment extends Fragment {
                 public void onFailure(Call<User> call, Throwable t) {
 
                     dialog.dismiss();
+
                     String error=t.getMessage();
                     String errorResult= validateExceptionMessage(error,getContext());
                     showToast(getContext(),errorResult);
+                    System.out.println("ERROR"+errorResult);
+                    System.out.println("ERROR"+t.getMessage());
                     //Toast.makeText(getContext(), errorResult, Toast.LENGTH_SHORT).show();
                 }
 
