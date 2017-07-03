@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M03.DaoFriendship;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
@@ -15,6 +16,12 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M03.*;
+import sun.misc.Request;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.CreatePlanificationCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.DeletePlanificationCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.GetPlanificationByIdCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.UpdatePlanificationCommand;
 
 /**
  * Fabrica de comandos
@@ -170,6 +177,39 @@ public class CommandsFactory {
 
     //Fin Modulo 10
 
+    //Modulo 3
+
+    /**
+     * Metodo para instanciar el comando RequestFriendship con todos sus atributos
+
+     * @param userOne
+     * @param userTwo
+     * @return el comando RequestFriendship
+     */
+    static public Command instanciateRequestFriendshipCmd(Dao friendship, String userOne, String userTwo){ return new RequestFriendshipCommand(friendship, userOne, userTwo); }
+
+    /**
+     * Metodo para instanciar el comando RequestFriendship con todos sus atributos
+     * @param friendship
+     * @param userOne
+     * @param userTwo
+     * @return el comando RequestFriendship
+     */
+    static public Command instanciateUpdateFriendshipCmd(Dao friendship, String userOne, String userTwo){ return new RequestFriendshipCommand(friendship, userOne, userTwo); }
+
+    /**
+     * Metodo para instanciar el comando GetFriends
+     * @param id es el id del usuario
+     * @param action identifica si son amigos o no
+     * @return el comando GetFriends
+     */
+
+    public static GetFriendsCommand instatiateGetFriendsCmd(String id, String action){ return new GetFriendsCommand(id, action); }
+
+    public static GetContactsCommand instatiateGetContactsCmd(String id, String contacts) { return new GetContactsCommand(id, contacts);}
+
+    //fin modulo 3
+
     //Modulo11
 
     static public getFoodPerCommand getFoodPerCmd(Entity Food){ return new getFoodPerCommand(Food); }
@@ -192,5 +232,25 @@ public class CommandsFactory {
     static public getPersonalizedListCommand getPersoFoodCmd (Entity Food) {return new getPersonalizedListCommand(Food);}
 
     static public MomentCommand getMoment (Entity Moment) {return  new MomentCommand(Moment);}
-}
 
+    //Modulo 7
+
+    public static CreatePlanificationCommand instanciateCreatePlanificationCmd(Entity create) {
+        return new CreatePlanificationCommand(create);
+    }
+
+    public static DeletePlanificationCommand instanciateDeletePlanificationCmd(Entity delete) {
+        return new DeletePlanificationCommand(delete);
+    }
+
+    public static GetPlanificationByIdCommand instanciateGetPlanificationByIdCmd(Entity get) {
+        return new GetPlanificationByIdCommand(get);
+    }
+
+    public static UpdatePlanificationCommand instanciateUpdatePlanificationCmd(Entity update) {
+        return new UpdatePlanificationCommand(update);
+    }
+
+    //fin modulo 7
+
+}
