@@ -49,6 +49,8 @@
         android:layout_alignLeft="@+id/_levelLabelTV"
         android:layout_alignStart="@+id/_levelLabelTV"
         android:layout_below="@+id/_levelLabelTV"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
         android:layout_gravity="center"
         android:text=""
         android:textColor="#353535"
@@ -58,14 +60,14 @@
         android:id="@+id/_lineXML"
         style="?android:attr/listSeparatorTextViewStyle"
         android:layout_width="match_parent"
-        android:layout_height="5dp"
+        android:layout_height="1dp"
         android:layout_above="@+id/_listXML"
-        android:layout_below="@+id/_pointsTV"
         android:background="#000000"
-        android:paddingTop="5dip" />
+        android:paddingTop="8dp" />
 
     <ListView
         android:id="@+id/_listXML"
+        android:layout_marginTop="15dp"
         style="?android:attr/listSeparatorTextViewStyle"
         android:layout_width="fill_parent"
         android:layout_height="322dp"
