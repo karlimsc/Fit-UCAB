@@ -116,6 +116,7 @@ public class M06DetailsTrainingFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+        _Training.set_trainingId(505); //PRUEBA
         switch (id) {
             case R.id.m06_edit_training:
                 // do stuff
@@ -197,8 +198,9 @@ public class M06DetailsTrainingFragment extends Fragment {
 
                 dialog.dismiss();
                 String error = t.getMessage();
-                String errorResult = M06Util.validateExceptionMessage(error, getContext());
-                showToast(getContext(), errorResult);
+                String errorResult = "Ha ocurrido un error eliminando";
+                Toast.makeText(getContext(), errorResult,
+                        Toast.LENGTH_LONG).show();
             }
         });
 
@@ -224,7 +226,7 @@ public class M06DetailsTrainingFragment extends Fragment {
 
                 try {
                     Toast.makeText(getContext(),
-                            "Se ha eliminado exitosamente el entrenamiento",
+                            "Se ha compartido exitosamente el entrenamiento",
                             Toast.LENGTH_LONG).show();
 
                 } catch (Exception e) {
@@ -239,8 +241,9 @@ public class M06DetailsTrainingFragment extends Fragment {
 
                 dialog.dismiss();
                 String error = t.getMessage();
-                String errorResult = M06Util.validateExceptionMessage(error, getContext());
-                showToast(getContext(), errorResult);
+                String errorResult = "Ha ocurrido un error compartiendo";
+                Toast.makeText(getContext(), errorResult,
+                        Toast.LENGTH_LONG).show();
             }
         });
 

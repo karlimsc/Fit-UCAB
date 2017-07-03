@@ -216,8 +216,9 @@ public class M06UpdateTrainingFragment extends Fragment {
 
                 dialog.dismiss();
                 String error = t.getMessage();
-                String errorResult = M06Util.validateExceptionMessage(error, getContext());
-                showToast(getContext(), errorResult);
+                String errorResult = "Ha ocurrido un error modificando";
+                Toast.makeText(getContext(), errorResult,
+                        Toast.LENGTH_LONG).show();
             }
         });
 
