@@ -22,13 +22,6 @@ public abstract class Command
      * @throws ListByIdException excepcion para listar por id
      */
     public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception;
-//TODO: Cambiar a AchieveChallengeCommand
-    public List<Entity> getChallenges(){
-        return null;
-    }
-    public Entity getChallenge(){
-        return null;
-    }
 
     public abstract Entity Return() throws SQLException, CreateHomeException, BdConnectException;
 

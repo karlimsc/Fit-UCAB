@@ -22,7 +22,7 @@ public class AchieveChallengeCommand extends Command {
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
     private Dao _dao;
-    private List<Entity> _challenges;
+    private static List<Entity> _challenges;
     private int _userId;
 
     public AchieveChallengeCommand(int id, Dao dao) {
@@ -31,14 +31,15 @@ public class AchieveChallengeCommand extends Command {
         _userId = id;
     }
 
-    public List<Entity> getChallenges() {
+    public static List<Entity> getChallenges() {
         return _challenges;
     }
 
     //TODO: Falta execute
     public void execute() throws NoSuchMethodException {
         try {
-            _dao.achieveChallenge(_userId, _challenges);
+            ((DaoGaming) _dao).achieveChallenge(_userId, _challenges);
+            System.out.println("Hola bebe");
         }
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
