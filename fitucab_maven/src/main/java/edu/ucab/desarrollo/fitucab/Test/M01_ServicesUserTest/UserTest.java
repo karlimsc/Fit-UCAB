@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.Test.M01_ServicesUserTest;
+
 
 
 import edu.ucab.desarrollo.fitucab.common.entities.User;
@@ -6,9 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by Daniel on 26-05-2017.
- */
+
 public class UserTest {
 
 

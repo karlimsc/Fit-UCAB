@@ -3,7 +3,8 @@ package edu.ucab.desarrollo.fitucab.common.exceptions;
 /**
  * Clase para formular mensajes de advertencia
  */
-public class StatusMessage {
+public class
+StatusMessage {
 
     private int _code;
     private String _message;
