@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.R;
 
 /**
@@ -23,6 +24,8 @@ public class M06UpdateTraining extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private Training _Training;
 
     // TODO: Rename and change types of parameters
     private String mParam1;

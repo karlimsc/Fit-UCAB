@@ -2,17 +2,21 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M06;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -20,39 +24,51 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
+import com.fitucab.ds1617b.fitucab.Model.Activit;
+import com.fitucab.ds1617b.fitucab.Model.Person;
 import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.R.attr.country;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
+import android.widget.AdapterView.OnItemClickListener;
 
 
 public class M06AddTrainingFragment extends Fragment {
+    //ManagePreferences manageId = new ManagePreferences();
+    //View rootView;
 
     private OnFragmentSwap _callBack;
-    private FloatingActionButton _btn;
+    private Button _btn;
     private EditText _edittext;
     private View _view;
     ListView _listView;
     private ArrayList <String> arrayList;
     private ArrayAdapter<String> adapter;
-    private ArrayList <String> arrayListAdd;
+    private ArrayList <Activit> arrayListAdd;
     Context context;
     CheckBox _checkbox;
     TextView _textview;
+    ActivitiesAdapter madapter;
+    private RecyclerView recyclerView;
+
 
 
 
@@ -109,34 +125,47 @@ public class M06AddTrainingFragment extends Fragment {
         _btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
-                if (_checkbox.isChecked())
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                int id= preferences.getInt("idUser",0);
+                _edittext =(EditText) _view.findViewById(R.id.new_activity);
+                String name = _edittext.getText().toString();
+                //int userId = manageId.getIdUser(rootView.getContext());
+                String actividades = ActivitiesAdapter.activities;
+                ActivitiesAdapter.activities = "";
+
+                if (!name.equals(""))
                 {
-                   String s = _textview.getText().toString();
+                    if (!actividades.equals(""))
+                    {
+                        getRetrofit(name,actividades,id);
+                        _callBack.onSwap("M06HomeTrainingFragment",null);
+
+                    }
                 }
-                String trainingNmae = _edittext.getText().toString();
-                System.out.print(trainingNmae);
-                _callBack.onSwap("M06HomeTrainingFragment",null);
+
+
             }
         });
 
 
     }
+
+
     /**
      * Prepara el componente de la vista
      */
     private void setupViewValues() {
 
        _edittext =(EditText) _view.findViewById(R.id.new_activity);
-       _btn = (FloatingActionButton) _view.findViewById(R.id.floatingActionButton);
+       _btn = (Button) _view.findViewById(R.id.floatingActionButton);
 
     }
 
-    public void getRetrofit(String trainingname) {
+    public void getRetrofit(String trainingname,String activities, int id) {
 
 
         ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
-        Call<Training> call = apiService.addTraining(trainingname,1,1);
+        Call<Training> call = apiService.addTraining(trainingname,activities,id);
 
         final MaterialDialog dialog = getInstaceDialog(getContext());
 
@@ -171,18 +200,20 @@ public class M06AddTrainingFragment extends Fragment {
     }
 
     private void manageListView(){
-        _checkbox = (CheckBox) _view.findViewById(R.id.checkbox);
-        _textview = (TextView) _view.findViewById(R.id.tv_m06_trainingAdd);
 
+        Activit [] activities = {new Activit(1,"Caminar", 1), new Activit(2,"Trotar", 1), new Activit(3,"Bicicleta", 1), new Activit(4,"Natacion", 1),
+                                 new Activit(5,"Yoga", 1), new Activit(6,"Estiramientos", 1), new Activit(7,"Eliptica", 1), new Activit(8,"Escaleras", 1),
+                                 new Activit(9,"Bailar", 1), new Activit(10,"Aerobic", 1), new Activit(11,"Remo", 1), new Activit(12,"Basketball", 1),
+                                 new Activit(13,"Futbol", 1), new Activit(14,"Tenis", 1), new Activit(15,"Voleibol", 1)};
 
-        context = getContext ();
-        // _listView = (ListView) _view.findViewById(R.id.listofactivities);
-        _listView = (ListView)_view. findViewById(R.id.listofactivities);
-        String [] activities = {"Caminar", "Trotar", "Bicicleta", "Natacion", "Yoga", "Estiramientos",
-                "Eliptica", "Escaleras", "Bailar", "Aerobic", "Remo", "Basketball", "Futbol", "Tenis", "Voleibol"};
         arrayListAdd = new ArrayList<>(Arrays.asList(activities));
-        adapterAdd =  new ArrayAdapter<String>(context, R.layout.fragment_m06_listview_item_add, R.id.tv_m06_trainingAdd,arrayListAdd);
-        _listView.setAdapter(adapterAdd);
+        madapter = new ActivitiesAdapter(arrayListAdd);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView = (RecyclerView) _view.findViewById(R.id.m06_recycler_view1) ;
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(madapter);
+
 
 
 
