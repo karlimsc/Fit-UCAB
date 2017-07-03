@@ -6,44 +6,39 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.IDaoFood;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.IDaoDiet;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 
 /**
- * Created by charbel on 01/07/2017.
+ * Created by JoseA2R on 2/7/17.
  */
-public class updatePersoCommand extends Command {
+public class GetCaloriesConsumedMonthCommand extends Command {
 
-    final static org.slf4j.Logger logger = LoggerFactory.getLogger(updatePersoCommand.class);
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(GetCaloriesConsumedMonthCommand.class);
 
-    Entity _food;
+    Entity _diet;
     public Entity Respuesta;
 
-    public updatePersoCommand(Entity food)
-    {
-        _food = food;
+    public GetCaloriesConsumedMonthCommand(Entity diet) {
+        _diet = diet;
     }
-
 
     @Override
     public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException, BdConnectException {
 
         try{
+        IDaoDiet Daodiet = DaoFactory.iniciarDaoDiet();
+        Respuesta = Daodiet.getCaloriesConsumedMonth(_diet);
 
-        IDaoFood Daofood = DaoFactory.iniciarDaoFood();
-        Respuesta = Daofood.updatePerso(_food);
-
-        } catch (Exception e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Debug: ", error.toString());
-            logger.error("Error: ", error.toString());
-        }
-
-
+    } catch (Exception e){
+        MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.debug("Debug: ", error.toString());
+        logger.error("Error: ", error.toString());
+    }
     }
 
     @Override
