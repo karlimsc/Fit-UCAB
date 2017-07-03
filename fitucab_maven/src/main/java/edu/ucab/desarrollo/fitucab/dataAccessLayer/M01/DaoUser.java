@@ -209,7 +209,7 @@ public class DaoUser extends Dao implements IDaoUser {
             _bdCon.close();
         }
     }
-    
+
 
 
     /**

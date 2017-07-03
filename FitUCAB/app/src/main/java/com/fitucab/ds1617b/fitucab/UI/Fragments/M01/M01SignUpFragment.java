@@ -12,41 +12,35 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.android.volley.Request;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
-import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
-import com.fitucab.ds1617b.fitucab.Model.Activit;
-import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
-
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.VolleySingleton;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05UrlConsul;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -152,8 +146,8 @@ public class M01SignUpFragment extends Fragment {
                     sex="m";
                 }
 
-               // getRetrofit(username,password,email,sex,phone,birthdate,weight,height);
-                makeInsertUser(username,password,email,sex,phone,birthdate,weight,height);
+                getRetrofit(username,password,email,sex,phone,birthdate,weight,height);
+               // makeInsertUser(username,password,email,sex,phone,birthdate,weight,height);
 
             }
         });
