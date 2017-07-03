@@ -29,7 +29,7 @@ public class M03_ServicesContacts {
         try
         {
             cmd.execute();
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch (Exception e)
         {
