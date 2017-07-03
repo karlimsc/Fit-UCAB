@@ -27,6 +27,12 @@ public class Activity extends Entity {
     public Activity() {
     }
 
+    public Activity(int id, String name)
+    {
+        super(id);
+        this._name = _name;
+    }
+
     /**
      * Get del nombre de la actividad
      * @return

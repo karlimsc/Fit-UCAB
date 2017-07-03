@@ -1,5 +1,6 @@
-package M06;
+package edu.ucab.desarrollo.fitucab.Test.M06;
 
+import edu.ucab.desarrollo.fitucab.common.entities.Activity;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Training;
@@ -7,13 +8,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Created by Barbara Fernadez on 7/1/2017.
- */
+
 class TrainingTest {
     @BeforeEach
     void setUp() {
@@ -26,7 +26,7 @@ class TrainingTest {
     @Test
     void getTrainingName() {
 
-        Training prueba = new Training();
+        Training prueba = EntityFactory.createTraining();
         prueba.setTrainingName("daniel");
         assertEquals(prueba.getTrainingName(),"daniel");
     }
@@ -34,7 +34,7 @@ class TrainingTest {
     @Test
     void setTrainingName() {
 
-        Training prueba = new Training();
+        Training prueba = EntityFactory.createTraining();
         prueba.setTrainingName("daniel");
         assertEquals(prueba.getTrainingName(),"daniel");
 
@@ -42,14 +42,14 @@ class TrainingTest {
 
     @Test
     void getTrainingPeriod() {
-        Training prueba = new Training();
+        Training prueba = EntityFactory.createTraining();
         prueba.setTrainingPeriod(1);
         assertEquals(prueba.getTrainingPeriod(),1);
     }
 
     @Test
     void setTrainingPeriod() {
-        Training prueba = new Training();
+        Training prueba = EntityFactory.createTraining();
         prueba.setTrainingPeriod(2);
         assertEquals(prueba.getTrainingPeriod(),2);
         assertNotNull(prueba);
@@ -57,16 +57,32 @@ class TrainingTest {
 
     @Test
     void get_activitylist() {
+        Activity a = EntityFactory.createActivity();
+        a.set_name("prueba");
+        Training prueba = EntityFactory.createTraining();
+        ArrayList<Entity> activitiesList = new ArrayList<Entity>();
+        activitiesList.add(a);
+        prueba.set_activitylist(activitiesList);
+        Activity resultado = (Activity) prueba.get_activitylist().get(0);
+        assertEquals(resultado.get_name(),"prueba");
 
     }
 
     @Test
     void set_activitylist() {
+        Activity a = EntityFactory.createActivity();
+        a.set_name("prueba");
+        Training prueba = EntityFactory.createTraining();
+        ArrayList<Entity> activitiesList = new ArrayList<Entity>();
+        activitiesList.add(a);
+        prueba.set_activitylist(activitiesList);
+        Activity resultado = (Activity) prueba.get_activitylist().get(0);
+        assertEquals(resultado.get_name(),"prueba");
     }
 
     @Test
     void get_userId() {
-        Training prueba = new Training();
+        Training prueba = EntityFactory.createTraining();
         prueba.set_userId(1);
         assertEquals(prueba.get_userId(),1);
 
@@ -74,7 +90,7 @@ class TrainingTest {
 
     @Test
     void set_userId() {
-        Training prueba = new Training();
+        Training prueba = EntityFactory.createTraining();;
         prueba.set_userId(1);
         assertEquals(prueba.get_userId(),1);
 

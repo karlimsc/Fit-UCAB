@@ -13,6 +13,7 @@ public class Training extends Entity {
     private int _trainingPeriod;
     private ArrayList<Entity> _activitylist;
     private int _userId;
+    private ArrayList<Entity> _activitiesList;
 
     /**
      * Constructor vacio
@@ -144,5 +145,15 @@ public class Training extends Entity {
 
     public void set_userId(int _userId) {
         this._userId = _userId;
+    }
+
+    public ArrayList<Entity> get_activitiesList()
+    {
+        return _activitiesList;
+    }
+
+    public void set_activitiesList(ArrayList<Entity> _activitiesList)
+    {
+        this._activitiesList = _activitiesList;
     }
 }

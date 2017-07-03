@@ -1,23 +1,30 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
 import javax.ws.rs.*;
-
-
 import com.google.gson.Gson;
-import edu.ucab.desarrollo.fitucab.common.Registry;
-import edu.ucab.desarrollo.fitucab.common.entities.Activity;
+
+import edu.ucab.desarrollo.fitucab.common.*;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+
+import edu.ucab.desarrollo.fitucab.common.exceptions.*;
+
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
+import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.security.InvalidParameterException;
+
 import java.util.ArrayList;
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Arrays;
+
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -32,7 +39,13 @@ import javax.ws.rs.QueryParam;
 public class M06_ServicesTraining
 {
 
+    private static Logger logger = LoggerFactory.getLogger( M06_ServicesTraining.class );
+
+
+    //final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
+
     Gson gson = new Gson();
+
 
     //el tipo de instruccion HTTP
     @POST
@@ -51,9 +64,11 @@ public class M06_ServicesTraining
 
     // ArrayList<String> activities revisar esto OJO
     public String createTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  final ArrayList<String> activities,
+                                 @QueryParam( "trainingActivities" )  String _activities,
                                  @QueryParam( "userId" ) int userId )
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity createTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
         CreateTrainingCommand cmd =
@@ -64,9 +79,16 @@ public class M06_ServicesTraining
             Entity result = cmd.getResult();//nuevo
             return gson.toJson( result );//nuevo
         }
-        catch ( Exception e )
+        catch ( AddException e )
         {
-            return gson.toJson( false );
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.error(error_.toString());
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
     }
 
@@ -92,11 +114,21 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( UpdateException e )
         {
-            return gson.toJson( false );
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.error(error_.toString());
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
@@ -116,8 +148,10 @@ public class M06_ServicesTraining
 
     public String addActivitiesToTraining( @QueryParam( "idTraining" ) int id,
                                            @QueryParam( "trainingName" ) String name,
-                                           @QueryParam( "trainingActivities" )  ArrayList<String> activities)
+                                           @QueryParam( "trainingActivities" )  String _activities)
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
         AddActivitiesToTrainingCommand cmd = CommandsFactory.instanciateAddActivitiesToTrainingCmd(updatedTrainingObject);
@@ -125,14 +159,25 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( AddException e )
         {
-            return gson.toJson( false );
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.error(error_.toString());
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
+
 
 
     @POST
@@ -149,8 +194,10 @@ public class M06_ServicesTraining
 
     public String removeActivitiesToTraining( @QueryParam( "idTraining" ) int id,
                                               @QueryParam( "trainingName" ) String name,
-                                              @QueryParam( "trainingActivities" )  ArrayList<String> activities)
+                                              @QueryParam( "trainingActivities" )  String _activities)
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
         RemoveActivitiesFromTrainingCommand cmd = CommandsFactory.instanciateRemoveActivitiesFromTrainingCmd(updatedTrainingObject);
@@ -158,14 +205,26 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( DeleteException e )
         {
-            return gson.toJson( false );
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.error(error_.toString());
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
+
+
 
     @GET
     @Path( "/displayTraining" )
@@ -218,14 +277,25 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( DeleteException e )
         {
-            return gson.toJson( false );
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.error(error_.toString());
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
 
     }
+
 
     @GET
     @Path( "/shareTraining" )
@@ -238,9 +308,11 @@ public class M06_ServicesTraining
      * @return
      */
     public String shareTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  final ArrayList<String> activities,
+                                 @QueryParam( "trainingActivities" ) String _activities,
                                  @QueryParam( "userId" ) int userId )
     {
+        String[] activities_ = _activities.split(";");
+        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
         Entity shareTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
         ShareTrainingCommand cmd =
@@ -248,13 +320,24 @@ public class M06_ServicesTraining
         try
         {
             cmd.execute();
-            return gson.toJson( true );
+            Entity ok = EntityFactory.createEntity();
+            ok.set_errorMsg("OK");
+            ok.set_errorCode(200);
+            return gson.toJson( ok );
         }
-        catch ( Exception e )
+        catch ( ShareException e )
         {
-            return gson.toJson( false );
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.error(error_.toString());
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
         }
     }
+
 
 
     private ArrayList<Entity> activityList (ArrayList<String> activities){
@@ -313,30 +396,112 @@ public class M06_ServicesTraining
 
     /**
      * Servicio Web que retorna el entrenamiento a detalle
-     * @param userId usuario login
      * @param trainingId entrenamiento elegido
      * @return entrenamiento
      */
     @POST
     @Path( "/getTrainingDetail" )
     @Produces( "application/json" )
-    public String getTrainingDetail( @QueryParam( "userId" ) int userId,
-                                     @QueryParam( "trainingId" ) int trainingId )
+    public String getTrainingDetail(@QueryParam( "trainingId" ) int trainingId )
     {
-        return null;
+
+        Entity training = null, commandResult = null;
+        Command command = null;
+        String response = null;
+
+        try
+        {
+            if ( trainingId > 0 )
+            {
+                training = EntityFactory.createTraining( trainingId );
+            }
+            else
+            {
+                throw new InvalidParameterException( Registry.ERROR_PARAM_WS );
+
+            }
+
+            command = CommandsFactory.instanciateGetTrainingDetailCmd( training );
+            command.execute();
+
+            commandResult =  ( ( GetTrainingDetailCommand ) command ).get_output();
+            commandResult.set_errorCode( Registry.RESULT_CODE_OK );
+            response = gson.toJson( commandResult );
+        }
+        catch ( ListByIdException e )
+        {
+            commandResult.set_errorCode( e.ERROR_CODE );
+            commandResult.set_errorMsg( e.ERROR_MSG );
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "getTrainingDetail", e.toString() );
+        }
+        catch( Exception e )
+        {
+            commandResult.set_errorCode( Registry.RESULT_CODE_FAIL );
+            commandResult.set_errorMsg( Registry.RESULT_CODE_FAIL_MSG );
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "getTrainingDetail", e.toString() );
+        }
+
+        return response;
+
     }
 
     /**
-     * Servicio Web que retorna la lista de entrenamientos del usuario
-     * @param userId usuario login
-     * @return entrenamiento
+     * Servicio Web para mostrar todos los entrenamientos
+     * @param userId
+     * @return lista de entrenamientos
      */
     @POST
     @Path( "/getAllTraining" )
     @Produces( "application/json" )
     public String getAllTraining( @QueryParam( "userId" ) int userId )
     {
-        return null;
-    }
+        Entity training, cmdResult= null;
+        List<Entity> commandResult = null;
+        Command command;
+        String response = null;
 
+        try
+        {
+            if ( userId > 0 )
+            {
+                training = EntityFactory.createTraining( userId );
+            }
+            else
+            {
+                throw new InvalidParameterException( Registry.ERROR_PARAM_WS );
+            }
+
+            command = CommandsFactory.instanciateGetAllTrainingCmd( training );
+            command.execute();
+
+            commandResult =  ( ( GetAllTrainingCommand ) command ).get_output();
+            //cmdResult.set_errorCode( Registry.RESULT_CODE_OK );
+            response = gson.toJson( commandResult );
+        }
+        catch ( ListAllException e )
+        {
+            cmdResult.set_errorCode( e.ERROR_CODE );
+            cmdResult.set_errorMsg( e.ERROR_MSG );
+            commandResult.add(cmdResult);
+
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "getAllTraining", e.toString() );
+        }
+        catch ( Exception e )
+        {
+            cmdResult.set_errorCode( Registry.RESULT_CODE_FAIL );
+            cmdResult.set_errorMsg( Registry.RESULT_CODE_FAIL_MSG );
+            commandResult.add(cmdResult);
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "getAllTraining", e.toString() );
+        }
+
+        return response;
+    }
 }

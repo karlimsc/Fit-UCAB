@@ -30,15 +30,15 @@ public class MockM06 {
         defaultT.set_trainingOrderInView(1);
         mockTrain.add(defaultT);
 
-        Training training1 = new Training(2,"El de los viernes",actList);
+        Training training1 = new Training(2,"Maraton CAF",actList);
         training1.set_trainingOrderInView(2);
         mockTrain.add(training1);
 
-        Training training2 = new Training(3,"Extremo para la barriga",actList);
+        Training training2 = new Training(3,"Carrera Gatetorade",actList);
         training2.set_trainingOrderInView(3);
         mockTrain.add(training2);
 
-        Training training4 = new Training(4,"Para incrementar la sudoracion",actList);
+        Training training4 = new Training(4,"Diario",actList);
         training4.set_trainingOrderInView(4);
         mockTrain.add(training4);
 

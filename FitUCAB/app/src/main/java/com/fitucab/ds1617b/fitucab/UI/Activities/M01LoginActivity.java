@@ -20,6 +20,7 @@ import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwap {
 
     private FragmentManager FM = getSupportFragmentManager();
+
     /**
      * Metodo que inicia para selecionar el fragmento al que se va a cambiar
      * @param savedInstanceState
@@ -29,20 +30,22 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+
         //Declaracion del Toolbar. si alguien necesita acceder al toolbar en un Fragment
         //debe declarar este atributo como privado y hacerle un Getter.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        int id= getIdUser(this);
-        if(id==0){
+       // int id= getIdUser(this);
+       //if(id==0){
             //Seleccionamos el fragmento que queremos mostrar.
             onSwap("M01HomeFragment",null);
-        }
-        else{
+        //}
+        //else{
 
-            onSwapActivity("M02HomeActivity",null);
-        }
+         // onSwapActivity("M02HomeActivity",null);
+        //}
 
     }
 

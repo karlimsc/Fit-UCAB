@@ -1,0 +1,202 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07ActivityFragment">
+
+    <TextView
+        android:id="@+id/tv_m07_titulo"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:text="Frecuencia:"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:textSize="23dp"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="7"
+        android:rowCount="2"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="390dp">
+
+        <TextView
+            android:id="@+id/tv_m07_checklunes"
+            android:text="L"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+
+        <TextView
+            android:id="@+id/tv_m07_checkmartes"
+            android:text="M"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/tv_m07_checkmiercoles"
+            android:text="M"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/tv_m07_checkjueves"
+            android:text="J"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/tv_m07_checkviernes"
+            android:text="V"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/tv_m07_checksabado"
+            android:text="S"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+        <TextView
+            android:id="@+id/tv_m07_checkdomingo"
+            android:text="D"
+            android:textColor="@color/black"
+            android:layout_marginLeft="8dp"
+            android:textSize="23dp"/>
+
+        <CheckBox
+            android:id="@+id/cb_m07_checklunes"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checkmartes"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checkmiercoles"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checkjueves"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checkviernes"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checksabado"/>
+        <CheckBox
+            android:id="@+id/cb_m07_checkdomingo"/>
+
+    </GridLayout>
+
+    <!-- TODO: Update blank fragment layout -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="120dp">
+
+
+        <ImageButton
+            android:id="@+id/btn_m07_fechaInicio"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:srcCompat="@mipmap/ic_launcher_date"/>
+
+
+        <EditText
+            android:id="@+id/tv_m07_fechaInicio"
+            android:hint="Fecha inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@color/black"/>
+
+
+
+        <ImageButton
+            android:id="@+id/btn_m07_fechaFin"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:srcCompat="@mipmap/ic_launcher_date"/>
+
+
+        <EditText
+            android:id="@+id/tv_m07_fechaFin"
+            android:hint="Fecha fin"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@color/black"/>
+
+
+        <ImageButton
+            android:id="@+id/btn_m07_horaInicio"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:srcCompat="@mipmap/ic_launcher_time"/>
+
+        <EditText
+            android:id="@+id/tv_m07_horaInicio"
+            android:hint="Hora inicio"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@color/black"/>
+
+
+        <ImageButton
+            android:id="@+id/btn_m07_horaFin"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:srcCompat="@mipmap/ic_launcher_time"/>
+
+
+        <EditText
+            android:id="@+id/tv_m07_horaFin"
+            android:hint="Hora fin"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:textColor="@color/black"/>
+
+
+    </GridLayout>
+
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:background="@color/colorBtnConfirmar"
+        android:fontFamily="sans-serif"
+        android:text="Agregar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.495" />
+
+
+    <Button
+        android:id="@+id/btnDecline"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:background="@color/colorBtnDenegar"
+        android:fontFamily="sans-serif"
+        android:text="Declinar"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:typeface="sans"
+        app:layout_constraintRight_toLeftOf="@+id/btnAdd"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginRight="180dp"
+        android:layout_marginTop="400dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+</FrameLayout>

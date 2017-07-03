@@ -1,31 +1,22 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M06;
 
 import android.app.Activity;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Toast;
-
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.Model.Training;
+import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -53,7 +44,6 @@ import retrofit2.Response;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
-import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 import static com.fitucab.ds1617b.fitucab.Model.MockM06.getMockTraining;
 
 
@@ -65,6 +55,7 @@ public class M06HomeTrainingFragment extends Fragment {
     ArrayList<Training> mTrainings;
     private RecyclerView recyclerView;
     private TrainingAdapter mAdapter;
+    private User user;
     public M06HomeTrainingFragment() {
 
     }
@@ -161,9 +152,6 @@ public class M06HomeTrainingFragment extends Fragment {
     }
 
 
-
-
-
     public void getRetrofit() {
 
 
@@ -217,8 +205,6 @@ public class M06HomeTrainingFragment extends Fragment {
         recyclerView.setAdapter(mAdapter);
     }
 
-
-
     private void fetchUserTrainings(final RequestParams params){
         RequestParams test = new RequestParams();
         test.put("userId",1);
@@ -267,6 +253,4 @@ public class M06HomeTrainingFragment extends Fragment {
         });
     }
 
-
 }
-
