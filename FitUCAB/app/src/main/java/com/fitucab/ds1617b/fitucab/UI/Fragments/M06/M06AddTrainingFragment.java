@@ -173,7 +173,8 @@ public class M06AddTrainingFragment extends Fragment {
 
 
         ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
-        Call<Training> call = apiService.addTraining(trainingname,activities,id);
+        //Call<Training> call = apiService.addTraining(trainingname,activities,id); //ORIGINAL
+        Call<Training> call = apiService.addTraining(trainingname,activities,5000);
 
         final MaterialDialog dialog = getInstaceDialog(getContext());
 
@@ -188,6 +189,9 @@ public class M06AddTrainingFragment extends Fragment {
 
                     Training training = response.body();
                     _callBack.onSwap("M06HomeTrainingFragment",null);
+                    Toast.makeText(getContext(),
+                            "Se ha registrado exitosamente",
+                            Toast.LENGTH_LONG).show();
 
                 } catch (Exception e) {
                     e.printStackTrace();
