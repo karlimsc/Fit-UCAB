@@ -6,6 +6,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.CreateUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M01.LoginUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
@@ -219,7 +220,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * @return El usuario con el estatus de inserción.
      */
     @Override
-    public Entity create(Entity e) throws Exception {
+    public Entity create(Entity e) throws CreateUserException, SQLException {
 
         _sc = new Security();
 

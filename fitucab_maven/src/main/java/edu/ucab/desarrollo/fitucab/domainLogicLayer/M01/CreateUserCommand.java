@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.CreateUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
@@ -49,6 +50,12 @@ public class CreateUserCommand extends Command {
             this._response=true;
 
             logger.debug("Debug: ", "Realizó el Try en CreateUserCommand");
+        }
+        catch (CreateUserException e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error);
+            this._response = false;
         }
         catch (NullPointerException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
