@@ -14,7 +14,7 @@ public class LoginUserException extends M01_UserException {
     private String _class;
     private String _specificException;
     private static org.slf4j.Logger _logger = LoggerFactory
-            .getLogger(DaoUser.class);
+            .getLogger(LoginUserException.class);
     /**
      * Metodo Constructor para lanzar excepcion en el login
      * @param _class
@@ -25,9 +25,10 @@ public class LoginUserException extends M01_UserException {
         this._class = _class;
         this._specificException = _specificException;
 
-        MessageException error = new MessageException(this, this.getClass().getSimpleName(),
+        MessageException error = new MessageException(LoginUserException.this, this.getClass().getSimpleName(),
                 _specificException);
-        _logger.error("Error: ", error);
+        _logger.debug("Estatus Usuario " + super.userFail.get_status());
+        _logger.debug("Constructor de LOGINEXCEPTION: ", _specificException + " " + error.toString());
     }
 
     /**

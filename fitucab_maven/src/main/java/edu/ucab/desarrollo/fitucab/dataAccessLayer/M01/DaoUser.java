@@ -160,16 +160,17 @@ public class DaoUser extends Dao implements IDaoUser {
 
         User _user = (User) e;
 
-        User userFail = new User();
-
-        userFail.set_status(Integer.toString(RESULT_USER_FAIL));
-
-
         String password = _sc.encryptPassword(_user.getPassword());
 
-        int idUser = 0;
+        User userFail = new User();
 
         try {
+
+
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+
+            int idUser = 0;
+
             cstmt = _bdCon.prepareCall(_sqlInicioSesion.toString());
 
             //1er signo de interrogacion el parametro de salida
@@ -182,7 +183,8 @@ public class DaoUser extends Dao implements IDaoUser {
             cstmt.execute();
 
             idUser = cstmt.getInt(1);
-            System.out.printf(String.valueOf(idUser));
+
+            _logger.debug("ID del User Encontrado "+String.valueOf(idUser));
 
             if (idUser!= 0) {
                 _user.setId(idUser);
@@ -192,7 +194,10 @@ public class DaoUser extends Dao implements IDaoUser {
             else {
                 userFail.set_status(Integer.toString(RESULT_USER_FAIL));
                 //return userFail;
-                throw new LoginUserException(DaoUser.class.getSimpleName(),"Error al Insertar el Usuario",userFail);
+                _logger.debug("Debug: ", "MENSAJE");
+                _logger.debug("No encontró el usuario. Login Exception");
+                _logger.debug("String del USERFAIL " + gson.toJson(userFail));
+                throw new LoginUserException(DaoUser.class.getSimpleName(),"Error al Insertar el Usuario", userFail);
             }
 
         } catch (SQLException ex) {
@@ -200,7 +205,7 @@ public class DaoUser extends Dao implements IDaoUser {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
 
-            _logger.error("Error: ", error.toString());
+            _logger.error("Error SQL Exception: ", error.toString());
 
             return userFail;
 
@@ -209,7 +214,7 @@ public class DaoUser extends Dao implements IDaoUser {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
 
-            _logger.error("Error: ", error.toString());
+            _logger.error("Error Exception: ", error.toString());
 
             return userFail;
         } finally {

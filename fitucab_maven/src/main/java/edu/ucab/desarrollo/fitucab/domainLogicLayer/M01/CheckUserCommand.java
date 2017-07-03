@@ -56,24 +56,25 @@ public class CheckUserCommand extends Command{
 
         }
         catch (LoginUserException e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
+            /*MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());*/
+
+            logger.error("Error LoginUserExc: ", e.toString());
             _userReturn = e.getUserFail();
         }
         catch (NullPointerException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
+            logger.error("Error NULL Pointer: ", error);
         } catch(Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
+            logger.error("Error Exception: ", error);
         }
     }
 
     public Entity Return(){
-        return null;
+        return _userReturn;
     }
 
 }

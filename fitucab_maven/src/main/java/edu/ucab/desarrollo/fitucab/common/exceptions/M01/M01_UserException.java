@@ -8,11 +8,8 @@ import edu.ucab.desarrollo.fitucab.common.entities.User;
 public class M01_UserException extends Exception{
     User userFail = new User();
 
-
-    private int RESULT_CODE_OK = 200;
     private int RESULT_CODE_FAIL = 300;
     private int RESULT_USER_FAIL = 400;
-    private int RESULT_EMAIL_OK = 500;
 
     public M01_UserException(User userFail){
         this.userFail = userFail;
