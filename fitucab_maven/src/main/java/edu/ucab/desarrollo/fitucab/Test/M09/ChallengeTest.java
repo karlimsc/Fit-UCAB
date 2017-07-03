@@ -213,8 +213,8 @@ public class ChallengeTest {
 
     @Test(expected = AssertionError.class)
     public void ChallengeConstructTestPUFE() {
-        Challenge challenge = new Challenge(1,"Reto de Prueba","Descripcion reto de prueba",10);
-        assertNull(challenge);
+        Challenge challenge = null;
+        assertNotNull(challenge);
     }
 
     @Test
@@ -225,8 +225,8 @@ public class ChallengeTest {
 
     @Test(expected = AssertionError.class)
     public void ChallengeConstructorTestPUFE() {
-        Challenge challenge = new Challenge(10,15);
-        assertNull(challenge);
+        Challenge challenge = null;
+        assertNotNull(challenge);
     }
 
 }
