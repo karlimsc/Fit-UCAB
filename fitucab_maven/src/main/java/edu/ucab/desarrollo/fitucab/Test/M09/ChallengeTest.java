@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.Test.M09;
+package M09;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Challenge;
 import org.junit.Test;
