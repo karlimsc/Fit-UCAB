@@ -8,6 +8,9 @@ import org.slf4j.LoggerFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import org.slf4j.LoggerFactory;
 import java.sql.*;
+
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -115,7 +118,6 @@ public class DaoTraining extends Dao implements IDaoTraining
         return null;
     }
 
-
     public Boolean delete(Entity e) throws DeleteException
     {
         Training t = (Training) e;
@@ -149,7 +151,6 @@ public class DaoTraining extends Dao implements IDaoTraining
         }
         return true;
     }
-
 
     /**
      * Lista todos los entrenamientos
@@ -283,7 +284,6 @@ public class DaoTraining extends Dao implements IDaoTraining
         return entity;
     }
 
-
     public Boolean activateTraining( Entity e )
     {
         return null;
@@ -366,6 +366,7 @@ public class DaoTraining extends Dao implements IDaoTraining
     {
         return null;
     }
+
 
     public Boolean modifyName(Entity e)  throws UpdateException{
         Training t = (Training) e;

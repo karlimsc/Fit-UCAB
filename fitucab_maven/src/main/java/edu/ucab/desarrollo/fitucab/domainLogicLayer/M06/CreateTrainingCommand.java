@@ -39,4 +39,9 @@ public class CreateTrainingCommand extends Command {
             throw ex;
         }
     }
+
+    public Entity Return(){
+        return null;
+    }
+
 }

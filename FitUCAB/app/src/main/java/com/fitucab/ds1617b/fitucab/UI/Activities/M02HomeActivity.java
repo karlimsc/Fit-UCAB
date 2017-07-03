@@ -34,6 +34,9 @@ import com.fitucab.ds1617b.fitucab.UI.Fragments.M02.M02HomeFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
+
 /**
  * Clase M02AccountFragment que maneja el fragmeto de perfil
  *
@@ -50,19 +53,20 @@ public class M02HomeActivity extends AppCompatActivity
     private SharedPreferences preferences;
     private IpStringConnection ip= new IpStringConnection();
     private FragmentManager FM = getSupportFragmentManager();
+    private int _id;
 
 
     /**
      * Void onCreate que genera la vista M02HomeActivity
      * @param  savedInstanceState el estado de la instancia
      */
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_m02_home);
         initcomponents();
     }
+
     /**
      * Void initcomponentes donde se inicializan todos los componentes
      * Vista donde se encuentran los bontones y componentes de la vista
@@ -93,29 +97,30 @@ public class M02HomeActivity extends AppCompatActivity
      * VOID toAskWebService que realiza las peticiones al webservice
      *
      */
-
     private void toAskWebService() {
         try {
-        preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        int id= preferences.getInt("idUser",0);
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        String webUrl= ip.getIp()+"M02Users/"+id;
-        Log.i(TAG, "toAskWebService: "+webUrl);
-        JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl,
-                new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                Log.i(TAG, "onResponse: "+response.toString());
-                setJsonView(response);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.i(TAG, " ERROR"+ error.toString());
-            }
-        });
+ //           preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+  //          _id = getIdUser(this);
+ //           int id= 1;
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+//            String webUrl= ip.getIp()+"M02Users/"+id;
+            String webUrl= ip.getIp()+"M02Users/"+1;
+            Log.i(TAG, "toAskWebService: "+webUrl);
+            JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            Log.i(TAG, "onResponse: "+response.toString());
+                            setJsonView(response);
+                        }
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Log.i(TAG, " ERROR"+ error.toString());
+                }
+            });
 
-        requestQueue.add(jsonrequest);
+            requestQueue.add(jsonrequest);
 
             //throw new M02Exception();
         }
@@ -130,6 +135,7 @@ public class M02HomeActivity extends AppCompatActivity
             e.printStackTrace();
         }
     }
+
     /**
      * VOID setJsonView que setea todos los componentes de la vista con los valores
      * @param response Objeto Json que viene del webservice
@@ -207,8 +213,6 @@ public class M02HomeActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.flContent_m02_home, fragmentToSwap).commit();
 
         }else if (id == R.id.nav_m02_activitys) {
-	Intent act = new Intent(M02HomeActivity.this,M05PrincipalActivity.class);
-            startActivity(act);
 
         }
         else if (id == R.id.nav_m02_challenges) {
@@ -221,14 +225,12 @@ public class M02HomeActivity extends AppCompatActivity
             startActivity(myintent);
         }
         else if (id == R.id.nav_m02_gamification) {
-                        Intent myintent = new Intent(M02HomeActivity.this, M09GamificationActivity.class);
+            Intent myintent = new Intent(M02HomeActivity.this, M09GamificationActivity.class);
             startActivity(myintent);
-
         }
         else if (id == R.id.nav_m02_hydration) {
             Intent myintent = new Intent(M02HomeActivity.this, M10WaterGlassActivity.class);
             startActivity(myintent);
-
         }
         else if (id == R.id.nav_m02_training) {
             Intent myintent = new Intent(M02HomeActivity.this, M01LoginActivity.class);

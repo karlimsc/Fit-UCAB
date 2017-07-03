@@ -88,7 +88,7 @@ public class M03FragmentAmigos extends Fragment {
         //añadimos a los usuarios ¡???? me falto algo
 
 
-        String urlreq = ipString.getIp()+"friend/getAll?id="+userId+"&Action=Requests";
+        String urlreq = ipString.getIp()+"friend/GetAll?id="+userId+"&Action=Requests";
        //creamos un objeto gson
         final Gson gsonreq = new Gson();
         //Instanciar el RequestQueue.
@@ -108,7 +108,7 @@ public class M03FragmentAmigos extends Fragment {
 
 
 
-                        String url = ipString.getIp()+"friend/getAll?id="+userId+"&Action=Friends";
+                        String url = ipString.getIp()+"friend/GetAll?id="+userId+"&Action=Friends";
                         final Gson gson = new Gson();
                         // Instanciar el RequestQueue.
                         RequestQueue queue = Volley.newRequestQueue(rootView.getContext());

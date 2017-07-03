@@ -1,28 +1,68 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
-/**
- * Created by estefania on 25/06/2017.
- */
-public class CheckUserCommand {
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
+import org.slf4j.LoggerFactory;
 
-    String _password;
-    String _user;
-    private static String DEFAULT_ENCODING1="UTF-8";
 
-    public CheckUserCommand(String password, String user){
-        this._password= password;
+public class CheckUserCommand extends Command{
+
+
+    private static Entity _userReturn;
+    private Entity _user;
+
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
+
+
+
+    /**
+     * Metodo para obtener el id del  usuario
+     * @return Entity con la id
+     */
+    public static Entity getUserLogin(){
+        return _userReturn;
+    }
+
+    /**
+     * Constructor de la clase
+     * @param user
+     */
+    public CheckUserCommand(Entity user){
         this._user = user;
     }
 
 
-    public void execute(){
+    /**
+     * Metodo abtracto sobreescrito para este caso particula de verificacion de usuario
+     * @throws ListAllException
+     * @throws ListByIdException
+     * @throws NoSuchMethodException
+     * @throws Exception
+     */
+
+
+    public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception {
         try{
+            //instanciacion del dao
+
+            DaoUser LoginUserDao = (DaoUser) DaoFactory.instanciateDaoUser(_user);
+            _userReturn = LoginUserDao.login(_user);
 
         }
-        catch (Exception e){
+        catch(Exception e){
 
         }
+    }
 
+    public Entity Return(){
+        return null;
     }
 
 }
