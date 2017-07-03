@@ -21,6 +21,7 @@ public class TrainingAdapter extends RecyclerView.Adapter<TrainingAdapter.ViewHo
 
     private ArrayList<Training> _trainingList;
     private OnFragmentSwap mFragment;
+    static public Training t;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView trainingName;
@@ -65,6 +66,7 @@ public class TrainingAdapter extends RecyclerView.Adapter<TrainingAdapter.ViewHo
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("training",training);
                 mFragment.onSwap("M06DetailsTrainingFragment",bundle);
+
             }
         });
 
