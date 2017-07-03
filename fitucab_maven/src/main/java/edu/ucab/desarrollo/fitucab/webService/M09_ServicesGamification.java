@@ -48,7 +48,6 @@ public class M09_ServicesGamification {
             Command cmd = CommandsFactory.instanciateAchieveChallengeCmd(id, dao);
             cmd.execute();
             List<Challenge> challenges = (List<Challenge>)(List<?>) AchieveChallengeCommand.getChallenges();
-            logger.error("Hola ");
             return challenges;
         }
         catch (WebApplicationException e){
@@ -126,6 +125,15 @@ public class M09_ServicesGamification {
         return null;
     }
 
+    /**
+     * Metodo que pone dice el nivel que se aumento.
+     * @param id Id del usuario.
+     * @return Clase challenge con el nivel alcanzado.
+     * @throws NoSuchMethodException
+     * @throws WebApplicationException
+     * @throws Exception
+     * @see Challenge
+     */
     @GET
     @Path("/checkLevels/{userId}")
     public Challenge getLevelUp(@PathParam("userId") int id) throws NoSuchMethodException {

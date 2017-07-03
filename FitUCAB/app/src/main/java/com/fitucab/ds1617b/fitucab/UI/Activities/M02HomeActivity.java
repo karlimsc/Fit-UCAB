@@ -17,7 +17,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
-
+import android.content.Context;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -27,6 +27,7 @@ import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.M02Exception;
 import com.fitucab.ds1617b.fitucab.Helper.M02Util;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M02.M02AccountFragment;
@@ -35,6 +36,7 @@ import com.fitucab.ds1617b.fitucab.UI.Fragments.M02.M02HomeFragment;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import static android.support.test.InstrumentationRegistry.getContext;
 import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 
 /**
@@ -54,6 +56,7 @@ public class M02HomeActivity extends AppCompatActivity
     private IpStringConnection ip= new IpStringConnection();
     private FragmentManager FM = getSupportFragmentManager();
     private int _id;
+    private ManagePreferences bringid;
 
 
     /**
@@ -99,12 +102,9 @@ public class M02HomeActivity extends AppCompatActivity
      */
     private void toAskWebService() {
         try {
- //           preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-  //          _id = getIdUser(this);
- //           int id= 1;
+            int id = getIdUser(this);
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-//            String webUrl= ip.getIp()+"M02Users/"+id;
-            String webUrl= ip.getIp()+"M02Users/"+1;
+            String webUrl= ip.getIp()+"M02Users/"+id;
             Log.i(TAG, "toAskWebService: "+webUrl);
             JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl,
                     new Response.Listener<JSONObject>() {
@@ -144,8 +144,9 @@ public class M02HomeActivity extends AppCompatActivity
         try {
 
             String username= response.getString("user");
+
             int weight= response.getInt("weight");
-            Log.i(TAG, "setJsonView: "+ username+ " , "+weight);
+            Log.i(TAG, "setJsonView e: "+ username+ " , "+weight);
             _tv_m02_nombre.setText(username);
             _tv_m02_peso.setText( "Peso: "+weight+" Kg");
 
