@@ -15,8 +15,9 @@ import java.util.ArrayList;
 public interface IDaoFriendship extends IDao{
 
     public Entity create(Entity e) throws SQLException;
+    public void requestFriendship(String userOne, String userTwo);
+    public void updateFriendship(String updater, String updated, String action);
     public ArrayList<UserAuxiliar> getList (String id, String Action)  throws  SQLException;
     public ArrayList<UserAuxiliar> getContacts (String id, String contacts)  throws  SQLException;
-
 
 }
