@@ -10,6 +10,7 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.DaoWater;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoFood;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoMoment;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M07.DaoPlanification;
 
 /**
  * Fabrica para instanciar los DAO
@@ -110,6 +111,14 @@ public class DaoFactory
     public static DaoNearMe instanceDaoNearMe(Entity entidad){ return new DaoNearMe(entidad);}
     //fin modulo 3
 
+
+     //MODULO 07
+
+    public static DaoPlanification instanciateDaoPlanification() {
+        return new DaoPlanification();
+    }
+
+    //FIN MODULO 07
 
 }
 

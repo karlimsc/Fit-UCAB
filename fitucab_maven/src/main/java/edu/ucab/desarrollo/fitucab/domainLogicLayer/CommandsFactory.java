@@ -18,6 +18,10 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M03.*;
 import sun.misc.Request;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.CreatePlanificationCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.DeletePlanificationCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.GetPlanificationByIdCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.UpdatePlanificationCommand;
 
 /**
  * Fabrica de comandos
@@ -230,7 +234,25 @@ public class CommandsFactory {
 
     static public MomentCommand getMoment (Entity Moment) {return  new MomentCommand(Moment);}
 
+    //Modulo 7
+
+    public static CreatePlanificationCommand instanciateCreatePlanificationCmd(Entity create) {
+        return new CreatePlanificationCommand(create);
+    }
+
+    public static DeletePlanificationCommand instanciateDeletePlanificationCmd(Entity delete) {
+        return new DeletePlanificationCommand(delete);
+    }
+
+    public static GetPlanificationByIdCommand instanciateGetPlanificationByIdCmd(Entity get) {
+        return new GetPlanificationByIdCommand(get);
+    }
+
+    public static UpdatePlanificationCommand instanciateUpdatePlanificationCmd(Entity update) {
+        return new UpdatePlanificationCommand(update);
+    }
+
+    //fin modulo 7
 
 }
-
 

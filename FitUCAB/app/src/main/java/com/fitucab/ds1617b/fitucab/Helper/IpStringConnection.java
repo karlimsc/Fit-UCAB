@@ -9,11 +9,11 @@ package com.fitucab.ds1617b.fitucab.Helper;
 
 public class IpStringConnection {
 
-    private String _ip = "http://192.168.1.9:8080/fitucab/";
+    private String _ip = "http://192.168.250.3:8080/fitucab_war_exploded/";
 
     public IpStringConnection() {
 
-        this._ip = "http://192.168.1.9:8080/fitucab/";
+        this._ip = "http://192.168.250.3:8080/fitucab_war_exploded/";
 
 
     }
