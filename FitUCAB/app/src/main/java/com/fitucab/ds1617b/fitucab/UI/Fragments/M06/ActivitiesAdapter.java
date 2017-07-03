@@ -15,6 +15,8 @@ import com.fitucab.ds1617b.fitucab.R;
 import java.util.ArrayList;
 
 import static android.R.attr.country;
+import static android.support.test.InstrumentationRegistry.getContext;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
 
 
 public class ActivitiesAdapter extends RecyclerView.Adapter<ActivitiesAdapter.ViewHolder> {

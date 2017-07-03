@@ -15,7 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.R;
@@ -23,6 +26,14 @@ import com.fitucab.ds1617b.fitucab.R;
 import org.junit.runner.Describable;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
 
 public class M06DetailsTrainingFragment extends Fragment {
 
@@ -143,6 +154,42 @@ public class M06DetailsTrainingFragment extends Fragment {
 
 
     }
+
+
+
+        ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
+        Call<Training> call = apiService.deleteTraining(id, trainingname);
+
+        final MaterialDialog dialog = getInstaceDialog(getContext());
+
+        call.enqueue(new Callback<Training>() {
+
+            @Override
+            public void onResponse(Call<Training> call, Response<Training> response) {
+
+                dialog.dismiss();
+
+                try {
+
+                    _callBack.onSwap("M06HomeTrainingFragment",null);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("No es problema de bd ni internet");
+
+                }
+
+            }
+            @Override
+            public void onFailure(Call<Training> call, Throwable t) {
+
+                dialog.dismiss();
+                String error = t.getMessage();
+                String errorResult = validateExceptionMessage(error, getContext());
+                showToast(getContext(), errorResult);
+            }
+        });
+
 
     private void manageRecyclerView(){
 

@@ -22,7 +22,7 @@
 
         <EditText
             android:id="@+id/new_activity"
-            android:layout_width="188dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
 
             android:layout_marginLeft="20dp"
@@ -42,15 +42,17 @@
 
     <Button
         android:id="@+id/floatingActionButton"
-        android:layout_width="104dp"
+        android:layout_width="275dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="10dp"
         android:clickable="true"
-        app:backgroundTint="@color/colorBtnConfirmar"
+        android:text="Agregar"
 
+        android:textColor="@color/white"
+        app:backgroundTint="@color/colorBtnConfirmar"
         app:srcCompat="@drawable/signomas" />
 
 
@@ -58,18 +60,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
         android:weightSum="1">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="369dp">
+            android:layout_height="420dp">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/m06_recycler_view1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="10dp"
                 android:layout_weight="0.57"
                 android:scrollbars="vertical" />
         </ScrollView>
