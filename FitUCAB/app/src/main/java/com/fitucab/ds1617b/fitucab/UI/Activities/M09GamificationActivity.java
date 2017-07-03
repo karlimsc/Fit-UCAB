@@ -13,18 +13,28 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ItemList;
+import com.fitucab.ds1617b.fitucab.Helper.ListAdapter;
 import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.Helper.ParseJSON;
 import com.fitucab.ds1617b.fitucab.Helper.CustomList;
+
+import java.util.ArrayList;
 
 /**
  * Clase M09GamificationActivity que maneja la actividad principal del Modulo 9 Gestion de Gamificacion
@@ -36,6 +46,9 @@ import com.fitucab.ds1617b.fitucab.Helper.CustomList;
 public class M09GamificationActivity extends AppCompatActivity implements View.OnClickListener {
 
     //Declaracion de atributos de la clase
+    private ArrayList<ItemList> arrayItem= null;
+    private ListAdapter adapter = null;
+    private String TAG= "FitUCAB";
     private TextView _textViewLevel;
     private TextView _scoreTV;
     private int _totalPoints;
@@ -43,12 +56,12 @@ public class M09GamificationActivity extends AppCompatActivity implements View.O
     private static int _accomplished;
     private static int _notAccomplished;
     public IpStringConnection _ip = new IpStringConnection();
-    private String _acomplishmentsURL = _ip.getIp()+"M09_ServicesGamification/obtenerretos";
-    private String _levelURL = _ip.getIp()+"M09_ServicesGamification/obtenernivel";
+    private String _acomplishmentsURL = _ip.getIp()+"M09_ServicesGamifications/getChallenges";
+    private String _levelURL = _ip.getIp()+"M09_ServicesGamifications/getScores";
     private ListView _listAccomplishments;
     private String _error;
     private ManagePreferences _user = new ManagePreferences();
-    private String _paramVolley = "?id=";
+    private String _paramVolley = "/";
 
 
     /**
@@ -93,27 +106,26 @@ public class M09GamificationActivity extends AppCompatActivity implements View.O
         //SharedPreferences _preferences = PreferenceManager.getDefaultSharedPreferences(_context);
         //int _userID = _preferences.getInt("idUser", _user.get_idUser());
         //cableado mientras SharedPreferences no funciona
-        int _userID = 1;
+        int _userID = 2;
         //Colocamos la direccion correctamente para realizar la peticion con parametros
         _acomplishmentsURL= _acomplishmentsURL+_paramVolley+""+_userID;
-        StringRequest _stringRequest = new StringRequest(_acomplishmentsURL,
-                new Response.Listener<String>() {
+        JsonArrayRequest _stringRequest = new JsonArrayRequest(Request.Method.GET,_acomplishmentsURL,
+                new Response.Listener<JSONArray>() {
                     @Override
-                    public void onResponse(String _response) {
+                    public void onResponse(JSONArray _response) {
                         Log.d("onResponse()", _response.toString());
-                        //LE PASO LA ACTIVIDAD PARA INSTANCIAR PUNTAJE CON SU VALOR
-                        scoreJSON(_response, _context);
+                        scoreJSON(_response,_context);
                     }
                 }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError _error) {
-                Log.e("onResponse()", _error.toString());
+            public void onErrorResponse(VolleyError error) {
+                Log.e("onResponse()", error.toString());
             }
         });
-        //INSTANCIAR PETICION AL VOLLEY
+
         RequestQueue _request = Volley.newRequestQueue(this);
         _request.add(_stringRequest);
-        Log.d("Request impreso", _stringRequest.toString());
+        Log.d("objetooo", _stringRequest.toString());
     }
 
     /**
@@ -122,36 +134,48 @@ public class M09GamificationActivity extends AppCompatActivity implements View.O
      * @param _json    parametro que obtiene como resultado de la busqueda del webservice
      * @param _context contexto donde se vaciara los datos obtenidos
      */
-    private void scoreJSON(String _json, Context _context) {
+    private void scoreJSON(JSONArray _json, Context _context) {
 
-        ParseJSON _pj = new ParseJSON(_json);
-        _pj.parseJSON();
-        String[] _score = ParseJSON._score;
-        int _collectPoints = 0;
-        for (int i = 0; i < ParseJSON._score.length; i++) {
-            try {
-                _collectPoints = _collectPoints + Integer.parseInt(_score[i].toString());
-                _totalPoints = _collectPoints;
-            } catch (NullPointerException e) {
-                Log.e(_error, "Valor NULL");
-            } catch (NumberFormatException e) {
-                Log.e(_error, "No es un numero");
-            }
-        }
         try {
-            String _totalScore = String.valueOf(_totalPoints);
-            _scoreTV = (TextView) ((Activity) _context).findViewById(R.id._pointsTV);
-            _scoreTV.setText("Points: " + _totalScore);
-        } catch (NullPointerException e) {
-            Log.e(_error, "Valor NULL");
-        } catch (NumberFormatException e) {
-            Log.e(_error, "No es un numero");
-        }catch (Exception e){
-            Log.e(_error, "Excepcion no identificada en metodo scoreJSON");
+            arrayItem = new ArrayList<>();
+          for (int i=0; i< _json.length(); i++){
+              JSONObject json= _json.getJSONObject(i);
+              arrayItem.add(new ItemList(json.getString("score"),json.getString("name"),json.getString("description")));
+          }
+            adapter = new ListAdapter(arrayItem, getApplicationContext());
+            _listAccomplishments.setAdapter(adapter);}
+        catch (JSONException e){
+            e.printStackTrace();
         }
-        //GENERO LA LISTA CON SUS CONTENIDOS
-        CustomList _cl = new CustomList(this, ParseJSON._ids, ParseJSON._names, ParseJSON._descriptions, ParseJSON._score);
-        _listAccomplishments.setAdapter(_cl);
+//
+//        ParseJSON _pj = new ParseJSON(_json);
+//        _pj.parseJSON();
+//        String[] _score = ParseJSON._score;
+//        int _collectPoints = 0;
+//        for (int i = 0; i < ParseJSON._score.length; i++) {
+//            try {
+//                _collectPoints = _collectPoints + Integer.parseInt(_score[i].toString());
+//                _totalPoints = _collectPoints;
+//            } catch (NullPointerException e) {
+//                Log.e(_error, "Valor NULL");
+//            } catch (NumberFormatException e) {
+//                Log.e(_error, "No es un numero");
+//            }
+//        }
+//        try {
+//            String _totalScore = String.valueOf(_totalPoints);
+//            _scoreTV = (TextView) ((Activity) _context).findViewById(R.id._pointsTV);
+//            _scoreTV.setText("Points: " + _totalScore);
+//        } catch (NullPointerException e) {
+//            Log.e(_error, "Valor NULL");
+//        } catch (NumberFormatException e) {
+//            Log.e(_error, "No es un numero");
+//        }catch (Exception e){
+//            Log.e(_error, "Excepcion no identificada en metodo scoreJSON");
+//        }
+//        //GENERO LA LISTA CON SUS CONTENIDOS
+//        CustomList _cl = new CustomList(this, ParseJSON._ids, ParseJSON._names, ParseJSON._descriptions, ParseJSON._score);
+//        _listAccomplishments.setAdapter(_cl);
     }
 
     /**
@@ -164,7 +188,7 @@ public class M09GamificationActivity extends AppCompatActivity implements View.O
         //SharedPreferences _preferences = PreferenceManager.getDefaultSharedPreferences(_context);
         //int _userID = _preferences.getInt("idUser", _user.get_idUser());
         //cableado mientras SharedPreferences no funciona
-        int _userID = 1;
+        int _userID = 2;
         //Colocamos la direccion correctamente para realizar la peticion con parametros
         _levelURL= _levelURL+_paramVolley+""+_userID;
         StringRequest _stringRequest = new StringRequest(_levelURL,
@@ -172,8 +196,7 @@ public class M09GamificationActivity extends AppCompatActivity implements View.O
                     @Override
                     public void onResponse(String _response) {
                         Log.d("onResponse()", _response.toString());
-                        //Llamada para manejar el JSON obtenido del WebService
-                        levelJSON(_response, _context);
+                        levelJSON(_response,_context);
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -181,9 +204,9 @@ public class M09GamificationActivity extends AppCompatActivity implements View.O
                 Log.e("onResponse()", error.toString());
             }
         });
-        //INSTANCIAR PETICION AL VOLLEY
-        RequestQueue request = Volley.newRequestQueue(this);
-        request.add(_stringRequest);
+
+        RequestQueue _request = Volley.newRequestQueue(this);
+        _request.add(_stringRequest);
         Log.d("objetooo", _stringRequest.toString());
 
     }
@@ -197,8 +220,10 @@ public class M09GamificationActivity extends AppCompatActivity implements View.O
     private void levelJSON(String _json, Context _context) {
         JSONObject _jsonObject = null;
         try {
-            _jsonObject = new JSONObject(_json);
-            _calculateLevel = Integer.parseInt(_jsonObject.getString("_nivel"));
+            _jsonObject= new JSONObject(_json);
+            _calculateLevel = Integer.parseInt(_jsonObject.getString("level"));
+            _scoreTV = (TextView) ((Activity) _context).findViewById(R.id._pointsTV);
+            _scoreTV.setText("Points: " +_jsonObject.getString("score") );
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (NullPointerException e) {
