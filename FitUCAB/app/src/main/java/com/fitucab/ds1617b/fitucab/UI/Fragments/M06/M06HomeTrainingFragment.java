@@ -1,22 +1,15 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M06;
 
 import android.app.Activity;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ListView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
@@ -34,7 +27,6 @@ import retrofit2.Response;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
 import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
-import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 import static com.fitucab.ds1617b.fitucab.Model.MockM06.getMockTraining;
 
 
@@ -111,47 +103,6 @@ public class M06HomeTrainingFragment extends Fragment {
 
     }
 
-
-    public void getRetrofit() {
-
-
-            ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
-            Call<Training> call = apiService.getAllTraining(1);
-
-            final MaterialDialog dialog = getInstaceDialog(getContext());
-
-            call.enqueue(new Callback<Training>() {
-
-                @Override
-                public void onResponse(Call<Training> call, Response<Training> response) {
-
-                    dialog.dismiss();
-
-                    try {
-
-                        Training training = response.body();
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        System.out.println("No es problema de bd ni internet");
-
-                    }
-
-                }
-                @Override
-                public void onFailure(Call<Training> call, Throwable t) {
-
-                    dialog.dismiss();
-                    String error = t.getMessage();
-                    String errorResult = validateExceptionMessage(error, getContext());
-                    showToast(getContext(), errorResult);
-                }
-            });
-
-        }
-
-
-
     private void manageRecyclerView(){
 
         mAdapter = new TrainingAdapter(mTrainings,_callBack);
@@ -162,8 +113,38 @@ public class M06HomeTrainingFragment extends Fragment {
         recyclerView.setAdapter(mAdapter);
     }
 
+    public void getRetrofit(int userId){
 
+           ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
+             Call<ArrayList<Training>> call= apiService.getAllTraining(1);
 
+             final MaterialDialog dialog =getInstaceDialog(getContext());
 
+             call.enqueue(new Callback<ArrayList<Training>>() {
+
+                 @Override
+                 public void onResponse(Call<ArrayList<Training>> call, Response<ArrayList<Training>> response) {
+
+                     dialog.dismiss();
+
+                     try{
+
+                         ArrayList<Training> trainings = response.body();
+
+                     }
+                     catch (Exception e){
+                         e.printStackTrace();
+                         System.out.println("No es problema de bd ni internet");
+                     }
+                 }
+                 @Override
+                 public void onFailure(Call<ArrayList<Training>> call, Throwable t) {
+
+                     dialog.dismiss();
+                     String error=t.getMessage();
+                     String errorResult= validateExceptionMessage(error,getContext());
+                     showToast(getContext(),errorResult);
+                 }
+             });
+    }
 }
-
