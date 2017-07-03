@@ -24,7 +24,6 @@ public abstract class Command
 
     public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception;
 
-
     public List<Entity> getFriendships(){
         return null;
     }
