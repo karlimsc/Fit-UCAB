@@ -215,9 +215,9 @@ public class M11FooddialogFragment extends DialogFragment {
         IpStringConnection jsonURL = new IpStringConnection();
         ArrayList<Food> foodJson = new ArrayList<>();
         foodJson.add ( new Food() );
-        foodJson.get(0).set_FoodCalorie( caloria );
-        foodJson.get(0).set_FoodName( nombreAlimento );
-        foodJson.get(0).set_FoodWeight( peso );
+        foodJson.get(0).set_foodCalorie( caloria );
+        foodJson.get(0).set_foodName( nombreAlimento );
+        foodJson.get(0).set_foodWeight( peso );
         int idUser = 0;
         idUser = ManagePreferences.getIdUser(inflater);
         if (_chbx_m11_cena.isChecked())

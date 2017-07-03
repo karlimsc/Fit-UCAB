@@ -372,7 +372,7 @@ public class M11DietFragment extends Fragment {
     }
 
     public void ingresarDieta(){
-        String alimento = "Tomate";
+        String alimento = "Tomates";
         int idUser = 1;
         idUser = ManagePreferences.getIdUser(getContext());
         insertarAlimentoPersonalizado(alimento, "120", "128",idUser, getContext() );
@@ -411,10 +411,10 @@ public class M11DietFragment extends Fragment {
         IpStringConnection jsonURL = new IpStringConnection();
         ArrayList<Food> foodJson = new ArrayList<>();
         foodJson.add(new Food());
-        foodJson.get(0).set_FoodCalorie( caloria );
-        foodJson.get(0).set_FoodName( nombreAlimento );
-        foodJson.get(0).set_FoodWeight( peso );
-        foodJson.get(0).set_Id(1); //idUser
+        foodJson.get(0).set_foodCalorie( caloria );
+        foodJson.get(0).set_foodName( nombreAlimento );
+        foodJson.get(0).set_foodWeight( peso );
+        foodJson.get(0).set_id(1); //idUser
         foodJson.get(0).set_foodPersonalized(true);
         jsonURL.set_ip( jsonURL.getIp() + "M11_Food/insertOnePersonalizedFood?nombre="+
                 foodJson.get(0).get_foodName() + "&caloria=" + foodJson.get(0).get_foodCalorie()
@@ -427,7 +427,13 @@ public class M11DietFragment extends Fragment {
                         Gson gson = new Gson();
                         Map<String, String> respuesta = new HashMap<>();
                         Food aux = gson.fromJson( response,Food.class);
-                        respuesta = aux.getResponse();
+                        try {
+                            respuesta = aux.getResponse();
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
                         Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },

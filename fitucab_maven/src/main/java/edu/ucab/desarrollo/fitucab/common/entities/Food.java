@@ -61,10 +61,10 @@ public class Food extends Entity{
 
     public Food (String foodname, String foodWeight , String foodCalorie, int id)
     {
-     _foodName=foodname;
-     _foodWeight=foodWeight;
-     _foodCalorie = foodCalorie;
-     _iD = id;
+        _foodName=foodname;
+        _foodWeight=foodWeight;
+        _foodCalorie = foodCalorie;
+        _iD = id;
     }
 
 
