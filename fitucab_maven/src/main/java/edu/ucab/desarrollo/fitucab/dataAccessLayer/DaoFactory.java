@@ -4,6 +4,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoHome;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M03.DaoFriendship;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M03.DaoNearMe;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M06.DaoTraining;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.DaoWater;
@@ -103,6 +104,10 @@ public class DaoFactory
     {
         return new DaoFriendship( entidad );
     }
+
+    public static Dao instanceDaoNearMe(){ return new DaoNearMe();}
+
+    public static DaoNearMe instanceDaoNearMe(Entity entidad){ return new DaoNearMe(entidad);}
     //fin modulo 3
 
 

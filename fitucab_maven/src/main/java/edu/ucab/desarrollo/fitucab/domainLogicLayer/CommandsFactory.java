@@ -185,13 +185,14 @@ public class CommandsFactory {
     static public Command instanciateRequestFriendshipCmd(Dao friendship, String userOne, String userTwo){ return new RequestFriendshipCommand(friendship, userOne, userTwo); }
 
     /**
-     * Metodo para instanciar el comando RequestFriendship con todos sus atributos
-     * @param friendship
-     * @param userOne
-     * @param userTwo
-     * @return el comando RequestFriendship
+     * Metodo para instanciar el comando NearMe
+     * @param id es el id del usuario
+     * @param nearMe es la instancia del Dao
+     * @longitud longitud de la ubicacion
+     * @latitud latitud de la ubicacion
+     * @return el comando GetFriends
      */
-    static public Command instanciateUpdateFriendshipCmd(Dao friendship, String userOne, String userTwo){ return new RequestFriendshipCommand(friendship, userOne, userTwo); }
+    static public Command instanciateNearMeCmd(Dao nearMe, String id, String longitud, String latitud){ return new NearMeCommand(nearMe, id, longitud, latitud); }
 
     /**
      * Metodo para instanciar el comando GetFriends
