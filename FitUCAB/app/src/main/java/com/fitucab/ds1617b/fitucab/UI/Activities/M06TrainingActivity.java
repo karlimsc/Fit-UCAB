@@ -9,12 +9,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Model.Planification;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06AddTrainingFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06DetailsTrainingFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06HomeTrainingFragment;
 
-public class M06TrainingActivity extends AppCompatActivity implements OnFragmentSwap {
+public class  M06TrainingActivity extends AppCompatActivity implements OnFragmentSwap {
     private FragmentManager FM = getSupportFragmentManager();
 
     @Override
@@ -57,6 +58,11 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
         }catch(Exception e){
             e.printStackTrace();
         }
+
+    }
+
+    @Override
+    public void onSwapData(String fragmentName, Bundle bundle, Planification planification) {
 
     }
 

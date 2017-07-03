@@ -1,9 +1,12 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M07;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import android.net.Uri;
 import android.os.Build;
@@ -13,6 +16,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -20,6 +24,7 @@ import android.widget.ImageButton;
 import android.widget.TimePicker;
 
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Model.Planification;
 import com.fitucab.ds1617b.fitucab.R;
 
 /**
@@ -41,6 +46,7 @@ public class M07ActivityFragment extends Fragment {
     private CheckBox _cb_m07_checkviernes;
     private CheckBox _cb_m07_checksabado;
     private CheckBox _cb_m07_checkdomingo;
+    private Button _btn_m07_declinar;
 
     private OnFragmentSwap _callBack;
     private View _view;
@@ -49,10 +55,16 @@ public class M07ActivityFragment extends Fragment {
     private int ano;
     private int hora;
     private int min;
+    private Planification planification;
 
 
     public M07ActivityFragment() {
         // Required empty public constructor
+    }
+
+    @SuppressLint("ValidFragment")
+    public M07ActivityFragment(Planification planification){
+     this.planification = planification;
     }
 
 
@@ -79,6 +91,7 @@ public class M07ActivityFragment extends Fragment {
         _cb_m07_checkviernes = (CheckBox)_view.findViewById(R.id.cb_m07_checkviernes);
         _cb_m07_checksabado = (CheckBox)_view.findViewById(R.id.cb_m07_checksabado);
         _cb_m07_checkdomingo = (CheckBox)_view.findViewById(R.id.cb_m07_checkdomingo);
+        _btn_m07_declinar = (Button)_view.findViewById(R.id.btnDecline);
 
         //_btn_m07_horaInicio.setOnClickListener((View.OnClickListener) _view);
         //_btn_m07_horaFin.setOnClickListener((View.OnClickListener) _view);
@@ -86,6 +99,8 @@ public class M07ActivityFragment extends Fragment {
         agregarFechaFin();
         agregarHoraInicio();
         agregarHoraFin();
+        buttonDeclinar();
+        cargarEvento(planification);
 
 
         return _view;
@@ -192,5 +207,58 @@ public class M07ActivityFragment extends Fragment {
                 timePickerDialog.show();
             }
         });
+    }
+
+    private void  buttonDeclinar(){
+
+        _btn_m07_declinar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                _callBack.onSwap("M07HomeFragment", null);
+            }
+
+        });
+
+    }
+
+    private void  cargarEvento(Planification planification){
+
+        boolean frecuencia[];
+
+        _tv_m07_fechaInicio.setText(String.valueOf(planification.get_startDate()));
+        _tv_m07_fechaFin.setText(String.valueOf(planification.get_endDate()));
+        _tv_m07_fechaInicio.setText(String.valueOf(planification.get_startTime()));
+        _tv_m07_horaFin.setText(String.valueOf(planification.get_duration()));
+        frecuencia = planification.get_days();
+
+           if ( frecuencia[0] == true) {
+               _cb_m07_checklunes.setChecked(true);
+
+           }
+            else if (frecuencia[1] == true) {
+               _cb_m07_checkmartes.setChecked(true);
+
+           }
+           else if (frecuencia[2] == true) {
+               _cb_m07_checkmiercoles.setChecked(true);
+
+           }
+           else if (frecuencia[3] == true) {
+               _cb_m07_checkjueves.setChecked(true);
+
+           }
+           else if (frecuencia[4] == true) {
+               _cb_m07_checkviernes.setChecked(true);
+
+           }
+           else if (frecuencia[5] == true) {
+               _cb_m07_checksabado.setChecked(true);
+
+           }
+           else if (frecuencia[6] == true) {
+               _cb_m07_checkdomingo.setChecked(true);
+
+           }
+
     }
 }

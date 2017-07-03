@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Model.Planification;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05LogExerciseFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05TrackActivityFragment;
@@ -53,6 +54,11 @@ public class M05AddExerciseActivity extends AppCompatActivity implements OnFragm
         mTabHost.addTab(mTabHost.newTabSpec("log")
                 .setIndicator(String.valueOf(R.string._tv_m05_titletabmanual)),
                 M05LogExerciseFragment.class, null);
+    }
+
+    @Override
+    public void onSwapData(String fragmentName, Bundle bundle, Planification planification) {
+
     }
 
     @Override

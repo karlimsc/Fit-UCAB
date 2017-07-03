@@ -1,5 +1,7 @@
 package com.fitucab.ds1617b.fitucab.UI.Activities;
 
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Model.Planification;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07ActivityFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07HomeFragment;
@@ -26,6 +29,11 @@ public class M07PlanificationActivity extends AppCompatActivity implements OnFra
         setContentView(R.layout.activity_m07_planification);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("idUser",0);
+        editor.commit();
 
         onSwap("M07HomeFragment", null);
 
@@ -64,6 +72,39 @@ public class M07PlanificationActivity extends AppCompatActivity implements OnFra
         }
 
     }
+
+    public void onSwapData(String fragmentName, Bundle bundle, Planification planification) {
+        Fragment fragmentToSwap = null;
+        FragmentTransaction fragmentTransaction = FM.beginTransaction();
+
+        try {
+
+            switch (fragmentName) {
+                case "M07TrainingFragment":
+                    fragmentToSwap = new M07TrainingFragment();
+                    fragmentToSwap.setArguments(bundle);
+                    fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
+                    break;
+                case "M07ActivityFragment":
+                    fragmentToSwap = new M07ActivityFragment();
+                    fragmentToSwap.setArguments(bundle);
+                    fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
+                    break;
+                case "M07HomeFragment":
+                    fragmentToSwap = new M07HomeFragment();
+                    fragmentToSwap.setArguments(bundle);
+                    fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
+                    break;
+            }
+            fragmentTransaction.commit();
+
+        }
+
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void onSwapActivity(String activityName, Bundle bundle) {
 
