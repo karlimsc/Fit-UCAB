@@ -482,13 +482,19 @@ public class DaoUser extends Dao implements IDaoUser {
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.error("Error: ", error.toString());
             System.out.print("Error: " + error.toString());
-            return e.getSQLState();
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
+            //return e.getSQLState();
         } catch (Exception e) {
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.error("Error: ", error.toString());
             System.out.print("Error: " + error.toString());
-            return e.getMessage();
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
+            //return e.getMessage();
         } finally {
             _bdCon.close();
         }
