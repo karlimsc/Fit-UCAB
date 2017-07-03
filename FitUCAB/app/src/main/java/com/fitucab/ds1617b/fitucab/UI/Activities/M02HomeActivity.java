@@ -34,6 +34,9 @@ import com.fitucab.ds1617b.fitucab.UI.Fragments.M02.M02HomeFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
+
 /**
  * Clase M02AccountFragment que maneja el fragmeto de perfil
  *
@@ -50,6 +53,7 @@ public class M02HomeActivity extends AppCompatActivity
     private SharedPreferences preferences;
     private IpStringConnection ip= new IpStringConnection();
     private FragmentManager FM = getSupportFragmentManager();
+    private int _id;
 
 
     /**
@@ -96,10 +100,11 @@ public class M02HomeActivity extends AppCompatActivity
     private void toAskWebService() {
         try {
  //           preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+  //          _id = getIdUser(this);
  //           int id= 1;
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 //            String webUrl= ip.getIp()+"M02Users/"+id;
-            String webUrl= ip.getIp()+"M02Users/1";
+            String webUrl= ip.getIp()+"M02Users/"+1;
             Log.i(TAG, "toAskWebService: "+webUrl);
             JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl,
                     new Response.Listener<JSONObject>() {
