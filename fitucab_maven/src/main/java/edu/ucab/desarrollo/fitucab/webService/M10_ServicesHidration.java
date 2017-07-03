@@ -3,6 +3,7 @@ package edu.ucab.desarrollo.fitucab.webService;
 
 
 import com.google.gson.Gson;
+import edu.ucab.desarrollo.fitucab.common.Validations.ValidationWSM10;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
@@ -15,7 +16,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-
+import java.util.HashMap;
 
 
 /**
@@ -41,26 +42,36 @@ public class M10_ServicesHidration {
     @Produces("application/json")
     public String addWater(@QueryParam("time") String dia, @QueryParam("glasstype") int glassType
             , @QueryParam("fkp") int fkp) {
-
-        //VALIDAR DATOS DE ENTRADA...
-
+        logger.debug("Debug: Agregando agua->WebService");
 
         Entity WaterObject = EntityFactory.createWater(glassType,fkp,dia);
         AddWaterCommand cmd = CommandsFactory.instatiateAddWaterCmd(WaterObject);
 
         try
         {
+            HashMap<String, Object> mapa = new HashMap<String, Object>();
+            mapa.put("dia", dia);
+            mapa.put("glassType", glassType);
+            mapa.put("fkp", fkp);
+
+            ValidationWSM10.validarParametros(mapa);
+
             cmd.execute();
 
-            return cmd.returned;
+
         }
         catch ( Exception e )
         {
+            cmd.returned=e.toString();
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
+
             logger.error("Error: ", error.toString());
+
+        }finally {
+
             return cmd.returned;
+
         }
 
 
@@ -78,22 +89,36 @@ public class M10_ServicesHidration {
     @Produces("application/json")
     public String GetListDate( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
+        logger.debug("Debug: Obteniendo Lista->WebService");
+
         Entity WaterObject = EntityFactory.createWater(fkp,dia);
         GetListDateCommand  cmd = CommandsFactory.instatiateGetListDateCmd(WaterObject);
 
         try
         {
+            HashMap<String, Object> mapa = new HashMap<String, Object>();
+            mapa.put("dia", dia);
+            mapa.put("fkp", fkp);
+
+            ValidationWSM10.validarParametros(mapa);
+
+
             cmd.execute();
 
-            return cmd.returned;
+
         }
         catch ( Exception e )
         {
+            cmd.returned=e.toString();
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
+
             logger.error("Error: ", error.toString());
+
+        }finally {
+
             return cmd.returned;
+
         }
 
 
@@ -111,23 +136,34 @@ public class M10_ServicesHidration {
     @Produces("application/json")
     public String GetWater( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
+        logger.debug("Debug: Obteniendo Agua->WebService");
 
         Entity WaterObject = EntityFactory.createWater(fkp,dia);
         GetWaterCommand cmd = CommandsFactory.instatiateGetWaterCmd(WaterObject);
 
         try
         {
+            HashMap<String, Object> mapa = new HashMap<String, Object>();
+            mapa.put("fkp", fkp);
+            mapa.put("dia", dia);
+
+            ValidationWSM10.validarParametros(mapa);
             cmd.execute();
 
-            return cmd.returned;
+
         }
         catch ( Exception e )
         {
+            cmd.returned=e.toString();
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
+
             logger.error("Error: ", error.toString());
+
+        }finally {
+
             return cmd.returned;
+
         }
 
 
@@ -146,23 +182,34 @@ public class M10_ServicesHidration {
     @Produces("application/json")
     public String DeletLast( @QueryParam("time") String dia , @QueryParam("fkp") int fkp)
     {
+        logger.debug("Debug: Eliminando agua->WebService");
 
         Entity WaterObject = EntityFactory.createWater(fkp,dia);
         DeletLastCommand cmd = CommandsFactory.instatiateDeletLastCmd(WaterObject);
 
         try
         {
+            HashMap<String, Object> mapa = new HashMap<String, Object>();
+            mapa.put("dia", dia);
+            mapa.put("fkp", fkp);
+
+            ValidationWSM10.validarParametros(mapa);
             cmd.execute();
 
-            return cmd.returned;
+
         }
         catch ( Exception e )
         {
+            cmd.returned=e.toString();
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
+
             logger.error("Error: ", error.toString());
+
+        }finally {
+
             return cmd.returned;
+
         }
 
 
@@ -180,22 +227,34 @@ public class M10_ServicesHidration {
     @Produces({"application/json"})
     public String GetFecha(@QueryParam("fkp") int fkp) {
 
+        logger.debug("Debug: Obteniendo Fecha->WebService");
+
         Entity WaterObject = EntityFactory.createWater(fkp);
         GetFechaCommand cmd = CommandsFactory.instatiateGetFechaCmd(WaterObject);
 
         try
         {
+            HashMap<String, Object> mapa = new HashMap<String, Object>();
+            mapa.put("fkp", fkp);
+
+            ValidationWSM10.validarParametros(mapa);
+
             cmd.execute();
 
-            return cmd.returned;
+
         }
         catch ( Exception e )
         {
+            cmd.returned=e.toString();
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug("Error: ", error.toString());
+
             logger.error("Error: ", error.toString());
+
+        }finally {
+
             return cmd.returned;
+
         }
 
 

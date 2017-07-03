@@ -18,6 +18,7 @@ import java.util.Date;
  */
 public class GetFechaCommand extends Command {
 
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(DeletLastCommand.class);
 
     Entity _water;
     public String returned;
@@ -29,6 +30,9 @@ public class GetFechaCommand extends Command {
     public GetFechaCommand (Entity water){ _water = water; };
 
     public void execute() {
+
+        logger.debug("Debug: Obteniendo Fecha->Comando");
+
         Gson gson = new Gson();
 
         Water watergGetWater = (Water) _water;
