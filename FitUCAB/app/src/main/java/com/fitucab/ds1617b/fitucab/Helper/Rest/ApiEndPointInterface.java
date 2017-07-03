@@ -85,10 +85,6 @@ public interface ApiEndPointInterface {
                                    @Query( "trainingActivities" )  String _activities);
 
     @GET("M06_ServicesTraining/deleteTraining")
-    Call<Training> editTraining(@Query( "trainingId" ) int trainingId,
-                                @Query( "trainingName" ) String trainingName );
-
-    @GET("M06_ServicesTraining/changeTrainingName")
     Call<Training> deleteTraining(@Query( "idTraining" ) int id,
                                   @Query( "trainingName" ) String name);
 

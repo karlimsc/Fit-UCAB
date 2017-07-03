@@ -203,6 +203,8 @@ public class M06UpdateTrainingFragment extends Fragment {
 
                     Training training = response.body();
                     _callBack.onSwap("M06HomeTrainingFragment",null);
+                    Toast.makeText(getContext(), "Se ha modificado exitosamente el entrenamiento",
+                            Toast.LENGTH_LONG).show();
 
                 } catch (Exception e) {
                     e.printStackTrace();
