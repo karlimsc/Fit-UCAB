@@ -6,6 +6,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.LoginUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
@@ -43,6 +44,7 @@ public class DaoUser extends Dao implements IDaoUser {
     private Connection _bdCon;
     //Encargado de encriptar la contraseña
     private Security _sc;
+    private LoginUserException _errorLog;
 
     //String de conexion funciones
     String _sqlInicioSesion = "{?=call M01_INICIARSESION(?,?)}";
@@ -151,7 +153,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * @return
      */
 
-    public Entity login(Entity e) throws SQLException {
+    public Entity login(Entity e) throws LoginUserException,SQLException {
         _sc = new Security();
 
         CallableStatement cstmt;
@@ -179,23 +181,35 @@ public class DaoUser extends Dao implements IDaoUser {
             return _user;
 
         } catch (SQLException ex) {
-            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+            _errorLog = new LoginUserException(ex, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _errorLog.toString());
+            _logger.error("Error: ", _errorLog.toString());
+            throw _errorLog;
+            //Anterior
+            /*MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.debug("Debug: ", error.toString());
             _logger.error("Error: ", error.toString());
 
             //Retorna null por el error
-            return null;
+            return null;*/
         } catch (Exception ex) {
+            _errorLog = new LoginUserException(ex, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _errorLog.toString());
+            _logger.error("Error: ", _errorLog.toString());
+            throw _errorLog;
+           //Anterior
+            /*
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.debug("Debug: ", error.toString());
             _logger.error("Error: ", error.toString());
-            return null;
+            return null;*/
         } finally {
             _bdCon.close();
         }
     }
+
 
 
     /**
@@ -260,7 +274,11 @@ public class DaoUser extends Dao implements IDaoUser {
         }
     }
 
-    public boolean update() throws SQLException {
+    /**
+     * Metodo del M02 para actualizar atributos de la Entidad User
+     * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+     */
+    public boolean Update() throws SQLException {
         try {
             if (!_username.equals("")) {
                 UpdateName(_username);
@@ -282,12 +300,17 @@ public class DaoUser extends Dao implements IDaoUser {
         return true;
     }
 
-    public void UpdateName(String name) throws BdConnectException, SQLException {
-        String updatename = name;
+    /**
+     * Metodo del M02 para actualizar el username de un usuario
+     * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+     * @param _name
+     */
+    public void UpdateName(String _name) throws BdConnectException, SQLException {
+        String updatename = _name;
         try {
             _bdCon = Dao.getBdConnect();
-            Statement st = _bdCon.createStatement();
-            ResultSet _result = st.executeQuery("select m02_modperfilname(" + _id + ", '" + updatename + "')");
+            Statement _st = _bdCon.createStatement();
+            ResultSet _result = _st.executeQuery("select m02_modperfilname(" + _id + ", '" + updatename + "')");
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -300,12 +323,17 @@ public class DaoUser extends Dao implements IDaoUser {
 
     }
 
-    public void UpdateEmail(String email) throws SQLException {
-        String updatemail = email;
+    /**
+     * Metodo del M02 para actualizar el email de un usuario
+     * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+     * @param _email
+     */
+    public void UpdateEmail(String _email) throws SQLException {
+        String updatemail = _email;
         try {
             _bdCon = Dao.getBdConnect();
-            Statement st = _bdCon.createStatement();
-            ResultSet _result = st.executeQuery("select m02_modperfilmail(" + _id + ", '" + updatemail + "')");
+            Statement _st = _bdCon.createStatement();
+            ResultSet _result = _st.executeQuery("select m02_modperfilmail(" + _id + ", '" + updatemail + "')");
 
         } catch (SQLException e1) {
             e1.printStackTrace();
@@ -313,16 +341,23 @@ public class DaoUser extends Dao implements IDaoUser {
             e1.printStackTrace();
         }
         finally {
-            _bdCon.close();
+
+                _bdCon.close();
+
         }
     }
 
-    public void UpdatePhone(String phone) throws SQLException {
-        String updatephone = phone;
+    /**
+     * Metodo del M02 para actualizar el numero telefonico de un usuario
+     * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+     * @param _phone
+     */
+    public void UpdatePhone(String _phone) throws SQLException {
+        String updatephone = _phone;
         try {
             _bdCon = Dao.getBdConnect();
-            Statement st = _bdCon.createStatement();
-            ResultSet _result = st.executeQuery("select m02_modperfilphone(" + _id + ", '" + updatephone + "')");
+            Statement _st = _bdCon.createStatement();
+            ResultSet _result = _st.executeQuery("select m02_modperfilphone(" + _id + ", '" + updatephone + "')");
 
         } catch (SQLException e1) {
             e1.printStackTrace();
@@ -436,4 +471,4 @@ public class DaoUser extends Dao implements IDaoUser {
 
 
 
-}
+    }

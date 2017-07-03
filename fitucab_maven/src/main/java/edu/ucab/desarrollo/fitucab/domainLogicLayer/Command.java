@@ -26,8 +26,15 @@ public abstract class Command
     public List<Entity> getChallenges(){
         return null;
     }
-
     public Entity getChallenge(){
+        return null;
+    }
+
+    public List<Entity> getFriendships(){
+        return null;
+    }
+
+    public Entity getFriendship(){
         return null;
     }
 
