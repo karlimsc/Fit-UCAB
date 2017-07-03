@@ -21,14 +21,24 @@ public class GetTrainingDetailCommand extends Command
 {
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
-    Entity _training;
+    private Entity _input;
+    private Entity _output;
+
     public GetTrainingDetailCommand(Entity training)
     {
-        this._training = training;
-
+        _input = training;
     }
+
     public void execute() throws ListAllException, ListByIdException
     {
+        IDaoTraining dao;
+        dao = DaoFactory.instanceDaoTraining(_input);
+        _output = dao.trainingDetail(_input);
 
+    }
+
+    public Entity get_output()
+    {
+        return _output;
     }
 }

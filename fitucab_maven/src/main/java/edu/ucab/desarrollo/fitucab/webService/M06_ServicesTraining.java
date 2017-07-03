@@ -1,11 +1,9 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
 import javax.ws.rs.*;
-
-
 import com.google.gson.Gson;
-import edu.ucab.desarrollo.fitucab.common.Registry;
-import edu.ucab.desarrollo.fitucab.common.entities.Activity;
+
+import edu.ucab.desarrollo.fitucab.common.*;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.exceptions.*;
@@ -15,11 +13,16 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import org.slf4j.LoggerFactory;
 
-import javax.ws.rs.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.security.InvalidParameterException;
+
 import java.util.ArrayList;
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Arrays;
+
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -34,9 +37,13 @@ import javax.ws.rs.QueryParam;
 public class M06_ServicesTraining
 {
 
-    final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
+    private static Logger logger = LoggerFactory.getLogger( M06_ServicesTraining.class );
+
+
+    //final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
     Gson gson = new Gson();
+
 
     //el tipo de instruccion HTTP
     @POST
@@ -170,6 +177,7 @@ public class M06_ServicesTraining
     }
 
 
+
     @POST
     @Path( "/removeActivitiesToTraining" )
     @Produces( "application/json" )
@@ -213,6 +221,8 @@ public class M06_ServicesTraining
         }
 
     }
+
+
 
     @GET
     @Path( "/displayTraining" )
@@ -284,6 +294,7 @@ public class M06_ServicesTraining
 
     }
 
+
     @GET
     @Path( "/shareTraining" )
     @Produces( "application/json" )
@@ -324,6 +335,7 @@ public class M06_ServicesTraining
             return gson.toJson( error );
         }
     }
+
 
 
     private ArrayList<Entity> activityList (ArrayList<String> activities){
@@ -382,30 +394,112 @@ public class M06_ServicesTraining
 
     /**
      * Servicio Web que retorna el entrenamiento a detalle
-     * @param userId usuario login
      * @param trainingId entrenamiento elegido
      * @return entrenamiento
      */
     @POST
     @Path( "/getTrainingDetail" )
     @Produces( "application/json" )
-    public String getTrainingDetail( @QueryParam( "userId" ) int userId,
-                                     @QueryParam( "trainingId" ) int trainingId )
+    public String getTrainingDetail(@QueryParam( "trainingId" ) int trainingId )
     {
-        return null;
+
+        Entity training = null, commandResult = null;
+        Command command = null;
+        String response = null;
+
+        try
+        {
+            if ( trainingId > 0 )
+            {
+                training = EntityFactory.createTraining( trainingId );
+            }
+            else
+            {
+                throw new InvalidParameterException( Registry.ERROR_PARAM_WS );
+
+            }
+
+            command = CommandsFactory.instanciateGetTrainingDetailCmd( training );
+            command.execute();
+
+            commandResult =  ( ( GetTrainingDetailCommand ) command ).get_output();
+            commandResult.set_errorCode( Registry.RESULT_CODE_OK );
+            response = gson.toJson( commandResult );
+        }
+        catch ( ListByIdException e )
+        {
+            commandResult.set_errorCode( e.ERROR_CODE );
+            commandResult.set_errorMsg( e.ERROR_MSG );
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "getTrainingDetail", e.toString() );
+        }
+        catch( Exception e )
+        {
+            commandResult.set_errorCode( Registry.RESULT_CODE_FAIL );
+            commandResult.set_errorMsg( Registry.RESULT_CODE_FAIL_MSG );
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "getTrainingDetail", e.toString() );
+        }
+
+        return response;
+
     }
 
     /**
-     * Servicio Web que retorna la lista de entrenamientos del usuario
-     * @param userId usuario login
-     * @return entrenamiento
+     * Servicio Web para mostrar todos los entrenamientos
+     * @param userId
+     * @return lista de entrenamientos
      */
     @POST
     @Path( "/getAllTraining" )
     @Produces( "application/json" )
     public String getAllTraining( @QueryParam( "userId" ) int userId )
     {
-        return null;
-    }
+        Entity training, cmdResult= null;
+        List<Entity> commandResult = null;
+        Command command;
+        String response = null;
 
+        try
+        {
+            if ( userId > 0 )
+            {
+                training = EntityFactory.createTraining( userId );
+            }
+            else
+            {
+                throw new InvalidParameterException( Registry.ERROR_PARAM_WS );
+            }
+
+            command = CommandsFactory.instanciateGetAllTrainingCmd( training );
+            command.execute();
+
+            commandResult =  ( ( GetAllTrainingCommand ) command ).get_output();
+            //cmdResult.set_errorCode( Registry.RESULT_CODE_OK );
+            response = gson.toJson( commandResult );
+        }
+        catch ( ListAllException e )
+        {
+            cmdResult.set_errorCode( e.ERROR_CODE );
+            cmdResult.set_errorMsg( e.ERROR_MSG );
+            commandResult.add(cmdResult);
+
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "getAllTraining", e.toString() );
+        }
+        catch ( Exception e )
+        {
+            cmdResult.set_errorCode( Registry.RESULT_CODE_FAIL );
+            cmdResult.set_errorMsg( Registry.RESULT_CODE_FAIL_MSG );
+            commandResult.add(cmdResult);
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "getAllTraining", e.toString() );
+        }
+
+        return response;
+    }
 }

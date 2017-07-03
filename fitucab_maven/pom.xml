@@ -7,6 +7,12 @@
   <version>1.0-SNAPSHOT</version>
   <name>fitucab Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <!-- Especificacion de cual version de jersey se usa para que no genere conflicto con jersey 1 -->
+  <properties>
+    <jersey2.version>2.19</jersey2.version>
+    <jaxrs.version>2.0.1</jaxrs.version>
+  </properties>
+  <!-- fin de la especificacion -->
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -72,11 +78,41 @@
           <artifactId>junit-jupiter-api</artifactId>
           <version>RELEASE</version>
       </dependency>
+
+    <!-- JAX-RS -->
+    <dependency>
+      <groupId>javax.ws.rs</groupId>
+      <artifactId>javax.ws.rs-api</artifactId>
+      <version>2.0.1</version>
+    </dependency>
+    <!-- Jersey 2.19 -->
+    <dependency>
+      <groupId>org.glassfish.jersey.containers</groupId>
+      <artifactId>jersey-container-servlet</artifactId>
+      <version>2.19</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-server</artifactId>
+      <version>2.19</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-client</artifactId>
+      <version>2.19</version>
+    </dependency>
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>4.12</version>
+      </dependency>
     <dependency>
       <groupId>io.rest-assured</groupId>
-      <artifactId>rest-assured</artifactId>
+      <artifactId>json-schema-validator</artifactId>
       <version>3.0.3</version>
+      <scope>test</scope>
     </dependency>
+
   </dependencies>
   <build>
     <finalName>fitucab</finalName>

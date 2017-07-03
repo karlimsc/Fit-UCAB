@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.Model.Training;
+import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 
 import org.junit.runner.Describable;
@@ -31,6 +32,7 @@ public class M06DetailsTrainingFragment extends Fragment {
     private View _view;
     private Training _Training;
     private OnFragmentSwap _callBack;
+    private User user;
 
     public M06DetailsTrainingFragment() {
         // Required empty public constructor
@@ -105,9 +107,9 @@ public class M06DetailsTrainingFragment extends Fragment {
         int id = item.getItemId();
         switch (id) {
             case R.id.m06_edit_training:
-                // do stuff
-                ///TODO GO TO EDIT FRAGMENT
-                //_callBack.onSwap();
+                Bundle bundle = new Bundle();
+//                bundle.putInt("User", user.get_idUser());
+                _callBack.onSwap("M06UpdateTraining",null);
                 return true;
 
             case R.id.m06_active_training:

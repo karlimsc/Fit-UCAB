@@ -2,17 +2,6 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="160dp"
-        android:layout_height="120dp"
-        android:scaleType="centerCrop"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="40dp"
-        android:src="@mipmap/logofitucabnombre" />
-
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,10 +21,7 @@
                 android:text="Actividades que componen el entrenamiento"
                 android:layout_gravity="center_vertical" />
 
-
-
         </LinearLayout>
-
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/m06_activities_recycler"
@@ -45,7 +31,6 @@
             android:layout_marginTop="15dp"/>
 
     </LinearLayout>
-
 
 </FrameLayout>
 

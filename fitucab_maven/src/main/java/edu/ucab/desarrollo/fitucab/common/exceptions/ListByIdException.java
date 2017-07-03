@@ -16,7 +16,7 @@ public class ListByIdException extends Exception
      * excepcion personalizada para listar por id
      * @param e
      */
-    public ListByIdException(SQLException e)
+    public ListByIdException(Exception e)
     {
         super( e );
     }

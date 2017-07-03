@@ -3,6 +3,9 @@ package com.fitucab.ds1617b.fitucab.Helper.Rest;
 import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.Model.Notification_Settings;
+
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -67,7 +70,7 @@ public interface ApiEndPointInterface {
     Call<Notification_Settings> getSetting(@Query("userId") int userId);
 
     @POST("M06_ServicesTraining/getAllTraining")
-    Call<Training> getAllTraining(@Query("userId") int userId);
+    Call<ArrayList<Training>> getAllTraining(@Query("userId") int userId);
 
 
     @POST("M06_ServicesTraining/getTrainingDetail")

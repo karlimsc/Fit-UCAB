@@ -63,7 +63,7 @@ END;
 $$ LANGUAGE plpgsql;
 
 /**************************************************GET_EVERY_TRAINING**************************************************/
-CREATE OR REPLACE FUNCTION M06_GET_TRAININGS(integer) RETURNS TABLE (id integer, trainingname varchar(50)) AS $$
+CREATE OR REPLACE FUNCTION M06_GET_TRAININGS(integer) RETURNS TABLE (id integer, training_name varchar(50)) AS $$
 
 BEGIN
  	RETURN QUERY
