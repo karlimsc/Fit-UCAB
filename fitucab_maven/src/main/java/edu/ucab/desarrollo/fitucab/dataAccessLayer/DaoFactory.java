@@ -3,11 +3,14 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoHome;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M03.DaoFriendship;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M03.DaoNearMe;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M06.DaoTraining;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.DaoWater;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoFood;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoMoment;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M07.DaoPlanification;
 
 /**
  * Fabrica para instanciar los DAO
@@ -64,9 +67,9 @@ public class DaoFactory
      * @param id
      * @return
      */
-    public static edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoUser instanceDaoUser(int id) {
+    public static DaoUser instanceDaoUser(int id) {
 
-        return new edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.DaoUser(id);
+        return new DaoUser(id);
     }
 
     //MODULO 10
@@ -83,6 +86,39 @@ public class DaoFactory
 
     public static DaoMoment iniciarDaoMoment(){return  new DaoMoment();}
 
+    /**
+     * Metodo que instancia el DaoUpdateUser
+     * @param id
+     * @param username
+     * @param phone
+     * @param email
+     * @return DaoUpdatePerfil
+     */
+    public static DaoUser instanceDaoUpdateUser(int id, String username, String phone, String email){
+        return new DaoUser (id,username,phone,email);
+    }
+    //modulo 3
+
+    public static Dao instanceDaoFriendship() { return  new DaoFriendship(); }
+
+    public static DaoFriendship instanceDaoFriendship(Entity entidad )
+    {
+        return new DaoFriendship( entidad );
+    }
+
+    public static Dao instanceDaoNearMe(){ return new DaoNearMe();}
+
+    public static DaoNearMe instanceDaoNearMe(Entity entidad){ return new DaoNearMe(entidad);}
+    //fin modulo 3
+
+
+     //MODULO 07
+
+    public static DaoPlanification instanciateDaoPlanification() {
+        return new DaoPlanification();
+    }
+
+    //FIN MODULO 07
 
 }
 

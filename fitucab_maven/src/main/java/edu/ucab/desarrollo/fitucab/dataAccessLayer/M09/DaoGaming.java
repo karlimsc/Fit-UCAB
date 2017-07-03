@@ -6,6 +6,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.IDao;
 import org.slf4j.LoggerFactory;
 
 import java.sql.*;
@@ -16,7 +17,7 @@ import java.util.List;
  * @author David Garcia, Juan Mendez, Mario Salazar
  * @version 2.0
  */
-public class DaoGaming extends Dao{
+public class DaoGaming extends Dao implements IDao{
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(DaoGaming.class);
 
@@ -53,10 +54,6 @@ public class DaoGaming extends Dao{
         try {
             Statement st = _conn.createStatement();
             ResultSet rs = st.executeQuery("select * from m09_getachievechallengebyid("+id+")");
-//            CallableStatement cs = _conn.prepareCall("{? = call m09_getachievechallengebyid(?)}");
-//            cs.setInt(2,id);
-//            cs.execute();
-//            ResultSet rs = (ResultSet) cs.getObject(1);
             while (rs.next()){
                 Entity challege = EntityFactory.createChallenge(rs.getInt("id"), rs.getString("name"), rs.getString("description"), rs.getInt("score"));
                 challenges.add(challege);
@@ -78,7 +75,7 @@ public class DaoGaming extends Dao{
             ResultSet rs = st.executeQuery("select * from m09_getachieveanduanchievechallengebyid("+id+")");
             Entity achieve = EntityFactory.createChallenge();
             while (rs.next()){
-      //          achieve = EntityFactory.createChallenge(rs.getLong("achieve"), rs.getLong("unachieve"));
+                achieve = EntityFactory.createChallenge(rs.getLong("achieve"), rs.getLong("unachieve"));
             }
             return achieve;
         } catch (SQLException e) {
@@ -99,7 +96,7 @@ public class DaoGaming extends Dao{
             ResultSet rs = st.executeQuery("select m09_getscorechallengebyid("+id+")");
             Entity level = EntityFactory.createChallenge();
             while (rs.next()){
-             //   level = EntityFactory.createChallenge(rs.getInt("m09_getscorechallengebyid"));
+                level = EntityFactory.createChallenge(rs.getInt("m09_getscorechallengebyid"));
             }
             return level;
         } catch (SQLException e) {
@@ -120,7 +117,7 @@ public class DaoGaming extends Dao{
             ResultSet rs = st.executeQuery("select m09_getscorechallengebyid("+id+")");
             Entity level = EntityFactory.createChallenge();
             while (rs.next()){
-             //   level = EntityFactory.createChallenge(rs.getInt("m09_getscorechallengebyid"));
+                level = EntityFactory.createChallenge(rs.getInt("m09_getscorechallengebyid"));
             }
             return level;
         } catch (SQLException e) {
@@ -135,8 +132,5 @@ public class DaoGaming extends Dao{
         return null;
     }
 
-    @Override
-    public void Create(Entity e) {
 
-    }
 }

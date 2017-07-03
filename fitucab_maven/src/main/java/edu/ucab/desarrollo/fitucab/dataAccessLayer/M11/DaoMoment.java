@@ -7,10 +7,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -21,10 +18,6 @@ public class DaoMoment extends Dao implements iDaoMoment {
     ArrayList<Moment> jsonArray;
     Gson gson = new Gson();
 
-    @Override
-    public void Create(Entity e) {
-
-    }
 
     @Override
     public Entity create(Entity e) throws AddException {
@@ -37,10 +30,11 @@ public class DaoMoment extends Dao implements iDaoMoment {
         String query = "Select * from m11_get_momentos()";
         jsonArray = new ArrayList<>();
         Moment moment = (Moment) e;
+        Connection conn = Dao.getBdConnect();
+        CallableStatement cs = conn.prepareCall("{call m11_get_momentos}");
 
-            Connection conn = Dao.getBdConnect();
-            PreparedStatement st = conn.prepareStatement(query);
-            ResultSet rs = st.executeQuery();
+
+            ResultSet rs = cs.executeQuery();
             while (rs.next()) {
                 jsonArray.add(new Moment());
                 jsonArray.get(rs.getRow() - 1).set_description(rs.getString("momento"));

@@ -90,11 +90,4 @@ public abstract class Dao implements IDao
         }
     }
 
-    public void achieveChallenge(int id, List<Entity> challenges){};
-    public Entity fillChart(int id){return null;};
-    public Entity score(int id){return null;};
-    public Entity levelUp(int id){return null;};
-
-    public abstract void Create(Entity e);
-
 }

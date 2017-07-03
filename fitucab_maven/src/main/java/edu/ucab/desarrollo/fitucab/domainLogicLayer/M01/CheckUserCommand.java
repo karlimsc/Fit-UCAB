@@ -46,12 +46,14 @@ public class CheckUserCommand extends Command{
      * @throws NoSuchMethodException
      * @throws Exception
      */
+
+
     public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception {
         try{
             //instanciacion del dao
 
             DaoUser LoginUserDao = (DaoUser) DaoFactory.instanciateDaoUser(_user);
-            _userReturn = LoginUserDao.read(_user);
+            _userReturn = LoginUserDao.login(_user);
 
         }
         catch(Exception e){

@@ -22,7 +22,7 @@
         android:paddingTop="6dp"
         android:text="Achievement: "
         android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/_achievementTV"
@@ -45,7 +45,7 @@
         android:paddingTop="6dp"
         android:text="Award: "
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="15sp"
         android:layout_alignParentTop="true"
         android:layout_toLeftOf="@+id/_awardTV"
         android:layout_toStartOf="@+id/_awardTV" />
@@ -78,7 +78,7 @@
         android:paddingTop="6dp"
         android:text="Description:"
         android:textColor="#353535"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:textStyle="italic" />
 
 
