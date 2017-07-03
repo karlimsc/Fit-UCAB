@@ -22,6 +22,8 @@ public class FitUCAB extends Application {
         h.add(M10_ServicesHidration.class);
         h.add(M02_ServicesUser.class);
         h.add(M02_ServicesHome.class);
+        h.add(M03_ServicesFriends.class);
+        h.add(M03_ServicesContacts.class);
         return h;
     }
 }
