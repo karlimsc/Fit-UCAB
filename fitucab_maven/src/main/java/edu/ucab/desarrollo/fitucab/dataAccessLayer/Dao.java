@@ -89,7 +89,7 @@ public abstract class Dao implements IDao
             logger.error( "Metodo: {} {}", "getBdConnect", e.toString() );
         }
     }
-
+//TODO: pasar a idaonuestro
     public void achieveChallenge(int id, List<Entity> challenges){};
     public Entity fillChart(int id){return null;};
     public Entity score(int id){return null;};
