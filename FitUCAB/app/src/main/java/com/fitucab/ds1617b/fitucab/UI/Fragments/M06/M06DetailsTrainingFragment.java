@@ -14,8 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.fitucab.ds1617b.fitucab.Helper.M06Util;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
@@ -117,8 +119,8 @@ public class M06DetailsTrainingFragment extends Fragment {
         switch (id) {
             case R.id.m06_edit_training:
                 // do stuff
+                swap();
                 ///TODO GO TO EDIT FRAGMENT
-                //_callBack.onSwap();
                 return true;
 
             case R.id.m06_active_training:
@@ -137,7 +139,7 @@ public class M06DetailsTrainingFragment extends Fragment {
             case R.id.m06_share_training:
                 // do stuff
                 ///TODO GO TO SHARE
-                System.out.println("hola");
+                _getRetrofit(_Training, 500);
                 //_callBack.onSwap();
                 return true;
         }
@@ -156,6 +158,11 @@ public class M06DetailsTrainingFragment extends Fragment {
 
     }
 
+    public void swap(){
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("training",_Training);
+        _callBack.onSwap("M06UpdateTrainingFragment",bundle);
+    }
     public void getRetrofit(int id, String trainingname) {
 
 
@@ -174,6 +181,9 @@ public class M06DetailsTrainingFragment extends Fragment {
                 try {
 
                     _callBack.onSwap("M06HomeTrainingFragment",null);
+                    Toast.makeText(getContext(),
+                            "Se ha eliminado exitosamente el entrenamiento",
+                            Toast.LENGTH_LONG).show();
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -187,7 +197,49 @@ public class M06DetailsTrainingFragment extends Fragment {
 
                 dialog.dismiss();
                 String error = t.getMessage();
-                String errorResult = validateExceptionMessage(error, getContext());
+                String errorResult = M06Util.validateExceptionMessage(error, getContext());
+                showToast(getContext(), errorResult);
+            }
+        });
+
+    }
+    public void _getRetrofit(Training t, int userShare) {
+
+
+        ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
+        String _act = "";
+        for (Activit a:_Training.get_activities() ) {
+            _act += a.get_name() + ";";
+        }
+        Call<Training> call = apiService.shareTraining(_Training.get_trainingName(), _act, userShare);
+
+        final MaterialDialog dialog = getInstaceDialog(getContext());
+
+        call.enqueue(new Callback<Training>() {
+
+            @Override
+            public void onResponse(Call<Training> call, Response<Training> response) {
+
+                dialog.dismiss();
+
+                try {
+                    Toast.makeText(getContext(),
+                            "Se ha eliminado exitosamente el entrenamiento",
+                            Toast.LENGTH_LONG).show();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("No es problema de bd ni internet");
+
+                }
+
+            }
+            @Override
+            public void onFailure(Call<Training> call, Throwable t) {
+
+                dialog.dismiss();
+                String error = t.getMessage();
+                String errorResult = M06Util.validateExceptionMessage(error, getContext());
                 showToast(getContext(), errorResult);
             }
         });

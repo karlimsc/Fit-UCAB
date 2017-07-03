@@ -126,7 +126,7 @@ public class M06_ServicesTraining
 
 
     @GET
-    @Path( "/addActivitiesToTraining" )
+    @Path( "/updateTraining" )
     @Produces( "application/json" )
 
     /**
@@ -137,10 +137,29 @@ public class M06_ServicesTraining
      * @return
      */
 
-    public String addActivitiesToTraining( @QueryParam( "idTraining" ) int id,
+    public String updateTraining( @QueryParam( "idTraining" ) int id,
                                            @QueryParam( "trainingName" ) String name,
                                            @QueryParam( "trainingActivities" )  String _activities)
     {
+        Entity _updatedTrainingObject = EntityFactory.createTraining( id, name);
+        ChangeTrainingNameCommand _cmd = CommandsFactory.instanciateChangeTrainingNameCmd(_updatedTrainingObject);
+
+        try
+        {
+            _cmd.execute();
+            Entity ok = EntityFactory.createEntity();
+        }
+        catch ( UpdateException e )
+        {
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.error(error_.toString());
+            Entity error = EntityFactory.createEntity();
+            error.set_errorMsg(e.ERROR_MSG);
+            error.set_errorCode(e.ERROR_CODE);
+            return gson.toJson( error );
+        }
         String[] activities_ = _activities.split(";");
         ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
         ArrayList<Entity> activitiesList = activityList(activities);
