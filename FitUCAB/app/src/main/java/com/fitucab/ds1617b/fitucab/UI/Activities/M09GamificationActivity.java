@@ -147,35 +147,6 @@ public class M09GamificationActivity extends AppCompatActivity implements View.O
         catch (JSONException e){
             e.printStackTrace();
         }
-//
-//        ParseJSON _pj = new ParseJSON(_json);
-//        _pj.parseJSON();
-//        String[] _score = ParseJSON._score;
-//        int _collectPoints = 0;
-//        for (int i = 0; i < ParseJSON._score.length; i++) {
-//            try {
-//                _collectPoints = _collectPoints + Integer.parseInt(_score[i].toString());
-//                _totalPoints = _collectPoints;
-//            } catch (NullPointerException e) {
-//                Log.e(_error, "Valor NULL");
-//            } catch (NumberFormatException e) {
-//                Log.e(_error, "No es un numero");
-//            }
-//        }
-//        try {
-//            String _totalScore = String.valueOf(_totalPoints);
-//            _scoreTV = (TextView) ((Activity) _context).findViewById(R.id._pointsTV);
-//            _scoreTV.setText("Points: " + _totalScore);
-//        } catch (NullPointerException e) {
-//            Log.e(_error, "Valor NULL");
-//        } catch (NumberFormatException e) {
-//            Log.e(_error, "No es un numero");
-//        }catch (Exception e){
-//            Log.e(_error, "Excepcion no identificada en metodo scoreJSON");
-//        }
-//        //GENERO LA LISTA CON SUS CONTENIDOS
-//        CustomList _cl = new CustomList(this, ParseJSON._ids, ParseJSON._names, ParseJSON._descriptions, ParseJSON._score);
-//        _listAccomplishments.setAdapter(_cl);
     }
 
     /**
