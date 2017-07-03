@@ -99,14 +99,19 @@ public class M01_ServicesUser {
                              @QueryParam("weight") int weight,
                              @QueryParam("height") int height) throws NullPointerException,
                                                                       java.text.ParseException {
+        System.out.print("DEBUG: " + username);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date;
         java.sql.Date sqlDate = null;
 
-        try {
+        Date initDate = new SimpleDateFormat("dd/MM/yyyy").parse(birthdate);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String parsedDate = formatter.format(initDate);
 
-            date = sdf.parse(birthdate);
+
+
+
+        try {
+            Date date = formatter.parse(parsedDate);
             sqlDate = new java.sql.Date(date.getTime());
 
         }
@@ -114,7 +119,11 @@ public class M01_ServicesUser {
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.error("Error: ", error);
+            System.out.print("DEBUG: en la fecha"+error);
         }
+
+
+        System.out.print("DEBUG: " + sqlDate.toString());
 
         try
         {
@@ -145,12 +154,14 @@ public class M01_ServicesUser {
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             System.out.print("NULL POINTER");
             logger.error("Error: ", error);
+            System.out.print("DEBUG: en la nullpointer"+error);
             return gson.toJson(null);
         }
         catch ( Exception e )
         { MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.error("Error: ", error);
+            System.out.print("DEBUG: OTRA"+error);
             return gson.toJson( null );
         }
 

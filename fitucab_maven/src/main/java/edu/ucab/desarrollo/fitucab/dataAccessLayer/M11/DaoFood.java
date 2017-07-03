@@ -94,10 +94,10 @@ public class DaoFood extends Dao implements IDaoFood {
         Connection conn = Dao.getBdConnect();
 
 
-        CallableStatement st = conn.prepareCall("{? = Call m11_get_alimentos_sugerencia() }");
+        CallableStatement st = conn.prepareCall("{? = Call  m11_get_todos_alimentos() }");
 
      //   PreparedStatement st = conn.prepareStatement(query);
-        st.setString(1, username);
+        st.setString(1, food.get_idname());
         ResultSet rs = st.executeQuery();
 
         while(rs.next()) {
@@ -160,9 +160,9 @@ public class DaoFood extends Dao implements IDaoFood {
         username  = String.valueOf(food.get_id());
         Connection conn = Dao.getBdConnect();
 
-        CallableStatement st = conn.prepareCall("{? = Call m11_get_todos_alimentos_autocompletar()) }");
+        CallableStatement st = conn.prepareCall("{? = Call m11_get_todos_alimentos_autocompletar() }");
 
-        st.setString(1, username);
+        st.setString(1, food.get_idname());
         ResultSet rs = st.executeQuery();
 
         while(rs.next()) {
