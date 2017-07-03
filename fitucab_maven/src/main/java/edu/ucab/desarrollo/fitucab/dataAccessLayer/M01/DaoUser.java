@@ -277,7 +277,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * Metodo del M02 para actualizar atributos de la Entidad User
      * @author Juan Macedo, Cesar Boza, Bryan Teixeira
      */
-    public boolean Update() throws SQLException {
+    public boolean update() throws SQLException {
         try {
             if (!_username.equals("")) {
                 UpdateName(_username);

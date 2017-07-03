@@ -1,5 +1,6 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M02;
 
+import edu.ucab.desarrollo.fitucab.common.M02Cache;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
@@ -10,7 +11,9 @@ import org.slf4j.LoggerFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.*;
 
 /**
- * Created by cesareduardo on 02/07/2017.
+ * Clase UpdateUserCommand para el manejo del comando de actualizar la entidad Usuario
+ * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+ * @version 3.0
  */
 public class UpdateUserCommand extends Command {
 
@@ -19,6 +22,7 @@ public class UpdateUserCommand extends Command {
     String _phone;
     String _email;
     boolean _update;
+    private Entity _userC;
     final static org.slf4j.Logger _logger = LoggerFactory.getLogger(HomeCommand.class);
 
     public UpdateUserCommand(int id,String username,String phone,String email){
@@ -30,9 +34,13 @@ public class UpdateUserCommand extends Command {
 
     public void execute() throws ListAllException, ListByIdException, NoSuchMethodException {
 
+        M02Cache _mapUser = new M02Cache();
         IDaoUser update = DaoFactory.instanceDaoUpdateUser(_id,_username,_phone,_email);
+        IDaoUser _user = DaoFactory.instanceDaoUser(_id);
         try {
-            _update = update.Update();
+            _userC = _user.read(_id);
+            _update = update.update();
+            _mapUser.update(_id,_username,_phone,_email,_userC);
         } catch (Exception e) {
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
