@@ -1,15 +1,16 @@
 package edu.ucab.desarrollo.fitucab.webService;
 
 import com.google.gson.Gson;
-import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Food;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.*;
 import java.sql.Connection;
@@ -31,6 +32,7 @@ public class M11_ServicesFood {
     private ArrayList<Food> jsonArray;
     private  Entity respuesta ;
 
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(M09_ServicesGamification.class);
     /**
      * Funcion que recibe el nombre del usuario, y con este extrae
      * la informacion de los alimentos personalizados que ha consumido el usuario

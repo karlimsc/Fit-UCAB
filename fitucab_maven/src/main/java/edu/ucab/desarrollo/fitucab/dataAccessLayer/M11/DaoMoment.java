@@ -1,10 +1,13 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer.M11;
 
+import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.Moment;
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 
+import java.sql.*;
 import java.util.ArrayList;
 
 /**
@@ -13,10 +16,8 @@ import java.util.ArrayList;
 public class DaoMoment extends Dao implements iDaoMoment {
 
     ArrayList<Moment> jsonArray;
-    @Override
-    public void Create(Entity e) {
+    Gson gson = new Gson();
 
-    }
 
     @Override
     public Entity create(Entity e) throws AddException {
@@ -24,10 +25,25 @@ public class DaoMoment extends Dao implements iDaoMoment {
     }
 
     @Override
-    public Entity read(Entity e) {
+    public Entity read(Entity e) throws SQLException, BdConnectException {
+
+        String query = "Select * from m11_get_momentos()";
+        jsonArray = new ArrayList<>();
+        Moment moment = (Moment) e;
+        Connection conn = Dao.getBdConnect();
+        CallableStatement cs = conn.prepareCall("{call m11_get_momentos}");
 
 
-        return e;
+            ResultSet rs = cs.executeQuery();
+            while (rs.next()) {
+                jsonArray.add(new Moment());
+                jsonArray.get(rs.getRow() - 1).set_description(rs.getString("momento"));
+                jsonArray.get(rs.getRow() - 1).set_id(rs.getInt("momento_id"));
+            }
+            moment.jsonArray = jsonArray;
+
+            return moment;
+
     }
 
     @Override

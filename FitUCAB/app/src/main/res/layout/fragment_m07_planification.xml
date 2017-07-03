@@ -1,0 +1,104 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.fitucab.ds1617b.fitucab.UI.Fragments.M07.M07PlanificationFragment">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="120dp">
+
+
+        <TextView
+            android:id="@+id/tv_m07_fechaInicio"
+            android:hint="Fecha inicio"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@mipmap/ic_launcher_date"/>
+
+
+        <TextView
+            android:id="@+id/tv_m07_fechaI"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/black"/>
+
+
+
+        <TextView
+            android:id="@+id/tv_m07_fechaFin"
+            android:hint="Fecha Fin"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@mipmap/ic_launcher_date"/>
+
+
+        <TextView
+            android:id="@+id/tv_m07_fechaF"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/tv_m07_horaInicio"
+            android:hint="Hora inicio"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@mipmap/ic_launcher_time"/>
+
+        <TextView
+            android:id="@+id/tv_m07_horaI"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/black"/>
+
+
+        <TextView
+            android:id="@+id/tv_m07_horaFin"
+            android:hint="Hora Fin"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@mipmap/ic_launcher_time"/>
+
+
+        <TextView
+            android:id="@+id/tv_m07_horaF"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_m07_frecuencia"
+            android:hint="Frecuencia"
+            android:layout_width="80dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/ic_launcher_time"/>
+
+
+        <TextView
+            android:id="@+id/tv_m07_dias"
+            android:layout_width="80dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="40dp"
+            android:textColor="@color/black"/>
+
+    </GridLayout>
+
+
+</FrameLayout>

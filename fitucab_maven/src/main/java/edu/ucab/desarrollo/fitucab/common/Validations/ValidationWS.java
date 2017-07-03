@@ -1,7 +1,7 @@
 package edu.ucab.desarrollo.fitucab.common.Validations;
 
 
-import edu.ucab.desarrollo.fitucab.common.exceptions.ParameterNullException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ParametersNullException;
 
 import java.util.Map;
 
@@ -10,10 +10,10 @@ import java.util.Map;
  */
 public class ValidationWS {
 
-    public static void validarParametrosNotNull(Map<String, Object> parametros) throws ParameterNullException {
+    public static void validarParametrosNotNull(Map<String, Object> parametros) throws ParametersNullException {
         for (Map.Entry<String, Object> entry : parametros.entrySet()){
             if (entry.getValue() == null){
-                throw new ParameterNullException(entry.getKey());
+                throw new ParametersNullException(entry.getKey());
             }
         }
 

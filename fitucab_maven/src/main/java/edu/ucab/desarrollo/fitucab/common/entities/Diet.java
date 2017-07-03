@@ -3,6 +3,7 @@ package edu.ucab.desarrollo.fitucab.common.entities;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -13,6 +14,7 @@ public class Diet extends Entity{
     private int _calorie;
     private LocalDate _dateTime;
     private String _date;
+    private Date  _fecha;
     private String _food;
     private String _moment;
     private String _username;
@@ -30,10 +32,10 @@ public class Diet extends Entity{
 
     public Diet() {}
 
-    public Diet(String moment, LocalDate dateTime, String username){
+    public Diet(String moment, String dateTime, String username){
 
         this._moment = moment;
-        this._dateTime = dateTime;
+        this._date = dateTime;
         this._username = username;
 
     }
@@ -62,11 +64,11 @@ public class Diet extends Entity{
         this._username = username;
     }
 
-    public Diet(int id, int calorie, LocalDate dateTime) {
+  /*  public Diet(String id, LocalDate calorie, String dateTime) {
         this._id = id;
         this._calorie = calorie;
         this._dateTime = dateTime;
-    }
+    }*/
 
     public Diet(int calorie, LocalDate dateTime) {
         this._calorie = calorie;
@@ -80,6 +82,10 @@ public class Diet extends Entity{
     public Diet(int calorie) {
         this._calorie = calorie;
     }
+
+    public Date get_date(){return _fecha;};
+
+    public void set_date(Date date){this._fecha = date;}
 
     public int get_id() {
         return _id;

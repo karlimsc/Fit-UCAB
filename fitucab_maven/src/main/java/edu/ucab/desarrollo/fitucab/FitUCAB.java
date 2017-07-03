@@ -14,15 +14,17 @@ public class FitUCAB extends Application {
     public Set<Class<?>> getClasses() {
         HashSet h= new HashSet<Class<?>>();
         h.add(M01_ServicesUser.class);
-        h.add(M01_ServicesUser1.class);
         h.add(M06_ServicesTraining.class);
         h.add(M09_ServicesGamification.class);
         h.add(M11_ServicesMoment.class);
         h.add(M11_ServicesFood.class);
         h.add(M11_ServicesDiet.class);
         h.add(M10_ServicesHidration.class);
+        h.add(M07_ServicesPlanification.class);
         h.add(M02_ServicesUser.class);
         h.add(M02_ServicesHome.class);
+        h.add(M03_ServicesFriends.class);
+        h.add(M03_ServicesContacts.class);
         return h;
     }
 }
