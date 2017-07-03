@@ -23,7 +23,8 @@ import static org.junit.Assert.*;
 public class GetFechaCommandTest {
 
 
-    SimpleDateFormat _sdf2 = new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat _sdf1 = new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat _sdf2 = new SimpleDateFormat("yyyy/MM/dd");
     Date fecha = new Date();
     String dia =_sdf2.format(fecha);
 
@@ -61,6 +62,7 @@ public class GetFechaCommandTest {
         Water waterComparacion = EntityFactory.createWater();
         waterComparacion.set_cantidad(2);
         waterComparacion.set_suma(550);
+        dia = _sdf1.format(fecha);
         waterComparacion.set_time(dia);
         assertTrue(water.equals(waterComparacion));
     }
