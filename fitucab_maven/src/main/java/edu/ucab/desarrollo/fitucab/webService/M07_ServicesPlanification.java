@@ -14,6 +14,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.DeletePlanificationComma
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.GetPlanificationByIdCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.UpdatePlanificationCommand;
 import edu.ucab.desarrollo.fitucab.validation.ValidationWs;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.*;
 import java.util.ArrayList;
@@ -28,6 +29,8 @@ public class M07_ServicesPlanification {
     private final int UNKNOWN_ERROR_STATUS = 500;
     private final String UNKNOWN_ERROR_MESSAGE = "Ha ocurrido un error durante la peticion";
     private ArrayList<Planification> jsonArray;
+    private static org.slf4j.Logger _logger = LoggerFactory.getLogger(M07_ServicesPlanification.class);
+
 
     /**
      * Endpoint para insertar una planificacion
@@ -123,6 +126,7 @@ public class M07_ServicesPlanification {
         }
 
         finally {
+            _logger.debug("Respuesta del servicio planification en el create", response);
             return gson.toJson(response);
         }
 
@@ -229,6 +233,7 @@ public class M07_ServicesPlanification {
         }
 
         finally {
+            _logger.debug("Respuesta del servicio planification en el update", response);
             return gson.toJson(response);
         }
 
@@ -280,6 +285,7 @@ public class M07_ServicesPlanification {
         }
 
         finally {
+            _logger.debug("Respuesta del servicio planification en el delete", response);
             return gson.toJson(response);
         }
     }
@@ -325,6 +331,7 @@ public class M07_ServicesPlanification {
         }
 
         finally {
+            _logger.debug("Respuesta del servicio planification en el obtener", response);
             return gson.toJson(response);
         }
 

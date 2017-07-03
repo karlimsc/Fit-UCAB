@@ -10,6 +10,7 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M07.DaoPlanification;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
+import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -22,10 +23,12 @@ public class GetPlanificationByIdCommand extends Command {
 
     private Entity _planificationEntity;
     private ArrayList<Planification> _listPlanification;
+    private static org.slf4j.Logger _logger = LoggerFactory.getLogger(GetPlanificationByIdCommand.class);
 
     public GetPlanificationByIdCommand(Entity planificationEntity) {
 
         this._planificationEntity = planificationEntity;
+
     }
 
     public ArrayList<Planification> get_listPlanification() {
@@ -42,6 +45,10 @@ public class GetPlanificationByIdCommand extends Command {
             _listPlanification = dao.getPlanificationByUser(_planificationEntity);
         } catch (Exception e) {
             e.printStackTrace();
+            _logger.error("Error en el comando para realizar una busqueda en planification" +
+                    ": " + e.toString());
+            _planificationEntity.set_errorCode(500);
+            _planificationEntity.set_errorMsg("Error durante la busqueda");
         }
     }
 

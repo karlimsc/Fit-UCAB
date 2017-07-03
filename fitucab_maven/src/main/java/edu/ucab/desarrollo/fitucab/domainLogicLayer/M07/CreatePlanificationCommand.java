@@ -9,6 +9,8 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M07.DaoPlanification;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
+import org.slf4j.LoggerFactory;
+import sun.util.resources.cldr.pa.CurrencyNames_pa;
 
 import java.sql.SQLException;
 
@@ -19,6 +21,7 @@ import java.sql.SQLException;
 public class CreatePlanificationCommand extends Command {
 
     private Entity _planificationEntity;
+    private static org.slf4j.Logger _logger = LoggerFactory.getLogger(CreatePlanificationCommand.class);
 
     public CreatePlanificationCommand(Entity planificationEntity) {
 
@@ -36,6 +39,10 @@ public class CreatePlanificationCommand extends Command {
             _planificationEntity = dao.create(_planificationEntity);
         } catch (Exception e) {
             e.printStackTrace();
+            _logger.error("Error en el comando para realizar una inserion en planification" +
+                    ": " + e.toString());
+            _planificationEntity.set_errorCode(500);
+            _planificationEntity.set_errorMsg("Error durante la insercion");
         }
 
 
