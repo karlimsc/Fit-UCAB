@@ -1,5 +1,6 @@
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.LoginUserException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import org.junit.Ignore;
@@ -36,6 +37,8 @@ class CheckUserCommandTest {
             Entity _userReturn = LoginUserDao.login(_user);
             assertEquals(1,_userReturn.get_id());
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (LoginUserException e) {
             e.printStackTrace();
         }
 

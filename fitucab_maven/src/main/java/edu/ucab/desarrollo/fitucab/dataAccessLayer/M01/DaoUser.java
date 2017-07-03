@@ -6,6 +6,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.LoginUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
@@ -43,6 +44,7 @@ public class DaoUser extends Dao implements IDaoUser {
     private Connection _bdCon;
     //Encargado de encriptar la contraseña
     private Security _sc;
+    private LoginUserException _errorLog;
 
     //String de conexion funciones
     String _sqlInicioSesion = "{?=call M01_INICIARSESION(?,?)}";
@@ -151,7 +153,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * @return
      */
 
-    public Entity login(Entity e) throws SQLException {
+    public Entity login(Entity e) throws LoginUserException,SQLException {
         _sc = new Security();
 
         CallableStatement cstmt;
@@ -179,19 +181,30 @@ public class DaoUser extends Dao implements IDaoUser {
             return _user;
 
         } catch (SQLException ex) {
-            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+            _errorLog = new LoginUserException(ex, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _errorLog.toString());
+            _logger.error("Error: ", _errorLog.toString());
+            throw _errorLog;
+            //Anterior
+            /*MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.debug("Debug: ", error.toString());
             _logger.error("Error: ", error.toString());
 
             //Retorna null por el error
-            return null;
+            return null;*/
         } catch (Exception ex) {
+            _errorLog = new LoginUserException(ex, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _logger.debug("Debug: ", _errorLog.toString());
+            _logger.error("Error: ", _errorLog.toString());
+            throw _errorLog;
+           //Anterior
+            /*
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.debug("Debug: ", error.toString());
             _logger.error("Error: ", error.toString());
-            return null;
+            return null;*/
         } finally {
             _bdCon.close();
         }
