@@ -5,6 +5,9 @@ import edu.ucab.desarrollo.fitucab.common.codec.Codec;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Planification;
+import edu.ucab.desarrollo.fitucab.common.entities.Response;
+import edu.ucab.desarrollo.fitucab.common.exceptions.EncodingExeption;
+import edu.ucab.desarrollo.fitucab.common.exceptions.ParameterNullException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.CreatePlanificationCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.DeletePlanificationCommand;
@@ -13,20 +16,17 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.UpdatePlanificationComma
 import edu.ucab.desarrollo.fitucab.validation.ValidationWs;
 
 import javax.ws.rs.*;
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
-/**
- * Created by jaorr on 30/06/17.
- */
+
 @Path( "/M07_ServicesPlanification" )
 public class M07_ServicesPlanification {
 
     Gson gson = new Gson();
+    Response response = new Response();
+    private final int UNKNOWN_ERROR_STATUS = 500;
+    private final String UNKNOWN_ERROR_MESSAGE = "Ha ocurrido un error durante la peticion";
     private ArrayList<Planification> jsonArray;
 
     /**
@@ -105,11 +105,23 @@ public class M07_ServicesPlanification {
             CreatePlanificationCommand cmd = CommandsFactory.instanciateCreatePlanificationCmd(planificationEntity);
             cmd.execute();
 
-            jsonArray.add((Planification) planificationEntity);
-            return gson.toJson(jsonArray);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "ERROR: " + e.toString();
+            response.setStatus(planificationEntity.get_errorCode());
+            response.setMessage(planificationEntity.get_errorMsg());
+        } catch (ParameterNullException e) {
+            response.setStatus(e.getStatus());
+            response.setMessage(e.getMessage());
+        }
+        catch (EncodingExeption e){
+            response.setStatus(e.get_status());
+            response.setMessage(e.getMessage());
+        }
+        catch (Exception e) {
+            response.setStatus(UNKNOWN_ERROR_STATUS);
+            response.setMessage(UNKNOWN_ERROR_MESSAGE);
+        }
+
+        finally {
+            return gson.toJson(response);
         }
 
 
@@ -171,11 +183,23 @@ public class M07_ServicesPlanification {
             UpdatePlanificationCommand cmd = CommandsFactory.instanciateUpdatePlanificationCmd(planificationEntity);
             cmd.execute();
 
-            jsonArray.add((Planification) planificationEntity);
-            return gson.toJson(jsonArray);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "ERROR: " + e.toString();
+            response.setStatus(planificationEntity.get_errorCode());
+            response.setMessage(planificationEntity.get_errorMsg());
+        } catch (ParameterNullException e) {
+            response.setStatus(e.getStatus());
+            response.setMessage(e.getMessage());
+        }
+        catch (EncodingExeption e){
+            response.setStatus(e.get_status());
+            response.setMessage(e.getMessage());
+        }
+        catch (Exception e) {
+            response.setStatus(UNKNOWN_ERROR_STATUS);
+            response.setMessage(UNKNOWN_ERROR_MESSAGE);
+        }
+
+        finally {
+            return gson.toJson(response);
         }
 
 
@@ -183,13 +207,15 @@ public class M07_ServicesPlanification {
 
     @DELETE
     @Produces("application/json")
-    public String updatePlanification(@DefaultValue("-1") @QueryParam("planificationId") int planificationId,
+    public String deletePlanification(@DefaultValue("-1") @QueryParam("planificationId") int planificationId,
                                       @DefaultValue("-1") @QueryParam("userId") int userId) {
         try {
-            HashMap<String, Object> params = new HashMap<String, Object>(){ {
-                put("planificationId", planificationId);
-                put("userId", userId);
-            }};
+            HashMap<String, Object> params = new HashMap<String, Object>() {
+                {
+                    put("planificationId", planificationId);
+                    put("userId", userId);
+                }
+            };
             jsonArray = new ArrayList<>();
             ValidationWs.validarParametrosNotNull(params);
             params = Codec.decode(params);
@@ -199,16 +225,27 @@ public class M07_ServicesPlanification {
 
             DeletePlanificationCommand cmd = CommandsFactory.instanciateDeletePlanificationCmd(planificationEntity);
             cmd.execute();
-
-            jsonArray.add((Planification) planificationEntity);
-            return gson.toJson(jsonArray);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "ERROR: " + e.toString();
+            response.setStatus(planificationEntity.get_errorCode());
+            response.setMessage(planificationEntity.get_errorMsg());
+        } catch (ParameterNullException e) {
+            response.setStatus(e.getStatus());
+            response.setMessage(e.getMessage());
+        }
+        catch (EncodingExeption e){
+            response.setStatus(e.get_status());
+            response.setMessage(e.getMessage());
+        }
+        catch (Exception e) {
+            response.setStatus(UNKNOWN_ERROR_STATUS);
+            response.setMessage(UNKNOWN_ERROR_MESSAGE);
         }
 
-
+        finally {
+            return gson.toJson(response);
+        }
     }
+
+
 
     @GET
     @Produces("application/json")
@@ -226,10 +263,24 @@ public class M07_ServicesPlanification {
             GetPlanificationByIdCommand cmd = CommandsFactory.instanciateGetPlanificationByIdCmd(planificationEntity);
             cmd.execute();
 
-            return gson.toJson(cmd.get_listPlanification());
-        } catch (Exception e) {
-            e.printStackTrace();
-            return "ERROR: " + e.toString();
+            response.setStatus(planificationEntity.get_errorCode());
+            response.setMessage(planificationEntity.get_errorMsg());
+            response.setData(cmd.get_listPlanification());
+        } catch (ParameterNullException e) {
+            response.setStatus(e.getStatus());
+            response.setMessage(e.getMessage());
+        }
+        catch (EncodingExeption e){
+            response.setStatus(e.get_status());
+            response.setMessage(e.getMessage());
+        }
+        catch (Exception e) {
+            response.setStatus(UNKNOWN_ERROR_STATUS);
+            response.setMessage(UNKNOWN_ERROR_MESSAGE);
+        }
+
+        finally {
+            return gson.toJson(response);
         }
 
 

@@ -16,10 +16,11 @@ public class DeletePlanificationCommand extends Command {
     private Entity _planificationEntity;
 
     public DeletePlanificationCommand(Entity _planificationEntity) {
+
         this._planificationEntity = _planificationEntity;
     }
 
-    public void execute() throws ListAllException, ListByIdException, NoSuchMethodException {
+    public void execute() {
         // invocar metodo delete
 
         DaoPlanification dao = DaoFactory.instanciateDaoPlanification();

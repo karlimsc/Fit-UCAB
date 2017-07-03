@@ -16,17 +16,17 @@ public class CreatePlanificationCommand extends Command {
     private Entity _planificationEntity;
 
     public CreatePlanificationCommand(Entity planificationEntity) {
+
         this._planificationEntity = planificationEntity;
     }
 
 
 
-    public void execute() throws ListAllException, ListByIdException, NoSuchMethodException {
-        //invocar al metodo dao que inserta
+    public void execute() {
         DaoPlanification dao = DaoFactory.instanciateDaoPlanification();
         try {
             _planificationEntity = dao.create(_planificationEntity);
-        } catch (AddException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

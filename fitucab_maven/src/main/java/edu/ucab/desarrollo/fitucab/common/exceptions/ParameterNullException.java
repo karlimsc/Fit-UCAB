@@ -6,6 +6,8 @@ package edu.ucab.desarrollo.fitucab.common.exceptions;
 public class ParameterNullException extends NullPointerException {
 
     private String _paramName;
+    private final int _status = 501;
+
 
 
     public ParameterNullException(String paramName) {
@@ -15,6 +17,10 @@ public class ParameterNullException extends NullPointerException {
     public ParameterNullException(String s, String paramName) {
         super(s);
         this._paramName = paramName;
+    }
+
+    public int getStatus() {
+        return _status;
     }
 
     @Override

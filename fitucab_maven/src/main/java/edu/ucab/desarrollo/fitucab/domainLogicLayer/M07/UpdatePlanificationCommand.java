@@ -19,7 +19,7 @@ public class UpdatePlanificationCommand extends Command {
         this._planificationEntity = _planificationEntity;
     }
 
-    public void execute() throws ListAllException, ListByIdException, NoSuchMethodException {
+    public void execute() {
      // invocar metodo para actualizar
         DaoPlanification dao = DaoFactory.instanciateDaoPlanification();
         try {

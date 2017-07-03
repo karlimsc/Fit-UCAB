@@ -20,6 +20,7 @@ public class GetPlanificationByIdCommand extends Command {
     private ArrayList<Planification> _listPlanification;
 
     public GetPlanificationByIdCommand(Entity planificationEntity) {
+
         this._planificationEntity = planificationEntity;
     }
 
@@ -27,8 +28,7 @@ public class GetPlanificationByIdCommand extends Command {
         return _listPlanification;
     }
 
-    public void execute() throws ListAllException, ListByIdException, NoSuchMethodException {
-        //invocar metodo que busca por id
+    public void execute() {
         DaoPlanification dao = DaoFactory.instanciateDaoPlanification();
         try {
             _listPlanification = dao.getPlanificationByUser(_planificationEntity);
