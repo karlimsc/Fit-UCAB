@@ -71,5 +71,20 @@ public interface ApiEndPointInterface {
 
 
     @POST("M06_ServicesTraining/getTrainingDetail")
-    Call<Training> getAllTraining(@Query("userId") int userId, @Query("trainingId") int trainingId);
+    Call<Training> getAllTraining(@Query("userId") int userId,
+                                  @Query("trainingId") int trainingId);
+
+    @POST("M06_ServicesTraining)/")
+    Call<Training> addTraining(@Query("userId") int userId,
+                               @Query("trainingId") int trainingId);
+
+    @POST("M06_ServicesTraining)/")
+    Call<Training> editTraining(@Query("userId") int userId,
+                                @Query("trainingId") int trainingId);
+
+    @POST("M06_ServicesTraining)/")
+    Call<Training> deleteTraining(@Query("userId") int userId,
+                                  @Query("trainingId") int trainingId);
+
+
 }
