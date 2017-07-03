@@ -38,7 +38,7 @@ public class UpdateFriendshipCommand extends Command {
     @Override
     public void execute() throws NoSuchMethodException {
         try {
-//            _dao.updateFriendship(_idUpdater, _idUpdated, _action);
+           _dao.updateFriendship(_idUpdater, _idUpdated, _action);
         }
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),

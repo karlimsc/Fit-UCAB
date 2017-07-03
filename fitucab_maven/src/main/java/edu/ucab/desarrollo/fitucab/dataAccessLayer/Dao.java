@@ -90,4 +90,7 @@ public abstract class Dao implements IDao
         }
     }
 
+    public void requestFriendship(String userOne, String userTwo){};
+    public void setLocation(String id, String latitud, String longitud){};
+    public void updateFriendship(String updater, String updated, String action){};
 }

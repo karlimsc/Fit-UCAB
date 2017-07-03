@@ -40,7 +40,7 @@ public class RequestFriendshipCommand extends Command {
 
     public void execute() throws NoSuchMethodException {
         try {
-//            _dao.requestFriendship(_idRequester, _idRequested);
+           _dao.requestFriendship(_idRequester, _idRequested);
         }
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
