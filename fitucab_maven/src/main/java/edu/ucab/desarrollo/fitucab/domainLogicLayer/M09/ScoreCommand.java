@@ -37,7 +37,6 @@ public class ScoreCommand extends Command{
         return _score;
     }
 
-    //TODO: Falta execute
     public void execute() throws NoSuchMethodException {
         try{
             _score = ((DaoGaming) _dao).score(_userId);

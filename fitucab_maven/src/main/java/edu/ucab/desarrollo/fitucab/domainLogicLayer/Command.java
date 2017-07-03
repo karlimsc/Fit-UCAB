@@ -23,6 +23,7 @@ public abstract class Command
      */
     public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception;
 
+
     public abstract Entity Return() throws SQLException, CreateHomeException, BdConnectException;
 
     public Boolean ReturnUpdate() {

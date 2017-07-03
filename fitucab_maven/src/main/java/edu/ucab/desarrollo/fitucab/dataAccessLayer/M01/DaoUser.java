@@ -226,9 +226,11 @@ public class DaoUser extends Dao implements IDaoUser {
 
         User _user = (User) e;
 
+        User _userFail = new User();
+
         String password = _sc.encryptPassword(_user.getPassword());
 
-        CallableStatement cstmt, cs;
+        CallableStatement cstmt;
 
 
         try {
@@ -249,6 +251,7 @@ public class DaoUser extends Dao implements IDaoUser {
 
             int id = cstmt.getInt(1);
             _user.setId(id);
+            _user.set_status(Integer.toString(RESULT_CODE_OK));
 
             return _user;
 
@@ -258,14 +261,14 @@ public class DaoUser extends Dao implements IDaoUser {
             _logger.debug("Debug: ", error.toString());
             _logger.error("Error: ", error.toString());
 
-            //Retorna null por el error
-            return null;
+            _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+            return _userFail;
         } catch (Exception ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.debug("Debug: ", error.toString());
             _logger.error("Error: ", error.toString());
-            return null;
+            _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+            return _userFail;
         } finally {
             _bdCon.close();
         }

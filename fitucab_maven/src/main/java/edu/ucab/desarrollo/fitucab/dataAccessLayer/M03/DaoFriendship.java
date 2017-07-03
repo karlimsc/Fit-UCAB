@@ -47,7 +47,7 @@ public class DaoFriendship extends Dao implements IDaoFriendship {
 
     /**
      * Metodo que retorna todos los amigos
-     * @param id es la entidad
+     * @param id es el usuario
      * @param Action para saber si son amigos
      * @return retorna la amistad ya agregada
      * @throws SQLException
@@ -439,7 +439,9 @@ public class DaoFriendship extends Dao implements IDaoFriendship {
 
 
 
+
     public void Create(Entity e) {
 
     }
 }
+

@@ -227,14 +227,14 @@ public class M11_ServicesFood {
      */
 
     @GET
-    @Path("/updatePersonalized")
+    @Path("/updatePersonalized")//pl mal hecho , hay que arreglarlo
     @Produces("application/json")
     public String updatePersonalized(@QueryParam("foodName") String foodName,
                                      @QueryParam("foodWeight") String foodWeight,
                                      @QueryParam("calorie") String calorie,
                                      @QueryParam("idUser") int idUser){
 
-        Entity EntityFood = EntityFactory.getFoodIDuser(foodName,idUser);
+        Entity EntityFood = EntityFactory.getFoodWeigthCaloriId(foodName,foodWeight,calorie,idUser);
         updatePersoCommand cmd = CommandsFactory.updatepersonCmd(EntityFood);
 
         try {
@@ -313,7 +313,7 @@ public class M11_ServicesFood {
      */
 
     @POST
-    @Path("/insertPersonalizedFood")
+    @Path("/insertPersonalizedFood") // confio que funciona
     @Produces("application/json")
     public String insertPersonalizedFood(@QueryParam("jsonFood") String jsonFood){
 
@@ -350,7 +350,7 @@ public class M11_ServicesFood {
      * @return
      */
     @GET
-    @Path("/getPersonalizedList")
+    @Path("/getPersonalizedList")//por aqui
     @Produces("application/json")
     public String getPersonalizedList(@QueryParam("username") String username) {
 

@@ -8,6 +8,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M03.DaoFriendship;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import org.slf4j.LoggerFactory;
@@ -34,11 +35,10 @@ public class UpdateFriendshipCommand extends Command {
         _action = action;
     }
 
-
     @Override
     public void execute() throws NoSuchMethodException {
         try {
-//            _dao.updateFriendship(_idUpdater, _idUpdated, _action);
+            ((DaoFriendship) _dao).updateFriendship(_idUpdater, _idUpdated, _action);
         }
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),

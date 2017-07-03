@@ -32,7 +32,6 @@ public class FillChartCommand extends Command{
         return _challenge;
     }
 
-    //TODO: Falta execute
     public void execute() throws NoSuchMethodException {
         try{
             _challenge = ((DaoGaming) _dao).fillChart(_userId);
