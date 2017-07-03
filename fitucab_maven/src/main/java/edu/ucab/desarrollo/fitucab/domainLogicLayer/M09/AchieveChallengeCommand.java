@@ -39,7 +39,6 @@ public class AchieveChallengeCommand extends Command {
     public void execute() throws NoSuchMethodException {
         try {
             ((DaoGaming) _dao).achieveChallenge(_userId, _challenges);
-            System.out.println("Hola bebe");
         }
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
