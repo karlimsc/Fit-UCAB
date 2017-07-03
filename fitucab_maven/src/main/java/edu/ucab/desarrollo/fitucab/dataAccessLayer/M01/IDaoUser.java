@@ -14,9 +14,25 @@ import java.sql.SQLException;
  */
 public interface IDaoUser extends IDao {
 
+    /**
+     * Metodo para la recuperacion de cuenta
+     * @param email
+     * @return
+     * @throws SQLException
+     */
+
     String testEmail (String email) throws SQLException;
+
+    /**
+     * Metodo para realizar el login
+     * @param e
+     * @return
+     * @throws SQLException
+     * @throws LoginUserException
+     */
     Entity login(Entity e) throws SQLException, LoginUserException;
-    public boolean update() throws CreateHomeException, SQLException;
+
+    public boolean Update() throws CreateHomeException, SQLException;
     public void UpdateName(String name) throws BdConnectException, SQLException;
     public void UpdateEmail(String email) throws SQLException;
     public void UpdatePhone(String phone) throws SQLException;
