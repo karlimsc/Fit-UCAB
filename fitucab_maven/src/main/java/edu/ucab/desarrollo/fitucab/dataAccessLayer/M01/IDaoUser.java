@@ -13,9 +13,10 @@ import java.sql.SQLException;
  * Created by karo on 28/06/17.
  */
 public interface IDaoUser extends IDao {
+
     String testEmail (String email) throws SQLException;
     Entity login(Entity e) throws SQLException, LoginUserException;
-    public boolean update() throws CreateHomeException, SQLException;
+    public boolean Update() throws CreateHomeException, SQLException;
     public void UpdateName(String name) throws BdConnectException, SQLException;
     public void UpdateEmail(String email) throws SQLException;
     public void UpdatePhone(String phone) throws SQLException;

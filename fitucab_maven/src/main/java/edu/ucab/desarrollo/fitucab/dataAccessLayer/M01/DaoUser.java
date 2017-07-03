@@ -209,6 +209,7 @@ public class DaoUser extends Dao implements IDaoUser {
             _bdCon.close();
         }
     }
+    
 
 
     /**
@@ -274,7 +275,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * Metodo del M02 para actualizar atributos de la Entidad User
      * @author Juan Macedo, Cesar Boza, Bryan Teixeira
      */
-    public boolean Update() {
+    public boolean Update() throws SQLException {
         try {
             if (!_username.equals("")) {
                 UpdateName(_username);
@@ -324,7 +325,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * @author Juan Macedo, Cesar Boza, Bryan Teixeira
      * @param _email
      */
-    public void UpdateEmail(String _email) {
+    public void UpdateEmail(String _email) throws SQLException {
         String updatemail = _email;
         try {
             _bdCon = Dao.getBdConnect();
@@ -337,7 +338,9 @@ public class DaoUser extends Dao implements IDaoUser {
             e1.printStackTrace();
         }
         finally {
-            _bdCon.close();
+
+                _bdCon.close();
+
         }
     }
 
@@ -346,7 +349,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * @author Juan Macedo, Cesar Boza, Bryan Teixeira
      * @param _phone
      */
-    public void UpdatePhone(String _phone) {
+    public void UpdatePhone(String _phone) throws SQLException {
         String updatephone = _phone;
         try {
             _bdCon = Dao.getBdConnect();
