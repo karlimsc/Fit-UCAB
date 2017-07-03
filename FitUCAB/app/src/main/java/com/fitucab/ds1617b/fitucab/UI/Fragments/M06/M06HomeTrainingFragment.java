@@ -16,6 +16,7 @@ import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
 import com.fitucab.ds1617b.fitucab.Model.Training;
+import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ public class M06HomeTrainingFragment extends Fragment {
     ArrayList<Training> mTrainings;
     private RecyclerView recyclerView;
     private TrainingAdapter mAdapter;
+    private User user;
     public M06HomeTrainingFragment() {
 
     }
@@ -77,6 +79,7 @@ public class M06HomeTrainingFragment extends Fragment {
         manageRecyclerView();
         setupViewValues();
         manageChangeFragmentTraining();
+        getRetrofit(user.get_idUser());
         return _view;
     }
 
