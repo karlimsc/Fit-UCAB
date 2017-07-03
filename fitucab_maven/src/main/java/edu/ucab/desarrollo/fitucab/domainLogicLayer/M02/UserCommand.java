@@ -59,6 +59,7 @@ public class UserCommand extends Command {
         return _home;
     }
 
-
-
+    public int get_id() {
+        return _id;
+    }
 }

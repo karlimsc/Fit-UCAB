@@ -7,8 +7,8 @@ public class Registry
 {
 
 
-    public static String BD_USER = "fitucab";
-    public static String BD_PASSWORD = "fitucab";
+    public static String BD_USER = "juanmacedoal";
+    public static String BD_PASSWORD = "21489juan";
     public static String BD_URL = "jdbc:postgresql://localhost/fitucabdb";
     public static String BD_CLASS_FOR_NAME = "org.postgresql.Driver";
 

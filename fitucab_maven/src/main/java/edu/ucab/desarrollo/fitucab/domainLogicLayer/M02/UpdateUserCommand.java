@@ -17,6 +17,9 @@ public class UpdateUserCommand extends Command {
     int _id;
     String _username;
     String _phone;
+
+
+
     String _email;
     boolean _update;
     final static org.slf4j.Logger _logger = LoggerFactory.getLogger(HomeCommand.class);
@@ -27,6 +30,24 @@ public class UpdateUserCommand extends Command {
         this._phone=phone;
         this._email=email;
     }
+
+    public int get_id() {
+        return _id;
+    }
+
+    public String get_username() {
+        return _username;
+    }
+
+    public String get_phone() {
+        return _phone;
+    }
+
+    public String get_email() {
+        return _email;
+    }
+
+
 
     public void execute() throws ListAllException, ListByIdException, NoSuchMethodException {
 
