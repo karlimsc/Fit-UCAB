@@ -39,7 +39,7 @@ public class M06_ServicesTraining
     Gson gson = new Gson();
 
     //el tipo de instruccion HTTP
-    @POST
+    @GET
     //el path de la funcion
     @Path( "/createTraining" )
     //formato de retorno
@@ -84,7 +84,7 @@ public class M06_ServicesTraining
     }
 
 
-    @POST
+    @GET
     @Path( "/changeTrainingName" )
     @Produces( "application/json" )
 
@@ -125,7 +125,7 @@ public class M06_ServicesTraining
     }
 
 
-    @POST
+    @GET
     @Path( "/addActivitiesToTraining" )
     @Produces( "application/json" )
 
@@ -170,7 +170,7 @@ public class M06_ServicesTraining
     }
 
 
-    @POST
+    @GET
     @Path( "/removeActivitiesToTraining" )
     @Produces( "application/json" )
 
@@ -258,7 +258,7 @@ public class M06_ServicesTraining
     {
 
         Entity deleteTrainingObject = EntityFactory.createTraining(trainingId, trainingName);
-
+        deleteTrainingObject.set_id(trainingId);
         DeleteTrainingCommand cmd = CommandsFactory.instanciateDeleteTrainingCmd(deleteTrainingObject);
 
 
