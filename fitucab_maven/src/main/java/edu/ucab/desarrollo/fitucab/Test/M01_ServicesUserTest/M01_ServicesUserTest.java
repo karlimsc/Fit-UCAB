@@ -1,4 +1,3 @@
-package edu.ucab.desarrollo.fitucab.Test.M01_ServicesUserTest;
 
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
@@ -65,7 +64,8 @@ public class M01_ServicesUserTest {
 
 
         try {
-            URI prueba = new URI("http://localhost:8888/WebServicesFitUCAB_war_exploded/M01_ServicesUser/informationUser?username=danri");
+            URI prueba = new URI("http://localhost:8080/fitucab_maven_war_exploded/M01_ServicesUser/localhost:8080" +
+                                    "/fitucab_war_exploded/M01_ServicesUser/login_user?username=karo&password=1234");
 
             given().accept(ContentType.JSON).when().get(prueba).then()
                     .assertThat().statusCode(HttpStatus.SC_OK);
@@ -86,8 +86,8 @@ public class M01_ServicesUserTest {
     public void insertUserTest() throws URISyntaxException {
 
         try {
-            URI prueba = new URI("http://localhost:8888/" +
-                    "WebServicesFitUCAB_war_exploded/M01_ServicesUser/" +
+            URI prueba = new URI("http://localhost:8080/" +
+                    "fitucab_maven_war_exploded/M01_ServicesUser/" +
                     "insertRegistry?" +
                     "username=dan1rive" +
                     "&password=dan1234" +
@@ -99,12 +99,7 @@ public class M01_ServicesUserTest {
                     "&height=1");
             given().accept(ContentType.JSON).when().get(prueba).then()
                     .assertThat().statusCode(HttpStatus.SC_OK);
-            URI prueba2 = new URI("http://localhost:8888/" +
-                    "WebServicesFitUCAB_war_exploded/" +
-                    "M01_ServicesUser/" +
-                    "deteleUser?username=dan1rive");
-            given().accept(ContentType.JSON).when().get(prueba2).then()
-                    .assertThat().statusCode(HttpStatus.SC_OK);
+
 
         }
         catch (URISyntaxException e) {
@@ -117,18 +112,18 @@ public class M01_ServicesUserTest {
 
         }
     }
-    
+
 
     @Test
     public void getUserTest() throws Exception {
         try {
 
-            URI prueba = new URI("http://localhost:8888/WebServicesFitUCAB_war_exploded/" +
-                    "M01_ServicesUser/login_user?username=danri&password=dan1234");
+            URI prueba = new URI("http://localhost:8080/localhost:8080/fitucab_maven_war_exploded/" +
+                    "M01_ServicesUser/login_user?username=karo&password=1234");
 
             given().accept(ContentType.JSON).when().get(prueba).then()
                     .assertThat().statusCode(HttpStatus.SC_OK);
-            URI prueba2 = new URI("http://localhost:8888/WebServicesFitUCAB_war_exploded/" +
+            URI prueba2 = new URI("http://localhost:8080/fitucab_maven_war_exploded/" +
                     "M01_ServicesUser/login_user?username=danri&password=dannnnn");
             String json = given().accept(ContentType.JSON).when()
                     .get(prueba2).thenReturn().body().asString();
@@ -150,10 +145,7 @@ public class M01_ServicesUserTest {
     }
 
 
-        //Para despues
-    @Test
-    public void testEmailTest() throws Exception {
-    }
+
 
 
 
