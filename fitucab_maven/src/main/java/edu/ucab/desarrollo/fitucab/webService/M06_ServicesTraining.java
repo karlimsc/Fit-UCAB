@@ -12,6 +12,8 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.*;
 import java.security.InvalidParameterException;
@@ -31,6 +33,8 @@ import javax.ws.rs.QueryParam;
 @Path( "/M06_ServicesTraining" )
 public class M06_ServicesTraining
 {
+
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
     Gson gson = new Gson();
 
@@ -68,6 +72,10 @@ public class M06_ServicesTraining
         }
         catch ( AddException e )
         {
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.debug(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);
@@ -104,6 +112,10 @@ public class M06_ServicesTraining
         }
         catch ( UpdateException e )
         {
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.debug(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);
@@ -145,6 +157,10 @@ public class M06_ServicesTraining
         }
         catch ( AddException e )
         {
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.debug(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);
@@ -186,6 +202,10 @@ public class M06_ServicesTraining
         }
         catch ( DeleteException e )
         {
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.debug(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);
@@ -252,6 +272,10 @@ public class M06_ServicesTraining
         }
         catch ( DeleteException e )
         {
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.debug(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);
@@ -290,6 +314,10 @@ public class M06_ServicesTraining
         }
         catch ( ShareException e )
         {
+            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.debug(error_.toString());
+            logger.debug(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);
