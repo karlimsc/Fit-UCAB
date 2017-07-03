@@ -192,19 +192,25 @@ public class DaoUser extends Dao implements IDaoUser {
             else {
                 userFail.set_status(Integer.toString(RESULT_USER_FAIL));
                 //return userFail;
-                throw new CreateUserException(DaoUser.class.getSimpleName(),"Error al Insertar el Usuario",userFail);
+                throw new LoginUserException(DaoUser.class.getSimpleName(),"Error al Insertar el Usuario",userFail);
             }
 
         } catch (SQLException ex) {
-            _errorLog = new LoginUserException(ex, DaoUser.class.getSimpleName(),BdConnectException.class.toString());
-            _logger.debug("Debug: ", _errorLog.toString());
-            _logger.error("Error: ", _errorLog.toString());
-            return userFail;
-        } catch (Exception ex) {
+
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.debug("Debug: ", error.toString());
+
             _logger.error("Error: ", error.toString());
+
+            return userFail;
+
+        } catch (Exception ex) {
+
+            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+
+            _logger.error("Error: ", error.toString());
+
             return userFail;
         } finally {
             _bdCon.close();
@@ -232,6 +238,8 @@ public class DaoUser extends Dao implements IDaoUser {
 
         CallableStatement cstmt;
 
+        int id =0;
+
 
         try {
             cstmt = _bdCon.prepareCall(_sqlRegistrarUsuario.toString());
@@ -249,26 +257,46 @@ public class DaoUser extends Dao implements IDaoUser {
             cstmt.setInt(9, _user.getHeight());
             cstmt.execute();
 
-            int id = cstmt.getInt(1);
-            _user.setId(id);
-            _user.set_status(Integer.toString(RESULT_CODE_OK));
+            id = cstmt.getInt(1);
 
-            return _user;
+            if (id!=0) {
+
+                _user.setId(id);
+                _user.set_status(Integer.toString(RESULT_CODE_OK));
+                return _user;
+            }
+            else {
+
+                _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+                System.out.print("EN DAOUSER TRHOWS EL USER STATUS ES " + _userFail.get_status()) ;
+                throw new CreateUserException(DaoUser.class.getSimpleName(),"Error al hacer login",_userFail);
+            }
+
 
         } catch (SQLException ex) {
+
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.debug("Debug: ", error.toString());
+
+            _logger.error("Error: ", error.toString());
+            System.out.print("EN DAOUSER SQL EXC EL USER STATUS ES " + _userFail.get_status()) ;
+
+            _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+
+            return _userFail;
+
+        } catch (Exception ex) {
+            System.out.print("EN DAOUSER EXCEPTION EL USER STATUS ES " + _userFail.get_status()) ;
+
+            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+
             _logger.error("Error: ", error.toString());
 
             _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+
             return _userFail;
-        } catch (Exception ex) {
-            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.error("Error: ", error.toString());
-            _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
-            return _userFail;
+
         } finally {
             _bdCon.close();
         }

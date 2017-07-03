@@ -8,7 +8,6 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -19,7 +18,7 @@ public class CreateUserCommand extends Command {
     private Entity _user;
     private Boolean _response;
     private static Entity _userResponse;
-    final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(CreateUserCommand.class);
 
 
     /**
@@ -52,6 +51,7 @@ public class CreateUserCommand extends Command {
             logger.debug("Debug: ", "Realizó el Try en CreateUserCommand");
         }
         catch (CreateUserException e){
+            System.out.print("EN EXCEPCION EL USER STATUS ES " +  e.getUserFail());
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.error("Error: ", error);
@@ -61,7 +61,7 @@ public class CreateUserCommand extends Command {
         }catch(Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
+            logger.error("Error: ", error.toString());
             this._response = false;
         }
     }
