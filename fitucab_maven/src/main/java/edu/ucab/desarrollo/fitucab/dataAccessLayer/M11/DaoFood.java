@@ -10,10 +10,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Food;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 
 import java.lang.reflect.Type;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -63,7 +60,10 @@ public class DaoFood extends Dao implements IDaoFood {
         username= String.valueOf(food.get_id());
 
         Connection conn = Dao.getBdConnect();
-        PreparedStatement stm = conn.prepareStatement(query);
+
+
+        CallableStatement stm = conn.prepareCall("{? = Call m11_get_alimentos_person() }");
+       // PreparedStatement stm = conn.prepareStatement(query);
         stm.setString(1, username);
         ResultSet rs = stm.executeQuery();
 
@@ -92,7 +92,11 @@ public class DaoFood extends Dao implements IDaoFood {
         jsonArray = new ArrayList<>();
 
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
+
+
+        CallableStatement st = conn.prepareCall("{? = Call m11_get_alimentos_sugerencia() }");
+
+     //   PreparedStatement st = conn.prepareStatement(query);
         st.setString(1, username);
         ResultSet rs = st.executeQuery();
 
@@ -121,7 +125,10 @@ public class DaoFood extends Dao implements IDaoFood {
         username = String.valueOf(food.get_id());//Revisar aqui
         calorie = food.get_foodCalorie();
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
+
+        CallableStatement st = conn.prepareCall("{? = Call m11_get_alimentos_sugerencia(?) }");
+
+       // PreparedStatement st = conn.prepareStatement(query);
         st.setString(1, username);
         st.setInt(2, Integer.parseInt(calorie));
         ResultSet rs = st.executeQuery();
@@ -152,7 +159,9 @@ public class DaoFood extends Dao implements IDaoFood {
         jsonArray = new ArrayList<>();
         username  = String.valueOf(food.get_id());
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
+
+        CallableStatement st = conn.prepareCall("{? = Call m11_get_todos_alimentos_autocompletar()) }");
+
         st.setString(1, username);
         ResultSet rs = st.executeQuery();
 
@@ -194,7 +203,9 @@ public class DaoFood extends Dao implements IDaoFood {
 
 
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
+        CallableStatement st = conn.prepareCall("{call  m11_elimina_alimento_person(?, ?)}");
+
+      //  PreparedStatement st = conn.prepareStatement(query);
         st.setString(1, food.get_foodName());
         st.setInt(2, food.get_id());
         st.executeQuery();
@@ -217,7 +228,9 @@ public class DaoFood extends Dao implements IDaoFood {
 
 
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
+        CallableStatement st = conn.prepareCall("{call  m11_act_alimento_person(?, ?, ?, ?)}");
+
+        //PreparedStatement st = conn.prepareStatement(query);
         st.setString(1, food.get_foodName());
         st.setInt(2, Integer.parseInt(food.get_foodWeight()));
         st.setInt(3, Integer.parseInt(food.get_foodCalorie()));
@@ -241,7 +254,14 @@ public class DaoFood extends Dao implements IDaoFood {
         String query = "select m11_inserta_alim_person(? , ?, ?, ?, ?)";
 
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
+
+
+
+        CallableStatement st = conn.prepareCall("{call m11_inserta_alim_person(? , ?, ?, ?, ?)}");
+
+
+
+      //  PreparedStatement st = conn.prepareStatement(query);
 
         st.setString(1, food.get_foodName());
         st.setInt(2, Integer.parseInt(food.get_foodCalorie()));
@@ -281,7 +301,10 @@ public class DaoFood extends Dao implements IDaoFood {
         Food[] alimentos = gson.fromJson(food.getJson(), type);
 
         Connection conn = Dao.getBdConnect();
-        PreparedStatement st = conn.prepareStatement(query);
+
+        CallableStatement st = conn.prepareCall("{call m11_inserta_alim_person(? , ?, ?}");
+
+       // PreparedStatement st = conn.prepareStatement(query);
         for (int i = 0; i < alimentos.length; i++) {
             st.setString(1, alimentos[i].get_foodName());
             st.setInt(2, Integer.parseInt(alimentos[i].get_foodWeight()));
@@ -303,8 +326,9 @@ public class DaoFood extends Dao implements IDaoFood {
         Food food = (Food) e;
 
         Connection conn = Dao.getBdConnect();
-        String query = "select * from m11_get_alimentos_person_lista(?)";
-        PreparedStatement st = conn.prepareStatement(query);
+     //   String query = "select * from m11_get_alimentos_person_lista(?)";
+
+        CallableStatement st = conn.prepareCall("{? = Call m11_get_alimentos_person_lista () }");
         st.setString(1, food.get_idname());
         ResultSet rs = st.executeQuery();
         jsonArray = new ArrayList<>();
