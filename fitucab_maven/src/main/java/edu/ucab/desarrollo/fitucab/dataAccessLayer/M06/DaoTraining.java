@@ -50,21 +50,21 @@ public class DaoTraining extends Dao implements IDaoTraining
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new AddException(ex);
         }
         catch (BdConnectException ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new AddException(ex);
         }
         catch (Exception ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new AddException(ex);
         }
 
@@ -81,12 +81,24 @@ public class DaoTraining extends Dao implements IDaoTraining
 
             }
             catch (SQLException ex) {
+                MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                        Thread.currentThread().getStackTrace()[1].getMethodName());
+                logger.debug(error.toString());
+                logger.error(error.toString());
                 throw new AddException(ex);
             }
             catch (BdConnectException ex) {
+                MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                        Thread.currentThread().getStackTrace()[1].getMethodName());
+                logger.debug(error.toString());
+                logger.error(error.toString());
                 throw new AddException(ex);
             }
             catch (Exception ex) {
+                MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                        Thread.currentThread().getStackTrace()[1].getMethodName());
+                logger.debug(error.toString());
+                logger.error(error.toString());
                 throw new AddException(ex);
             }
         }
@@ -198,21 +210,21 @@ public class DaoTraining extends Dao implements IDaoTraining
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new ShareException(ex);
         }
         catch (BdConnectException ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new ShareException(ex);
         }
         catch (Exception ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new ShareException(ex);
         }
 
@@ -277,21 +289,21 @@ public class DaoTraining extends Dao implements IDaoTraining
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new UpdateException(ex);
         }
         catch (BdConnectException ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new UpdateException(ex);
         }
         catch (Exception ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new UpdateException(ex);
         }
 
@@ -321,21 +333,21 @@ public class DaoTraining extends Dao implements IDaoTraining
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new AddException(ex);
         }
         catch (BdConnectException ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new AddException(ex);
         }
         catch (Exception ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new AddException(ex);
         }
 
@@ -364,21 +376,21 @@ public class DaoTraining extends Dao implements IDaoTraining
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new DeleteException(ex);
         }
         catch (BdConnectException ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new DeleteException(ex);
         }
         catch (Exception ex) {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw new DeleteException(ex);
         }
 

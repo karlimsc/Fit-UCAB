@@ -75,7 +75,7 @@ public class M06_ServicesTraining
             MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error_.toString());
-            logger.debug(error_.toString());
+            logger.error(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);
@@ -115,7 +115,7 @@ public class M06_ServicesTraining
             MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error_.toString());
-            logger.debug(error_.toString());
+            logger.error(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);
@@ -160,7 +160,7 @@ public class M06_ServicesTraining
             MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error_.toString());
-            logger.debug(error_.toString());
+            logger.error(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);
@@ -205,7 +205,7 @@ public class M06_ServicesTraining
             MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error_.toString());
-            logger.debug(error_.toString());
+            logger.error(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);
@@ -275,7 +275,7 @@ public class M06_ServicesTraining
             MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error_.toString());
-            logger.debug(error_.toString());
+            logger.error(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);
@@ -317,7 +317,7 @@ public class M06_ServicesTraining
             MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error_.toString());
-            logger.debug(error_.toString());
+            logger.error(error_.toString());
             Entity error = EntityFactory.createEntity();
             error.set_errorMsg(e.ERROR_MSG);
             error.set_errorCode(e.ERROR_CODE);

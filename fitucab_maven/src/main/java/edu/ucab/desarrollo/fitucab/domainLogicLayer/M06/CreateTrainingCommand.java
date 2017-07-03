@@ -35,7 +35,7 @@ public class CreateTrainingCommand extends Command {
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.debug(error.toString());
-            logger.debug(error.toString());
+            logger.error(error.toString());
             throw ex;
         }
     }
