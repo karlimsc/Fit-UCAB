@@ -8,6 +8,8 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.*;
@@ -77,6 +79,18 @@ public class EntityFactoryM09Test {
     public void InstanceDaoGamingTestPUFE() {
         Dao dao = DaoFactory.instanceDaoGaming();
         assertNull(dao);
+    }
+
+    @Test
+    public void GetChallengesTestPUE() {
+        List<Entity> lista = EntityFactory.getChallenges();
+        assertNotNull(lista);
+    }
+
+    @Test(expected = AssertionError.class)
+    public void GetChallengesTestPUFE() {
+        List<Entity> lista = EntityFactory.getChallenges();
+        assertNull(lista);
     }
 
 }
