@@ -13,7 +13,6 @@ import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.R;
 
-import org.apache.commons.lang3.SerializationUtils;
 
 import java.util.ArrayList;
 

@@ -15,17 +15,33 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
 import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
+import com.fitucab.ds1617b.fitucab.Model.Activit;
 import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.AsyncHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+import cz.msebera.android.httpclient.Header;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -79,10 +95,12 @@ public class M06HomeTrainingFragment extends Fragment {
         // Inflate the layout for this fragment
         _view =  inflater.inflate(R.layout.fragment_m06_home_training, container, false);
         getActivity().setTitle("Listado de entrenamientos.");
-
         mTrainings= getMockTraining();
-        manageRecyclerView();
+        //manageRecyclerView();
         setupViewValues();
+        fetchUserTrainings(null);
+
+
         manageChangeFragmentTraining();
         return _view;
     }
@@ -110,6 +128,50 @@ public class M06HomeTrainingFragment extends Fragment {
 
     }
 
+
+    public void getRetrofit() {
+
+
+            ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
+            Call<ArrayList<Training>> call = apiService.getAllTraining(1);
+
+            final MaterialDialog dialog = getInstaceDialog(getContext());
+
+            call.enqueue(new Callback<ArrayList<Training>>() {
+
+                @Override
+                public void onResponse(Call<ArrayList<Training>> call, Response<ArrayList<Training>> response) {
+
+                    dialog.dismiss();
+
+                    try {
+
+                        ArrayList<Training> training = response.body();
+                        System.out.println("hola mundo");
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        System.out.println("No es problema de bd ni internet");
+
+                    }
+
+
+                }
+
+                @Override
+                public void onFailure(Call<ArrayList<Training>> call, Throwable t) {
+                    dialog.dismiss();
+                    String error = t.getMessage();
+                    String errorResult = validateExceptionMessage(error, getContext());
+                    showToast(getContext(), errorResult);
+
+                }
+
+            });
+
+        }
+
+
+
     private void manageRecyclerView(){
 
         mAdapter = new TrainingAdapter(mTrainings,_callBack);
@@ -121,38 +183,68 @@ public class M06HomeTrainingFragment extends Fragment {
 
     }
 
-    public void getRetrofit(int userId){
+    private void fetchUserTrainings(final RequestParams params){
+        RequestParams test = new RequestParams();
+        test.put("userId",1);
+        AsyncHttpClient client = new AsyncHttpClient();
+        System.out.println("Parametros:");
+        //System.out.println(params.toString());
+        client.post("http://192.168.0.107:8080/fitucab/M06_ServicesTraining/getAllTraining?userId=1", test, new AsyncHttpResponseHandler() {
 
-           ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
-             Call<ArrayList<Training>> call= apiService.getAllTraining(1);
+            @Override
+            public void onStart() {
+            }
 
-             final MaterialDialog dialog =getInstaceDialog(getContext());
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    JsonParser jsonParser = new JsonParser();
+                    JsonArray jsonArray = (JsonArray) jsonParser.parse((new String(responseBody)));
 
-             call.enqueue(new Callback<ArrayList<Training>>() {
+                    ArrayList<Training> trainingList = new ArrayList<>();
+                    for (int i = 0; i < jsonArray.size(); i++) {
+                        JsonElement json_data = jsonArray.get(i);
+                        JsonObject obj = json_data.getAsJsonObject();
+                        String tName = obj.get("_trainingName").getAsString();
+                        int idTrain = obj.get("_id").getAsInt();
+                        JsonArray activities = obj.get("_activitiesList").getAsJsonArray();
+                        ArrayList<Activit> trainingActivities = new ArrayList<>();
+                        for (int j = 0; j < activities.size(); j++) {
 
-                 @Override
-                 public void onResponse(Call<ArrayList<Training>> call, Response<ArrayList<Training>> response) {
+                            JsonElement json_data2 = activities.get(j);
+                            JsonObject obj2 = json_data2.getAsJsonObject();
+                            String actName = obj2.get("_name").getAsString();
+                            int actdur = obj2.get("_duration").getAsInt();
+                            int idact = obj2.get("_id").getAsInt();
 
-                     dialog.dismiss();
+                            Activit act = new Activit(idact,actName,actdur);
+                            trainingActivities.add(act);
 
-                     try{
+                        }
+                        Training training = new Training(idTrain,tName,trainingActivities);
+                        trainingList.add(training);
+                        System.out.println("hola");
+                    }
+                    mTrainings = trainingList ;
+                    manageRecyclerView();
+                    // ArrayList<Training> training = response.body();
+                    System.out.println("hola mundo");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("No es problema de bd ni internet");
 
-                         ArrayList<Training> trainings = response.body();
+                }
 
-                     }
-                     catch (Exception e){
-                         e.printStackTrace();
-                         System.out.println("No es problema de bd ni internet");
-                     }
-                 }
-                 @Override
-                 public void onFailure(Call<ArrayList<Training>> call, Throwable t) {
+            }
 
-                     dialog.dismiss();
-                     String error=t.getMessage();
-                     String errorResult= validateExceptionMessage(error,getContext());
-                     showToast(getContext(),errorResult);
-                 }
-             });
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+                System.out.println("No es problema de bd ni internet");
+
+            }
+
+
+        });
     }
+
 }
