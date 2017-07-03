@@ -436,7 +436,7 @@ public class DaoUser extends Dao implements IDaoUser {
                 usernameResult = cstmt.getString(1);
                 passwordResult = cstmt.getString(2);
                 passwordResult = _sc.decryptPassword(passwordResult);
-                System.out.print("Debug: user " + usernameResult);
+                _logger.debug("Debug: user " + usernameResult);
                 //Se crea la sesion para autenticar
 
                 Session session = Session.getInstance(props,
@@ -463,14 +463,15 @@ public class DaoUser extends Dao implements IDaoUser {
                         " Ahora puedes seguir entrenando");
                 //Enviamos
                 Transport.send(message);
+
                 //Aqui esta la validacion
                 User userOk = new User();
                 userOk.set_status(Integer.toString(RESULT_EMAIL_OK));
 
                 //TODO:HAY QUE VER LO QUE RECIBE LA APP
-                return gson.toJson(userOk.get_status());
+                return gson.toJson(userOk);
             } else {
-                System.out.print("Debug: user " + usernameResult);
+                _logger.debug("Debug: Else " + usernameResult);
                 User userFail = new User();
                 userFail.set_status(Integer.toString(RESULT_USER_FAIL));
                 return gson.toJson(userFail);
