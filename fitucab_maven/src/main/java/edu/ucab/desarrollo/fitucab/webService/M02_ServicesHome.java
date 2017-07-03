@@ -22,22 +22,22 @@ public class M02_ServicesHome {
 
     private StatusMessage _message;
     private Response _response;
-    private Entity home;
+    private Entity _home;
 
 
     /**
-     * Metodo para actualizar contenido del home.
+     * Metodo para actualizar contenido del _home.
      * Buscar cantidad de vasos consumidos y calorias consumidas.
      * @return Clase Home en formato json
      * @see Home
      */
     @GET
     @Path("/{userId}")
-    public Response getHome(@PathParam("userId") int id) {
-        Command command = CommandsFactory.instanciateHomeCmd(id);
+    public Response getHome(@PathParam("userId") int _id) {
+        Command _command = CommandsFactory.instanciateHomeCmd(_id);
         try {
-            command.execute();
-            home = command.Return();
+            _command.execute();
+            _home = _command.Return();
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (ListAllException e) {
@@ -48,12 +48,12 @@ public class M02_ServicesHome {
             e.printStackTrace();
         }
 
-        if ( home == null ){
+        if ( _home == null ){
             _message = new StatusMessage( 0, "Home no actualizado" );
             _response = Response.status( Response.Status.NOT_FOUND ).entity( _message ).build();
             throw new WebApplicationException( _response );
         }
-        _response = Response.status( Response.Status.ACCEPTED ).entity( home ).build();
+        _response = Response.status( Response.Status.ACCEPTED ).entity(_home).build();
         return _response;
     }
 

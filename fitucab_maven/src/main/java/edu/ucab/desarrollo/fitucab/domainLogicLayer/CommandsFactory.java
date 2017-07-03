@@ -6,6 +6,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.HomeCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.UpdateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.UserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
@@ -68,6 +69,10 @@ public class CommandsFactory {
      */
     static public HomeCommand instanciateHomeCmd(int id){
         return new HomeCommand(id);
+    }
+
+    static public UpdateUserCommand instanciateUpdateUserCmd(int id,String username,String phone,String email){
+        return new UpdateUserCommand(id,username,phone,email);
     }
 
     //FIN MODULO 2

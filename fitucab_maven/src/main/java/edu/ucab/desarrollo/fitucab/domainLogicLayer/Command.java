@@ -26,10 +26,13 @@ public abstract class Command
     public List<Entity> getChallenges(){
         return null;
     }
-
     public Entity getChallenge(){
         return null;
     }
 
     public abstract Entity Return() throws SQLException, CreateHomeException, BdConnectException;
+
+    public Boolean ReturnUpdate() {
+        return null;
+    }
 }

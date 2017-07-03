@@ -5,8 +5,8 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.IDaoUser;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.IDaoHome;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.IDaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import org.slf4j.LoggerFactory;
 
