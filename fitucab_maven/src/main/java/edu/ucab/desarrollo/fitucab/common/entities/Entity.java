@@ -1,8 +1,5 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
-
 /**
  *Patron Entidad
  */

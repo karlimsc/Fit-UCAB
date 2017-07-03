@@ -2,6 +2,7 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M02;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -13,7 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-
+import android.content.Intent;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -22,6 +23,7 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.M02Exception;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 
@@ -30,6 +32,8 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 
 /**
  * Clase M02AccountFragment que maneja el fragmeto de perfil
@@ -47,6 +51,9 @@ public class M02AccountFragment extends Fragment {
     private String TAG= "FitUCAB";
     private User user =new User();
     private IpStringConnection ip= new IpStringConnection();
+    private String identi, email, name, phone;
+    ManagePreferences manageId = new ManagePreferences();
+    View rootView;
 
 
     /**
@@ -70,6 +77,7 @@ public class M02AccountFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         _view= inflater.inflate(R.layout.fragment_m02_account, container, false);
+
         initComponentes(_view);
         return _view;
 
@@ -88,7 +96,6 @@ public class M02AccountFragment extends Fragment {
         _et_m02_email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                user.set_email("odasodkasod");
                 toPutWebService(user);
             }
         });
@@ -153,12 +160,21 @@ public class M02AccountFragment extends Fragment {
 
     private void toPutWebService(User user) {
         try {
+            identi = String.valueOf(user.get_idUser());
+
+            if (user.get_email() != null)
+                email =  user.get_email();
+            if (user.get_username() != null)
+                name = user.get_username();
+            if (user.get_phone() != null)
+                phone = user.get_phone();
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
             int id= preferences.getInt("idUser",0);
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-            String webUrl= ip.getIp()+"M02Users/"+id+"&user="+user;
+            String webUrl= ip.getIp()+"M02Users/userId?id="+1+"&username="+name
+                    +"&email="+email+"&phone="+phone;
             Log.i(TAG, "toAskWebService: "+webUrl);
-            JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.PUT, webUrl, new Response.Listener<JSONObject>() {
+            JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject response) {
                     Log.i(TAG, "onResponse: "+response.toString());
@@ -191,10 +207,9 @@ public class M02AccountFragment extends Fragment {
      */
     private void toAskWebService() {
         try {
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-            int id= preferences.getInt("idUser",0);
+           // int id = manageId.getIdUser(rootView.getContext());
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
-            String webUrl= ip.getIp()+"M02Users/"+id;
+            String webUrl= ip.getIp()+"M02Users/"+1;
             Log.i(TAG, "toAskWebService: "+webUrl);
             JsonObjectRequest jsonrequest= new  JsonObjectRequest(Request.Method.GET, webUrl, new Response.Listener<JSONObject>() {
                 @Override

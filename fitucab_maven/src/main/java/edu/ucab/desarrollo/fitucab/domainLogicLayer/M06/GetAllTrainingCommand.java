@@ -41,4 +41,10 @@ public class GetAllTrainingCommand extends Command
         _output = dao.listAll( _input );
 
     }
+
+
+
+    public Entity Return(){
+        return null;
+    }
 }
