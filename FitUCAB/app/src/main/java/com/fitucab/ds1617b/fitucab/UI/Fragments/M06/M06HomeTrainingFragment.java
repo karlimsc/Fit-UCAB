@@ -91,36 +91,9 @@ public class M06HomeTrainingFragment extends Fragment {
         _view =  inflater.inflate(R.layout.fragment_m06_home_training, container, false);
         getActivity().setTitle("Listado de entrenamientos.");
         mTrainings= getMockTraining();
-        manageRecyclerView();
+        //manageRecyclerView();
         setupViewValues();
-        //fetchUserTrainings(null);
-        JsonParser jsonParser = new JsonParser();
-        JsonArray jsonArray = (JsonArray) jsonParser.parse("[{\"_trainingName\":\"Predeterminado\",\"_trainingPeriod\":0,\"_userId\":0,\"_activitiesList\":[{\"_name\":\"Caminar\",\"_duration\":2,\"_id\":1,\"_errorCode\":0},{\"_name\":\"Trotar\",\"_duration\":3,\"_id\":2,\"_errorCode\":0},{\"_name\":\"Correr\",\"_duration\":2,\"_id\":3,\"_errorCode\":0},{\"_name\":\"Lagartijas\",\"_duration\":1,\"_id\":4,\"_errorCode\":0},{\"_name\":\"Nadar\",\"_duration\":2,\"_id\":5,\"_errorCode\":0}],\"_id\":1,\"_errorCode\":0},{\"_trainingName\":\"Dia Lunes\",\"_trainingPeriod\":0,\"_userId\":0,\"_activitiesList\":[{\"_name\":\"Caminar\",\"_duration\":2,\"_id\":1,\"_errorCode\":0},{\"_name\":\"Trotar\",\"_duration\":3,\"_id\":2,\"_errorCode\":0},{\"_name\":\"Correr\",\"_duration\":2,\"_id\":3,\"_errorCode\":0},{\"_name\":\"Lagartijas\",\"_duration\":1,\"_id\":4,\"_errorCode\":0},{\"_name\":\"Nadar\",\"_duration\":2,\"_id\":5,\"_errorCode\":0}],\"_id\":2,\"_errorCode\":0}]");
-
-        ArrayList<Training> trainingList = new ArrayList<>();
-        for (int i = 0; i < jsonArray.size(); i++) {
-            JsonElement json_data = jsonArray.get(i);
-            JsonObject obj = json_data.getAsJsonObject();
-            String tName = obj.get("_trainingName").getAsString();
-            int idTrain = obj.get("_id").getAsInt();
-            JsonArray activities = obj.get("_activitiesList").getAsJsonArray();
-            ArrayList<Activit> trainingActivities = new ArrayList<>();
-            for (int j = 0; i < activities.size(); i++) {
-
-                JsonElement json_data2 = activities.get(j);
-                JsonObject obj2 = json_data2.getAsJsonObject();
-                String actName = obj2.get("_name").getAsString();
-                int actdur = obj2.get("_duration").getAsInt();
-                int idact = obj2.get("_id").getAsInt();
-
-                Activit act = new Activit(idact,actName,actdur);
-                trainingActivities.add(act);
-
-            }
-            Training training = new Training(idTrain,tName,trainingActivities);
-            trainingList.add(training);
-                System.out.println("hola");
-        }
+        fetchUserTrainings(null);
 
 
         manageChangeFragmentTraining();
@@ -220,20 +193,36 @@ public class M06HomeTrainingFragment extends Fragment {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
-                    Gson gson = new Gson();
                     JsonParser jsonParser = new JsonParser();
                     JsonArray jsonArray = (JsonArray) jsonParser.parse((new String(responseBody)));
-                     jsonArray = (JsonArray) jsonParser.parse("[{\"_trainingName\":\"Predeterminado\",\"_trainingPeriod\":0,\"_userId\":0,\"_activitiesList\":[{\"_name\":\"Caminar\",\"_duration\":2,\"_id\":1,\"_errorCode\":0},{\"_name\":\"Trotar\",\"_duration\":3,\"_id\":2,\"_errorCode\":0},{\"_name\":\"Correr\",\"_duration\":2,\"_id\":3,\"_errorCode\":0},{\"_name\":\"Lagartijas\",\"_duration\":1,\"_id\":4,\"_errorCode\":0},{\"_name\":\"Nadar\",\"_duration\":2,\"_id\":5,\"_errorCode\":0}],\"_id\":1,\"_errorCode\":0},{\"_trainingName\":\"Dia Lunes\",\"_trainingPeriod\":0,\"_userId\":0,\"_activitiesList\":[{\"_name\":\"Caminar\",\"_duration\":2,\"_id\":1,\"_errorCode\":0},{\"_name\":\"Trotar\",\"_duration\":3,\"_id\":2,\"_errorCode\":0},{\"_name\":\"Correr\",\"_duration\":2,\"_id\":3,\"_errorCode\":0},{\"_name\":\"Lagartijas\",\"_duration\":1,\"_id\":4,\"_errorCode\":0},{\"_name\":\"Nadar\",\"_duration\":2,\"_id\":5,\"_errorCode\":0}],\"_id\":2,\"_errorCode\":0}]");
-                    Type listType = new TypeToken<ArrayList<Training>>(){}.getType();
 
-                    ArrayList<Training> myModelList = gson.fromJson(jsonArray.toString(), listType);
-
+                    ArrayList<Training> trainingList = new ArrayList<>();
                     for (int i = 0; i < jsonArray.size(); i++) {
                         JsonElement json_data = jsonArray.get(i);
+                        JsonObject obj = json_data.getAsJsonObject();
+                        String tName = obj.get("_trainingName").getAsString();
+                        int idTrain = obj.get("_id").getAsInt();
+                        JsonArray activities = obj.get("_activitiesList").getAsJsonArray();
+                        ArrayList<Activit> trainingActivities = new ArrayList<>();
+                        for (int j = 0; j < activities.size(); j++) {
 
+                            JsonElement json_data2 = activities.get(j);
+                            JsonObject obj2 = json_data2.getAsJsonObject();
+                            String actName = obj2.get("_name").getAsString();
+                            int actdur = obj2.get("_duration").getAsInt();
+                            int idact = obj2.get("_id").getAsInt();
+
+                            Activit act = new Activit(idact,actName,actdur);
+                            trainingActivities.add(act);
+
+                        }
+                        Training training = new Training(idTrain,tName,trainingActivities);
+                        trainingList.add(training);
                         System.out.println("hola");
                     }
-                        // ArrayList<Training> training = response.body();
+                    mTrainings = trainingList ;
+                    manageRecyclerView();
+                    // ArrayList<Training> training = response.body();
                     System.out.println("hola mundo");
                 } catch (Exception e) {
                     e.printStackTrace();

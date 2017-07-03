@@ -78,7 +78,24 @@
             android:textSize="@dimen/text_button_size"
             android:typeface="sans" />
 
+
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_m06_cable"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/layout_margin"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorBtnAceptar"
+        android:fontFamily="sans-serif"
+        android:text="Directo a M06"
+        android:textColor="@android:color/background_light"
+        android:textSize="@dimen/text_button_size"
+        android:typeface="sans" />
+
 
 
 </LinearLayout>
