@@ -562,9 +562,9 @@ public class EntityFactory
      * @see Friendship
 
      */
-    static public Friendship createFriendship(int id, int userOne, int userTwo){
+    static public Friendship createFriendship(String userOne, String userTwo){
 
-        return new Friendship(id, userOne, userTwo);
+        return new Friendship(userOne, userTwo);
 
     }
 

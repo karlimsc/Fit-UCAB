@@ -7,18 +7,16 @@ package edu.ucab.desarrollo.fitucab.common.entities;
  */
 
 public class Friendship extends Entity {
-   private int _userOne;
-   private int _userTwo;
+   private String _userOne;
+   private String _userTwo;
 
    /**
-    * Constructor con id y usuarios
-    * @param _id
+    * Constructor usuarios
     * @param _userOne
     * @param _userTwo
     */
 
-   public Friendship(int _id, int _userOne, int _userTwo) {
-      super(_id);
+   public Friendship(String _userOne, String _userTwo) {
       this._userOne = _userOne;
       this._userTwo = _userTwo;
    }
@@ -36,16 +34,16 @@ public class Friendship extends Entity {
     * @return
     */
 
-   public int get_userOne() {
-      return _userOne;
-   }
+    public String get_userOne() {
+        return _userOne;
+    }
 
-   /**
+    /**
     * Set del id del usuario 1
     * @param _userOne
     */
 
-   public void set_userOne(int _userOne) {
+   public void set_userOne(String _userOne) {
       this._userOne = _userOne;
    }
 
@@ -54,7 +52,7 @@ public class Friendship extends Entity {
     * @return
     */
 
-   public int get_userTwo() {
+   public String get_userTwo() {
       return _userTwo;
    }
 
@@ -63,7 +61,7 @@ public class Friendship extends Entity {
     * @param _userTwo
     */
 
-   public void set_userTwo(int _userTwo) {
+   public void set_userTwo(String _userTwo) {
       this._userTwo = _userTwo;
    }
 

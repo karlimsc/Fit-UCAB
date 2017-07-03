@@ -2,6 +2,7 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M03;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.Friendship;
+import edu.ucab.desarrollo.fitucab.common.entities.UserAuxiliar;
 import edu.ucab.desarrollo.fitucab.common.entities.Water;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.IDao;
 
@@ -14,7 +15,8 @@ import java.util.ArrayList;
 public interface IDaoFriendship extends IDao{
 
     public Entity create(Entity e) throws SQLException;
-    public ArrayList<Friendship> getList (Entity e)  throws  SQLException;
-    public Entity getFriendship(Entity e)  throws  SQLException;
-    public Entity deleteFriendship(Entity e)  throws  SQLException;
+    public ArrayList<UserAuxiliar> getList (String id, String Action)  throws  SQLException;
+    public ArrayList<UserAuxiliar> getContacts (String id, String contacts)  throws  SQLException;
+
+
 }

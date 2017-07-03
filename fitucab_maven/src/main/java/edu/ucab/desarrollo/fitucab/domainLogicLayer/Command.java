@@ -31,5 +31,13 @@ public abstract class Command
         return null;
     }
 
+    public List<Entity> getFriendships(){
+        return null;
+    }
+
+    public Entity getFriendship(){
+        return null;
+    }
+
     public abstract Entity Return() throws SQLException, CreateHomeException, BdConnectException;
 }
