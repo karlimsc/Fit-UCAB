@@ -217,20 +217,24 @@ public class M01_ServicesUser {
             System.out.print("Debug: email " + email);
             cmd.execute();
             String _response = cmd.get_response();
-            return gson.toJson(_response);
+            return _response;
 
         }catch (NullPointerException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             System.out.print("NULL POINTER");
             logger.error("Error: ", error);
-            return gson.toJson(null);
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
         }
         catch ( Exception e )
         { MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.error("Error: ", error);
-            return gson.toJson( null );
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
         }
 
 

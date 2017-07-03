@@ -39,17 +39,18 @@ public class RecoverPasswordCommand extends Command {
             this._response=testMailDao.testEmail(_email);
 
             logger.debug("Debug: ", "Realizó el Try en RecoverPassCommand");
+            System.out.print("Debug: Realizó el Try en RecoverPassCommand");
+            System.out.print("Debug:Rsponse"+ this._response);
+
         }
         catch (NullPointerException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
-            this._response = null;
+            logger.error("Error: ", error.toString());
         } catch(Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
-            this._response = null;
+            logger.error("Error: ", error.toString());
         }
     }
 

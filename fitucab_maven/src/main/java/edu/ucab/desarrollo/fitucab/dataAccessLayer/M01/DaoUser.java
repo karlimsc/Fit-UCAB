@@ -311,7 +311,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * Metodo del M02 para actualizar atributos de la Entidad User
      * @author Juan Macedo, Cesar Boza, Bryan Teixeira
      */
-    public boolean Update() throws SQLException {
+    public boolean update() throws SQLException {
         try {
             if (!_username.equals("")) {
                 UpdateName(_username);
@@ -409,7 +409,7 @@ public class DaoUser extends Dao implements IDaoUser {
      */
     @Override
     public String testEmail(String email) throws SQLException {
-        User user = null;
+
         Boolean validaEmail = false;
         String usernameResult = "";
         String passwordResult = "";
@@ -419,6 +419,7 @@ public class DaoUser extends Dao implements IDaoUser {
             Properties props = new Properties();
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.starttls.enable", "true");
+            props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
             props.put("mail.smtp.host", "smtp.gmail.com");
             props.put("mail.smtp.port", "587");
 
@@ -436,7 +437,7 @@ public class DaoUser extends Dao implements IDaoUser {
                 usernameResult = cstmt.getString(1);
                 passwordResult = cstmt.getString(2);
                 passwordResult = _sc.decryptPassword(passwordResult);
-                System.out.print("Debug: user " + usernameResult);
+                _logger.debug("Debug: user " + usernameResult);
                 //Se crea la sesion para autenticar
 
                 Session session = Session.getInstance(props,
@@ -463,14 +464,15 @@ public class DaoUser extends Dao implements IDaoUser {
                         " Ahora puedes seguir entrenando");
                 //Enviamos
                 Transport.send(message);
+
                 //Aqui esta la validacion
                 User userOk = new User();
                 userOk.set_status(Integer.toString(RESULT_EMAIL_OK));
 
                 //TODO:HAY QUE VER LO QUE RECIBE LA APP
-                return gson.toJson(userOk.get_status());
+                return gson.toJson(userOk);
             } else {
-                System.out.print("Debug: user " + usernameResult);
+                _logger.debug("Debug: Else " + usernameResult);
                 User userFail = new User();
                 userFail.set_status(Integer.toString(RESULT_USER_FAIL));
                 return gson.toJson(userFail);
@@ -481,13 +483,19 @@ public class DaoUser extends Dao implements IDaoUser {
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.error("Error: ", error.toString());
             System.out.print("Error: " + error.toString());
-            return e.getSQLState();
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
+            //return e.getSQLState();
         } catch (Exception e) {
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.error("Error: ", error.toString());
             System.out.print("Error: " + error.toString());
-            return e.getMessage();
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
+            //return e.getMessage();
         } finally {
             _bdCon.close();
         }
