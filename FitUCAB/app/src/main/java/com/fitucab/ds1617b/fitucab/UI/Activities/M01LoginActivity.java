@@ -20,6 +20,7 @@ import static com.fitucab.ds1617b.fitucab.Helper.ManagePreferences.getIdUser;
 public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwap {
 
     private FragmentManager FM = getSupportFragmentManager();
+
     /**
      * Metodo que inicia para selecionar el fragmento al que se va a cambiar
      * @param savedInstanceState
