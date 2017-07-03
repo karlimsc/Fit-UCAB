@@ -4,6 +4,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +18,7 @@ public class LevelUpCommand extends Command {
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(FillChartCommand.class);
 
     private Dao _dao;
-    private Entity _level;
+    private static Entity _level;
     private int _userId;
 
     public LevelUpCommand(int id, Dao dao) {
@@ -26,14 +27,14 @@ public class LevelUpCommand extends Command {
         _userId = id;
     }
 
-    public Entity getChallenge() {
+    public static Entity getChallenge() {
         return _level;
     }
 
     //TODO: Falta execute
     public void execute() throws NoSuchMethodException {
         try{
-            _level = _dao.levelUp(_userId);
+            _level = ((DaoGaming) _dao).levelUp(_userId);
         } catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());

@@ -6,6 +6,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +22,7 @@ public class ScoreCommand extends Command{
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(ScoreCommand.class);
 
     private Dao _dao;
-    private Entity _score;
+    private static Entity _score;
     private int _userId;
     private int _level;
 
@@ -32,14 +33,14 @@ public class ScoreCommand extends Command{
         _level = 0;
     }
 
-    public Entity getChallenge() {
+    public static Entity getChallenge() {
         return _score;
     }
 
     //TODO: Falta execute
     public void execute() throws NoSuchMethodException {
         try{
-            _score = _dao.score(_userId);
+            _score = ((DaoGaming) _dao).score(_userId);
             _level = ((Challenge) _score).getScore();
             if (_level < _level1){
                 ((Challenge) _score).setLevel(1);

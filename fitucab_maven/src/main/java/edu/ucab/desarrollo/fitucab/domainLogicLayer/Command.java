@@ -23,21 +23,6 @@ public abstract class Command
      */
     public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception;
 
-    public List<Entity> getChallenges(){
-        return null;
-    }
-    public Entity getChallenge(){
-        return null;
-    }
-
-    public List<Entity> getFriendships(){
-        return null;
-    }
-
-    public Entity getFriendship(){
-        return null;
-    }
-
     public abstract Entity Return() throws SQLException, CreateHomeException, BdConnectException;
 
     public Boolean ReturnUpdate() {
