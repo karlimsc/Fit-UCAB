@@ -139,7 +139,7 @@ public class M06DetailsTrainingFragment extends Fragment {
             case R.id.m06_share_training:
                 // do stuff
                 ///TODO GO TO SHARE
-                _getRetrofit(_Training, 500);
+                _getRetrofit(_Training, 5000);
                 //_callBack.onSwap();
                 return true;
         }
