@@ -120,18 +120,51 @@ public class CommandsFactory {
     }
 
     //Modulo 9
+
+    /**
+     * Metodo que instancia el comando AchieveChallengeCommand
+     * @param id Id del usuario.
+     * @param dao Dao que se usara el comando.
+     * @return Clase Command
+     * @see Command
+     * @see AchieveChallengeCommand
+     */
     static public Command instanciateAchieveChallengeCmd(int id, Dao dao){
         return new AchieveChallengeCommand(id, dao);
     }
 
+    /**
+     * Metodo que instancia el comando ScoreCommand
+     * @param id Id del usuario.
+     * @param dao Dao que se usara el comando.
+     * @return Clase Command
+     * @see Command
+     * @see ScoreCommand
+     */
     static public Command instanciateScoreCmd(int id, Dao dao){
         return new ScoreCommand(id, dao);
     }
 
+    /**
+     * Metodo que instancia el comando FillChartCommand
+     * @param id Id del usuario.
+     * @param dao Dao que se usara el comando.
+     * @return Clase Command
+     * @see Command
+     * @see FillChartCommand
+     */
     static public Command instanciateFillChartCmd(int id, Dao dao){
         return new FillChartCommand(id, dao);
     }
 
+    /**
+     * Metodo que instancia el comando LevelUpCommand
+     * @param id Id del usuario.
+     * @param dao Dao que se usara el comando.
+     * @return Clase Command
+     * @see Command
+     * @see LevelUpCommand
+     */
     static public Command instanciateLevelUpCmd(int id, Dao dao){
         return new LevelUpCommand(id, dao);
     }

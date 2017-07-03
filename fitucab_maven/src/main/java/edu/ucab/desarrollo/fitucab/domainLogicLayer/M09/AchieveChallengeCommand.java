@@ -25,16 +25,35 @@ public class AchieveChallengeCommand extends Command {
     private static List<Entity> _challenges;
     private int _userId;
 
+    /**
+     * Constructor que inicializa el dao, el id de un usario y la lista de retos.
+     * @param id Id del usuario.
+     * @param dao Clase DaoGaming.
+     * @see DaoGaming
+     * @see edu.ucab.desarrollo.fitucab.common.entities.Challenge
+     */
     public AchieveChallengeCommand(int id, Dao dao) {
         _dao = dao;
         _challenges = EntityFactory.getChallenges();
         _userId = id;
     }
 
+    /**
+     * Metodo estatico que retorna la lista de retos hechos por un usuario.
+     * @return
+     * @see List
+     * @see edu.ucab.desarrollo.fitucab.common.entities.Challenge
+     */
     public static List<Entity> getChallenges() {
         return _challenges;
     }
 
+    /**
+     * Metodo ejecutar heredado de commad.
+     * @throws NoSuchMethodException
+     * @throws Exception
+     * @see DaoGaming
+     */
     public void execute() throws NoSuchMethodException {
         try {
             ((DaoGaming) _dao).achieveChallenge(_userId, _challenges);
@@ -50,6 +69,5 @@ public class AchieveChallengeCommand extends Command {
     public Entity Return(){
         return null;
     }
-
 
 }

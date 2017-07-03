@@ -48,7 +48,14 @@ public class DaoFactory
         return new DaoTraining( entidad );
     }
 
+    //MODULO 09
+
+    /**
+     * Metodo para instanciar el dao de gamification
+     * @return Dao Gaming
+     */
     public static Dao instanceDaoGaming() { return  new DaoGaming(); }
+    //FIN MODULO 09
 
     //MODULO 2
 

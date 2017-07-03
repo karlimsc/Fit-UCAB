@@ -48,7 +48,6 @@ public class M09_ServicesGamification {
             Command cmd = CommandsFactory.instanciateAchieveChallengeCmd(id, dao);
             cmd.execute();
             List<Challenge> challenges = (List<Challenge>)(List<?>) AchieveChallengeCommand.getChallenges();
-            logger.error("Hola ");
             return challenges;
         }
         catch (WebApplicationException e){
