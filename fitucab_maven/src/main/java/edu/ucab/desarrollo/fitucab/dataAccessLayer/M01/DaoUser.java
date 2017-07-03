@@ -409,7 +409,7 @@ public class DaoUser extends Dao implements IDaoUser {
      */
     @Override
     public String testEmail(String email) throws SQLException {
-        User user = null;
+
         Boolean validaEmail = false;
         String usernameResult = "";
         String passwordResult = "";
