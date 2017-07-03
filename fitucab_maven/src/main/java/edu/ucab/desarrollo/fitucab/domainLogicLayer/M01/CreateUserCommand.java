@@ -55,20 +55,10 @@ public class CreateUserCommand extends Command {
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.error("Error: ", error);
+            _userResponse = e.getUserFail();
             this._response = false;
-        }
-        catch (NullPointerException e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
-            this._response = false;
-        }catch (InstantiationException e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
-            this._response = false;
-        }
-        catch(Exception e){
+
+        }catch(Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.error("Error: ", error);

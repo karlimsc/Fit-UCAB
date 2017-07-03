@@ -40,7 +40,6 @@ public class DaoUser extends Dao implements IDaoUser {
     String _phone;
     String _email;
     Entity _user;
-    Date birthdate;
     private GetUserException _error;
     private Connection _bdCon;
     //Encargado de encriptar la contraseña
@@ -192,11 +191,12 @@ public class DaoUser extends Dao implements IDaoUser {
             }
             else {
                 userFail.set_status(Integer.toString(RESULT_USER_FAIL));
-                return userFail;
+                //return userFail;
+                throw new CreateUserException(DaoUser.class.getSimpleName(),"Error al Insertar el Usuario",userFail);
             }
 
         } catch (SQLException ex) {
-            _errorLog = new LoginUserException(ex, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
+            _errorLog = new LoginUserException(ex, DaoUser.class.getSimpleName(),BdConnectException.class.toString());
             _logger.debug("Debug: ", _errorLog.toString());
             _logger.error("Error: ", _errorLog.toString());
             return userFail;
