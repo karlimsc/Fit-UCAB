@@ -6,7 +6,7 @@ package edu.ucab.desarrollo.fitucab.common.exceptions;
 public class UpdateException extends Exception
 {
 
-    public final int ERROR_CODE = 554;
+    public final int ERROR_CODE = 559;
     public final String ERROR_MSG = "Ha ocurrido un error modificando";
 
 

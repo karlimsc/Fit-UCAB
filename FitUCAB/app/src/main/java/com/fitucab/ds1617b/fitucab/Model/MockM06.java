@@ -22,7 +22,7 @@ public class MockM06 {
         ArrayList<Training> mockTrain = new ArrayList<>();
         ArrayList<Activit> actList = new ArrayList<Activit>();
 
-        Activit mockAct1 = new Activit(1,"correr",4);
+        Activit mockAct1 = new Activit(1,"Correr",4);
         Activit mockAct2 = new Activit(2,"Nadar",3);
         actList.add(mockAct1);
         actList.add(mockAct2);

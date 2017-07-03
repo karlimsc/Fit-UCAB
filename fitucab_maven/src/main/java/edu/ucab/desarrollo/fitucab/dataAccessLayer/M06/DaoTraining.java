@@ -306,7 +306,7 @@ public class DaoTraining extends Dao implements IDaoTraining
                         "SELECT M06_ADDTRAINING_ACTIVITY('" + a.get_duration() + "', '" + e.get_id() + "', '" + a.get_id() + ")";
                 conn = Dao.getBdConnect();
                 st = conn.createStatement();
-                rs = st.executeQuery(query);
+                rs = st.executeQuery(_query);
                 //User user = null;
             }
 
@@ -407,6 +407,7 @@ public class DaoTraining extends Dao implements IDaoTraining
     public Boolean addActivities(Entity e) throws AddException {
 
         try {
+            removeActivities(e);
             Training t = (Training) e;
             Connection conn = Dao.getBdConnect();
             Statement st = conn.createStatement();
@@ -455,15 +456,12 @@ public class DaoTraining extends Dao implements IDaoTraining
             Statement st = conn.createStatement();
             //User user = null;
 
-            for (Entity activity : t.get_activitylist()) {
-                Activity a = (Activity) activity;
                 String _query =
-                        "SELECT M06_DELETE_ACTIVITY('" + e.get_id() + "', '" + a.get_id() + "')";
+                        "SELECT M06_DELETE_ACTIVITY('" + e.get_id() + "', '" + 0 + "')";
                 conn = Dao.getBdConnect();
                 st = conn.createStatement();
                 ResultSet rs = st.executeQuery(_query);
                 //User user = null;
-            }
 
         }
         catch (SQLException ex) {
