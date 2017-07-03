@@ -76,7 +76,7 @@ public interface ApiEndPointInterface {
 ///////////////////////////////////////////////////////////////////////
     @POST("M06_ServicesTraining)/createTraining")
     Call<Training> addTraining(@Query("trainingName") String trainingName,
-                               @Query("trainingActivities") int trainingActivities,
+                               @Query("trainingActivities") String trainingActivities,
                                 @Query("userId") int userId);
 
     @POST("M06_ServicesTraining)/deleteTraining")
