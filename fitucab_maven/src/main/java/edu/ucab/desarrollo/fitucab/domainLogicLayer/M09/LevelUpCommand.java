@@ -21,17 +21,33 @@ public class LevelUpCommand extends Command {
     private static Entity _level;
     private int _userId;
 
+    /**
+     * Constructor que inicializa el dao, el id de un usario y la entidad challenge.
+     * @param id Id del usuario.
+     * @param dao Clase DaoGaming.
+     * @see DaoGaming
+     * @see edu.ucab.desarrollo.fitucab.common.entities.Challenge
+     */
     public LevelUpCommand(int id, Dao dao) {
         _dao = dao;
         _level = EntityFactory.createChallenge();
         _userId = id;
     }
 
+    /**
+     * Metodo estatico que retorna la clase Challenge con scores aumentados.
+     * @return
+     */
     public static Entity getChallenge() {
         return _level;
     }
 
-    //TODO: Falta execute
+    /**
+     * Metodo ejecutar heredado de commad.
+     * @throws NoSuchMethodException
+     * @throws Exception
+     * @see DaoGaming
+     */
     public void execute() throws NoSuchMethodException {
         try{
             _level = ((DaoGaming) _dao).levelUp(_userId);

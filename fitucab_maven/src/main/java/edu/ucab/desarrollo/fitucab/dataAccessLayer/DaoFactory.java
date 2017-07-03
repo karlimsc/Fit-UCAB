@@ -8,6 +8,7 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.M03.DaoNearMe;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M06.DaoTraining;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.DaoWater;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoDiet;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoFood;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoMoment;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M07.DaoPlanification;
@@ -49,7 +50,14 @@ public class DaoFactory
         return new DaoTraining( entidad );
     }
 
+    //MODULO 09
+
+    /**
+     * Metodo para instanciar el dao de gamification
+     * @return Dao Gaming
+     */
     public static Dao instanceDaoGaming() { return  new DaoGaming(); }
+    //FIN MODULO 09
 
     //MODULO 2
 
@@ -83,6 +91,8 @@ public class DaoFactory
     //Modulo11
 
     public static DaoFood iniciarDaoFood(){return new DaoFood();}
+
+    public static DaoDiet iniciarDaoDiet(){return new DaoDiet();}
 
     public static DaoMoment iniciarDaoMoment(){return  new DaoMoment();}
 

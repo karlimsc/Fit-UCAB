@@ -3,6 +3,7 @@ package com.fitucab.ds1617b.fitucab.Model;
 import com.fitucab.ds1617b.fitucab.Helper.LocalDate;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -12,33 +13,34 @@ import java.util.Map;
 
 
 
-    public class Diet extends Entity {
+
+    public class Diet extends Entity{
         private int _id;
         private int _calorie;
         private LocalDate _dateTime;
         private String _date;
+        private Date _fecha;
         private String _food;
         private String _moment;
         private String _username;
         public ArrayList<Diet> jsonArray;
-    private Map<String, String> _response;
+        private Map<String, String> _response;
 
 
-        public Diet() {
+        public void setResponse(Map<String, String> response) {
+            _response = response;
         }
 
-    public void setResponse(Map<String, String> response) {
-        _response = response;
-    }
+        public Map<String, String> getResponse() {
+            return _response;
+        }
 
-    public Map<String, String> getResponse() {
-        return _response;
-    }
+        public Diet() {}
 
-        public Diet(String moment, LocalDate dateTime, String username) {
+        public Diet(String moment, String dateTime, String username){
 
             this._moment = moment;
-            this._dateTime = dateTime;
+            this._date = dateTime;
             this._username = username;
 
         }
@@ -49,8 +51,7 @@ import java.util.Map;
             this._dateTime = dateTime;
             this._food = food;
         }
-
-        public Diet(String date, String username) {
+        public Diet(String date, String username){
 
             this._date = date;
             this._username = username;
@@ -64,15 +65,15 @@ import java.util.Map;
             this._username = username;
         }
 
-        public Diet(String username) {
+        public Diet(String username){
             this._username = username;
         }
 
-        public Diet(int id, int calorie, LocalDate dateTime) {
-            this._id = id;
-            this._calorie = calorie;
-            this._dateTime = dateTime;
-        }
+  /*  public Diet(String id, LocalDate calorie, String dateTime) {
+        this._id = id;
+        this._calorie = calorie;
+        this._dateTime = dateTime;
+    }*/
 
         public Diet(int calorie, LocalDate dateTime) {
             this._calorie = calorie;
@@ -86,6 +87,10 @@ import java.util.Map;
         public Diet(int calorie) {
             this._calorie = calorie;
         }
+
+        public Date get_date(){return _fecha;};
+
+        public void set_date(Date date){this._fecha = date;}
 
         public int get_id() {
             return _id;
