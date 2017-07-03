@@ -20,7 +20,7 @@ class CheckUserCommandTest {
 
     @Test
     void getUserLogin() {
-        User _user = new User("karol","1234");
+        User _user = new User("karo","1234");
         _user.setId(1);
         assertNotEquals(2,_user.getId());
         assertEquals("karo",_user.getUser());
@@ -30,7 +30,7 @@ class CheckUserCommandTest {
     @Test
     @Ignore
     void execute() throws SQLException {
-        User _user = new User("karol","1234");
+        User _user = new User("karo","1234");
         _user.setId(1);
         DaoUser LoginUserDao = (DaoUser) DaoFactory.instanciateDaoUser(_user);
         try {
