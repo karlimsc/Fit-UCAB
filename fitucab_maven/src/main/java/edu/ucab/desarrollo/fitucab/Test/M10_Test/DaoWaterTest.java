@@ -38,11 +38,11 @@ public class DaoWaterTest {
         _sql.sql(insertPerson);
         Sql _sql2 = new Sql();
         String insertWaterList1 = "INSERT INTO public.glass_historic(glasshistoricid, glasstime, glasstype, " +
-                "fk_person) VALUES(201,'02/10/3000', 250, 1),(202,'02/10/3000', 300, 1),(203,'02/10/3000', 350, 1);";
+                "fk_person) VALUES(201,'3000/10/02', 250, 1),(202,'3000/10/02', 300, 1),(203,'3000/10/02', 350, 1);";
         _sql2.sql(insertWaterList1);
         Sql _sql3 = new Sql();
         String insertWaterList2 = "INSERT INTO public.glass_historic(glasshistoricid, glasstime, glasstype, " +
-                "fk_person) VALUES(301,'02/10/4000', 250, 1),(302,'02/10/4000', 300, 1),(303,'02/10/4000', 350, 1);";
+                "fk_person) VALUES(301,'4000/10/02', 250, 1),(302,'4000/10/02', 300, 1),(303,'4000/10/02', 350, 1);";
         _sql3.sql(insertWaterList2);
 
     }
@@ -77,9 +77,9 @@ public class DaoWaterTest {
         _water.set_fkPerson(1);
         _water.set_time("02/10/3000");
         ArrayList<Water> waterListCompare = new ArrayList<Water>();
-        waterListCompare.add(new Water("02/10/3000",250));
-        waterListCompare.add(new Water("02/10/3000",300));
-        waterListCompare.add(new Water("02/10/3000",350));
+        waterListCompare.add(new Water("3000/10/02",250));
+        waterListCompare.add(new Water("3000/10/02",300));
+        waterListCompare.add(new Water("3000/10/02",350));
         IDaoWater daoWater = DaoFactory.instanceDaoWater(_water);
         ArrayList<Water> waterList = daoWater.getList(_water);
         Arrays.deepEquals(waterList.toArray(), waterListCompare.toArray());
@@ -126,7 +126,7 @@ public class DaoWaterTest {
         Water _water = EntityFactory.createWater();
         Water waterComparacion = EntityFactory.createWater();
         DaoWater daoWater = new DaoWater(_water);
-        String dia = ("02/10/5000");
+        String dia = ("5000/10/02");
         String hora = ("10:10:10");
         String glassType = "200";
         String fkp = "1";
@@ -142,13 +142,13 @@ public class DaoWaterTest {
         Water _water = EntityFactory.createWater();
         ResultSet rs;
         DaoWater daoWater = new DaoWater(_water);
-        rs = daoWater.queryExecute("Select * from M10_GetListFecha(1 ,'02/10/300')");
+        rs = daoWater.queryExecute("Select * from M10_GetListFecha(1 ,'3000/10/02')");
         ArrayList<Water> waterList = new ArrayList<Water>();
         waterList = daoWater.getWaterList(rs);
         ArrayList<Water> waterListCompare = new ArrayList<Water>();
-        waterListCompare.add(new Water("02/10/3000",250));
-        waterListCompare.add(new Water("02/10/3000",300));
-        waterListCompare.add(new Water("02/10/3000",350));
+        waterListCompare.add(new Water("3000/10/02",250));
+        waterListCompare.add(new Water("3000/10/02",300));
+        waterListCompare.add(new Water("3000/10/02",350));
         Arrays.deepEquals(waterList.toArray(), waterListCompare.toArray());
     }
 
@@ -160,7 +160,7 @@ public class DaoWaterTest {
         water.set_suma(900);
         ResultSet rs;
         DaoWater daoWater = new DaoWater(_water);
-        rs = daoWater.queryExecute("Select * from M10_GetWaterGlass(1 ,'02/10/3000')");
+        rs = daoWater.queryExecute("Select * from M10_GetWaterGlass(1 ,'3000/10/02')");
         _water = daoWater.getWaterItem(rs);
         assertTrue(_water.equals(water));
     }
@@ -170,7 +170,7 @@ public class DaoWaterTest {
         Water _water = EntityFactory.createWater();
         ResultSet rs;
         DaoWater daoWater = new DaoWater(_water);
-        rs = daoWater.queryExecute("Select * from M10_DeletWaterLast('02/10/4000',1)");
+        rs = daoWater.queryExecute("Select * from M10_DeletWaterLast('4000/10/02',1)");
         _water = daoWater.deletLastItem(rs);
         assertEquals((int)_water.get_cantidad(),2);
     }
