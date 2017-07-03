@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -19,6 +21,7 @@ import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Model.AdapterM10ListView;
 import com.fitucab.ds1617b.fitucab.Model.Water;
 import com.fitucab.ds1617b.fitucab.R;
+import com.fitucab.ds1617b.fitucab.UI.Activities.M04NotificationActivity;
 import com.fitucab.ds1617b.fitucab.UI.Activities.M10WaterGlassActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -43,11 +46,13 @@ public class M10HistoyFragment extends Fragment {
     private static ArrayList<Water>  list = new ArrayList<>();
     private Context contexto;
     private IpStringConnection Url = new IpStringConnection();
-    int idusuario =1;
+    int idusuario =2;
     M10WaterGlassActivity m10 = new M10WaterGlassActivity();
     static M10WaterGlassFragment m10w;
      Gson gson = new Gson();
     Water water = new Water();
+    public static TextView _glassesML;
+    public static ProgressBar _glassesProgress;
 
 
     public M10HistoyFragment() {
@@ -74,6 +79,8 @@ public class M10HistoyFragment extends Fragment {
         _waterlist.setAdapter(adapter);
         m10w =new M10WaterGlassFragment();
 
+        _glassesML = (TextView) rootView.findViewById(R.id.cantidadAgua);
+        _glassesProgress = (ProgressBar) rootView.findViewById(R.id.progressBarAgua);
 
 
 
@@ -124,7 +131,6 @@ public class M10HistoyFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-
     public void set_list(Context contexto)
     {
         String url1 = "M10_WaterGlass/GetList?time="+m10._EtnDate.getText()+"&fkp="+idusuario;
@@ -142,7 +148,27 @@ public class M10HistoyFragment extends Fragment {
 
                                 ViewList();
 
+                                int suma = 0;
+                                int cantidad = list.size();
+                                for (int i = 0;i<list.size();i++){
+                                    suma = suma+list.get(i).get_glasstype();
+                                }
+                                
+                                _glassesML.setText("Has consumido en " + Integer.toString(cantidad)
+                                        +" vasos de agua, un total de " + Integer.toString(suma)
+                                        + " Ml de los " +
+                                        "2000 Ml recomendados");
+                                _glassesProgress.setProgress(suma);
 
+                                if(suma==0){
+
+                                    M04NotificationActivity actividad = new M04NotificationActivity();
+                                    actividad.sendMail("andresfra92@gmail.com",
+                                            "Notificacion de Hidratacion",
+                                            "No has consumido agua el dia de hoy, le recordamos que " +
+                                            "debe consumir al menos 2 litros de agua diariamente.",10);
+
+                                }
 
                             } catch (Exception e) {
                                 e.printStackTrace();

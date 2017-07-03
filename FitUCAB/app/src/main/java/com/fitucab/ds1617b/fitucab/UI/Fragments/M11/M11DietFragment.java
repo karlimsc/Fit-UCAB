@@ -111,7 +111,7 @@ public class M11DietFragment extends Fragment {
         java.util.Date utilDate = new java.util.Date(); //fecha actual
         long lnMilisegundos = utilDate.getTime();
         _fecha_actual = new java.sql.Date(lnMilisegundos);
-        PeticionCaloriasHoy("PEDRO", String.valueOf(_fecha_actual));
+        PeticionCaloriasHoy("josea2r", String.valueOf(_fecha_actual));
         PeticionAgregarMomentos();
         ingresarAlimentoADieta();
 
