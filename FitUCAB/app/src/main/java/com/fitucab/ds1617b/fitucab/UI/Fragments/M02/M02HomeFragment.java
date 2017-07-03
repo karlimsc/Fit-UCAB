@@ -23,6 +23,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Activities.M02HomeActivity;
@@ -51,6 +52,8 @@ public class M02HomeFragment extends Fragment {
     private User user;
     private IpStringConnection ip= new IpStringConnection();
     Fragment fragmentToSwap = null;
+    ManagePreferences manageId = new ManagePreferences();
+    View rootView;
 
     /**
      * Constructor para crear el fragmento
@@ -124,8 +127,7 @@ public class M02HomeFragment extends Fragment {
      */
     private void toAskWebService() {
         try {
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-            int id= preferences.getInt("idUser",0);
+            //int id = manageId.getIdUser(rootView.getContext());
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
             String webUrl= ip.getIp()+"M02Users/"+1;
             Log.i(TAG, "toAskWebService: "+webUrl);
@@ -184,8 +186,7 @@ public class M02HomeFragment extends Fragment {
      */
     private void toAskWebServiceHome() {
         try {
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-            int id= preferences.getInt("idUser",0);
+//            int id = manageId.getIdUser(rootView.getContext());
             RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
             String webUrl= ip.getIp()+"M02Homes/"+1;
             Log.i(TAG, "toAskWebServiceHome: "+webUrl);

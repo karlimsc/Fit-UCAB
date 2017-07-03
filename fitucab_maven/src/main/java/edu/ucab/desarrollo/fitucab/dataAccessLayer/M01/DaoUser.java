@@ -270,7 +270,11 @@ public class DaoUser extends Dao implements IDaoUser {
         }
     }
 
-    public boolean update() throws SQLException {
+    /**
+     * Metodo del M02 para actualizar atributos de la Entidad User
+     * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+     */
+    public boolean Update() {
         try {
             if (!_username.equals("")) {
                 UpdateName(_username);
@@ -292,12 +296,17 @@ public class DaoUser extends Dao implements IDaoUser {
         return true;
     }
 
-    public void UpdateName(String name) throws BdConnectException, SQLException {
-        String updatename = name;
+    /**
+     * Metodo del M02 para actualizar el username de un usuario
+     * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+     * @param _name
+     */
+    public void UpdateName(String _name) throws BdConnectException, SQLException {
+        String updatename = _name;
         try {
             _bdCon = Dao.getBdConnect();
-            Statement st = _bdCon.createStatement();
-            ResultSet _result = st.executeQuery("select m02_modperfilname(" + _id + ", '" + updatename + "')");
+            Statement _st = _bdCon.createStatement();
+            ResultSet _result = _st.executeQuery("select m02_modperfilname(" + _id + ", '" + updatename + "')");
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -310,12 +319,17 @@ public class DaoUser extends Dao implements IDaoUser {
 
     }
 
-    public void UpdateEmail(String email) throws SQLException {
-        String updatemail = email;
+    /**
+     * Metodo del M02 para actualizar el email de un usuario
+     * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+     * @param _email
+     */
+    public void UpdateEmail(String _email) {
+        String updatemail = _email;
         try {
             _bdCon = Dao.getBdConnect();
-            Statement st = _bdCon.createStatement();
-            ResultSet _result = st.executeQuery("select m02_modperfilmail(" + _id + ", '" + updatemail + "')");
+            Statement _st = _bdCon.createStatement();
+            ResultSet _result = _st.executeQuery("select m02_modperfilmail(" + _id + ", '" + updatemail + "')");
 
         } catch (SQLException e1) {
             e1.printStackTrace();
@@ -327,12 +341,17 @@ public class DaoUser extends Dao implements IDaoUser {
         }
     }
 
-    public void UpdatePhone(String phone) throws SQLException {
-        String updatephone = phone;
+    /**
+     * Metodo del M02 para actualizar el numero telefonico de un usuario
+     * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+     * @param _phone
+     */
+    public void UpdatePhone(String _phone) {
+        String updatephone = _phone;
         try {
             _bdCon = Dao.getBdConnect();
-            Statement st = _bdCon.createStatement();
-            ResultSet _result = st.executeQuery("select m02_modperfilphone(" + _id + ", '" + updatephone + "')");
+            Statement _st = _bdCon.createStatement();
+            ResultSet _result = _st.executeQuery("select m02_modperfilphone(" + _id + ", '" + updatephone + "')");
 
         } catch (SQLException e1) {
             e1.printStackTrace();
