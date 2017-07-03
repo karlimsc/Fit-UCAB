@@ -3,15 +3,10 @@ package edu.ucab.desarrollo.fitucab.dataAccessLayer.M06;
 import edu.ucab.desarrollo.fitucab.common.entities.*;
 import edu.ucab.desarrollo.fitucab.common.exceptions.*;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
-<<<<<<< HEAD
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-=======
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import org.slf4j.LoggerFactory;
-
-
->>>>>>> cc1811a5830110dfbc54279833f437c80cabbe4c
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -19,11 +14,11 @@ import java.util.LinkedList;
 
 public class DaoTraining extends Dao implements IDaoTraining
 {
-
-    final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
+    private static Logger logger = LoggerFactory.getLogger( DaoTraining.class );
+    //final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
     Entity _entidad;
-    private static Logger logger = LoggerFactory.getLogger( DaoTraining.class );
+
 
     public DaoTraining( Entity entidad )
 
