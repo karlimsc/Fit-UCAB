@@ -8,6 +8,7 @@ package com.fitucab.ds1617b.fitucab.Helper;
  */
 
 public class IpStringConnection {
+    
 
     private String _ip = "http://192.168.1.106:8888/fitucab/";
 
