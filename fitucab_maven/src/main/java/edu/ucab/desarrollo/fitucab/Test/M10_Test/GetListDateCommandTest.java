@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.Test.M01_Test.M10_Test;
+package edu.ucab.desarrollo.fitucab.Test.M10_Test;
 
 import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
@@ -6,18 +6,23 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 import edu.ucab.desarrollo.fitucab.common.entities.Water;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.AddWaterCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.DeletLastCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.GetListDateCommand;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
 
 import static org.junit.Assert.*;
 
 /**
  * Created by Raul A on 7/2/2017.
  */
-public class DeletLastCommandTest {
+public class GetListDateCommandTest {
+
     @Before
     public void setUp() throws Exception {
         Sql _sql = new Sql();
@@ -44,13 +49,21 @@ public class DeletLastCommandTest {
     @Test
     public void execute() throws Exception {
         Gson gson = new Gson();
+        Gson gson2 = new Gson();
         int fkp = 1;
         String dia = "02/10/3000";
         Entity WaterObject = EntityFactory.createWater(fkp,dia);
-        DeletLastCommand cmd = CommandsFactory.instatiateDeletLastCmd(WaterObject);
+        ArrayList<Water> waterListCompare = new ArrayList<Water>();
+        waterListCompare.add(new Water("10/02/3000",250));
+        waterListCompare.add(new Water("10/02/3000",300));
+        waterListCompare.add(new Water("10/02/3000",350));
+        ArrayList<Water> water;
+        GetListDateCommand cmd = CommandsFactory.instatiateGetListDateCmd(WaterObject);
         cmd.execute();
-        Water water = gson.fromJson(cmd.returned,Water.class);
-        assertEquals((int)water.get_cantidad(),2);
+        waterListCompare = gson.fromJson(gson.toJson(waterListCompare),ArrayList.class);
+        water = gson.fromJson(cmd.returned,ArrayList.class);
+        Arrays.deepEquals(water.toArray(), waterListCompare.toArray());
     }
+
 
 }

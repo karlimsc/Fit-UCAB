@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.Test.M01_Test.M10_Test;
+package edu.ucab.desarrollo.fitucab.Test.M10_Test;
 
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Water;

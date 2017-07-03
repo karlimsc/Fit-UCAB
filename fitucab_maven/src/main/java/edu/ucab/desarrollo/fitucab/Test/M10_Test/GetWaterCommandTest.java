@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.Test.M01_Test.M10_Test;
+package edu.ucab.desarrollo.fitucab.Test.M10_Test;
 
 import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
@@ -6,8 +6,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.Sql;
 import edu.ucab.desarrollo.fitucab.common.entities.Water;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.DeletLastCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.GetFechaCommand;
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.GetWaterCommand;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,12 +19,7 @@ import static org.junit.Assert.*;
 /**
  * Created by Raul A on 7/2/2017.
  */
-public class GetFechaCommandTest {
-
-
-    SimpleDateFormat _sdf2 = new SimpleDateFormat("dd/MM/yyyy");
-    Date fecha = new Date();
-    String dia =_sdf2.format(fecha);
+public class GetWaterCommandTest {
 
     @Before
     public void setUp() throws Exception {
@@ -36,7 +30,7 @@ public class GetFechaCommandTest {
         _sql.sql(insertPerson);
         Sql _sql2 = new Sql();
         String insertWaterList1 = "INSERT INTO public.glass_historic(glasshistoricid, glasstime, glasstype, " +
-                "fk_person) VALUES(201,'"+dia+"', 250, 1),(202,'"+dia+"', 300, 1);";
+                "fk_person) VALUES(201,'02/10/3000', 250, 1),(202,'02/10/3000', 300, 1),(203,'02/10/3000', 350, 1);";
         _sql2.sql(insertWaterList1);
     }
 
@@ -53,16 +47,17 @@ public class GetFechaCommandTest {
     @Test
     public void execute() throws Exception {
         Gson gson = new Gson();
-        int fkp = 1;
-        Entity WaterObject = EntityFactory.createWater(fkp);
-        GetFechaCommand cmd = CommandsFactory.instatiateGetFechaCmd(WaterObject);
-        cmd.execute();
-        Water water = gson.fromJson(cmd.returned,Water.class);
+        Water water = EntityFactory.createWater();
+        Water _water = EntityFactory.createWater();
         Water waterComparacion = EntityFactory.createWater();
-        waterComparacion.set_cantidad(2);
-        waterComparacion.set_suma(550);
-        waterComparacion.set_time(dia);
-        assertTrue(water.equals(waterComparacion));
+        water.set_time("02/10/3000");
+        water.set_fkPerson(1);
+        GetWaterCommand cmd = CommandsFactory.instatiateGetWaterCmd(water);
+        cmd.execute();
+        waterComparacion.set_suma(900);
+        waterComparacion.set_cantidad(3);
+        _water = gson.fromJson(cmd.returned,Water.class);
+        assertTrue(waterComparacion.equals(_water));
     }
 
 }
