@@ -28,6 +28,9 @@ public class GetListDateCommand extends Command {
     public GetListDateCommand (Entity water){ _water = water; };
 
     public void execute() {
+
+        logger.debug("Debug: Obteniendo lista->Comando");
+
         Gson gson = new Gson();
         IDaoWater daoWater = DaoFactory.instanceDaoWater(_water);
 
