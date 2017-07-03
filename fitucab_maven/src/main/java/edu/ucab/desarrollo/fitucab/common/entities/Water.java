@@ -1,13 +1,13 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
 public class Water extends Entity{
-    private     String _time;
-    private     String  hora;
-    private     Integer _glasstype;
-    private     Integer  _fkPerson;
-    private     Integer _cantidad;
-    private     Integer _suma;
-    private     String _error;
+    private     String _time = "";
+    private     String  hora = "";
+    private     Integer _glasstype = 0;
+    private     Integer  _fkPerson = 0;
+    private     Integer _cantidad = 0;
+    private     Integer _suma = 0;
+    private     String _error = "";
 
 
     /**
@@ -165,5 +165,23 @@ public class Water extends Entity{
 
     public String get_get(){
         return hora;
+    }
+
+    @Override
+    public boolean equals(Object water){
+        Water waterEntrada = (Water) water;
+        if (!this.get_suma().equals(waterEntrada.get_suma()))
+            return false;
+        if (!this.get_cantidad().equals(waterEntrada.get_cantidad()))
+            return false;
+        if (!this.get_time().equals(waterEntrada.get_time()))
+            return false;
+        if (!this.get_error().equals(waterEntrada.get_error()))
+            return false;
+        if (!this.get_fkPerson().equals(waterEntrada.get_fkPerson()))
+            return false;
+        if (!this.get_glasstype().equals(waterEntrada.get_glasstype()))
+            return false;
+        return true;
     }
 }

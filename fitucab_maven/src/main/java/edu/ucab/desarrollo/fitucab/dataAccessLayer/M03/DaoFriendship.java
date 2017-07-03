@@ -438,4 +438,10 @@ public class DaoFriendship extends Dao implements IDaoFriendship {
     }
 
 
+
+
+    public void Create(Entity e) {
+
+    }
 }
+

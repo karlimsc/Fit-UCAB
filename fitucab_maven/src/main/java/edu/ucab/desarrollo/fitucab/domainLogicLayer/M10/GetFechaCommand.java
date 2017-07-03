@@ -18,6 +18,7 @@ import java.util.Date;
  */
 public class GetFechaCommand extends Command {
 
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(DeletLastCommand.class);
 
     Entity _water;
     public String returned;
@@ -29,12 +30,15 @@ public class GetFechaCommand extends Command {
     public GetFechaCommand (Entity water){ _water = water; };
 
     public void execute() {
+
+        logger.debug("Debug: Obteniendo Fecha->Comando");
+
         Gson gson = new Gson();
 
         Water watergGetWater = (Water) _water;
 
 
-        SimpleDateFormat _sdf2 = new SimpleDateFormat("MM/dd/yyyy");
+        SimpleDateFormat _sdf2 = new SimpleDateFormat("dd/MM/yyyy");
         Date fecha = new Date();
         watergGetWater.set_time(_sdf2.format(fecha));
         GetWaterCommand cmd = CommandsFactory.instatiateGetWaterCmd(watergGetWater);
