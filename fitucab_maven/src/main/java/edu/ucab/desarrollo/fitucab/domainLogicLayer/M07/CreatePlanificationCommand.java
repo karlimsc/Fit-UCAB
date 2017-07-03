@@ -13,7 +13,8 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import java.sql.SQLException;
 
 /**
- * Created by jaorr on 30/06/17.
+ * Clase CreatePlanificationCommand para el manejo del Patron Comando
+ * Este comando se encarga de crear un nuevo de registro
  */
 public class CreatePlanificationCommand extends Command {
 
@@ -25,7 +26,10 @@ public class CreatePlanificationCommand extends Command {
     }
 
 
-
+    /**
+     * Metodo que se encarga de ejecutar las acciones correspondiente para
+     * insertar en la base de datos
+     */
     public void execute() {
         DaoPlanification dao = DaoFactory.instanciateDaoPlanification();
         try {

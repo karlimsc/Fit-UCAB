@@ -15,7 +15,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- * Created by jaorr on 30/06/17.
+ * Clase GetPlanificationByIdCommand para el manejo del Patron Comando
+ * Este comando se encarga de buscar las planificaciones asocidad a un usuario
  */
 public class GetPlanificationByIdCommand extends Command {
 
@@ -31,6 +32,10 @@ public class GetPlanificationByIdCommand extends Command {
         return _listPlanification;
     }
 
+    /**
+     * Metodo que se encarga de ejecutar las acciones correspondiente para
+     * buscar un registro en la base de datos
+     */
     public void execute() {
         DaoPlanification dao = DaoFactory.instanciateDaoPlanification();
         try {

@@ -15,7 +15,6 @@ public class IpStringConnection {
 
         this._ip = "http://190.79.81.69:8080/fitucab/";
 
-
     }
 
     public String getIp() {

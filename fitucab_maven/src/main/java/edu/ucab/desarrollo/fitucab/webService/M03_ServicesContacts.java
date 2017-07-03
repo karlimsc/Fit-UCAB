@@ -9,7 +9,7 @@ import javax.ws.rs.*;
 
 /**
 
- * Clase M03_ServicesFriends que maneja el modulo de contactos.
+ * Clase M03_ServicesContacts que maneja el modulo de contactos.
  * @author Daniel Da Silva, Luis Martinez, Anderson Gomez
  * @version 2.0
 

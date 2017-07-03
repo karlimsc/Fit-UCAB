@@ -38,7 +38,11 @@ import java.util.Date;
  */
 @Path("/M01_ServicesUser")
 public class M01_ServicesUser {
-    Entity _response;
+    private int RESULT_CODE_OK=200;
+    private int RESULT_CODE_FAIL=300;
+    private int RESULT_USER_FAIL=400;
+    private int RESULT_EMAIL_OK=500;
+    private static String DEFAULT_ENCODING1="UTF-8";
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M01_ServicesUser.class);
 
@@ -58,19 +62,37 @@ public class M01_ServicesUser {
                           @QueryParam("password") String password)
     {
 
+        User userFail = new User();
 
         try {
             Entity userObject = EntityFactory.createUser(username,password);
             Command _command = CommandsFactory.instanciateCheckUserCmd(userObject);
             CheckUserCommand cmd = (CheckUserCommand) _command;
             cmd.execute();
-            //User result = (User) CheckUserCommand.getUserLogin();
-            return gson.toJson(CheckUserCommand.getUserLogin());
+            User result = (User) CheckUserCommand.getUserLogin();
+            return gson.toJson(result);
         }
-        catch (Exception e){
-            return null ;
+        catch (NullPointerException e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            System.out.print("NULL POINTER");
+            logger.error("Error: ", error);
+            return e.getMessage();
         }
-
+        catch (SQLException e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            System.out.print("SQL");
+            logger.error("Error: ", error);
+            return e.getSQLState();
+        }
+        catch(Exception e) {
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            System.out.print("OTRA");
+            logger.error("Error: ", error);
+            return e.getMessage();
+        }
     }
 
 
@@ -99,14 +121,21 @@ public class M01_ServicesUser {
                              @QueryParam("weight") int weight,
                              @QueryParam("height") int height) throws NullPointerException,
                                                                       java.text.ParseException {
+        System.out.print("DEBUG: " + username);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date;
+        User userFail = new User();
+
+        //PARSEO de las Fechas.
         java.sql.Date sqlDate = null;
+        Date initDate = new SimpleDateFormat("dd/MM/yyyy").parse(birthdate);
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String parsedDate = formatter.format(initDate);
+
+
+
 
         try {
-
-            date = sdf.parse(birthdate);
+            Date date = formatter.parse(parsedDate);
             sqlDate = new java.sql.Date(date.getTime());
 
         }
@@ -114,7 +143,11 @@ public class M01_ServicesUser {
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.error("Error: ", error);
+            System.out.print("DEBUG: en la fecha"+error);
         }
+
+
+        System.out.print("DEBUG: " + sqlDate.toString());
 
         try
         {
@@ -124,34 +157,38 @@ public class M01_ServicesUser {
             User _returnUser = (User) createUserObject;
 
             Command _command = CommandsFactory.instanciateCreateUserCmd(createUserObject);
+
             CreateUserCommand cmd = (CreateUserCommand) _command;
+
             cmd.execute();
 
-            //Obtiene el usuario registrado
+            //Obtiene el usuario registrado con su estatus
             User rUser = (User) cmd.getUserRegistry();
+
             _returnUser.setId(rUser.getId());
+
             if (cmd.get_response()) {
-                logger.debug("Debug: ","Boolean de CommandCreateUser TRUE");
-                System.out.print("Debug Boolean de CommandCreateUser TRUE");
-                System.out.print("Debug Boolean de CommandCreateUser TRUE " + _returnUser.getUser());
-                //return gson.toJson(_returnUser);
                 return gson.toJson(rUser);
             }
-            else
-                return gson.toJson(null);
+            else{
+                return gson.toJson(userFail);
+            }
 
         }catch (NullPointerException e){
+
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             System.out.print("NULL POINTER");
             logger.error("Error: ", error);
-            return gson.toJson(null);
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
         }
         catch ( Exception e )
         { MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.error("Error: ", error);
-            return gson.toJson( null );
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
         }
 
     }
@@ -186,7 +223,6 @@ public class M01_ServicesUser {
     @Path("/restorePassword")
     @Produces("application/json")
     public String testEmail (@QueryParam("email") String email){
-
         try
         {
             Command _command = CommandsFactory.instanciateRecoverPasswordCmd(email);

@@ -13,7 +13,8 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import java.sql.SQLException;
 
 /**
- * Created by jaorr on 30/06/17.
+ * Clase UpdatePlanificationCommand para el manejo del Patron Comando
+ * Este comando se encarga de actualizar las planificaciones asocidad a un usuario
  */
 public class UpdatePlanificationCommand extends Command {
     @Override
@@ -27,8 +28,11 @@ public class UpdatePlanificationCommand extends Command {
         this._planificationEntity = _planificationEntity;
     }
 
+    /**
+     * Metodo que se encarga de ejecutar las acciones correspondiente para
+     * actualizar un registro en la base de datos
+     */
     public void execute() {
-     // invocar metodo para actualizar
         DaoPlanification dao = DaoFactory.instanciateDaoPlanification();
         try {
             _planificationEntity = dao.update(_planificationEntity);

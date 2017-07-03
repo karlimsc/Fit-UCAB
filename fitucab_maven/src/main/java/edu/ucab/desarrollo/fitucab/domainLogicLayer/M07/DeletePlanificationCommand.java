@@ -13,7 +13,8 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import java.sql.SQLException;
 
 /**
- * Created by jaorr on 30/06/17.
+ * Clase DeletePlanificationCommand para el manejo del Patron Comando
+ * Este comando se encarga de eliminar un registro
  */
 public class DeletePlanificationCommand extends Command {
 
@@ -24,6 +25,10 @@ public class DeletePlanificationCommand extends Command {
         this._planificationEntity = _planificationEntity;
     }
 
+    /**
+     * Metodo que se encarga de ejecutar las acciones correspondiente para
+     * eliminar un registro en la base de datos
+     */
     public void execute() {
         // invocar metodo delete
 

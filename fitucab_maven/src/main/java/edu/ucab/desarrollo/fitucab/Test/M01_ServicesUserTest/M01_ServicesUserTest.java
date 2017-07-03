@@ -1,10 +1,10 @@
-package edu.ucab.desarrollo.fitucab.Test.M01_ServicesUserTest;
+package M01_ServicesUserTest;
 
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
-/*import io.restassured.http.ContentType;
-import io.restassured.response.Response;*/
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.junit.*;
 import java.net.URI;
@@ -13,17 +13,17 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
 
-//import static io.restassured.RestAssured.given;
+import static io.restassured.RestAssured.given;
 import static org.junit.Assert.*;
 
 
 public class M01_ServicesUserTest {
-/*
-    Dao _dao;
+
+   Dao _dao;
     ResultSet rs;
  //   CreateUserCommand
 
-   // @Before
+    @Before
     public void setUp() throws Exception {
 
         Connection conn = _dao.getConInstance();
@@ -216,6 +216,6 @@ public class M01_ServicesUserTest {
 
 
 
-*/
+
 
 }

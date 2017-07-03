@@ -47,7 +47,7 @@ public class M09_ServicesGamification {
             Dao dao = DaoFactory.instanceDaoGaming();
             Command cmd = CommandsFactory.instanciateAchieveChallengeCmd(id, dao);
             cmd.execute();
-            List<Challenge> challenges = (List<Challenge>)(List<?>) cmd.getChallenges();
+            List<Challenge> challenges = (List<Challenge>)(List<?>) AchieveChallengeCommand.getChallenges();
             return challenges;
         }
         catch (WebApplicationException e){
@@ -79,7 +79,7 @@ public class M09_ServicesGamification {
             Dao dao = DaoFactory.instanceDaoGaming();
             Command cmd = CommandsFactory.instanciateFillChartCmd(id, dao);
             cmd.execute();
-            return (Challenge) cmd.getChallenge();
+            return (Challenge) FillChartCommand.getChallenge();
         }
         catch (WebApplicationException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
@@ -110,7 +110,7 @@ public class M09_ServicesGamification {
             Dao dao = DaoFactory.instanceDaoGaming();
             Command cmd = CommandsFactory.instanciateScoreCmd(id, dao);
             cmd.execute();
-            return (Challenge) cmd.getChallenge();
+            return (Challenge) ScoreCommand.getChallenge();
         }
         catch (WebApplicationException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
@@ -125,6 +125,15 @@ public class M09_ServicesGamification {
         return null;
     }
 
+    /**
+     * Metodo que pone dice el nivel que se aumento.
+     * @param id Id del usuario.
+     * @return Clase challenge con el nivel alcanzado.
+     * @throws NoSuchMethodException
+     * @throws WebApplicationException
+     * @throws Exception
+     * @see Challenge
+     */
     @GET
     @Path("/checkLevels/{userId}")
     public Challenge getLevelUp(@PathParam("userId") int id) throws NoSuchMethodException {
@@ -132,7 +141,7 @@ public class M09_ServicesGamification {
             Dao dao = DaoFactory.instanceDaoGaming();
             Command cmd = CommandsFactory.instanciateLevelUpCmd(id, dao);
             cmd.execute();
-            return (Challenge) cmd.getChallenge();
+            return (Challenge) LevelUpCommand.getChallenge();
         }
         catch (WebApplicationException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),

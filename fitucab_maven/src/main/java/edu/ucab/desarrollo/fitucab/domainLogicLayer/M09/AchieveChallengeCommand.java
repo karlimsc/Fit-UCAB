@@ -22,23 +22,41 @@ public class AchieveChallengeCommand extends Command {
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
     private Dao _dao;
-    private List<Entity> _challenges;
+    private static List<Entity> _challenges;
     private int _userId;
 
+    /**
+     * Constructor que inicializa el dao, el id de un usario y la lista de retos.
+     * @param id Id del usuario.
+     * @param dao Clase DaoGaming.
+     * @see DaoGaming
+     * @see edu.ucab.desarrollo.fitucab.common.entities.Challenge
+     */
     public AchieveChallengeCommand(int id, Dao dao) {
         _dao = dao;
         _challenges = EntityFactory.getChallenges();
         _userId = id;
     }
 
-    public List<Entity> getChallenges() {
+    /**
+     * Metodo estatico que retorna la lista de retos hechos por un usuario.
+     * @return
+     * @see List
+     * @see edu.ucab.desarrollo.fitucab.common.entities.Challenge
+     */
+    public static List<Entity> getChallenges() {
         return _challenges;
     }
 
-    //TODO: Falta execute
+    /**
+     * Metodo ejecutar heredado de commad.
+     * @throws NoSuchMethodException
+     * @throws Exception
+     * @see DaoGaming
+     */
     public void execute() throws NoSuchMethodException {
         try {
-            _dao.achieveChallenge(_userId, _challenges);
+            ((DaoGaming) _dao).achieveChallenge(_userId, _challenges);
         }
         catch (Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
@@ -51,6 +69,5 @@ public class AchieveChallengeCommand extends Command {
     public Entity Return(){
         return null;
     }
-
 
 }

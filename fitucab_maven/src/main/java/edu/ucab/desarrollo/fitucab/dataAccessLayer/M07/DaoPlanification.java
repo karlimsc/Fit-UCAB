@@ -12,7 +12,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
- * Created by jaorr on 30/06/17.
+ * Dao para el manejo de la base datos correspondiete a la tabla de planificacion
  */
 public class DaoPlanification extends Dao implements IDaoPlanification {
 
@@ -29,7 +29,15 @@ public class DaoPlanification extends Dao implements IDaoPlanification {
     private boolean flag = false;
 
 
-
+    /**
+     * Metodo para eliminar un registro en la base de datos
+     * @param planificationEntity Objeto que contiene el id de la
+     *                           planificacion y el id del usuario
+     * @return El objeto de entrada con el estatus de ejecucion(200 si la ejecucion
+     * fue correcta)
+     * @see Planification
+     * @see Entity
+     */
     public Entity delete(Entity planificationEntity) {
 
         final String query = "SELECT * FROM m7_elimina_actividad(?, ?)";
@@ -66,7 +74,14 @@ public class DaoPlanification extends Dao implements IDaoPlanification {
         }
     }
 
-
+    /**
+     * Metodo para la creacion de una planificacion
+     * @param planificationEntity Objeto que contiene los datos que se insertaran
+     * @return El objeto de entrada con el estatus de ejecucion(200 si la ejecucion
+     * fue correcta)
+     * @see Planification
+     * @see Entity
+     */
     public Entity create(Entity planificationEntity) {
 
         final String query = "SELECT * FROM m7_inserta_actividad(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -113,6 +128,14 @@ public class DaoPlanification extends Dao implements IDaoPlanification {
         return null;
     }
 
+    /**
+     * Metodo para obtener todas las planificaciones asociadas a un usuario
+     * @param planificationEntity Objeto que contiene el id del usuario por el que
+     *                            se desea realizar la busqueda
+     * @return Lista de objetos Planification
+     * @see Planification
+     * @see Entity
+     */
     @Override
     public ArrayList<Planification> getPlanificationByUser(Entity planificationEntity) {
 
@@ -156,6 +179,15 @@ public class DaoPlanification extends Dao implements IDaoPlanification {
         }
     }
 
+    /**
+     * Metodo para la actualizacion de una planificacion en la base de datos
+     * @param planificationEntity Objeto que contiene los datos para actualizar
+     *                            el registro
+     * @return El objeto de entrada con el estatus de ejecucion(200 si la ejecucion
+     * fue correcta)
+     * @see  Planification
+     * @see  Entity
+     */
     public Entity update(Entity planificationEntity) {
 
         final String query = "SELECT * FROM m7_edita_actividad(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -204,6 +236,16 @@ public class DaoPlanification extends Dao implements IDaoPlanification {
         }
     }
 
+    /**
+     * Metodo que arma la lista de objetos pertenecientes a la planificacion de un
+     * usuario
+     * @param rs Objeto que contiene los datos de la busqueda en la base de datos
+     * @param userId Id del usuario al que pertenece la planificacion
+     * @return Lista de planificacion
+     * @throws SQLException
+     * @see Planification
+     */
+
     private ArrayList<Planification> armarRespuesta(ResultSet rs, int userId) throws SQLException{
         ArrayList<Planification> planificationList;
         Planification aux;
@@ -231,6 +273,15 @@ public class DaoPlanification extends Dao implements IDaoPlanification {
 
         return planificationList;
     }
+
+    /**
+     * Metodo que verifica la existencia de un registro en la base de datos
+     * @param planificationId id de la planificacion
+     * @param userId usuario al que pertene la planificacion
+     * @param conn objeto de la conexion a la base de datos
+     * @return true si existe, false si no existe
+     * @throws SQLException
+     */
 
     private boolean exists(int planificationId, int userId, Connection conn) throws SQLException {
         final String query = "SELECT * FROM m7_get_actividad_por_id(?,?)";
