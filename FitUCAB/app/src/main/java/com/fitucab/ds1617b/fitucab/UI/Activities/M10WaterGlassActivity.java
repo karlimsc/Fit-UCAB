@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -60,6 +62,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     private static ImageButton _btnAdd;
     private static ImageButton _btnLess;
     public static EditText _EtnDate;
+
     ManagePreferences user = new ManagePreferences();
 
     private Calendar _cal ;
@@ -222,8 +225,6 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         _btnLess = (ImageButton) findViewById(R.id.btn_m10_lessDate);
         _btnAdd = (ImageButton) findViewById(R.id.btn_m10_AddDate);
         _EtnDate= (EditText) findViewById(R.id.et_m10_date);
-
-
         giveDate();
         activarCalendario();
         addDate();

@@ -446,7 +446,7 @@ public class M01SignUpFragment extends Fragment {
 
     }
 
-    public void makeInsertUser(String username,String password,String email,String sex,
+   /* public void makeInsertUser(String username,String password,String email,String sex,
                                String phone,String birthdate,String weight,
                                String height)
     {                                     // Aqui va ManagePreferences.getIdUser()
@@ -493,7 +493,7 @@ public class M01SignUpFragment extends Fragment {
                 });
         VolleySingleton.getInstance(getContext()).addToRequestQueue(stringRequest);
 
-    }
+    }*/
 
 
 }

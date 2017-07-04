@@ -26,6 +26,13 @@ public class ScoreCommand extends Command{
     private int _userId;
     private int _level;
 
+    /**
+     * Constructor que inicializa el dao, el id de un usario y la entidad challenge.
+     * @param id Id del usuario.
+     * @param dao Clase DaoGaming.
+     * @see DaoGaming
+     * @see edu.ucab.desarrollo.fitucab.common.entities.Challenge
+     */
     public ScoreCommand(int id, Dao dao) {
         _dao = dao;
         _score = EntityFactory.createChallenge();
@@ -33,11 +40,20 @@ public class ScoreCommand extends Command{
         _level = 0;
     }
 
+    /**
+     * Metodo estatico que retorna la clase Challenge con el nivel de un reto.
+     * @return
+     */
     public static Entity getChallenge() {
         return _score;
     }
 
-    //TODO: Falta execute
+    /**
+     * Metodo ejecutar heredado de commad.
+     * @throws NoSuchMethodException
+     * @throws Exception
+     * @see DaoGaming
+     */
     public void execute() throws NoSuchMethodException {
         try{
             _score = ((DaoGaming) _dao).score(_userId);
