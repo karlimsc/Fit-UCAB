@@ -66,17 +66,17 @@ public class M02_ServicesHome {
      "'"+user.getBirthdate()+"')");
      ResultSet rsC = _sql.sqlConn("SELECT calorias FROM m11_get_calorias_dia('"+user.getUser()+"')");
      while (rsW.next()){
-     _home.setTotalAgua( rsW.getInt("countg") );
-     System.out.println("Agua: "+ _home.getTotalAgua());
+     _home.setTotalWater( rsW.getInt("countg") );
+     System.out.println("Agua: "+ _home.getTotalWater());
      }
      while (rsC.next()){
-     _home.setTotalCaloria( rsC.getInt("calorias") );
-     System.out.println("Calorias: "+ _home.getTotalCaloria());
+     _home.setTotalCalories( rsC.getInt("calorias") );
+     System.out.println("Calorias: "+ _home.getTotalCalories());
      }
      _sql.closeConnection(_sql.getConn());
-     System.out.println("Calorias: "+ _home.getTotalCaloria());
-     System.out.println("Agua: "+ _home.getTotalAgua());
-     return new Home( _home.getTotalCaloria(), _home.getTotalAgua() );
+     System.out.println("Calorias: "+ _home.getTotalCalories());
+     System.out.println("Agua: "+ _home.getTotalWater());
+     return new Home( _home.getTotalCalories(), _home.getTotalWater() );
      } catch (SQLException e) {
      e.printStackTrace();
      return null;

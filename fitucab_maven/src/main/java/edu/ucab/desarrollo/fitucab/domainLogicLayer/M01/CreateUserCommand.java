@@ -2,12 +2,12 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.CreateUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import org.slf4j.LoggerFactory;
 
 /**
@@ -18,7 +18,7 @@ public class CreateUserCommand extends Command {
     private Entity _user;
     private Boolean _response;
     private static Entity _userResponse;
-    final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(CreateUserCommand.class);
 
 
     /**
@@ -50,21 +50,18 @@ public class CreateUserCommand extends Command {
 
             logger.debug("Debug: ", "Realizó el Try en CreateUserCommand");
         }
-        catch (NullPointerException e){
+        catch (CreateUserException e){
+            System.out.print("EN EXCEPCION EL USER STATUS ES " +  e.getUserFail());
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.error("Error: ", error);
+            _userResponse = e.getUserFail();
             this._response = false;
-        }catch (InstantiationException e){
+
+        }catch(Exception e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
-            this._response = false;
-        }
-        catch(Exception e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
+            logger.error("Error: ", error.toString());
             this._response = false;
         }
     }

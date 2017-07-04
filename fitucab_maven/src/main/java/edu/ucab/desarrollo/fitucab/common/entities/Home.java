@@ -11,8 +11,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Home extends Entity {
 
-    private float _totalCaloria;
-    private int _totalAgua;
+    private float _totalCalories;
+    private int _totalWater;
 
     /**
      * Constructor vacio
@@ -22,44 +22,44 @@ public class Home extends Entity {
 
     /**
      * Constructor con todos los atributos
-     * @param totalCaloria Total de calorias consumidas
-     * @param totalAgua Total de vasos de agua consumidos
+     * @param _totalCalories Total de calorias consumidas
+     * @param _totalWater Total de vasos de agua consumidos
      */
-    public Home(float totalCaloria, int totalAgua) {
-        _totalCaloria = totalCaloria;
-        _totalAgua = totalAgua;
+    public Home(float _totalCalories, int _totalWater) {
+        this._totalCalories = _totalCalories;
+        this._totalWater = _totalWater;
     }
 
     /**
      * Metodo que devuelte el valor de calorias float
      * @return
      */
-    public float getTotalCaloria() {
-        return _totalCaloria;
+    public float getTotalCalories() {
+        return _totalCalories;
     }
 
     /**
      * Metodo que asigna el valor de calorias float
-     * @param totalCaloria
+     * @param _totalCalories
      */
-    public void setTotalCaloria(float totalCaloria) {
-        _totalCaloria = totalCaloria;
+    public void setTotalCalories(float _totalCalories) {
+        this._totalCalories = _totalCalories;
     }
 
     /**
      * Metodo que devuelve el valor de agua int
      * @return
      */
-    public int getTotalAgua() {
-        return _totalAgua;
+    public int getTotalWater() {
+        return _totalWater;
     }
 
     /**
      * Metodo que asigna un valor agua int
-     * @param totalAgua
+     * @param _totalWater
      */
-    public void setTotalAgua(int totalAgua) {
-        _totalAgua = totalAgua;
+    public void setTotalWater(int _totalWater) {
+        this._totalWater = _totalWater;
     }
 
 }

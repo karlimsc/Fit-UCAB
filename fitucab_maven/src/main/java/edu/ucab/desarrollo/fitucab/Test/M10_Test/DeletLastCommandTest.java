@@ -27,7 +27,7 @@ public class DeletLastCommandTest {
         _sql.sql(insertPerson);
         Sql _sql2 = new Sql();
         String insertWaterList1 = "INSERT INTO public.glass_historic(glasshistoricid, glasstime, glasstype, " +
-                "fk_person) VALUES(201,'02/10/3000', 250, 1),(202,'02/10/3000', 300, 1),(203,'02/10/3000', 350, 1);";
+                "fk_person) VALUES(201,'3000/10/02', 250, 1),(202,'3000/10/02', 300, 1),(203,'3000/10/02', 350, 1);";
         _sql2.sql(insertWaterList1);
     }
 
