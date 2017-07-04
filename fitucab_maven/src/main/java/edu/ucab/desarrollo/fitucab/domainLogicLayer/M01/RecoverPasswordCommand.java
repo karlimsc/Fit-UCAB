@@ -1,7 +1,10 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
+import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.LoginUserException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.RecoveryPassException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
@@ -18,6 +21,7 @@ public class RecoverPasswordCommand extends Command {
     private String _email;
     private String _response;
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
+    private Gson gson;
 
 
     /**
@@ -43,7 +47,14 @@ public class RecoverPasswordCommand extends Command {
             System.out.print("Debug:Rsponse"+ this._response);
 
         }
-        catch (NullPointerException e){
+        catch (RecoveryPassException e){
+            /*MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());*/
+
+            logger.error("Error RecoverExc: ", e.toString());
+            this._response=gson.toJson(e.getUserFail());
+
+        }   catch (NullPointerException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.error("Error: ", error.toString());
