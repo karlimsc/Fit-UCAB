@@ -257,7 +257,7 @@ public class DaoFood extends Dao implements IDaoFood {
 
 
 
-        CallableStatement st = conn.prepareCall("{call m11_inserta_alim_person(? , ?, ?, ?, ?)}");
+        CallableStatement st = conn.prepareCall("{? = call m11_inserta_alim_person(? , ?, ?, ?)}");
 
 
 

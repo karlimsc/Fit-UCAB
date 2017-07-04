@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by charbel on 03/07/2017.
  */
-public class DaoFoodTest {
+public class M11_Test_DaoFoodTest {
     private Sql _sql = new Sql();
     private ResultSet _rs;
 
