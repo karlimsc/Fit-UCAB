@@ -128,8 +128,8 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
         mMap = googleMap;
 
         // Set a preference for minimum and maximum zoom.
-        mMap.setMinZoomPreference(6.0f);
-        mMap.setMaxZoomPreference(14.0f);
+        //mMap.setMinZoomPreference(6.0f);
+        //mMap.setMaxZoomPreference(14.0f);
 
 
 
@@ -141,7 +141,7 @@ public class M05TrackActivityFragment extends Fragment implements OnMapReadyCall
         locMarker = mMap.addMarker(new MarkerOptions()
                 .position(loc)
                 .title("Usted Está Aquí"));
-        locMarker.setTag(0);
+        //locMarker.setTag(0);
 
         mMap.moveCamera(CameraUpdateFactory.newLatLng(loc));
 

@@ -8,6 +8,7 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.M03.DaoNearMe;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M06.DaoTraining;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M09.DaoGaming;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M10.DaoWater;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoDiet;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoFood;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.DaoMoment;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M07.DaoPlanification;
@@ -18,8 +19,6 @@ import edu.ucab.desarrollo.fitucab.dataAccessLayer.M07.DaoPlanification;
 
 public class DaoFactory
 {
-
-
 
     //MODULO 1
 
@@ -40,13 +39,13 @@ public class DaoFactory
 
     /**
      * metodo para instanciar el dao de entrenamiento
-     * @param entidad
+     * @param entity
      * @return dao de entrenamiento
      */
 
-    public static DaoTraining instanceDaoTraining( Entity entidad )
+    public static DaoTraining instanceDaoTraining( Entity entity )
     {
-        return new DaoTraining( entidad );
+        return new DaoTraining(entity);
     }
 
     //MODULO 09
@@ -90,6 +89,8 @@ public class DaoFactory
     //Modulo11
 
     public static DaoFood iniciarDaoFood(){return new DaoFood();}
+
+    public static DaoDiet iniciarDaoDiet(){return new DaoDiet();}
 
     public static DaoMoment iniciarDaoMoment(){return  new DaoMoment();}
 

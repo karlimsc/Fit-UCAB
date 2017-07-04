@@ -6,5 +6,5 @@ package com.fitucab.ds1617b.fitucab.Helper.Rest;
 
 public class StringCon {
 
-    static String url ="http://192.168.3.117:8080/fitucab/";
+    static String url ="http://10.0.2.2:8080/fitucab/";
 }

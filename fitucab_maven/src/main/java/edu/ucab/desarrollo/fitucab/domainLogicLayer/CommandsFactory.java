@@ -4,15 +4,24 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
+
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
+
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.HomeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.UpdateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.UserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
+
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M03.*;
@@ -20,6 +29,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.CreatePlanificationComma
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.DeletePlanificationCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.GetPlanificationByIdCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.UpdatePlanificationCommand;
+
 
 /**
  * Fabrica de comandos
@@ -76,6 +86,14 @@ public class CommandsFactory {
         return new HomeCommand(id);
     }
 
+    /**
+     * Metodo de actualizar usuario
+     * @param id
+     * @param username
+     * @param phone
+     * @param email
+     * @return
+     */
     static public UpdateUserCommand instanciateUpdateUserCmd(int id,String username,String phone,String email){
         return new UpdateUserCommand(id,username,phone,email);
     }
@@ -84,17 +102,31 @@ public class CommandsFactory {
 
     // Comandos M06
 
-    static public CreateTrainingCommand instanciateCreateTrainingCmd(Entity training, int userId){
-        return new CreateTrainingCommand(training, userId);
-
+    static public CreateTrainingCommand instanciateCreateTrainingCmd(Entity training){
+        return new CreateTrainingCommand(training);
     }
 
-    static public UpdateTrainingCommand instanciateUpdateTrainingCmd(Entity training){
-        return new UpdateTrainingCommand(training);
-
+    static public DeleteTrainingCommand instanciateDeleteTrainingCmd(Entity training){
+        return new DeleteTrainingCommand(training);
     }
+
+    static public ShareTrainingCommand instanciateShareTrainingCmd(Entity training) {
+        return new ShareTrainingCommand(training);
+    }
+
+    static public AddActivitiesToTrainingCommand instanciateAddActivitiesToTrainingCmd(Entity training) {
+        return new AddActivitiesToTrainingCommand(training);
+    }
+
+    static public RemoveActivitiesFromTrainingCommand instanciateRemoveActivitiesFromTrainingCmd(Entity training) {
+        return new RemoveActivitiesFromTrainingCommand(training);
+    }
+
+    static public ChangeTrainingNameCommand instanciateChangeTrainingNameCmd(Entity training) {
+        return new ChangeTrainingNameCommand(training);
+    }
+
     static public CheckTrainingCommand instanciateCheckTrainingCmd(int trainingId, int userId) {
-
         return new CheckTrainingCommand(trainingId, userId);
     }
 
@@ -276,6 +308,25 @@ public class CommandsFactory {
     static public getPersonalizedListCommand getPersoFoodCmd (Entity Food) {return new getPersonalizedListCommand(Food);}
 
     static public MomentCommand getMoment (Entity Moment) {return  new MomentCommand(Moment);}
+
+    static public DeleteDietCommand deleteDietCmd (Entity Diet) {return new DeleteDietCommand(Diet);}
+
+    static public GetCaloriesConsumedDayCommand getCaloriesDayCmd (Entity Diet)
+    {return new GetCaloriesConsumedDayCommand(Diet);}
+
+    static public GetCaloriesConsumedWeekCommand getCaloriesWeekCmd (Entity Diet)
+    {return new GetCaloriesConsumedWeekCommand(Diet);}
+
+    static public GetCaloriesConsumedMonthCommand getCaloriesMonthCmd (Entity Diet)
+    {return new GetCaloriesConsumedMonthCommand(Diet);}
+
+    static public GetCaloriesDateCommand getCaloriesDateCmd (Entity Diet) {return new GetCaloriesDateCommand(Diet);}
+
+    static public GetMomentFoodCommand getMomentFoodCmd (Entity Diet) {return new GetMomentFoodCommand(Diet);}
+
+    static public InsertOneDietCommand insertOneDietCmd (Entity Diet) {return new InsertOneDietCommand(Diet);}
+
+ //fin modulo 11
 
     //Modulo 7
 

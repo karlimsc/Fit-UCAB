@@ -1,11 +1,13 @@
 package edu.ucab.desarrollo.fitucab.dataAccessLayer;
 
+
 import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
-import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import java.sql.SQLException;
+import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 
-import java.sql.SQLException;
+
 
 /**
  * Interface que implementa el DAO
@@ -13,7 +15,8 @@ import java.sql.SQLException;
  */
 public interface IDao
 {
-    public Entity create(Entity e) throws AddException, AddException, AddException, SQLException, Exception;
+
+    public Entity create(Entity e) throws AddException, SQLException, Exception, BdConnectException;
 
     public Entity read(Entity e) throws CreateHomeException, SQLException, BdConnectException;
 

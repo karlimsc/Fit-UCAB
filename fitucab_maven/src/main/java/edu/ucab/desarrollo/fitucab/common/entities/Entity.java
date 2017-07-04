@@ -4,6 +4,7 @@ package edu.ucab.desarrollo.fitucab.common.entities;
  *Patron Entidad
  */
 public class Entity {
+
         private int _id;
         private int _errorCode;
         private String _errorMsg;

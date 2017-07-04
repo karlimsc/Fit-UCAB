@@ -214,5 +214,18 @@
     <string name="bt_start_tracking">Iniciar</string>
     <string name="title_activity_m06_training">M06TrainingActivity</string>
 
+    <!--Inicio Strings Modulo 6 -->
+    <string name="btn_m06_trainings">Listado de Entrenamientos</string>
+    <string name="lv_m06_listoftrainings"></string>
+    <string name="btn_m06_plus"></string>
+    <string name="btn_m06_minus"></string>
+    <string name="lv_m06_listofactivities"></string>
+    <string name="Agregaractividades">Nuevo Entrenamiento</string>
+    <string name="ModificarActividad">Modificar Entrenamiento</string>
+    <string name="ListarActividades">Actividad</string>
+    <string name="Entrenamiento">Entrenamiento:</string>
+
+    <!--FIN Strings Modulo 6 -->
+
 </resources>
 

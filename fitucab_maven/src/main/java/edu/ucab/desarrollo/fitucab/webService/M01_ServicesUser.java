@@ -8,27 +8,19 @@ import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
-import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.Security;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -38,10 +30,7 @@ import java.util.Date;
  */
 @Path("/M01_ServicesUser")
 public class M01_ServicesUser {
-    private int RESULT_CODE_OK=200;
-    private int RESULT_CODE_FAIL=300;
     private int RESULT_USER_FAIL=400;
-    private int RESULT_EMAIL_OK=500;
     private static String DEFAULT_ENCODING1="UTF-8";
 
     final static org.slf4j.Logger logger = LoggerFactory.getLogger(M01_ServicesUser.class);
@@ -61,8 +50,6 @@ public class M01_ServicesUser {
     public String getUser(@QueryParam("username") String username,
                           @QueryParam("password") String password)
     {
-
-        User userFail = new User();
 
         try {
             Entity userObject = EntityFactory.createUser(username,password);
@@ -230,20 +217,24 @@ public class M01_ServicesUser {
             System.out.print("Debug: email " + email);
             cmd.execute();
             String _response = cmd.get_response();
-            return gson.toJson(_response);
+            return _response;
 
         }catch (NullPointerException e){
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             System.out.print("NULL POINTER");
             logger.error("Error: ", error);
-            return gson.toJson(null);
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
         }
         catch ( Exception e )
         { MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                 Thread.currentThread().getStackTrace()[1].getMethodName());
             logger.error("Error: ", error);
-            return gson.toJson( null );
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
         }
 
 

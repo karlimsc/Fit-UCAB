@@ -19,5 +19,5 @@ public interface IDaoFriendship extends IDao{
     public void updateFriendship(String updater, String updated, String action);
     public ArrayList<UserAuxiliar> getList (String id, String Action)  throws  SQLException;
     public ArrayList<UserAuxiliar> getContacts (String id, String contacts)  throws  SQLException;
-
+    public int mayor(String idRequested, String idRequester);
 }
