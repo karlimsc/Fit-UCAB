@@ -1,7 +1,3 @@
-/**M02_Gestion_Perfil_Home**/
-
-/**************************************************Consultar Perfil por ID**************************************************/
-
 CREATE OR REPLACE FUNCTION M02_CONSULTARPERFILID(codigo int)
 	RETURNS TABLE (id int,
 		usuario varchar(20),
@@ -151,3 +147,48 @@ BEGIN
 	RETURN result;
 END;
 $$ LANGUAGE plpgsql;
+
+CREATE OR REPLACE  FUNCTION M10_GetWaterGlass( fkp int, date_stamp date,
+                                 OUT sumG integer, OUT countG integer)
+AS $$
+DECLARE  
+
+BEGIN	
+sumG =  (SELECT Sum(t.GLASSTYPE) FROM glass_historic as t
+       WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp);
+
+countg =  (SELECT Count(t.glasshistoricid) FROM glass_historic as t
+       WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp);
+END;
+$$ LANGUAGE plpgsql VOLATILE;
+
+
+CREATE OR REPLACE FUNCTION M10_GetListFecha(fkp int, date_stamp date)
+RETURNS TABLE(GLASSTIME timestamp, GLASSTYPE int) AS $$
+BEGIN
+  RETURN QUERY
+    SELECT t.GLASSTIME,t.GLASSTYPE FROM glass_historic as t
+      WHERE DATE(t.GLASSTIME) = date_stamp and fk_person = fkp;
+ end;
+$$ LANGUAGE 'plpgsql';
+
+CREATE OR REPLACE FUNCTION m11_get_calorias_dia(
+usuario VARCHAR)
+  RETURNS TABLE(calorias INT)
+  AS $$
+DECLARE
+   fecha_inicio date;
+   fecha_fin    date;
+   var_r record;
+BEGIN
+   fecha_fin := current_date;
+   fecha_inicio := fecha_fin - Interval '6 days';
+   FOR var_r IN (SELECT SUM(DIETCALORIE) AS suma
+           FROM PERSON, DIET
+           WHERE PERSONID = FK_PERSONID AND DIETDATETIME  BETWEEN fecha_inicio AND fecha_fin AND PERSONUSERNAME = usuario)
+   LOOP
+          calorias := var_r.suma;
+      RETURN NEXT;
+   END LOOP;
+END; $$
+  LANGUAGE plpgsql;
