@@ -281,7 +281,7 @@ public class DaoFood extends Dao implements IDaoFood {
         return aux;
     }
 
-    @Override
+    @Override//listo
     public Entity insertarPersoFood(Entity e) throws SQLException, BdConnectException {
         Map<String, String> response = new HashMap<String, String>();
         Food food = (Food) e;
@@ -320,7 +320,7 @@ public class DaoFood extends Dao implements IDaoFood {
         return aux;
     }
 
-    @Override
+    @Override//listo
     public Entity getPersonalizedLis(Entity e) throws BdConnectException, SQLException {
 
         Food food = (Food) e;

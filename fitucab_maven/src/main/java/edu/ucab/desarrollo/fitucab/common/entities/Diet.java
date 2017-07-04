@@ -64,11 +64,7 @@ public class Diet extends Entity{
         this._username = username;
     }
 
-  /*  public Diet(String id, LocalDate calorie, String dateTime) {
-        this._id = id;
-        this._calorie = calorie;
-        this._dateTime = dateTime;
-    }*/
+
 
     public Diet(int calorie, LocalDate dateTime) {
         this._calorie = calorie;

@@ -90,9 +90,16 @@ public class M11SuggestionFragment extends Fragment {
                     public void onResponse(String response) {
                         Gson gson = new Gson();
                         ArrayList<Food> foods = new ArrayList<>();
-                        Food aux1 = gson.fromJson(response,Food.class);
-                        foods = aux1.jsonArray;
-                        LlenaTablaAlimentos(foods);
+                        try {
+                            Food aux1 = gson.fromJson(response, Food.class);
+                            foods = aux1.jsonArray;
+
+                            LlenaTablaAlimentos(foods);
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
