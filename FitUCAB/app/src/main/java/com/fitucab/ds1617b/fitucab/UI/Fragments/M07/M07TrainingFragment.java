@@ -16,12 +16,22 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Planification;
 import com.fitucab.ds1617b.fitucab.R;
+import com.google.gson.Gson;
 
 import java.text.StringCharacterIterator;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 /**
@@ -38,10 +48,11 @@ public class M07TrainingFragment extends Fragment {
     private ImageButton _btn_m07_horaFin;
     private EditText _tv_m07_horaFin;
     private Button _btn_m07_declinar;
+    private Button _btn_m07_aceptar;
 
 
     private View _view;
-    private OnFragmentSwap _callBack;
+    private OnFragmentSwap _callback;
 
     private int dia;
     private int mes;
@@ -55,6 +66,7 @@ public class M07TrainingFragment extends Fragment {
     }
 
     public M07TrainingFragment(Planification planification) {
+
         this.planification = planification;
     }
 
@@ -76,13 +88,13 @@ public class M07TrainingFragment extends Fragment {
         _btn_m07_horaFin = (ImageButton)_view.findViewById(R.id.btn_m07_horaFin);
         _tv_m07_horaFin = (EditText)_view.findViewById(R.id.tv_m07_horaFin);
         _btn_m07_declinar = (Button)_view.findViewById(R.id.btn_m07_Decline);
-
+        _btn_m07_declinar = (Button)_view.findViewById(R.id.btnAdd);
         agregarFechaInicio();
         agregarFechaFin();
         agregarHoraInicio();
         agregarHoraFin();
-        buttonDeclinar();
-        cargarEvento(planification);
+        buttonDeclina();
+        buttonAceptar();
 
         return _view;
     }
@@ -171,16 +183,29 @@ public class M07TrainingFragment extends Fragment {
         });
     }
 
-    private void  buttonDeclinar(){
+    private void  buttonDeclina(){
 
         _btn_m07_declinar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                _callBack.onSwap("M07HomeFragment", null);
+                _callback.onSwap("M07HomeFragment",null);
             }
+
 
         });
 
+    }
+
+    private void buttonAceptar(){
+
+        _btn_m07_aceptar.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view){
+                Toast.makeText( getContext() , "Actividad Creada" , Toast.LENGTH_LONG).show();
+            }
+
+        });
     }
 
     private void  cargarEvento(Planification planification) {
@@ -190,6 +215,31 @@ public class M07TrainingFragment extends Fragment {
         _tv_m07_fechaInicio.setText(String.valueOf(planification.get_startTime()));
         _tv_m07_horaFin.setText(String.valueOf(planification.get_duration()));
 
+    }
+
+    public void addEvent(String usuario)
+    {
+        /**
+        RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
+        IpStringConnection jsonURL = new IpStringConnection();
+        jsonURL.set_ip( jsonURL.getIp() + "M07_ServicesPlanification/setEvent?userId=" + usuario );
+        StringRequest stringRequest = new StringRequest(Request.Method.SET, jsonURL.getIp(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        ServerResponse respuesta = new ServerResponse();
+                        respuesta = gson.fromJson(response,new TypeToken<ServerResponse>(){}.getType());
+                        ArrayList<Planification> planifications = new ArrayList<>();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
+                    }
+                });
+        requestQueue.add(stringRequest); **/
     }
 
 }

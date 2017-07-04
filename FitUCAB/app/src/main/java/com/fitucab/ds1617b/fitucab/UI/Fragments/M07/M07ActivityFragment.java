@@ -22,10 +22,19 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Planification;
 import com.fitucab.ds1617b.fitucab.R;
+import com.google.gson.Gson;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -47,6 +56,7 @@ public class M07ActivityFragment extends Fragment {
     private CheckBox _cb_m07_checksabado;
     private CheckBox _cb_m07_checkdomingo;
     private Button _btn_m07_declinar;
+    private Button _btn_m07_aceptar;
 
     private OnFragmentSwap _callBack;
     private View _view;
@@ -92,6 +102,7 @@ public class M07ActivityFragment extends Fragment {
         _cb_m07_checksabado = (CheckBox)_view.findViewById(R.id.cb_m07_checksabado);
         _cb_m07_checkdomingo = (CheckBox)_view.findViewById(R.id.cb_m07_checkdomingo);
         _btn_m07_declinar = (Button)_view.findViewById(R.id.btnDecline);
+        _btn_m07_aceptar = (Button)_view.findViewById(R.id.btnAdd);
 
         //_btn_m07_horaInicio.setOnClickListener((View.OnClickListener) _view);
         //_btn_m07_horaFin.setOnClickListener((View.OnClickListener) _view);
@@ -100,7 +111,7 @@ public class M07ActivityFragment extends Fragment {
         agregarHoraInicio();
         agregarHoraFin();
         buttonDeclinar();
-        cargarEvento(planification);
+        buttonAceptar();
 
 
         return _view;
@@ -221,6 +232,17 @@ public class M07ActivityFragment extends Fragment {
 
     }
 
+    private void buttonAceptar(){
+        _btn_m07_aceptar.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view){
+                Toast.makeText( getContext() , "Si escucha" , Toast.LENGTH_LONG).show();
+            }
+
+        });
+    }
+
     private void  cargarEvento(Planification planification){
 
         boolean frecuencia[];
@@ -260,5 +282,29 @@ public class M07ActivityFragment extends Fragment {
 
            }
 
+    }
+
+    public void addEvent(String usuario)
+    {
+        /**RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
+        IpStringConnection jsonURL = new IpStringConnection();
+        jsonURL.set_ip( jsonURL.getIp() + "M07_ServicesPlanification/setEvent?userId=" + usuario );
+        StringRequest stringRequest = new StringRequest(Request.Method.Set, jsonURL.getIp(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        ServerResponse respuesta = new ServerResponse();
+                        respuesta = gson.fromJson(response,new TypeToken<ServerResponse>(){}.getType());
+                        ArrayList<Planification> planifications = new ArrayList<>();
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
+                    }
+                });
+        requestQueue.add(stringRequest);**/
     }
 }
