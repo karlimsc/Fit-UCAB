@@ -10,7 +10,7 @@ import android.view.View;
 
 import com.fitucab.ds1617b.fitucab.R;
 
-public class MainActivity extends AppCompatActivity {
+public class  MainActivity extends AppCompatActivity {
 
 
 

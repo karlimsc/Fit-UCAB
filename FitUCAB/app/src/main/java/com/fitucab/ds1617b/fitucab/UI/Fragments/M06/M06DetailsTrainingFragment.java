@@ -1,63 +1,84 @@
 package com.fitucab.ds1617b.fitucab.UI.Fragments.M06;
 
-import android.content.Context;
-import android.net.Uri;
+import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
+import com.fitucab.ds1617b.fitucab.Helper.M06Util;
+import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiClient;
+import com.fitucab.ds1617b.fitucab.Helper.Rest.ApiEndPointInterface;
+import com.fitucab.ds1617b.fitucab.Model.Activit;
+import com.fitucab.ds1617b.fitucab.Model.Training;
+import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link M06DetailsTrainingFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link M06DetailsTrainingFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import org.junit.runner.Describable;
+
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.getInstaceDialog;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.showToast;
+import static com.fitucab.ds1617b.fitucab.Helper.M01Util.validateExceptionMessage;
+
 public class M06DetailsTrainingFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    private OnFragmentInteractionListener mListener;
+    private RecyclerView recyclerView;
+    private TextView _title;
+    private View _view;
+    private Training _Training;
+    private OnFragmentSwap _callBack;
+    private User user;
 
     public M06DetailsTrainingFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment M06DetailsTrainingFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static M06DetailsTrainingFragment newInstance(String param1, String param2) {
-        M06DetailsTrainingFragment fragment = new M06DetailsTrainingFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Bundle mBundle = this.getArguments();
+        _Training = mBundle.getParcelable("training");
+
     }
 
+
+    //En el callBack guardo la instancia de la aplicacion
+    /**
+     * Una vez la activity llama a un fragment se ejecuta este metodo
+     * @param activity recibe la activity que llamo o instancio al fragment
+     */
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try {
+
+            _callBack = (OnFragmentSwap) activity;
+
+        }
+        catch (ClassCastException e) {
+
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnHeadlineSelectedListener");
+
         }
     }
 
@@ -65,45 +86,181 @@ public class M06DetailsTrainingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_m06_details_training, container, false);
+        _view =  inflater.inflate(R.layout.fragment_m06_details_training, container, false);
+        setHasOptionsMenu(true);
+        setupViewValues();
+        manageRecyclerView();
+        return _view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
+    /**
+     * Method type: @Override Void
+     * Method Name: onCreateOptionsMenu
+     * Method @Params Menu menu, MenuInflater inflater
+     * Method Description: this method makes a copnfiguration to MenuOptions
+     * **/
 
     @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_m06_training, menu);
+        super.onCreateOptionsMenu(menu,inflater);
+        setHasOptionsMenu(true);
+
     }
 
     /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+     * Method type: @Override Void
+     * Method Name: onOptionsItemSelected
+     * Method @Params Menu menu, MenuInflater inflater
+     * Method Description: this method drive the click on the menuIcon
+     * **/
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        //_Training.set_trainingId(505); //PRUEBA
+        switch (id) {
+            case R.id.m06_edit_training:
+                Bundle bundle = new Bundle();
+//                bundle.putInt("User", user.get_idUser());
+                _callBack.onSwap("M06UpdateTraining",null);
+                return true;
+
+            case R.id.m06_active_training:
+                // do stuff
+                ///TODO CALL ACTIVE TRAINING
+                //_callBack.onSwap();
+                return true;
+
+            case R.id.m06_delete_training:
+                // do stuff
+                ///TODO GO TO DELETE TRAINING
+                getRetrofit(_Training.get_trainingId(), _Training.get_trainingName());
+                //_callBack.onSwap();
+                return true;
+
+            case R.id.m06_share_training:
+                // do stuff
+                ///TODO GO TO SHARE
+                _getRetrofit(_Training, 5000);
+                //_callBack.onSwap();
+                return true;
+        }
+
+
+
+        return false;
     }
+
+    private void setupViewValues(){
+
+        _title = (TextView) _view.findViewById(R.id.tv_m06_training_name);
+        //_title.setText();
+        getActivity().setTitle(_Training.get_trainingName());
+
+
+    }
+
+    public void swap(){
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("training",_Training);
+        _callBack.onSwap("M06UpdateTrainingFragment",bundle);
+    }
+    public void getRetrofit(int id, String trainingname) {
+
+
+        ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
+        Call<Training> call = apiService.deleteTraining(id, trainingname);
+
+        final MaterialDialog dialog = getInstaceDialog(getContext());
+
+        call.enqueue(new Callback<Training>() {
+
+            @Override
+            public void onResponse(Call<Training> call, Response<Training> response) {
+
+                dialog.dismiss();
+
+                try {
+
+                    _callBack.onSwap("M06HomeTrainingFragment",null);
+                    Toast.makeText(getContext(),
+                            "Se ha eliminado exitosamente el entrenamiento",
+                            Toast.LENGTH_LONG).show();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("No es problema de bd ni internet");
+
+                }
+
+            }
+            @Override
+            public void onFailure(Call<Training> call, Throwable t) {
+
+                dialog.dismiss();
+                String error = t.getMessage();
+                String errorResult = "Ha ocurrido un error eliminando";
+                Toast.makeText(getContext(), errorResult,
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+    public void _getRetrofit(Training t, int userShare) {
+
+
+        ApiEndPointInterface apiService = ApiClient.getClient().create(ApiEndPointInterface.class);
+        String _act = "";
+        for (Activit a:_Training.get_activities() ) {
+            _act += a.get_name() + ";";
+        }
+        Call<Training> call = apiService.shareTraining(_Training.get_trainingName(), _act, userShare);
+
+        final MaterialDialog dialog = getInstaceDialog(getContext());
+
+        call.enqueue(new Callback<Training>() {
+
+            @Override
+            public void onResponse(Call<Training> call, Response<Training> response) {
+
+                dialog.dismiss();
+
+                try {
+                    Toast.makeText(getContext(),
+                            "Se ha compartido exitosamente el entrenamiento",
+                            Toast.LENGTH_LONG).show();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    System.out.println("No es problema de bd ni internet");
+
+                }
+
+            }
+            @Override
+            public void onFailure(Call<Training> call, Throwable t) {
+
+                dialog.dismiss();
+                String error = t.getMessage();
+                String errorResult = "Ha ocurrido un error compartiendo";
+                Toast.makeText(getContext(), errorResult,
+                        Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
+    private void manageRecyclerView(){
+
+        ActivitiesAdapter mAdapter = new ActivitiesAdapter(_Training.get_activities());
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView = (RecyclerView) _view.findViewById(R.id.m06_activities_recycler) ;
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+    }
+
+
+
 }
