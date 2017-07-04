@@ -10,6 +10,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import Domain.*;
 
+import static Domain.Sql.getConInstance;
+
 /**
  * Created by estefania on 14/05/2017.
  */

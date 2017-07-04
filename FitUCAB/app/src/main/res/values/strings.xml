@@ -51,8 +51,6 @@
     <string name="M01_RESTORE_MESSAGE">El correo con sus datos fue enviado</string>
 
 
-
-
     <!--FIN Strings Modulo 1 -->
 
 
@@ -117,10 +115,6 @@
     <!--FIN Strings Modulo 3 -->
 
 
-
-
-
-
     <!-- Inicio Strings Modulo 5 (Estan en orden alfabetico)-->
     <string name="_app_name_title_m05">Actividad</string>
     <string name="_btn_m05_registermanual">REGISTRAR</string>
@@ -177,7 +171,7 @@
     <string name="_tst_m05_seletectitemonetouch">Debe seleccionar prolongadamente el item para ver opciones</string>
 
     <!--FIN Strings Modulo 5 -->
-   <!-- Inicio Strings Modulo 10 -->
+    <!-- Inicio Strings Modulo 10 -->
     <string name="title_activity_m10_water_glass">Agua</string>
     <string name="tab_m10_Hidratacion">Hidratacion</string>
     <string name="tab_m10_Control">Control</string>
@@ -218,6 +212,20 @@
     <string name="title_activity_m02_home">M02HomeActivity</string>
     <string name="title_activity_m05_track_exercise">Track</string>
     <string name="bt_start_tracking">Iniciar</string>
+    <string name="title_activity_m06_training">M06TrainingActivity</string>
+
+    <!--Inicio Strings Modulo 6 -->
+    <string name="btn_m06_trainings">Listado de Entrenamientos</string>
+    <string name="lv_m06_listoftrainings"></string>
+    <string name="btn_m06_plus"></string>
+    <string name="btn_m06_minus"></string>
+    <string name="lv_m06_listofactivities"></string>
+    <string name="Agregaractividades">Nuevo Entrenamiento</string>
+    <string name="ModificarActividad">Modificar Entrenamiento</string>
+    <string name="ListarActividades">Actividad</string>
+    <string name="Entrenamiento">Entrenamiento:</string>
+
+    <!--FIN Strings Modulo 6 -->
 
 </resources>
 

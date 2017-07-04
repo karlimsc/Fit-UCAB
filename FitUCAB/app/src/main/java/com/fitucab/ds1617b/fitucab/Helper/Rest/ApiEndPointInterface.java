@@ -1,9 +1,14 @@
 package com.fitucab.ds1617b.fitucab.Helper.Rest;
 
+import com.fitucab.ds1617b.fitucab.Model.Training;
 import com.fitucab.ds1617b.fitucab.Model.User;
 import com.fitucab.ds1617b.fitucab.Model.Notification_Settings;
+
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 /**
@@ -63,4 +68,35 @@ public interface ApiEndPointInterface {
 
     @GET("M04_ServicesNotificationSettings/getSetting")
     Call<Notification_Settings> getSetting(@Query("userId") int userId);
+
+    @POST("M06_ServicesTraining/getAllTraining")
+    Call<ArrayList<Training>> getAllTraining(@Query("userId") int userId);
+
+
+    @POST("M06_ServicesTraining/getTrainingDetail")
+    Call<Training> getAllTraining(@Query("userId") int userId,
+                                  @Query("trainingId") int trainingId);
+///////////////////////////////////////////////////////////////////////
+    @GET("M06_ServicesTraining/createTraining")
+    Call<Training> addTraining(@Query("trainingName") String trainingName,
+                               @Query("trainingActivities") String trainingActivities,
+                                @Query("userId") int userId);
+
+    @GET("M06_ServicesTraining/updateTraining")
+    Call<Training> updateTraining( @Query( "idTraining" ) int id,
+                                   @Query( "trainingName" ) String name,
+                                   @Query( "trainingActivities" )  String _activities);
+
+    @GET("M06_ServicesTraining/deleteTraining")
+    Call<Training> deleteTraining(@Query( "trainingId" ) int id,
+                                  @Query( "trainingName" ) String name);
+
+
+
+    @GET("M06_ServicesTraining/shareTraining")
+    Call<Training> shareTraining( @Query( "trainingName" ) String name,
+                                  @Query( "trainingActivities" )  String _activities,
+                                  @Query( "userId" ) int id );
+
+
 }

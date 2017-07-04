@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<configuration>
+    <!--Esto aplica para todos los modulos-->
+    <appender name="Debug" class="ch.qos.logback.core.FileAppender">
+        <!--Colocar la direccion local a la carpeta resource-->
+        <file>/home/david/Programs/Fit-UCAB/fitucab_maven/src/main/java/edu/ucab/desarrollo/fitucab/resource/Debug.log</file>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{50} [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="Error" class="ch.qos.logback.core.FileAppender">
+        <file>/home/david/Programs/Fit-UCAB/fitucab_maven/src/main/java/edu/ucab/desarrollo/fitucab/resource/Error.log</file>
+        <encoder>
+            <pattern>%date %level [%thread] %logger{50} [%file:%line] %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="edu.ucab.desarrollo.fitucab.webService" additivity="false" level="debug">
+        <appender-ref ref="Debug" />
+    </logger>
+
+    <logger name="edu.ucab.desarrollo.fitucab.webService" additivity="false" level="error">
+        <appender-ref ref="Error" />
+    </logger>
+
+</configuration>
+

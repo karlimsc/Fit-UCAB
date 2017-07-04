@@ -19,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,6 +30,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
 import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
+import com.fitucab.ds1617b.fitucab.Model.Entity;
 import com.fitucab.ds1617b.fitucab.Model.Water;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M10.M10HistoyFragment;
@@ -59,6 +62,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
     private static ImageButton _btnAdd;
     private static ImageButton _btnLess;
     public static EditText _EtnDate;
+
     ManagePreferences user = new ManagePreferences();
 
     private Calendar _cal ;
@@ -221,8 +225,6 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
         _btnLess = (ImageButton) findViewById(R.id.btn_m10_lessDate);
         _btnAdd = (ImageButton) findViewById(R.id.btn_m10_AddDate);
         _EtnDate= (EditText) findViewById(R.id.et_m10_date);
-
-
         giveDate();
         activarCalendario();
         addDate();
@@ -383,7 +385,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                     public void onResponse(String response) {
                         // Display the first 500 characters of the response string.}
                         try {
-                            water = gson.fromJson(response,Water.class);
+                            water =  gson.fromJson(response,Water.class);
                             _EtnDate.setText(water.get_time());
                             m10w.setCant(water.get_cantidad().toString());
                            // Thread.sleep(10);
@@ -398,7 +400,7 @@ public class M10WaterGlassActivity extends AppCompatActivity implements View.OnC
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                _EtnDate.setText("30/05/2017");
+                _EtnDate.setText("1/07/2017");
                 unlockbtnm();
             }
         });

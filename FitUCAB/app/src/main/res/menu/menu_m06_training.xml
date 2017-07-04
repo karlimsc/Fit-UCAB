@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item
+        android:id="@+id/m06_edit_training"
+        android:icon="@drawable/edit_training"
+        android:orderInCategory="100"
+        android:title="Editar Entrenamiento"
+        />
+
+    <item
+        android:id="@+id/m06_active_training"
+        android:orderInCategory="100"
+        android:title="Seleccionar Entrenamiento"
+        android:icon="@drawable/active_training"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/m06_delete_training"
+        android:orderInCategory="100"
+        android:title="Eliminar Entrenamiento"
+        android:icon="@drawable/delete_training"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/m06_share_training"
+        android:orderInCategory="100"
+        android:title="Compartir Entrenamiento"
+        android:icon="@drawable/share_training"
+        android:visible="true"/>
+</menu>

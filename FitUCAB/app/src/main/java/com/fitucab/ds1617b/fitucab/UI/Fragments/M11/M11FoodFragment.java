@@ -2,19 +2,14 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M11;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.GridLayout;
 import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -33,7 +28,6 @@ import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.util.ArrayList;
 
@@ -103,9 +97,17 @@ public class M11FoodFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
+
                         ArrayList<Food> foods = new ArrayList<>();
-                        foods = gson.fromJson(response, new TypeToken<ArrayList<Food>>(){}.getType());
-                        LlenaTablaAlimentos(foods);
+                        try {
+                            Food aux = gson.fromJson(response, Food.class);
+                            foods = aux.jsonArray;
+                            LlenaTablaAlimentos(foods);
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
@@ -126,16 +128,16 @@ public class M11FoodFragment extends Fragment {
     {
         for (int i = 0 ; i < alimentos.size() ; i++ ){
             final TableRow fila = new TableRow(getContext());
-            fila.setId(alimentos.get(i).get_Id());
+            fila.setId(alimentos.get(i).get_id());
             _gl_m11_listaAlimento.addView(fila);
             TableLayout.LayoutParams params = new TableLayout.LayoutParams(
                     TableLayout.LayoutParams.WRAP_CONTENT , TableLayout.LayoutParams.WRAP_CONTENT);
-            AgregaColumna( alimentos.get(i).get_FoodName(), fila , params);
-            AgregaColumna( String.valueOf(alimentos.get(i).get_FoodWeight()), fila , params);
-            AgregaColumna( String.valueOf(alimentos.get(i).get_FoodCalorie()), fila , params);
-            final String alimento = alimentos.get(i).get_FoodName();
-            final int pesoAlimento = Integer.valueOf(alimentos.get(i).get_FoodWeight());
-            final int caloriaAlimento = Integer.valueOf(alimentos.get(i).get_FoodCalorie());
+            AgregaColumna( alimentos.get(i).get_foodName(), fila , params);
+            AgregaColumna( String.valueOf(alimentos.get(i).get_foodWeight()), fila , params);
+            AgregaColumna( String.valueOf(alimentos.get(i).get_foodCalorie()), fila , params);
+            final String alimento = alimentos.get(i).get_foodName();
+            final int pesoAlimento = Integer.valueOf(alimentos.get(i).get_foodWeight());
+            final int caloriaAlimento = Integer.valueOf(alimentos.get(i).get_foodCalorie());
             fila.setOnClickListener(new View.OnClickListener(){
 
                 @Override
@@ -238,9 +240,14 @@ public class M11FoodFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
+                        Food aux = gson.fromJson( response , Food.class);
                         ArrayList<String> respuesta = new ArrayList<>();
-                        respuesta = gson.fromJson( response ,
-                                new TypeToken<ArrayList<String>>(){}.getType() );
+                        try {
+                            respuesta = (ArrayList<String>) aux.getResponse();
+                        }catch (Exception e )
+                        {
+                            e.printStackTrace();
+                        }
 
                     }
                 },

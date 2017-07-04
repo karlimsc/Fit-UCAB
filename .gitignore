@@ -3,12 +3,14 @@
 local.properties
 /.idea/workspace.xml
 /.idea/libraries
-.DS_Store
 /build
 /captures
 .externalNativeBuild
 .idea
 /app/build
+*.DS_Store
+.AppleDouble
+.LSOverride
 
 /FitUCAB/.gradle
 /FitUCAB/*.iml
@@ -31,3 +33,14 @@ local.properties
 /WebServicesFitUCAB/*.xml
 
 FitUCAB/\.directory
+
+fitucab_maven/classes/*
+fitucab_maven/target/*
+*.log
+
+fitucab_maven/out/artifacts/fitucab_war_exploded/
+
+fitucab_maven/out/
+
+
+fitucab_maven/target/
