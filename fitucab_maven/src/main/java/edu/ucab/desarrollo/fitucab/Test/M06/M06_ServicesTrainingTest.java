@@ -1,5 +1,4 @@
-package edu.ucab.desarrollo.fitucab.Test.M06;
-/*
+package M06;
 import static io.restassured.RestAssured.given;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
@@ -15,13 +14,13 @@ import java.net.URISyntaxException;
 import static io.restassured.RestAssured.useRelaxedHTTPSValidation;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.*;
-*/
+
 
 /**
  * Created by Barbara Fernadez on 7/2/2017.
  */
 class M06_ServicesTrainingTest {
-/*
+
 
     @BeforeEach
     void setUp() {
@@ -176,5 +175,5 @@ class M06_ServicesTrainingTest {
     @Test
     void getAllTraining() {
     }
-*/
+
 }
