@@ -6,7 +6,9 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.CreateUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M01.LoginUserException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.RecoveryPassException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
@@ -39,12 +41,10 @@ public class DaoUser extends Dao implements IDaoUser {
     String _phone;
     String _email;
     Entity _user;
-    Date birthdate;
     private GetUserException _error;
     private Connection _bdCon;
     //Encargado de encriptar la contraseña
     private Security _sc;
-    private LoginUserException _errorLog;
 
     //String de conexion funciones
     String _sqlInicioSesion = "{?=call M01_INICIARSESION(?,?)}";
@@ -122,7 +122,7 @@ public class DaoUser extends Dao implements IDaoUser {
                 Date _birthdate = _result.getDate( "birthdate" );
                 int  _height = _result.getInt( "height" );
                 int _weight = _result.getInt("weight");
-                _user = EntityFactory.createUser( _id ,_usuario, _email, _sex, _phone, _birthdate, _height, _weight);
+                _user = EntityFactory.createUser( _id ,_usuario, _email, _sex, _phone, _birthdate, _weight, _height);
             }
             return _user;
         } catch (NullPointerException e) {
@@ -162,7 +162,15 @@ public class DaoUser extends Dao implements IDaoUser {
 
         String password = _sc.encryptPassword(_user.getPassword());
 
+        User userFail = new User();
+
         try {
+
+
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+
+            int idUser = 0;
+
             cstmt = _bdCon.prepareCall(_sqlInicioSesion.toString());
 
             //1er signo de interrogacion el parametro de salida
@@ -174,37 +182,41 @@ public class DaoUser extends Dao implements IDaoUser {
 
             cstmt.execute();
 
-            int id = cstmt.getInt(1);
-            System.out.printf(String.valueOf(id));
+            idUser = cstmt.getInt(1);
 
-            _user.setId(id);
-            return _user;
+            _logger.debug("ID del User Encontrado "+String.valueOf(idUser));
+
+            if (idUser!= 0) {
+                _user.setId(idUser);
+                _user.set_status(Integer.toString(RESULT_CODE_OK));
+                return _user;
+            }
+            else {
+                userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+                //return userFail;
+                _logger.debug("Debug: ", "MENSAJE");
+                _logger.debug("No encontró el usuario. Login Exception");
+                _logger.debug("String del USERFAIL " + gson.toJson(userFail));
+                throw new LoginUserException(DaoUser.class.getSimpleName(),"Error al Insertar el Usuario", userFail);
+            }
 
         } catch (SQLException ex) {
-            _errorLog = new LoginUserException(ex, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
-            _logger.debug("Debug: ", _errorLog.toString());
-            _logger.error("Error: ", _errorLog.toString());
-            throw _errorLog;
-            //Anterior
-            /*MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.debug("Debug: ", error.toString());
-            _logger.error("Error: ", error.toString());
 
-            //Retorna null por el error
-            return null;*/
-        } catch (Exception ex) {
-            _errorLog = new LoginUserException(ex, DaoHome.class.getSimpleName(),BdConnectException.class.toString());
-            _logger.debug("Debug: ", _errorLog.toString());
-            _logger.error("Error: ", _errorLog.toString());
-            throw _errorLog;
-           //Anterior
-            /*
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.debug("Debug: ", error.toString());
-            _logger.error("Error: ", error.toString());
-            return null;*/
+
+            _logger.error("Error SQL Exception: ", error.toString());
+
+            return userFail;
+
+        } catch (Exception ex) {
+
+            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+
+            _logger.error("Error Exception: ", error.toString());
+
+            return userFail;
         } finally {
             _bdCon.close();
         }
@@ -216,11 +228,10 @@ public class DaoUser extends Dao implements IDaoUser {
      * Metodo que es llamado a traves del web service para agregar a la base de datos
      * los parametros recibidos
      *
-     * @return
+     * @return El usuario con el estatus de inserción.
      */
-
     @Override
-    public Entity create(Entity e) throws Exception {
+    public Entity create(Entity e) throws CreateUserException, SQLException {
 
         _sc = new Security();
 
@@ -231,6 +242,8 @@ public class DaoUser extends Dao implements IDaoUser {
         String password = _sc.encryptPassword(_user.getPassword());
 
         CallableStatement cstmt;
+
+        int id =0;
 
 
         try {
@@ -249,26 +262,46 @@ public class DaoUser extends Dao implements IDaoUser {
             cstmt.setInt(9, _user.getHeight());
             cstmt.execute();
 
-            int id = cstmt.getInt(1);
-            _user.setId(id);
-            _user.set_status(Integer.toString(RESULT_CODE_OK));
+            id = cstmt.getInt(1);
 
-            return _user;
+            if (id!=0) {
+
+                _user.setId(id);
+                _user.set_status(Integer.toString(RESULT_CODE_OK));
+                return _user;
+            }
+            else {
+
+                _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+                System.out.print("EN DAOUSER TRHOWS EL USER STATUS ES " + _userFail.get_status()) ;
+                throw new CreateUserException(DaoUser.class.getSimpleName(),"Error al hacer login",_userFail);
+            }
+
 
         } catch (SQLException ex) {
+
             MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.debug("Debug: ", error.toString());
+
+            _logger.error("Error: ", error.toString());
+            System.out.print("EN DAOUSER SQL EXC EL USER STATUS ES " + _userFail.get_status()) ;
+
+            _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+
+            return _userFail;
+
+        } catch (Exception ex) {
+            System.out.print("EN DAOUSER EXCEPTION EL USER STATUS ES " + _userFail.get_status()) ;
+
+            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+
             _logger.error("Error: ", error.toString());
 
             _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
+
             return _userFail;
-        } catch (Exception ex) {
-            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.error("Error: ", error.toString());
-            _userFail.set_status(Integer.toString(RESULT_CODE_FAIL));
-            return _userFail;
+
         } finally {
             _bdCon.close();
         }
@@ -278,7 +311,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * Metodo del M02 para actualizar atributos de la Entidad User
      * @author Juan Macedo, Cesar Boza, Bryan Teixeira
      */
-    public boolean Update() throws SQLException {
+    public boolean update() throws SQLException {
         try {
             if (!_username.equals("")) {
                 UpdateName(_username);
@@ -375,9 +408,9 @@ public class DaoUser extends Dao implements IDaoUser {
      * @return por ahora retorna un String
      */
     @Override
-    public String testEmail(String email) throws SQLException {
-        User user = null;
-        Boolean validaEmail = false;
+    public String testEmail(String email) throws RecoveryPassException, SQLException {
+
+
         String usernameResult = "";
         String passwordResult = "";
 
@@ -386,6 +419,7 @@ public class DaoUser extends Dao implements IDaoUser {
             Properties props = new Properties();
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.starttls.enable", "true");
+            props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
             props.put("mail.smtp.host", "smtp.gmail.com");
             props.put("mail.smtp.port", "587");
 
@@ -396,14 +430,26 @@ public class DaoUser extends Dao implements IDaoUser {
             cstmt.registerOutParameter(2, Types.VARCHAR);
             cstmt.setString(3, email);
 
-            cstmt.execute();
+            Boolean result=true;
 
-            validaEmail = true;
+            result = cstmt.execute();
+
+            Boolean validaEmail = false;
+
+            while (result) {
+                validaEmail = true;
+                _logger.debug("Debug: Hay resultados");
+                System.out.print("Debug: Hay resultados");
+            }
+
+            validaEmail=true;
             if (validaEmail == true) {
                 usernameResult = cstmt.getString(1);
                 passwordResult = cstmt.getString(2);
                 passwordResult = _sc.decryptPassword(passwordResult);
-                System.out.print("Debug: user " + usernameResult);
+
+                _logger.debug("Debug: user " + usernameResult);
+
                 //Se crea la sesion para autenticar
 
                 Session session = Session.getInstance(props,
@@ -430,17 +476,19 @@ public class DaoUser extends Dao implements IDaoUser {
                         " Ahora puedes seguir entrenando");
                 //Enviamos
                 Transport.send(message);
+
                 //Aqui esta la validacion
                 User userOk = new User();
                 userOk.set_status(Integer.toString(RESULT_EMAIL_OK));
 
                 //TODO:HAY QUE VER LO QUE RECIBE LA APP
-                return gson.toJson(userOk.get_status());
+                return gson.toJson(userOk);
             } else {
-                System.out.print("Debug: user " + usernameResult);
                 User userFail = new User();
-                userFail.set_status(Integer.toString(RESULT_USER_FAIL));
-                return gson.toJson(userFail);
+                _logger.debug("Debug: ", "MENSAJE");
+                _logger.debug("No encontró el Correo. Login Exception");
+                _logger.debug("String del USERFAIL " + gson.toJson(userFail));
+                throw new LoginUserException(DaoUser.class.getSimpleName(),"No se encuentra el email",userFail);
             }
 
         } catch (SQLException e) {
@@ -448,13 +496,18 @@ public class DaoUser extends Dao implements IDaoUser {
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.error("Error: ", error.toString());
             System.out.print("Error: " + error.toString());
-            return e.getSQLState();
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
+            //return e.getSQLState();
         } catch (Exception e) {
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.error("Error: ", error.toString());
             System.out.print("Error: " + error.toString());
-            return e.getMessage();
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
         } finally {
             _bdCon.close();
         }
@@ -468,7 +521,4 @@ public class DaoUser extends Dao implements IDaoUser {
     public Entity read(Entity e) throws CreateHomeException, SQLException, BdConnectException {
         return null;
     }
-
-
-
-    }
+}

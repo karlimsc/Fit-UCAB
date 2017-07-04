@@ -61,10 +61,10 @@ public class Food extends Entity{
 
     public Food (String foodname, String foodWeight , String foodCalorie, int id)
     {
-     _foodName=foodname;
-     _foodWeight=foodWeight;
-     _foodCalorie = foodCalorie;
-     _iD = id;
+        _foodName=foodname;
+        _foodWeight=foodWeight;
+        _foodCalorie = foodCalorie;
+        _iD = id;
     }
 
 
@@ -73,6 +73,10 @@ public class Food extends Entity{
     public String getJson () {return  _json;}
 
     public String get_idname(){return _idname;}
+
+    public void set_idname(String idName){
+        this._idname = idName;
+    }
     public int get_id() {
         return _iD;
     }

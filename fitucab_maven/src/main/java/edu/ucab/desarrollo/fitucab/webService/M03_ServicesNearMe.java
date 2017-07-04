@@ -32,7 +32,7 @@ public class M03_ServicesNearMe {
         {
             NearMeCommand cmd = CommandsFactory.instatiateNearMeCmd(id, longitud, latitud, rango);
             cmd.execute();
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {

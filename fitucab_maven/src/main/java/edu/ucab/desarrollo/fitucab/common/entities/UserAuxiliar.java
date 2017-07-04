@@ -3,7 +3,6 @@ package edu.ucab.desarrollo.fitucab.common.entities;
 
 public class UserAuxiliar extends Entity{
 
-    private int _id;
     private String _username;
     private int _point;
     private int _type;
@@ -27,7 +26,7 @@ public class UserAuxiliar extends Entity{
     }
 
     public UserAuxiliar(int _id, String _username, int _point, int _type, String _email, String _phone, String _sex) {
-        this._id = _id;
+        super.set_id(_id);
         this._username = _username;
         this._point = _point;
         this._type = _type;
@@ -37,7 +36,7 @@ public class UserAuxiliar extends Entity{
     }
 
     public UserAuxiliar(int id, String nombre, int puntaje, int type){
-        _id = id;
+        super.set_id(id);
         _username = nombre;
         _point = puntaje;
         _type = type;
@@ -46,16 +45,6 @@ public class UserAuxiliar extends Entity{
     public String get_username()
     {
         return _username;
-    }
-
-    public int get_id()
-    {
-        return _id;
-    }
-
-    public void set_id(int id)
-    {
-        this._id = id;
     }
 
     public void set_username(String _username)

@@ -4,9 +4,11 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M11.IDaoFood;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
+import org.slf4j.LoggerFactory;
 
 import java.sql.SQLException;
 
@@ -15,15 +17,27 @@ import java.sql.SQLException;
  */
 public class deletePersonalizedFoodCommand extends Command {
 
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(deletePersonalizedFoodCommand.class);
+
     Entity _food ;
     public Entity Respuesta ;
     public deletePersonalizedFoodCommand(Entity food){_food = food;}
+
     @Override
     public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, SQLException, BdConnectException {
 
-        IDaoFood Daofood = DaoFactory.iniciarDaoFood();
-        Respuesta = Daofood.DeletPerFood(_food);
+        try{
 
+            IDaoFood Daofood = DaoFactory.iniciarDaoFood();
+            Respuesta = Daofood.DeletPerFood(_food);
+
+
+        } catch (Exception e){
+        MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                Thread.currentThread().getStackTrace()[1].getMethodName());
+        logger.debug("Debug: ", error.toString());
+        logger.error("Error: ", error.toString());
+    }
 
 
 

@@ -382,7 +382,6 @@ public class DaoFriendship extends Dao implements IDaoFriendship {
                     aux.set_phone(conFitUcab.get(i).get_phone());
                     aux.set_sex(conFitUcab.get(i).get_sex());
                     aux.set_point(conFitUcab.get(i).get_point());
-                    //aux.set_point(conFitUcab.get(i).get_());
 
                     noAmiyDeclined.add(aux);
                 }
@@ -438,4 +437,10 @@ public class DaoFriendship extends Dao implements IDaoFriendship {
     }
 
 
+
+
+    public void Create(Entity e) {
+
+    }
 }
+

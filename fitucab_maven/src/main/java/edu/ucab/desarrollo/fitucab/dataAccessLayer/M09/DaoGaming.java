@@ -23,6 +23,9 @@ public class DaoGaming extends Dao implements IDao{
 
     private Connection _conn;
 
+    /**
+     * Constructor vacio que inicializa la conexion a la base de datos.
+     */
     public DaoGaming() {
         try {
             _conn = Dao.getBdConnect();
@@ -49,7 +52,13 @@ public class DaoGaming extends Dao implements IDao{
         return null;
     }
 
-
+    /**
+     * Metodo encargado de retornar los retos logrados que implementa el comando.
+     * @param id Id del usuario que hizo los retos
+     * @param challenges Lista de todos los retos a retornar.
+     * @throws SQLException
+     * @throws Exception
+     */
     public void achieveChallenge(int id, List<Entity> challenges) {
         try {
             Statement st = _conn.createStatement();
@@ -69,6 +78,15 @@ public class DaoGaming extends Dao implements IDao{
         }
     }
 
+    /**
+     * Metodo encargado de retornar el numero de retos logrados y no logrados para llenar la grafica de la app de android.
+     * @param id Id del usuario que hizo los retos.
+     * @return Una entity con la cantidad de retos logrados.
+     * @throws SQLException
+     * @throws Exception
+     * @see Entity
+     * @see edu.ucab.desarrollo.fitucab.common.entities.Challenge
+     */
     public Entity fillChart(int id) {
         try {
             Statement st = _conn.createStatement();
@@ -90,6 +108,15 @@ public class DaoGaming extends Dao implements IDao{
         return null;
     }
 
+    /**
+     * Metodo encargado de retornar la suma de todos los record de los retos logrados para definir el nivel.
+     * @param id Id del usuario que realizo los retos.
+     * @return Una entity con la suma de retos logrados.
+     * @throws SQLException
+     * @throws Exception
+     * @see Entity
+     * @see edu.ucab.desarrollo.fitucab.common.entities.Challenge
+     */
     public Entity score(int id) {
         try {
             Statement st = _conn.createStatement();
@@ -111,6 +138,15 @@ public class DaoGaming extends Dao implements IDao{
         return null;
     }
 
+    /**
+     * Metodo encargado de retornar la suma de todos los record de los retos logrados para definir un mensaje.
+     * @param id Id del usuario que hizo los retos.
+     * @return Una entity con la suma de retos logrados.
+     * @throws SQLException
+     * @throws Exception
+     * @see Entity
+     * @see edu.ucab.desarrollo.fitucab.common.entities.Challenge
+     */
     public Entity levelUp(int id) {
         try {
             Statement st = _conn.createStatement();

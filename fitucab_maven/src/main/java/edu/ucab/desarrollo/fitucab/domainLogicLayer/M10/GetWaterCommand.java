@@ -23,7 +23,7 @@ public class GetWaterCommand extends Command {
 
     public void execute() {
 
-
+        logger.debug("Debug: Obteniendo agua->Comando");
 
         IDaoWater daoWater = DaoFactory.instanceDaoWater(_water);
 

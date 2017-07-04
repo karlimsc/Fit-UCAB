@@ -2,7 +2,9 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
+
     buildToolsVersion "25.0.0"
+
     defaultConfig {
         applicationId "com.fitucab.ds1617b.fitucab"
         minSdkVersion 16
@@ -24,6 +26,12 @@ android {
     sourceSets { main { assets.srcDirs = ['src/main/assets', 'src/main/assets/'] } }
     dexOptions {
         preDexLibraries = false
+    }
+}
+
+repositories {
+    maven {
+        url "https://repository.jboss.org/nexus/content/repositories/thirdparty-releases"
     }
 }
 
@@ -49,19 +57,20 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     compile 'de.hdodenhof:circleimageview:2.1.0'
-
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.mockito:mockito-core:1.10.19'
-
-
-    compile 'com.afollestad.material-dialogs:core:0.9.0.2'
-    compile 'com.afollestad.material-dialogs:commons:0.9.0.2'
-
     compile 'com.sun.mail:android-mail:1.5.5'
     compile 'com.sun.mail:android-activation:1.5.5'
-
-
     compile 'com.loopj.android:android-async-http:1.4.9'
 
     compile 'junit:junit:4.12'
+
+    compile 'com.afollestad.material-dialogs:core:0.9.0.2'
+    compile 'com.afollestad.material-dialogs:commons:0.9.0.2'
+    compile 'com.android.support.test.espresso:espresso-core:2.2.2'
+    compile 'com.android.support:support-annotations:+'
+    compile 'com.intellij:annotations:+@jar'
+    compile 'org.jetbrains:annotations:7.0.2'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
+
 }
+
