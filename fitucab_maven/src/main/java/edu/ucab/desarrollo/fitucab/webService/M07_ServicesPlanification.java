@@ -14,6 +14,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.DeletePlanificationComma
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.GetPlanificationByIdCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.UpdatePlanificationCommand;
 import edu.ucab.desarrollo.fitucab.validation.ValidationWs;
+import org.slf4j.LoggerFactory;
 
 import javax.ws.rs.*;
 import java.util.ArrayList;
@@ -28,9 +29,12 @@ public class M07_ServicesPlanification {
     private final int UNKNOWN_ERROR_STATUS = 500;
     private final String UNKNOWN_ERROR_MESSAGE = "Ha ocurrido un error durante la peticion";
     private ArrayList<Planification> jsonArray;
+    private static org.slf4j.Logger _logger = LoggerFactory.getLogger(M07_ServicesPlanification.class);
+
 
     /**
-     *
+     * Endpoint para insertar una planificacion
+     * METHOD: GET
      * @param startDay INDICA EL DIA QUE COMIENZA LA PLANIFICACION
      * @param endDay INDICA EL DIA DE FIN DE LA PLANIFICACION, SI LA PLANIFICACION
      *               ES DE UN UN SOLO DIA, ESTE VALOR DEBE SER IGUAL A startDay
@@ -50,10 +54,12 @@ public class M07_ServicesPlanification {
      *               LOS SABADO. ESTE PARAMETRO NO ES OBLIGATORIO
      * @param sunday PARAMETRO BOOLEANO QUE INDICA SI LA ACTIVIDAD SE REALIZARA
      *               LOS DOMINGO. ESTE PARAMETRO NO ES OBLIGATORIO
-     * @return REGRESA UN JSON CON UNA ESTRUCTURA A DEFINIR
+     * @return REGRESA UN JSON CON LA ESTRUCTURA DEL OBJETO RESPONSE
+     * @see Response
      */
 
-    @POST
+    @GET
+    @Path( "/insertPlanification" )
     @Produces("application/json")
     public String createPlanification(@QueryParam("startDay") String startDay,
                                       @QueryParam("endDay") String endDay,
@@ -121,14 +127,44 @@ public class M07_ServicesPlanification {
         }
 
         finally {
+            _logger.debug("Respuesta del servicio planification en el create", response);
             return gson.toJson(response);
         }
 
 
     }
 
+    /**
+     * Endpoint para actualizar una planificacion
+     * METHOD: GET
+     * @param planificationId ID DEL REGISTRO EN LA BASE DE DATOS
+     * @param userId ID DEL USUARIO AL QUE PERTENCE LA PLNIFICACION
+     * @param sportId ID DEL SPORT AL QUE ESTA ASOCIADA LA PLANIFICACION
+     * @param startDay INDICA EL DIA QUE COMIENZA LA PLANIFICACION
+     * @param endDay INDICA EL DIA DE FIN DE LA PLANIFICACION, SI LA PLANIFICACION
+     *               ES DE UN UN SOLO DIA, ESTE VALOR DEBE SER IGUAL A startDay
+     * @param startTime INDICA LA HORA DEL DIA EN QUE COMIENZA LA ACTIVIDAD
+     * @param duration INDICA LA DURACION DE LA ACTIVAD A REALIZAR
+     * @param monday PARAMETRO BOOLEANO QUE INDICA SI LA ACTIVIDAD SE REALIZARA
+     *               LOS LUNES. ESTE PARAMETRO NO ES OBLIGATORIO
+     * @param tuesday PARAMETRO BOOLEANO QUE INDICA SI LA ACTIVIDAD SE REALIZARA
+     *               LOS MARTES. ESTE PARAMETRO NO ES OBLIGATORIO
+     * @param wednesday PARAMETRO BOOLEANO QUE INDICA SI LA ACTIVIDAD SE REALIZARA
+     *               LOS MIERCOLES. ESTE PARAMETRO NO ES OBLIGATORIO
+     * @param thursday PARAMETRO BOOLEANO QUE INDICA SI LA ACTIVIDAD SE REALIZARA
+     *               LOS JUEVES. ESTE PARAMETRO NO ES OBLIGATORIO
+     * @param friday PARAMETRO BOOLEANO QUE INDICA SI LA ACTIVIDAD SE REALIZARA
+     *               LOS VIERNES. ESTE PARAMETRO NO ES OBLIGATORIO
+     * @param saturday PARAMETRO BOOLEANO QUE INDICA SI LA ACTIVIDAD SE REALIZARA
+     *               LOS SABADO. ESTE PARAMETRO NO ES OBLIGATORIO
+     * @param sunday PARAMETRO BOOLEANO QUE INDICA SI LA ACTIVIDAD SE REALIZARA
+     *               LOS DOMINGO. ESTE PARAMETRO NO ES OBLIGATORIO
+     * @return REGRESA UN JSON CON LA ESTRUCTURA DEL OBJETO RESPONSE
+     * @see Response
+     */
 
-    @PUT
+    @GET
+    @Path( "/updatePlanification" )
     @Produces("application/json")
     public String updatePlanification(@DefaultValue("-1") @QueryParam("planificationId") int planificationId,
                                       @QueryParam("startDay") String startDay,
@@ -199,13 +235,24 @@ public class M07_ServicesPlanification {
         }
 
         finally {
+            _logger.debug("Respuesta del servicio planification en el update", response);
             return gson.toJson(response);
         }
 
 
     }
 
+
+    /**
+     * Endpoint para eliminar una planificacion
+     * METHOD: DELETE
+     * @param planificationId ID DEL REGISTRO EN LA BASE DE DATOS
+     * @param userId ID DEL USUARIO AL QUE PERTENCE LA PLANIFICACION
+     * @return REGRESA UN JSON CON LA ESTRUCTURA DEL OBJETO RESPONSE
+     * @see Response
+     */
     @DELETE
+    @Path( "/deletePlanification" )	
     @Produces("application/json")
     public String deletePlanification(@DefaultValue("-1") @QueryParam("planificationId") int planificationId,
                                       @DefaultValue("-1") @QueryParam("userId") int userId) {
@@ -241,12 +288,19 @@ public class M07_ServicesPlanification {
         }
 
         finally {
+            _logger.debug("Respuesta del servicio planification en el delete", response);
             return gson.toJson(response);
         }
     }
 
 
-
+    /**
+     * Endpoint para obtener las planificaciones pertenecientes a un usuario
+     * METHOD: GET
+     * @param userId ID DEL USUARIO AL QUE PERTENCE LA PLANIFICACION
+     * @return REGRESA UN JSON CON LA ESTRUCTURA DEL OBJETO RESPONSE
+     * @see Response
+     */
     @GET
     @Produces("application/json")
     public String getPlanification(@DefaultValue("-1") @QueryParam("userId") int userId) {
@@ -280,6 +334,7 @@ public class M07_ServicesPlanification {
         }
 
         finally {
+            _logger.debug("Respuesta del servicio planification en el obtener", response);
             return gson.toJson(response);
         }
 

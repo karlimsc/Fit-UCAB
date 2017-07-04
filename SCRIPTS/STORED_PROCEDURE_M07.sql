@@ -35,7 +35,7 @@ LANGUAGE plpgsql;
 CREATE OR REPLACE function m7_elimina_actividad(id_planificacion int, usuario INT)
 	RETURNS void AS $$
 	BEGIN
-		DELETE  FROM PLANIFICATION  
+		DELETE  FROM PLANIFICATION
 		WHERE FK_PERSONID = usuario AND PLANIFICATIONID = id_planificacion;
 	END; $$
 LANGUAGE plpgsql;
@@ -74,6 +74,41 @@ CREATE OR REPLACE function m7_get_actividad(usuario INT)
 			END LOOP;
 		END; $$
 LANGUAGE plpgsql;
---ejemplo 
+--ejemplo
 -- SELECT * FROM m7_get_actividad(1);
+
+--Verificar si existe una planificacion especifica de un usuario (actividades)
+CREATE OR REPLACE function m7_get_actividad_por_id(planificacion INT, usuario INT)
+	RETURNS TABLE ( id_planificacion INT ,fecha_inicio DATE, fecha_fin DATE, hora_inicio TIME, duracion TIME
+		, lunes BOOLEAN, martes BOOLEAN, miercoles BOOLEAN, jueves BOOLEAN, viernes BOOLEAN, sabado BOOLEAN
+		, domingo BOOLEAN, deporte INT)
+	 AS $$
+	 DECLARE
+	 	var_r record;
+		BEGIN
+			FOR var_r IN ( SELECT PLANIFICATIONID, PLANIFICATIONSTARTDATE, PLANIFICATIONENDDATE, PLANIFICATIONENDDATE, PLANIFICATIONSTARTTIME, PLANIFICATIONDURATIONTIME,
+							MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY, FK_SPORTID
+						   FROM PLANIFICATION
+						   WHERE FK_PERSONID = usuario AND PLANIFICATIONID = planificacion)
+			LOOP
+			id_planificacion := var_r.PLANIFICATIONID;
+			fecha_inicio := var_r.PLANIFICATIONSTARTDATE;
+			fecha_fin := var_r.PLANIFICATIONENDDATE;
+			hora_inicio := var_r.PLANIFICATIONSTARTTIME;
+			duracion := var_r.PLANIFICATIONDURATIONTIME;
+			lunes := var_r.MONDAY;
+			martes := var_r.TUESDAY;
+			miercoles := var_r.WEDNESDAY;
+			jueves := var_r.THURSDAY;
+			viernes := var_r.FRIDAY;
+			sabado := var_r.SATURDAY;
+			domingo := var_r.SUNDAY;
+			deporte := var_r.FK_SPORTID;
+			RETURN NEXT;
+			END LOOP;
+		END; $$
+LANGUAGE plpgsql;
+--ejemplo
+-- SELECT * FROM m7_get_actividad_por_id(1,1);
+
 

@@ -330,18 +330,46 @@ public class CommandsFactory {
 
     //Modulo 7
 
+    /**
+     * Metodo para instaciar el comando CreatePlanificacion
+     * @param create Objeto Entity
+     * @return Instancia del comando
+     * @see CreatePlanificationCommand
+     * @see Entity
+     */
     public static CreatePlanificationCommand instanciateCreatePlanificationCmd(Entity create) {
         return new CreatePlanificationCommand(create);
     }
 
+    /**
+     * Metodo para instaciar el comando DeletePlanificacion
+     * @param delete Objeto Entity
+     * @return Instancia del comando
+     * @see DeletePlanificationCommand
+     * @see Entity
+     */
     public static DeletePlanificationCommand instanciateDeletePlanificationCmd(Entity delete) {
         return new DeletePlanificationCommand(delete);
     }
 
+    /**
+     * Metodo para instaciar el comando GetPlanificacion
+     * @param get Objeto Entity
+     * @return Instancia del comando
+     * @see GetPlanificationByIdCommand
+     * @see Entity
+     */
     public static GetPlanificationByIdCommand instanciateGetPlanificationByIdCmd(Entity get) {
         return new GetPlanificationByIdCommand(get);
     }
 
+    /**
+     * Metodo para instaciar el comando UpdatePlanificacion
+     * @param update Objeto Entity
+     * @return Instancia del comando
+     * @see UpdatePlanificationCommand
+     * @see Entity
+     */
     public static UpdatePlanificationCommand instanciateUpdatePlanificationCmd(Entity update) {
         return new UpdatePlanificationCommand(update);
     }

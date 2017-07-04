@@ -1,8 +1,6 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
-/**
- * Created by jaorr on 30/06/17.
- */
+
 public class Sport extends Entity {
 
     private int _id;
