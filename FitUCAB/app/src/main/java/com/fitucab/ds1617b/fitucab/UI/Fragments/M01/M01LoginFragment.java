@@ -167,7 +167,7 @@ public class  M01LoginFragment extends Fragment {
      * @param passwordLogin
      */
      public void getRetrofit(String usernameLogin, String passwordLogin){
-/*
+
          if (validateComponents(usernameLogin, passwordLogin).equals("ok")) {
 
              ApiEndPointInterface apiService= ApiClient.getClient().create(ApiEndPointInterface.class);
@@ -190,9 +190,9 @@ public class  M01LoginFragment extends Fragment {
 
                          onCompleted(user);
                          int id=getIdUser(getContext());
-                         System.out.println(id);*/
+                         System.out.println(id);
                          _callBack.onSwapActivity("M02HomeActivity",null);
-/*
+
                          }
                      }
                      catch (Exception e){
@@ -212,8 +212,8 @@ public class  M01LoginFragment extends Fragment {
                      showToast(getContext(),errorResult);
                  }
              });
-         }*/
-         /*else{
+         }
+         else{
              if (validateComponents(usernameLogin, passwordLogin).equals(getString
                      (R.string.m01_errorUsernameSpecialChar))) {
 
@@ -242,7 +242,7 @@ public class  M01LoginFragment extends Fragment {
                          getString(R.string.m01_errorNullFields),
                          Toast.LENGTH_LONG).show();
              }
-         }*/
+         }
      }
 
     /**
