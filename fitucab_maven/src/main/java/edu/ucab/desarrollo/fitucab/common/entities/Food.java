@@ -73,6 +73,10 @@ public class Food extends Entity{
     public String getJson () {return  _json;}
 
     public String get_idname(){return _idname;}
+
+    public void set_idname(String idName){
+        this._idname = idName;
+    }
     public int get_id() {
         return _iD;
     }

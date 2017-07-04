@@ -470,7 +470,6 @@ public class EntityFactory
 
     }
 
-
     static public Entity getFoodWeigthCaloriId(String foodname, String foodWeight, String foodCalorie, int id)
 
     {

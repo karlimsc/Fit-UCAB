@@ -10,7 +10,7 @@ import java.util.Map;
  * Created by jaorr on 22/05/17.
  */
 public class Diet extends Entity{
-    private int _id;
+    private int _iD;
     private int _calorie;
     private LocalDate _dateTime;
     private String _date;
@@ -41,7 +41,7 @@ public class Diet extends Entity{
     }
 
     public Diet(int id, int calorie, LocalDate dateTime, String food) {
-        this._id = id;
+        this._iD = id;
         this._calorie = calorie;
         this._dateTime = dateTime;
         this._food = food;
@@ -83,16 +83,17 @@ public class Diet extends Entity{
         this._calorie = calorie;
     }
 
-    public Date get_date(){return _fecha;};
+    public String get_date(){return _date;}
+    public Date get_fecha(){return _fecha;}
 
     public void set_date(Date date){this._fecha = date;}
 
     public int get_id() {
-        return _id;
+        return _iD;
     }
 
     public void set_id(int id) {
-        this._id = id;
+        this._iD = id;
     }
 
     public int get_calorie() {

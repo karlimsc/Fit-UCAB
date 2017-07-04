@@ -21,6 +21,7 @@ public class getFoodAutoCommand extends Command {
 
     Entity _food;
     public Entity Respuesta;
+    boolean ans;
 
     public getFoodAutoCommand(Entity food) {
         _food = food;
@@ -41,6 +42,10 @@ public class getFoodAutoCommand extends Command {
         logger.error("Error: ", error.toString());
     }
 
+    }
+
+    public boolean answer(){
+        return this.ans;
     }
 
     @Override
