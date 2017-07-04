@@ -213,7 +213,7 @@ public class M07TrainingFragment extends Fragment {
 
             @Override
             public void onClick(View view){
-                Toast.makeText( getContext() , "Actividad Creada" , Toast.LENGTH_LONG).show();
+                Toast.makeText( getContext() , "Se creo el evento" , Toast.LENGTH_LONG).show();
             }
 
         });
