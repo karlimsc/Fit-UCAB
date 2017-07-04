@@ -21,6 +21,7 @@ public class getFoodallCommand extends Command {
 
     Entity _food;
     public Entity Respuesta ;
+    boolean ans;
 
     public getFoodallCommand(Entity food) {_food =food; }
 
@@ -38,6 +39,10 @@ public class getFoodallCommand extends Command {
         logger.debug("Debug: ", error.toString());
         logger.error("Error: ", error.toString());
     }
+    }
+
+    public boolean answer(){
+        return this.ans;
     }
 
     @Override

@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by charbel on 03/07/2017.
  */
-public class MomentTest {
+public class M11_Test_Moment {
 
 
 
