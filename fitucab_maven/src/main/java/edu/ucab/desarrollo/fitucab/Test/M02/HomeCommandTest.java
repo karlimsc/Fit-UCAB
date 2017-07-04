@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.Test.M02;
+package M02;
 
 import edu.ucab.desarrollo.fitucab.common.entities.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.*;

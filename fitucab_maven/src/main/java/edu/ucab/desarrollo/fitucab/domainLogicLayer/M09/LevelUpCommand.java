@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
  */
 public class LevelUpCommand extends Command {
 
-    final static org.slf4j.Logger logger = LoggerFactory.getLogger(FillChartCommand.class);
+    final static org.slf4j.Logger logger = LoggerFactory.getLogger(LevelUpCommand.class);
 
     private Dao _dao;
     private static Entity _level;
