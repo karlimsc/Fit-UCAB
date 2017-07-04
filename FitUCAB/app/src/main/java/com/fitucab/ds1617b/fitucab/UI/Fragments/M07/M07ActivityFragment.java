@@ -69,6 +69,7 @@ public class M07ActivityFragment extends Fragment {
     private int ano;
     private int hora;
     private int min;
+
     private Planification planification;
     private ManagePreferences manageId = new ManagePreferences();
     private int idUsuario;
@@ -120,9 +121,7 @@ public class M07ActivityFragment extends Fragment {
         if ( planification != null ){
             cargarEvento( planification );
         }
-        else{
-            addEvent( idUsuario );
-        }
+
 
         return _view;
     }
@@ -161,7 +160,7 @@ public class M07ActivityFragment extends Fragment {
                 datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener(){
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        _tv_m07_fechaInicio.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
+                        _tv_m07_fechaInicio.setText(year+"-"+(monthOfYear+1)+"-"+dayOfMonth);
                     }
                 }
                         ,dia,mes,ano);
@@ -183,7 +182,7 @@ public class M07ActivityFragment extends Fragment {
                 datePickerDialog = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener(){
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        _tv_m07_fechaFin.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
+                        _tv_m07_fechaFin.setText(year+"-"+(monthOfYear+1)+"-"+dayOfMonth);
                     }
                 }
                         ,dia,mes,ano);
@@ -203,7 +202,7 @@ public class M07ActivityFragment extends Fragment {
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                                _tv_m07_horaInicio.setText(hourOfDay + ":" + minute);
+                                _tv_m07_horaInicio.setText(hourOfDay + ":" + minute+":0");
                             }
                         }, hora, min, false);
                 timePickerDialog.show();
@@ -222,7 +221,7 @@ public class M07ActivityFragment extends Fragment {
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
                             public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-                                _tv_m07_horaFin.setText(hourOfDay + ":" + minute);
+                                _tv_m07_horaFin.setText(hourOfDay + ":" + minute+":"+0);
                             }
                         }, hora, min, false);
                 timePickerDialog.show();
@@ -247,6 +246,7 @@ public class M07ActivityFragment extends Fragment {
 
             @Override
             public void onClick(View view){
+                addEvent( idUsuario );
                 Toast.makeText( getContext() , "Si escucha" , Toast.LENGTH_LONG).show();
             }
 

@@ -30,10 +30,7 @@ public class M07PlanificationActivity extends AppCompatActivity implements OnFra
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt("idUser",0);
-        editor.commit();
+
 
         onSwap("M07HomeFragment", null);
 
