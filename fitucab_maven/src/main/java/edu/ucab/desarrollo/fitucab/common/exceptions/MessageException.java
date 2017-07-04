@@ -23,6 +23,6 @@ public class MessageException extends Exception {
         str.append(_clase);
         str.append(_metodo);
         str.append(super.toString());
-        return super.toString();
+        return str.toString();
     }
 }
