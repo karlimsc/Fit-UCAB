@@ -15,6 +15,9 @@ public class LocalDate {
         this.month = month;
         this.day = day;
     }
+    public LocalDate() {
+
+    }
 
     public int getYear() {
         return year;

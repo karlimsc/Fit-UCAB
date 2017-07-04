@@ -1,6 +1,5 @@
 package edu.ucab.desarrollo.fitucab.common;
-
-/**
+/**                                                                 
  * Comando Registro
  */
 public class Registry
