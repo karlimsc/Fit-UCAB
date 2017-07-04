@@ -57,14 +57,14 @@ public class DaoFood extends Dao implements IDaoFood {
         String query = "SELECT * FROM m11_get_alimentos_person(?)";
         jsonArray = new ArrayList<>();
         Food food = (Food) e;
-        username= String.valueOf(food.get_id());
+
 
         Connection conn = Dao.getBdConnect();
 
 
         CallableStatement stm = conn.prepareCall("{? = Call m11_get_alimentos_person() }");
        // PreparedStatement stm = conn.prepareStatement(query);
-        stm.setString(1, username);
+        stm.setString(1, food.get_idname());
         ResultSet rs = stm.executeQuery();
 
         while(rs.next()){
