@@ -8,6 +8,7 @@ import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M01.CreateUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M01.LoginUserException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.RecoveryPassException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
@@ -44,7 +45,6 @@ public class DaoUser extends Dao implements IDaoUser {
     private Connection _bdCon;
     //Encargado de encriptar la contraseña
     private Security _sc;
-    private LoginUserException _errorLog;
 
     //String de conexion funciones
     String _sqlInicioSesion = "{?=call M01_INICIARSESION(?,?)}";
@@ -311,7 +311,7 @@ public class DaoUser extends Dao implements IDaoUser {
      * Metodo del M02 para actualizar atributos de la Entidad User
      * @author Juan Macedo, Cesar Boza, Bryan Teixeira
      */
-    public boolean Update() throws SQLException {
+    public boolean update() throws SQLException {
         try {
             if (!_username.equals("")) {
                 UpdateName(_username);
@@ -408,9 +408,9 @@ public class DaoUser extends Dao implements IDaoUser {
      * @return por ahora retorna un String
      */
     @Override
-    public String testEmail(String email) throws SQLException {
-        User user = null;
-        Boolean validaEmail = false;
+    public String testEmail(String email) throws RecoveryPassException, SQLException {
+
+
         String usernameResult = "";
         String passwordResult = "";
 
@@ -419,6 +419,7 @@ public class DaoUser extends Dao implements IDaoUser {
             Properties props = new Properties();
             props.put("mail.smtp.auth", "true");
             props.put("mail.smtp.starttls.enable", "true");
+            props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
             props.put("mail.smtp.host", "smtp.gmail.com");
             props.put("mail.smtp.port", "587");
 
@@ -429,14 +430,26 @@ public class DaoUser extends Dao implements IDaoUser {
             cstmt.registerOutParameter(2, Types.VARCHAR);
             cstmt.setString(3, email);
 
-            cstmt.execute();
+            Boolean result=true;
 
-            validaEmail = true;
+            result = cstmt.execute();
+
+            Boolean validaEmail = false;
+
+            while (result) {
+                validaEmail = true;
+                _logger.debug("Debug: Hay resultados");
+                System.out.print("Debug: Hay resultados");
+            }
+
+            validaEmail=true;
             if (validaEmail == true) {
                 usernameResult = cstmt.getString(1);
                 passwordResult = cstmt.getString(2);
                 passwordResult = _sc.decryptPassword(passwordResult);
-                System.out.print("Debug: user " + usernameResult);
+
+                _logger.debug("Debug: user " + usernameResult);
+
                 //Se crea la sesion para autenticar
 
                 Session session = Session.getInstance(props,
@@ -463,17 +476,19 @@ public class DaoUser extends Dao implements IDaoUser {
                         " Ahora puedes seguir entrenando");
                 //Enviamos
                 Transport.send(message);
+
                 //Aqui esta la validacion
                 User userOk = new User();
                 userOk.set_status(Integer.toString(RESULT_EMAIL_OK));
 
                 //TODO:HAY QUE VER LO QUE RECIBE LA APP
-                return gson.toJson(userOk.get_status());
+                return gson.toJson(userOk);
             } else {
-                System.out.print("Debug: user " + usernameResult);
                 User userFail = new User();
-                userFail.set_status(Integer.toString(RESULT_USER_FAIL));
-                return gson.toJson(userFail);
+                _logger.debug("Debug: ", "MENSAJE");
+                _logger.debug("No encontró el Correo. Login Exception");
+                _logger.debug("String del USERFAIL " + gson.toJson(userFail));
+                throw new LoginUserException(DaoUser.class.getSimpleName(),"No se encuentra el email",userFail);
             }
 
         } catch (SQLException e) {
@@ -481,13 +496,18 @@ public class DaoUser extends Dao implements IDaoUser {
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.error("Error: ", error.toString());
             System.out.print("Error: " + error.toString());
-            return e.getSQLState();
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
+            //return e.getSQLState();
         } catch (Exception e) {
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.error("Error: ", error.toString());
             System.out.print("Error: " + error.toString());
-            return e.getMessage();
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
         } finally {
             _bdCon.close();
         }

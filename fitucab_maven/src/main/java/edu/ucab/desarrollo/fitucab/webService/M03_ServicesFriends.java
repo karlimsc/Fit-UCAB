@@ -79,12 +79,12 @@ public class M03_ServicesFriends {
     @Produces("application/json")
     public String GetAll(@QueryParam("id") String id, @QueryParam("action") String action)
     {
-        GetFriendsCommand cmd = CommandsFactory.instatiateGetFriendsCmd(id, action);
 
         try
         {
+            GetFriendsCommand cmd = CommandsFactory.instatiateGetFriendsCmd(id, action);
             cmd.execute();
-            return _gson.toJson(cmd.returned);
+            return cmd.returned;
         }
         catch ( Exception e )
         {

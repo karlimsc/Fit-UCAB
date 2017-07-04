@@ -58,4 +58,8 @@ public class HomeCommand extends Command {
     public Entity Return(){
             return _home;
     }
+
+    public int getId() {
+        return id;
+    }
 }
