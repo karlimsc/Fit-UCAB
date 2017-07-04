@@ -322,6 +322,7 @@ public class DaoDiet extends Dao implements IDaoDiet {
         //PreparedStatement st = conn.prepareStatement(query);
         Diet diet = (Diet) e;
         Type type = new TypeToken<Diet[]>() {
+
         }.getType();
 
         st.setInt(1, diet.get_calorie());
