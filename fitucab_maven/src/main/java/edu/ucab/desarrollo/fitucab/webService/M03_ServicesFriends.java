@@ -104,7 +104,7 @@ public class M03_ServicesFriends {
 
         try{
             Dao dao = DaoFactory.instanceDaoFriendship();
-            Command cmd = CommandsFactory.instanciateRequestFriendshipCmd(dao, idUpdater, idUpdated);
+            Command cmd = CommandsFactory.instanciateUpdateFriendshipCmd(dao, idUpdater, idUpdated, Action);
             cmd.execute();
 
         }catch(Exception e){

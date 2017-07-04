@@ -6,5 +6,5 @@ package com.fitucab.ds1617b.fitucab.Helper.Rest;
 
 public class StringCon {
 
-    static String url ="http://localhost:8888/WebServicesFitUCAB_war_exploded/M10_WaterGlass";
+    static String url ="http://192.168.1.157:8888/fitucab/";
 }

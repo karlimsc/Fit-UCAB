@@ -97,10 +97,17 @@ public class M11FoodFragment extends Fragment {
                     @Override
                     public void onResponse(String response) {
                         Gson gson = new Gson();
-                        Food aux = gson.fromJson(response,Food.class);
+
                         ArrayList<Food> foods = new ArrayList<>();
-                        foods = aux.jsonArray;
-                        LlenaTablaAlimentos(foods);
+                        try {
+                            Food aux = gson.fromJson(response, Food.class);
+                            foods = aux.jsonArray;
+                            LlenaTablaAlimentos(foods);
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
                     }
                 },
                 new Response.ErrorListener() {

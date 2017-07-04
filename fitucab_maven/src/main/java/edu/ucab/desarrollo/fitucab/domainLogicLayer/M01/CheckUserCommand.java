@@ -1,9 +1,11 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
+import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
@@ -46,16 +48,24 @@ public class CheckUserCommand extends Command{
      * @throws NoSuchMethodException
      * @throws Exception
      */
-    public void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception {
+
+
+    public void execute() throws InstantiationException, Exception {
         try{
             //instanciacion del dao
-
             DaoUser LoginUserDao = (DaoUser) DaoFactory.instanciateDaoUser(_user);
+
             _userReturn = LoginUserDao.login(_user);
 
         }
-        catch(Exception e){
-
+        catch (NullPointerException e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error);
+        } catch(Exception e){
+            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
+                    Thread.currentThread().getStackTrace()[1].getMethodName());
+            logger.error("Error: ", error);
         }
     }
 

@@ -215,9 +215,9 @@ public class M11FooddialogFragment extends DialogFragment {
         IpStringConnection jsonURL = new IpStringConnection();
         ArrayList<Food> foodJson = new ArrayList<>();
         foodJson.add ( new Food() );
-        foodJson.get(0).set_FoodCalorie( caloria );
-        foodJson.get(0).set_FoodName( nombreAlimento );
-        foodJson.get(0).set_FoodWeight( peso );
+        foodJson.get(0).set_foodCalorie( caloria );
+        foodJson.get(0).set_foodName( nombreAlimento );
+        foodJson.get(0).set_foodWeight( peso );
         int idUser = 0;
         idUser = ManagePreferences.getIdUser(inflater);
         if (_chbx_m11_cena.isChecked())
@@ -231,12 +231,17 @@ public class M11FooddialogFragment extends DialogFragment {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Gson gson = new Gson();
-                        Map<String, String> respuesta = new HashMap<>();
-                        Food l = gson.fromJson( response,Food.class);
-                        respuesta = l.getResponse();
-
-                        Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
+                        try {
+                            Gson gson = new Gson();
+                            Map<String, String> respuesta = new HashMap<>();
+                            Food l = gson.fromJson(response, Food.class);
+                            respuesta = l.getResponse();
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
+                       // Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },
                 new Response.ErrorListener() {

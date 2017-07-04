@@ -170,6 +170,17 @@ public class User extends Entity {
         _email= email;
     }
 
+    /**
+     * Constructor para el status
+     * @param _id
+     * @param _status
+     */
+
+    public User(int _id, String _status) {
+        super(_id);
+        this._status = _status;
+    }
+
 
     public int getId()
     {
@@ -251,4 +262,5 @@ public class User extends Entity {
     public void set_status(String _status) {
         this._status = _status;
     }
+
 }
