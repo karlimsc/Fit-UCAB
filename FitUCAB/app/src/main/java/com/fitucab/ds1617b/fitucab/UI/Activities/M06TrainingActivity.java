@@ -19,12 +19,7 @@ import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06AddTrainingFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06DetailsTrainingFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06HomeTrainingFragment;
-<<<<<<< HEAD
-import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06UpdateTraining;
-=======
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M06.M06UpdateTrainingFragment;
->>>>>>> 21507c5dd54ba1e2e88803c81c5882e998ba596a
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -85,15 +80,6 @@ public class M06TrainingActivity extends AppCompatActivity implements OnFragment
                     fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
                     fragmentTransaction.addToBackStack("M06HomeTrainingFragment");
                     break;
-
-                case "M06UpdateTraining":
-                    fragmentToSwap = new M06UpdateTraining();
-                    fragmentToSwap.setArguments(bundle);
-                    fragmentTransaction.replace(R.id.flContent, fragmentToSwap);
-                    fragmentTransaction.addToBackStack("M06HomeTrainingFragment");
-                    break;
-
-
                 case "M06UpdateTrainingFragment":
                     fragmentToSwap = new M06UpdateTrainingFragment();
                     fragmentToSwap.setArguments(bundle);
