@@ -231,12 +231,17 @@ public class M11FooddialogFragment extends DialogFragment {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Gson gson = new Gson();
-                        Map<String, String> respuesta = new HashMap<>();
-                        Food l = gson.fromJson( response,Food.class);
-                        respuesta = l.getResponse();
-
-                        Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
+                        try {
+                            Gson gson = new Gson();
+                            Map<String, String> respuesta = new HashMap<>();
+                            Food l = gson.fromJson(response, Food.class);
+                            respuesta = l.getResponse();
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
+                       // Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },
                 new Response.ErrorListener() {
