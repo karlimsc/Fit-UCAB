@@ -246,8 +246,11 @@ public class M07ActivityFragment extends Fragment {
 
             @Override
             public void onClick(View view){
+
                 addEvent( idUsuario );
-                Toast.makeText( getContext() , "Si escucha" , Toast.LENGTH_LONG).show();
+
+                Toast.makeText( getContext() , "Se creo el evento" , Toast.LENGTH_LONG).show();
+
             }
 
         });
