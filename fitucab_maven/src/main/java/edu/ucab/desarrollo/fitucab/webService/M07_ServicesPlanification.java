@@ -34,7 +34,7 @@ public class M07_ServicesPlanification {
 
     /**
      * Endpoint para insertar una planificacion
-     * METHOD: POST
+     * METHOD: GET
      * @param startDay INDICA EL DIA QUE COMIENZA LA PLANIFICACION
      * @param endDay INDICA EL DIA DE FIN DE LA PLANIFICACION, SI LA PLANIFICACION
      *               ES DE UN UN SOLO DIA, ESTE VALOR DEBE SER IGUAL A startDay
@@ -58,7 +58,8 @@ public class M07_ServicesPlanification {
      * @see Response
      */
 
-    @POST
+    @GET
+    @Path( "/insertPlanification" )
     @Produces("application/json")
     public String createPlanification(@QueryParam("startDay") String startDay,
                                       @QueryParam("endDay") String endDay,
@@ -135,7 +136,7 @@ public class M07_ServicesPlanification {
 
     /**
      * Endpoint para actualizar una planificacion
-     * METHOD: PUT
+     * METHOD: GET
      * @param planificationId ID DEL REGISTRO EN LA BASE DE DATOS
      * @param userId ID DEL USUARIO AL QUE PERTENCE LA PLNIFICACION
      * @param sportId ID DEL SPORT AL QUE ESTA ASOCIADA LA PLANIFICACION
@@ -162,7 +163,8 @@ public class M07_ServicesPlanification {
      * @see Response
      */
 
-    @PUT
+    @GET
+    @Path( "/updatePlanification" )
     @Produces("application/json")
     public String updatePlanification(@DefaultValue("-1") @QueryParam("planificationId") int planificationId,
                                       @QueryParam("startDay") String startDay,
@@ -250,6 +252,7 @@ public class M07_ServicesPlanification {
      * @see Response
      */
     @DELETE
+    @Path( "/deletePlanification" )	
     @Produces("application/json")
     public String deletePlanification(@DefaultValue("-1") @QueryParam("planificationId") int planificationId,
                                       @DefaultValue("-1") @QueryParam("userId") int userId) {

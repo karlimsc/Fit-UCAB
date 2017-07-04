@@ -25,10 +25,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Planification;
+import com.fitucab.ds1617b.fitucab.Model.ServerResponse;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.text.StringCharacterIterator;
 import java.util.ArrayList;
@@ -60,6 +63,8 @@ public class M07TrainingFragment extends Fragment {
     private int hora;
     private int min;
     private Planification planification;
+    private ManagePreferences manageId = new ManagePreferences();
+    private int idUsuario;
 
     public M07TrainingFragment() {
         // Required empty public constructor
@@ -78,7 +83,7 @@ public class M07TrainingFragment extends Fragment {
         // Inflate the layout for this fragment
 
         _view = inflater.inflate(R.layout.fragment_m07_training, container, false);
-
+        idUsuario = manageId.getIdUser(getContext());
         _btn_m07_fechaInicio = (ImageButton)_view.findViewById(R.id.btn_m07_fechaInicio);
         _tv_m07_fechaInicio = (EditText)_view.findViewById(R.id.tv_m07_fechaInicio);
         _btn_m07_fechaFin = (ImageButton)_view.findViewById(R.id.btn_m07_fechaFin);
@@ -88,13 +93,19 @@ public class M07TrainingFragment extends Fragment {
         _btn_m07_horaFin = (ImageButton)_view.findViewById(R.id.btn_m07_horaFin);
         _tv_m07_horaFin = (EditText)_view.findViewById(R.id.tv_m07_horaFin);
         _btn_m07_declinar = (Button)_view.findViewById(R.id.btn_m07_Decline);
-        _btn_m07_declinar = (Button)_view.findViewById(R.id.btnAdd);
+        _btn_m07_aceptar = (Button)_view.findViewById(R.id.btnAdd);
         agregarFechaInicio();
         agregarFechaFin();
         agregarHoraInicio();
         agregarHoraFin();
         buttonDeclina();
         buttonAceptar();
+        if ( planification != null ){
+            cargarEvento( planification );
+        }
+        else{
+            addEvent(idUsuario);
+        }
 
         return _view;
     }
@@ -217,13 +228,13 @@ public class M07TrainingFragment extends Fragment {
 
     }
 
-    public void addEvent(String usuario)
+    public void addEvent(int usuario)
     {
-        /**
+
         RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
         IpStringConnection jsonURL = new IpStringConnection();
         jsonURL.set_ip( jsonURL.getIp() + "M07_ServicesPlanification/setEvent?userId=" + usuario );
-        StringRequest stringRequest = new StringRequest(Request.Method.SET, jsonURL.getIp(),
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -239,7 +250,7 @@ public class M07TrainingFragment extends Fragment {
                         Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
                     }
                 });
-        requestQueue.add(stringRequest); **/
+        requestQueue.add(stringRequest);
     }
 
 }

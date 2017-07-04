@@ -21,6 +21,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -31,10 +32,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Planification;
+import com.fitucab.ds1617b.fitucab.Model.ServerResponse;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,7 +70,8 @@ public class M07ActivityFragment extends Fragment {
     private int hora;
     private int min;
     private Planification planification;
-
+    private ManagePreferences manageId = new ManagePreferences();
+    private int idUsuario;
 
     public M07ActivityFragment() {
         // Required empty public constructor
@@ -103,7 +108,7 @@ public class M07ActivityFragment extends Fragment {
         _cb_m07_checkdomingo = (CheckBox)_view.findViewById(R.id.cb_m07_checkdomingo);
         _btn_m07_declinar = (Button)_view.findViewById(R.id.btnDecline);
         _btn_m07_aceptar = (Button)_view.findViewById(R.id.btnAdd);
-
+        idUsuario = manageId.getIdUser(getContext());
         //_btn_m07_horaInicio.setOnClickListener((View.OnClickListener) _view);
         //_btn_m07_horaFin.setOnClickListener((View.OnClickListener) _view);
         agregarFechaInicio();
@@ -112,7 +117,12 @@ public class M07ActivityFragment extends Fragment {
         agregarHoraFin();
         buttonDeclinar();
         buttonAceptar();
-
+        if ( planification != null ){
+            cargarEvento( planification );
+        }
+        else{
+            addEvent( idUsuario );
+        }
 
         return _view;
     }
@@ -284,12 +294,17 @@ public class M07ActivityFragment extends Fragment {
 
     }
 
-    public void addEvent(String usuario)
-    {
-        /**RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
+    public void addEvent(int usuario)
+     {
+        RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
         IpStringConnection jsonURL = new IpStringConnection();
-        jsonURL.set_ip( jsonURL.getIp() + "M07_ServicesPlanification/setEvent?userId=" + usuario );
-        StringRequest stringRequest = new StringRequest(Request.Method.Set, jsonURL.getIp(),
+        jsonURL.set_ip( jsonURL.getIp() + "M07_ServicesPlanification/insertPlanification?startDay="+ _tv_m07_fechaInicio.toString()+
+                "&endDay="+_tv_m07_fechaFin.toString()+"&startTim="+ _tv_m07_horaInicio+"&duration="+
+                _tv_m07_horaFin+"userId=" + usuario+ "&sportId="+1+ "&monday="+ _cb_m07_checklunes.isChecked()+
+                "&tuesday="+  _cb_m07_checkmartes.isChecked()+"&wednesday="+ _cb_m07_checkmiercoles.isChecked()+
+        "&thursday="+_cb_m07_checkjueves.isChecked()+"&friday="+_cb_m07_checkviernes.isChecked()+
+                "&saturday="+_cb_m07_checksabado.isChecked()+"&sunday="+_cb_m07_checkdomingo.isChecked());
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -305,6 +320,6 @@ public class M07ActivityFragment extends Fragment {
                         Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
                     }
                 });
-        requestQueue.add(stringRequest);**/
+        requestQueue.add(stringRequest);
     }
 }
