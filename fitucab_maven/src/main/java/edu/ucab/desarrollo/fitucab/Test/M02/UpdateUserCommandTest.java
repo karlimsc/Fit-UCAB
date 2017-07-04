@@ -9,7 +9,9 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 
 /**
- * Created by root on 03/07/17.
+ * Clase de prueba para los comandos de la entidad User
+ * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+ * @version 2.0
  */
 public class UpdateUserCommandTest {
 
@@ -19,14 +21,14 @@ public class UpdateUserCommandTest {
     @Test
     public void UpdateUserCommandConstructorTest()
     {
-        Command u = CommandsFactory.instanciateUpdateUserCmd (1, "juan", "1234", "corre@hotmail.com");
+        Command _u = CommandsFactory.instanciateUpdateUserCmd (1, "juan", "1234", "corre@hotmail.com");
 
-        assertNotNull(u);
+        assertNotNull(_u);
 
-        assertEquals(((UpdateUserCommand)u).get_id(), 1);
-        assertEquals(((UpdateUserCommand)u).get_username(), "juan");
-        assertEquals(((UpdateUserCommand)u).get_phone(), "1234");
-        assertEquals(((UpdateUserCommand)u).get_email(), "corre@hotmail.com");
+        assertEquals(((UpdateUserCommand)_u).get_id(), 1);
+        assertEquals(((UpdateUserCommand)_u).get_username(), "juan");
+        assertEquals(((UpdateUserCommand)_u).get_phone(), "1234");
+        assertEquals(((UpdateUserCommand)_u).get_email(), "corre@hotmail.com");
 
     }
 
@@ -36,14 +38,14 @@ public class UpdateUserCommandTest {
      */
     @Test
     public void UpdateUserCommandExecuteTest() throws Exception {
-      Boolean test = true;
+      Boolean _test = true;
 
-        Command u = CommandsFactory.instanciateUpdateUserCmd (1, "juan", "1234", "corre@hotmail.com");
+        Command _u = CommandsFactory.instanciateUpdateUserCmd (1, "juan", "1234", "corre@hotmail.com");
 
-        ((UpdateUserCommand)u).execute();
+        ((UpdateUserCommand)_u).execute();
 
-        assertNotNull(u.ReturnUpdate());
-        assertEquals(u.ReturnUpdate(),test);
+        assertNotNull(_u.ReturnUpdate());
+        assertEquals(_u.ReturnUpdate(),_test);
     }
 
 
