@@ -351,7 +351,7 @@ public class M11DietFragment extends Fragment {
                                 long lnMilisegundos = utilDate.getTime();
                                 java.sql.Date _fecha_actual = new java.sql.Date(lnMilisegundos);
                                 _momentoInsert = item.toString();
-                                //PeticionDietaMomento("PEDRO",String.valueOf(_fecha_actual),item.toString());
+                               // PeticionDietaMomento("josea2r",String.valueOf(_fecha_actual),item.toString());
 
 
                             }
@@ -372,7 +372,7 @@ public class M11DietFragment extends Fragment {
     }
 
     public void ingresarDieta(){
-        String alimento = "Tomate";
+        String alimento = "Tomates";
         int idUser = 1;
         idUser = ManagePreferences.getIdUser(getContext());
         insertarAlimentoPersonalizado(alimento, "120", "128",idUser, getContext() );
@@ -387,12 +387,18 @@ public class M11DietFragment extends Fragment {
                     public void onResponse(String response) {
 
                         Gson gson = new Gson();
+try {
+    Map<String, String> respuesta = new HashMap<>();
+    Diet aux1 = gson.fromJson(response, Diet.class);
+    respuesta = aux1.getResponse();
+    Toast.makeText( getContext() , respuesta.get("data") , Toast.LENGTH_LONG);
+}
+catch (Exception e)
+{
+    e.printStackTrace();
+}
 
-                        Map<String, String> respuesta = new HashMap<>();
-                        Diet aux1 = gson.fromJson( response, Diet.class);
-                        respuesta = aux1.getResponse();
 
-                        Toast.makeText( getContext() , respuesta.get("data") , Toast.LENGTH_LONG);
                     }
                 },
                 new ErrorListener() {
@@ -411,13 +417,13 @@ public class M11DietFragment extends Fragment {
         IpStringConnection jsonURL = new IpStringConnection();
         ArrayList<Food> foodJson = new ArrayList<>();
         foodJson.add(new Food());
-        foodJson.get(0).set_FoodCalorie( caloria );
-        foodJson.get(0).set_FoodName( nombreAlimento );
-        foodJson.get(0).set_FoodWeight( peso );
-        foodJson.get(0).set_Id(1); //idUser
+        foodJson.get(0).set_foodCalorie( caloria );
+        foodJson.get(0).set_foodName( nombreAlimento );
+        foodJson.get(0).set_foodWeight( peso );
+        foodJson.get(0).set_id(1); //idUser
         foodJson.get(0).set_foodPersonalized(true);
-        jsonURL.set_ip( jsonURL.getIp() + "M11_Food/insertOnePersonalizedFood?nombre="+
-                foodJson.get(0).get_foodName() + "&caloria=" + foodJson.get(0).get_foodCalorie()
+        jsonURL.set_ip( jsonURL.getIp() + "M11_Food/insertOnePersonalizedFood?foodName="+
+                foodJson.get(0).get_foodName() + "&foodCalorie=" + foodJson.get(0).get_foodCalorie()
                 + "&foodWeight=" + foodJson.get(0).get_foodCalorie() + "&foodDinner=" + foodJson.get(0).get_foodPersonalized() +
                 "&idUser=" + usuarioID );
         StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
@@ -427,8 +433,15 @@ public class M11DietFragment extends Fragment {
                         Gson gson = new Gson();
                         Map<String, String> respuesta = new HashMap<>();
                         Food aux = gson.fromJson( response,Food.class);
-                        respuesta = aux.getResponse();
-                        Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
+                        try {
+                            respuesta = aux.getResponse();
+                            Toast.makeText( inflater , respuesta.get("data") , Toast.LENGTH_LONG);
+                        }
+                        catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
+
                     }
                 },
                 new ErrorListener() {

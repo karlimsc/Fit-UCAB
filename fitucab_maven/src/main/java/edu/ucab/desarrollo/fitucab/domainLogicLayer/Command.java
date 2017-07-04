@@ -21,8 +21,16 @@ public abstract class Command
      * @throws ListAllException excepcion para listar todos
      * @throws ListByIdException excepcion para listar por id
      */
+
     public abstract void execute() throws ListAllException, ListByIdException, NoSuchMethodException, Exception;
 
+    public List<Entity> getFriendships(){
+        return null;
+    }
+
+    public Entity getFriendship(){
+        return null;
+    }
 
     public abstract Entity Return() throws SQLException, CreateHomeException, BdConnectException;
 

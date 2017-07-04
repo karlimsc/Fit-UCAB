@@ -272,7 +272,7 @@ public class M11_ServicesFood {
 
 
     @GET
-    @Path("/insertOnePersonalizedFood")
+    @Path("/insertOnePersonalizedFood")//listo
     @Produces("application/json")
     public String insertUnAlimento( @QueryParam("foodName") String foodName ,
                                   @QueryParam("foodCalorie") String foodCalorie ,
@@ -350,7 +350,7 @@ public class M11_ServicesFood {
      * @return
      */
     @GET
-    @Path("/getPersonalizedList")//por aqui
+    @Path("/getPersonalizedList")//listo
     @Produces("application/json")
     public String getPersonalizedList(@QueryParam("username") String username) {
 

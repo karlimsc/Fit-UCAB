@@ -1,3 +1,5 @@
+package edu.ucab.desarrollo.fitucab.Test.M01_ServicesUserTest;
+
 import io.restassured.http.ContentType;
 import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.apache.http.HttpStatus;

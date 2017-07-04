@@ -114,6 +114,14 @@ public class M01LoginActivity extends AppCompatActivity implements OnFragmentSwa
                 this.finish();
                 break;
 
+            case "M06TrainingActivity":
+                Intent newActivity2 = new Intent(this, M06TrainingActivity.class);
+                startActivity(newActivity2);
+                //Esto es para que una vez cambie de actividad muera el login
+                this.finish();
+                break;
+
+
         }
 
     }

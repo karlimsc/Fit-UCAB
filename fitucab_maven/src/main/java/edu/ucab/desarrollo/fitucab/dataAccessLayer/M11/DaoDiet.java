@@ -124,7 +124,7 @@ public class DaoDiet extends Dao implements IDaoDiet {
 
         st.setString(1, diet.get_moment());
         st.setDate(2, date1);
-        st.setString(3, String.valueOf(diet.get_id()));
+        st.setString(3, diet.get_username());
         ResultSet rs = st.executeQuery();
 
         while (rs.next()) {
@@ -322,6 +322,7 @@ public class DaoDiet extends Dao implements IDaoDiet {
         //PreparedStatement st = conn.prepareStatement(query);
         Diet diet = (Diet) e;
         Type type = new TypeToken<Diet[]>() {
+
         }.getType();
 
         st.setInt(1, diet.get_calorie());

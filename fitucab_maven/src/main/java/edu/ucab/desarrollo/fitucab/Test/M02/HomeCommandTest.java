@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.Test.M02;
+package M02;
 
 import edu.ucab.desarrollo.fitucab.common.entities.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.*;
@@ -10,7 +10,9 @@ import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertTrue;
 
 /**
- * Created by root on 03/07/17.
+ * Clase de prueba para los comandos de la entidad Home
+ * @author Juan Macedo, Cesar Boza, Bryan Teixeira
+ * @version 2.0
  */
 public class HomeCommandTest  {
     /**
@@ -18,11 +20,11 @@ public class HomeCommandTest  {
      */
     @Test
     public void HomeCommandTestExito(){
-        Command h = CommandsFactory.instanciateHomeCmd(1);
+        Command _h = CommandsFactory.instanciateHomeCmd(1);
 
-        assertNotNull(h);
+        assertNotNull(_h);
 
-        assertEquals(((HomeCommand)h).getId(),1);
+        assertEquals(((HomeCommand)_h).getId(),1);
     }
 
     /**
@@ -31,18 +33,18 @@ public class HomeCommandTest  {
     @Test
     public void HomeCommandTestEntity()
     {
-        Command h = CommandsFactory.instanciateHomeCmd(1);
+        Command _h = CommandsFactory.instanciateHomeCmd(1);
 
-        ((HomeCommand)h).execute();
+        ((HomeCommand)_h).execute();
 
-        Entity h1 = EntityFactory.createHome(800,0);
+        Entity _h1 = EntityFactory.createHome(800,0);
 
-        assertNotNull(((HomeCommand)h).Return());
+        assertNotNull(((HomeCommand)_h).Return());
 
-        Entity h2=((HomeCommand)h).Return();
+        Entity h2=((HomeCommand)_h).Return();
 
-        assertTrue(((Home)h2).getTotalAgua() == ((Home)h1).getTotalAgua());
-        assertTrue(((Home)h2).getTotalCaloria() == ((Home)h1).getTotalCaloria());
+        assertTrue(((Home)h2).getTotalWater() == ((Home)_h1).getTotalWater());
+        assertTrue(((Home)h2).getTotalCalories() == ((Home)_h1).getTotalCalories());
 
     }
 

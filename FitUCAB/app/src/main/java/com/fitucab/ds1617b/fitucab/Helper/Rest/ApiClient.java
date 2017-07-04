@@ -1,5 +1,6 @@
 package com.fitucab.ds1617b.fitucab.Helper.Rest;
 
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -12,7 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    public static final String BASE_URL= "http://10.0.2.2:8888/fitucab_war_exploded/";
+    public static final String BASE_URL= "http://10.0.2.2:8080/fitucab/";
+
     private static Retrofit retrofit = null;
 
     /**

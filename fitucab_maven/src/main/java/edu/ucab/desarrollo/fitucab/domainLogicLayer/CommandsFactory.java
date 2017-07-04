@@ -4,15 +4,24 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CheckUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.CreateUserCommand;
+
+import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.CreateTrainingCommand;
+
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M01.RecoverPasswordCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.HomeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.UpdateUserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M02.UserCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
+
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.FillChartCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M03.*;
@@ -20,6 +29,7 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.CreatePlanificationComma
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.DeletePlanificationCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.GetPlanificationByIdCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M07.UpdatePlanificationCommand;
+
 
 /**
  * Fabrica de comandos
@@ -92,17 +102,31 @@ public class CommandsFactory {
 
     // Comandos M06
 
-    static public CreateTrainingCommand instanciateCreateTrainingCmd(Entity training, int userId){
-        return new CreateTrainingCommand(training, userId);
-
+    static public CreateTrainingCommand instanciateCreateTrainingCmd(Entity training){
+        return new CreateTrainingCommand(training);
     }
 
-    static public UpdateTrainingCommand instanciateUpdateTrainingCmd(Entity training){
-        return new UpdateTrainingCommand(training);
-
+    static public DeleteTrainingCommand instanciateDeleteTrainingCmd(Entity training){
+        return new DeleteTrainingCommand(training);
     }
+
+    static public ShareTrainingCommand instanciateShareTrainingCmd(Entity training) {
+        return new ShareTrainingCommand(training);
+    }
+
+    static public AddActivitiesToTrainingCommand instanciateAddActivitiesToTrainingCmd(Entity training) {
+        return new AddActivitiesToTrainingCommand(training);
+    }
+
+    static public RemoveActivitiesFromTrainingCommand instanciateRemoveActivitiesFromTrainingCmd(Entity training) {
+        return new RemoveActivitiesFromTrainingCommand(training);
+    }
+
+    static public ChangeTrainingNameCommand instanciateChangeTrainingNameCmd(Entity training) {
+        return new ChangeTrainingNameCommand(training);
+    }
+
     static public CheckTrainingCommand instanciateCheckTrainingCmd(int trainingId, int userId) {
-
         return new CheckTrainingCommand(trainingId, userId);
     }
 
