@@ -234,7 +234,7 @@ public class M02HomeActivity extends AppCompatActivity
             startActivity(myintent);
         }
         else if (id == R.id.nav_m02_training) {
-            Intent myintent = new Intent(M02HomeActivity.this, M01LoginActivity.class);
+            Intent myintent = new Intent(M02HomeActivity.this, M06TrainingActivity.class);
             startActivity(myintent);
 
         }
