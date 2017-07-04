@@ -2,15 +2,9 @@ package com.fitucab.ds1617b.fitucab.UI.Fragments.M07;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,18 +21,20 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.fitucab.ds1617b.fitucab.Helper.IpStringConnection;
+import com.fitucab.ds1617b.fitucab.Helper.LocalDate;
+import com.fitucab.ds1617b.fitucab.Helper.LocalTime;
 import com.fitucab.ds1617b.fitucab.Helper.ManagePreferences;
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
-import com.fitucab.ds1617b.fitucab.Model.Food;
 import com.fitucab.ds1617b.fitucab.Model.Planification;
+import com.fitucab.ds1617b.fitucab.Model.ServerResponse;
 import com.fitucab.ds1617b.fitucab.R;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -103,10 +99,12 @@ public class M07HomeFragment extends Fragment {
         _lt_planification.setAdapter( adapter );
         _lt_planification.setOnItemLongClickListener( new AdapterView.OnItemLongClickListener(){
 
+
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                        dialogoAccion( planification.get(position) );
-
+                Planification planificationToDialog = new Planification();
+                planificationToDialog = planification.get( position );
+                dialogoAccion( planificationToDialog );
                 return false;
             }
         } );
@@ -122,21 +120,34 @@ public class M07HomeFragment extends Fragment {
         builder.setPositiveButton( "Eliminar" , new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //Si preciona el boton se elimina la planificacion
-                        peticionEliminarPlanificacion( planificacion.get_planificationId());
+                        peticionEliminarPlanificacion( planificacion.get_id());
                     }
                     })
                 .setNegativeButton( "Editar" , new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //Hay que hacer un if para redirigir si es actividad o entrenamiento....
-                        _callBack.onSwap("M07ActivityFragment", null);
+                        if (planificacion.get_days()== null) {
+
+                            _callBack.onSwapData("M07trainingFragment", null,planificacion);
+                        }
+
+                        else if (planificacion.get_days() != null){
+                            _callBack.onSwapData("M07ActivityFragment", null, planificacion);
+                        }
                     }
                 })
         .setNeutralButton( "Ver" , new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                //abre un fragmento con la data de la planificacion
-                FragmentManager fm = getFragmentManager();
-                M07PlanificationFragment planificationFragment = new M07PlanificationFragment( planificacion );
-                planificationFragment.show( getActivity().getFragmentManager() , "titulo" );
+                if (planificacion.get_days()== null) {
+
+                    _callBack.onSwapData("M07trainingFragment", null,planificacion);
+                }
+
+                else if (planificacion.get_days() != null){
+                    _callBack.onSwapData("M07ActivityFragment", null, planificacion);
+                }
+
+
             }
         });
         AlertDialog alert = builder.create();
@@ -150,6 +161,30 @@ public class M07HomeFragment extends Fragment {
 
     public void peticionEliminarPlanificacion ( int idPlanificacion ){
         //Colocar codigo para la peticion
+        RequestQueue requestQueue = Volley.newRequestQueue(_view.getContext());
+        IpStringConnection jsonURL = new IpStringConnection();
+        jsonURL.set_ip( jsonURL.getIp() + "M07_ServicesPlanification/deletePlanification?planificationId="
+                + idPlanificacion +"&userId=" +idUsuario);
+        StringRequest stringRequest = new StringRequest(Request.Method.DELETE, jsonURL.getIp(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Gson gson = new Gson();
+                        ServerResponse respuesta = new ServerResponse();
+                        respuesta = gson.fromJson(response,new TypeToken<ServerResponse>(){}.getType());
+                        ArrayList<Planification> planifications = new ArrayList<>();
+
+                        Toast.makeText(_view.getContext(), "Planificacion eliminada correctamente", Toast.LENGTH_LONG);
+                    }
+
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(_view.getContext(), "Hola, no devolvio nada", Toast.LENGTH_LONG);
+                    }
+                });
+        requestQueue.add(stringRequest);
     }
 
     /**
@@ -161,7 +196,7 @@ public class M07HomeFragment extends Fragment {
         IpStringConnection jsonURL = new IpStringConnection();
         RequestQueue requestQueue = Volley.newRequestQueue( getContext() );
         //Revisar la URL cuando Jesus la haga....
-        jsonURL.set_ip( jsonURL.getIp() + "M07_ServicesPlanification/getPlanification?userID=" +
+        jsonURL.set_ip( jsonURL.getIp() + "M07_ServicesPlanification/getPlanification?userId=" +
         idUsuario );
         StringRequest stringRequest = new StringRequest(Request.Method.GET, jsonURL.getIp(),
                 new Response.Listener<String>() {
@@ -169,10 +204,14 @@ public class M07HomeFragment extends Fragment {
                     public void onResponse(String response) {
 
                         Gson gson = new Gson();
+                        ServerResponse respuesta = new ServerResponse();
+                        respuesta = gson.fromJson(response,
+                                new TypeToken<ServerResponse>(){}.getType());
                         ArrayList<Planification> planifications = new ArrayList<>();
-                        planifications = gson.fromJson(response,
-                                new TypeToken<ArrayList<Planification>>(){}.getType());
+                        //planifications = respuesta.getData();
+                        planifications = manejandoRespuesta( respuesta );
                         mostrarPlanificacion( planifications );
+
                         //Toast.makeText( getContext() , respuesta.get("data") , Toast.LENGTH_LONG).show();
                     }
                 },
@@ -185,6 +224,53 @@ public class M07HomeFragment extends Fragment {
         requestQueue.add( stringRequest );
 
 
+    }
+
+    public ArrayList<Planification> manejandoRespuesta(ServerResponse respuesta){
+        ArrayList<Planification> planifications = new ArrayList<>();
+        LocalTime lt;
+        LocalDate ld;
+        Planification planification;
+        ArrayList<Planification> aux = new ArrayList<>();
+        aux = respuesta.getData();
+        for ( int i = 0; i < respuesta.getData().size()-1; i++ ){
+            ld = new LocalDate();
+            lt = new LocalTime();
+            planification = new Planification();
+            lt.setHour( Integer.valueOf(aux.get(i).get_startTime().getHour()) );
+            lt.setMinute( Integer.valueOf(aux.get(i).get_startTime().getMinute() ));
+            lt.setNano( Integer.valueOf(aux.get(i).get_startTime().getNano()) );
+            lt.setSecond( Integer.valueOf(aux.get(i).get_startTime().getSecond() ));
+            planification.set_startTime( lt );
+            lt.setHour( Integer.valueOf(aux.get(i).get_duration().getHour()) );
+            lt.setMinute( Integer.valueOf(aux.get(i).get_duration().getMinute() ));
+            lt.setNano( Integer.valueOf(aux.get(i).get_duration().getNano()) );
+            lt.setSecond( Integer.valueOf(aux.get(i).get_duration().getSecond() ));
+            planification.set_duration( lt );
+            ld.setYear( Integer.valueOf(aux.get(i).get_startDate().getYear()) );
+            ld.setDay( Integer.valueOf(aux.get(i).get_startDate().getDay()) );
+            ld.setMonth( Integer.valueOf(aux.get(i).get_startDate().getMonth() ));
+            planification.set_startDate( ld );
+            ld.setYear( Integer.valueOf(aux.get(i).get_endDate().getYear()) );
+            ld.setDay( Integer.valueOf(aux.get(i).get_endDate().getDay()) );
+            ld.setMonth( Integer.valueOf(aux.get(i).get_endDate().getMonth() ));
+            planification.set_endDate( ld );
+
+            planification.set_id( Integer.valueOf(aux.get(i).get_id()) );
+            planification.set_sport( Integer.valueOf(aux.get(i).get_sport()) );
+            planification.set_days(agregarDias(aux.get(i)));
+            planifications.add( planification );
+
+        }
+        return planifications;
+    }
+
+    public boolean[] agregarDias(Planification planification ){
+        boolean[] days = new boolean[7];
+        for ( int i = 0; i <= planification.get_days().length; i++ ){
+            days[i] = planification.get_days()[i];
+        }
+        return days;
     }
 
     private void  crearEvento(){

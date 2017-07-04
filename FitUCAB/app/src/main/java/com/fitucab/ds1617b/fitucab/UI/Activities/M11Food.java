@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
+import com.fitucab.ds1617b.fitucab.Model.Planification;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M01.M01SignUpFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M11.M11DietFragment;
@@ -96,6 +97,11 @@ public class M11Food extends AppCompatActivity implements OnFragmentSwap {
         catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onSwapData(String fragmentName, Bundle bundle, Planification planification) {
+
     }
 
 

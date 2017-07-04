@@ -5,10 +5,19 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.ParametersNullException;
 import java.util.Map;
 
 /**
- * Created by jaorr on 30/06/17.
+ * Clase que valida que los parametros recibidos que sean obligatorios no sean nulos
  */
 public class ValidationWs {
         public static final int INT_INVALID = -1;
+
+    /**
+     * Metodo que realiza la validacion de los parametros.
+     * Se considera null un parametro si: el parametro es String y es null,
+     * o si es int y su valor es -1.
+     * @param parametros
+     * @throws ParametersNullException
+     * @see ParametersNullException
+     */
         public static void validarParametrosNotNull(Map<String, Object> parametros) throws ParametersNullException {
             Object a = -1;
             for (Map.Entry<String, Object> entry : parametros.entrySet()){

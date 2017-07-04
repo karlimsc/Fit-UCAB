@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.fitucab.ds1617b.fitucab.Helper.OnFragmentSwap;
 import com.fitucab.ds1617b.fitucab.Model.Activit;
+import com.fitucab.ds1617b.fitucab.Model.Planification;
 import com.fitucab.ds1617b.fitucab.R;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05ModifyFragment;
 import com.fitucab.ds1617b.fitucab.UI.Fragments.M05.M05PrincipalActivityFragment;
@@ -73,6 +74,11 @@ public class M05PrincipalActivity extends AppCompatActivity implements OnFragmen
         }catch(Exception e){
             e.printStackTrace();
         }
+
+    }
+
+    @Override
+    public void onSwapData(String fragmentName, Bundle bundle, Planification planification) {
 
     }
 
