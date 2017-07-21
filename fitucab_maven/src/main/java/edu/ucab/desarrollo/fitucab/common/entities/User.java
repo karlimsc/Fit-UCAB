@@ -1,6 +1,5 @@
 package edu.ucab.desarrollo.fitucab.common.entities;
 
-
 import com.google.gson.annotations.SerializedName;
 
 import javax.xml.bind.annotation.XmlRootElement;
@@ -65,6 +64,7 @@ public class User extends Entity {
 
     public User(int id,String _username, String _password, String _email, String _sex, String _phone, Date _birthdate,
                 int _weight, int _height) {
+
         super.set_id(id);
         this._username = _username;
         this._password = _password;
@@ -88,8 +88,6 @@ public class User extends Entity {
         _username = user;
         _password = password;
 
-
-
     };
 
     /**
@@ -105,6 +103,7 @@ public class User extends Entity {
      * @param _height
      */
     public User(int id, String _username, String _email, String _sex, String _phone, Date _birthdate, int _weight, int _height) {
+
         super(id);
         this._username = _username;
         this._email = _email;
@@ -135,8 +134,6 @@ public class User extends Entity {
         _birthdate= birthdate;
     };
 
-
-
     /**
      * Constructor para solo el username y el password
      * @param user
@@ -144,6 +141,7 @@ public class User extends Entity {
      */
     public User(String user,String password)
     {
+
         _username = user;
         _password = password;
     }
@@ -156,6 +154,7 @@ public class User extends Entity {
      */
     public User(String user,String password, String _email)
     {
+
         _username = user;
         _password = password;
         _email = _email;
@@ -175,8 +174,8 @@ public class User extends Entity {
      * @param _id
      * @param _status
      */
-
     public User(int _id, String _status) {
+
         super(_id);
         this._status = _status;
     }
