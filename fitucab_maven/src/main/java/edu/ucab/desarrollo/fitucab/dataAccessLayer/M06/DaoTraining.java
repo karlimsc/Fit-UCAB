@@ -30,18 +30,15 @@ public class DaoTraining extends Dao implements IDaoTraining
     public Entity create(Entity e) throws AddException {
 
         Training entity = null;
-        User userId = null;
-        LinkedList<Entity> resultList = null;
         CallableStatement preStatement = null;
         ResultSet resultSet = null;
         EntityMapTraining etMap;
 
         try {
+            entity = (Training) e;
 
             preStatement= getBdConnect().prepareCall("{ call M06_CREATETRAINING(?) }" );
             // Aqui meto los parametros
-            entity = (Training) e;
-            //preStatement.setInt( 1, entidad.get_id() );
             preStatement.setString(1, ((Training) e).getTrainingName());
             preStatement.setInt(1,(((Training) e).get_userId()));
             //Aqui ejecuto el SP

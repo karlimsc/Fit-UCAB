@@ -64,32 +64,43 @@ public class M06_ServicesTraining
 
     // ArrayList<String> activities revisar esto OJO
     public String createTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" )  String _activities,
                                  @QueryParam( "userId" ) int userId )
     {
-        String[] activities_ = _activities.split(";");
-        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
-        ArrayList<Entity> activitiesList = activityList(activities);
-        Entity createTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
-        CreateTrainingCommand cmd =
-                CommandsFactory.instanciateCreateTrainingCmd( createTrainingObject);
+
+        Entity training = null,
+        commandResult = null;
+        Command command = null;
+        String response = null;
+
         try
         {
-            cmd.execute();
-            Entity result = cmd.getResult();//nuevo
-            return gson.toJson( result );//nuevo
+            training = EntityFactory.createTraining(userId, name);
+            command = CommandsFactory.instanciateCreateTrainingCmd( training);
+            command.execute();
+
+            commandResult = ((CreateTrainingCommand) command).getResult();
+            commandResult.set_errorCode(Registry.RESULT_CODE_OK);
+            response = gson.toJson( commandResult );
+
         }
         catch ( AddException e )
         {
-            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error_.toString());
-            logger.error(error_.toString());
-            Entity error = EntityFactory.createEntity();
-            error.set_errorMsg(e.ERROR_MSG);
-            error.set_errorCode(e.ERROR_CODE);
-            return gson.toJson( error );
+            commandResult.set_errorCode( e.ERROR_CODE );
+            commandResult.set_errorMsg( e.ERROR_MSG );
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "createTraining", e.toString() );
         }
+        catch( Exception e )
+        {
+            commandResult.set_errorCode( Registry.RESULT_CODE_FAIL );
+            commandResult.set_errorMsg( Registry.RESULT_CODE_FAIL_MSG );
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "createTraining", e.toString() );
+        }
+
+        return response;
     }
 
 

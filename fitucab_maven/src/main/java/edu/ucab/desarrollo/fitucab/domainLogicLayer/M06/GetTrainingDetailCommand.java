@@ -14,8 +14,6 @@ import org.slf4j.LoggerFactory;
  */
 public class GetTrainingDetailCommand extends Command
 {
-    final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
-
     private Entity _input;
     private Entity _output;
 

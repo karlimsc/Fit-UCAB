@@ -28,9 +28,9 @@ public class Training extends Entity {
      * @param activitylist lista de actividades que tiene el entrenamiento
      */
     public Training(int id, String trainingName, ArrayList activitylist) {
-        //set_id( id );
-        this._activitylist = activitylist;
-        this._userId = id;
+
+        super(id);
+        this._activitylist = activitylist;this._userId = id;
         this._trainingName = trainingName;
 
     }
