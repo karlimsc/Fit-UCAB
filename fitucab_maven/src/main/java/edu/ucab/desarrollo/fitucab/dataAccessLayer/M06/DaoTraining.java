@@ -18,10 +18,8 @@ import java.util.LinkedList;
 public class DaoTraining extends Dao implements IDaoTraining
 {
     private static Logger logger = LoggerFactory.getLogger( DaoTraining.class );
-    //final static org.slf4j.Logger logger = LoggerFactory.getLogger(AchieveChallengeCommand.class);
 
     Entity _entidad;
-
 
     public DaoTraining( Entity entidad )
 
@@ -31,81 +29,56 @@ public class DaoTraining extends Dao implements IDaoTraining
 
     public Entity create(Entity e) throws AddException {
 
-
-        Training t = (Training) e;
-        String query ="SELECT * FROM M06_CREATETRAINING('"+t.getTrainingName()+"','"+t.get_userId()+"')";
+        Training entity = null;
+        User userId = null;
+        LinkedList<Entity> resultList = null;
+        CallableStatement preStatement = null;
+        ResultSet resultSet = null;
+        EntityMapTraining etMap;
 
         try {
-            Connection conn = Dao.getBdConnect();
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            //User user = null;
 
+            preStatement= getBdConnect().prepareCall("{ call M06_CREATETRAINING(?) }" );
+            // Aqui meto los parametros
+            entity = (Training) e;
+            //preStatement.setInt( 1, entidad.get_id() );
+            preStatement.setString(1, ((Training) e).getTrainingName());
+            preStatement.setInt(1,(((Training) e).get_userId()));
+            //Aqui ejecuto el SP
+            resultSet = preStatement.executeQuery();
 
-            while (rs.next()) {
-                int Id = rs.getInt("M06_CREATETRAINING");
-                e.set_id(Id);
+            while (resultSet.next()) {
+                int Id = resultSet.getInt("id");
+                String trainingName = resultSet.getString("name");
+
+                entity = EntityFactory.createTraining( Id, trainingName );
+                entity.set_activitiesList( listActivities() );
+
             }
 
         }
-        catch (SQLException ex) {
-            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error.toString());
-            logger.error(error.toString());
-            throw new AddException(ex);
+        catch ( SQLException _e )
+        {
+            logger.error( "Metodo: {} {}", "createTraining", e.toString() );
+            throw new AddException( _e );
         }
-        catch (BdConnectException ex) {
-            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error.toString());
-            logger.error(error.toString());
-            throw new AddException(ex);
+        catch( BdConnectException _e )
+        {
+            logger.error( "Metodo: {} {}", "createTraining", e.toString() );
+            throw new AddException( _e );
         }
-        catch (Exception ex) {
-            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error.toString());
-            logger.error(error.toString());
-            throw new AddException(ex);
+        catch ( Exception _e )
+        {
+            logger.error( "Metodo: {} {}", "createTraining", e.toString() );
+            throw new AddException( _e );
+        }
+        finally
+        {
+            closeConnection();
         }
 
-        for (Entity activity : t.get_activitylist()) {
-            Activity a = (Activity) activity;
-            String _query =
-                    "SELECT M06_ADDTRAINING_ACTIVITY('" + a.get_duration() + "', '" + e.get_id() + "', '" + a.get_id() + "')";
-            try {
+        return entity;
 
-                Connection conn = Dao.getBdConnect();
-                Statement st = conn.createStatement();
-                ResultSet rs = st.executeQuery(_query);
-                //User user = null;
-
-            }
-            catch (SQLException ex) {
-                MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                        Thread.currentThread().getStackTrace()[1].getMethodName());
-                logger.debug(error.toString());
-                logger.error(error.toString());
-                throw new AddException(ex);
-            }
-            catch (BdConnectException ex) {
-                MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                        Thread.currentThread().getStackTrace()[1].getMethodName());
-                logger.debug(error.toString());
-                logger.error(error.toString());
-                throw new AddException(ex);
-            }
-            catch (Exception ex) {
-                MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                        Thread.currentThread().getStackTrace()[1].getMethodName());
-                logger.debug(error.toString());
-                logger.error(error.toString());
-                throw new AddException(ex);
-            }
-        }
-
-        return e;
     }
 
     public Entity read(Entity e )
@@ -216,11 +189,11 @@ public class DaoTraining extends Dao implements IDaoTraining
 
     /**
      * Metodo para mostrar el entrenamiento a detalle     *
-     * @param entidad     *
+     * @param e    *
      * @return la entidad entrenamiento     *
      * @throws ListByIdException
      */
-    public Entity trainingDetail( Entity entidad) throws ListByIdException
+    public Entity trainingDetail( Entity e) throws ListByIdException
     {
 
         Training entity = null;
@@ -233,16 +206,16 @@ public class DaoTraining extends Dao implements IDaoTraining
         try
         {
             etMap = EntityMapTraining.getInstance();
-            entity = etMap.get( entidad.get_id() );
+            entity = etMap.get( e.get_id() );
 
             if( entity == null )
             {
                 // Aqui se invoca el SP
                 preStatement = getBdConnect().prepareCall( "{ call M06_GET_TRAINING_DETAILS(?) }" );
                 // Aqui meto los parametros
-                entity = (Training) entidad;
+                entity = (Training) e;
                 //preStatement.setInt( 1, entidad.get_id() );
-                preStatement.setInt(1, entidad.get_id());
+                preStatement.setInt(1, e.get_id());
                 //Aqui ejecuto el SP
                 resultSet = preStatement.executeQuery();
 
@@ -261,20 +234,20 @@ public class DaoTraining extends Dao implements IDaoTraining
             }
 
         }
-        catch ( SQLException e )
+        catch ( SQLException _e )
         {
             logger.error( "Metodo: {} {}", "trainingDetail", e.toString() );
-            throw new ListByIdException( e );
+            throw new ListByIdException( _e );
         }
-        catch( BdConnectException e )
+        catch( BdConnectException _e )
         {
             logger.error( "Metodo: {} {}", "trainingDetail", e.toString() );
-            throw new ListByIdException( e );
+            throw new ListByIdException( _e );
         }
-        catch ( Exception e )
+        catch ( Exception _e )
         {
             logger.error( "Metodo: {} {}", "trainingDetail", e.toString() );
-            throw new ListByIdException( e );
+            throw new ListByIdException( _e );
         }
         finally
         {

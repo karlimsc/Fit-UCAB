@@ -1,18 +1,14 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M02;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.IDaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
-import edu.ucab.desarrollo.fitucab.common.M02Cache;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.M02Cache;
 import org.slf4j.LoggerFactory;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import static edu.ucab.desarrollo.fitucab.common.M02Cache._mapUser;
 
 /**
  * Clase UserCommand que hereda de clase Command para el manejo de la Entidad User
@@ -42,20 +38,18 @@ public class UserCommand extends Command {
     @Override
     public void execute() {
         M02Cache _mapUser = new M02Cache();
+        Entity entidad = EntityFactory.createEntity();
+        entidad.set_id(_id);
         IDaoUser _user = DaoFactory.instanceDaoUser(_id);
         try {
             if (_mapUser.searchUser(_id)==true){
                 _home= (_mapUser.getUser(_id));
             }
             else {
-                _home = _user.read(_id);
+                _home = _user.read(entidad);
                 _mapUser.llenar(_id, _home);
             }
-        } catch (GetUserException e) {
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.debug("Debug: ", error);
-            _logger.error("Error: ", error);
+
         } catch (Exception e) {
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());

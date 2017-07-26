@@ -1,4 +1,4 @@
-package edu.ucab.desarrollo.fitucab.common;
+package edu.ucab.desarrollo.fitucab.dataAccessLayer.M02;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;

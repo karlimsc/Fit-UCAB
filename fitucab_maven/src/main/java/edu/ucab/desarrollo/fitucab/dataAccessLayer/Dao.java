@@ -42,8 +42,6 @@ public abstract class Dao implements IDao
         return conInstance;
     }
 
-
-
     /**
      * Metodo que realiza la conexion con la base de datos
      * @return Conexion hecha a la base de datos
@@ -73,7 +71,6 @@ public abstract class Dao implements IDao
         }
         return conn;
     }
-
 
     /**
      *

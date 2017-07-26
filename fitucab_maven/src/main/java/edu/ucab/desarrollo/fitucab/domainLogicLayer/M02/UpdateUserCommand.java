@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M02;
 
-import edu.ucab.desarrollo.fitucab.common.M02Cache;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
+import edu.ucab.desarrollo.fitucab.dataAccessLayer.M02.M02Cache;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
@@ -58,8 +59,10 @@ public class UpdateUserCommand extends Command {
         M02Cache _mapUser = new M02Cache();
         IDaoUser update = DaoFactory.instanceDaoUpdateUser(_id,_username,_phone,_email);
         IDaoUser _user = DaoFactory.instanceDaoUser(_id);
+        Entity entidad = EntityFactory.createEntity();
+        entidad.set_id(_id);
         try {
-            _userC = _user.read(_id);
+            _userC = _user.read(entidad);
             _update = update.update();
             _mapUser.update(_id,_username,_phone,_email,_userC);
         } catch (Exception e) {

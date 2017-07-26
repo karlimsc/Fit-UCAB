@@ -1,4 +1,4 @@
-package M06;
+package edu.ucab.desarrollo.fitucab.Test.M06;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Activity;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
@@ -32,7 +32,7 @@ class EntityFactoryTest {
 
     @Test
     void createTraining2() {
-        Entity e = EntityFactory.createTraining(1,"daniel",2);
+        Entity e = EntityFactory.createTraining(1,"daniel");
         Training c = (Training) e;
         assertEquals(c.getTrainingPeriod(),2);
     }

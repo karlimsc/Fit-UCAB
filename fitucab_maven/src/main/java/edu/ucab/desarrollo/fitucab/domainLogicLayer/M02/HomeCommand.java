@@ -1,6 +1,7 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M02;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.GetUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
@@ -32,17 +33,15 @@ public class HomeCommand extends Command {
 
     @Override
     public void execute() {
+        IDaoUser _user = DaoFactory.instanceDaoUser(id);
+        Entity entidad = EntityFactory.createEntity();
+        entidad.set_id(id);
         try {
-            IDaoUser _user = DaoFactory.instanceDaoUser(id);
-            _usuario = _user.read(id);
+
+            _usuario = _user.read(entidad);
             IDaoHome home = DaoFactory.instanceDaoHome(_usuario);
             _home = home.read(_usuario);
         } catch (CreateHomeException e) {
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            _logger.debug("Debug: ", error);
-            _logger.error("Error: ", error);
-        } catch (GetUserException e) {
             MessageException error = new MessageException(e, this.getClass().getSimpleName(),
                     Thread.currentThread().getStackTrace()[1].getMethodName());
             _logger.debug("Debug: ", error);
