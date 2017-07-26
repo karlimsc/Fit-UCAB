@@ -4,11 +4,12 @@ import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListByIdException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M01.LoginUserException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import org.slf4j.LoggerFactory;
+
+import java.sql.SQLException;
 
 
 public class CheckUserCommand extends Command{
@@ -47,30 +48,13 @@ public class CheckUserCommand extends Command{
      */
 
 
-    public void execute() throws InstantiationException, Exception {
-        try{
+    public void execute() throws InstantiationException, NullPointerException,LoginUserException, SQLException{
+
             //instanciacion del dao
             DaoUser LoginUserDao = (DaoUser) DaoFactory.instanciateDaoUser(_user);
 
             _userReturn = LoginUserDao.login(_user);
 
-        }
-        catch (LoginUserException e){
-            /*MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());*/
-
-            logger.error("Error LoginUserExc: ", e.toString());
-            _userReturn = e.getUserFail();
-        }
-        catch (NullPointerException e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error NULL Pointer: ", error);
-        } catch(Exception e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error Exception: ", error);
-        }
     }
 
     public Entity Return(){

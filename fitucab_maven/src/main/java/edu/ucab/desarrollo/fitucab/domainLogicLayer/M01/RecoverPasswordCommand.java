@@ -2,16 +2,15 @@ package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
 import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
-import edu.ucab.desarrollo.fitucab.common.entities.User;
-import edu.ucab.desarrollo.fitucab.common.exceptions.M01.LoginUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M01.RecoveryPassException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import org.slf4j.LoggerFactory;
+
+import java.sql.SQLException;
 
 /**
  * Created by estefania on 29/06/2017.
@@ -32,8 +31,7 @@ public class RecoverPasswordCommand extends Command {
         this._email = _email;
     }
 
-    public void execute(){
-        try{
+    public void execute() throws RecoveryPassException, NullPointerException,SQLException, InstantiationException{
 
             Dao _dao = DaoFactory.instanciateDaoUser();
             DaoUser testMailDao;
@@ -46,23 +44,6 @@ public class RecoverPasswordCommand extends Command {
             System.out.print("Debug: Realizó el Try en RecoverPassCommand");
             System.out.print("Debug:Rsponse"+ this._response);
 
-        }
-        catch (RecoveryPassException e){
-            /*MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());*/
-
-            logger.error("Error RecoverExc: ", e.toString());
-            this._response=gson.toJson(e.getUserFail());
-
-        }   catch (NullPointerException e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error.toString());
-        } catch(Exception e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error.toString());
-        }
     }
 
     public String get_response() {

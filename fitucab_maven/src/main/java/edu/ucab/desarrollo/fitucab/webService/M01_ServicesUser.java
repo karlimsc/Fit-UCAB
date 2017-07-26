@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.RecoveryPassException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
@@ -60,24 +61,19 @@ public class M01_ServicesUser {
             return gson.toJson(result);
         }
         catch (NullPointerException e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            System.out.print("NULL POINTER");
-            logger.error("Error: ", error);
+            logger.error( "Metodo: {} {}", "getUser", e.toString() );
             return e.getMessage();
         }
         catch (SQLException e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            System.out.print("SQL");
-            logger.error("Error: ", error);
+            logger.error( "Metodo: {} {}", "getUser", e.toString() );
             return e.getSQLState();
         }
+        catch (InstantiationException e){
+            logger.error( "Metodo: {} {}", "getUser", e.toString() );
+            return e.getMessage();
+        }
         catch(Exception e) {
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            System.out.print("OTRA");
-            logger.error("Error: ", error);
+            logger.error( "Metodo: {} {}", "getUser", e.toString() );
             return e.getMessage();
         }
     }
@@ -162,20 +158,18 @@ public class M01_ServicesUser {
             }
 
         }catch (NullPointerException e){
-
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            System.out.print("NULL POINTER");
-            logger.error("Error: ", error);
             userFail.set_status(Integer.toString(RESULT_USER_FAIL));
-            return gson.toJson(userFail);
+            logger.error( "Metodo: {} {}", "insertUser", e.toString() );
+            return e.getMessage();
+        }
+        catch (InstantiationException e){
+            logger.error( "Metodo: {} {}", "insertUser", e.toString() );
+            return e.getMessage();
         }
         catch ( Exception e )
-        { MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
-            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
-            return gson.toJson(userFail);
+        {
+            logger.error( "Metodo: {} {}", "insertUser", e.toString() );
+            return e.getMessage();
         }
 
     }
@@ -200,9 +194,27 @@ public class M01_ServicesUser {
             cmd.execute();
             return gson.toJson( true );
         }
+        catch(SQLException e)
+        {
+            logger.error( "Metodo: {} {}", "userOnly", e.toString() );
+            return e.getMessage();
+        }
+        catch(RecoveryPassException e){
+            logger.error( "Metodo: {} {}", "userOnly", e.toString() );
+            return e.getMessage();
+        }
+        catch(InstantiationException e){
+            logger.error( "Metodo: {} {}", "userOnly", e.toString() );
+            return e.getMessage();
+        }
+        catch(NullPointerException e){
+            logger.error( "Metodo: {} {}", "userOnly", e.toString() );
+            return e.getMessage();
+        }
         catch ( Exception e )
         {
-            return gson.toJson( false );
+            logger.error( "Metodo: {} {}", "userOnly", e.toString() );
+            return e.getMessage();
         }
     }
 
@@ -220,18 +232,27 @@ public class M01_ServicesUser {
             return _response;
 
         }catch (NullPointerException e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            System.out.print("NULL POINTER");
-            logger.error("Error: ", error);
+                logger.error( "Metodo: {} {}", "testEmail", e.toString() );
+                User userFail = new User();
+                userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+                return gson.toJson(userFail);
+        }catch (RecoveryPassException e){
+            logger.error( "Metodo: {} {}", "testEmail", e.toString() );
             User userFail = new User();
             userFail.set_status(Integer.toString(RESULT_USER_FAIL));
             return gson.toJson(userFail);
-        }
-        catch ( Exception e )
-        { MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
+        }catch (SQLException e){
+            logger.error( "Metodo: {} {}", "testEmail", e.toString() );
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
+        }catch (InstantiationException e){
+            logger.error( "Metodo: {} {}", "testEmail", e.toString() );
+            User userFail = new User();
+            userFail.set_status(Integer.toString(RESULT_USER_FAIL));
+            return gson.toJson(userFail);
+        }catch ( Exception e )
+        {            logger.error( "Metodo: {} {}", "testEmail", e.toString() );
             User userFail = new User();
             userFail.set_status(Integer.toString(RESULT_USER_FAIL));
             return gson.toJson(userFail);

@@ -1,14 +1,14 @@
 package edu.ucab.desarrollo.fitucab.domainLogicLayer.M01;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
-import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M01.CreateUserException;
-import edu.ucab.desarrollo.fitucab.common.exceptions.MessageException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.M01.DaoUser;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import org.slf4j.LoggerFactory;
+
+import java.sql.SQLException;
 
 /**
  * Created by karo on 24/06/17.
@@ -36,9 +36,7 @@ public class CreateUserCommand extends Command {
 
 
     @Override
-    public void execute()  throws NullPointerException, InstantiationException{
-
-        try{
+    public void execute()  throws NullPointerException, InstantiationException, CreateUserException, SQLException{
 
             Dao  _dao = DaoFactory.instanciateDaoUser(_user);
             DaoUser createUserDao;
@@ -49,21 +47,7 @@ public class CreateUserCommand extends Command {
             this._response=true;
 
             logger.debug("Debug: ", "Realizó el Try en CreateUserCommand");
-        }
-        catch (CreateUserException e){
-            System.out.print("EN EXCEPCION EL USER STATUS ES " +  e.getUserFail());
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error);
-            _userResponse = e.getUserFail();
-            this._response = false;
 
-        }catch(Exception e){
-            MessageException error = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.error("Error: ", error.toString());
-            this._response = false;
-        }
     }
 
     public Boolean get_response() {
