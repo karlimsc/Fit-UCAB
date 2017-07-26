@@ -16,8 +16,21 @@ public class AddException extends Exception
      * excepcion personalizada para el agregar
      * @param e
      */
-    public AddException(Exception e)
+    public AddException( Exception e )
     {
         super( e );
+    }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder str = null;
+
+
+        str = new StringBuilder( ERROR_CODE + "\n" );
+        str.append( ERROR_MSG + "\n" );
+        str.append( super.toString() );
+
+        return str.toString();
     }
 }
