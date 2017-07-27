@@ -18,4 +18,17 @@ public class UpdateException extends Exception
     {
         super( e );
     }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder str = null;
+
+
+        str = new StringBuilder( ERROR_CODE + "\n" );
+        str.append( ERROR_MSG + "\n" );
+        str.append( super.toString() );
+
+        return str.toString();
+    }
 }
