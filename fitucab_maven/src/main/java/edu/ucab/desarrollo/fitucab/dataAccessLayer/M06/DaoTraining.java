@@ -5,12 +5,8 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.*;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
-import org.slf4j.LoggerFactory;
+
 import java.sql.*;
-
-import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -32,7 +28,7 @@ public class DaoTraining extends Dao implements IDaoTraining
         Training entity = null;
         CallableStatement preStatement = null;
         ResultSet resultSet = null;
-        EntityMapTraining etMap;
+        EntityMapTraining etMap= null;
 
         try {
             entity = (Training) e;
@@ -53,6 +49,7 @@ public class DaoTraining extends Dao implements IDaoTraining
 
             }
 
+            etMap.put(e.get_id(),entity);
         }
         catch ( SQLException _e )
         {
@@ -83,9 +80,54 @@ public class DaoTraining extends Dao implements IDaoTraining
         return null;
     }
 
-    public Entity update( Entity e )
+    public Entity update( Entity e ) throws UpdateException
     {
-        return null;
+        Training entity = null;
+        User userId = null;
+        CallableStatement preStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+
+           // Aqui se invoca el SP
+                preStatement = getBdConnect().prepareCall( "{ call M06_MODIFYNAMETRAINING(?) }" );
+                // Aqui meto los parametros
+                entity = (Training) e;
+
+                preStatement.setInt(1, e.get_id());
+                preStatement.setString(1, ((Training) e).getTrainingName());
+                //Aqui ejecuto el SP
+                resultSet = preStatement.executeQuery();
+
+                entity= EntityFactory.createTraining(e.get_id(),((Training) e).getTrainingName());
+                entity.set_activitiesList(listActivities());
+
+                //cierro la conexion
+                resultSet.close();
+
+        }
+        catch ( SQLException _e )
+        {
+            logger.error( "Metodo: {} {}", "updateTraining", e.toString() );
+            throw new UpdateException( _e );
+        }
+        catch( BdConnectException _e )
+        {
+            logger.error( "Metodo: {} {}", "updateTraining", e.toString() );
+            throw new UpdateException( _e );
+        }
+        catch ( Exception _e )
+        {
+            logger.error( "Metodo: {} {}", "updateTraining", e.toString() );
+            throw new UpdateException( _e );
+        }
+        finally
+        {
+            closeConnection();
+        }
+
+
+        return entity;
     }
 
     public Boolean delete(Entity e) throws DeleteException
