@@ -6,7 +6,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import java.sql.SQLException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
-
+import edu.ucab.desarrollo.fitucab.common.exceptions.UpdateException;
 
 
 /**
@@ -20,5 +20,5 @@ public interface IDao
 
     public Entity read(Entity e) throws CreateHomeException, SQLException, BdConnectException;
 
-    public Entity update(Entity e);
+    public Entity update(Entity e) throws UpdateException;
 }
