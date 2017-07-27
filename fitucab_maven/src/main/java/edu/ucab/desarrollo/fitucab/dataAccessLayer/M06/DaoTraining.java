@@ -86,6 +86,7 @@ public class DaoTraining extends Dao implements IDaoTraining
         User userId = null;
         CallableStatement preStatement = null;
         ResultSet resultSet = null;
+        EntityMapTraining etMap = null;
 
         try {
 
@@ -94,16 +95,18 @@ public class DaoTraining extends Dao implements IDaoTraining
                 // Aqui meto los parametros
                 entity = (Training) e;
 
-                preStatement.setInt(1, e.get_id());
+                preStatement.setInt(1, ((Training) e).get_id());
                 preStatement.setString(1, ((Training) e).getTrainingName());
                 //Aqui ejecuto el SP
                 resultSet = preStatement.executeQuery();
+                //cierro la conexion
+                resultSet.close();
 
                 entity= EntityFactory.createTraining(e.get_id(),((Training) e).getTrainingName());
                 entity.set_activitiesList(listActivities());
 
-                //cierro la conexion
-                resultSet.close();
+                //Guardo en el entityMap
+                etMap.replace(e.get_id(),entity);
 
         }
         catch ( SQLException _e )
