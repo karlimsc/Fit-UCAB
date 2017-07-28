@@ -316,6 +316,14 @@ public class M06_ServicesTraining
         return response;
     }
 
+    @GET
+    @Path("/activateTraining")
+    @Produces ("application/json")
+    public String activateTraining(@QueryParam("userId") int userId,
+                                   @QueryParam("trainingId") int trainingId){
+        return null;
+    }
+
     /**
      * Metodo que devuelve una lista de actividades para asignarle al entrenamiento
      * @param activities
