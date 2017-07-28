@@ -1,4 +1,4 @@
-package M06;
+package edu.ucab.desarrollo.fitucab.Test.M06;
 import static io.restassured.RestAssured.given;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
