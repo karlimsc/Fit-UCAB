@@ -19,9 +19,6 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.LevelUpCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.ScoreCommand;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M10.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M11.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M03.*;
@@ -135,6 +132,15 @@ public class CommandsFactory {
      */
     public static Command instanciateGetTrainingDetailCmd (Entity training){
         return new GetTrainingDetailCommand(training);
+    }
+
+    /**
+     * Metodo para instanciar el comando GetTrainingDetail
+     * @param training
+     * @return el comando GetTrainingDetail
+     */
+    public static Command instanciateActiveTrainingCmd (Entity training, Entity user){
+        return new ActiveTrainingCommand(training,user);
     }
 
     //Modulo 9
