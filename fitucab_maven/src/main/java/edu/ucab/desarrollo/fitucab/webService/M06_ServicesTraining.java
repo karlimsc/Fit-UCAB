@@ -47,22 +47,15 @@ public class M06_ServicesTraining
     Gson gson = new Gson();
 
 
-    //el tipo de instruccion HTTP
-    @GET
-    //el path de la funcion
-    @Path( "/createTraining" )
-    //formato de retorno
-    @Produces( "application/json" )
-
     /**
-     * Metodo utilizado a traves de web service para agregar un entrenamiento
-     * @param trainingName
-     * @param trainingActivities
+     * Web service para crear un entrenamiento
+     * @param name
      * @param userId
      * @return
      */
-
-    // ArrayList<String> activities revisar esto OJO
+    @GET
+    @Path( "/createTraining" )
+    @Produces( "application/json" )
     public String createTraining(@QueryParam( "trainingName" ) String name,
                                  @QueryParam( "userId" ) int userId )
     {
@@ -103,168 +96,14 @@ public class M06_ServicesTraining
         return response;
     }
 
-
-    @GET
-    @Path( "/changeTrainingName" )
-    @Produces( "application/json" )
-
     /**
-     * Metodo utilizado a traves de webservice para cambiar el nombre de un entranamiento
-     * la base de datos
-     * @param idTraining
-     * @param trainingName
-     * @return
-     */
-
-    public String renameTraining( @QueryParam( "idTraining" ) int id,
-                                  @QueryParam( "trainingName" ) String name)
-    {
-        Entity updatedTrainingObject = EntityFactory.createTraining( id, name);
-        ChangeTrainingNameCommand cmd = CommandsFactory.instanciateChangeTrainingNameCmd(updatedTrainingObject);
-
-        try
-        {
-            cmd.execute();
-            Entity ok = EntityFactory.createEntity();
-            ok.set_errorMsg("OK");
-            ok.set_errorCode(200);
-            return gson.toJson( ok );
-        }
-        catch ( UpdateException e )
-        {
-            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error_.toString());
-            logger.error(error_.toString());
-            Entity error = EntityFactory.createEntity();
-            error.set_errorMsg(e.ERROR_MSG);
-            error.set_errorCode(e.ERROR_CODE);
-            return gson.toJson( error );
-        }
-
-    }
-
-
-    @GET
-    @Path( "/updateTraining" )
-    @Produces( "application/json" )
-
-    /**
-     * Metodo utilizado a traves de webservice para agregar actividades a un entranamiento
-     * la base de datos
-     * @param idTraining
-     * @param trainingName
-     * @return
-     */
-
-    public String updateTraining( @QueryParam( "idTraining" ) int id,
-                                           @QueryParam( "trainingName" ) String name,
-                                           @QueryParam( "trainingActivities" )  String _activities)
-    {
-        Entity _updatedTrainingObject = EntityFactory.createTraining( id, name);
-        ChangeTrainingNameCommand _cmd = CommandsFactory.instanciateChangeTrainingNameCmd(_updatedTrainingObject);
-
-        try
-        {
-            _cmd.execute();
-            Entity ok = EntityFactory.createEntity();
-        }
-        catch ( UpdateException e )
-        {
-            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error_.toString());
-            logger.error(error_.toString());
-            Entity error = EntityFactory.createEntity();
-            error.set_errorMsg(e.ERROR_MSG);
-            error.set_errorCode(e.ERROR_CODE);
-            return gson.toJson( error );
-        }
-        String[] activities_ = _activities.split(";");
-        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
-        ArrayList<Entity> activitiesList = activityList(activities);
-        Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
-        AddActivitiesToTrainingCommand cmd = CommandsFactory.instanciateAddActivitiesToTrainingCmd(updatedTrainingObject);
-
-        try
-        {
-            cmd.execute();
-            Entity ok = EntityFactory.createEntity();
-            ok.set_errorMsg("OK");
-            ok.set_errorCode(200);
-            return gson.toJson( ok );
-        }
-        catch ( AddException e )
-        {
-            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error_.toString());
-            logger.error(error_.toString());
-            Entity error = EntityFactory.createEntity();
-            error.set_errorMsg(e.ERROR_MSG);
-            error.set_errorCode(e.ERROR_CODE);
-            return gson.toJson( error );
-        }
-
-    }
-
-
-
-    @GET
-    @Path( "/removeActivitiesToTraining" )
-    @Produces( "application/json" )
-
-    /**
-     * Metodo utilizado a traves de webservice para agregar actividades a un entranamiento
-     * la base de datos
-     * @param idTraining
-     * @param trainingName
-     * @return
-     */
-
-    public String removeActivitiesToTraining( @QueryParam( "idTraining" ) int id,
-                                              @QueryParam( "trainingName" ) String name,
-                                              @QueryParam( "trainingActivities" )  String _activities)
-    {
-        String[] activities_ = _activities.split(";");
-        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
-        ArrayList<Entity> activitiesList = activityList(activities);
-        Entity updatedTrainingObject = EntityFactory.createTraining( id, activitiesList, name);
-        RemoveActivitiesFromTrainingCommand cmd = CommandsFactory.instanciateRemoveActivitiesFromTrainingCmd(updatedTrainingObject);
-
-        try
-        {
-            cmd.execute();
-            Entity ok = EntityFactory.createEntity();
-            ok.set_errorMsg("OK");
-            ok.set_errorCode(200);
-            return gson.toJson( ok );
-        }
-        catch ( DeleteException e )
-        {
-            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error_.toString());
-            logger.error(error_.toString());
-            Entity error = EntityFactory.createEntity();
-            error.set_errorMsg(e.ERROR_MSG);
-            error.set_errorCode(e.ERROR_CODE);
-            return gson.toJson( error );
-        }
-
-    }
-
-
-
-    @GET
-    @Path( "/displayTraining" )
-    @Produces( "application/json" )
-    /**
-     * Metodo utilizado a traves de web service para visualizar los entrenamientos que posee el usuario
+     * web service para visualizar los entrenamientos que posee el usuario
      * @param trainingId
      * @return
      */
-
+    @GET
+    @Path( "/displayTraining" )
+    @Produces( "application/json" )
     public String getTraining( @QueryParam( "userId" ) int userId,
             @QueryParam( "trainingId" ) int trainingId )
     {
@@ -285,16 +124,15 @@ public class M06_ServicesTraining
         }
     }
 
-    @GET
-    @Path( "/deleteTraining" )
-    @Produces( "application/json" )
     /**
-     * Metodo utilizado a traves de web service para eliminar un entrenamiento
+     * web service para eliminar un entrenamiento
      * @param trainingId
      * @param trainingName
      * @return
      */
-
+    @GET
+    @Path( "/deleteTraining" )
+    @Produces( "application/json" )
     public String deleteTraining( @QueryParam( "trainingId" ) int trainingId,
                                   @QueryParam( "trainingName" ) String trainingName )
     {
@@ -326,17 +164,16 @@ public class M06_ServicesTraining
 
     }
 
-
-    @GET
-    @Path( "/shareTraining" )
-    @Produces( "application/json" )
     /**
-     * Metodo utilizado a traves de web service para compartir un entrenamiento
-     * @param trainingName
-     * @param trainingActivities
+     * Web Service para compartir un entrenamiento
+     * @param name
+     * @param _activities
      * @param userId
      * @return
      */
+    @GET
+    @Path( "/shareTraining" )
+    @Produces( "application/json" )
     public String shareTraining(@QueryParam( "trainingName" ) String name,
                                  @QueryParam( "trainingActivities" ) String _activities,
                                  @QueryParam( "userId" ) int userId )
@@ -366,62 +203,6 @@ public class M06_ServicesTraining
             error.set_errorCode(e.ERROR_CODE);
             return gson.toJson( error );
         }
-    }
-
-
-
-    private ArrayList<Entity> activityList (ArrayList<String> activities){
-        ArrayList<Entity> activitiesList = new ArrayList<Entity>();
-        for(int i = 0; i <= activities.size() - 1; i++){
-            Entity act = EntityFactory.createActivity();
-            if (activities.get(i).equals("Caminar")){
-                act = EntityFactory.createActivity(1, activities.get(i), 2);
-            }
-            else if (activities.get(i).equals("Trotar")){
-                act = EntityFactory.createActivity(2, activities.get(i), 1);
-            }
-            else if (activities.get(i).equals("Bicicleta")){
-                act = EntityFactory.createActivity(3, activities.get(i), 2);
-            }
-            else if (activities.get(i).equals("Natacion")){
-                act = EntityFactory.createActivity(4, activities.get(i), 2);
-            }
-            else if (activities.get(i).equals("Yoga")){
-                act = EntityFactory.createActivity(5, activities.get(i), 3);
-            }
-            else if (activities.get(i).equals("Estiramientos")){
-                act = EntityFactory.createActivity(6, activities.get(i), 1);
-            }
-            else if (activities.get(i).equals("Eliptica")){
-                act = EntityFactory.createActivity(7, activities.get(i), 1);
-            }
-            else if (activities.get(i).equals("Escaleras")){
-                act = EntityFactory.createActivity(8, activities.get(i), 1);
-            }
-            else if (activities.get(i).equals("Bailar")){
-                act = EntityFactory.createActivity(9, activities.get(i), 2);
-            }
-            else if (activities.get(i).equals("Aerobic")){
-                act = EntityFactory.createActivity(10, activities.get(i), 2);
-            }
-            else if (activities.get(i).equals("Remo")){
-                act = EntityFactory.createActivity(11, activities.get(i), 2);
-            }
-            else if (activities.get(i).equals("Basketball")){
-                act = EntityFactory.createActivity(12, activities.get(i), 2);
-            }
-            else if (activities.get(i).equals("Futbol")){
-                act = EntityFactory.createActivity(13, activities.get(i), 2);
-            }
-            else if (activities.get(i).equals("Tenis")){
-                act = EntityFactory.createActivity(14, activities.get(i), 2);
-            }
-            else if (activities.get(i).equals("Voleibol")){
-                act = EntityFactory.createActivity(15, activities.get(i), 2);
-            }
-            activitiesList.add(act);
-        }
-        return activitiesList;
     }
 
     /**
@@ -533,5 +314,64 @@ public class M06_ServicesTraining
         }
 
         return response;
+    }
+
+    /**
+     * Metodo que devuelve una lista de actividades para asignarle al entrenamiento
+     * @param activities
+     * @return Arraylist de actividades
+     */
+    private ArrayList<Entity> activityList (ArrayList<String> activities){
+        ArrayList<Entity> activitiesList = new ArrayList<Entity>();
+        for(int i = 0; i <= activities.size() - 1; i++){
+            Entity act = EntityFactory.createActivity();
+            if (activities.get(i).equals("Caminar")){
+                act = EntityFactory.createActivity(1, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Trotar")){
+                act = EntityFactory.createActivity(2, activities.get(i), 1);
+            }
+            else if (activities.get(i).equals("Bicicleta")){
+                act = EntityFactory.createActivity(3, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Natacion")){
+                act = EntityFactory.createActivity(4, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Yoga")){
+                act = EntityFactory.createActivity(5, activities.get(i), 3);
+            }
+            else if (activities.get(i).equals("Estiramientos")){
+                act = EntityFactory.createActivity(6, activities.get(i), 1);
+            }
+            else if (activities.get(i).equals("Eliptica")){
+                act = EntityFactory.createActivity(7, activities.get(i), 1);
+            }
+            else if (activities.get(i).equals("Escaleras")){
+                act = EntityFactory.createActivity(8, activities.get(i), 1);
+            }
+            else if (activities.get(i).equals("Bailar")){
+                act = EntityFactory.createActivity(9, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Aerobic")){
+                act = EntityFactory.createActivity(10, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Remo")){
+                act = EntityFactory.createActivity(11, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Basketball")){
+                act = EntityFactory.createActivity(12, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Futbol")){
+                act = EntityFactory.createActivity(13, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Tenis")){
+                act = EntityFactory.createActivity(14, activities.get(i), 2);
+            }
+            else if (activities.get(i).equals("Voleibol")){
+                act = EntityFactory.createActivity(15, activities.get(i), 2);
+            }
+            activitiesList.add(act);
+        }
+        return activitiesList;
     }
 }
