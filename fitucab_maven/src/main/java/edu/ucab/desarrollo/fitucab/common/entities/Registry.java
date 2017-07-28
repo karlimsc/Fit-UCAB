@@ -19,6 +19,8 @@ public class Registry {
     private float _height;
     @SerializedName("_registryPoint")
     private int _registryPoint;
+    @SerializedName("_registryTraining")
+    private int _registryTraining;
 
     /**
      * Constructor vacio
@@ -32,12 +34,13 @@ public class Registry {
      * @param height
      * @param registryPoint
      */
-    public Registry(int idRegistry, float weight,float height,int registryPoint)
+    public Registry(int idRegistry, float weight,float height,int registryPoint, int registryTraining)
     {
      _idRegistry = idRegistry;
      _weight = weight;
      _height = height;
      _registryPoint = registryPoint;
+     _registryTraining = registryTraining;
     };
 
     public Registry(int idRegistry)
@@ -107,5 +110,14 @@ public class Registry {
     public void setregistryPoint( int registryPoint)
     {
         this._registryPoint = registryPoint;
+    }
+
+    public int get_registryTraining()
+    {
+        return _registryTraining;
+    }
+    public void set_registryTraining(int _registryTraining)
+    {
+        this._registryTraining = _registryTraining;
     }
 }
