@@ -320,7 +320,13 @@ public class M06_ServicesTraining
     @Path("/activateTraining")
     @Produces ("application/json")
     public String activateTraining(@QueryParam("userId") int userId,
-                                   @QueryParam("trainingId") int trainingId){
+                                   @QueryParam("trainingId") int trainingId)
+    {
+
+        Entity training = null, user=null, commandResult = null;
+        Command command = null;
+        String response = null;
+
         return null;
     }
 
