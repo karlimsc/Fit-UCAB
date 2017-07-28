@@ -1,6 +1,7 @@
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.entities.User;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.CreateUserException;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.Dao;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
@@ -29,7 +30,8 @@ class CreateUserCommandTest {
     }
 
     @Test
-    void execute() throws InstantiationException, SQLException {
+    void execute() throws InstantiationException, SQLException, CreateUserException
+    {
 
         Entity _user = EntityFactory.createUser(60,"naomi","123",
                 "murcielagoEmpalagoso@malo.com","f","00000",
