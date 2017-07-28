@@ -114,18 +114,6 @@ public class CommandsFactory {
         return new ShareTrainingCommand(training);
     }
 
-    static public AddActivitiesToTrainingCommand instanciateAddActivitiesToTrainingCmd(Entity training) {
-        return new AddActivitiesToTrainingCommand(training);
-    }
-
-    static public RemoveActivitiesFromTrainingCommand instanciateRemoveActivitiesFromTrainingCmd(Entity training) {
-        return new RemoveActivitiesFromTrainingCommand(training);
-    }
-
-    static public ChangeTrainingNameCommand instanciateChangeTrainingNameCmd(Entity training) {
-        return new ChangeTrainingNameCommand(training);
-    }
-
     static public CheckTrainingCommand instanciateCheckTrainingCmd(int trainingId, int userId) {
         return new CheckTrainingCommand(trainingId, userId);
     }
