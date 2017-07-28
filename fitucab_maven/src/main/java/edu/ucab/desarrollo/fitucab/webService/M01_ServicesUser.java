@@ -102,7 +102,8 @@ public class M01_ServicesUser {
                              @QueryParam("phone") String phone,
                              @QueryParam("birthdate") String birthdate,
                              @QueryParam("weight") int weight,
-                             @QueryParam("height") int height) throws NullPointerException,
+                             @QueryParam("height") int height,
+                             @QueryParam("trainingAct") int trainingAct) throws NullPointerException,
                                                                       java.text.ParseException {
         System.out.print("DEBUG: " + username);
 
@@ -135,7 +136,7 @@ public class M01_ServicesUser {
         try
         {
             Entity createUserObject = EntityFactory.createUser(0,username, password, email,
-                    sex, phone, sqlDate, weight, height);
+                    sex, phone, sqlDate, weight, height, 500);
 
             User _returnUser = (User) createUserObject;
 
