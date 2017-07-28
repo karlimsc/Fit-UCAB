@@ -316,9 +316,47 @@ public class DaoTraining extends Dao implements IDaoTraining
         return entity;
     }
 
-    public Boolean activateTraining( Entity e )
+    public Boolean activateTraining( Entity e, Entity a ) throws ActiveTrainingException
     {
-        return null;
+        Training entity = null;
+        User user = null;
+        CallableStatement preStatement = null;
+        ResultSet resultSet = null;
+
+        try
+        {
+            entity = (Training) e;
+            user = (User) a;
+
+            preStatement = getBdConnect().prepareCall( "{ call M06_ACTIVE_TRAINING(?) }" );
+            preStatement.setInt(1, a.get_id());
+            preStatement.setInt(2,e.get_id());
+
+            resultSet = preStatement.executeQuery();
+            resultSet.close();
+
+        }
+        catch ( SQLException _e )
+        {
+            logger.error( "Metodo: {} {}", "ActiveTraining", e.toString() );
+            throw new ActiveTrainingException( _e );
+        }
+        catch( BdConnectException _e )
+        {
+            logger.error( "Metodo: {} {}", "ActiveTraining", e.toString() );
+            throw new ActiveTrainingException( _e );
+        }
+        catch ( Exception _e )
+        {
+            logger.error( "Metodo: {} {}", "ActiveTraining", e.toString() );
+            throw new ActiveTrainingException( _e );
+        }
+        finally
+        {
+            closeConnection();
+        }
+
+        return true;
     }
 
     public Boolean shareTraining( Entity e ) throws ShareException
