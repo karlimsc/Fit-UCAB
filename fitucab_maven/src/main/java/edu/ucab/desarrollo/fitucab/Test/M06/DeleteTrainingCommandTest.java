@@ -1,9 +1,8 @@
-package M06;
+package edu.ucab.desarrollo.fitucab.Test.M06;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.ChangeTrainingNameCommand;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.DeleteTrainingCommand;
 import org.junit.jupiter.api.Test;
 
