@@ -253,6 +253,7 @@ public class DaoUser extends Dao implements IDaoUser {
             cstmt.setDate(7, _user.getBirthdate());
             cstmt.setInt(8, _user.getWeight());
             cstmt.setInt(9, _user.getHeight());
+            cstmt.setInt(10 , _user.get_trainingAct());
             cstmt.execute();
 
             id = cstmt.getInt(1);
