@@ -26,6 +26,9 @@ public class User extends Entity {
     private int    _height; // Se usan unicamente para uso del perfil de usuario
     @SerializedName("_status")
     private String _status;
+    @SerializedName("_trainingAct")
+    private int _trainingAct;
+
 
     /**
      * Constructor vacio
@@ -74,6 +77,21 @@ public class User extends Entity {
         this._birthdate = _birthdate;
         this._weight = _weight;
         this._height = _height;
+    }
+
+    public User(int id,String _username, String _password, String _email, String _sex, String _phone, Date _birthdate,
+                int _weight, int _height , int _trainingAct) {
+
+        super.set_id(id);
+        this._username = _username;
+        this._password = _password;
+        this._email = _email;
+        this._sex = _sex;
+        this._phone = _phone;
+        this._birthdate = _birthdate;
+        this._weight = _weight;
+        this._height = _height;
+        this._trainingAct = _trainingAct;
     }
 
     /***
@@ -257,9 +275,17 @@ public class User extends Entity {
     public String get_status() {
         return _status;
     }
-
     public void set_status(String _status) {
         this._status = _status;
+    }
+
+    public int get_trainingAct()
+    {
+        return _trainingAct;
+    }
+    public void set_trainingAct(int _trainingAct)
+    {
+        this._trainingAct = _trainingAct;
     }
 
 }
