@@ -47,7 +47,8 @@ class DaoTrainingTest {
     }
 
     @Test
-    void update() {
+    void update() throws UpdateException
+    {
         DaoTraining dao = DaoFactory.instanceDaoTraining(null);
         assertNull(dao.update(null));
     }
@@ -104,60 +105,7 @@ class DaoTrainingTest {
         assertNull(dao.listTrainingsShared(null));
     }
 
-    @Test
-    void modifyName() {
-        Activity act = EntityFactory.createActivity(1, "Caminar", 2);
-        ArrayList<Entity> activities = new ArrayList<Entity>();
-        activities.add(act);
-        Entity training = EntityFactory.createTraining(1, "PruebaUnitaria", activities);
-        DaoTraining dao = DaoFactory.instanceDaoTraining( training );
-        try {
-            Entity result = dao.create(training);
-            Boolean boolresult = dao.modifyName(result);
-            assertEquals(true, boolresult);
-            dao.delete(result);
-        }catch (Exception ex){
-            assertTrue(ex instanceof UpdateException);
-        }
-    }
 
-    @Test
-    void addActivities() {
-        Activity act = EntityFactory.createActivity(1, "Caminar", 2);
-        ArrayList<Entity> activities = new ArrayList<Entity>();
-        activities.add(act);
-        Entity training = EntityFactory.createTraining(1, "PruebaUnitaria", activities);
-        DaoTraining dao = DaoFactory.instanceDaoTraining( training );
-        try {
-            activities.clear();
-            Entity result = dao.create(training);
-            Activity _act = EntityFactory.createActivity(2, "Trotar", 1);
-            activities.add(_act);
-            Entity updateTest = EntityFactory.createTraining(1, activities, "PruebaUnitaria");
-            Boolean boolresult = dao.addActivities(updateTest);
-            assertEquals(true, boolresult);
-            dao.delete(result);
-        }catch (Exception ex){
-            assertTrue(ex instanceof DeleteException);
-        }
-    }
-
-    @Test
-    void removeActivities() {
-        Activity act = EntityFactory.createActivity(1, "Caminar", 2);
-        ArrayList<Entity> activities = new ArrayList<Entity>();
-        activities.add(act);
-        Entity training = EntityFactory.createTraining(1, "PruebaUnitaria", activities);
-        DaoTraining dao = DaoFactory.instanceDaoTraining( training );
-        try {
-            Entity result = dao.create(training);
-            Boolean boolresult = dao.removeActivities(result);
-            assertEquals(true, boolresult);
-            dao.delete(result);
-        }catch (Exception ex){
-            assertTrue(ex instanceof DeleteException);
-        }
-    }
     @Test
     public void testListAll() throws Exception
     {
