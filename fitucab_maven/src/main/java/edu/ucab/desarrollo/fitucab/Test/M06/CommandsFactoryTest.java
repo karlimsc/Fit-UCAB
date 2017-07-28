@@ -1,4 +1,4 @@
-package M06;
+package edu.ucab.desarrollo.fitucab.Test.M06;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
@@ -39,30 +39,6 @@ class CommandsFactoryTest {
         assertEquals(result,false);
     }
 
-    @Test
-    void instanciateAddActivitiesToTrainingCmd() {
-        Entity prueba = EntityFactory.createTraining(1, "daniel");
-        AddActivitiesToTrainingCommand c = CommandsFactory.instanciateAddActivitiesToTrainingCmd(prueba);
-        boolean result = c.getResult();
-        assertEquals(result,false);
-    }
-
-    @Test
-    void instanciateRemoveActivitiesFromTrainingCmd() {
-        Entity prueba = EntityFactory.createTraining(1, "daniel");
-        RemoveActivitiesFromTrainingCommand c = CommandsFactory.instanciateRemoveActivitiesFromTrainingCmd(prueba);
-        boolean result = c.getResult();
-        assertEquals(result,false);
-    }
-
-    @Test
-    void instanciateChangeTrainingNameCmd() {
-
-        Entity prueba = EntityFactory.createTraining(1, "daniel");
-        ChangeTrainingNameCommand c = CommandsFactory.instanciateChangeTrainingNameCmd(prueba);
-        boolean result = c.getResult();
-        assertEquals(result,false);
-    }
 
     @Test
     void instanciateGetAllTrainingCmd() {
