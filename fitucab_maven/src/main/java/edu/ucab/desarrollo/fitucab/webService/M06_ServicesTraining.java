@@ -323,11 +323,42 @@ public class M06_ServicesTraining
                                    @QueryParam("trainingId") int trainingId)
     {
 
-        Entity training = null, user=null, commandResult = null;
+        Entity training = null, user=null;
+        Entity commandResult = null;
         Command command = null;
         String response = null;
 
-        return null;
+        try
+        {
+            training.set_id(trainingId);
+            user.set_id(userId);
+
+            command = CommandsFactory.instanciateActiveTrainingCmd(training,user);
+            command.execute();
+
+            commandResult =  ( ( ActiveTrainingCommand ) command ).get_output();
+            commandResult.set_errorCode( Registry.RESULT_CODE_OK );
+            response = gson.toJson( commandResult );
+        }
+        catch ( ActiveTrainingException e )
+        {
+            commandResult.set_errorCode( e.ERROR_CODE );
+            commandResult.set_errorMsg( e.ERROR_MSG );
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "activateTraining", e.toString() );
+        }
+        catch( Exception e )
+        {
+            commandResult.set_errorCode( Registry.RESULT_CODE_FAIL );
+            commandResult.set_errorMsg( Registry.RESULT_CODE_FAIL_MSG );
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "activateTraining", e.toString() );
+        }
+
+        return response;
+
     }
 
     /**
