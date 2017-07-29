@@ -330,8 +330,8 @@ public class M06_ServicesTraining
 
         try
         {
-            training.set_id(trainingId);
-            user.set_id(userId);
+            training = EntityFactory.createTraining(trainingId) ;
+            user= EntityFactory.createUser(userId);
 
             command = CommandsFactory.instanciateActiveTrainingCmd(training,user);
             command.execute();
