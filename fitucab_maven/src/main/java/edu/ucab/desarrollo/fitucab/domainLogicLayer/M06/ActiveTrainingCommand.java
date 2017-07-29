@@ -12,7 +12,7 @@ public class ActiveTrainingCommand extends Command
 {
     private Entity _training;
     private Entity _user;
-    private boolean _output;
+    private Entity _output;
 
     public ActiveTrainingCommand(Entity training, Entity user)
     {
@@ -28,7 +28,7 @@ public class ActiveTrainingCommand extends Command
 
     }
 
-    public boolean get_output()
+    public Entity get_output()
     {
         return _output;
     }
