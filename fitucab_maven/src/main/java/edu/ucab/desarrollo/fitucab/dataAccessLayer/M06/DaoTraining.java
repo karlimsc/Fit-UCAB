@@ -316,7 +316,7 @@ public class DaoTraining extends Dao implements IDaoTraining
         return entity;
     }
 
-    public Boolean activateTraining( Entity e, Entity a ) throws ActiveTrainingException
+    public Entity activateTraining( Entity e, Entity a ) throws ActiveTrainingException
     {
         Training entity = null;
         User user = null;
@@ -356,7 +356,7 @@ public class DaoTraining extends Dao implements IDaoTraining
             closeConnection();
         }
 
-        return true;
+        return entity;
     }
 
     public Boolean shareTraining( Entity e ) throws ShareException
