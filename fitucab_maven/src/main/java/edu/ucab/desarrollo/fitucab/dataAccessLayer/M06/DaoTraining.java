@@ -325,10 +325,10 @@ public class DaoTraining extends Dao implements IDaoTraining
 
         try
         {
-            entity = (Training) e;
+            entity = (Training)e;
             user = (User) a;
 
-            preStatement = getBdConnect().prepareCall( "{ call M06_ACTIVE_TRAINING(?) }" );
+            preStatement = getBdConnect().prepareCall( "{ call M06_ACTIVATETRAINING(?,?) }" );
             preStatement.setInt(1, a.get_id());
             preStatement.setInt(2,e.get_id());
 
