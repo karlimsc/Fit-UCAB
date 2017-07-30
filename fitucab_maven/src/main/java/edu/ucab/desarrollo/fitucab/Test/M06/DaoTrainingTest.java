@@ -83,7 +83,7 @@ class DaoTrainingTest {
         DaoTraining dao = DaoFactory.instanceDaoTraining(null);
         assertNull(dao.activateTraining(null,null));
     }
-    
+
 
     @Test
     void listTrainingsShared() {

@@ -64,8 +64,8 @@ public class M06_ServicesTraining
 
         try
         {
-            training = EntityFactory.createTraining(userId, name);
-            command = CommandsFactory.instanciateCreateTrainingCmd( training);
+            training = EntityFactory.createTraining( name, userId );
+            command = CommandsFactory.instanciateCreateTrainingCmd( training );
             command.execute();
 
             commandResult = ((CreateTrainingCommand) command).getResult();

@@ -34,28 +34,41 @@ public class DaoTraining extends Dao implements IDaoTraining
         Training entity = null;
         CallableStatement preStatement = null;
         ResultSet resultSet = null;
-        EntityMapTraining etMap= null;
+        EntityMapTraining etMap;
 
-        try {
-            entity = (Training) e;
+        try
+        {
+            etMap = EntityMapTraining.getInstance();
+            entity = etMap.get( e.get_id() );
+
+            if( entity == null )
+            {
 
             preStatement= getBdConnect().prepareCall("{ call M06_CREATETRAINING(?,?) }" );
+
+            entity = (Training) e;
             // Aqui meto los parametros
             preStatement.setString(1, ((Training) e).getTrainingName());
-            preStatement.setInt(1,(((Training) e).get_userId()));
+            preStatement.setInt(2,(((Training) e).get_userId()));
             //Aqui ejecuto el SP
             resultSet = preStatement.executeQuery();
 
-            while (resultSet.next()) {
-                int Id = resultSet.getInt("id");
-                String trainingName = resultSet.getString("name");
+            while ( resultSet.next() )
+            {
 
-                entity = EntityFactory.createTraining( Id, trainingName );
+                int Id = resultSet.getInt("result");
+                entity = EntityFactory.createTraining( Id, ((Training) e).getTrainingName());
                 entity.set_activitiesList( listActivities() );
 
             }
 
-            etMap.put(e.get_id(),entity);
+            etMap.put(entity.get_id(),entity);
+
+            }
+            else
+            {
+               return entity;
+            }
         }
         catch ( SQLException _e )
         {
@@ -103,12 +116,12 @@ public class DaoTraining extends Dao implements IDaoTraining
         try {
 
            // Aqui se invoca el SP
-                preStatement = getBdConnect().prepareCall( "{ call M06_MODIFYNAMETRAINING(?) }" );
+                preStatement = getBdConnect().prepareCall( "{ call M06_MODIFYNAMETRAINING(?,?) }" );
                 // Aqui meto los parametros
                 entity = (Training) e;
 
                 preStatement.setInt(1, ((Training) e).get_id());
-                preStatement.setString(1, ((Training) e).getTrainingName());
+                preStatement.setString(2, ((Training) e).getTrainingName());
                 //Aqui ejecuto el SP
                 resultSet = preStatement.executeQuery();
                 //cierro la conexion
@@ -148,7 +161,6 @@ public class DaoTraining extends Dao implements IDaoTraining
     public Boolean delete(Entity e) throws DeleteException
     {
         Training entity = null;
-        User userId = null;
         CallableStatement preStatement = null;
         ResultSet resultSet = null;
         EntityMapTraining etMap = null;
@@ -359,7 +371,13 @@ public class DaoTraining extends Dao implements IDaoTraining
         return entity;
     }
 
-    public Entity sharedTraining( Entity trainingId) throws SharedException
+    /**
+     * metodo para asignarle a un usuario un entrenamiento
+     * @param entity
+     * @return
+     * @throws SharedException
+     */
+    public Entity sharedTraining( Entity entity) throws SharedException
     {
         Training training = null;
         CallableStatement preStatement = null;
@@ -367,7 +385,7 @@ public class DaoTraining extends Dao implements IDaoTraining
 
         try {
 
-            training = (Training) trainingId;
+            training = (Training) entity;
 
             preStatement = getBdConnect().prepareCall( "{ call M06_CREATETRAINING(?,?) }" );
             preStatement.setString(1, training.getTrainingName());

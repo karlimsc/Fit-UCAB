@@ -49,14 +49,15 @@ public class Training extends Entity {
     /**
      * Contructor con nombre y periodo
      * @param _trainingName
-     * @param _trainingPeriod
+     * @param _userId
      */
-    public Training(String _trainingName, int _trainingPeriod)
+    public Training(String _trainingName, int _userId)
     {
 
         this._trainingName = _trainingName;
-        this._trainingPeriod = _trainingPeriod;
+        this._userId = _userId;
     }
+
 
     /**
      * Contructor sin la lista de actividades

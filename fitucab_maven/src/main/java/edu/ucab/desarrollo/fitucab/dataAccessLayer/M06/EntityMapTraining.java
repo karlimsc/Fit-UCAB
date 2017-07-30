@@ -30,18 +30,15 @@ public class EntityMapTraining
         return _instance;
     }
 
-
     public void put( Integer key, Training value )
     {
         _map.put( key, value );
     }
 
-
     public Training get( Integer key )
     {
         return _map.get( key );
     }
-
 
     public Training replace( Integer key, Training value )
     {
