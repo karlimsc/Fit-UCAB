@@ -12,16 +12,13 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.*;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.CommandsFactory;
 import edu.ucab.desarrollo.fitucab.domainLogicLayer.M06.*;
-import edu.ucab.desarrollo.fitucab.domainLogicLayer.M09.AchieveChallengeCommand;
 import org.slf4j.LoggerFactory;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.security.InvalidParameterException;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Arrays;
 
@@ -167,42 +164,49 @@ public class M06_ServicesTraining
     /**
      * Web Service para compartir un entrenamiento
      * @param name
-     * @param _activities
      * @param userId
      * @return
      */
     @GET
-    @Path( "/shareTraining" )
+    @Path( "/sharedTraining" )
     @Produces( "application/json" )
-    public String shareTraining(@QueryParam( "trainingName" ) String name,
-                                 @QueryParam( "trainingActivities" ) String _activities,
+    public String sharedTraining(@QueryParam( "trainingName" ) String name,
                                  @QueryParam( "userId" ) int userId )
     {
-        String[] activities_ = _activities.split(";");
-        ArrayList<String> activities = new ArrayList<String>(Arrays.asList(activities_));
-        ArrayList<Entity> activitiesList = activityList(activities);
-        Entity shareTrainingObject = EntityFactory.createTraining(userId, name, activitiesList);
-        ShareTrainingCommand cmd =
-                CommandsFactory.instanciateShareTrainingCmd(shareTrainingObject);
+        Entity training = null,
+                commandResult = null;
+        Command command = null;
+        String response = null;
+
         try
         {
-            cmd.execute();
-            Entity ok = EntityFactory.createEntity();
-            ok.set_errorMsg("OK");
-            ok.set_errorCode(200);
-            return gson.toJson( ok );
+            training = EntityFactory.createTraining(userId, name);
+            command = CommandsFactory.instanciateSharedTrainingCmd(training);
+            command.execute();
+
+            commandResult = ((SharedTrainingCommand) command).get_result();
+            commandResult.set_errorCode(Registry.RESULT_CODE_OK);
+            response = gson.toJson( commandResult );
+
         }
-        catch ( ShareException e )
+        catch ( AddException e )
         {
-            MessageException error_ = new MessageException(e, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error_.toString());
-            logger.error(error_.toString());
-            Entity error = EntityFactory.createEntity();
-            error.set_errorMsg(e.ERROR_MSG);
-            error.set_errorCode(e.ERROR_CODE);
-            return gson.toJson( error );
+            commandResult.set_errorCode( e.ERROR_CODE );
+            commandResult.set_errorMsg( e.ERROR_MSG );
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "sharedTraining", e.toString() );
         }
+        catch( Exception e )
+        {
+            commandResult.set_errorCode( Registry.RESULT_CODE_FAIL );
+            commandResult.set_errorMsg( Registry.RESULT_CODE_FAIL_MSG );
+            response = gson.toJson( commandResult );
+
+            logger.error( "Metodo: {} {}", "sharedTraining", e.toString() );
+        }
+
+        return response;
     }
 
     /**
@@ -336,7 +340,7 @@ public class M06_ServicesTraining
             command = CommandsFactory.instanciateActiveTrainingCmd(training,user);
             command.execute();
 
-            commandResult =  ( ( ActiveTrainingCommand ) command ).get_output();
+            commandResult =  ( (ActivateTrainingCommand) command ).get_output();
             commandResult.set_errorCode( Registry.RESULT_CODE_OK );
             response = gson.toJson( commandResult );
         }

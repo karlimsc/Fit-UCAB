@@ -7,7 +7,6 @@ import edu.ucab.desarrollo.fitucab.common.entities.User;
 import edu.ucab.desarrollo.fitucab.common.exceptions.ListAllException;
 
 import edu.ucab.desarrollo.fitucab.common.entities.Activity;
-import edu.ucab.desarrollo.fitucab.common.entities.Entity;
 import edu.ucab.desarrollo.fitucab.common.entities.EntityFactory;
 import edu.ucab.desarrollo.fitucab.common.exceptions.*;
 import edu.ucab.desarrollo.fitucab.dataAccessLayer.DaoFactory;
@@ -84,21 +83,7 @@ class DaoTrainingTest {
         DaoTraining dao = DaoFactory.instanceDaoTraining(null);
         assertNull(dao.activateTraining(null,null));
     }
-
-    @Test
-    void shareTraining() {
-        Activity act = EntityFactory.createActivity(1, "Caminar", 2);
-        ArrayList<Entity> activities = new ArrayList<Entity>();
-        activities.add(act);
-        Entity training = EntityFactory.createTraining(1, "PruebaUnitaria", activities);
-        DaoTraining dao = DaoFactory.instanceDaoTraining( training );
-        try {
-            Boolean boolresult = dao.shareTraining(training);
-            assertEquals(true, boolresult);
-        }catch (Exception ex){
-            assertTrue(ex instanceof ShareException);
-        }
-    }
+    
 
     @Test
     void listTrainingsShared() {

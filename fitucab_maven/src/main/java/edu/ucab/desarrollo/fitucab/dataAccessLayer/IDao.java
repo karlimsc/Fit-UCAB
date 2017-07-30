@@ -5,6 +5,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.AddException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.BdConnectException;
 import java.sql.SQLException;
 import edu.ucab.desarrollo.fitucab.common.entities.Entity;
+import edu.ucab.desarrollo.fitucab.common.exceptions.M01.CreateUserException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.M02.CreateHomeException;
 import edu.ucab.desarrollo.fitucab.common.exceptions.UpdateException;
 
@@ -16,7 +17,7 @@ import edu.ucab.desarrollo.fitucab.common.exceptions.UpdateException;
 public interface IDao
 {
 
-    public Entity create(Entity e) throws AddException, SQLException, Exception, BdConnectException;
+    public Entity create(Entity e) throws AddException, SQLException, BdConnectException, CreateUserException;
 
     public Entity read(Entity e) throws CreateHomeException, SQLException, BdConnectException;
 

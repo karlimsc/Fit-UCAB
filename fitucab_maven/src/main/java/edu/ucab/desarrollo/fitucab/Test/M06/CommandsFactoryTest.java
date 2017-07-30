@@ -32,10 +32,10 @@ class CommandsFactoryTest {
     }
 
     @Test
-    void instanciateShareTrainingCmd() {
+    void instanciateSharedTrainingCmd() {
         Entity prueba = EntityFactory.createTraining(1, "daniel");
-        ShareTrainingCommand c = CommandsFactory.instanciateShareTrainingCmd(prueba);
-        boolean result = c.getResult();
+        SharedTrainingCommand c = CommandsFactory.instanciateSharedTrainingCmd(prueba);
+        Entity result = c.get_result();
         assertEquals(result,false);
     }
 

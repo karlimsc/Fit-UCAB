@@ -107,8 +107,8 @@ public class CommandsFactory {
         return new DeleteTrainingCommand(training);
     }
 
-    static public ShareTrainingCommand instanciateShareTrainingCmd(Entity training) {
-        return new ShareTrainingCommand(training);
+    static public SharedTrainingCommand instanciateSharedTrainingCmd(Entity training) {
+        return new SharedTrainingCommand(training);
     }
 
     static public CheckTrainingCommand instanciateCheckTrainingCmd(int trainingId, int userId) {
@@ -140,7 +140,7 @@ public class CommandsFactory {
      * @return el comando GetTrainingDetail
      */
     public static Command instanciateActiveTrainingCmd (Entity training, Entity user){
-        return new ActiveTrainingCommand(training,user);
+        return new ActivateTrainingCommand(training,user);
     }
 
     //Modulo 9

@@ -8,13 +8,13 @@ import edu.ucab.desarrollo.fitucab.domainLogicLayer.Command;
 /**
  * Created by root on 28/07/17.
  */
-public class ActiveTrainingCommand extends Command
+public class ActivateTrainingCommand extends Command
 {
     private Entity _training;
     private Entity _user;
     private Entity _output;
 
-    public ActiveTrainingCommand(Entity training, Entity user)
+    public ActivateTrainingCommand(Entity training, Entity user)
     {
         _training = training;
         _user = user;
