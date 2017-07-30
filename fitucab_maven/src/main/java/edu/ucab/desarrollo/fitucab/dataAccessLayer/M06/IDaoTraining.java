@@ -18,7 +18,7 @@ public interface IDaoTraining extends IDao {
     public LinkedList<Entity> listAll(Entity e) throws  ListAllException;
     public Entity trainingDetail(Entity e) throws ListByIdException;
     public Entity activateTraining(Entity e, Entity a) throws ActiveTrainingException;
-    public Boolean shareTraining(Entity e) throws ShareException;
+    public Entity sharedTraining(Entity a) throws SharedException;
     public ArrayList<Entity> listTrainingsShared(Entity e);
 
 }
