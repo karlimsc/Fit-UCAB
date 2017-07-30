@@ -39,7 +39,7 @@ public class DaoTraining extends Dao implements IDaoTraining
         try {
             entity = (Training) e;
 
-            preStatement= getBdConnect().prepareCall("{ call M06_CREATETRAINING(?) }" );
+            preStatement= getBdConnect().prepareCall("{ call M06_CREATETRAINING(?,?) }" );
             // Aqui meto los parametros
             preStatement.setString(1, ((Training) e).getTrainingName());
             preStatement.setInt(1,(((Training) e).get_userId()));
@@ -359,51 +359,45 @@ public class DaoTraining extends Dao implements IDaoTraining
         return entity;
     }
 
-    public Boolean shareTraining( Entity e ) throws ShareException
+    public Entity sharedTraining( Entity trainingId) throws SharedException
     {
-        Training t = (Training) e;
-        String query ="SELECT M06_CREATETRAINING('"+t.getTrainingName()+"','"+t.get_userId()+"')";
+        Training training = null;
+        CallableStatement preStatement = null;
+        ResultSet resultSet = null;
 
         try {
-            Connection conn = Dao.getBdConnect();
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            //User user = null;
 
-            for (Entity activity : t.get_activitylist()) {
-                Activity a = (Activity) activity;
-                String _query =
-                        "SELECT M06_ADDTRAINING_ACTIVITY('" + a.get_duration() + "', '" + e.get_id() + "', '" + a.get_id() + ")";
-                conn = Dao.getBdConnect();
-                st = conn.createStatement();
-                rs = st.executeQuery(_query);
-                //User user = null;
-            }
+            training = (Training) trainingId;
+
+            preStatement = getBdConnect().prepareCall( "{ call M06_CREATETRAINING(?,?) }" );
+            preStatement.setString(1, training.getTrainingName());
+            preStatement.setInt(2, training.get_userId());
+
+            resultSet = preStatement.executeQuery();
+            resultSet.close();
 
         }
-        catch (SQLException ex) {
-            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error.toString());
-            logger.error(error.toString());
-            throw new ShareException(ex);
+        catch ( SQLException _e )
+        {
+            logger.error( "Metodo: {} {}", "SharedTraining", training.toString() );
+            throw new SharedException( _e );
         }
-        catch (BdConnectException ex) {
-            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error.toString());
-            logger.error(error.toString());
-            throw new ShareException(ex);
+        catch( BdConnectException _e )
+        {
+            logger.error( "Metodo: {} {}", "SharedTraining", training.toString() );
+            throw new SharedException( _e );
         }
-        catch (Exception ex) {
-            MessageException error = new MessageException(ex, this.getClass().getSimpleName(),
-                    Thread.currentThread().getStackTrace()[1].getMethodName());
-            logger.debug(error.toString());
-            logger.error(error.toString());
-            throw new ShareException(ex);
+        catch ( Exception _e )
+        {
+            logger.error( "Metodo: {} {}", "SharedTraining", training.toString() );
+            throw new SharedException( _e );
+        }
+        finally
+        {
+            closeConnection();
         }
 
-        return true;
+        return training;
     }
 
     /**
