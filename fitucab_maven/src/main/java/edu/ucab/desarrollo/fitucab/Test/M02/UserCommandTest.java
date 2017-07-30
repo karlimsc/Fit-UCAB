@@ -47,7 +47,7 @@ public class UserCommandTest {
         SimpleDateFormat _format = new SimpleDateFormat("21/04/2017");
         _format.format(_now);
 
-        Entity _u1 = EntityFactory.createUser(1,"rafael","juanmacedoal@hotmail.com","m","1234",_now,80,180);
+        Entity _u1 = EntityFactory.createUser(1,"rafael","juanmacedoal@hotmail.com","m","1234", (java.sql.Date) _now,80,180);
 
         assertNotNull(((UserCommand)_uc).Return());
 

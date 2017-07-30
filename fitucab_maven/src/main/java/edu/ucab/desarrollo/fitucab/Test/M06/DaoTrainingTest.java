@@ -79,9 +79,10 @@ class DaoTrainingTest {
     }
 
     @Test
-    void activateTraining() {
+    void activateTraining() throws ActiveTrainingException
+    {
         DaoTraining dao = DaoFactory.instanceDaoTraining(null);
-        assertNull(dao.activateTraining(null));
+        assertNull(dao.activateTraining(null,null));
     }
 
     @Test

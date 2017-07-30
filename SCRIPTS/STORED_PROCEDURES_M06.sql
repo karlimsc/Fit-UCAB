@@ -86,3 +86,13 @@ BEGIN
 	;
 END;
 $$ LANGUAGE plpgsql;
+
+/**************************************************ACTIVATE_TRAINING**************************************************/
+CREATE OR REPLACE FUNCTION M06_ACTIVATETRAINING (userId integer, trainingId integer) RETURNS VOID AS $$
+BEGIN
+
+	UPDATE REGISTRY
+	SET FK_TRAININGACT = trainingId
+	WHERE FK_PERSONID= userId;
+END;
+$$ LANGUAGE plpgsql;

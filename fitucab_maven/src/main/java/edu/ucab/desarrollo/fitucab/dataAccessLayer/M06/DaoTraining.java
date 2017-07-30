@@ -338,17 +338,17 @@ public class DaoTraining extends Dao implements IDaoTraining
         }
         catch ( SQLException _e )
         {
-            logger.error( "Metodo: {} {}", "ActiveTraining", e.toString() );
+            logger.error( "Metodo: {} {}", "ActivateTraining", e.toString() );
             throw new ActiveTrainingException( _e );
         }
         catch( BdConnectException _e )
         {
-            logger.error( "Metodo: {} {}", "ActiveTraining", e.toString() );
+            logger.error( "Metodo: {} {}", "ActivateTraining", e.toString() );
             throw new ActiveTrainingException( _e );
         }
         catch ( Exception _e )
         {
-            logger.error( "Metodo: {} {}", "ActiveTraining", e.toString() );
+            logger.error( "Metodo: {} {}", "ActivateTraining", e.toString() );
             throw new ActiveTrainingException( _e );
         }
         finally
